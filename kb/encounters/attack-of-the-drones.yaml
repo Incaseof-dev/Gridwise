@@ -11,7 +11,7 @@ sources:
     title: EVE University Wiki – Attack of the Drones
     url: https://wiki.eveuniversity.org/Attack_of_the_Drones
     license: CC BY-SA 4.0
-    retrieved: 2026-10-23
+    retrieved: 2026-11-13
     revision: "223905"
 defaults:
   confidence: verified

@@ -11,7 +11,7 @@ sources:
     title: EVE University Wiki – Safe Return
     url: https://wiki.eveuniversity.org/Safe_Return
     license: CC BY-SA 4.0
-    retrieved: 2026-10-23
+    retrieved: 2026-11-13
     revision: "230828"
 defaults:
   confidence: verified

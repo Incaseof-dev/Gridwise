@@ -11,8 +11,8 @@ sources:
     title: EVE University Wiki – The Seven's Brothel
     url: https://wiki.eveuniversity.org/The_Seven's_Brothel
     license: CC BY-SA 4.0
-    retrieved: 2026-10-23
-    revision: "201919"
+    retrieved: 2026-11-13
+    revision: "232779"
 defaults:
   confidence: verified
   source: uni
@@ -24,7 +24,7 @@ notes:
   - text: "Web/warp disruption: Rogue Mercenary Thorn (Web)"
   - text: "Suggested ships: Frigate, Destroyer"
   - text: "Blitz: Destroy Group 3, then warp out."
-  - text: The Brothel is the only building that drops loot. It's possible that it will drop random 3% Hardwiring Implant.
+  - text: The Brothel is the only structure that drops loot. It's possible that it will drop random 3% Hardwiring Implant.
 pockets:
   - name: Warp-in
     notes:

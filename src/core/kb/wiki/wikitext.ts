@@ -70,6 +70,9 @@ export function parseTemplate(inner: string): Template {
   return { kind: 'template', name: rawName.trim(), positional, named };
 }
 
+const TABLE_MARK = /^(\|\}|\|-)$/;
+const NPC_TABLE = /^\s*(npctablehead|npcth|npctablerow|npctr|npctableseparator|npcts)\s*(\||\}\})/i;
+
 /** Top-level templates, headings and text lines, in document order. */
 export function parseWikitext(text: string): WikiNode[] {
   const nodes: WikiNode[] = [];
@@ -89,7 +92,12 @@ export function parseWikitext(text: string): WikiNode[] {
       const end = closingBraces(s, i);
       if (end > 0) {
         // A template at the start of a line is a block (table row, info box); inside a sentence it is inline text.
-        if (line.trim()) line += s.slice(i, end);
+        // A table's closing or row mark before it ("|}{{NPCTableHead|Wave 2}}", tables written on one line) is
+        // not a sentence: the mark goes as its own line and the template stays a block.
+        // The NPC table templates are blocks wherever they stand, also after a sentence on the same line ("… from
+        // the warp-in point.{{NPCTableHead|}}").
+        const npcTable = NPC_TABLE.test(s.slice(i + 2, i + 40));
+        if (line.trim() && !npcTable && !TABLE_MARK.test(line.trim())) line += s.slice(i, end);
         else {
           flushLine();
           nodes.push(parseTemplate(s.slice(i + 2, end - 2)));

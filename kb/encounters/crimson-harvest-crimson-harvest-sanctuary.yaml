@@ -11,8 +11,8 @@ sources:
     title: EVE University Wiki – Crimson Harvest (2026), section "Crimson Harvest Sanctuary"
     url: https://wiki.eveuniversity.org/Crimson_Harvest_(2026)#Crimson_Harvest_Sanctuary
     license: CC BY-SA 4.0
-    retrieved: 2026-10-23
-    revision: "232560"
+    retrieved: 2026-11-13
+    revision: "232913"
 defaults:
   confidence: verified
   source: uni
@@ -83,6 +83,7 @@ pockets:
             class: Battleship
             names:
               - Harvest Overseer
+              - Harvest Controller
             group: Boss Wave
             ewar:
               - kind: neut

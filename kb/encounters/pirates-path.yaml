@@ -11,7 +11,7 @@ sources:
     title: EVE University Wiki – Pirate's Path
     url: https://wiki.eveuniversity.org/Pirate's_Path
     license: CC BY-SA 4.0
-    retrieved: 2026-10-23
+    retrieved: 2026-11-13
     revision: "200634"
 defaults:
   confidence: verified

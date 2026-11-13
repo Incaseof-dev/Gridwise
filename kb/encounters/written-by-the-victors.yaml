@@ -11,8 +11,8 @@ sources:
     title: EVE University Wiki – Written By The Victors
     url: https://wiki.eveuniversity.org/Written_By_The_Victors
     license: CC BY-SA 4.0
-    retrieved: 2026-10-23
-    revision: "231282"
+    retrieved: 2026-11-13
+    revision: "232910"
 defaults:
   confidence: verified
   source: uni
@@ -39,6 +39,7 @@ notes:
 pockets:
   - name: Pocket 1
     notes:
+      - text: This spawn is not to be underestimated. Judgment Elite Battleships each do 300 DPS EM/Thermal out to 65 km, total wave damage is roughly 1000-1200 DPS. Do not attempt to face-tank them without a marauder.
       - text: "Mission Completion Dialogue: Wait, you found a Khumaak out there? What the hell is a Wildfire Khumaak? I'm dying to look at it, I admit, but we can't screw around here. We need to get this thing somewhere safe before we start trying to figure anything out. I have a bad feeling about all of this . Boufin was strangely protective, Angels were all over the burial site, and the Amarr were plenty aware of its location too. With that many people involved, I doubt nobody noticed us lifting that thing out of the tombs. I have an idea about where to take it, but I need to make a quick holovid call first. Talk to me again in a few moments, ok?"
     waves:
       - id: initial-defenders-10-25km-from-the-objective
@@ -83,8 +84,7 @@ pockets:
           - count: "3"
             class: Elite Battleship
             names:
-              - Imperial Templar
-              - Imperial Judgement
+              - Imperial Templar Judgment
       - id: structures
         trigger:
           on: warpIn

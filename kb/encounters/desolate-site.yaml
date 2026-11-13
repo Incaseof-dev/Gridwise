@@ -11,7 +11,7 @@ sources:
     title: EVE University Wiki – Desolate Site
     url: https://wiki.eveuniversity.org/Desolate_Site
     license: CC BY-SA 4.0
-    retrieved: 2026-10-23
+    retrieved: 2026-11-13
     revision: "230628"
 defaults:
   confidence: verified

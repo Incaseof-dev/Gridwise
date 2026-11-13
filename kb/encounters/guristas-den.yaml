@@ -12,7 +12,7 @@ sources:
     title: EVE University Wiki – Guristas Den
     url: https://wiki.eveuniversity.org/Guristas_Den
     license: CC BY-SA 4.0
-    retrieved: 2026-10-23
+    retrieved: 2026-11-13
     revision: "225103"
 defaults:
   confidence: verified

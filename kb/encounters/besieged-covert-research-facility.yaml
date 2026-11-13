@@ -11,8 +11,8 @@ sources:
     title: EVE University Wiki – Besieged Covert Research Facility
     url: https://wiki.eveuniversity.org/Besieged_Covert_Research_Facility
     license: CC BY-SA 4.0
-    retrieved: 2026-10-23
-    revision: "230947"
+    retrieved: 2026-11-13
+    revision: "233007"
 defaults:
   confidence: verified
   source: uni
@@ -40,7 +40,7 @@ lootNotes:
   - text: Covert Research Tools
   - text: Any type of pirate faction ammo (regardless of region), includes commander ammo types (e.g. Dread Guristas)
   - text: 30-day pirate ship skins
-  - text: "Low and Mid-Grade implant drops of the following sets: Virtue, Nomad, Centurion, Talisman, Halo, Amulet, Harvest, Hydra, Crystal, Savior, Edge, Asklepian, Snake"
+  - text: "Low and Mid-Grade implant drops of the following sets: Virtue, Nomad, Centurion, Talisman, Halo, Amulet, Harvest, Hydra, Crystal, Savior, Edge, Asklepian, Snake, Wedge"
   - text: Blueprint copies for Hyperspatial Accelerators, Jump Drive Economizers and any of the implants listed above
   - text: Minerals, in stacks of 10 (from the Thukker Component Assembly Facility) excluding Morphite
   - text: Thukker Capital Component Manufacturing Technical Data Chip, which can be opened to receive Thukker manufacturing rig blueprints for Upwell structures

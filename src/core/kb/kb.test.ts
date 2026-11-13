@@ -102,6 +102,47 @@ describe('wikitext', () => {
     expect(nodes.map((n) => n.kind)).toEqual(['text', 'template']);
   });
 
+  it('reads tables written on one line: a closing mark does not swallow the next table (Guristas Hidden Rally Point)', () => {
+    const nodes = parseWikitext(
+      '{{NPCTableHead|Wave 1}}{{NPCTableRow|Destroyer|5|Pithior Guerilla}}\n|}{{NPCTableHead|Wave 2}}{{NPCTableRow|Cruiser|6|Pithum Inferno}}\n|}',
+    );
+    expect(nodes.map((n) => (n.kind === 'template' ? n.name : n.kind === 'text' ? n.text : n.kind))).toEqual([
+      'NPCTableHead',
+      'NPCTableRow',
+      '|}',
+      'NPCTableHead',
+      'NPCTableRow',
+      '|}',
+    ]);
+    const enc = convertWikiPage(
+      page(
+        'Guristas Hidden Rally Point',
+        '{{CMBSiteInfo|name= Guristas Hidden Rally Point|type= anomaly|faction= Guristas}}\n' +
+          '{{NPCTableHead|Wave 1}}{{NPCTableRow|Destroyer|5|Pithior Guerilla}}\n' +
+          '|}{{NPCTableHead|Wave 2}}{{NPCTableRow|Cruiser|6|Pithum Inferno}}\n' +
+          '|}{{NPCTableHead|Wave 3}}{{NPCTableRow|Battleship|8|Pith Massacrer}}\n|}',
+      ),
+      'd',
+    ).file!;
+    expect((enc.pockets as { waves: { id: string }[] }[])[0]!.waves.map((w) => w.id)).toEqual([
+      'wave-1',
+      'wave-2',
+      'wave-3',
+    ]);
+  });
+
+  it('takes an NPC table after a sentence on the same line as a table (Angel’s Red Light District)', () => {
+    const nodes = parseWikitext(
+      'The gate is 35 km away.{{NPCTableHead|}}{{NPCTableRow|Frigate|2|Gistii Hijacker}}\n|}',
+    );
+    expect(nodes.map((n) => (n.kind === 'template' ? n.name : n.kind === 'text' ? n.text : n.kind))).toEqual([
+      'The gate is 35 km away.',
+      'NPCTableHead',
+      'NPCTableRow',
+      '|}',
+    ]);
+  });
+
   it('parses nested template parameters', () => {
     const [t] = parseWikitext('{{Missiondetails|DamageToDeal={{Damagetype|kin|th}}|Level= 4}}');
     expect(t).toMatchObject({ name: 'Missiondetails', named: { DamageToDeal: '{{Damagetype|kin|th}}', Level: '4' } });

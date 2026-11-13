@@ -11,8 +11,8 @@ sources:
     title: EVE University Wiki – Salvage Heist
     url: https://wiki.eveuniversity.org/Salvage_Heist
     license: CC BY-SA 4.0
-    retrieved: 2026-10-23
-    revision: "229748"
+    retrieved: 2026-11-13
+    revision: "232888"
 defaults:
   confidence: verified
   source: uni
@@ -77,10 +77,10 @@ pockets:
             ewar:
               - kind: web
               - kind: warpDisruption
-      - id: wave-2-gath-renton-armor-damage
+      - id: wave-2-gath-renton-75-armor
         trigger:
           on: other
-          text: Wave 2 (Gath Renton armor damage)
+          text: Wave 2 (Gath Renton 75% armor)
           confidence: inferred
         spawns:
           - count: "2"
@@ -89,10 +89,10 @@ pockets:
               - Pithi Saboteur
             ewar:
               - kind: ecm
-      - id: wave-3-timed-after-renton-structure-damage
+      - id: wave-3-gath-renton-50-structure
         trigger:
           on: other
-          text: Wave 3 (timed, after Renton structure damage)
+          text: Wave 3 (Gath Renton 50% structure)
           confidence: inferred
         spawns:
           - count: "3"

@@ -11,8 +11,8 @@ sources:
     title: EVE University Wiki – Fear of Angels
     url: https://wiki.eveuniversity.org/Fear_of_Angels
     license: CC BY-SA 4.0
-    retrieved: 2026-10-23
-    revision: "231798"
+    retrieved: 2026-11-13
+    revision: "232908"
 defaults:
   confidence: verified
   source: uni
@@ -50,6 +50,7 @@ pockets:
   - name: Single room
     notes:
       - text: Marshal Treonis does a fairly dangerous amount of omni damage with her turrets, but they have poor tracking against interceptors and will struggle to apply damage at close range. Her missiles deal purely kinetic damage with decent alpha. Her signature radius is small (27m) and she will orbit you at 1000m/s at 7.5km. Use precision ammo and expect to be on grid for a little while - she has a fairly strong buffer shield and armor tank.
+      - text: "Agent hand-in conversation: My superiors are impressed. It's the rare pilot who can take on SARO agents and live. Take this blueprint as a sign of our appreciation, not only for what you've done, but also for what you have become. I'm sure we'll be crossing paths again someday, whether you realize it or not. Fly safe, . Remind the galaxy why they fear Angels."
     waves:
       - id: group-95-km
         trigger:

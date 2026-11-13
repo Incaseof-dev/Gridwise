@@ -11,7 +11,7 @@ sources:
     title: EVE University Wiki – Operation Hamstring
     url: https://wiki.eveuniversity.org/Operation_Hamstring
     license: CC BY-SA 4.0
-    retrieved: 2026-10-23
+    retrieved: 2026-11-13
     revision: "191819"
 defaults:
   confidence: verified

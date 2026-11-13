@@ -11,7 +11,7 @@ sources:
     title: EVE University Wiki – Eliminate the Pirate Campers (Blood Raiders)
     url: https://wiki.eveuniversity.org/Eliminate_the_Pirate_Campers_(Blood_Raiders)
     license: CC BY-SA 4.0
-    retrieved: 2026-10-23
+    retrieved: 2026-11-13
     revision: "229836"
 defaults:
   confidence: verified
@@ -49,6 +49,12 @@ pockets:
             names:
               - Corpatis Bishop
               - Corpatis Seer
+      - id: reinforcement-auto-aggro
+        trigger:
+          on: other
+          text: Reinforcement (Auto aggro)
+          confidence: inferred
+        spawns:
           - count: "3"
             class: Cruiser
             names:

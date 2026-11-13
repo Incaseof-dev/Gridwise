@@ -4,15 +4,15 @@ id: crimson-harvest-tetrimon-garrison
 kind: escalation
 name: Tetrimon Garrison
 dedRating: null
-enemyFaction: null
+enemyFaction: Order of Tetrimon
 review: unreviewed
 sources:
   uni:
     title: EVE University Wiki – Crimson Harvest (2026), section "Tetrimon Garrison"
     url: https://wiki.eveuniversity.org/Crimson_Harvest_(2026)#Tetrimon_Garrison
     license: CC BY-SA 4.0
-    retrieved: 2026-10-23
-    revision: "232560"
+    retrieved: 2026-11-13
+    revision: "232913"
 defaults:
   confidence: verified
   source: uni
@@ -20,6 +20,83 @@ notes:
   - text: Part of the Crimson Harvest (2026) event. Event sites change from year to year.
   - text: Level 5 Order of Tetrimon site.
   - text: "Tetrimon Garrison: As the transmission relay explodes, you detect a faint encrypted signal on a tight beam. Following the signal should lead you to a Tetrimon Garrison"
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: single-pocket
+        trigger:
+          on: other
+          text: Single Pocket
+          confidence: inferred
+        spawns:
+          - count: 0-4
+            class: Frigate
+            names:
+              - Tetrimon Crucifier
+            group: Waves 1-4
+            ewar:
+              - kind: neut
+              - kind: warpDisruption
+            note: 35% EM, 6% TH, 59% Kin. Neuts ~4 GJ/3s @11 km
+          - count: 0-4
+            class: Frigate
+            names:
+              - Tetrimon Crusader
+            group: Waves 1-4
+            ewar:
+              - kind: web
+              - kind: neut
+            note: 50% EM, 50% TH, 34% EX. Neuts ~4 GJ/3s @11 km
+          - count: 0-3
+            class: Destroyer
+            names:
+              - Tetrimon Heretic
+            group: Waves 1-4
+            ewar:
+              - kind: targetPaint
+              - kind: warpDisruption
+            note: 40% EM, 27% TH, 34% KIN
+          - count: 0-3
+            class: Cruiser
+            names:
+              - Tetrimon Augoror
+            group: Waves 1-4
+            note: 63% EM, 38% TH, engages at ~20 KM
+          - count: 0-3
+            class: Cruiser
+            names:
+              - Tetrimon Curse
+            group: Waves 1-4
+            ewar:
+              - kind: neut
+              - kind: trackingDisruption
+              - kind: warpDisruption
+            note: 25% EM, 15% TH, 60% KN. Neuts ~100 GJ/5s @12 km
+          - count: 0-4
+            class: Cruiser
+            names:
+              - Tetrimon Omen
+            group: Waves 1-4
+            ewar:
+              - kind: web
+            note: 63% EM, 38% TH. High DPS.
+          - count: 0-2
+            class: Battlecruiser
+            names:
+              - Tetrimon Oracle
+            group: Waves 1-4
+            note: 100% EM, very high DPS at ~20 KM
+          - count: "1"
+            class: Battleship
+            names:
+              - Tetrimon Captain
+            group: Boss Wave
+            ewar:
+              - kind: web
+              - kind: neut
+              - kind: warpDisruption
+            drop: Mutated Blood Samples, Tetrimonic Warclone Blanks, fireworks, rarely Imperial Navy faction modules
+            note: 30GJ/s neut
 aliases:
   - "Crimson Harvest: Tetrimon Garrison"
 sde:

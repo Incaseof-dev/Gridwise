@@ -11,8 +11,8 @@ sources:
     title: EVE University Wiki – Angel Mineral Acquisition Outpost, 2nd Part
     url: https://wiki.eveuniversity.org/Angel_Mineral_Acquisition_Outpost%2C_2nd_Part
     license: CC BY-SA 4.0
-    retrieved: 2026-10-23
-    revision: "232559"
+    retrieved: 2026-11-13
+    revision: "232802"
 defaults:
   confidence: verified
   source: uni
@@ -21,7 +21,7 @@ restrictions:
 pockets:
   - name: 1st pocket
     notes:
-      - text: ----
+      - text: Full room aggro on warp-in. First cruise missile battery destroyed triggers reinforcement 1, highest bounty battleship killed triggers reinforcement 2.
     waves:
       - id: initial-defenders-50-80km
         trigger:
@@ -32,7 +32,7 @@ pockets:
             class: Destroyer
             names:
               - Gistior Defiler
-            note: type list incomplete on the source page
+              - Gistior Haunter
           - count: "2"
             class: Cruiser
             names:
@@ -42,12 +42,19 @@ pockets:
             class: Battlecruiser
             names:
               - Gistatis Legatus
+              - Gistatis Tribunus
+              - Gistatis Praefectus
             note: type list incomplete on the source page
-          - count: "12"
+          - count: "6"
             class: Battleship
             names:
-              - Gist Commander
-            note: type list incomplete on the source page
+              - Gist Warlord
+              - Gist Malakim
+              - Gist Throne
+              - Gist Saint
+            ewar:
+              - kind: targetPaint
+            triggers: Highest bounty triggers reinforcement 2
           - count: "2"
             class: Sentry
             names:
@@ -59,6 +66,7 @@ pockets:
             class: Sentry
             names:
               - Angel Cruise Missile Battery
+            triggers: First one killed spawns reinforcement 1
       - id: 1st-reinforcement-spawn
         trigger:
           on: other
@@ -68,8 +76,8 @@ pockets:
           - count: "2"
             class: Battleship
             names:
-              - Gist Commander
-            note: type list incomplete on the source page
+              - Gist War General
+              - Gist Warlord
           - count: "2"
             class: Sentry
             names:
@@ -86,8 +94,8 @@ pockets:
           - count: "3"
             class: Elite Frigate
             names:
-              - Arch Gistii Hijacker
-            note: type list incomplete on the source page
+              - Arch Gistii Hunter
+              - Arch Gistii Impaler
           - count: "3"
             class: Cruiser
             names:
@@ -96,13 +104,15 @@ pockets:
           - count: "2"
             class: Battleship
             names:
-              - Gist Commander
-            note: type list incomplete on the source page
+              - Gist Warlord
+              - Gist Malakim
+              - Gist Throne
   - name: 2nd Pocket
     notes:
       - text: ----
-      - text: It is possible to blitz this pocket by shooting the triggers, but expect high incoming damage.
-      - text: Hashi Keptzh deals very high damage at short to moderate range (495 DPS EM/Kin turrets w/ 20 km optimal, 450 DPS Explosive missiles w/ 34 km range) and needs at least 450 DPS in raw Explosive to effectively break his shield tank. He has -90% web within 15km and will approach you with microwarpdrive.
+      - text: Full room aggro on warp-in. You can blitz this pocket by shooting the triggers, but expect high incoming damage. Highest bounty battleship will trigger the next spawn. All waves will spawn on the Rent-a-Dream Pleasure Garden structure that is roughly 40 km from warp-in.
+      - text: Hashi Keptzh has active shield tank which needs 450+ DPS Explosive damage to crack. He does 495 DPS Kin/EM with 21 km range turrets, and 450 DPS Explosive damage with 34 km range torpedoes, though they have poor application to non-battleships. He uses MWD to close in on you at 1000m/s and will apply -90% web within 15 km, making kiting outside of his web range extremely important. Shooting from ~30km away seems to be the safest option as he will rarely use MWD at 30km range and under.
+      - text: "Escalation end: The facility has been neutralized and the sector officers ship is now nothing but wreckage."
     waves:
       - id: initial-defenders-45-60km
         trigger:
@@ -122,9 +132,13 @@ pockets:
           - count: "5"
             class: Battleship
             names:
-              - Gist Commander
+              - Gist Warlord
+              - Gist Malakim
+              - Gist Throne
+              - Gist Saint
+            ewar:
+              - kind: targetPaint
             triggers: Highest bounty
-            note: type list incomplete on the source page
           - count: "7"
             class: Sentry
             names:
@@ -138,19 +152,23 @@ pockets:
           - count: "2"
             class: Destroyer
             names:
-              - Gistior Defiler
-            note: type list incomplete on the source page
+              - Gistior Seizer
+              - Gistior Trasher
           - count: "3"
             class: Battlecruiser
             names:
-              - Gistatis Legatus
-            note: type list incomplete on the source page
+              - Gistatis Praefectus
+              - Gistatis Tribuni
           - count: "2"
             class: Battleship
             names:
-              - Gist Commander
+              - Gist Warlord
+              - Gist Malakim
+              - Gist Throne
+              - Gist Saint
+            ewar:
+              - kind: targetPaint
             triggers: Highest bounty
-            note: type list incomplete on the source page
       - id: 2nd-reinforcement-spawn
         trigger:
           on: other
@@ -172,8 +190,8 @@ pockets:
           - count: "3"
             class: Battleship
             names:
-              - Gist Commander
-            note: type list incomplete on the source page
+              - Gist Malakim
+              - Gist Throne
           - count: "1"
             class: Overseer Battleship
             names:

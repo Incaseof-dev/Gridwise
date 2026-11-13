@@ -11,7 +11,7 @@ sources:
     title: EVE University Wiki – Angel Cartel Naval Shipyard
     url: https://wiki.eveuniversity.org/Angel_Cartel_Naval_Shipyard
     license: CC BY-SA 4.0
-    retrieved: 2026-10-23
+    retrieved: 2026-11-13
     revision: "232576"
 defaults:
   confidence: verified
@@ -44,6 +44,26 @@ pockets:
     notes:
       - text: On earned escalations only, the first gate is unlocked, allowing ships to bypass the first room completely via immediately aligning to the gate, activating micro jump drive, and taking the gate. This only applies to earned escalations, not sites that are scanned down.
     waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: 70km
+          - count: "1"
+            class: Structure
+            names:
+              - Cargo Rig
+            drop: Named modules
+          - count: "1"
+            class: Structure
+            names:
+              - Habitation Module
+            drop: Commodities
       - id: defending-fleet
         trigger:
           on: other

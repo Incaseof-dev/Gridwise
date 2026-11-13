@@ -11,7 +11,7 @@ sources:
     title: EVE University Wiki – Serpentis Corporation Hydroponics Site
     url: https://wiki.eveuniversity.org/Serpentis_Corporation_Hydroponics_Site
     license: CC BY-SA 4.0
-    retrieved: 2026-10-23
+    retrieved: 2026-11-13
     revision: "231198"
 defaults:
   confidence: verified
@@ -68,7 +68,12 @@ pockets:
         trigger:
           on: warpIn
           text: Structures
-        spawns: []
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+            note: Locked until room is cleared.
       - id: single-defending-fleet
         trigger:
           on: other
@@ -107,7 +112,12 @@ pockets:
         trigger:
           on: warpIn
           text: Structures
-        spawns: []
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+            note: Locked until room is cleared.
       - id: single-defending-fleet-at-15km
         trigger:
           on: other

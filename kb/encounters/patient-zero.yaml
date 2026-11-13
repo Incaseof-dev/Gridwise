@@ -11,7 +11,7 @@ sources:
     title: EVE University Wiki – Patient Zero
     url: https://wiki.eveuniversity.org/Patient_Zero
     license: CC BY-SA 4.0
-    retrieved: 2026-10-23
+    retrieved: 2026-11-13
     revision: "205186"
 defaults:
   confidence: verified

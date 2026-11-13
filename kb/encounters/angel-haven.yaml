@@ -12,7 +12,7 @@ sources:
     title: EVE University Wiki – Angel Haven
     url: https://wiki.eveuniversity.org/Angel_Haven
     license: CC BY-SA 4.0
-    retrieved: 2026-10-23
+    retrieved: 2026-11-13
     revision: "228883"
 defaults:
   confidence: verified
@@ -204,11 +204,13 @@ pockets:
             class: Commander Battleship
             names:
               - Domination Saint
+            group: Possible Rare Spawn
             drop: Possible Domination Battleship modules, Faction charges
           - count: 0-1
             class: Dreadnought
             names:
               - Angel Dreadnought
+            group: Possible Rare Spawn
             ewar:
               - kind: web
             drop: Possible Domination Battleship modules, Faction charges

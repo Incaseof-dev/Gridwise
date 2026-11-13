@@ -11,7 +11,7 @@ sources:
     title: EVE University Wiki – Extract The Renegade
     url: https://wiki.eveuniversity.org/Extract_The_Renegade
     license: CC BY-SA 4.0
-    retrieved: 2026-10-23
+    retrieved: 2026-11-13
     revision: "205174"
 defaults:
   confidence: verified

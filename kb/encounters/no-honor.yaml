@@ -11,8 +11,8 @@ sources:
     title: EVE University Wiki – No Honor
     url: https://wiki.eveuniversity.org/No_Honor
     license: CC BY-SA 4.0
-    retrieved: 2026-10-23
-    revision: "202672"
+    retrieved: 2026-11-13
+    revision: "232785"
 defaults:
   confidence: verified
   source: uni

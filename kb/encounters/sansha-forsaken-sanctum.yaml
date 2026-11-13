@@ -12,7 +12,7 @@ sources:
     title: EVE University Wiki – Sansha Forsaken Sanctum
     url: https://wiki.eveuniversity.org/Sansha_Forsaken_Sanctum
     license: CC BY-SA 4.0
-    retrieved: 2026-10-23
+    retrieved: 2026-11-13
     revision: "230534"
 defaults:
   confidence: verified
@@ -263,11 +263,13 @@ pockets:
             names:
               - True Sansha’s Tyrant
               - Dread Lord
+            group: Possible Rare Spawn
             drop: Can drop faction modules
           - count: "?"
             class: Dreadnought
             names:
               - Sansha's Nation Dreadnought
+            group: Possible Rare Spawn
             ewar:
               - kind: web
               - kind: warpDisruption
@@ -276,6 +278,7 @@ pockets:
             class: Supercarrier
             names:
               - True Sansha's Nation Supercarrier
+            group: Possible Rare Spawn
             ewar:
               - kind: web
               - kind: warpDisruption

@@ -11,14 +11,15 @@ sources:
     title: EVE University Wiki – Guristas Powergrid
     url: https://wiki.eveuniversity.org/Guristas_Powergrid
     license: CC BY-SA 4.0
-    retrieved: 2026-10-23
-    revision: "226861"
+    retrieved: 2026-11-13
+    revision: "232810"
 defaults:
   confidence: verified
   source: uni
 lootNotes:
   - text: 06 Feb 2025 Dread Guristas Colonel dropped nothing (empty wreck). Expedition bugged? On previous steps dropped two Dread Guristas modules total worth ~30m.
   - text: 09 Sep 2025 Dread Guristas Colonel dropped nothing (empty wreck)
+  - text: 05 Nov 2026 Dread Guristas Colonel dropped two Pith C-Type modules total worth ~100m
 pockets:
   - name: Part 1
     notes:

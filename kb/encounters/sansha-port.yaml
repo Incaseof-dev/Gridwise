@@ -12,7 +12,7 @@ sources:
     title: EVE University Wiki – Sansha Port
     url: https://wiki.eveuniversity.org/Sansha_Port
     license: CC BY-SA 4.0
-    retrieved: 2026-10-23
+    retrieved: 2026-11-13
     revision: "225132"
 defaults:
   confidence: verified
@@ -125,4 +125,5 @@ pockets:
             class: Commander Battlecruiser
             names:
               - True Sansha's Daemon
+            group: Possible Rare Spawn
             drop: Possible True Sansha Faction Modules

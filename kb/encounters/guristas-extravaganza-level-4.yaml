@@ -11,8 +11,8 @@ sources:
     title: EVE University Wiki – Guristas Extravaganza (Level 4)
     url: https://wiki.eveuniversity.org/Guristas_Extravaganza_(Level_4)
     license: CC BY-SA 4.0
-    retrieved: 2026-10-23
-    revision: "228329"
+    retrieved: 2026-11-13
+    revision: "232906"
 defaults:
   confidence: verified
   source: uni
@@ -29,7 +29,7 @@ notes:
   - text: "Notes: Structures drop no loot, with the exception of those in Pocket 5 and the Ion projections and Moon harvester."
   - text: "Notes: Asteroid Factory has a lot of armor and there's no point in shooting it."
   - text: "Notes: As of the Trinity 1.2 Update the Guristas Storage Facility no longer drops faction loot."
-  - text: "Notes: Many of the frigates (Kyoukan/Webifier) in the earlier waves of each pockets only do little damages and doesn't web (Jan 5th 2025)."
+  - text: "Notes: Guristas Kyoukan/Webifier frigates will only web you ~50% of the time."
 lootNotes:
   - text: "Loot: ± 8.3 Mil ISK"
   - text: "Salvage: ± 4.4 Mil ISK"
@@ -278,7 +278,7 @@ pockets:
           - count: "1"
             class: Destroyer
             names:
-              - Pthior Terrorist
+              - Pithior Terrorist
           - count: "2"
             class: Battleship
             names:
@@ -290,6 +290,7 @@ pockets:
   - name: 4th Pocket
     notes:
       - text: "Tips: Blow up Starbase Storage Facility, Starbase Reactor, and Guristas Starbase Control Tower and the reinforcement spawns won't appear."
+      - text: No standing loss for killing Amarr Heavy Missile Batteries. Killing Guristas Emissary triggers -0.3 Guristas Pirates standing loss.
     waves:
       - id: initial-group-auto-aggro
         trigger:
@@ -346,6 +347,7 @@ pockets:
             note: Jamming Eliminator
   - name: 5th Pocket
     notes:
+      - text: Mission is marked complete after killing all battlecruisers and battleships in the initial spawn.
       - text: thumb|Example loot drop from Guristas War HQ
       - text: Guristas War HQ has 350k HP and dropped 600 of loot that was worth 2M ISK (23 December 2025).
     waves:

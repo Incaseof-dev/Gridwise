@@ -11,7 +11,7 @@ sources:
     title: EVE University Wiki – Angel Hub
     url: https://wiki.eveuniversity.org/Angel_Hub
     license: CC BY-SA 4.0
-    retrieved: 2026-10-23
+    retrieved: 2026-11-13
     revision: "228830"
 defaults:
   confidence: verified
@@ -130,6 +130,7 @@ pockets:
             names:
               - Domination Saint
               - Domination Nephilim
+            group: Possible Rare Reinforcement Spawn
             drop: Faction Warp Disruptor, Faction charges
             note: "encounter on Dec 23 and 24, 2020,Loot: Faction Ammo, Faction Warp Disruptor"
   - name: Dirty Shipyard

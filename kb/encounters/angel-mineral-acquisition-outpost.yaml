@@ -11,8 +11,8 @@ sources:
     title: EVE University Wiki – Angel Mineral Acquisition Outpost
     url: https://wiki.eveuniversity.org/Angel_Mineral_Acquisition_Outpost
     license: CC BY-SA 4.0
-    retrieved: 2026-10-23
-    revision: "224802"
+    retrieved: 2026-11-13
+    revision: "232887"
 defaults:
   confidence: verified
   source: uni
@@ -20,9 +20,10 @@ restrictions:
   - text: "Ship size limit: Battleships"
 notes:
   - text: 3 pockets' initial groups and 5 spawns for a total of 63 ships.
-  - text: "Escalation: This site can escalate to Angel Mineral Acquisition Outpost, 2nd Part"
+  - text: "Escalation: This site can escalate to Angel Mineral Acquisition Outpost, 2nd Part. The escalation does not follow the normal true security spawn rules of most combat sites, and can appear in systems of higher true security than the current system."
+  - text: "Escalation: Escalation message: In the smoldering ruins of the last battleship you have found a data interface that appears to lead to another pirate base. Its coordinates are being uploaded to your navigation systems."
 lootNotes:
-  - text: This site does not contain any noteworthy loot.
+  - text: This site does not contain any noteworthy loot. You get ~27M ISK in bounties from a full site clear.
 pockets:
   - name: Room 1
     waves:
@@ -34,8 +35,8 @@ pockets:
           - count: "2"
             class: Frigate
             names:
-              - Arch Gistii Impaler
-              - Arch Gistii Raider
+              - Gistii Impaler
+              - Gistii Raider
           - count: "6"
             class: Elite Frigate
             names:
@@ -46,6 +47,7 @@ pockets:
             names:
               - Gistum Liquidator
               - Gistum Marauder
+            triggers: Spawns reinforcement 1
           - count: "4"
             class: Sentry
             names:
@@ -63,17 +65,20 @@ pockets:
           confidence: inferred
         spawns:
           - count: "1"
-            class: Frigate
+            class: Elite Frigate
             names:
-              - Gistii Hunter
-              - Gistii Impaler
+              - Arch Gistii Hunter
+              - Arch Gistii Impaler
+              - Arch Gistii Hijacker
             ewar:
+              - kind: web
               - kind: warpDisruption
           - count: "2"
             class: Elite Cruiser
             names:
-              - Gistum Liquidator
-              - Gistum Marauder
+              - Arch Gistum Breaker
+              - Arch Gistum Defeater
+              - Arch Gistum Liquidator
           - count: "3"
             class: Battleship
             names:
@@ -122,6 +127,7 @@ pockets:
               - Angel Stasis Tower
             ewar:
               - kind: web
+            triggers: Spawns reinforcement 1
       - id: 1st-reinforcement-spawn
         trigger:
           on: other
@@ -149,6 +155,8 @@ pockets:
             names:
               - Gist Malakim
   - name: Room 3
+    notes:
+      - text: Escalation trigger is usually the highest bounty battleship in this wave.
     waves:
       - id: initial-defenders
         trigger:
@@ -171,7 +179,7 @@ pockets:
               - Malakim
               - Nephilim
               - Throne
-            triggers: Triggers next wave
+            triggers: Highest bounty triggers next wave
           - count: "5"
             class: Sentry
             names:
@@ -179,9 +187,10 @@ pockets:
           - count: "1"
             class: Sentry
             names:
-              - Angel Energy Neutralizer Sentry
+              - Angel Energy Neutralizer Sentry II
             ewar:
               - kind: neut
+            note: Neuts 20 GJ/s
       - id: reinforcement-spawn
         trigger:
           on: other
@@ -206,13 +215,13 @@ pockets:
           - count: "5"
             class: Battleship
             names:
-              - Cherubim
-              - Saint
-              - Throne
-              - Warlord
+              - Gist Cherubim
+              - Gist Saint
+              - Gist Throne
+              - Gist Warlord
             ewar:
               - kind: targetPaint
-            triggers: Possible escalation trigger
+            triggers: Highest bounty triggers escalation
 sde:
   dungeonIds:
     - 2477

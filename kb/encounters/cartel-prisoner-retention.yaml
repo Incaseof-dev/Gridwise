@@ -11,7 +11,7 @@ sources:
     title: EVE University Wiki – Cartel Prisoner Retention
     url: https://wiki.eveuniversity.org/Cartel_Prisoner_Retention
     license: CC BY-SA 4.0
-    retrieved: 2026-10-23
+    retrieved: 2026-11-13
     revision: "231505"
 defaults:
   confidence: verified
@@ -195,6 +195,74 @@ pockets:
     notes:
       - text: ----
       - text: "Important: The main structure (Angel Retention Facility) will steadily repair its shields, and if anything (ships or drones) is within 35~38km of it, it will web you and repair all of its armor every few seconds. This dramatically increases the DPS needed to break it."
+    waves:
+      - id: defending-fleet-26-43
+        trigger:
+          on: other
+          text: Defending Fleet (26- 43)
+          confidence: inferred
+        spawns:
+          - count: "8"
+            class: Frigate
+            names:
+              - Gistii Ambusher
+              - Gistii Hunter
+              - Gistii Impaler
+              - Gistii Raider
+          - count: 7-15
+            class: Elite Frigate
+            names:
+              - Arch Gistii Hijacker
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: Land 26 to 32km, quickly swarm; type list incomplete on the source page
+          - count: "16"
+            class: Destroyer
+            names:
+              - Gistior Defacer
+            note: Land 31 to 37km; type list incomplete on the source page
+          - count: "8"
+            class: Cruiser
+            names:
+              - Gistum Centurion
+            note: type list incomplete on the source page
+          - count: "10"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+            note: type list incomplete on the source page
+          - count: "5"
+            class: Battleship
+            names:
+              - Gist Cherubim
+            ewar:
+              - kind: targetPaint
+            note: Nephilim Target Painter, 120+km range; type list incomplete on the source page
+          - count: "1"
+            class: Battleship
+            names:
+              - Angel Prison Warden
+            drop: Low chance of Faction modules (Unconfirmed)
+            note: Renamed Gist Cherubim
+          - count: "4"
+            class: Sentry
+            names:
+              - Angel Stasis Tower
+            ewar:
+              - kind: web
+          - count: "4"
+            class: Sentry
+            names:
+              - Angel Sentry Gun
+          - count: "1"
+            class: Sentry
+            names:
+              - Angel Retention Facility
+            ewar:
+              - kind: web
+            drop: 21st Tier Overseer's Effects, possibility of Gist B-Type Modules and/ or Machariel BPC (rare)
+            note: Has no EM Resists, instant armor repair stops if ship and drones attack from over 35km range
     onWarpIn: This heavily guarded pocket bestows the prison battlements and a massive fleet of Angel vessels that see to it that no one can escape from within the retention core. The acceleration gate that takes prison transport ships into the main Prisoner block is scrambled by a scramble wave generator to keep the gate closed at almost all times.
 sde:
   dungeonIds:

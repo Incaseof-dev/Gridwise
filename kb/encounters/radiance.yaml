@@ -11,7 +11,7 @@ sources:
     title: EVE University Wiki – Radiance
     url: https://wiki.eveuniversity.org/Radiance
     license: CC BY-SA 4.0
-    retrieved: 2026-10-23
+    retrieved: 2026-11-13
     revision: "204988"
 defaults:
   confidence: verified

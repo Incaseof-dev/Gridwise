@@ -11,7 +11,7 @@ sources:
     title: EVE University Wiki – Guristas Hidden Rally Point
     url: https://wiki.eveuniversity.org/Guristas_Hidden_Rally_Point
     license: CC BY-SA 4.0
-    retrieved: 2026-10-23
+    retrieved: 2026-11-13
     revision: "230627"
 defaults:
   confidence: verified
@@ -49,6 +49,94 @@ pockets:
             names:
               - Pith Massacrer
               - Pith Usurper
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Imputor
+              - Dire Pithi Infiltrator
+          - count: "6"
+            class: Cruiser
+            names:
+              - Pithum Inferno
+              - Pithum Mortifier
+          - count: "7"
+            class: Battlecruiser
+            names:
+              - Pithatis Assassin
+              - Pithatis Death Dealer
+            triggers: triggers the next wave
+          - count: "4"
+            class: Battleship
+            names:
+              - Pith Eradicator
+              - Pith Obliterator
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Cruiser
+            names:
+              - Pithum Abolisher
+              - Pithum Eraser
+          - count: "7"
+            class: Battlecruiser
+            names:
+              - Pithatis Death Dealer
+              - Pithatis Revolter
+            triggers: triggers the next wave
+      - id: wave-4
+        trigger:
+          on: other
+          text: Wave 4
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Saboteur
+          - count: "5"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Inferno
+              - Dire Pithum Mortifier
+            triggers: triggers the next wave
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Pithatis Death Dealer
+              - Pithatis Revolter
+          - count: "3"
+            class: Battleship
+            names:
+              - Pith Eliminator
+              - Pith Exterminator
+            ewar:
+              - kind: ecm
+      - id: wave-5
+        trigger:
+          on: other
+          text: Wave 5
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Abolisher
+              - Dire Pithum Eraser
+          - count: "8"
+            class: Battleship
+            names:
+              - Pith Conquistador
+              - Pith Massacrer
 sde:
   dungeonIds:
     - 3513
