@@ -1,0 +1,205 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: smuggler-interception-guristas-pirates-level-3
+kind: mission
+name: Smuggler Interception
+level: 3
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Smuggler Interception (Guristas Pirates) (Level 3)
+    url: https://wiki.eveuniversity.org/Smuggler_Interception_(Guristas_Pirates)_(Level_3)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "214690"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy convoy and return with cargo (10x Militants) to agent.
+notes:
+  - text: "Suggested ships: Drake, Battleship"
+pockets:
+  - name: Warp-in
+    notes:
+      - text: No NPCs, Warp Gate only
+  - name: Pocket 1
+    waves:
+      - id: initial
+        trigger:
+          on: warpIn
+          text: Initial
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Pithi Plunderer
+              - Pithi Wrecker
+            group: Group 1 (40-45 km) (no-auto-aggro)
+          - count: 5-6
+            class: Frigate
+            names:
+              - Pithi Infiltrator
+              - Pithi Invader
+              - Pithi Plunderer
+              - Pithi Wrecker
+            group: Group 2 (30-35 km) (no-auto-aggro)
+          - count: "1"
+            class: Cruiser
+            names:
+              - Pithum Mortifier
+              - Pithum Inferno
+            group: Group 2 (30-35 km) (no-auto-aggro)
+            triggers: Taking this cruiser to armor triggers reinforcement 1
+      - id: reinforcement-1-range-from-40-55-km-no-auto-aggro
+        trigger:
+          on: other
+          text: Reinforcement 1 (range from 40-55 km) (no-auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Pithum Silencer
+              - Pithum Ascriber
+            triggers: Attacking any of the cruisers triggers reinforcement 2
+      - id: reinforcement-2-range-from-37-55-km-auto-aggro
+        trigger:
+          on: other
+          text: Reinforcement 2 (range from 37-55 km) (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Pithi Infiltrator
+              - Pithi Invader
+              - Pithi Plunderer
+              - Pithi Wrecker
+          - count: "2"
+            class: Cruiser
+            names:
+              - Pithum Silencer
+              - Pithum Ascriber
+            triggers: Reinforcement 3
+      - id: reinforcement-3-does-not-always-spawn
+        trigger:
+          on: other
+          text: Reinforcement 3 (Does not always spawn)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Cruiser
+            names:
+              - Pithum Mortifier
+              - Pithum Inferno
+      - id: mining
+        trigger:
+          on: other
+          text: Mining
+          confidence: inferred
+        spawns: []
+  - name: Pocket 2
+    notes:
+      - text: "Blitz: Ignore all frigates and destroy all cruisers. Remember to scoop Militants."
+    waves:
+      - id: initial-15-km-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial (15 km) (auto-aggro)
+        spawns:
+          - count: "2"
+            class: Cruiser
+            names:
+              - Guristas Personnel Transport
+            drop: 10x Militants(each)
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Pithatis Executor
+              - Pithatis Enforcer
+              - Pithatis Assaulter
+            triggers: Reinforcement 1 and Reinforcement 2
+      - id: reinforcement-1-20-25-km-auto-aggro
+        trigger:
+          on: other
+          text: Reinforcement 1 (20-25 km) (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Pithi Infiltrator
+              - Pithi Invader
+      - id: reinforcement-2-15-20-km-auto-aggro
+        trigger:
+          on: other
+          text: Reinforcement 2 (15-20 km) (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Cruiser
+            names:
+              - Pithum SilencerAscriber
+            triggers: Triggers reinforcement 3
+      - id: reinforcement-3-30-km-auto-aggro
+        trigger:
+          on: other
+          text: Reinforcement 3 (30 km) (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Cruiser
+            names:
+              - Pithum Mortifier
+              - Pithum Inferno
+            triggers: Attacking any of the cruisers triggers reinforcement 4
+      - id: reinforcement-4-30-km-auto-aggro
+        trigger:
+          on: other
+          text: Reinforcement 4 (30 km) (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Pithi Plunderer
+              - Pithi Wrecker
+            triggers: Reinforcement 5
+      - id: alternative-reinforcement-4-30-km-auto-aggro
+        trigger:
+          on: other
+          text: Alternative Reinforcement 4 (30 km) (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Pithi Plunderer
+              - Pithi Wrecker
+          - count: "2"
+            class: Battleship
+            names:
+              - Pith Exterminator
+              - Pith Eliminator
+            ewar:
+              - kind: ecm
+            triggers: Alternate spawn, might be related to ships class used to run mission
+      - id: reinforcement-5-does-not-always-spawn
+        trigger:
+          on: other
+          text: Reinforcement 5 (Does not always spawn)
+          confidence: inferred
+        spawns:
+          - count: 3-5
+            class: Cruiser
+            names:
+              - Pithum Mortifier
+              - Pithum Inferno
+      - id: mining
+        trigger:
+          on: other
+          text: Mining
+          confidence: inferred
+        spawns: []

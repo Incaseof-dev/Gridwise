@@ -1,0 +1,277 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: what-slavery-begets
+kind: mission
+name: What Slavery Begets
+level: 3
+enemyFaction: Amarr Empire
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – What Slavery Begets
+    url: https://wiki.eveuniversity.org/What_Slavery_Begets
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "195047"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Retrieve crew members from the wrecks.
+ewar:
+  - kind: neut
+  - kind: nos
+  - kind: trackingDisruption
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: All Frigates"
+  - text: "Notes: You need to retrieve 3x Massive Sealed Cargo Containers (6000.0m3). To complete this mission, you will require a ship with a hacking module online, as well as an available cargo capacity of at least 2,000 m3 volume (and preferably 6,000 m3)."
+  - text: There are 4 containers each in the 2nd and 3rd room and 5 in the last room. One among each of these groups has 1 of the 3 large containers you need to finish the mission. The rest only ever contain 1 unit of scrap metal. They are bunched together at 40km from the warp in in each of the rooms. Hacking 4 was enough for me to hack all of them. To find which of the cans you need to hack make sure you have 'type' column active and the objective can should have a different type than the rest.
+  - text: Hacking can in 2nd/3rd room will cause spawns to appear and attack
+  - text: "2nd room: 2 elite frigs, 2 spawns"
+  - text: "3rd room: 5 elite frigs 6 elite cruisers, 1 spawn"
+  - text: Hacking cans in any of the rooms will randomly cause a 500 aoe damage around the cans that hits your ship or any drones you have orbiting you.
+  - text: The mission requires you to carry 6,000m3 which will require an Hauler/Transport ship to carry.
+  - text: You need to equip an Analyser module to hack the datacenters.
+  - text: You need more than Hacking level 3.
+  - text: There are destructible structures in most of the rooms, none of them drop anything.
+pockets:
+  - name: Warp-In
+    notes:
+      - text: Acceleration gate at 60km.
+      - text: Towers range 20km to 75km.
+      - text: Destroying Stasis Towera replaces them with an Amarr Heavy Neut Tower
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "4"
+            class: Tower
+            names:
+              - Amarr Cruise Missile Battery
+          - count: "7"
+            class: Tower
+            names:
+              - Amarr Stasis Tower
+            ewar:
+              - kind: web
+            triggers: Spawns Reinforcements
+          - count: "2"
+            class: Tower
+            names:
+              - Tower Sentry Amarr III
+      - id: reinforcements
+        trigger:
+          on: other
+          text: Reinforcements
+          confidence: inferred
+        spawns:
+          - count: "7"
+            class: Tower
+            names:
+              - Amarr Energy Neutralizer Sentry
+            ewar:
+              - kind: neut
+  - name: Pocket 1
+    notes:
+      - text: Ships range 25-40km.
+      - text: Towers range 40-45km.
+      - text: You warp into the acceleration gate at 0km.
+      - text: Reinforcement spawns at 3 minutes from warp in, 20-25km from warp in point.
+      - text: Reinforcement spawns at 6 minutes from warp in, 15-25km from warp in point.
+      - text: Reinforcement spawns at 7 minutes from warp in, 15-25km from warp in point.
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "6"
+            class: Tower
+            names:
+              - Amarr Cruise Missile Battery
+          - count: "2"
+            class: Tower
+            names:
+              - Tower Sentry Amarr III
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Templar Justicar
+              - Divine Justicar
+              - Divine Champion
+            ewar:
+              - kind: web
+          - count: "5"
+            class: Battleship
+            names:
+              - Templar Martyr
+      - id: reinforcement-wave-1
+        trigger:
+          on: other
+          text: Reinforcement Wave 1
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Divine Imran
+              - Divine Valok
+              - Divine Napat
+            ewar:
+              - kind: trackingDisruption
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Divine Justicar
+              - Divine Ambrose
+            ewar:
+              - kind: neut
+          - count: "2"
+            class: Battleship
+            names:
+              - Martyr
+              - Dominator
+      - id: reinforcement-wave-2
+        trigger:
+          on: other
+          text: Reinforcement Wave 2
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Divine Imran
+              - Divine Valok
+              - Divine Napat
+            ewar:
+              - kind: trackingDisruption
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Divine Justicar
+              - Divine Ambrose
+            ewar:
+              - kind: neut
+          - count: "3"
+            class: Battleship
+            names:
+              - Martyr
+              - Dominator
+      - id: reinforcement-wave-2-4
+        trigger:
+          on: other
+          text: Reinforcement Wave 2
+          confidence: inferred
+        spawns:
+          - count: "7"
+            class: Frigate
+            names:
+              - Divine Imran
+              - Divine Valok
+              - Divine Napat
+            ewar:
+              - kind: trackingDisruption
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Divine Justicar
+              - Divine Ambrose
+            ewar:
+              - kind: neut
+  - name: Pocket 2
+    notes:
+      - text: Ships range 20-30km.
+      - text: Towers range 25-30km.
+      - text: You warp into the acceleration gate at 0km.
+      - text: Destroying Neutralizer Towers replaces them with Sentry III Towers.
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "2"
+            class: Tower
+            names:
+              - Amarr Cruise Missile Battery
+          - count: "2"
+            class: Tower
+            names:
+              - Tower Sentry Amarr III
+          - count: "2"
+            class: Tower
+            names:
+              - Amarr Energy Neutralizer Sentry
+            ewar:
+              - kind: neut
+          - count: "7"
+            class: Frigate
+            names:
+              - Divine Imran
+              - Divine Valok
+              - Divine Napat
+            ewar:
+              - kind: trackingDisruption
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Divine Justicar
+              - Divine Champion
+          - count: "5"
+            class: Battleship
+            names:
+              - Templar Ultara
+              - Templar Martyr
+      - id: reinforcements
+        trigger:
+          on: other
+          text: Reinforcements
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Tower
+            names:
+              - Tower Sentry Amarr III
+  - name: Pocket 3
+    notes:
+      - text: Ships range 30-40km.
+      - text: Towers range 20-60km.
+      - text: The objective (Datacenters) are 40k from the warp in.
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "4"
+            class: Tower
+            names:
+              - Amarr Cruise Missile Battery
+          - count: "4"
+            class: Tower
+            names:
+              - Amarr Energy Neutralizer Sentry
+            ewar:
+              - kind: neut
+          - count: "3"
+            class: Frigate
+            names:
+              - Divine Imran
+              - Divine Valok
+              - Divine Napat
+            ewar:
+              - kind: trackingDisruption
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Divine Justicar
+              - Divine Champion
+          - count: "7"
+            class: Battleship
+            names:
+              - Templar Ultara
+              - Templar Martyr

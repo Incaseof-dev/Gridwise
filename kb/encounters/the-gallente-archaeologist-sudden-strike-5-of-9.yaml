@@ -1,0 +1,268 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-gallente-archaeologist-sudden-strike-5-of-9
+kind: mission
+name: The Gallente Archaeologist - Sudden Strike (5 of 9)
+level: 4
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Gallente Archaeologist - Sudden Strike (5 of 9)
+    url: https://wiki.eveuniversity.org/The_Gallente_Archaeologist_-_Sudden_Strike_(5_of_9)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223381"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal:
+    - thermal
+    - kinetic
+  resist: []
+ewar:
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Warp disruption frigates"
+  - text: This mission is a part of the mission chain The Gallente Archaeologist
+  - text: "Notes: The best damage to deal is thermal but kinetic is mostly ok except against the Orion battleships which have a very high kinetic resist."
+  - text: "Blitz: Destroy the first group in the last room. But you have to destroy all the NPCs in room 1 to 3, to take the gates."
+lootNotes:
+  - text: Besides the 3% hardwiring implants, a lot of Gallente dog tags drop as well as normal meta modules.
+pockets:
+  - name: Room 1
+    waves:
+      - id: group-1-at-0-km
+        trigger:
+          on: other
+          text: Group 1 (at 0 km)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Federation Navy Gamma II Support Frigate
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Cruiser
+            names:
+              - Federation Navy Torax
+          - count: "1"
+            class: Battleship
+            names:
+              - Federation Navy Megathron
+      - id: group-2-at-55-km
+        trigger:
+          on: other
+          text: Group 2 (at 55 km)
+          confidence: inferred
+        spawns:
+          - count: "8"
+            class: Cruiser
+            names:
+              - Federation Navy Torax
+          - count: "2"
+            class: Battleship
+            names:
+              - Federation Navy Dominix
+      - id: group-3-at-65-km
+        trigger:
+          on: other
+          text: Group 3 (at 65 km)
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Federation Navy Officer
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Federation Navy Gamma II Support Frigate
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Battleship
+            names:
+              - Federation Navy Megathron
+              - Federation Navy Orion
+      - id: group-4-at-90-km
+        trigger:
+          on: other
+          text: Group 4 (at 90 km)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Federation Navy Gamma II Support Frigate
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "5"
+            class: Cruiser
+            names:
+              - Federation Navy Vexor
+          - count: "2"
+            class: Battleship
+            names:
+              - Federation Navy Dominix
+              - Federation Navy Megathron
+  - name: Room 2
+    waves:
+      - id: group-1-at-30-km
+        trigger:
+          on: other
+          text: Group 1 (at 30 km)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Federation Navy Gamma I Support Frigate
+            ewar:
+              - kind: web
+          - count: "7"
+            class: Cruiser
+            names:
+              - Federation Navy Thorax
+          - count: "1"
+            class: Battleship
+            names:
+              - Federation Navy Orion
+      - id: group-2-at-55-km
+        trigger:
+          on: other
+          text: Group 2 (at 55 km)
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Cruiser
+            names:
+              - Federation Navy Vexor
+          - count: "2"
+            class: Battleship
+            names:
+              - Federation Navy Megathron
+      - id: group-3-at-65-km
+        trigger:
+          on: other
+          text: Group 3 (at 65 km)
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Elite Frigate
+            names:
+              - Federation Navy Gamma II Support Frigate
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Battleship
+            names:
+              - Federation Navy Dominix
+              - Federation Navy Megathron
+  - name: Room 3
+    waves:
+      - id: group-1-at-30-km
+        trigger:
+          on: other
+          text: Group 1 (at 30 km)
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Cruiser
+            names:
+              - Federation Navy Thorax
+          - count: "3"
+            class: Battleship
+            names:
+              - Federation Navy Megathron
+              - Federation Navy Orion
+      - id: group-2-at-60-km
+        trigger:
+          on: other
+          text: Group 2 (at 60 km)
+          confidence: inferred
+        spawns:
+          - count: "10"
+            class: Frigate
+            names:
+              - Federation Navy Officer
+              - Federation Navy Soldier
+          - count: "2"
+            class: Battleship
+            names:
+              - Federation Navy Megathron
+              - Federation Navy Orion
+      - id: group-3-at-65-km
+        trigger:
+          on: other
+          text: Group 3 (at 65 km)
+          confidence: inferred
+        spawns:
+          - count: "10"
+            class: Frigate
+            names:
+              - Federation Navy Maulus
+              - Federation Navy Soldier
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Federation Navy Squad Leader
+            drop: 3% hardwiring implant
+  - name: Room 4
+    waves:
+      - id: group-1-at-20-km
+        trigger:
+          on: other
+          text: Group 1 (at 20 km)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Federation Navy Gamma II Support Frigate
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "5"
+            class: Frigate
+            names:
+              - Federation Navy Officer
+          - count: "2"
+            class: Battleship
+            names:
+              - Federation Navy Orion
+      - id: group-2-at-55-km
+        trigger:
+          on: other
+          text: Group 2 (at 55 km)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Federation Navy Gamma II Support Frigate
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "7"
+            class: Cruiser
+            names:
+              - Federation Navy Thorax
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Captain Jerome Leman
+            drop: 3% hardwiring implant
+          - count: "4"
+            class: Battleship
+            names:
+              - Federation Navy Megathron
+              - Federation Navy Orion

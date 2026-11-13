@@ -1,0 +1,210 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: rogue-drone-asteroid-infestation
+kind: complex
+name: Rogue Drone Asteroid Infestation
+dedRating: 3
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Rogue Drone Asteroid Infestation
+    url: https://wiki.eveuniversity.org/Rogue_Drone_Asteroid_Infestation
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "228847"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Cruisers (Not Tech 3)"
+notes:
+  - text: Rogue Drone Asteroid Infestation is a DED rated combat site found in high and low security space. It is often regarded as a low value site as it contains no faction drones and has a very low chance to drop a single faction module.
+  - text: Interestingly, the site can have low amounts of Rogue Drone alloys in the cans in the last two pockets that can be reprocessed for minerals.
+  - text: There are minable asteroids of Omber and Veldspar, but the site will despawn shortly after the drones guarding the Scratched Cask in the last room are defeated, preventing them from being mined unless someone stays in the site, although you do have enough time to go to a nearby station to drop off.
+  - text: While mining the ore in the site, pirate rats (based on which empire space you're in) can randomly appear, their strength relative to the system's security rating.
+loot:
+  - item: 5th Tier Overseer's Effects
+    from: Black Drone Container
+    note: est. 180k ISK (wiki) · 100% drop rate
+  - item: 7th Tier Overseer's Effects
+    from: Scratched Cask
+    note: est. 600k ISK (wiki) · 100% drop rate
+  - item: Mineral Compound
+    from: Rogue Drone Container
+    note: Compound type varies
+  - item: Nocxium, Mexallon, Pyerite, or Tritanium
+    from: Mineral Container
+    note: <100m³
+  - item: A faction module
+    from: Scratched Cask
+    note: Very rare
+  - item: + Exploration logs
+  - item: Jun 2016
+    note: est. 850k (wiki) · 360k Salvage
+  - item: Nov 2018
+    note: est. 680k (wiki)
+  - item: Nov 2018
+    note: est. 680k (wiki)
+  - item: April 2021
+    note: est. 710k (wiki)
+  - item: Nov 2023
+    note: est. 1.95m (wiki)
+  - item: Nov 2023
+    note: est. 680k (wiki)
+lootNotes:
+  - text: Faction module drop is very rare.
+  - text: Total of ≈112k units (67,000m³) Omber site-wide.
+pockets:
+  - name: First Pocket
+    notes:
+      - text: ----
+      - text: thumb|First Pocket
+      - text: This pocket contains 1 Omber (about 18k units) and 11 Veldspar asteroids.
+      - text: A harvester fleet can spawn in this pocket. Maximum size of the fleet is unknown, but can contain at least two with Serpentis Harvesters and a Serpentis defense ship.
+      - text: The Harvester wrecks can drop an Elara Restrained Mining Laser Upgrade module, as well as minerals.
+    waves:
+      - id: asteroids
+        trigger:
+          on: other
+          text: Asteroids
+          confidence: inferred
+        spawns: []
+      - id: defending-group-auto-aggro
+        trigger:
+          on: other
+          text: Defending Group(auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Drone
+            names:
+              - Incubus
+              - Termite
+            note: type list incomplete on the source page
+    onWarpIn: This complex was once the work field of a wealthy mining corporation. Funding got cut shortly after an architectural mishap, where the acceleration gates that were supposed to carry the massive industrial haulers got infected with a mysterious virus. The gates' power coils were severely drained and are to this day only capable of hurling smaller vessels between complex pockets. The ruins are now reputed to be infested with a strain of rogue drones.
+  - name: Second Pocket
+    notes:
+      - text: ----
+      - text: This pocket contains 2 Omber (only containing about 500 units total) and 28 Veldspar asteroids.
+      - text: The Black Drone Container is blocked from warp-in by a large, barren asteroid, requiring manual piloting to move around. The containers are locked until the rats by them are destroyed.
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Red Container
+            names:
+              - Black Drone Container
+            drop: 5th Tier Overseer's Effects
+          - count: "1"
+            class: Container
+            names:
+              - Rogue Drone Container
+            drop: Minerals
+          - count: "2"
+            class: Structure
+            names:
+              - Barren Asteroid
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: Locked until all ships are destroyed
+      - id: asteroids
+        trigger:
+          on: other
+          text: Asteroids
+          confidence: inferred
+        spawns: []
+      - id: wave
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: "14"
+            class: Drone
+            names:
+              - Arachula
+              - Asmodeus
+            note: type list incomplete on the source page
+          - count: "5"
+            class: Frigate
+            names:
+              - Decimator
+              - infester
+            note: type list incomplete on the source page
+    onWarpIn: "This section of the complex was once a pocket of very valuable minerals. Most of the ore was mined away decades ago by the resident mining corporation, but the drifting hulks of rock are now kept company by another type of scavenger: rogue drones."
+  - name: Third Pocket
+    notes:
+      - text: ----
+      - text: thumb|Third Pocket
+      - text: This pocket contains 8 Omber (about 93k units) and 9 Veldspar asteroids.
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Red Container
+            names:
+              - Scratched Cask
+            drop: 7th Tier Overseer's Effects and rarely a faction module
+          - count: "1"
+            class: Container
+            names:
+              - Rogue Drone Container
+            drop: Minerals
+          - count: "4"
+            class: Container
+            names:
+              - Mineral Container
+            drop: Raw minerals
+      - id: asteroids
+        trigger:
+          on: other
+          text: Asteroids
+          confidence: inferred
+        spawns: []
+      - id: wave
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: "8"
+            class: Drone
+            names:
+              - Asmodeus
+              - Belpegor
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Frigate
+            names:
+              - Render Alvi
+          - count: "5"
+            class: Frigate
+            names:
+              - Render
+              - Splinter Alvi
+          - count: "2"
+            class: Frigate
+            names:
+              - Decimator
+              - Render Alvi
+            group: By the Scratched Cask container
+            triggers: Destroying these unlocks the Scratched Cask and completes the site
+          - count: "2"
+            class: Frigate
+            names:
+              - Decimator
+              - Render Alvi
+            group: By the Rogue Drone Container
+    onWarpIn: This complex pocket once housed a thriving center for miners operating in the deadspace field. The old station ruins that still remain within the sector are evidence enough that some decades back, this area was highly valued by whatever mining interest controlled it. Multiple signals and reports of rogue drone activity have been detected around this central area. It appears these abandoned ruins have now become the home of a hostile strain of rogue drones who will stop at nothing to defend their harvesting operation.
+sde:
+  dungeonIds:
+    - 2255

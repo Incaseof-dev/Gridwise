@@ -1,0 +1,147 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: blood-raider-prison-camp
+kind: complex
+name: Blood raider prison camp
+dedRating: 8
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Blood Raider Prison Camp
+    url: https://wiki.eveuniversity.org/Blood_Raider_Prison_Camp
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "209829"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: T2 Battleship"
+notes:
+  - text: Blood raider prison camp is a null security DED rated site found through exploration.
+  - text: Corpus Harbringer battleship will neut.
+loot:
+  - item: 21st Tier Overseer's Effects
+    from: Blood Raider Central Bastion
+    note: 100% drop rate
+  - item: Corpus B-Type module
+    from: Blood Raider Central Bastion
+  - item: Bhaalgorn BPC
+    from: Blood Raider Central Bastion
+  - item: Dark Blood modules
+    from: Dark Blood Pope
+pockets:
+  - name: 1st pocket
+    notes:
+      - text: Acceleration gate is 25km from warp in.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "8"
+            class: Destroyer
+            names:
+              - Corpior Devoter
+              - Corpior Templar
+              - Corpior Friar
+          - count: "2"
+            class: Battleship
+            names:
+              - Corpus Monsignor
+  - name: 2nd pocket
+    notes:
+      - text: Acceleration gate is 30km from warp in.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "14"
+            class: Destroyer
+            names:
+              - Corpior
+          - count: "8"
+            class: Battleship
+            names:
+              - Corpus Monsignor
+              - Corpus Oracle
+              - Corpus Cardinal
+              - Corpus Harbinger
+            ewar:
+              - kind: neut
+  - name: 3rd pocket
+    notes:
+      - text: Acceleration gate is 30km from warp in.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "14"
+            class: Destroyer
+            names:
+              - Corpior
+          - count: "8"
+            class: Battleship
+            names:
+              - Corpus Monsignore
+              - Corpus Oracle
+              - Corpus Cardinal
+              - Corpus Harbinger
+            ewar:
+              - kind: neut
+          - count: "1"
+            class: Overseer Battleship
+            names:
+              - Dark Blood Pope
+            drop: Drops Dark Blood modules
+          - count: "4"
+            class: Sentry
+            names:
+              - Blood Raider Sentry Gun
+  - name: 4th pocket
+    notes:
+      - text: Blood Raider Central Bastion has strong shield regen like other 8/10 structures and 400000 HP in structure.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "6"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Herald
+              - Elder Corpii Follower
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "20"
+            class: Destroyer
+            names:
+              - Corpior
+          - count: "4"
+            class: Sentry
+            names:
+              - Blood Raider Sentry Gun
+          - count: "4"
+            class: Sentry
+            names:
+              - Stasis Tower
+            ewar:
+              - kind: web
+          - count: "1"
+            class: Structure
+            names:
+              - Blood Raider Central Bastion
+            ewar:
+              - kind: web
+            drop: Drops good stuff
+sde:
+  dungeonIds:
+    - 5221

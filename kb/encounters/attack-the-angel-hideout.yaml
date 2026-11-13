@@ -1,0 +1,67 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: attack-the-angel-hideout
+kind: mission
+name: Attack the Angel Hideout
+level: 2
+enemyFaction: Angel Cartel & Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Attack the Angel Hideout
+    url: https://wiki.eveuniversity.org/Attack_the_Angel_Hideout
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191574"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the Mother-in-law and her escort.
+notes:
+  - text: "Blitz: Ignore Group 1, kill Group 2, and warp out."
+pockets:
+  - name: Warp-in
+    notes:
+      - text: No aggro on warp-in.
+      - text: "Pop-up: Incoming Transmission: Well, you little twit, you’ve found me. My daughter never should have married you. Prepare for some pain."
+    waves:
+      - id: initial-hostiles
+        trigger:
+          on: warpIn
+          text: Initial Hostiles
+        spawns:
+          - count: "2"
+            class: Drone
+            names:
+              - Cleaner
+            group: Group 1 (30km)
+            note: Renamed Belphegor/Mammon Apis
+          - count: "3"
+            class: Frigate
+            names:
+              - Angel Harpy
+            group: Group 2 (60km)
+            note: Renamed Gistii Thug/Outlaw
+          - count: "2"
+            class: Frigate
+            names:
+              - Angel Medusa
+            group: Group 2 (60km)
+            note: Renamed Gistii Raider/Ambusher
+          - count: "1"
+            class: Cruiser
+            names:
+              - Mother-in-Law
+            group: Group 2 (60km)
+            note: Renamed Gistum Predator
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Angel Bunker
+            drop: Random loot sometimes

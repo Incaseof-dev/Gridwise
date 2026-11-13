@@ -1,0 +1,43 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: clear-the-traderoute
+kind: mission
+name: Clear the Traderoute
+level: 1
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Clear the Traderoute
+    url: https://wiki.eveuniversity.org/Clear_the_Traderoute
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191614"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy all enemy ships
+notes:
+  - text: No hostiles at initial gate.
+pockets:
+  - name: 1st Pocket
+    notes:
+      - text: Auto aggro on warp-in.
+    waves:
+      - id: initial-hostiles
+        trigger:
+          on: warpIn
+          text: Initial Hostiles
+        spawns:
+          - count: "1"
+            class: Drone
+            names:
+              - Mammon Apis
+            group: Group 1 (5km)
+          - count: "2"
+            class: Drone
+            names:
+              - Belphegor
+              - Mammon Apis
+            group: Group 2 (30km)

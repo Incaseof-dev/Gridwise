@@ -1,0 +1,77 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: hidden-camera
+kind: mission
+name: Hidden Camera
+level: null
+enemyFaction: Pator 6 (Minmatar)
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Hidden Camera
+    url: https://wiki.eveuniversity.org/Hidden_Camera
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "208143"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal:
+    - explosive
+    - em
+  resist:
+    - thermal
+    - explosive
+objectives:
+  - text: Place 1x Covert Recording Device (1.0 m3) in Storage Warehouse at Pator 6's hideout
+ewar:
+  - kind: neut
+notes:
+  - text: This mission can spawn in a lowsec or highsec system, you might want to just bring a shuttle to the agent. Don't forget to put Covert Recording Device in your cargohold before undocking. At the warp-in point Hodts Ergre (friendly) will let you though the acceleration gate. No faction standing losses from ship kills.
+pockets:
+  - name: 1st room
+    notes:
+      - text: Hodts Ergre is attacked and his 'Destabilizer Datacore' passkey is taken by some fleeing Pator 6 ships. The room has two acceleration gates, one of which is unlocked after rats are dead. Go through the unlocked gate.
+    waves:
+      - id: defenders
+        trigger:
+          on: warpIn
+          text: Defenders
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Pator 6 Comrade
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate A
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate B
+  - name: 2nd room A
+    notes:
+      - text: The second room contains an acceleration gate back to the first room. Grab the 'Destabilizer Datacore' passkey (0.1 m3) from the container that spawns next to one of the frigate wrecks and return to the first room through the acceleration gate.
+      - text: After you return to the first room use the other acceleration gate that was locked. With the passkey it will let you into the third room. The passkey is consumed on use.
+    waves:
+      - id: defenders
+        trigger:
+          on: warpIn
+          text: Defenders
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Pator 6 Rookie
+          - count: "2"
+            class: Frigate
+            names:
+              - Pator 6 Veteran
+            ewar:
+              - kind: neut
+            drop: Will drop container that contains 1x 'Destabilizer Datacore' passkey
+  - name: 2nd room B
+    notes:
+      - text: No NPC's, place 1x 'Covert Recording Device' (1 m3) in 'Pator 6 Storage Warehouse' container to complete mission objective.

@@ -1,0 +1,186 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: intercept-the-saboteurs-serpentis-sanshas-nation
+kind: mission
+name: Intercept The Saboteurs
+level: 4
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Intercept The Saboteurs (Serpentis & Sansha's Nation)
+    url: https://wiki.eveuniversity.org/Intercept_The_Saboteurs_(Serpentis_%26_Sansha's_Nation)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "229232"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal:
+    - kinetic
+    - thermal
+  resist:
+    - kinetic
+    - thermal
+objectives:
+  - text: Retrieve viral agent.
+ewar:
+  - kind: sensorDamp
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite frigates"
+  - text: "Blitz: Clear the warpin."
+  - text: "Blitz: In the first pocket destroy the center group."
+  - text: "Blitz: Last ship in center group drops the viral agent. Once you have the viral agent you can return to the agent."
+  - text: "Standing loss: Killing one of the Transporters incurs a 2.4% standing loss for Serpentis."
+lootNotes:
+  - text: "Bounties: ± 4 Mil ISK"
+  - text: "Loot: ± 5 Mil ISK"
+  - text: "Salvage: ± 3 Mil ISK"
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: single-group-10-16km
+        trigger:
+          on: other
+          text: Single Group (10- 16km)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Coreli Protector
+              - Coreli Defender
+          - count: "2"
+            class: Destroyer
+            names:
+              - Corelior Sentinel
+              - Corelior Cannoneer
+  - name: 1st pocket
+    notes:
+      - text: Engaging any portion of the center left group will trigger full aggro.
+      - text: Last ship in center group drops the viral agent.
+      - text: Remember to set your drones to passive. Unagressed groups will go after your drones.
+      - text: "Structures: Habitation Modules may drop random drugs."
+      - text: "Structures: Small Armories may drop generic ammo."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Corelior Cannoneer
+              - Corelior Sentinel
+            group: Right Group (52- 58km, Coral Rock Formation)
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corelum Chief Safeguard
+              - Corelum Chief Guard
+            group: Right Group (52- 58km, Coral Rock Formation)
+            ewar:
+              - kind: sensorDamp
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Corelatis Squad Leader
+            group: Right Group (52- 58km, Coral Rock Formation)
+          - count: "1"
+            class: Battleship
+            names:
+              - Core Baron
+              - Core Commodore
+            group: Right Group (52- 58km, Coral Rock Formation)
+          - count: "3"
+            class: Frigate
+            names:
+              - Coreli Defender
+              - Coreli Protector
+            group: Center Right Group (57- 60km, Shipyard)
+          - count: "3"
+            class: Frigate
+            names:
+              - Corelior Cannoneer
+              - Corelior Sentinel
+            group: Center Right Group (57- 60km, Shipyard)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Frigate
+            names:
+              - Coreli Defender
+              - Coreli Protector
+            group: Center Left Group (57-80km, Freight Pad)
+          - count: "2"
+            class: Destroyer
+            names:
+              - Corelior Cannoneer
+              - Corelior Sentinel
+            group: Center Left Group (57-80km, Freight Pad)
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corelum Chief Defender
+              - Corelum Chief Protector
+            group: Center Left Group (57-80km, Freight Pad)
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Corelatis Squad
+              - Corelatis Platoon Leader
+            group: Center Left Group (57-80km, Freight Pad)
+          - count: "1"
+            class: Battleship
+            names:
+              - Core Rear Admiral
+            group: Center Left Group (57-80km, Freight Pad)
+          - count: "3"
+            class: Industrial
+            names:
+              - Serpentis Transport Ship
+            group: Center Left Group (57-80km, Freight Pad)
+          - count: "3"
+            class: Frigate
+            names:
+              - Coreli Protector
+            group: Center Rear Group (60- 71km)
+          - count: "3"
+            class: Frigate
+            names:
+              - Coreli Guardian Spy
+              - Coreli Guardian Agent
+            group: Center Rear Group (60- 71km)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Destroyer
+            names:
+              - Corelior Cannoneer
+              - Corelior Sentinel
+            group: Far Left Group (60- 80km, Rock Formation)
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corelum Chief Guard
+            group: Far Left Group (60- 80km, Rock Formation)
+            ewar:
+              - kind: sensorDamp
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Corelatis Squad
+              - Corelatis Platoon Leader
+            group: Far Left Group (60- 80km, Rock Formation)
+          - count: "1"
+            class: Battleship
+            names:
+              - Core Baron
+              - Core Commodore
+            group: Far Left Group (60- 80km, Rock Formation)

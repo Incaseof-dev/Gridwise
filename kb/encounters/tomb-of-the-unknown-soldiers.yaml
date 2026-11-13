@@ -1,0 +1,111 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: tomb-of-the-unknown-soldiers
+kind: mission
+name: Tomb Of The Unknown Soldiers
+level: 4
+enemyFaction: Caldari State
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Tomb Of The Unknown Soldiers
+    url: https://wiki.eveuniversity.org/Tomb_Of_The_Unknown_Soldiers
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "192074"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: neut
+  - kind: ecm
+notes:
+  - text: "Suggested ships: Battleship"
+  - text: Proximity mines can be (safely) detonated by shooting at them
+  - text: Veldspar asteroids present
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Taibu State Katana
+              - Taibu State Wakizashi
+          - count: "2"
+            class: Cruiser
+            names:
+              - Taibu State Samurai
+              - Taibu State Bajo
+          - count: "3"
+            class: Battleship
+            names:
+              - State Shukuro Shogun
+              - State Shukuro Nagashin
+              - State Shukuro Bishamon
+            triggers: Reinforcement 1
+      - id: reinforcement-1
+        trigger:
+          on: other
+          text: Reinforcement 1
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - State Knapaku
+              - State Shukuro Bajo
+              - State Shukuro Gassin
+            ewar:
+              - kind: neut
+              - kind: ecm
+          - count: "3"
+            class: Battleship
+            names:
+              - State Shukuro Shogun
+              - State Shukuro Bishamon
+            triggers: Reinforcement 2
+      - id: reinforcement-2
+        trigger:
+          on: other
+          text: Reinforcement 2
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - State Knapaku
+              - State Shukuro Bajo
+              - State Shukuro Gassin
+            ewar:
+              - kind: neut
+              - kind: ecm
+          - count: "4"
+            class: Battleship
+            names:
+              - State Shukuro Shogun
+              - State Shukuro Bishamon
+              - State Shukuro Nagashin
+            triggers: Reinforcement 3
+      - id: reinforcement-3
+        trigger:
+          on: other
+          text: Reinforcement 3
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Taibu State Katana
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - State Shukuro Bajo
+          - count: "3"
+            class: Battleship
+            names:
+              - State Shukuro Shogun

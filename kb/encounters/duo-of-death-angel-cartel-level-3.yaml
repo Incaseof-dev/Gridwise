@@ -1,0 +1,43 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: duo-of-death-angel-cartel-level-3
+kind: mission
+name: Duo of Death
+level: 3
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Duo of Death (Angel Cartel) (Level 3)
+    url: https://wiki.eveuniversity.org/Duo_of_Death_(Angel_Cartel)_(Level_3)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "203789"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Eliminate the pirate duo and then report back to your agent.
+notes:
+  - text: "Suggested ships: Battlecruiser"
+  - text: Angel Bunker may drop cap boosters and/or ammo.
+pockets:
+  - name: Warp-in
+    waves:
+      - id: initial-group-50km-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group, 50km (auto-aggro)
+        spawns:
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+              - Gistatis Tribunus
+            note: Last one drops container with mission objective.
+      - id: asteroids
+        trigger:
+          on: other
+          text: Asteroids
+          confidence: inferred
+        spawns: []

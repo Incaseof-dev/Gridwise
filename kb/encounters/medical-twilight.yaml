@@ -1,0 +1,121 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: medical-twilight
+kind: escalation
+name: Medical Twilight
+dedRating: null
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Medical Twilight
+    url: https://wiki.eveuniversity.org/Medical_Twilight
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "221326"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: 'Escalation: Expedition start: The slaves you liberated from this Blood facility report that this was a holding place where slaves were gathered, before being sent off to a blood replenishing "medical" station. You have heard about those places; where the Blood members go to get their blood exchanged with the blood of a slave who has been put on a special "blood cleansing" diet for a period of time. Needless to say, this leaves the poor slave empty of the vital fluid in question. Understandably your newfound slaves are quite thrilled with these recent turn of events. None of them knows where this so called "medical" station is, but a couple can tell you that they were in another holding station like this one, before they came here and coincidentally it is not all that far away ...'
+  - text: "Escalation: The next wave will spawn upon attacking the Ritual Center."
+  - text: "Escalation: Second wave: The inhabitants of the Ritual Center have sent out distress signals. and more ships quickly arrive!"
+  - text: "Escalation: The final wave will spawn when the Ritual Center is at half shield."
+  - text: "Escalation: Final wave: The Overseer of the Ritual Center has undocked. The Ritual Center has deployed sentry guns and more ships into the fray."
+  - text: "Escalation: Do not underestimate the final wave. Being neuted, pointed and webbed can get you killed quickly! A suggested tactic is to fight at range and only go in to brawl when the elite frigates are off the field. To blitz this site, shoot the Ritual Center until all waves are spawned and then take out the elite frigates followed by the Dark Blood frigate. Be prepared to tank DPS under neut pressure."
+  - text: "Escalation: Escalation message: Another Blood hideout and more slaves. You find no clues as to where the medical facility is, but piecing together information from the slaves, you are pretty sure some part of this Blood operations is located here ..."
+  - text: "Escalation: The warp in is within neut range of the Elite Cruisers. The DPS combined with the heavy neuting and webs is a serious problem for active tanked ships. Dropping a bookmark and warping in at range to the bookmark is recommended. Warping inside the site itself is possible and there are plenty of small asteroids to warp between. You can draw the Blood Factory Overseer and the Elite Frigates away from the rest by kiting (the Overseer BS has a top speed of 700+ m/s). [Jan 2025 (0.5 System)]"
+  - text: "Escalation: Expeditions: You are pretty sure that at some time in history, there would have been places in the galaxy where destroying an evil thing like this would have prompted some noble and decent ruler to award you with a medal or even a prize."
+  - text: "Escalation: Another Blood hideout and more slaves. You find no clues as to where the medical facility is, nor can you find any information on other parts of this Blood operation. It looks like your expedition has come to an end."
+lootNotes:
+  - text: Completing all four escalations gives the possibility of a Cruor BPC or Corpii (Frigate) A-Type module drops in the final escalation site.
+pockets:
+  - name: First pocket
+    notes:
+      - text: "Dead end message: This place is long deserted and when your instruments scan the outposts docking station, it turns up logs that are a couple of years old. It seems the blood trail has grown cold."
+      - text: "Escalation message: This place seems to be deserted and recently so, as all systems are up and running. Your scanners can even pick up signals from small houshold appliances, indicating that someone should actually be home. When your instruments scan the outposts docking station, it turns up logs only few minutes old showing four ships departing at the same time, these logs are incomplete though, only listing departure time and destination. For some reason all the ships are headed for the same spot ..."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corpior Cleric
+              - Corpior Visionary
+          - count: 3-4
+            class: Cruiser
+            names:
+              - Corpum Arch Templar
+              - Corpum Revenant
+            ewar:
+              - kind: trackingDisruption
+          - count: "1"
+            class: Commander Cruiser
+            names:
+              - Dark Blood Engraver
+            drop: Faction loot or blueprint
+  - name: Second pocket
+    notes:
+      - text: Rocks and structures. No pirates.
+  - name: First pocket
+    notes:
+      - text: "Expeditions: As you float among the debris of the pirate ships you notice several small canisters of ectoplasm, all marked with a place of origin, presumably the Blood's so called 'medical' facility. Whether it is carelessness, cockiness or plain old stupidity is hard to say, but these pirates didn't bother to hide where they came from. Then again, this might be another ambush ..."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "6"
+            class: Destroyer
+            names:
+              - Corpior Cleric
+              - Corpior Converter
+              - Corpior Devotor
+              - Corpior Friar
+          - count: "1"
+            class: Commander Destroyer
+            names:
+              - Dark Blood Templar
+            triggers: Escallation trigger
+            drop: Faction loot or blueprint
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Corpatis Exorcist
+              - Corpatis Phantom
+  - name: Second pocket
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "10"
+            class: Destroyer
+            names:
+              - Corpior Visionary
+              - Corpior Converter
+              - Corpior Devotor
+              - Corpior Friar
+          - count: "12"
+            class: Cruiser
+            names:
+              - Corpum Arch Priest
+              - Corpum Arch Sage
+            ewar:
+              - kind: neut
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Blood Phantom
+          - count: "4"
+            class: Sentry
+            names:
+              - Blood Light Missile Battery
+sde:
+  dungeonIds:
+    - 1751

@@ -1,0 +1,124 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-tolle-scar
+kind: mission
+name: The Tolle Scar
+level: 4
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Tolle Scar
+    url: https://wiki.eveuniversity.org/The_Tolle_Scar
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "206463"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Clear the area of any threats and ensure the location is safe for filming to begin
+ewar:
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Strain Decimator Alvi"
+  - text: 5M ISK from Bounties
+  - text: "Impetus: Impetus is the main producer of holoreels in New Eden, creating anything from epic historical movies to cheap porn flicks. Their cadre of established directors alone number in the tens of thousands; the actors they employ are literally countless. On one hand, the near infinite nature of their resources allows for the production of many risky, experimental holoreel projects, and yet at the same time, it is all too easy for an aspiring holoreel actress to get lost among a thousand other beautiful faces."
+  - text: "The Tolle Scar: This ancient compound lies derelict and abandoned. Even Serpentis forces, known for tirelessly seeking out new footholds inside Federation space, remain unwilling to move into this prime strategic real estate. Few details are known about the events that took place here, and the local residents will all-too-eagerly move a curious tourist on to less uncomfortable topics. For most people, it is enough to know that the area is referred to as “The Scar”."
+  - text: Gated deadspace pocket 0 jumps away in the same System.
+  - text: "Blitz: approach the Gate, kill all ships, take the Gate and kill the Alvus Queens."
+  - text: Complete the Mission remotely.
+  - text: "Tips: You only need to kill the Alvus Queens in the last room to complete the Mission"
+pockets:
+  - name: Warp-in
+    notes:
+      - text: Gate group will spawn when ship is within 10 km of Acceleration Gate.
+    waves:
+      - id: gate-group
+        trigger:
+          on: other
+          text: Gate group
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Barracuda
+              - Devilfish Alvi
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Strain Decimator Alvi
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "1"
+            class: Cruiser
+            names:
+              - Disintegrator Alvum
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Striker
+              - Enforcer Alvatis
+          - count: "2"
+            class: Battleship
+            names:
+              - Patriarch Alvus
+      - id: structures-28-km
+        trigger:
+          on: other
+          text: Structures (28 km)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+  - name: Room 1
+    notes:
+      - text: "The Tolle Scar: Antechamber: Further inside the compound, the area shows signs of a large-scale fight. To this day, the frozen corpses of men and women drift aimlessly amidst the debris. Structures are peppered with antimatter impact craters, in all cases showing signs of an instant and violent decompression. There was clearly no trial here for those criminals caught by Federation forces. Whoever was living inside these pleasure hubs was evidently never supposed to survive the initial attack, which must have been swift and unexpected. Despite the vista of death and destruction, this second area is crawling with signs of life. Among the twisted metal and burned hulls is the unmistakably alien movement of rogue drones as they rally and build in numbers inside their monstrous hive. They are not alone, however. Off in the distance, a convoy of Minmatar combat vessels bearing no ID tags idle their engines and remain fully aligned for a warp-out."
+    waves:
+      - id: group-1-80-km
+        trigger:
+          on: other
+          text: Group 1 (80 km)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Barracuda
+              - Devilfish Alvi
+          - count: 1-3
+            class: Elite Frigate
+            names:
+              - Strain Decimator Alvi
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Cruiser
+            names:
+              - Bomber Alvum
+          - count: 2-3
+            class: Battleship
+            names:
+              - Patriarch
+              - Matriarch... Alvus
+          - count: 3-4
+            class: Battleship
+            names:
+              - Alvus Queen
+            triggers: Destroy them to complete the Mission
+      - id: group-2-160-km
+        trigger:
+          on: other
+          text: Group 2 (160 km)
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Friendly Cruiser
+            names:
+              - The Pator Six

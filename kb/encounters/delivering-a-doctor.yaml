@@ -1,0 +1,67 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: delivering-a-doctor
+kind: mission
+name: Delivering a Doctor
+level: null
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Delivering a Doctor
+    url: https://wiki.eveuniversity.org/Delivering_a_Doctor
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231143"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Deliver the ransom money (3) for Dr. Lujia Elban (1).
+notes:
+  - text: Deliver ransom money (provided by Sister Alitura) for Dr. Lujia Elban (1.0 m³). Then bring back Dr. Elban to the agent.
+  - text: Notes
+  - text: Be sure to put the "A Lot of Money" item (3.0 m³) into your ship's cargo hold before leaving the station.
+  - text: You will warp in 15km from a container called "Dead Drop". After placing the money in the container, the pirates will appear at ~25 km range and attack you.
+  - text: After destroying the second wave, the doctor silently and magically appears in your cargo hold. Return to the Sisters of EVE Bureau station to report back to Sister Alitura and complete the mission.
+  - text: Anyone thinking about trying to get the money back from the dead drop should know that although the dead drop can be damaged, the money is destroyed along with it if you blow it up.
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: When delivering the ransom
+      - text: "Serpentis Raiders: That worked out well. I wonder how much cash we can get if we kill you and keep the doctor?"
+      - text: "Next Mission: Engineering a Rescue"
+    waves:
+      - id: 15km-from-warp-in
+        trigger:
+          on: other
+          text: ~15km from warp-in
+          confidence: inferred
+        spawns:
+          - count: "?"
+            class: Container
+            names:
+              - Dead Drop
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Coreli Spy
+              - Coreli Agent
+            triggers: Last ship destroyed triggers wave 2
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Coreli Spy
+              - Coreli Agent

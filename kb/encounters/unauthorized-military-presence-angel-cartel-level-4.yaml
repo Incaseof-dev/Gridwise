@@ -1,0 +1,147 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: unauthorized-military-presence-angel-cartel-level-4
+kind: mission
+name: Unauthorized Military Presence
+level: 4
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Unauthorized Military Presence (Angel Cartel) (Level 4)
+    url: https://wiki.eveuniversity.org/Unauthorized_Military_Presence_(Angel_Cartel)_(Level_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "230471"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Retrieve 10x Militants (20 m3)
+ewar:
+  - kind: targetPaint
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite frigates"
+  - text: Your job is to intercept an Angel Cartel transport shop carrying unauthorized militants.
+  - text: "Blitz: Eliminate the small group at the initial gate."
+  - text: "Blitz: Destroy the 3rd group in second room. MJD is perfect for approaching them."
+  - text: "Blitz: Loot the Marines from the Transport wrecks. Return to agent."
+lootNotes:
+  - text: "Loot & Salvage: 3.83 mil"
+  - text: "Bounty: 3.3 mil"
+pockets:
+  - name: Warp-in
+    notes:
+      - text: Acceleration gate to the pocket is at 23km. Gate is locked until all ships are destroyed.
+    waves:
+      - id: initial-defenders-20-30-km
+        trigger:
+          on: warpIn
+          text: Initial defenders (20-30 km)
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Gistior Defiler
+              - Gistior Haunter
+          - count: "3"
+            class: Cruiser
+            names:
+              - Gistum Liquidator
+              - Gistum Marauder
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Gistatis Primus
+              - Gistatis Legionnaire
+  - name: Single pocket
+    notes:
+      - text: The 3rd Group has a proximity aggro of about 80km, attacking it will draw room aggro.
+      - text: Ship amounts in each group may vary.
+      - text: Mission is marked completed after group 3 is destroyed. Remember to also loot the militants.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Gistii Nomad
+            group: Group 1 (80 km, Minmatar Commercial Station Ruins)
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Impaler
+              - Arch Gistii Hunter
+            group: Group 1 (80 km, Minmatar Commercial Station Ruins)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "6"
+            class: Cruiser
+            names:
+              - Gistum Crusher
+            group: Group 1 (80 km, Minmatar Commercial Station Ruins)
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Gistatis Legionnaire
+            group: Group 1 (80 km, Minmatar Commercial Station Ruins)
+          - count: "4"
+            class: Battleship
+            names:
+              - Gist Commander
+              - Gist General
+            group: Group 1 (80 km, Minmatar Commercial Station Ruins)
+          - count: "2"
+            class: Frigate
+            names:
+              - Gistii Nomad
+            group: Group 2 (75-90 km, Manufacturing Facility Control Tower)
+            note: type list incomplete on the source page
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Gistum Smasher
+            group: Group 2 (75-90 km, Manufacturing Facility Control Tower)
+            ewar:
+              - kind: targetPaint
+            note: type list incomplete on the source page
+          - count: 2-3
+            class: Battlecruiser
+            names:
+              - Gistatis Primus
+              - Gistatis Legionnaire
+            group: Group 2 (75-90 km, Manufacturing Facility Control Tower)
+          - count: "3"
+            class: Frigate
+            names:
+              - Gistii Hunter
+            group: Group 3 (100 km, Ripped Superstructure)
+            note: type list incomplete on the source page
+          - count: "6"
+            class: Cruiser
+            names:
+              - Gistum Phalanx
+              - Gistum Breaker
+              - Gistum Defeater
+            group: Group 3 (100 km, Ripped Superstructure)
+            ewar:
+              - kind: web
+          - count: "2"
+            class: Battleship
+            names:
+              - Gist Warlord
+              - Gist War General
+            group: Group 3 (100 km, Ripped Superstructure)
+          - count: "1"
+            class: Industrial
+            names:
+              - Angel Cartel Personnel Transport
+            group: Group 3 (100 km, Ripped Superstructure)
+            drop: Drops the needed Militants.

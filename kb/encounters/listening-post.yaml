@@ -1,0 +1,123 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: listening-post
+kind: mission
+name: Listening Post
+level: 2
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Listening Post
+    url: https://wiki.eveuniversity.org/Listening_Post
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "202694"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy Rogue Drones
+notes:
+  - text: Listening Post is the second mission of a 3 part mission chain, The other missions are Survey Rendezvous and Kicking the Nest.
+  - text: Destroy all Rogue Drones.
+pockets:
+  - name: Warp-in
+    notes:
+      - text: The acceleration gate is ~about 90 km from the warpin.
+      - text: The acceleration gate is not locked. You can proceed to the next pocket without killing the drones.
+      - text: When you are about 30 km from the acceleration gate a group of drones will warp in.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 17-26
+            class: Drone
+            names:
+              - Arachula
+              - Asmodeus
+            note: All types are possible; type list incomplete on the source page
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+            note: Not locked
+  - name: Pocket
+    notes:
+      - text: Wave 1 spawns after main group of the initial defenders is dead.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 4-6
+            class: Frigate
+            names:
+              - Infester
+              - Splinter
+              - Render
+              - Decimator Alvi
+            group: Main group
+          - count: 4-5
+            class: Destroyer
+            names:
+              - Shatter
+              - Ripper Alvior
+            group: Main group
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Wrecker
+              - Destructor Alvum
+            group: Main group
+          - count: 16-23
+            class: Drone
+            names:
+              - Arachula
+              - Asmodeus
+            group: Drone group
+            note: All types are possible; type list incomplete on the source page
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: 5-9
+            class: Frigate
+            names:
+              - Infester
+              - Splinter
+              - Render
+              - Decimator Alvi
+          - count: 4-7
+            class: Destroyer
+            names:
+              - Shatter
+              - Ripper Alvior
+          - count: 3-4
+            class: Cruiser
+            names:
+              - Wrecker
+              - Destructor Alvum
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: 15-28
+            class: Drone
+            names:
+              - Arachula
+              - Asmodeus
+            note: All types are possible; type list incomplete on the source page

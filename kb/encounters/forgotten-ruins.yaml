@@ -1,0 +1,325 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: forgotten-ruins
+kind: other
+name: Forgotten Ruins
+dedRating: null
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Forgotten Ruins
+    url: https://wiki.eveuniversity.org/Forgotten_Ruins
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "203048"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: T2 Battleship"
+notes:
+  - text: Forgotten Ruins is a very rare combat relic site found only in the Delve region, especially in the OK-FEM constellation. Up to T2 Battleships can enter the site, and it often features large groups of Rogue Drone and Blood Raider rats. This combat site is harder than many lowsec and nullsec ones, and should only be attempted by skilled players.
+  - text: The site is similar to the Bloated Ruins and Wispy Ruins. Try to avoid triggering two waves at once, as the site can then become very difficult.
+npcs:
+  Pirate Grave Robber:
+    sdeTypes:
+      - Corpus Cardinal
+    class: Battleship
+  Corpus Relay Commander:
+    sdeTypes:
+      - Corpus Pope
+    class: Battleship
+pockets:
+  - name: Warp-in
+    notes:
+      - text: The rats at warp-in are passive unless attacked, but have to be destroyed to unlock the gate.
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Acceleration Gate
+            names:
+              - Gate to Terrace
+            note: Locked until defenders are dead
+      - id: wave
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battleship
+            names:
+              - Pirate Grave Robber
+    onWarpIn: "Pirate Grave Robber: The ancient ruins in here are taken buddy. Leave now and maybe we'll let you go in one piece."
+  - name: First Pocket (Terrace)
+    notes:
+      - text: "Database information: DED deep space scouts briefly explored this strange site and left behind a rather cryptic note. As far as you can tell some ancient ruins lie within, but who built them or what treasures might lie buried there are anyone's guess."
+      - text: This room contains rats from the Blood Raider pirate faction.
+      - text: "Reinforcements: More pirates have appeared!"
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Accl Gate
+            names:
+              - Gate to Portal
+            note: 30 km away. Locked
+          - count: "?"
+            class: Accl Gate
+            names:
+              - Gate to Hall
+            note: 60 km away. Locked
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "4"
+            class: Destroyer
+            names:
+              - Corpior Cleric
+              - Corpior Devoter
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Arch Sage
+              - Elder Corpum Dark Priest
+          - count: "11"
+            class: Battleship
+            names:
+              - Corpus Archbishop
+              - Corpus Harbinger
+            ewar:
+              - kind: neut
+          - count: "1"
+            class: Battleship
+            names:
+              - Blood Raid Commander
+            triggers: Triggers reinforcements
+          - count: "2"
+            class: Sentry
+            names:
+              - Blood Stasis Tower
+            ewar:
+              - kind: web
+      - id: reinforcements
+        trigger:
+          on: other
+          text: Reinforcements
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Elder Corpii Raider
+              - Elder Corpii Reaver
+          - count: "7"
+            class: Battlecruiser
+            names:
+              - Corpatis Bishop
+              - Corpatis Fanatic
+              - Corpatis Phantom
+          - count: "9"
+            class: Battleship
+            names:
+              - Corpus Monsignor
+              - Corpus Archbishop
+              - Corpus Harbinger
+            ewar:
+              - kind: neut
+  - name: Second Pocket (Portal)
+    notes:
+      - text: thumb|alt=|Forgotten Ruins - Portal
+      - text: This pocket is optional.
+      - text: "Database information: Charred remains and debris litter the area. A confrontation between the pirate scavengers and rogue drones must have taken place some time in the past, as the empty drone bunkers and ruined pirate ship carcasses would indicate."
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Acceleration Gate
+            names:
+              - Gate to Hall
+            note: Locked until room is cleared.
+      - id: wave
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Destroyer
+            names:
+              - Corpior Devoter
+              - Corpior Friar
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corpatis Seer
+              - Corpatis Shade
+          - count: "11"
+            class: Battleship
+            names:
+              - Corpus Archbishop
+              - Corpus Harbinger
+            ewar:
+              - kind: neut
+          - count: "1"
+            class: Battleship
+            names:
+              - Corpus Relay Commander
+            triggers: Attacking triggers reinforcement 1
+          - count: "1"
+            class: Sentry
+            names:
+              - Blood Stasis Tower
+            ewar:
+              - kind: web
+      - id: reinforcement-1
+        trigger:
+          on: other
+          text: Reinforcement 1
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Arch Priest
+              - Elder Corpum Arch Sage
+          - count: "8"
+            class: Battleship
+            names:
+              - Corpus Cardinal
+              - Corpus Patriarch
+          - count: "1"
+            class: Battleship
+            names:
+              - Corpus Relay Commander
+            triggers: Attacking triggers reinforcement 2
+      - id: reinforcement-2
+        trigger:
+          on: other
+          text: Reinforcement 2
+          confidence: inferred
+        spawns:
+          - count: "10"
+            class: Battleship
+            names:
+              - Corpus Cardinal
+              - Corpus Patriarch
+  - name: Third Pocket (Hall)
+    notes:
+      - text: thumb|alt=|Forgotten Ruins - Hall
+      - text: There are 6 Floating Debris containers that must be hacked with a Relic Analyzer before getting access to their contents.
+      - text: "Smartbomb trigger: Someone has triggered an ancient land mine! All ships inside the blast radius take damage."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "11"
+            class: Elite Frigate
+            names:
+              - Strain Hunter
+              - Strain Devilfish
+              - Strain Silverfish
+            note: type list incomplete on the source page
+          - count: "10"
+            class: Battleship
+            names:
+              - Alvus Creator
+              - Patriarch Alvus
+          - count: "8"
+            class: Sentry
+            names:
+              - Drone Cruise Missile Battery
+            triggers: Attacking any one triggers battery wave
+      - id: battery-wave
+        trigger:
+          on: other
+          text: Battery wave
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Strain Decimator
+              - Strain Infester Alvi
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Defeater
+              - Striker
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Battleship
+            names:
+              - Alvus Queen
+              - Matriarch Alvus
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Gate to Sanctum
+            note: Locked until room is cleared.
+          - count: "6"
+            class: Hackable
+            names:
+              - Floating Debris
+            triggers: Successful hack triggers smartbomb wave
+            note: Medium difficulty
+    onWarpIn: A large force of drones has taken up residence in this area. They obviously benefit greatly from salvaging the remnants of the former inhabitants, which still litters this patch of space. A drone presence this large could not be formed without an abundance of raw materials.
+  - name: Fourth Pocket (Sanctum)
+    notes:
+      - text: The Drone Creation Compound fires Citadel Explosive torpedoes that deal very high Explosive damage. Recommend at least 70% resists to Explosive damage.
+      - text: There are 2 Ancient Ruins containers that must be hacked with a Relic Analyzer before getting access to their contents. Hacking can trigger a spawn of Blood Raiders (4xBS,3xCruisers). Approaching a container can also trigger an explosion.
+      - text: "Smartbomb trigger: Huge bursts of energy and material spurt from the ancient ruins as someone approaches them. Some kind of ancient technology seems to have been put in place to protect the ruins. Your ship takes damage 3000!"
+      - text: Hive has an active tank that requires about 400-500 DPS to break.
+      - text: Rare chance Kasham Murdec arrives. No loot.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "14"
+            class: Elite Cruiser
+            names:
+              - Strain Atomizer
+              - Strain Nuker
+            note: type list incomplete on the source page
+          - count: "16"
+            class: Battleship
+            names:
+              - Alvus Creator
+              - Patriarch Alvus
+          - count: "6"
+            class: Sentry
+            names:
+              - Tower Sentry Drone III
+          - count: "1"
+            class: Sentry
+            names:
+              - Hive Mother
+            triggers: Attacking triggers reinforcements
+            drop: 20th Tier Overseer's Personal Effects, Mindlink implant, drone alloys
+            note: Has an active tank that requires about 400-500 DPS to break
+    onWarpIn: The source of the drone infestation seems to lie in this deadspace pocket, located inside a fiery nebula. The extreme and hostile environment, accompanied by a very heavy drone presence, seems to have kept most of the looters away, as two fully intact ancient ruins would indicate.

@@ -1,0 +1,107 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: vengeance-mordus
+kind: mission
+name: Vengeance
+level: 4
+enemyFaction: Mordu's Legion Command
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Vengeance (Mordus)
+    url: https://wiki.eveuniversity.org/Vengeance_(Mordus)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223429"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal:
+    - kinetic
+  resist:
+    - kinetic
+    - thermal
+notes:
+  - text: "Suggested ships: Cerberus and Wolf"
+  - text: "Blitz: No real blitz. You must clear both pockets. The last rat in the second pocket drops the prisoners."
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: No aggro on warp in. The groups could be aggressed one by one in the order they are listed here. Another order would probably be fine too.
+    waves:
+      - id: pocket-1
+        trigger:
+          on: other
+          text: Pocket 1
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Mordus Katana
+            group: Group 1 (15-20 km)
+          - count: "4"
+            class: Cruiser
+            names:
+              - Mordus Puma
+            group: Group 1 (15-20 km)
+          - count: "10"
+            class: Cruiser
+            names:
+              - Mordus Bobcat
+              - Mordus Lion
+              - Mordus Leopard
+            group: Group 2 (30-40 km, left)
+          - count: "2"
+            class: Battleship
+            names:
+              - Mordus Phanti
+              - Mordus Gigamar
+            group: Group 2 (30-40 km, left)
+          - count: "2"
+            class: Frigate
+            names:
+              - Mordus Bounty Hunter
+            group: Group 3 (30-40 km, middle)
+          - count: "3"
+            class: Cruiser
+            names:
+              - Mordus Lion
+            group: Group 3 (30-40 km, middle)
+          - count: "2"
+            class: Battleship
+            names:
+              - Mordus Phanti
+              - Mordus Sequestor
+            group: Group 3 (30-40 km, middle)
+          - count: "8"
+            class: Cruiser
+            names:
+              - Mordus Puma
+              - Mordus Cheetah
+              - Mordus Leopard
+            group: Group 4 (30-40 km, right)
+  - name: Pocket 2
+    notes:
+      - text: Aggro from everything. Last rat drops the prisoners. Paon Tay has 50% kin, 60% em, 70% exp and 80% therm shield res.
+    waves:
+      - id: pocket-2
+        trigger:
+          on: other
+          text: Pocket 2
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Cruiser
+            names:
+              - Mordus Leopard
+          - count: "3"
+            class: Battleship
+            names:
+              - Mordus Sequestor
+              - Paon Tay
+          - count: "3"
+            class: Sentry
+            names:
+              - Mordu's Sentry Gun

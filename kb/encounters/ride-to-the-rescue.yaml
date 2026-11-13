@@ -1,0 +1,70 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: ride-to-the-rescue
+kind: mission
+name: Ride to the Rescue
+level: 3
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Ride to the Rescue
+    url: https://wiki.eveuniversity.org/Ride_to_the_Rescue
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231747"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Yukiro Demense"
+  - text: 0.01% Guristas Pirates Standing Loss; 1M ISK Yukiro Demense Bounty
+  - text: "Gang War: The Angel Cartel and Guristas have a lot in common on the surface. Both seem to be the classical thugs, engaging in all the brutish activities attributed to base criminals. But while the two do have some overlapping interests, their methods and core desires are different. The Angel Cartel is closer to a criminal mafia, dedicated to pushing drugs, running protection rackets, taking out assassination contracts, and involving themselves in all manner of nefarious research projects. The Guristas, however, are opportunistic pirates. They prowl the space lanes and hit any target that looks half-valuable or vulnerable. They loot and plunder what they can, ransom off the valuable survivors, and then hit the bars to celebrate. The Cartel sees the Guristas as chaotic malcontents, disrupting trade, causing economic difficulties, and generally making it more difficult for them to ply their illicit trades. The Guristas see the Cartel as dishonorable brutes, skulking in the darkness and using trickery and deception to dull the minds and sensibilities of their clients."
+  - text: Accept the Mission remotely.
+  - text: Gated deadspace pocket up to 2 jumps away.
+  - text: "Blitz: take the Gate and kill Yukiro Demense."
+  - text: Complete the Mission remotely.
+  - text: "Tips: Yukiro Demense minimum resistance is 64% Kinetic Shields and Armour"
+pockets:
+  - name: Warp-in
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+  - name: Room 1
+    notes:
+      - text: All the Angel and Guristas ships will be destroyed except for the Survivors.
+      - text: "Yukiro Demense taunt: You shouldn't have bothered, Cartel puppet. You have no hope against me."
+    waves:
+      - id: survivors-70-km
+        trigger:
+          on: other
+          text: Survivors (70 km)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Pithi Infiltrator
+              - Pithi Invader
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Yukiro Demense
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            triggers: Mission objective
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Pithatis Executor

@@ -1,0 +1,47 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: violent-expulsion-thukker-tribe
+kind: mission
+name: Violent Expulsion
+level: 1
+enemyFaction: Thukker Tribe
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Violent Expulsion (Thukker Tribe)
+    url: https://wiki.eveuniversity.org/Violent_Expulsion_(Thukker_Tribe)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "192105"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Suggested ships: Destroyer"
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: initial-group-15km
+        trigger:
+          on: warpIn
+          text: Initial Group, 15km
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Thukker Mercenary Rookie
+            triggers: 1st Reinforcement
+          - count: "1"
+            class: Frigate
+            names:
+              - Thukker Mercenary Fighter
+      - id: 1st-reinforcement
+        trigger:
+          on: other
+          text: 1st Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Thukker Mercenary Fighter

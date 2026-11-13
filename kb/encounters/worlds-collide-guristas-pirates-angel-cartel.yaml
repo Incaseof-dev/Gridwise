@@ -1,0 +1,189 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: worlds-collide-guristas-pirates-angel-cartel
+kind: mission
+name: Worlds Collide
+level: 1
+enemyFaction: Guristas Pirates & Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Worlds Collide (Guristas Pirates & Angel Cartel)
+    url: https://wiki.eveuniversity.org/Worlds_Collide_(Guristas_Pirates_%26_Angel_Cartel)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223432"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: ecm
+  - kind: targetPaint
+notes:
+  - text: "Suggested ships: Frigate, Destroyer"
+  - text: Radiating Telescope may drop loot.
+  - text: It is not required to kill the Federation rats in the Research Outpost pocket.
+  - text: There is a gate back to the War Zone (Entry Pocket), which allows you to move through the rooms without leaving the site. This is useful for returning to earlier rooms to finish off rats or looting/salvaging wrecks.
+pockets:
+  - name: Entry Pocket (Warzone)
+    notes:
+      - text: Group 1 guards the gate to the Guristas base.
+      - text: Group 2 guards the gate to the Cartel base.
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Acceleration Gate
+            names:
+              - To Guristas Base
+          - count: "?"
+            class: Acceleration Gate
+            names:
+              - To Cartel Base
+      - id: group-1-120km-auto-aggro
+        trigger:
+          on: other
+          text: Group 1, 120km (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Pithi Saboteur
+              - Pithi Despoiler
+            ewar:
+              - kind: ecm
+      - id: group-2-120km
+        trigger:
+          on: other
+          text: Group 2, 120km
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Gistii Ambusher
+              - Gistii Raider
+          - count: "1"
+            class: Destroyer
+            names:
+              - Gistior Defacer
+  - name: Guristas Base
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Acceleration Gate
+            names:
+              - To The Research Outpost
+      - id: group-1-25km-auto-aggro
+        trigger:
+          on: other
+          text: Group 1, 25km (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Destroyer
+            names:
+              - Pithior Anarchist
+              - Pithior Nihilist
+            triggers: Reinforcement
+      - id: group-2-10km-auto-aggro
+        trigger:
+          on: other
+          text: Group 2, 10km (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Destroyer
+            names:
+              - Guristas Overseer
+      - id: reinforcement-5-26km-auto-aggro
+        trigger:
+          on: other
+          text: Reinforcement, 5-26km (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "7"
+            class: Frigate
+            names:
+              - Pithi Destructor
+              - Pithi Demolisher
+          - count: "1"
+            class: Destroyer
+            names:
+              - Pithior Nihilist
+  - name: Cartel Base
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Acceleration Gate
+            names:
+              - To The Research Outpost
+      - id: initial-group-20km-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group, 20km (auto-aggro)
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Gistii Raider
+          - count: "1"
+            class: Destroyer
+            names:
+              - Gistior Shatterer
+            triggers: Reinforcement
+      - id: reinforcement-5-26km-auto-aggro
+        trigger:
+          on: other
+          text: Reinforcement, 5-26km (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "9"
+            class: Frigate
+            names:
+              - Gistii Nomad
+              - Gistii Ruffian
+              - Gistii Raider
+            ewar:
+              - kind: targetPaint
+  - name: Research Outpost
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Acceleration Gate
+            names:
+              - To The Warzone
+      - id: initial-group-5-13km-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group, 5-13km (auto-aggro)
+        spawns:
+          - count: "10"
+            class: Frigate
+            names:
+              - Pithi Arrogator
+              - Pithi Imputor
+              - Pithi Saboteur
+            ewar:
+              - kind: ecm
+          - count: "2"
+            class: Frigate
+            names:
+              - Federation Hoplon
+              - Federation Kontos

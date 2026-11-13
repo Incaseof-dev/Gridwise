@@ -1,0 +1,80 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: extract-the-renegade
+kind: mission
+name: Extract The Renegade
+level: 4
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Extract The Renegade
+    url: https://wiki.eveuniversity.org/Extract_The_Renegade
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "205174"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy all enemy ships; bring Admiral Meledier back to your agent.
+ewar:
+  - kind: web
+  - kind: warpScramble
+notes:
+  - text: "Web/warp disruption: Elite Federation Manica/Libertus (Web, Scram)"
+  - text: "Suggested ships: Battleship, T3C"
+  - text: "Blitz: Clear Pocket 1. Kill Federation Praktor Hexeris and loot the can. Warp out."
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-group-8-10km
+        trigger:
+          on: warpIn
+          text: Initial Group, 8-10km
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Federation Clavis
+              - Federation Hastile
+          - count: "3"
+            class: Cruiser
+            names:
+              - Federation Hastarius
+              - Federation Loras
+          - count: "1"
+            class: Battleship
+            names:
+              - Federation Triarius
+              - Federation Xenan
+  - name: Pocket 2
+    waves:
+      - id: initial-group-13-26km
+        trigger:
+          on: warpIn
+          text: Initial Group, 13-26km
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Elite Federation Manica
+              - Elite Federation Libertus
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "2"
+            class: Destroyer
+            names:
+              - Federation Pelekus
+          - count: "5"
+            class: Cruiser
+            names:
+              - Federation Praktor Centurion
+              - Federation Praktor Legionarius
+          - count: "4"
+            class: Battleship
+            names:
+              - Federation Praktor Praeses
+              - Federation Praktor Hexeris
+            note: Hexeris is mission objective

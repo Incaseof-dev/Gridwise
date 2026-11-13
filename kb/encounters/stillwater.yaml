@@ -1,0 +1,86 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: stillwater
+kind: mission
+name: Stillwater
+level: 4
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Stillwater
+    url: https://wiki.eveuniversity.org/Stillwater
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231283"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Retrieve 1x Book Of St. Arzad (0.1 m3)
+ewar:
+  - kind: web
+  - kind: neut
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Arch Gistii Rogue"
+  - text: "Suggested ships: Battleship (sniper)"
+  - text: 3% Angel Cartel Faction Standing loss; 10M ISK in Bounties (Karkoti Rend only) + 10M from clearing other ships
+  - text: thumb|right|192px
+  - text: Accept the Mission remotely.
+  - text: Ungated semi-deadspace pocket within 2-4 jumps of the previous mission. You can warp around freely.
+  - text: "Blitz: kill Karkoti Rend, loot the Book Of St. Arzad and warp out."
+  - text: "Tips: Destroy the EWAR Angel Energy Neutralizer Sentry II first as it has 250 km range and drains 20 GJ/s"
+  - text: "Tips: Karkoti Rend's Battleship projects 500 DPS up to 150 km away (decreasing with distance) and approaches at 1000 m/s if over 40 km away. Damage split is ~ 28% EM / 11% Kinetic / 61% Explosive."
+  - text: "Tips: Karkoti Rend has similar EHP to a Gist Seraphim (~45s to kill with a T1-ammo cruise Praxis), so it's best to focus him directly after the tackle frigates and neutralizer to quickly blitz the mission."
+  - text: "Tips: When you kill Karkoti Rend, all other ships will warp out."
+  - text: "Tips: Incoming damage will be quite variable depending on the ship types that predominantly spawn. EM and Explosive damage are the most prevalent overall, though."
+pockets:
+  - name: Warp-in
+    notes:
+      - text: "Karkoti Rend (after aggro): Do you even know what the Book of St. Arzad says? I don't think you're ready for its revelations. Nor do I think the Republic is ready for it. But they've turned their back on me, so I'll make sure the truth is exposed. The history books will be rewritten, and I will be a very rich man."
+      - text: "Upon killing Karkoti Rend: The truth is a weapon and must be wielded with care. That was my greatest mistake: I could not handle its power. The khumaak is just a thing, an empty item; this book holds the true power. Use it wisely, but understand what it is saying. It could change everything."
+    waves:
+      - id: 30-50-km
+        trigger:
+          on: other
+          text: 30-50 km
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Rogue
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "6"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Hunter
+              - Arch Gistii Impaler
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Centurion
+              - Arch Gistum Phalanx
+          - count: "5"
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Seraphim
+              - Gist Throne
+          - count: "1"
+            class: Elite Battleship
+            names:
+              - Karkoti Rend
+            ewar:
+              - kind: neut
+            drop: Book Of St. Arzad
+          - count: "1"
+            class: Sentry
+            names:
+              - Angel Energy Neutralizer Sentry II
+            ewar:
+              - kind: neut
+    onWarpIn: I had a feeling that you would try to track me down. Not a wise decision. Not only are you outnumbered here, but I have the book. You wouldn't want anything to happen to it, would you?

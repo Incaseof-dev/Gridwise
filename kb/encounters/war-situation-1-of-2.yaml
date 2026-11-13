@@ -1,0 +1,54 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: war-situation-1-of-2
+kind: mission
+name: War Situation (1 of 2)
+level: 4
+enemyFaction: Amarr Empire
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – War Situation (1 of 2)
+    url: https://wiki.eveuniversity.org/War_Situation_(1_of_2)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223203"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the Lookout Post and the hostile entities orbiting it
+notes:
+  - text: "Objective: Destroy the Amarr Lookout."
+  - text: "Blitz: Not known."
+lootNotes:
+  - text: 2 Imperial Navy Colonel Insignia I
+  - text: 2 Imperial Navy General Insignia II
+  - text: 4 Imperial Navy Sergeant Insignia I
+  - text: various random meta modules
+  - text: "Next: War Situation (2 of 2)"
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Imperial Navy Soldier
+          - count: "2"
+            class: Cruiser
+            names:
+              - Imperial Navy Maller
+          - count: "2"
+            class: Battleship
+            names:
+              - Imperial Navy Apocalypse
+          - count: "1"
+            class: Structure
+            names:
+              - Amarr Lookout
+            note: Mission objective

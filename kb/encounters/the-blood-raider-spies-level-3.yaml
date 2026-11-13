@@ -1,0 +1,77 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-blood-raider-spies-level-3
+kind: mission
+name: The Blood Raider Spies
+level: 3
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Blood Raider Spies (Level 3)
+    url: https://wiki.eveuniversity.org/The_Blood_Raider_Spies_(Level_3)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "208212"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: web
+notes:
+  - text: No hostiles at initial gate.
+  - text: "Blitz: Kill the two Blood Raider Spies."
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: Extra destroyer spawns on destruction of last destroyer in Group 1.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 2-3
+            class: Destroyer
+            names:
+              - Corpior Converter
+              - Corpior Templar
+              - Corpior Visionary
+            group: Group 1 (35-40km)
+            triggers: Trigger
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Corpatis Bishop
+            group: Group 1 (35-40km)
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corpior Converter
+              - Corpior Visionary
+            group: Group 2 (80-90km)
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Blood Raider Spy
+            group: Group 3 (90-95km)
+            note: Are renamed Corpatis Shade/Seer
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Blood Disciple
+              - Blood Wraith
+            group: Group 4 (100-110km)
+            ewar:
+              - kind: web
+      - id: spawn
+        trigger:
+          on: other
+          text: Spawn
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Destroyer
+            names:
+              - Corpior Converter
+              - Corpior Visionary

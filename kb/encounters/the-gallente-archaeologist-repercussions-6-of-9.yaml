@@ -1,0 +1,64 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-gallente-archaeologist-repercussions-6-of-9
+kind: mission
+name: The Gallente Archaeologist - Repercussions (6 of 9)
+level: 4
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Gallente Archaeologist - Repercussions (6 of 9)
+    url: https://wiki.eveuniversity.org/The_Gallente_Archaeologist_-_Repercussions_(6_of_9)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223314"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal:
+    - thermal
+    - kinetic
+  resist: []
+ewar:
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Warp disruption frigates"
+  - text: This mission is a part of the mission chain The Gallente Archaeologist
+  - text: 'Blitz: Destroy the industrials named "Construction Freight".'
+  - text: "Notes: The best damage to deal is thermal; but kinetic is mostly okay except against the Orion battleships, which have a very high kinetic resist."
+lootNotes:
+  - text: 4 Federation Navy Fleet Colonel Insignia II
+  - text: 5 Federation Navy Fleet Major Insignia I
+  - text: 5 Federation Navy Sergeant Insignia III
+pockets:
+  - name: Ungated Pocket
+    waves:
+      - id: at-30-km
+        trigger:
+          on: other
+          text: at 30 km
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Elite Frigate
+            names:
+              - Federation Navy Gamma II Support Frigate
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "5"
+            class: Cruiser
+            names:
+              - Federation Navy Torax
+          - count: "2"
+            class: Battleship
+            names:
+              - Federation Navy Megathron
+              - Federation Navy Orion
+          - count: "3"
+            class: Industrial
+            names:
+              - Construction Freight

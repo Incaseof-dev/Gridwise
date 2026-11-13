@@ -1,0 +1,105 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: dead-drift
+kind: mission
+name: Dead Drift
+level: 2
+enemyFaction: Mercenaries
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Dead Drift
+    url: https://wiki.eveuniversity.org/Dead_Drift
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191636"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: web
+notes:
+  - text: "Web/warp disruption: Spider Drone I (Web)"
+  - text: "Suggested ships: Cruiser"
+  - text: "Blitz: Warp in, fly to Armageddon (Oberon), pick up Scientists and place them in Splendor. Warp out."
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: Abandoned Armageddon 20km from warp-in, next to a wormhole.
+      - text: Group 1 is triggered by approaching the Armageddon.
+      - text: The mission is flagged as complete as soon as the Scientists from the cargo container are picked up and placed in the Splendor.
+    waves:
+      - id: group-1
+        trigger:
+          on: warpIn
+          text: Group 1
+        spawns:
+          - count: "1"
+            class: Drone
+            names:
+              - Spider Drone I
+            ewar:
+              - kind: web
+          - count: "2"
+            class: Frigate
+            names:
+              - Mercenary Fighter
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Mercenary Lieutenant
+              - Mercenary Commander
+      - id: group-2
+        trigger:
+          on: other
+          text: Group 2
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Mercenary Fighter
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Mercenary Lieutenant
+            triggers: First BC destroyed spawns Reinforcement 1
+      - id: reinforcement-1
+        trigger:
+          on: other
+          text: Reinforcement 1
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Mercenary Fighter
+          - count: "1"
+            class: Battleship
+            names:
+              - Mercenary Overlord
+      - id: reinforcement-2
+        trigger:
+          on: other
+          text: Reinforcement 2
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Mercenary Fighter
+            triggers: Spawns Reinforcement 3
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Mercenary Lieutenant
+      - id: reinforcement-3
+        trigger:
+          on: other
+          text: Reinforcement 3
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Mercenary Fighter

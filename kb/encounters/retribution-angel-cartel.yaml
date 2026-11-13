@@ -1,0 +1,103 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: retribution-angel-cartel
+kind: mission
+name: Retribution
+level: 3
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Retribution (Angel Cartel)
+    url: https://wiki.eveuniversity.org/Retribution_(Angel_Cartel)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "201368"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal:
+    - kinetic
+    - explosive
+  resist:
+    - kinetic
+    - explosive
+objectives:
+  - text: Destroy the Angel outpost
+notes:
+  - text: "Suggested ships: Battlecruiser or higher"
+  - text: Deadspace
+  - text: "Blitz: Destroy the Angel Outpost and leave."
+  - text: No hostiles at initial acceleration gate.
+  - text: "Structures:"
+  - text: Small Armory drops an assortment of rockets, cruise missiles, missiles, and medium to large ammo
+  - text: Other structures drop no loot.
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: No enemies at initial gate.
+      - text: Four groups, no aggro at warp in.
+      - text: Attacking any one group will not aggro other groups.
+    waves:
+      - id: group-1-25-30km
+        trigger:
+          on: other
+          text: Group 1 25-30km
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Gistii Nomad
+              - Gistii Ruffian
+          - count: "2"
+            class: Cruiser
+            names:
+              - Gistum Breaker
+              - Gistum Defeater
+      - id: group-2-35-45km
+        trigger:
+          on: other
+          text: Group 2 35-45km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Gistum Centurion
+              - Gistum Phalanx
+      - id: group-3-45-50km
+        trigger:
+          on: other
+          text: Group 3 45-50km
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Gistii Hijacker
+              - Gistii Rogue
+          - count: "3"
+            class: Cruiser
+            names:
+              - Gistum Depredator
+              - Gistum Predator
+      - id: group-4-70-75km
+        trigger:
+          on: other
+          text: Group 4 70-75km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Angel Viper
+              - Angel Webifier
+            ewar:
+              - kind: warpDisruption
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Gistatis Legionnaire
+              - Gistatis Primus

@@ -1,0 +1,85 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: avenge-a-fallen-comrade-serpentis-level-2
+kind: mission
+name: Avenge a Fallen Comrade
+level: 2
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Avenge a Fallen Comrade (Serpentis) (Level 2)
+    url: https://wiki.eveuniversity.org/Avenge_a_Fallen_Comrade_(Serpentis)_(Level_2)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "193385"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the Habitat
+ewar:
+  - kind: sensorDamp
+notes:
+  - text: "Suggested ships: Destroyer"
+  - text: "Blitz: Destroy Habitat."
+  - text: No hostiles at initial gate.
+pockets:
+  - name: 1st Pocket
+    waves:
+      - id: initial-hostiles
+        trigger:
+          on: warpIn
+          text: Initial Hostiles
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Coreli Safeguard
+            group: Group 1, 2km (auto-aggro)
+          - count: "4"
+            class: Frigate
+            names:
+              - Coreli Initiate
+            group: Group 2, 40km
+          - count: "1"
+            class: Destroyer
+            names:
+              - Corelior Soldier
+            group: Group 2, 40km
+          - count: "3"
+            class: Frigate
+            names:
+              - Coreli Agent
+              - Coreli Spy
+            group: Group 3, 50km
+          - count: "1"
+            class: Cruiser
+            names:
+              - Corelum Chief Patroller
+            group: Group 3, 50km
+            ewar:
+              - kind: sensorDamp
+      - id: group-4
+        trigger:
+          on: other
+          text: Group 4
+          confidence: inferred
+        spawns:
+          - count: "7"
+            class: Frigate
+            names:
+              - Coreli Watchman
+              - Coreli Patroller
+            ewar:
+              - kind: sensorDamp
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Habitat
+            note: Mission completed on destruction

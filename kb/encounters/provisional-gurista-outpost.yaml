@@ -1,0 +1,148 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: provisional-gurista-outpost
+kind: complex
+name: Provisional Gurista Outpost
+dedRating: null
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Provisional Gurista Outpost
+    url: https://wiki.eveuniversity.org/Provisional_Gurista_Outpost
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "216322"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: T2 Battelecruiser"
+notes:
+  - text: Warping to the signature will land you at 0 on an ancient acceleration gate.
+  - text: "Escalation: This site has a chance to escalate to Gurista Surveillance Squad."
+  - text: "Escalation: Upon Guristas Experimental Weapon Tower destruction: It seemed for a while that you would manage to get all of the Gurista ships, but evidently one of the has slipped away. Luckily, your scanner have gathered enough information to give you its approximate destination."
+pockets:
+  - name: First Pocket
+    notes:
+      - text: The defenders can be 50-110 km away.
+    waves:
+      - id: initial-defenders-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial defenders(auto-aggro)
+        spawns:
+          - count: "1"
+            class: Cruiser
+            names:
+              - Pithum Eraser
+            group: 50 km off
+          - count: 2-3
+            class: Frigate
+            names:
+              - Pithi Invader
+              - Pithi Infiltrator
+            group: 110 km off
+          - count: 2-3
+            class: Frigate
+            names:
+              - Pithi Demolisher
+            group: Timed spawn; 100 km behind acceleration gate
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: Locked until all ships are destroyed
+  - name: Second Pocket
+    notes:
+      - text: Defenders are about 70-80 km away.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Pithi Wrecker
+              - Pithi Plunderer
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "2"
+            class: Structure
+            names:
+              - Guristas Bunker
+          - count: "2"
+            class: Structure
+            names:
+              - Guristas Battery
+          - count: "1"
+            class: Structure
+            names:
+              - Abandoned Ship Yard
+          - count: "1"
+            class: Structure
+            names:
+              - Guristas Experimental Weapon Tower
+            triggers: Escalation trigger. Triggers reinforcement 1
+      - id: reinforcement-1
+        trigger:
+          on: other
+          text: Reinforcement 1
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Guristas Heavy Missile Battery
+            triggers: Destroy any one to trigger reinforcement 2. Destroying both triggers reinforcement 3
+          - count: "4"
+            class: Cruiser
+            names:
+              - Pithum Abolisher
+              - Pithum Eraser
+          - count: 0-1
+            class: Commander Cruiser
+            names:
+              - Dread Guristas Inferno
+              - Dread Guristas Mortifier
+            drop: Faction ammo/tags. Possible Dread Guristas modules or a rare Gila BPC
+      - id: reinforcement-2
+        trigger:
+          on: other
+          text: Reinforcement 2
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Eraser
+              - Dire Pithum Mortifier
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Pithatis Executor
+      - id: reinforcement-3
+        trigger:
+          on: other
+          text: Reinforcement 3
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Pithi Wrecker
+              - Pithi Plunderer
+    onWarpIn: Heuristic analysis of this location indicates that destroying the Guristas Experimental Weapon Tower would greatly improve your odds of uncovering further illicit activity.
+sde:
+  dungeonIds:
+    - 1408

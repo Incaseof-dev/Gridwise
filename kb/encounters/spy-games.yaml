@@ -1,0 +1,215 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: spy-games
+kind: mission
+name: Spy Games
+level: 3
+enemyFaction: Caldari State
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Spy Games
+    url: https://wiki.eveuniversity.org/Spy_Games
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "232563"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Retrieve 1x Correspondence Log KL-513 (0.5 m3)
+restrictions:
+  - text: "Ship size limit: T1 Destroyer, Frigates"
+notes:
+  - text: "Suggested ships: Interceptor"
+  - text: 2.4% Caldari State Faction Standing loss; Tractor Beam I and 25 km range weapon for pulling Cargo Container out of Forcefield
+  - text: Gated deadspace pockets are one jump away in AJCJ-1.
+  - text: "Blitz: kill Eroma Eralen, take Acceleration Gate then another Acceleration Gate. Arc around to the opposite side of the Forcefield, destroy the Caldari Bunker with a 16 km range weapon and Tractor Beam the Correspondence Log KL-513 Cargo Container."
+  - text: "Alternative Blitz: kill Eroma Eralen, loot the Caldari Navy Overlay Transponder, take Acceleration Gate then another Acceleration Gate. Approach the Caldari Bunker, destroy each wave as it spawns and then destroy the 150 HP/s regenerating Forcefield."
+  - text: "Tips: Orbit Eroma Eralen at 3 km to avoid damage"
+  - text: "Tips: If you don't attack the friendly ships, they won't attack you"
+  - text: "Tips: Caldari Bunker reinforcement waves spawn as you approach the Caldari Bunker"
+  - text: "Tips: All Caldari Bunker reinforcement waves will spawn when you attack the Caldari Bunker or on proximity to the Forcefield."
+  - text: "Tips: Enemy ships can't pass through the Forcefield (unless you encounter a bug where all ships can pass through the Forcefield)"
+  - text: "Tips: Caldari Bunker drops two Cargo Containers: one has ammo and the other the Correspondence Log KL-513"
+  - text: "Tips: You will lose 2.4% Caldari State Faction Standing when you destroy the Caldari Bunker (Note: Also lost standing for destroying the forcefield AND NOT the bunker)"
+pockets:
+  - name: Warp-in
+    notes:
+      - text: "Agent Conversation about Eroma Eralen: There's Kori's agent, Eroma Eralen. Take him out and grab his Caldari Navy Overlay Transponder. With that item in tow, you'll be able to get past the Caldari guards in the next part of this deadspace pocket. They will think you're Eroma. Be careful, though: Eroma is a wild card, and there's no telling what he'll do."
+      - text: "Eroma Eralen: Good to see you again, capsuleer. I knew we'd meet again. You caught me without my smoke and mirrors. Guess I'll have to take you out the old-fashioned way."
+      - text: "Eroma Eralen: I've been bested. You'll make a fine Gurista one day, capsuleer. I think it's about time I retire from flying. Thank you for giving me a glorious end to my career…"
+    waves:
+      - id: entry-defender-40-kn-away
+        trigger:
+          on: other
+          text: Entry defender (40 kn away)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Eroma Eralen
+            drop: Caldari Navy Overlay Transponder
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+            note: Requires Caldari Navy Overlay Transponder
+  - name: Room 1
+    notes:
+      - text: "Hold for Security: Please hold while we scan for your identification. Vessel registered as Eroma Eralen AKA Smoke and Mirrors AKA Rabbit Foot AKA Sergeant Paken Isurada, 3rd Battalion, 8th Regiment, Caldari Navy You are free to enter"
+    waves:
+      - id: entry-defender
+        trigger:
+          on: other
+          text: Entry defender
+          confidence: inferred
+        spawns:
+          - count: "31"
+            class: Friendly Frigate
+            names:
+              - Frigate
+            note: Friendly due to Caldari Navy Overlay Transponder
+          - count: "4"
+            class: Friendly Cruiser
+            names:
+              - Cruiser
+            note: Friendly due to Caldari Navy Overlay Transponder
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+  - name: Room 2
+    notes:
+      - text: "NOTE: Alpha and Bravo Squadron waves are present on warp-in, the other bunker reinforcement waves are triggered based on proximity to the Forcefield. They spawn very quickly one after the other and you can easily trigger all of the reinforcement waves at once if you are not careful, especially if you are trying to blitz. The combined DPS will easily shred your tank, though the damage generally falls off past 20 km and you can use the forcefield to block their approach with good piloting."
+      - text: "Message from Cilis (entering pocket): I'm surprised that worked. The Navy must be getting dumber and more gullible each year. Seems that way, at least, since the start of Heth's rise. Good for business, bad for them. We need that evidence of Kori's treason. It must be in that building behind the forcefield. Approach the bunker carefully and watch out for any Navy ships. Take out the forcefield, grab the evidence, and get out of there as fast as possible."
+      - text: "Kori Latamaki agent message (on triggering reinforcements): I got a signal from Eroma's ship that he went down, but I couldn't reach my Navy friends in time. Looks like they're on their way, though. I should have figured you'd try to meddle in this, Cilis. I've worked on establishing contacts within the Navy for years. How do you think I knew about their bases, their projects, and their locations? I'm not going to let you ruin this deal like you ruined my career in the Guristas. No matter, though. I'll have them take out your capsuleer friend first. Afterwards, I'll set their sights on you. This isn't over, Cilis. Not by a long shot."
+      - text: "Mission debriefing: We're a big, happy family, aren't we? You thought a pirate's life was all fun and plunder, profit and murder, the thrill of being an outlaw. We have our own problems, our internal strife. Sometimes, I don't know why I chose this lifestyle. But I'm a capsuleer, and life has a different quality to it. You probably know what I'm talking about. All this backstabbing and in-fighting, these land-grabs and territorial bickering. What does this matter for a demigod? For us, it's all a matter of attrition: The last clone standing wins all the worthless, empty space in the universe. Oh well. It's fun while it lasts, right? Kori was right: This isn't over between us. It never will be. But I'll win out in the end. He'll die, I'll die, Irichi'll die. But then I'll hop into my next clone, and I'll win. That makes it worth it, right? This feud is between us Guristas; you have your own battles to fight. So fly well, egger. Maybe we'll work together again someday."
+    waves:
+      - id: caldari-bunker-reinforcement-waves
+        trigger:
+          on: other
+          text: Caldari Bunker reinforcement waves
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Alpha Squadron
+            group: Alpha
+          - count: "5"
+            class: Frigate
+            names:
+              - Bravo Squadron
+            group: Bravo
+          - count: "5"
+            class: Frigate
+            names:
+              - Charlie Squadron
+            group: Charlie
+          - count: "5"
+            class: Frigate
+            names:
+              - Delta Squadron
+            group: Delta
+          - count: "5"
+            class: Frigate
+            names:
+              - Echo Squadron
+            group: Echo
+          - count: "5"
+            class: Frigate
+            names:
+              - Foxtrot Squadron
+            group: Foxtrot
+          - count: "4"
+            class: Frigate
+            names:
+              - Golf Squadron
+            group: Golf
+          - count: "4"
+            class: Frigate
+            names:
+              - Hotel Squadron
+            group: Hotel
+          - count: "4"
+            class: Frigate
+            names:
+              - India Squadron
+            group: India
+          - count: "4"
+            class: Frigate
+            names:
+              - Juliet Squadron
+            group: Juliet
+          - count: "4"
+            class: Frigate
+            names:
+              - Kilo Squadron
+            group: Kilo
+          - count: "4"
+            class: Frigate
+            names:
+              - Lima Squadron
+            group: Lima
+          - count: "3"
+            class: Destroyer
+            names:
+              - Mike Squadron
+            group: Mike
+          - count: "3"
+            class: Destroyer
+            names:
+              - November Squadron
+            group: November
+          - count: "3"
+            class: Destroyer
+            names:
+              - Oscar Squadron
+            group: Oscar
+          - count: "1"
+            class: Cruiser
+            names:
+              - Quebec Squadron
+            group: Quebec
+          - count: "1"
+            class: Cruiser
+            names:
+              - Romeo Squadron
+            group: Romeo
+          - count: "1"
+            class: Cruiser
+            names:
+              - Sierra Squadron
+            group: Sierra
+          - count: "1"
+            class: Cruiser
+            names:
+              - Tango Squadron
+            group: Tango
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Forcefield
+            note: Regenerates 150HP/s
+          - count: "1"
+            class: Structure
+            names:
+              - Caldari Bunker
+            drop: Correspondence Log KL-513 and ammo in two separate Cargo Containers

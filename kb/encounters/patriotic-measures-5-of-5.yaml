@@ -1,0 +1,81 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: patriotic-measures-5-of-5
+kind: mission
+name: Patriotic Measures (5 of 5)
+level: 1
+enemyFaction: Caldari State
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Patriotic Measures (5 of 5)
+    url: https://wiki.eveuniversity.org/Patriotic_Measures_(5_of_5)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "200651"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the prototype macroshield generator, plus any Caldari ships.
+pockets:
+  - name: Warp-In
+    notes:
+      - text: Accel gate leads to first pocket
+    waves:
+      - id: defenders
+        trigger:
+          on: warpIn
+          text: Defenders
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Showato
+              - Bo-Hi
+          - count: "2"
+            class: Structure
+            names:
+              - Prototype Macroshield Generator
+            drop: Scrap Metal & Commodities
+            note: looks like it has OBSCENE amount of HP, but it destroys in about 10 shots.
+  - name: Pocket
+    waves:
+      - id: structure
+        trigger:
+          on: warpIn
+          text: Structure
+        spawns:
+          - count: "3"
+            class: Structure
+            names:
+              - Starbase Ion Field Protection Battery
+            drop: Missiles
+      - id: defenders
+        trigger:
+          on: warpIn
+          text: Defenders
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - State Nagasa
+              - State Shinai
+            group: Group 1
+          - count: "2"
+            class: Frigate
+            names:
+              - State Nagasa
+              - State Shinai
+            group: Group 2
+          - count: "2"
+            class: Frigate
+            names:
+              - State Nagasa
+              - State Shinai
+            group: Group 3
+          - count: "1"
+            class: Frigate
+            names:
+              - State Shinai
+            group: Reinforcements

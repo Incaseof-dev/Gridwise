@@ -1,0 +1,155 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: an-advantageous-catastrophe
+kind: mission
+name: An Advantageous Catastrophe
+level: 4
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – An Advantageous Catastrophe
+    url: https://wiki.eveuniversity.org/An_Advantageous_Catastrophe
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223362"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal:
+    - thermal
+    - kinetic
+  resist:
+    - kinetic
+    - thermal
+ewar:
+  - kind: sensorDamp
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Yes (Elite Federation Manica/Libertus)"
+  - text: "Suggested ships: Battleship/Command Ship/Strategic Cruiser"
+  - text: No aggro on warp-in. The mission objective is marked as complete once the last battleship in Wave 3 has been destroyed.
+  - text: Kill all Destroyers upon warp-in (spawns wave 1).
+  - text: Kill battleships until Wave 3 spawns.
+  - text: Kill all battleships from Wave 3.
+  - text: Federation Navy Fleet Captain Insignia I
+  - text: Federation Navy Fleet Colonel Insignia I
+  - text: Federation Navy Fleet Colonel Insignia II
+  - text: Federation Navy Fleet Major Insignia I
+  - text: Federation Navy Fleet Midshipman Insignia I
+  - text: Federation Navy Fleet Sergeant Insignia I
+  - text: Federation Navy Fleet Sergeant Insignia II
+  - text: Federation Navy Fleet Sergeant Insignia III
+lootNotes:
+  - text: This mission can potentially drop large numbers of officer tags along with various other loot, and the numerous enemy ships can also provide a large amount of salvage.
+  - text: "value of tags: 20-23 Mio,"
+  - text: "value of salvage: ~4 Mio,"
+  - text: "value of other loot: ~10 Mio"
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: Killing a random battleship will trigger Wave 2, and killing the last battleship in Wave 1 will trigger Wave 3.
+      - text: The Federation Hexeris orbits at 50-55km, and has an optimal range of 45km.
+      - text: The Elite Federation Mataras and Elite Federation Manicas should be dealt with first, as their sensor dampening and web/scram capabilities can greatly reduce both a ship's combat effectiveness and ability to escape.
+    waves:
+      - id: initial-group-40km
+        trigger:
+          on: warpIn
+          text: Initial Group, 40km
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Federation Libertus
+              - Federation Manica
+          - count: "3"
+            class: Destroyer
+            names:
+              - Federation Arcus
+              - Federation Pelekus
+            triggers: Last destroyed triggers Wave 1
+      - id: reinforcements
+        trigger:
+          on: other
+          text: Reinforcements
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Elite Federation Manica
+              - Elite Federation Libertus
+            group: Wave 1, 40-50km
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "8"
+            class: Destroyer
+            names:
+              - Federation Pelekus
+              - Federation Arcus
+            group: Wave 1, 40-50km
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Federation Praktor Auxilia
+            group: Wave 1, 40-50km
+          - count: "5"
+            class: Battleship
+            names:
+              - Federation Covinus
+              - Federation Navis Longa
+              - Federation Praeses
+              - Federation Hexeris
+            group: Wave 1, 40-50km
+          - count: "1"
+            class: Elite Battleship
+            names:
+              - Federation Praktor Navis Praetoria
+            group: Wave 1, 40-50km
+            ewar:
+              - kind: sensorDamp
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Elite Federation Matara
+            group: Wave 2, 20km
+            ewar:
+              - kind: sensorDamp
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Federation Praktor Arx
+              - Federation Praktor Bearcus
+              - Federation Praktor Quadrier
+            group: Wave 2, 20km
+          - count: "3"
+            class: Battleship
+            names:
+              - Federation Praktor Phanix
+              - Federation Praktor Magister
+            group: Wave 2, 20km
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Elite Federation Manica
+              - Elite Federation Libertus
+            group: Wave 3, 60km
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Elite Federation Mentes
+              - Elite Federation Quadrieis
+            group: Wave 3, 60km
+          - count: "3"
+            class: Battleship
+            names:
+              - Federation Praktor Magister
+              - Federation Praktor Phanix
+            group: Wave 3, 60km
+            note: Last killed triggers mission complete

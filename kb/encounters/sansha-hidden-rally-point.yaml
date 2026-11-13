@@ -1,0 +1,160 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: sansha-hidden-rally-point
+kind: anomaly
+name: Sansha Hidden Rally Point
+dedRating: null
+anomalyClass: 6
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Sansha Hidden Rally Point
+    url: https://wiki.eveuniversity.org/Sansha_Hidden_Rally_Point
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225138"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Ungated pocket with multiple waves of rats.
+  - text: The site can have quite high incoming damage. Players running this site are advised to bring ships with strong tanks. T3 Cruisers perform very well.
+  - text: "Escalation: Sansha Hidden Rally Point can escalate to True Sansha Fleet Staging Point."
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: Total bounties amount to around 15-20 million ISK.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "5"
+            class: Destroyer
+            names:
+              - Centior Abomination
+              - Centior Devourer
+              - Centior Horror
+              - Centior Monster
+          - count: "6"
+            class: Cruiser
+            names:
+              - Centum Torturer
+              - Centum Mutilator
+            triggers: Last ship destroyed triggers Wave 2
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Centatis Wraith
+              - Centatis Devil
+              - Centatis Phantasm
+              - Centatis Daemon
+          - count: "4"
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Dread Lord
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Minion
+              - Centii Loyal Servant
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "6"
+            class: Cruiser
+            names:
+              - Centum Fiend
+              - Centum Hellhound
+          - count: "7"
+            class: Battlecruiser
+            names:
+              - Centatis Devil
+              - Centatis Behemoth
+              - Centatis Daemon
+            triggers: Last ship destroyed triggers wave 3
+          - count: "4"
+            class: Battleship
+            names:
+              - Centus Lord
+              - Centus Slave Lord
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Cruiser
+            names:
+              - Centum Fiend
+              - Centum Hellhound
+          - count: "7"
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centatis Daemon
+            triggers: Last ship destroyed triggers wave 4
+      - id: wave-4
+        trigger:
+          on: other
+          text: Wave 4
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Centii Loyal Savage
+              - Centii Loyal Slavehunter
+            ewar:
+              - kind: trackingDisruption
+          - count: "5"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Torturer
+              - Centum Loyal Mutilator
+            triggers: Last ship destroyed triggers wave 5
+          - count: 6-7
+            class: Battlecruiser
+            names:
+              - Centatis Devil
+              - Centatis Behemoth
+              - Centatis Daemon
+          - count: 2-3
+            class: Battleship
+            names:
+              - Centus Beast Lord
+              - Centus Plague Lord
+            ewar:
+              - kind: trackingDisruption
+      - id: wave-5
+        trigger:
+          on: other
+          text: Wave 5
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Fiend
+              - Centum Loyal Hellhound
+          - count: "8"
+            class: Battleship
+            names:
+              - Centus Dark Lord
+              - Centus Dread Lord
+              - Centus Tyrant
+              - Centus Overlord
+    onWarpIn: Sansha's Nation was founded well over a century ago. Sansha was a Caldari tycoon who carved out a sizable piece of space for himself; there, he set out to create an utopian state. His vision and charm attracted thousands of people, and for some time the Nation flourished. But Sansha became ever more warped as his success increased. He started experiments, combining capsule technology with the human mind, creating zombie-like creatures having the cold, calculating minds of computers, yet retaining the ingenuity of humans. When this terrifying truth became public knowledge, Sansha was condemned, and special forces from each of the great empires joined forces to bring him down. His "true Sansha" servitors were decimated, scattered to the furthest reaches of known space. Remnants still remain far in the outer regions, but the once-glorious Nation has been reduced to small gangs of pirates and pillagers.
+sde:
+  dungeonIds:
+    - 3514

@@ -1,0 +1,129 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: blood-yard
+kind: anomaly
+name: Blood Yard
+dedRating: null
+anomalyClass: 5
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Blood Yard
+    url: https://wiki.eveuniversity.org/Blood_Yard
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225179"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: The site is an open Deadspace pocket, one may warp to preferred distance. Warping to beacon for close range would require a very good tank to handle the swarm’s incoming damage. Using a propulsion module or a Micro Jump Drive is recommended. Reinforcements spawns are triggered by the last ship killed.
+  - text: "Escalation: This site can escalate to Crimson Hand Supply Depot."
+lootNotes:
+  - text: The site pays one million isk in bounties and the rare faction spawn can drop faction modules, implants or blueprints.
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-defenders-dark-shipyard
+        trigger:
+          on: warpIn
+          text: Initial Defenders (Dark Shipyard)
+        spawns:
+          - count: 2-3
+            class: Elite Cruiser
+            names:
+              - Corpum Arch Sage
+          - count: "2"
+            class: Sentry
+            names:
+              - Blood Heavy Missile Battery
+      - id: first-reinforcement-spawn-40km-ruined-drill
+        trigger:
+          on: other
+          text: First Reinforcement Spawn (~40km, Ruined Drill)
+          confidence: inferred
+        spawns:
+          - count: 2-4
+            class: Elite Cruiser
+            names:
+              - Corpum Arch Templar
+              - Corpum Revenant
+      - id: second-reinforcement-spawn-dark-shipyard
+        trigger:
+          on: other
+          text: Second Reinforcement Spawn (Dark Shipyard)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corpior Devoter
+              - Corpior Visionary
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Corpum Arch Priest
+              - Corpum Arch Sage
+      - id: third-reinforcement-spawn-50km-scanner-sentry-ii
+        trigger:
+          on: other
+          text: Third Reinforcement Spawn (~50km, Scanner Sentry II)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Corpum Arch Templar
+              - Corpum Revenant
+          - count: "1"
+            class: Battleship
+            names:
+              - Corpus Archon
+      - id: fourth-reinforcement-spawn-45km-scanner-sentry-iii
+        trigger:
+          on: other
+          text: Fourth Reinforcement Spawn (~45km, Scanner Sentry III)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Corpum Arch
+              - Shadow Priest
+              - Corpum Sage
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corpatis Exorcist
+              - Corpatis Phantom
+      - id: fifth-reinforcement-spawn-45km-scanner-sentry-iii
+        trigger:
+          on: other
+          text: Fifth Reinforcement Spawn (~45km, Scanner Sentry III)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigates
+            names:
+              - Elder Corpii Engraver
+              - Elder Corpii Raider
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Corpum Arch Templar
+      - id: rare-final-spawn
+        trigger:
+          on: other
+          text: Rare final spawn
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Commander Cruiser
+            names:
+              - Dark Blood Templar
+              - Dark Blood Reaver
+            drop: Faction modules, possible implants
+sde:
+  dungeonIds:
+    - 2277

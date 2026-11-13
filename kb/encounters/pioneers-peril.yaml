@@ -1,0 +1,325 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: pioneers-peril
+kind: escalation
+name: Pioneers Peril
+dedRating: null
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Pioneers Peril
+    url: https://wiki.eveuniversity.org/Pioneers_Peril
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "220831"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Escalation start: Going through the logs from one of the command ships you blasted, you come across a recent memo containing a draft for a plan where forces from this Military Complex and another similar to this one were to gang up and raid a space trucker station somewhere in the region. Where this space trucker station is, is not included in the logs, but the location of the rally point is there. It is supposed to be by a small asteroid belt, not too far away."
+loot:
+  - item: +Overseer and other valuable loot
+  - item: Domination battleship modules
+    from: Domination battleships
+    note: est. Varies (wiki)
+  - item: Gist A-Type Battleship modules
+    from: Jorun 'Red Legs' Greaves
+  - item: Machariel BPC
+    from: Jorun 'Red Legs' Greaves
+lootNotes:
+  - text: You will possibly get Domination faction modules, Gist A-Type modules or a rare Machariel BPC.
+npcs:
+  Space Trucker Guardian:
+    sdeTypes:
+      - Mercenary Overlord
+    class: Battleship
+pockets:
+  - name: First Location
+    notes:
+      - text: You land at an acceleration gate.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Destroyer
+            names:
+              - Gistior Seizer
+              - Gistior Trasher
+          - count: 3-4
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Seraphim
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - Domination Nephilim
+            triggers: Escalation trigger
+            drop: may contain Domination faction modules or an implant
+  - name: First Pocket
+    notes:
+      - text: Single enemy 140 km away in this pocket. Simple warp-in may trigger escalation.
+      - text: "Escalation trigger: From the wreckage of this ship, you get info on where it is from, it is another Angel station. Well, more an outpost than a station perhaps, but it is a pure military outfit, not a regular colony."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Arch Angel Hunter
+              - Arch Angel Impaler
+            triggers: May trigger escalation, not confirmed
+  - name: Second Location
+    notes:
+      - text: No acceleration gate. Enemies are approx. 50 km away, though the Stasis Towers are 140 km off.
+      - text: Destroy Angel Outpost station if no escalation is triggered from the Domination commander.
+      - text: "Escalation dead-end: Again you let your scanners comb the remains of the station and the ships, looking for clues on this alleged raid, but alas ... nothing, not a word anywhere."
+      - text: "Escalation trigger: Again you let your scanners comb the remains of the station and the ships, looking for clues on this alleged raid, and before long you are holding a log listing the second rally spot and as far as you can see, the raiding parties have already departed from here and two other stations and are supposed to convene within the hour. If one of the raiding parties was supposed to come from the Angel station you destroyed originally, you have already managed to diminish their forces somewhat."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Angel Stasis Tower
+            ewar:
+              - kind: web
+          - count: 3-4
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Crusher
+              - Arch Gistum Smasher
+            ewar:
+              - kind: targetPaint
+          - count: 3-4
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Seraphim
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - Domination Cherubim
+              - Domination Malakim
+            triggers: Escalation trigger
+            drop: may contain Domination faction modules or an implant
+      - id: timed-wave-1-minute-after-warp-in
+        trigger:
+          on: other
+          text: Timed wave (1 minute after warp-in)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+              - Gistatis Tribunus
+          - count: "3"
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Seraphim
+      - id: timed-wave-2-minutes-after-warp-in
+        trigger:
+          on: other
+          text: Timed wave (2 minutes after warp-in)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Gistatis Legionnaire
+              - Gistatis Primus
+          - count: "3"
+            class: Battleship
+            names:
+              - Gist Nephilim
+              - Gist Saint
+            ewar:
+              - kind: targetPaint
+      - id: reinforcements-triggered-by-destroying-all-ships-from-initial-defenders
+        trigger:
+          on: warpIn
+          text: Reinforcements (triggered by destroying all ships from initial defenders)
+        spawns:
+          - count: "5"
+            class: Battleship
+            names:
+              - Gist Nephilim
+              - Gist Saint
+            ewar:
+              - kind: targetPaint
+      - id: notable-structures
+        trigger:
+          on: warpIn
+          text: Notable structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Angel Outpost Station
+            triggers: Alternate escalation trigger
+  - name: Third Location
+    notes:
+      - text: You land at an acceleration gate.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Gistatis Legionnaire
+              - Gistatis Primus
+          - count: 3-4
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Seraphim
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - Domination Throne
+            triggers: Escalation trigger
+            drop: may drop Domination faction modules or an implant
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Newly Constructed Acceleration Gate
+            note: Not locked
+  - name: First Pocket
+    notes:
+      - text: "Escalation dead-end: A fixed guidance beacon is floating here all alone. You quickly scan it but it appears the guidance system has been destroyed."
+      - text: "Escalation trigger: A fixed guidance beacon is floating here all alone. You quickly scan it and discover the guidance system points to a location not too far away. Perhaps thats is the space trucker station. In any case, it's the only clue you have to follow; if the pirates have ever been here, they have gone already"
+    waves:
+      - id: 80-km-away
+        trigger:
+          on: other
+          text: 80 km away
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Beacon
+            names:
+              - Guidance Beacon
+            triggers: Alternate escalation trigger
+  - name: Fourth Location
+    notes:
+      - text: Ungated non-deadspace pocket. No rats initially present.
+      - text: Jorun 'Red Legs' Greaves deals significantly high Explosive and Kinetic damage at a fairly short range. Try to outpace her if you can. She has fairly high resists, the weakest being 66% Explosive resists, plus a strong shield tank. She has an MWD and will try to chase you at around 1700 m/s.
+      - text: Attack the Space Truckers Pit Stop to spawn an optional defensive wave. This is only worth doing for extra bounties/salvage.
+    waves:
+      - id: timed-wave-after-1-minute
+        trigger:
+          on: other
+          text: Timed wave (after ~1 minute)
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Arch Gistii Nomad
+          - count: "4"
+            class: Destroyer
+            names:
+              - Gistior Defiler
+              - Gistior Seizer
+          - count: 5-7
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Seraphim
+      - id: timed-wave-2
+        trigger:
+          on: other
+          text: Timed wave 2
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Breaker
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Gistatis Primus
+          - count: 4-7
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Seraphim
+      - id: timed-wave-3-overseer
+        trigger:
+          on: other
+          text: Timed wave 3 (overseer)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Hijacker
+              - Arch Gistii Rogue
+              - Arch Gistii Thug
+              - Arch Gistii Outlaw
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "7"
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Seraphim
+          - count: "1"
+            class: Overseer Battleship
+            names:
+              - Jorun 'Red Legs' Greaves
+            drop: May contain Domination or Gist A-Type modules or possibly a Machariel BPC; wreck may produce T2 Salvage
+            note: Immune to EWAR
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Space Truckers Pit Stop
+            triggers: Attacking triggers trucker reinforcement wave
+      - id: trucker-reinforcement-wave
+        trigger:
+          on: other
+          text: Trucker Reinforcement wave
+          confidence: inferred
+        spawns:
+          - count: "?"
+            class: Elite Frigate
+            names:
+              - Mercenary Wingman
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "10"
+            class: Battleship
+            names:
+              - Space Trucker Guardian
+sde:
+  dungeonIds:
+    - 1914

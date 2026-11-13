@@ -1,0 +1,145 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: serpentis-hideout
+kind: complex
+name: Serpentis Hideout
+dedRating: null
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Serpentis Hideout
+    url: https://wiki.eveuniversity.org/Serpentis_Hideout
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "219345"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Destroyer"
+notes:
+  - text: Serpentis Hideout is an Unrated Deadspace Complex that is found in High Security and Low Security Gallente Space, via Probe scanning. The site consists of an entrance pocket, and two main pockets, separated by acceleration gates.
+  - text: If running the site in a T1 frigate, or if using light drones, take care against the Elite Frigates (Coreli Guardian Agent/Defender/Guard/Protector) as they will do higher damage than the regular frigate enemies, and will target light drones.
+  - text: When you warp to the site you will land on an acceleration gate. There are no enemies on it, and nothing around other than the acceleration gate that leads to the first main room of the site.
+  - text: "Escalation: This site can escalate to Mindflood. Escalation chance ~25% (3 out of 13)."
+  - text: 'Escalation: class="wikitable complex collapsible"'
+  - text: "Escalation: + Commander and other valuable loot"
+  - text: "Escalation: Shadow Hybrid Ammo S x 1000"
+  - text: "Escalation: 5k - 100k"
+  - text: "Escalation: Shadow Serpentis Copper Tag"
+pockets:
+  - name: Main Room 1
+    notes:
+      - text: This room contains just a couple of frigates when you warp in. Destroying them will spawn additional waves of frigates.
+      - text: class="wikitable complex collapsible"
+      - text: 1 x Acceleration GateDestroy all enemy ships in this room to unlock the acceleration gate.
+      - text: 1 x Abandoned Ship YardThis structure can be destroyed.
+      - text: 4 x Serpentis LookoutThis structure can be destroyed.
+      - text: These waves spawn when when the ships in the initial defender group are destroyed.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Coreli Agent
+              - Coreli Spy
+            triggers: Destroying either of these ships will spawn another wave.
+      - id: spawn-wave-1-2
+        trigger:
+          on: other
+          text: Spawn Wave 1 & 2
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Coreli Initiate
+              - Coreli Scout
+            group: Spawn Wave 1
+          - count: 1 - 2
+            class: Frigate
+            names:
+              - Coreli Initiate
+              - Coreli Scout
+            group: Spawn Wave 2
+  - name: Main Room 2
+    notes:
+      - text: Upon warp in this room contains a couple of frigates and a structure called Serpentis Armory. After an amount of time more enemies will spawn. Additionally, damaging the armory will cause a wave of enemies to spawn. Destroying the initial defenders has a chance to spawn a Shadow Serpentis faction frigate. Shadow Serpentis frigate rarely drops valuable Snake implant.
+      - text: class="wikitable complex collapsible"
+      - text: 1 x Serpentis ArmoryDestroying this structure may give an escalation to the Mindflood expedition.This structure can be destroyed.
+      - text: 2 x Serpentis BunkerThis structure can be destroyed.
+      - text: 1 x Abandoned Ship YardThis structure can be destroyed.
+      - text: The armory wave spawns shortly after the Serpentis Armory has been damaged.
+      - text: This Shadow Serpentis Faction Frigate has a chance to spawn when the Initial Defender wave is destroyed.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: 1 - 2
+            class: Frigate
+            names:
+              - Coreli Patroller
+            triggers: Destroying both of these frigates may cause a Shadow Serpentis Frigate to spawn.
+      - id: timed-wave-1-2
+        trigger:
+          on: other
+          text: Timed Wave 1 & 2
+          confidence: inferred
+        spawns:
+          - count: 2 - 3
+            class: Frigate
+            names:
+              - Coreli Initiate
+              - Coreli Scout
+            group: Timed Wave 1
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Agent
+              - Coreli Guardian Defender
+              - Coreli Guardian Guard
+              - Coreli Guardian Protector
+            group: Timed Wave 2
+            ewar:
+              - kind: sensorDamp
+          - count: "2"
+            class: Cruiser
+            names:
+              - Corelum Chief Scout
+              - Corelum Chief Spy
+            group: Timed Wave 2
+      - id: armory-wave
+        trigger:
+          on: other
+          text: Armory wave
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Coreli Agent
+              - Coreli Spy
+      - id: faction-spawn
+        trigger:
+          on: other
+          text: Faction Spawn
+          confidence: inferred
+        spawns:
+          - count: 0 - 1
+            class: Commander Frigate
+            names:
+              - Shadow Serpentis Initiate
+              - Shadow Serpentis Scout
+            triggers: Destroying this ship has a chance to give an escalation to the Mindflood expedition.
+            drop: Drops faction loot.
+    onWarpIn: Heuristic analysis of this location indicates that destroying the Serpentis Armory would greatly improve your odds of uncovering further illicit activity.
+sde:
+  dungeonIds:
+    - 1223

@@ -1,0 +1,103 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: intaki-chase
+kind: mission
+name: Intaki Chase
+level: 4
+enemyFaction: Syndicate & Minmatar Republic
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Intaki Chase
+    url: https://wiki.eveuniversity.org/Intaki_Chase
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "211055"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Investigate the lead on the Pator 6. Destroy everything in sight.
+notes:
+  - text: "Suggested ships: Long range battleship"
+  - text: 3% The Syndicate Faction Standing loss
+  - text: Ungated semi-deadspace pocket three jumps away in Pemene. Destroy everything in sight.
+  - text: Complete the Mission remotely.
+  - text: "Blitz: kill tower, then only the Syndicate Veteran Battleships. Be prepared to tank well and kill the neuting Cruisers if needed."
+  - text: "Tips: Intaki Settlement Control Tower has about 45000 hitpoints"
+  - text: "Tips: You will lose 3% The Syndicate Faction Standing for destroying the Intaki Settlement Control Tower"
+  - text: "Tips: All enemies spawn at the location of the Control Tower"
+  - text: "Tips: Syndicate Veteran Battleship deals 300 DPS 20 km away and approach at 1000 m/s"
+  - text: "Tips: Syndicate Veteran Battleships attack and destroy Drones very quickly"
+  - text: "Tips: Keep an eye on your Drones; at very high speeds, they will give up attacking the target"
+pockets:
+  - name: Warp-in
+    notes:
+      - text: "Mercy: Please, what more do you want from us? The Black Eagles have harassed us enough since we've moved in here. We're not criminals. We're just poor folk struggling to survive. Even though we're Intaki, we are still Federation citizens. Why would they insist on treating us like we're not? Mercy, please. We beg for mercy."
+      - text: "Warning: If you want the kid to live, you will not pursue us any further. Tell the Eagles to call off their guards, or they will pay dearly for interfering with our business. You have been warned."
+    waves:
+      - id: structures-65-km
+        trigger:
+          on: other
+          text: Structures (65 km)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Intaki Settlement Control Tower
+            triggers: Spawn Group 1
+      - id: group-1
+        trigger:
+          on: other
+          text: Group 1
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Syndicate Veteran Frigate
+          - count: "3"
+            class: Cruiser
+            names:
+              - Syndicate Cruiser
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Syndicate Veteran Cruiser
+            ewar:
+              - kind: neut
+          - count: "3"
+            class: Battleship
+            names:
+              - Pator 6 Delegate
+          - count: "2"
+            class: Battleship
+            names:
+              - Syndicate Battleship
+          - count: "1"
+            class: Elite Battleship
+            names:
+              - Syndicate Veteran Battleship
+            triggers: Triggers next wave
+      - id: group-2
+        trigger:
+          on: other
+          text: Group 2
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Battleship
+            names:
+              - Syndicate Veteran Battleship
+            triggers: Triggers next wave
+      - id: group-3
+        trigger:
+          on: other
+          text: Group 3
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Battleship
+            names:
+              - Syndicate Veteran Battleship

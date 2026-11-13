@@ -1,0 +1,193 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: sansha-annex
+kind: complex
+name: Sansha Annex
+dedRating: null
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Sansha Annex
+    url: https://wiki.eveuniversity.org/Sansha_Annex
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231538"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Battleship"
+notes:
+  - text: The site is very similar to Sansha Vigil.
+  - text: Upon warping to the site you will land at an acceleration gate.
+  - text: "Escalation: This site can escalate to Sansha Powergrid."
+  - text: "Escalation: Escalation message: This hidden outpost seems to have played a vital role in Sansha expansion in the area. The fact that this operation is now history surely slows down whatever plans for regional domination they may have had. Among one of the wreckages you locate co-ordinates for an energy harvesting facility nearby. Whether you explore it or not is your decision."
+loot:
+  - item: +Commander and other valuable loot
+  - item: True Sansha faction module
+    note: est. 1-100M ISK (wiki)
+  - item: Mid-Grade Amulet Alpha/Beta
+    note: est. 10M - 25M ISK (wiki)
+  - item: Phantasm blueprint
+npcs:
+  Sansha Sentry:
+    sdeTypes:
+      - Tower Sentry Sansha III
+    class: Sentry
+pockets:
+  - name: First Pocket
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Sansha Security Tower
+            triggers: Triggers tower waves when attacked. Unlocks acceleration gate
+          - count: "12"
+            class: Sentry
+            names:
+              - Sansha Heavy Missile Battery
+      - id: tower-wave-1-when-security-tower-is-attacked
+        trigger:
+          on: other
+          text: Tower wave 1 (when Security Tower is attacked)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centatis Devil
+          - count: "2"
+            class: Battleship
+            names:
+              - Centus Savage Lord
+      - id: tower-wave-2-at-0-shield
+        trigger:
+          on: other
+          text: Tower wave 2 (at 0% shield)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Destroyer
+            names:
+              - Centior Abomination
+              - Centior Monster
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Fiend
+              - Centum Loyal Mutilator
+          - count: "7"
+            class: Battleship
+            names:
+              - Centus Mutant Lord
+              - Centus Savage Lord
+    onWarpIn: Previous explorers have commented that one of the gates requires a passkey. Alternatively, it can be bypassed by interacting with the Security Tower.
+  - name: Second Pocket
+    notes:
+      - text: Kill tackling elite frigates (and the battlecruisers and battleships, if you can't tank the incoming damage) before attempting to shoot the sentries to avoid accidentally spawning the additional waves too early; the combined damage is extreme.
+      - text: "After destroying one of the sentries: More Centus ships have appeared as the sentry gun was destroyed!"
+      - text: "After destroying the Stasis Tower: Excavation Overseer: You dare destroy my prized Stasis Tower!? I can't believe it. Do you know how long it took my brainless minions to build that thing? And I just had it polished! You'll pay for that."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "4"
+            class: Sentry
+            names:
+              - Sansha Sentry
+            triggers: Triggers sentry wave
+          - count: "1"
+            class: Sentry
+            names:
+              - Sansha Stasis Tower
+            ewar:
+              - kind: web
+            triggers: Destroying triggers commander wave
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Ravener
+              - Centii Loyal Scavenger
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Fiend
+              - Centum Loyal Hellhound
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Centatis Devil
+              - Centatis Wraith
+              - Centatis Daemon
+          - count: "7"
+            class: Battleship
+            names:
+              - Centus Savage
+              - Centus Mutant Lord
+      - id: sentry-wave
+        trigger:
+          on: other
+          text: Sentry wave
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Centior Horror
+              - Centior Monster
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Hellhound
+              - Centum Loyal Torturer
+            note: type list incomplete on the source page
+          - count: "6"
+            class: Battleship
+            names:
+              - Centus Plague
+              - Centus Mutant Lord
+            ewar:
+              - kind: trackingDisruption
+      - id: commander-wave
+        trigger:
+          on: other
+          text: Commander wave
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Drone
+            names:
+              - Spider Drone II
+            ewar:
+              - kind: web
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Centatis Daemon
+              - Centatis Specter
+          - count: "4"
+            class: Battleship
+            names:
+              - Centus Lord
+              - Centus Slave Lord
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Centus Excavation Supervisor
+            triggers: Escalation trigger
+            drop: True Sansha faction modules/implants
+sde:
+  dungeonIds:
+    - 1634

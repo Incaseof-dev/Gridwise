@@ -1,0 +1,69 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-uprising-level-2-1-of-4
+kind: mission
+name: The Uprising (1 of 4)
+level: 2
+enemyFaction: Mordu's Legion Command
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Uprising (Level 2) (1 of 4)
+    url: https://wiki.eveuniversity.org/The_Uprising_(Level_2)_(1_of_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223191"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Suggested ships: Cruiser"
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: "Next: The Uprising (Level 2) (2 of 4)"
+    waves:
+      - id: group-1-10-25km-auto-aggro
+        trigger:
+          on: other
+          text: Group 1, 10-25km (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Mordus Missile Battery
+          - count: "9"
+            class: Frigate
+            names:
+              - Mordus Gladius
+              - Mordus Katana
+              - Mordus Sabre
+      - id: group-2-45km
+        trigger:
+          on: other
+          text: Group 2, 45km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Mordus Gladius
+          - count: "1"
+            class: Cruiser
+            names:
+              - Mordus Bobcat
+      - id: group-3-65km
+        trigger:
+          on: other
+          text: Group 3, 65km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Mordus Gladius
+          - count: "1"
+            class: Cruiser
+            names:
+              - Mordus Bobcat

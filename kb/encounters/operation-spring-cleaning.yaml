@@ -1,0 +1,306 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: operation-spring-cleaning
+kind: escalation
+name: Operation Spring Cleaning
+dedRating: null
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Operation Spring Cleaning
+    url: https://wiki.eveuniversity.org/Operation_Spring_Cleaning
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "157428"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: This escalation consists of four parts.
+  - text: 'Escalation start: In the ruins of this Angel structure you come across some logs containing a report from a ship identified as "Angel of Death". The ship is reporting the progress of operation "Spring Cleaning", where a squadron of Angels roam around the region and wipe out anyone the they view as a threat to their domination in the area. This gang has obviously been busy the last days, the log contains long lists of "confiscated" materials, destroyed structures and recycled biomass, the last item presumably being a measure of how many people they have murdered in the process. The list is a bit vague when it comes to identifying exactly who is being killed, which target is yet to be taken out and where these places are, but you try to extract the specifics and feed it into your databanks, which then relay the info to various search engines and registers in the region in the hope of being able to pinpoint some of the locations. Soon you get feedback indicating where to find one of these places; a small research station where scientists from the Caille University have a field laboratory. Or at least had one .. if the Angels have not hit them already, there is only one way to find out.'
+lootNotes:
+  - text: The Domination battleships drop faction ammo and dog tags, and may also drop Domination faction modules or even implants. The Gist Domination Murderer in the final location may drop Gist A-Type battleship modules and possibly a rare Machariel BPC.
+npcs:
+  Angel Frigate Transport:
+    sdeTypes:
+      - Gistii Hunter
+      - Gistii Impaler
+    class: Frigate
+pockets:
+  - name: First Part
+    notes:
+      - text: "Warp in. If the Domination commander is there: kill him, possibly get escalation. Else (or If didn't get escalation): Use go to the next room to possibly get the escalation."
+  - name: Warp-in
+    notes:
+      - text: High-grade Savior Epsilon Blueprint
+      - text: Domination MWD module
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Rogue
+              - Arch Gistii Thug
+              - Arch Gistii Hijacker
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+              - Gistatis Tribunus
+              - Gistatis Legionnaire
+          - count: "6"
+            class: Battleship
+            names:
+              - Gist Throne
+              - Gist Saint
+              - Gist Nephilim
+            ewar:
+              - kind: targetPaint
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - Domination Nephilim
+              - Domination Warlord
+            triggers: May trigger an escalation
+            drop: Possible Domination modules
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: not locked
+  - name: First room
+    notes:
+      - text: ----
+      - text: Approach either the station or the wreck for a possibility for the escalation to trigger.
+      - text: "Escalation dead-end: You are obviously too late to save the scientist and students from the Angels. It looks like they might have used them for target practice. Your attention is drawn to your navigation computer, which has tried all this time to dig up another location based on the Angel logs, but to no avail."
+      - text: "Escalation trigger: You are obviously too late to save the scientist and students who worked here. You wonder why on earth the pirates felt threatened by this academic bunch, but then again, they may just have used them for target practice. Your attention is drawn to your navigation panel; your computers have managed to dig up another location based on the Angel logs."
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Gallente Military Station Ruins
+            triggers: approach for possible escalation
+          - count: "1"
+            class: Structure
+            names:
+              - Spaceshuttle Wreck
+            triggers: approach for possible escalation
+  - name: Second Location
+    notes:
+      - text: Ungated pocket.
+      - text: The second wave is passive until attacked or approached.
+      - text: "Escalation dead-end: This place seems to have served as a small outpost for the Angels. Not much of any importance here, and you have no idea where to go next."
+      - text: "Escalation trigger: This location seems to have served as a small scouting outpost for the Angels. You have co-ordinates for your next destination, but be aware that whoever is there probably knows you're coming."
+    waves:
+      - id: initial-spawn-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial spawn (auto-aggro)
+        spawns:
+          - count: 3-4
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Centurion
+              - Arch Gistum Liquidator
+              - Arch Gistum Marauder
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+              - Gistatis Tribunus
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: 7-8
+            class: Elite Frigate
+            names:
+              - Arch Gistii Hijacker
+              - Arch Gistii Rogue
+              - Arch Gistii Thug
+              - Arch Gistii Outlaw
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 3-4
+            class: Destroyer
+            names:
+              - Gistior Seizer
+              - Gistior Trasher
+          - count: 3-4
+            class: Battleship
+            names:
+              - Gist Warlord
+              - Gist War General
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - Domination Nephilim
+              - Domination Saint
+            ewar:
+              - kind: targetPaint
+            triggers: Destroying can trigger escalation
+            drop: Faction ammo/tags. Possible Domination modules or an implant; wreck can produce Tech 2 salvage
+  - name: Third Location
+    notes:
+      - text: Again, another ungated pocket. Group 3 warps off after a short time and can be ignored.
+      - text: "Escalation trigger: Success! You managed to nail down the point of origin of these newly arrived Angels. If now only this Angel of Death guy would be there ..."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Cruiser
+            names:
+              - Gistum Centurion
+              - Gistum Phalanx
+            group: Group 1 (30 km off)
+          - count: 3-4
+            class: Battleship
+            names:
+              - Gist Nephilim
+              - Gist Saint
+            group: Group 1 (30 km off)
+            ewar:
+              - kind: targetPaint
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - Domination Nephilim
+              - Domination Saint
+            group: Group 1 (30 km off)
+            ewar:
+              - kind: targetPaint
+            triggers: Destroying can trigger escalation
+            drop: Faction ammo/tags. Possible Domination modules or an implant; wreck can contain Tech 2 salvage
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Hijacker
+              - Arch Gistii Rogue
+            group: Group 2 (70 km off)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "4"
+            class: Battleship
+            names:
+              - Gist Warlord
+            group: Group 2 (70 km off)
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Hunter
+              - Arch Gistii Raider
+            group: Group 3 (180 km off)
+          - count: "4"
+            class: Cruiser
+            names:
+              - Gistum Centurion
+              - Gistum Phalanx
+            group: Group 3 (180 km off)
+  - name: Fourth and Last Location
+    notes:
+      - text: You land at an acceleration gate at warp-in. No enemies are present.
+  - name: First Pocket
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Gistii Ambusher
+              - Gistii Raider
+              - Gistii Impaler
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Arch Gistii Hunter
+              - Arch Gistii Impaler
+          - count: 3-4
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Centurion
+              - Arch Gistum Liquidator
+              - Arch Gistum Marauder
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+              - Gistatis Tribunus
+  - name: Second Pocket
+    notes:
+      - text: Enemies are approximately 40 km from the warp-in point. Gist Domination Murderer has a short turret optimal of 21 km, but fires Nova cruise missiles that reach out to 120 km and deal approx. 450 points of damage. It deals Thermal and Kinetic damage with its turrets (with a slant towards thermal) and pure Explosive damage with its missiles. It also recharges shield at around 500 DPS.
+      - text: 'Expedition end: A lot of individuals, fictitious as well as non fictional, have been remembered throughout history as the "Angel of Death". You very much doubt that this low down pirate will join their ranks.'
+    waves:
+      - id: single-fleet
+        trigger:
+          on: other
+          text: Single fleet
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Gistii Ambusher
+              - Gistii Hunter
+              - Gistii Raider
+              - Gistii Impaler
+          - count: 6-7
+            class: Frigate
+            names:
+              - Angel Frigate Transport
+          - count: 10-11
+            class: Elite Frigate
+            names:
+              - Arch Gistii Hijacker
+              - Arch Gistii Rogue
+              - Arch Gistii Thug
+              - Arch Gistii Outlaw
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 3-4
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Centurion
+              - Arch Gistum Phalanx
+          - count: "4"
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Seraphim
+          - count: "1"
+            class: Overseer Battleship
+            names:
+              - Gist Domination Murderer
+            triggers: Destroying ends expedition
+            drop: May contain Gist A-Type modules and possibly a Machariel BPC
+sde:
+  dungeonIds:
+    - 1434

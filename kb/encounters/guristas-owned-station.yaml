@@ -1,0 +1,286 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: guristas-owned-station
+kind: escalation
+name: Guristas Owned Station
+dedRating: null
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Guristas Owned Station
+    url: https://wiki.eveuniversity.org/Guristas_Owned_Station
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "155673"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: The site has all four of its parts in low security space, and often leads up to 20 jumps away from the starting system.
+  - text: "Escalation start: To your surprise, the Overseer seems to have spent the last moments of his life sending some message to your ship on a private channel, a fact you learn from a blinking entry on your communication panel a few seconds after his innards slid across your windshield, bounced along your fuselage and were sucked into your thrusters. It appears he wanted to save his life by telling you the whereabouts of some place you could load your cargohold with riches, but before he could get very far with his offer, his journey ended. All you have is some hysteric babble about a hidden mining station at a certain location."
+loot:
+  - item: Pithum A-Type Cruiser module
+    from: Guristas Research Outpost
+    note: est. 10-500M ISK (wiki)
+  - item: Dread Guristas Cruiser modules
+    from: Dread Guristas commander battlecruisers
+    note: May also drop from the Research Outpost
+  - item: Gila BPC
+    from: Guristas Research Outpost
+    note: Rare drop
+lootNotes:
+  - text: Typical loot from Dread Guristas commander battlecruisers includes faction ammo and Dread Gurista tags. The Guristas Research Outpost can drop Pithum A-Type cruiser modules and a rare Gila BPC.
+npcs:
+  Mercenary Supervisor:
+    sdeTypes:
+      - Dread Guristas Assaulter
+      - Dread Guristas Enforcer
+    class: Commander Battlecruiser
+  Starbase Sentry:
+    sdeTypes:
+      - Tower Sentry Guristas II
+    class: Sentry
+  Starbase Cruise Missile Battery:
+    sdeTypes:
+      - Guristas Cruise Missile Battery
+    class: Sentry
+  Starbase Stasis Tower:
+    sdeTypes:
+      - Guristas Stasis Tower
+    class: Sentry
+pockets:
+  - name: First Location
+    notes:
+      - text: Mixture of Gurista and mercenary rats.
+      - text: The mercenary wave is optional, only worth doing for bounties and salvage.
+      - text: "Escalation dead-end: Either the Overseer was trying to trick you and this was the best he could come up with, or that you killed him before he could reveal the juicy parts of his offer. Either way, the takings from this expedition were as juicy as the good Overseer's remains after your thrusters were done with him."
+      - text: "Escalation trigger: Among the things you find are a few drones. Running a scan on their control units reveals they have been used not long ago, at another place not far away from here."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Tower
+            names:
+              - Starbase Control Tower
+            triggers: Attacking triggers optional mercenary wave
+          - count: "7"
+            class: Sentry
+            names:
+              - Guristas Heavy Missile Battery
+          - count: "5"
+            class: Elite Frigate
+            names:
+              - Mercenary Wingman
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "1"
+            class: Commander Battlecruiser
+            names:
+              - Mercenary Supervisor
+            triggers: Escalation trigger
+            drop: Possible Dread Guristas modules, faction ammo/tags, possible implants
+          - count: "4"
+            class: Battleship
+            names:
+              - Mercenary Overlord
+      - id: mercenary-wave-optional
+        trigger:
+          on: other
+          text: Mercenary Wave (optional)
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Elite Frigate
+            names:
+              - Mercenary Elite Fighter
+          - count: "6"
+            class: Cruiser
+            names:
+              - Mercenary Commander
+          - count: "6"
+            class: Battleship
+            names:
+              - Mercenary Overlord
+  - name: Second Location
+    notes:
+      - text: You land at an acceleration gate. If Dread Guristas commander doesn't spawn or doesn't trigger escalation, take the acceleration gate.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Abolisher
+              - Dire Pithum Eraser
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Pithatis Revolter
+              - Pithatis Assassin
+          - count: "1"
+            class: Commander Battlecruiser
+            names:
+              - Dread Guristas Assaulter
+            triggers: Escalation trigger
+            drop: Faction ammo/tags. May drop Dread Guristas modules or implants
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Newly Constructed Acceleration Gate
+            note: Not locked
+  - name: First Pocket
+    notes:
+      - text: Simple warp-in probably triggers escalation.
+      - text: "Escalation dead-end: All these moon mining stations suggest there must be a station or outpost somewhere in the region servicing them and refining the raw materials they produce. Again you look for clues from the drones, but the data you extract suggests no new locations, only the two you have been at already. If the Guristas have any more stations in the area, this is not where you will find them."
+      - text: "Escalation trigger: All these moon mining stations suggest there must be a station or outpost somewhere in the region servicing them and refining the raw materials they produce. Again you look for clues from the drones and again the data you extract suggest a new location not too far away."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Tower
+            names:
+              - Starbase Control Tower
+            triggers: Attacking triggers drone reinforcements
+          - count: "5"
+            class: Sentry
+            names:
+              - Starbase Sentry
+          - count: "6"
+            class: Elite Frigate
+            names:
+              - Strain Devilfish
+              - Strain Hunter
+              - Strain Barracuda Alvi
+          - count: "7"
+            class: Battleship
+            names:
+              - Alvus Ruler
+              - Supreme Alvus Parasite
+      - id: drone-reinforcements
+        trigger:
+          on: other
+          text: Drone reinforcements
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Strain Bomber
+              - Strain Disintegrator Alvum
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Defeater
+              - Enforcer Alvatis
+          - count: "7"
+            class: Battleship
+            names:
+              - Alvus Ruler
+              - Supreme Alvus Parasite
+    onWarpIn: It seems this Moon Mining facility has fallen prey to Rogue Drones. The structural makeup of this facility indicates it once belonged to the Guristas.
+  - name: Third Location
+    notes:
+      - text: 'Escalation trigger: Going through data scanned during the destruction of the station itself, you notice reports from a place called "R&D division Red", containing information on blueprint research and booster production and even the location of this base "Red".'
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "6"
+            class: Sentry
+            names:
+              - Starbase Cruise Missile Battery
+          - count: "1"
+            class: Sentry
+            names:
+              - Starbase Stasis Tower
+            ewar:
+              - kind: web
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Despoiler
+              - Dire Pithi Saboteur
+            ewar:
+              - kind: ecm
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Pithatis Assaulter
+              - Pithatis Death Dealer
+          - count: "1"
+            class: Commander Battlecruiser
+            names:
+              - Dread Guristas Death Dealer
+            triggers: Escalation trigger
+            drop: Faction ammo/tags; possible Dread Guristas modules, implants
+          - count: "7"
+            class: Battleship
+            names:
+              - Pith Eliminator
+              - Pith Exterminator
+            ewar:
+              - kind: ecm
+  - name: Fourth Location
+    notes:
+      - text: Ungated pocket.
+      - text: "Outpost destroyed: Expedition end: Now, you kind of regret killing the Overseer back there, it is always useful to know corrupt leaders who are ready to sell out things like this outpost in exchange for something as cheap as their own petty lives."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Guristas Research Outpost
+            triggers: Triggers smartbomb waves upon attack. Destroy for expedition end
+            drop: Possible Pithum A-Type cruiser modules and a possible Gila BPC
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Starbase Cruise Missile Battery
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Despoiler
+              - Dire Pithi Saboteur
+            ewar:
+              - kind: ecm
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Abolisher
+              - Dire Pithum Eraser
+          - count: "7"
+            class: Battleship
+            names:
+              - Pith Conquistador
+              - Pith Destroyer
+sde:
+  dungeonIds:
+    - 1831

@@ -1,0 +1,88 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: guristas-hideaway
+kind: anomaly
+name: Guristas Hideaway
+dedRating: null
+anomalyClass: 1
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Guristas Hideaway
+    url: https://wiki.eveuniversity.org/Guristas_Hideaway
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225168"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Single ungated normal space pocket. Killing the last hostile ship triggers a reinforcement spawn.
+  - text: "Escalation: Can escalate to the Guristas Scout Outpost, although is a rare escalation and Gurista Refuges are usually a better choice."
+lootNotes:
+  - text: Small Faction Spawn
+  - text: 1000 small faction ammo,
+  - text: Guristas Tag
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-defending-fleet
+        trigger:
+          on: warpIn
+          text: Initial Defending Fleet
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Pithi Arrogator
+      - id: 1st-reinforcement-spawn
+        trigger:
+          on: other
+          text: 1st Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Frigate
+            names:
+              - Pithi Invader
+              - Pithi Infiltrator
+      - id: 2nd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 2nd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Pithi Arrogator
+              - Pithi Imputor
+      - id: 3rd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 3rd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Pithi Plunderer
+              - Pithi Wrecker
+      - id: possible-rare-spawn
+        trigger:
+          on: other
+          text: Possible Rare Spawn
+          confidence: inferred
+        spawns:
+          - count: 0-1
+            class: Commander Frigate
+            names:
+              - Dread Guristas Saboteur
+              - Dread Guristas Despoiler
+            ewar:
+              - kind: ecm
+            drop: Possible Faction charges, Faction implants BPC or tags
+sde:
+  dungeonIds:
+    - 2134

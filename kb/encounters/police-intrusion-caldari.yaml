@@ -1,0 +1,129 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: police-intrusion-caldari
+kind: mission
+name: Police Intrusion
+level: 2
+enemyFaction: Caldari State
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Police Intrusion (Caldari)
+    url: https://wiki.eveuniversity.org/Police_Intrusion_(Caldari)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "195920"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: ecm
+notes:
+  - text: "Suggested ships: Arbitrator"
+  - text: "Space type: Deadspace"
+  - text: "Tip: Beware of the jamming, other than that this mission is a piece of cake. Drone carriers and F.O.F. missile platforms have the advantage of maintaining full tank and don't pay attention to the jam as the weapons lock on targets themselves, while gunships need to boost their signal strength and give a slot to that."
+  - text: "Tip: There are no triggered respawns"
+  - text: "Tip: Tags drop from all ships."
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: 2 groups. Aggro at warp-in from 1 small group at a 20km distance. Next group is larger and at around 30km distance.
+    waves:
+      - id: group-1-20km
+        trigger:
+          on: other
+          text: Group 1 (20km)
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - State Bo-Hi
+              - State Showato
+      - id: group-2-30km
+        trigger:
+          on: other
+          text: Group 2 (30km)
+          confidence: inferred
+        spawns:
+          - count: "8"
+            class: Frigate
+            names:
+              - State Katana
+              - State Nagasa
+              - State Shinai
+              - State Shukuro Shinai
+              - State Wakizashi
+          - count: "6"
+            class: Frigate
+            names:
+              - State Daito
+              - State Shuriken
+            ewar:
+              - kind: ecm
+          - count: "1"
+            class: Cruiser
+            names:
+              - State Ashigaru
+  - name: Pocket 2
+    notes:
+      - text: 3 groups. Aggro at warp-in from 1 group at a 30km distance. Next group is at 45km, and the last group spreads out between a 65-85km distance.
+    waves:
+      - id: group-1
+        trigger:
+          on: warpIn
+          text: Group 1
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - State Katana
+              - State Nagasa
+              - State Shinai
+              - State Wakizashi
+          - count: "1"
+            class: Cruiser
+            names:
+              - State Bushi
+      - id: group-2
+        trigger:
+          on: other
+          text: Group 2
+          confidence: inferred
+        spawns:
+          - count: "8"
+            class: Frigate
+            names:
+              - State Katana
+              - State Nagasa
+              - State Shinai
+              - State Wakizashi
+          - count: "3"
+            class: Frigate
+            names:
+              - State Shuriken
+            ewar:
+              - kind: ecm
+      - id: group-3
+        trigger:
+          on: other
+          text: Group 3
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - State Katana
+              - State Nagasa
+              - State Wakizashi
+          - count: "2"
+            class: Destroyer
+            names:
+              - State Kai Gunto
+              - State Yumi
+          - count: "1"
+            class: Cruiser
+            names:
+              - State Chugen
+            ewar:
+              - kind: ecm

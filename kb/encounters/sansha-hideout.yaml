@@ -1,0 +1,171 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: sansha-hideout
+kind: complex
+name: Sansha Hideout
+dedRating: null
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Sansha Hideout
+    url: https://wiki.eveuniversity.org/Sansha_Hideout
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "220602"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Destroyer T1/T2/T3"
+notes:
+  - text: "Escalation: Destroying the Minor Refinery structure or the Commander Ship may trigger an expedition called Drop, with this message:"
+  - text: 'Escalation: "While fighting the last defenders of this hideout, you noticed three of their ships warp out and disappear from radar. Your navigational computer has had a few minutes now to mull over the data they left and has come up with a probable destination in case you want to chase them."'
+lootNotes:
+  - text: "Bounties: The bounties on the heads of the pirates in this anomaly add up to a total of roughly 200,000 ISK, payable by CONCORD."
+  - text: "Loot: True Sansha Copper Tag, (True) Sansha Ammo, Faction Loot (True Sansha Modules) (very rare)"
+pockets:
+  - name: Room 1
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Centii Enslaver
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Centii Butcher
+          - count: "2"
+            class: Frigate
+            names:
+              - Centii Slavehunter
+            ewar:
+              - kind: trackingDisruption
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Centii Enslaver
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Bunker
+            triggers: Triggers Wave 2
+          - count: "2"
+            class: Structure
+            names:
+              - Sansha Lookout
+          - count: "1"
+            class: Structure
+            names:
+              - Abandonded Ship Yard
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: Unlocks when first room is cleared
+  - name: Room 2
+    notes:
+      - text: "Mineable Asteroids: From 50km to 150km"
+      - text: "Mineable Asteroids: 13x Veldspar (6 x 489m, 5x 1089m, 2x 3615m)"
+      - text: "Mineable Asteroids: 1x Scordite (3615m)"
+      - text: Minable asteroids confirmed to still exist as of 2024-12-15. (CCP removed minable asteroids from a lot of missions during or before 2023.)
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Centii Butcher
+            triggers: Wave 1
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Centior Misshape
+            triggers: Destroying 1 ship triggers Wave 2, estroying all ships triggers Wave 3
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Centii Cannibal
+              - Centii Enslaver
+              - Centii Plague
+          - count: 0-1
+            class: Commander Frigate
+            names:
+              - True Sansha's Minion
+            triggers: Escalation Trigger
+            drop: May drop faction modules
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Centii Butcher
+              - Centii Manslayer
+              - Centii Plague
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Sansha Minor Refinery
+            triggers: Escalation Trigger
+            drop: may contain T1 ammo or trade goods
+          - count: "1"
+            class: Structure
+            names:
+              - Abandoned Ship Yard
+          - count: "2"
+            class: Structure
+            names:
+              - Sansha Bunker
+          - count: "1"
+            class: Structure
+            names:
+              - Sansha Lookout
+sde:
+  dungeonIds:
+    - 1225

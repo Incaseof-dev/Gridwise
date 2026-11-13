@@ -1,0 +1,347 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: cowardly-commander
+kind: mission
+name: Cowardly Commander
+level: null
+enemyFaction: Sansha's Nation & Amarr Empire
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Cowardly Commander
+    url: https://wiki.eveuniversity.org/Cowardly_Commander
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231033"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy enemy ships
+ewar:
+  - kind: neut
+  - kind: trackingDisruption
+notes:
+  - text: "Blitz: Take the acceleration gates to the last room. Kill elite frigates if they point you. In last room triger the wave 2 and destroy it."
+  - text: thumb
+  - text: The mission is completed when last ship in third room wave 2 dies. This mission can be completed remotely and the next mission can be accepted remotely.
+  - text: "Tips: The pockets are not deadspace. You can bm them and warp back if you take too much damage."
+  - text: "Tips: The acceleration gates are NOT locked."
+  - text: "Tips: Be prepared for very heavy dps and large amounts of EWAR"
+  - text: "Tips: Make sure to prioritize targets (destroy EWAR ships first)"
+  - text: "Tips: Energy neutralizer towers are always primary targets"
+  - text: "Tips: To avoid getting neuted and scramed while traveling to the next gate, you can create pingspots while warping in into every room. Warp back to your ping, then warp to the next gate at 0 km."
+  - text: "Tips: The Sansha Commander will be present in each room as you warp-in and will warp away without engaging."
+pockets:
+  - name: Acceleration Gate Entrance
+    notes:
+      - text: Destroying the last ship in the Initial Group will trigger Wave 1.
+      - text: The gate to next room is NOT locked. After you kill the frigs that point you you can move on.
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Minion
+              - Centii Loyal Scavenger
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Battleship
+            names:
+              - Centus Plague Lord
+              - Centus Beast Lord
+            ewar:
+              - kind: trackingDisruption
+          - count: "2"
+            class: Sentry
+            names:
+              - Tower Sentry Sansha III
+            note: 250 km range
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Butcher
+              - Centii Loyal Manslayer
+              - Centii Loyal Follower
+            ewar:
+              - kind: web
+          - count: "4"
+            class: Battleship
+            names:
+              - Centus Dark Lord
+              - Centus Overlord
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: Leads to Room 1
+  - name: Room 1
+    notes:
+      - text: Destroying the last ship in the Initial Group will trigger Wave 1.
+      - text: The gate to next room is NOT locked.
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Slavehunter
+              - Centii Loyal Savage
+            ewar:
+              - kind: trackingDisruption
+          - count: "4"
+            class: Battleship
+            names:
+              - Centus Dark Lord
+              - Centus Overlord
+          - count: "2"
+            class: Sentry
+            names:
+              - Sansha Energy Neutralizer Sentry I
+            ewar:
+              - kind: neut
+            note: 250km range. 10 GJ/s neut
+          - count: "2"
+            class: Sentry
+            names:
+              - Tower Sentry Sansha III
+            note: 250 km range
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Centatis Daemon
+              - Centatis Devil
+          - count: "3"
+            class: Battleship
+            names:
+              - Centus Beast Lord
+              - Centus Plague Lord
+            ewar:
+              - kind: trackingDisruption
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: Gate is not locked
+  - name: Room 2
+    notes:
+      - text: The acceleration gate to next room is not locked.
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Ravener
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Torturer
+              - Centum Loyal Hellhound
+            note: type list incomplete on the source page
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Centatis Daemon
+              - Centatis Behemoth
+            triggers: Last battlecruiser destroyed triggers Wave 2
+          - count: "4"
+            class: Battleship
+            names:
+              - Centus Plague Lord
+              - Centus Beast Lord
+            ewar:
+              - kind: trackingDisruption
+            triggers: Last battleship destroyed triggers Wave 1
+          - count: "1"
+            class: Sentry
+            names:
+              - Sansha Energy Neutralizer Sentry II
+            ewar:
+              - kind: neut
+            note: 250km range. 20 GJ/s neut
+          - count: "2"
+            class: Sentry
+            names:
+              - Tower Sentry Sansha III
+            note: 250km range
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Scavenger
+              - Centii Loyal Ravener
+            ewar:
+              - kind: web
+          - count: "4"
+            class: Battleship
+            names:
+              - Centus Dread Lord
+              - Centus Tyrant
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Butcher
+              - Centii Loyal Plague
+              - Centii Loyal Manslayer
+          - count: "4"
+            class: Battleship
+            names:
+              - Centus Dark Lord
+              - Centus Overlord
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Accleration Gate
+            note: Gate is not locked
+  - name: Room 3
+    notes:
+      - text: No standing loss for destroying Amarr ships in Room 3.
+      - text: Last battleship destroyed in Wave 2 completes the mission objective.
+      - text: Completing this mission leads to chapter 2 - Spiderweb Politics.
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Imran
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Cruiser
+            names:
+              - Imperial Templar Tamir
+              - Imperial Templar Donus
+          - count: "3"
+            class: Battleship
+            names:
+              - Imperial Martyr
+              - Imperial Dominator
+            ewar:
+              - kind: neut
+            triggers: Last battleship destroyed triggers Wave 1
+            note: 10km range
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Valok
+              - Divine Imperial Paladin
+            group: Above solar harvesters
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Divine Imperial Tamir
+            group: Above solar harvesters
+            ewar:
+              - kind: trackingDisruption
+              - kind: neut
+            note: Energy neutralizer - 10km range
+          - count: "3"
+            class: Battleship
+            names:
+              - Imperial Martyr
+              - Imperial Ultara
+              - Imperial Templar Torah
+            group: Above solar harvesters
+            ewar:
+              - kind: neut
+            note: Martyr has 10km range neut, 35 GJ/s
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Imperial Champion
+              - Imperial Templar Justicar
+            group: Left of solar harvesters
+          - count: "4"
+            class: Battleship
+            names:
+              - Imperial Templar Ultara
+              - Imperial Templar Dominator
+            group: Left of solar harvesters
+            ewar:
+              - kind: neut
+            triggers: Last ship destroyed triggers Wave 2
+            note: Dominator has 10km range neut, 30 GJ/s
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Imperial Templar Caius
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Imperial Templar Phalanx
+          - count: "2"
+            class: Battleship
+            names:
+              - Imperial Templar Martyr
+            triggers: Destroy to complete mission

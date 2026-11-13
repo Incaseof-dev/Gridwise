@@ -1,0 +1,132 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: recon-1-of-3-sanshas-nation-level-4
+kind: mission
+name: Recon (1 of 3)
+level: 4
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Recon (1 of 3) (Sansha's Nation) (Level 4)
+    url: https://wiki.eveuniversity.org/Recon_(1_of_3)_(Sansha's_Nation)_(Level_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223398"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: neut
+  - kind: trackingDisruption
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite Frigates"
+  - text: "Suggested ships: Frigate (blitz), Battleship (clear)"
+  - text: "Parts: 1 of 3 (Sansha's Nation), 2 of 3, 3 of 3"
+  - text: Recon is a three part mission. Part 2 and part 3 are the same for all factions.
+  - text: "Blitz: Use fast frigate to take the acceleration in first pocket. The mission is completed when you land in second room."
+pockets:
+  - name: 1st pocket
+    notes:
+      - text: Auto aggro from initial spawn. New spawns will appear at an interval between 60-90 secs. These spawns will start from the three Shipyard structures, each about 20-30km from the warp-in point. Drones will get aggroed by the later spawns, so retrieve/deploy them as necessary to avoid damage.
+      - text: "Warning: Once Spawn 1 has been initiated, the Shipyards will keep spawning ships regardless of your location. If you had warped out, there will be a full gang waiting when next you warp-in. The full gang's DPS estimate is 900-1100dps."
+    waves:
+      - id: spawns
+        trigger:
+          on: other
+          text: Spawns
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Fiend
+              - Centum Loyal Hellhound
+            group: Spawn 1
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Centatis Daemon
+              - Centatis Behemoth
+            group: Spawn 1
+          - count: "1"
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Dread Lord
+            group: Spawn 1
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Slaughter
+              - Centum Loyal Execrator
+            group: Spawn 2
+            ewar:
+              - kind: trackingDisruption
+          - count: "2"
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Overlord
+              - Centus Dark Lord
+            group: Spawn 2
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Fiend
+              - Centum Loyal Hellhound
+            group: Spawn 3
+          - count: "2"
+            class: Battleship
+            names:
+              - Centus Tyrant
+            group: Spawn 3
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Fiend
+              - Centum Loyal Hellhound
+            group: Spawn 4
+          - count: "2"
+            class: Battleship
+            names:
+              - Centus Tyrant
+            group: Spawn 4
+  - name: Pocket 2
+    notes:
+      - text: The mission is completed once you land in the second pocket. You can just warp off without needing to kill any hostile ships in this pocket.
+      - text: Auto aggro from Spawn 1 after several seconds. Next spawn will appear in 60-90 secs.
+    waves:
+      - id: spawns
+        trigger:
+          on: other
+          text: Spawns
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - (Centum Loyal Slaughter)
+            group: Spawn 1
+            ewar:
+              - kind: trackingDisruption
+              - kind: neut
+          - count: "3"
+            class: Battleship
+            names:
+              - Centus Overlord
+            group: Spawn 1
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Centti Loyal Scavanger
+            group: Spawn 2
+            ewar:
+              - kind: warpDisruption
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Torturer
+            group: Spawn 2

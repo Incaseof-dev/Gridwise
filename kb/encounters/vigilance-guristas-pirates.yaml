@@ -1,0 +1,41 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: vigilance-guristas-pirates
+kind: mission
+name: Vigilance
+level: 3
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Vigilance (Guristas Pirates)
+    url: https://wiki.eveuniversity.org/Vigilance_(Guristas_Pirates)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "192101"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Suggested ships: Cruiser"
+  - text: "Blitz: Destroy Industrial (Suspicious) and grab the viral agent from cargo.."
+npcs:
+  Industrial:
+    sdeTypes:
+      - Suspicious
+    class: Industrial
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: Several Industrial (Clean) will appear and warp off before Industrial (Suspicious) appears.
+    waves:
+      - id: group-1-15km
+        trigger:
+          on: other
+          text: Group 1, 15km
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Industrial
+            names:
+              - Industrial

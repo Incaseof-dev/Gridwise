@@ -1,0 +1,114 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: blood-forsaken-hideaway
+kind: anomaly
+name: Blood Forsaken Hideaway
+dedRating: null
+anomalyClass: 1
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Blood Forsaken Hideaway
+    url: https://wiki.eveuniversity.org/Blood_Forsaken_Hideaway
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225125"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Rating: Class 1 Level 3"
+  - text: Blood Forsaken Hideaway is an unrated combat site belonging to the Blood Raiders pirate faction. It can be found via exploration as a cosmic anomaly within systems owned by the Amarr Empire and Ammatar Mandate. As an ungated complex, the limitations as to which ships can complete this site are tied to the security rating of the system where the anomaly spawns (T2 Battleships for high-security systems, and up to Titans in low-security and null-security systems). Completing this complex may award the player with valuable Dark Blood faction modules and ammunition.
+  - text: "This combat site consists of a single ungated pocket of space containing a variety of Frigate- and Destroyer-sized enemy ships. Three variations of this combat anomaly exist: Blood Hideaway, Blood Hidden Hideaway and Blood Forlorn Hideaway."
+  - text: Single ungated normal space pocket.
+  - text: "Escalation: Needs information"
+loot:
+  - item: Dark Blood Copper Tag
+    from: Dark Blood Commander
+    note: est. 10k ISK (wiki) · 100% drop rate
+  - item: (Dark) Blood Ammo
+    from: Dark Blood Commander
+    note: est. 6k - 58M ISK (wiki) · 100% drop rate
+  - item: Dark Blood module
+    from: Dark Blood Commander
+    note: est. 10k - 130M ISK (wiki) · rare
+  - item: Mid-grade Amulet Implant
+    from: Dark Blood Commander
+    note: est. 6M - 50M ISK (wiki) · rare
+lootNotes:
+  - text: 350.000 ISK
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: Rarely do the initial and the second wave spawn together. Destroying both waves triggers the first and third waves and can overwhelm smaller ships due to up to 6 elite frigates on grid.
+    waves:
+      - id: initial-defending-fleet
+        trigger:
+          on: warpIn
+          text: Initial Defending Fleet
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Corpii Collector
+            note: type list incomplete on the source page
+          - count: 2- 3
+            class: Destroyer
+            names:
+              - Corpior Cleric
+            note: type list incomplete on the source page
+      - id: 1st-reinforcement-spawn
+        trigger:
+          on: other
+          text: 1st Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Elder Corpii Engraver
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corpior Cleric
+            note: type list incomplete on the source page
+      - id: 2nd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 2nd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Corpii Collector
+            note: type list incomplete on the source page
+          - count: 3-4
+            class: Destroyer
+            names:
+              - Corpior Cleric
+            note: type list incomplete on the source page
+      - id: 3rd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 3rd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Collector
+            note: type list incomplete on the source page
+          - count: 4-5
+            class: Destroyer
+            names:
+              - Corpior Cleric
+            note: type list incomplete on the source page
+          - count: 0-1
+            class: Commander Destroyer
+            names:
+              - Dark Blood Commander
+            group: Possible Rare Spawn
+            drop: Possible Faction ammo or modules

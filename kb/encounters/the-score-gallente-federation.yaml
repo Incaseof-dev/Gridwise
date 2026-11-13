@@ -1,0 +1,64 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-score-gallente-federation
+kind: mission
+name: The Score
+level: 1
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Score (Gallente Federation)
+    url: https://wiki.eveuniversity.org/The_Score_(Gallente_Federation)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "192047"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: sensorDamp
+notes:
+  - text: "Suggested ships: Ishkur"
+  - text: 18 Federation Navy Frigates in 3 groups.
+  - text: No Aggro at warp in.
+  - text: Group 1+2 aggro together
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Federation Clavis
+            group: Group 1 (40km)
+          - count: "3"
+            class: Frigate
+            names:
+              - Federation Hoplon
+              - Federation Kontos
+            group: Group 2 (45km)
+          - count: "2"
+            class: Frigate
+            names:
+              - Federation Libertus
+              - Federation Manicu
+            group: Group 2 (45km)
+            ewar:
+              - kind: sensorDamp
+          - count: "1"
+            class: Destroyer
+            names:
+              - Federation Pelekus
+            group: Group 2 (45km)
+          - count: "6"
+            class: Frigate
+            names:
+              - Federation Kontos
+              - Federation Insidiator
+              - Federation Hoplon
+            group: Group 3 (50km)

@@ -1,0 +1,65 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: smuggler-interception-angel-cartel-level-2
+kind: mission
+name: Smuggler Interception
+level: 2
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Smuggler Interception (Angel Cartel) (Level 2)
+    url: https://wiki.eveuniversity.org/Smuggler_Interception_(Angel_Cartel)_(Level_2)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231043"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy convoy and return with cargo to agent (10x Militants 20 m3).
+notes:
+  - text: "Blitz: Kill group 2 and loot the militants from Personnel Transport wrecks."
+pockets:
+  - name: Warp-in
+    waves:
+      - id: group-1-35-50km
+        trigger:
+          on: other
+          text: Group 1, 35-50km
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Gistii Hijacker
+              - Gistii Rogue
+              - Gistii Ruffian
+              - Gistii Nomad
+      - id: group-2-35-50km
+        trigger:
+          on: other
+          text: Group 2, 35-50km
+          confidence: inferred
+        spawns:
+          - count: "8"
+            class: Frigate
+            names:
+              - Gistii Hijacker
+              - Gistii Rogue
+          - count: "1"
+            class: Destroyer
+            names:
+              - Gistior Defacer
+              - Gistior Haunter
+          - count: "1"
+            class: Cruiser
+            names:
+              - Gistum Depredator
+              - Gistum Predator
+          - count: "2"
+            class: Cruiser
+            names:
+              - Angel Cartel Personnel Transport
+            triggers: Mission objective
+            drop: Militants

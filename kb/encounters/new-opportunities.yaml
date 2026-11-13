@@ -1,0 +1,54 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: new-opportunities
+kind: mission
+name: New Opportunities
+level: 3
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – New Opportunities
+    url: https://wiki.eveuniversity.org/New_Opportunities
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231742"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Wormholes: The sudden appearance of wormholes across New Eden proved to be a boon to scientific communities of all disciplines. Nearly everyone in the cluster has some vested interest in the wormholes. The Angel Cartel has been investing heavily into wormhole exploration. They not only scavenge the Sleeper ruins for new technology, but also exploit the wormholes' ability to link otherwise distant points. A wormhole can potentially turn an eighty-jump trip from Curse to Fountain into a twenty-minute jaunt. Although these opportunities represent significant logistical advantages, they are always fleeting, and every effort to map wormhole space have thus far failed."
+  - text: Gated deadspace pocket one jump away.
+  - text: "Blitz: take the gate and warp out."
+  - text: "Tips: No rats have to be killed"
+pockets:
+  - name: Warp-in
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+  - name: Room 1
+    notes:
+      - text: "Recon Complete: It looks like the Sansha have beaten us to this site. I suggest we return to Abdiel Verat immediately."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Centii Loyal Enslaver
+              - Centii Loyal Manslayer
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Centii Loyal Fiend
+              - Centii Loyal Hellhound

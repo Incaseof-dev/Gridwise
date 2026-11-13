@@ -1,0 +1,83 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: portal-to-war-4-of-5
+kind: mission
+name: Portal to War (4 of 5)
+level: 3
+enemyFaction: Caldari State
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Portal to War (4 of 5)
+    url: https://wiki.eveuniversity.org/Portal_to_War_(4_of_5)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223443"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Investigate the area that the stolen data refers to and then report back to your agent. Destroy any hostiles that you might encounter there.
+notes:
+  - text: "Suggested ships: HAC, Battlecruiser"
+  - text: "Blitz: Kill the Caldari Navy Moa."
+  - text: Structures do not drop loot.
+  - text: "Next: Portal to War (5 of 5)"
+pockets:
+  - name: Warp-in
+    notes:
+      - text: "Agent hand-in message: A Caldari stargate hidden inside a man-made ion field? This is an amazing discovery, . But we must keep this quiet. If the general public hears about this, it may cause mass panic."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Caldari Navy Soldier
+            group: 1st Group, 35-42km (auto-aggro)
+          - count: "1"
+            class: Cruiser
+            names:
+              - Caldari Navy Moa
+            group: 1st Group, 35-42km (auto-aggro)
+          - count: "1"
+            class: Sentry
+            names:
+              - Caldari Point Defense Battery
+            group: 1st Group, 35-42km (auto-aggro)
+            drop: May drop missiles
+          - count: "2"
+            class: Frigate
+            names:
+              - Caldari Navy Soldier
+            group: 2nd Group, 42-45km (auto-aggro)
+          - count: "1"
+            class: Cruiser
+            names:
+              - Caldari Navy Blackbird
+            group: 2nd Group, 42-45km (auto-aggro)
+          - count: "1"
+            class: Sentry
+            names:
+              - Caldari Point Defense Battery
+            group: 2nd Group, 42-45km (auto-aggro)
+            drop: May drop missiles
+          - count: "2"
+            class: Frigate
+            names:
+              - Caldari Navy Soldier
+            group: 3rd Group, 45-54km (auto-aggro)
+          - count: "1"
+            class: Cruiser
+            names:
+              - Caldari Navy Blackbird
+            group: 3rd Group, 45-54km (auto-aggro)
+          - count: "1"
+            class: Sentry
+            names:
+              - Caldari Point Defense Battery
+            group: 3rd Group, 45-54km (auto-aggro)
+            drop: May drop missiles

@@ -1,0 +1,63 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: scavengers
+kind: mission
+name: Scavengers
+level: 2
+enemyFaction: Mercenaries & Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Scavengers
+    url: https://wiki.eveuniversity.org/Scavengers
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "198322"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Suggested ships: Elite Frigate, Cruiser, Battlecruiser"
+  - text: "Mission requires a Salvager module. Recommended generic setup: Heavy Tank"
+  - text: "Space type: Normal Space"
+  - text: "Recommended damage dealing: EM/Explosion"
+  - text: "Blitz: Find the Reconnaissance Ship Wreck, Salvage it to access it, Take High-Tech Data Chip, warp out"
+  - text: "Hint: There are about 50 wrecks at warp in, with wreck icons in overview."
+  - text: "Hint: The objective appears with a can icon in overview."
+  - text: "Hint: You must successfully salvage the can to open it."
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: Sends player to low security to salvage, ignoring the '5 jump' rule. Beware pirates.
+      - text: Complete enough to be able to blitz the mission. Still need further information regarding additional groups.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "?"
+            class: Container
+            names:
+              - Reconnaissance Ship Wreck
+            note: Mission objective, salvage to open
+      - id: group-1-10-20km-auto-aggro
+        trigger:
+          on: other
+          text: Group 1 (10-20km)(Auto aggro)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Mercenary Rookie
+          - count: "1"
+            class: Cruiser
+            names:
+              - Mercenary Commander
+      - id: group-2-spawn-after-30-seconds
+        trigger:
+          on: other
+          text: Group 2, spawn after 30 seconds
+          confidence: inferred
+        spawns: []

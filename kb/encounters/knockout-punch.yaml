@@ -1,0 +1,102 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: knockout-punch
+kind: mission
+name: Knockout Punch
+level: 3
+enemyFaction: Caldari State
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Knockout Punch
+    url: https://wiki.eveuniversity.org/Knockout_Punch
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "229500"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Pick up the Guristas „Dirty‟ Explosive System and blow the Caldari State Carrier with it
+restrictions:
+  - text: "Ship size limit: Shuttle"
+notes:
+  - text: "Suggested ships: Shuttle"
+  - text: Shuttle is given by the Agent; the Shuttle will be destroyed!
+  - text: Gated deadspace pocket zero jumps away in the same System.
+  - text: "Blitz: board the Shuttle, take the Acceleration Gate, pick up the Guristas 'Dirty' Explosive System from Damaged Caldari Shuttle and take another Acceleration Gate. Fly towards the Caldari Carrier and blow it up then warp out."
+  - text: "Tips: If you don't shoot at the guards and they won't shoot back at you"
+  - text: "Tips: The Carrier will drop a Caldari Navy Rear-Admiral Insignia I; bookmark the site and return after turning in the Mission"
+pockets:
+  - name: Warp-in
+    waves:
+      - id: passive-guards
+        trigger:
+          on: other
+          text: Passive guards
+          confidence: inferred
+        spawns:
+          - count: "18"
+            class: Battleship
+            names:
+              - Guristas Battleship
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+  - name: Room 1
+    notes:
+      - text: All ships present, hostiles included, will spontaneously destroy each other shortly after landing. You do not need to worry about tanking them.
+    waves:
+      - id: ships
+        trigger:
+          on: warpIn
+          text: Ships
+        spawns:
+          - count: "18"
+            class: Friendly Frigate
+            names:
+              - Captured Caldari State Shuttle
+          - count: "7"
+            class: Frigate
+            names:
+              - State Bo-Hi
+              - State Showato
+          - count: "2"
+            class: Cruiser
+            names:
+              - State Bushi
+              - State Dogo
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Container
+            names:
+              - Damaged Caldari Shuttle
+            drop: Guristas 'Dirty' Explosive System
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+  - name: Room 2
+    notes:
+      - text: You will repeatedly receive agent messages from Kori and Cilis as you approach the carrier. Read them if you want or ignore them - they are simply lore cosmetic.
+    waves:
+      - id: target-18km-away
+        trigger:
+          on: other
+          text: Target (18km away)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Carrier
+            names:
+              - Caldari State Carrier

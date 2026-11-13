@@ -1,0 +1,155 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: sansha-forlorn-den
+kind: anomaly
+name: Sansha Forlorn Den
+dedRating: null
+anomalyClass: 4
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Sansha Forlorn Den
+    url: https://wiki.eveuniversity.org/Sansha_Forlorn_Den
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231796"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Rating: Class 4 Level 4"
+  - text: "Escalation: This site may escalate into the expedition Sansha War Supply Complex, a 6/10 rated DED complex. The trigger for this escalation is unknown."
+lootNotes:
+  - text: "Bounty: unknown"
+  - text: "Loot/salvage: unknown"
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Centii Butcher
+              - Centii Manslayer
+              - Centii Slavehunter
+              - Centii Savage
+      - id: wave-1
+        trigger:
+          on: other
+          text: "Wave #1"
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Centii Butcher
+              - Centii Manslayer
+            triggers: "Triggers Wave #3"
+          - count: "5"
+            class: Cruiser
+            names:
+              - Centum Torturer
+              - Centum Mutilator
+          - count: "2"
+            class: Battleship
+            names:
+              - Centus Mutant Lord
+      - id: wave-2
+        trigger:
+          on: other
+          text: "Wave #2"
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Destroyer
+            names:
+              - Centior Abomination
+              - Centior Monster
+          - count: "4"
+            class: Cruiser
+            names:
+              - Centum Fiend
+              - Centum Hellhound
+            triggers: "Triggers Wave #4"
+          - count: "2"
+            class: Battleship
+            names:
+              - Centus Slave Lord
+      - id: wave-3
+        trigger:
+          on: other
+          text: "Wave #3"
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Cruiser
+            names:
+              - Centum Fiend
+              - Centum Hellhound
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centatis Daemon
+            triggers: "Triggers Wave #5"
+          - count: "2"
+            class: Battleship
+            names:
+              - Centus Mutant Lord
+              - Centus Savage Lord
+      - id: wave-4
+        trigger:
+          on: other
+          text: "Wave #4"
+          confidence: inferred
+        spawns:
+          - count: "10"
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centatis Daemon
+              - Centatis Devil
+              - Centatis Wraith
+      - id: wave-5
+        trigger:
+          on: other
+          text: "Wave #5"
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Minion
+              - Centii Loyal Servant
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Slaughterer
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centatis Devil
+          - count: "4"
+            class: Battleship
+            names:
+              - Centus Dark Lord
+              - Centus Overlord
+          - count: "1"
+            class: Unknown
+            names:
+              - True Sansha Ship
+            group: Possible Rare Spawn
+            drop: Possible to contain faction ammo, tags, modules
+            note: Rare spawn
+sde:
+  dungeonIds:
+    - 3429

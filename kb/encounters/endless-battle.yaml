@@ -1,0 +1,36 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: endless-battle
+kind: mission
+name: Endless Battle
+level: 1
+enemyFaction: Mercenaries
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Endless Battle
+    url: https://wiki.eveuniversity.org/Endless_Battle
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191682"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Bring 1x Stolen Documents to your agent
+notes:
+  - text: "Suggested ships: Frigate"
+  - text: "This mission leads to Part 2: Encryption Code Book (Courier)"
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: initial-group-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group (auto-aggro)
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Saboteur Mercenary
+            note: Drops 1x Stolen Documents

@@ -1,0 +1,205 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: mordus-folly
+kind: mission
+name: Mordus Folly
+level: 4
+enemyFaction: Mordu's Legion Command
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Mordus Folly
+    url: https://wiki.eveuniversity.org/Mordus_Folly
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223263"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal:
+    - kinetic
+    - em
+  resist:
+    - kinetic
+    - thermal
+objectives:
+  - text: Encrypted Ship log (1 m³)
+lootNotes:
+  - text: The following dog tags dropped in total. The current value is about 50 million isk. The exact amounts might vary with the exact spawn amounts. Just like the market value might also fluctuate. Supply Depot sometimes drops 10x Science Graduates that are used for building Research Lab module for Upwell structures. Other times, it drops 5x Civilians (with no use that I know of), or 5x Janitors (used in 3 blueprints).
+  - text: 1.6 million
+  - text: 16 Caldari Navy Admiral Insignia I
+  - text: 1 Caldari Navy Captain Insignia III
+  - text: 5 Caldari Navy Commodore Insignia I
+  - text: 18 Caldari Navy Commodore Insignia II
+npcs:
+  Taibu State Suriage/Shirasa:
+    sdeTypes:
+      - Web
+      - Scram
+    class: Frigate
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: No hostiles on the initial acceleration gate.
+      - text: The last Mordus ship drops the mission objective, it's recommended to leave one frigate until the end so picking up takes no time.
+      - text: Every new wave aggros you and your drones, so keep them safe.
+      - text: Mission contains a field of about 40 Veldspar asteroids with a diameter of around 40 km.
+      - text: Five Abandoned Containers with t1 loot (usually 1 item per container). Tractor beam doesn't work on them.
+      - text: "Tip: As of 23 Aug YC124 Abandoned Containers contained only Metal Scraps and ammo (hybrid and energy turrets)."
+      - text: 6.674.000
+      - text: "Est Price: 12 Mil"
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Mordus Rapier
+            group: Wave 1 (50km, autoaggro)
+          - count: "5"
+            class: Cruiser
+            names:
+              - Mordus Cheetah
+            group: Wave 1 (50km, autoaggro)
+            triggers: triggers wave 2
+          - count: "1"
+            class: Industrial
+            names:
+              - State Hauler
+            group: Wave 1 (50km, autoaggro)
+            note: Does not drop anything and killing it is not required to complete mission
+          - count: "1"
+            class: Battleship
+            names:
+              - Mordus Gigamar
+            group: Wave 1 (50km, autoaggro)
+          - count: "1"
+            class: Battleship
+            names:
+              - Mordus Mammoth
+            group: Wave 1 (50km, autoaggro)
+          - count: "3"
+            class: Battleship
+            names:
+              - Mordus Sequestor
+            group: Wave 1 (50km, autoaggro)
+            triggers: triggers wave 3
+          - count: 0-1
+            class: Battleship
+            names:
+              - Mordus Fleet Commander
+            group: Wave 1 (50km, autoaggro)
+            drop: random implant
+            note: 5mil bounty
+          - count: "5"
+            class: Cruiser
+            names:
+              - Mordus Leopard
+            group: Wave 2 (50km, triggered by killing the cruisers in wave 1)
+          - count: "2"
+            class: Battleship
+            names:
+              - Mordus Sequestor
+            group: Wave 3 (58km, triggered by killing the Sequestors in wave 1)
+            triggers: triggers wave 4
+          - count: "4"
+            class: Battleship
+            names:
+              - Mordus Phanti
+            group: Wave 4 (50km, triggered by killing wave 3
+  - name: Mordu's Folly (Part 2 of 2)
+    notes:
+      - text: "Blitz: Destroy the Caldari Supply Depot."
+      - text: "Tip: Even though the mission is against Caldari State, you can run it without standing loss if you only destroy the Caldari Supply Depot. But you have to deal with the ECM from some of the NPCs. Therefore either have good sensor strength or use drones to destroy the structure. As of 23 Aug YC124, Depot defenders do attack drones so watch them carefully. Supply Depot is very tough (above 180k HPs) but explodes when structure strength falls below 75% (armor and shield go to 0%)."
+  - name: Single Pocket
+    notes:
+      - text: No aggro on warp-in.
+      - text: If you destroy the depot early, the first battleship reinforcements wave (Bishamon/Shogun) will consist of 4 Bishamon.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: "Initial defenders:"
+        spawns:
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Taibu State Tachi
+            group: Single frigate (at 40 km)
+            ewar:
+              - kind: ecm
+            drop: Caldari Navy Captain Insignia III
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - State Shukuro Bajo
+            group: Battlecruiser group (at 45 km)
+            triggers: triggers a cruiser wave
+            drop: Caldari Navy Commodore Insignia I & Caldari Navy Commodore Insignia II
+          - count: "6"
+            class: Battleship
+            names:
+              - State Shukuro Bishamon
+              - State Shukuro Daijo
+            group: Battleship group (at 60 km)
+            triggers: triggers battleship wave
+            drop: Caldari Navy Admiral Insignia I
+          - count: "1"
+            class: Structure
+            names:
+              - Caldari Supply Depot
+            group: Structure (at 60 km)
+            triggers: mission finished on destruction
+            drop: 10x Science Graduates
+      - id: reinforcement-waves
+        trigger:
+          on: other
+          text: "Reinforcement waves:"
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Cruiser
+            names:
+              - Taibu State Tendai
+              - Taibu State Sohei
+            group: Triggered when the Supply Depot goes below 75% armor (at 60 km)
+            ewar:
+              - kind: ecm
+            drop: Caldari Navy Commodore Insignia II
+          - count: "3"
+            class: Cruiser
+            names:
+              - Taibu State Bajo
+            group: Triggered by the last initial battlecruiser (at 40-45 km)
+            drop: 3 Caldari Navy Commodore Insignia II
+          - count: "3"
+            class: Frigate
+            names:
+              - Taibu State Suriage/Shirasa
+            group: Timed trigger after the three cruisers before (?)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Battleship
+            names:
+              - State Shukuro Bishamon
+            group: Triggered by the last initial battleship (at 60-65 km)
+            triggers: triggers next battleship wave with Nahashin in it
+            drop: Caldari Navy Admiral Insignia I
+          - count: "2"
+            class: Battleship
+            names:
+              - State Shukuro Shogun
+            group: Triggered by the last initial battleship (at 60-65 km)
+            drop: 2 Caldari Navy Admiral Insignia I
+          - count: "2"
+            class: Battleship
+            names:
+              - State Shukuro Nagashin
+            group: Triggered the last battleship above (at 60-65 km)
+            drop: Caldari Navy Admiral Insignia I

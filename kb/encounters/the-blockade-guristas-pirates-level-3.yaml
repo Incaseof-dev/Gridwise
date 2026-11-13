@@ -1,0 +1,149 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-blockade-guristas-pirates-level-3
+kind: mission
+name: The Blockade
+level: 3
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Blockade (Guristas Pirates) (Level 3)
+    url: https://wiki.eveuniversity.org/The_Blockade_(Guristas_Pirates)_(Level_3)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "214891"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Kill their high-ranking officers
+ewar:
+  - kind: ecm
+  - kind: web
+notes:
+  - text: "Web/warp disruption: Starbase Stasis Tower (Web)"
+  - text: "Suggested ships: Battlecruiser, T3C"
+  - text: "Blitz: Kill every trigger, then the last 5 battlecruisers on the fourth wave to complete mission."
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: initial-group-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group, Auto-aggro
+        spawns:
+          - count: "1"
+            class: Sentry
+            names:
+              - Starbase Stasis Tower
+            ewar:
+              - kind: web
+          - count: "1"
+            class: Destroyer
+            names:
+              - Pithior Renegade
+            triggers: Spawns reinforcement 1
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Abolisher
+              - Dire Pithum Eraser
+              - Dire Pithum Mortifier
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Pithatis Enforcer
+              - Pithatis Executor
+      - id: reinforcement-1-50-80km
+        trigger:
+          on: other
+          text: Reinforcement 1, 50-80km
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Pithi Plunderer
+              - Pithi Wrecker
+          - count: 5-6
+            class: Destroyer
+            names:
+              - Pithior Anarchist
+              - Pithior Nihilist
+              - Pithior Renegade
+              - Pithior Terrorist
+          - count: 8-9
+            class: Battlecruiser
+            names:
+              - Pithatis Assassin
+              - Pithatis Assaulter
+              - Pithatis Enforcer
+              - Pithatis Executor
+            triggers: Highest bounty spawns reinforcement 2
+      - id: reinforcement-2-100-130km
+        trigger:
+          on: other
+          text: Reinforcement 2, 100-130km
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Destroyer
+            names:
+              - Pithior Anarchist
+              - Pithior Nihilist
+              - Pithior Renegade
+              - Pithior Terrorist
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Mortifier
+          - count: 6-7
+            class: Battlecruiser
+            names:
+              - Pithatis Assassin
+              - Pithatis Death Dealer
+              - Pithatis Executor
+            triggers: Highest bounty spawns reinforcement 3
+      - id: reinforcement-3
+        trigger:
+          on: other
+          text: Reinforcement 3
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Dire Pithi Plunderer
+              - Dire Pithi Wrecker
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Pithum Abolisher
+              - Pithum Eraser
+          - count: 5-8
+            class: Battlecruiser
+            names:
+              - Pithatis Assassin
+              - Pithatis Assaulter
+              - Pithatis Enforcer
+            triggers: Last kill spawns reinforcement 4
+      - id: reinforcement-4-15-30km
+        trigger:
+          on: other
+          text: Reinforcement 4, 15-30km
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Despoiler
+              - Dire Pithi Saboteur
+            ewar:
+              - kind: ecm
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Pithatis Death Dealer
+              - Pithatis Revolter
+            triggers: Completes Mission objective when destroyed

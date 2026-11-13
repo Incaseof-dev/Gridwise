@@ -1,0 +1,55 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: customs-interdiction-1-of-2
+kind: mission
+name: Customs Interdiction (1 of 2)
+level: 2
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Customs Interdiction (1 of 2)
+    url: https://wiki.eveuniversity.org/Customs_Interdiction_(1_of_2)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223226"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Suggested ships: Cruiser"
+  - text: "Blitz: Destroy Transport ship, loot DNA, warp out."
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: No aggro on warp-in.
+      - text: "Message When Warping-in: That's definitely it. The Customs Authority has confirmed that as the vessel they tracked leaving a Lai Dai factory yard three days ago. Take her down, pilot."
+      - text: Destroying the Transport does not incur a standings loss.
+      - text: When the Transport is destroyed, the Smuggler's DNA is put into your hold.
+      - text: "Next: Customs Interdiction (2 of 2)"
+    waves:
+      - id: group-1-15km
+        trigger:
+          on: other
+          text: Group 1, 15km
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Industrial
+            names:
+              - Smuggler Transport
+            triggers: triggers Reinforcement armor at 75%
+            note: State Industrial Type
+      - id: reinforcement-25km-spawn-on-armor-at-75
+        trigger:
+          on: other
+          text: Reinforcement, 25km spawn on armor at 75%
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Mercenary
+              - Gallente Frigates
+            drop: Gallente Navy Faction Tags(Gallente Frigate Drops These)
+            note: Gallente Frigates Are Named Mercenaries and Federation Kontos Type

@@ -1,0 +1,214 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: pirate-invasion-guristas-pirates
+kind: mission
+name: Pirate Invasion
+level: 3
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Pirate Invasion (Guristas Pirates)
+    url: https://wiki.eveuniversity.org/Pirate_Invasion_(Guristas_Pirates)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "216765"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Neutralize the entire enemy force and halt their sneak attack.
+ewar:
+  - kind: web
+  - kind: ecm
+  - kind: warpScramble
+notes:
+  - text: "Web/warp disruption: Elite Frigates (Scram)"
+  - text: "Suggested ships: HAC, Battlecruiser"
+pockets:
+  - name: Warp-In
+    waves:
+      - id: initial-group-20km-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group, 20km(auto-aggro)
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Pithi Plunderer
+              - Pithi Wrecker
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Arrogator
+              - Dire Pithi Imputor
+            ewar:
+              - kind: web
+              - kind: warpScramble
+  - name: 1st Pocket
+    notes:
+      - text: No auto-aggro.
+      - text: Shooting anything causes full pocket aggro.
+      - text: Acceleration gate to 2nd pocket is at 38km.
+      - text: "'War Installation' has a significant tank. 7-8 minutes of constant fire in ~600 dps BC."
+    waves:
+      - id: 1st-group-50km
+        trigger:
+          on: other
+          text: 1st Group, 50km
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Cruiser
+            names:
+              - Pithum Annihilator
+              - Pithum Mortifier
+            ewar:
+              - kind: ecm
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Pithatis Assassin
+              - Pithatis Assaulter
+      - id: 2nd-group-60-90km
+        trigger:
+          on: other
+          text: 2nd Group, 60-90km
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Pithi Demolisher
+              - Pithi Destructor
+          - count: 2-3
+            class: Destroyer
+            names:
+              - Pithior Guerilla
+              - Pithior Renegade
+          - count: "2"
+            class: Cruiser
+            names:
+              - Pithum Abolisher
+              - Pithum Eraser
+      - id: wave
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - War Installation
+            drop: T1 loot and/or ammo
+  - name: 2nd Pocket
+    notes:
+      - text: Shooting the 3rd group will aggro the 2nd group.
+    waves:
+      - id: 1st-group-30-40km-auto-aggro
+        trigger:
+          on: other
+          text: 1st Group, 30-40km (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Pithi Plunderer
+              - Pithi Wrecker
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Arrogator
+              - Dire Pithi Demolisher
+              - Dire Pithi Destructor
+              - Dire Pithi Imputor
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: 2-3
+            class: Destroyer
+            names:
+              - Pithior Anarchist
+              - Pithior Nihilist
+      - id: 2nd-group-25-40km
+        trigger:
+          on: other
+          text: 2nd Group, 25-40km
+          confidence: inferred
+        spawns:
+          - count: "7"
+            class: Cruiser
+            names:
+              - Pithum Ascriber
+              - Pithum Inferno
+              - Pithum Mortifier
+              - Pithum Silencer
+      - id: 3rd-group-50-65km
+        trigger:
+          on: other
+          text: 3rd Group, 50-65km
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Cruiser
+            names:
+              - Pithum Inferno
+              - Pithum Mortifier
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Pithatis Enforcer
+              - Pithatis Executor
+  - name: 3rd Pocket
+    notes:
+      - text: The 3rd Pocket may or may not exist. If it does, it's required for mission completion.
+      - text: The 2nd Group is not required for completion.
+    waves:
+      - id: 1st-group-auto-aggro
+        trigger:
+          on: other
+          text: 1st Group, (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Pithi Plunderer
+              - Pithi Wrecker
+          - count: "3"
+            class: Destroyer
+            names:
+              - Pithior Anarchist
+              - Pithior Nihilist
+      - id: 2nd-group-30-40km
+        trigger:
+          on: other
+          text: 2nd Group, 30-40km
+          confidence: inferred
+        spawns:
+          - count: 7-8
+            class: Cruiser
+            names:
+              - Pithum Ascriber
+              - Pithum Inferno
+              - Pithum Mortifier
+              - Pithum Silencer
+      - id: 3rd-group-53-65km
+        trigger:
+          on: other
+          text: 3rd Group, 53-65km
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Cruiser
+            names:
+              - Pithum Inferno
+              - Pithum Mortifier
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Pithatis Enforcer
+              - Pithatis Executor

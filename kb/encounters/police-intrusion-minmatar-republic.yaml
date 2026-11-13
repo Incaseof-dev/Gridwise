@@ -1,0 +1,116 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: police-intrusion-minmatar-republic
+kind: mission
+name: Police Intrusion
+level: 2
+enemyFaction: Minmatar Republic
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Police Intrusion (Minmatar Republic)
+    url: https://wiki.eveuniversity.org/Police_Intrusion_(Minmatar_Republic)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191852"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: targetPaint
+notes:
+  - text: "Suggested ships: Destroyer, Cruiser"
+pockets:
+  - name: 1st Pocket
+    waves:
+      - id: 1st-group-auto-aggro
+        trigger:
+          on: other
+          text: 1st Group (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Republic Radur
+              - Republic Skani
+      - id: 2nd-group
+        trigger:
+          on: other
+          text: 2nd Group
+          confidence: inferred
+        spawns:
+          - count: "10"
+            class: Frigate
+            names:
+              - Republic Takan
+              - Republic Otur
+              - Republic Tribal Baldur
+          - count: "1"
+            class: Cruiser
+            names:
+              - Republic Rodul
+      - id: 3rd-group
+        trigger:
+          on: other
+          text: 3rd Group
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Republic Otur
+              - Republic Takan
+              - Republic Baldur
+              - Republic Kvarm
+  - name: 2nd Pocket
+    waves:
+      - id: 1st-group-25km
+        trigger:
+          on: other
+          text: 1st Group, 25km
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Republic Gleeda
+              - Republic Otur
+              - Republic Tribal Gleeda
+            ewar:
+              - kind: targetPaint
+          - count: "1"
+            class: Cruiser
+            names:
+              - Republic Solon
+      - id: 2nd-group-40km
+        trigger:
+          on: other
+          text: 2nd Group, 40km
+          confidence: inferred
+        spawns:
+          - count: "7"
+            class: Frigate
+            names:
+              - Republic Baldur
+              - Republic Otur
+              - Republic Tribal Gleeda
+            ewar:
+              - kind: targetPaint
+      - id: 1st-group-70km
+        trigger:
+          on: other
+          text: 1st Group, 70km
+          confidence: inferred
+        spawns:
+          - count: "11"
+            class: Frigate
+            names:
+              - Republic Baldur
+              - Republic Gleeda
+              - Republic Kvarm
+              - Republic Otur
+          - count: "1"
+            class: Cruiser
+            names:
+              - Republic Jarpur

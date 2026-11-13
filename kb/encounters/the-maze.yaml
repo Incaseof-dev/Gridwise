@@ -1,0 +1,219 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-maze
+kind: complex
+name: The Maze
+dedRating: 10
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Maze
+    url: https://wiki.eveuniversity.org/The_Maze
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "232574"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: T2 Battleship"
+notes:
+  - text: The Maze is a null security DED rated site found through exploration. It can also be received as an escalation from the Guristas Haven and Guristas Sanctum.
+  - text: The maze contains a large number of acceleration gates. In each room one gate takes you deeper into the complex while the rest of them lead back to the first pocket.
+loot:
+  - item: 23rd Tier Overseer's Effects
+    from: Fleet Stronghold
+    note: est. 133,837,000 ISK (wiki) · 100% drop rate
+  - item: Pith X-Type module
+    from: Fleet Stronghold
+  - item: Rattlesnake BPC
+    from: Fleet Stronghold
+    note: Very rare
+pockets:
+  - name: 1st pocket
+    notes:
+      - text: The gate is unlocked and the rats do not need to be killed. But you will most likely have to fly through this pocket many times so thinning out the rats is recommended.
+      - text: In the room there are twelve acceleration gates. One of them leads deeper into the complex while the rest loop back. Take the bottom gate.
+      - text: Experienced explorers will quickly establish a simple method to always choose the correct acceleration gate. Before taking any gate, drop a canister in front of it. If the gate returns you to the entrance, proceed to the next gate you wish to try and drop a canister in front of that one. Label each can and proceed to continue with this process until you find the right gate - make a note of which can is in front of the proper gate and either ignore or destroy all of the others.
+      - text: Each acceleration gate will first send you to an empty room and then back to the beginning of the complex. When you activate the second acceleration gate, you will instantly be able to tell whether or not you are being returned to the beginning - if you are, the intro window bearing the complex's description will pop up once again.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "6"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Invader
+              - Dire Pithi Infiltrator
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "12"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+    onWarpIn: '"The Maze" is the name of this mysterious Gurista military complex. Most of those who have dared venture inside have not lived to tell about it, and those who are still alive are now labour workers for the Gurista. Although never confirmed, the deepest pockets of this complex are rumored to be the home of Fatal himself.'
+  - name: 2nd pocket
+    notes:
+      - text: After successfully navigating the correct acceleration gate you arrive in the second room of The Maze. Once again you will be confronted by a group defending the area.
+      - text: Once again you are faced with a choice of twelve acceleration gates, of which only one will lead further inside the complex. Take the fifth gate from the top
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 10-20
+            class: Frigate
+            names:
+              - Dire Pithi Invader
+              - Dire Pithi Infiltrator
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "12"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+  - name: 3rd pocket
+    notes:
+      - text: This time there are only four acceleration gates to choose from. Take the bottom gate.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns: []
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "4"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+  - name: 4th pocket
+    notes:
+      - text: This room comprises the smallest amount of defending NPCs so far. There is a total of 14 NPCs in this room; a mixture of Cruisers and Frigates.
+      - text: You have to choose between two acceleration gates. Take the one on right side.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns: []
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "2"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+  - name: 5th pocket
+    notes:
+      - text: "Warning: The Fleet Stronghold fires Kinetic Citadel Torpedoes that can instantly destroy any craft not suitably equipped for it! https://zkillboard.com/ship/25528/. Each individual hit does upwards of 500k Kinetic damage, and while they have virtually zero application to subcapitals, they will still wreck your tank if you aren't moving constantly. The station itself doesn't have significant tank, with only 120k total HP and 288 DPS shield rep."
+      - text: This room contains a mixture of frigates, cruisers, and battleships along with cruise missile batteries and the fleet outpost (firing Citadel Kinetic Torpedoes). Upon attacking the outpost 4 battleships spawn. The outpost will release more waves of defenders as it takes damage. Upon the outpost's destruction a jetcan will appear with a 23rd Tier Overseer's Personal Effects and possibly additional loot including Pith-X Type modules or a Rattlesnake BPC.
+      - text: There are 4 additional spawns that occur at damage intervals on the station. A spawn will occur at half-shield, half-armor. two-thirds structure and one third structure. Once you have reduced the station to one third structure you may as well finish it off before dealing with the spawn. Database Entry for structure stats.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 18-19
+            class: Elite Frigate
+            names:
+              - Dire Pithi Invader
+              - Dire Pithi Infiltrator
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "5"
+            class: Destroyer
+            names:
+              - Pithior Supremacist
+              - Pithior Terrorist
+          - count: "5"
+            class: Cruiser
+            names:
+              - Pithum Abolisher
+              - Pithum Eraser
+          - count: "10"
+            class: Battleship
+            names:
+              - Pith Conquistador
+              - Pith Massacrer
+          - count: "4"
+            class: Sentry
+            names:
+              - Guristas Stasis Tower
+            ewar:
+              - kind: web
+          - count: "8"
+            class: Sentry
+            names:
+              - Guristas Cruise Missile Batteries
+          - count: "1"
+            class: Station
+            names:
+              - Guristas Fleet Stronghold
+            ewar:
+              - kind: web
+            triggers: Triggers extra waves at damage intervals.
+            drop: 23rd Tier Overseer's Personal Effects, Pith X-Type and/or Dread Guristas battleship modules, possibly a Rattlesnake BPC
+            note: Shoots Citadel Torpedoes that hit hard.
+      - id: fleet-stronghold-attacked
+        trigger:
+          on: other
+          text: Fleet stronghold attacked
+          confidence: inferred
+        spawns: []
+      - id: fleet-stronghold-50-shield
+        trigger:
+          on: other
+          text: Fleet stronghold 50% shield
+          confidence: inferred
+        spawns: []
+      - id: fleet-stronghold-50-armor
+        trigger:
+          on: other
+          text: Fleet stronghold 50% armor
+          confidence: inferred
+        spawns: []
+      - id: fleet-stronghold-75-structure
+        trigger:
+          on: warpIn
+          text: Fleet stronghold 75% structure
+        spawns: []
+      - id: fleet-stronghold-30-structure
+        trigger:
+          on: warpIn
+          text: Fleet stronghold 30% structure
+        spawns:
+          - count: "8"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Invader
+              - Dire Pithi Infiltrator
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+sde:
+  dungeonIds:
+    - 2257

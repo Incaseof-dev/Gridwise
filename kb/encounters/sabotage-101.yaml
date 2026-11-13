@@ -1,0 +1,120 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: sabotage-101
+kind: mission
+name: Sabotage 101
+level: 3
+enemyFaction: Caldari State
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Sabotage 101
+    url: https://wiki.eveuniversity.org/Sabotage_101
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "229513"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Retrieve 1x Capital Ship Design – “Dictator” (0.1 m3)
+ewar:
+  - kind: web
+  - kind: ecm
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite Frigate"
+  - text: "Suggested ships: Interceptor"
+  - text: Gated deadspace pocket one jump away in P-FSQE. Your task is to retrieve the Capital Ship Design – “Dictator” from the Assembly Station DC105-A.
+  - text: "Blitz: fly through the Proximity Charge field to the Acceleration Gate. Loot the Capital Ship Design – “Dictator” from the Assembly Station DC105-A."
+  - text: "Tips: You cannot warp inside the rooms"
+  - text: "Tips: The Elite Frigate will often Web you but will rarely Warp Scramble"
+  - text: "Tips: The Proximity Charge deal damage at 7 km, but detonate at 7.5 km which means if you approach them slowly they will detonate without dealing any damage"
+  - text: "Tips: You will lose 2.4% Caldari State Faction Standing when you destroy the Proximity Charge"
+pockets:
+  - name: Warp-in
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+  - name: Room 1
+    notes:
+      - text: "Caldari Navy Explosion Field 0041-0: Warning! You are entering Caldari Navy space. Only authorized personnel of the Caldari State may proceed. An escort is being summoned to assess your security clearance… Error! Transmitter is not connected and/or requires repair. Please contact the nearest Caldari Navy installation for assistance."
+      - text: Proximity mines are spread out in a cross-shaped formation extending both horizontally and vertically, centered on the Acceleration Gate. With good manual piloting and avoiding reckless use of your prop mod, you can burn to the front of the gate and get into the next pocket without needing to shoot any of the mines and taking no damage.
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "44"
+            class: Structure
+            names:
+              - Proximity Charge
+            note: Triggers at 7.5 km; damages at 7 km
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+  - name: Room 2
+    notes:
+      - text: "Caldari Navy: How the hell did someone get in here? Scramble! Scramble!"
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - State Shukoro Shuriken
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Taibu State Shuriken
+            ewar:
+              - kind: ecm
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Taibu State Shirasaya
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Destroyer
+            names:
+              - State Yumi
+              - State Kai Gunto
+            triggers: Triggers next wave
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - State Shukoro Choji
+          - count: "1"
+            class: Cruiser
+            names:
+              - State Shukoro Choji
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Container
+            names:
+              - Assembly Station DC105-A
+            drop: Capital Ship Design – “Dictator”

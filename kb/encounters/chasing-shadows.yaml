@@ -1,0 +1,70 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: chasing-shadows
+kind: mission
+name: Chasing Shadows
+level: null
+enemyFaction: Mercenaries
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Chasing Shadows
+    url: https://wiki.eveuniversity.org/Chasing_Shadows
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "228295"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Eliminate the squadron and bring Kritsan Parthus back for interrogation.
+ewar:
+  - kind: neut
+  - kind: trackingDisruption
+notes:
+  - text: This is the second difficult mission of the epic arc. It is similar in difficulty to Burning Down the Hive.
+  - text: Kritsan Parthus is flying an Independent Harbinger/Prophecy (Battlecruiser), escorted by five Mercenary Rookie frigates. Parthus' ship will neut (drain your capacitor) if you get too close. It appears to have a range of 30km. He will also tracking disrupt your ship.
+  - text: Kritsan Parthus has 30% EM resistance and 50% KIN resistance, so EM damage towards that cruiser is recommended.
+  - text: As before, fit your ship properly, and use the correct tactics.
+  - text: If you want stay at long distance away from Parthus and use drones or missiles to take him out, then fit a Minmatar frigate with Projectiles and Rockets.
+  - text: Alternatively, you could a fast frigate like a Rifter with one or two 'Overdrive Injector System I' to quickly close in the distance with an afterburner.
+  - text: Destroy the escorts first. Lead them away from Parthus by manually piloting your ship. Double left click to fly the ship in a specific direction. Once you destroy the five escorts another three Mercenary Fighters will spawn. No more Fighters will spawn after they are eliminated.
+  - text: After dealing with the escorts it is time to deal with Parthus. Depending on your ship, either stay at maximum range or fire your afterburners to close in quickly. When you are in 500m orbit around Parthus turn off your afterburner and start shooting. If you are at long range send your drones or fire your missiles.
+  - text: "(2020-10-06 Update: It is possible to pop the Battlecruiser and ignore the others, but you'll need a ship with a lot of shields and armor to absorb the incoming fire. Doing this will not spawn the additional three mercenary fighters, and as soon as you kill the Battlecruiser, the item you need is automatically deposited to your cargo hold. There is no need to loot the wreck. Kritsan Parthus's Energy neut is 100 GJ every ten seconds.)"
+  - text: "After you blow up Parthus' ship, you'll hear from another new agent(Lear Evanus) - Amarr, this time: \"That’s an Amarr citizen you’ve kidnapped, pilot. But if I understand your motives correctly, we can overlook that. Once you’ve extracted Dagan’s location, we’ll help you bring the hammer of God down on that bastard.\" No one likes Dagan, it seems! Loot and return Parthus to Sister Alitura."
+  - text: "Item description of Kritsan Parthus: Parthus is an Amarr pirate. Quiet in person, he's known both as a wild gambler and a man who can cover his bets. His success in outfitting and executing illegal missions is similar: he takes a lot of risks, but thinks practically and can generally repay his debts."
+  - text: 'On turn in, Sister Alitura says: "I’ll handle questioning Parthus. Rest assured, he will be treated humanely, and compensated well."'
+pockets:
+  - name: Aftermath
+    notes:
+      - text: "Next Mission: The Missing Piece"
+    waves:
+      - id: initial
+        trigger:
+          on: warpIn
+          text: Initial
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Mercenary Rookie
+            triggers: Last one triggers reinforcements
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Kritsan Parthus
+            ewar:
+              - kind: neut
+              - kind: trackingDisruption
+            triggers: Mission completion trigger
+            drop: Kritsan Parthus and meta modules
+      - id: reinforcements
+        trigger:
+          on: other
+          text: Reinforcements
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Mercenary Fighter

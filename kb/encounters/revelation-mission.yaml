@@ -1,0 +1,39 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: revelation-mission
+kind: mission
+name: Revelation
+level: 4
+enemyFaction: null
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Revelation (mission)
+    url: https://wiki.eveuniversity.org/Revelation_(mission)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "210915"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Deliver 1x Book Of St. Arzad (0.1 m3)
+notes:
+  - text: thumb|right|192px
+  - text: Go to Avesber five jumps away.
+  - text: Insert the Book Of St. Arzad into University of Caille Cargo Container.
+  - text: Complete the Mission remotely.
+  - text: "Thank you: I think we did the right thing. Though I am deeply troubled by this situation, as a historian, I must confront it. Thank you for all your efforts in this investigation, . Though some of my people may be upset with you, the Matari people as a whole owe you their gratitude. Good luck in the future, brave pilot."
+pockets:
+  - name: Warp-in
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Container
+            names:
+              - University of Caille Cargo Container
+            drop: Insert Book Of St. Arzad

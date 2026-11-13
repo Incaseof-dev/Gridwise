@@ -1,0 +1,60 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: diplomatic-incident
+kind: mission
+name: Diplomatic Incident
+level: 4
+enemyFaction: Amarr Empire
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Diplomatic Incident
+    url: https://wiki.eveuniversity.org/Diplomatic_Incident
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "194915"
+defaults:
+  confidence: verified
+  source: uni
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: ship-group-65-85km
+        trigger:
+          on: other
+          text: Ship Group, 65-85km
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Divine Imperial Napat
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Paladin
+              - Divine Imperial Valok
+          - count: "4"
+            class: Cruiser
+            names:
+              - Imperial Templar Tamir
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Divine Imperial Justicar
+          - count: "9"
+            class: Battleship
+            names:
+              - Imperial Tanakh
+              - Imperial Templar Ultara
+              - Imperial Templar Martyr
+      - id: sentry-group-90km
+        trigger:
+          on: other
+          text: Sentry Group, 90km
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Minmatar Station Sentry

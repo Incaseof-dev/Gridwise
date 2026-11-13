@@ -1,0 +1,36 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: pirate-aggression-sanshas-nation
+kind: mission
+name: Pirate Aggression
+level: 1
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Pirate Aggression (Sansha's Nation)
+    url: https://wiki.eveuniversity.org/Pirate_Aggression_(Sansha's_Nation)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "209078"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy all enemies
+notes:
+  - text: Normal Space (Warp to bookmark works)
+  - text: Structures drop no loot.
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: initial-defenders-10-km
+        trigger:
+          on: warpIn
+          text: Initial Defenders, 10 km
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Centii Ravener
+              - Centii Scavenger

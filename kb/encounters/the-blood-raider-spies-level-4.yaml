@@ -1,0 +1,81 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-blood-raider-spies-level-4
+kind: mission
+name: The Blood Raider Spies
+level: 4
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Blood Raider Spies (Level 4)
+    url: https://wiki.eveuniversity.org/The_Blood_Raider_Spies_(Level_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "208031"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: neut
+notes:
+  - text: "Blitz: Kill group 3."
+lootNotes:
+  - text: "Loot & Salvage: 5.5M"
+  - text: "Bounties: 4.5M"
+pockets:
+  - name: Single Gated Pocket
+    notes:
+      - text: Blood Raider Outpost doesn't drop anything.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corpatis Bishop
+              - Corpatis Seer
+            group: Group 1, auto-aggro 5km
+          - count: "1"
+            class: Battleship
+            names:
+              - Corpus Harbinger
+              - Corpus Oracle
+            group: Group 1, auto-aggro 5km
+            ewar:
+              - kind: neut
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corpior Visionary
+              - Corpior Converter
+            group: Group 2, Radio Telescope 30-40km
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corpum Shadow Sage
+              - Corpum Dark Priest
+            group: Group 2, Radio Telescope 30-40km
+          - count: "3"
+            class: Battleship
+            names:
+              - Corpus Archon
+              - Corpus Prophet
+            group: Group 2, Radio Telescope 30-40km
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corpior Cleric
+              - Corpior Friar
+            group: Group 3, Blood Raider Outpost 50-60km
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corpatis Exorcist
+            group: Group 3, Blood Raider Outpost 50-60km
+            note: May be called Blood Raider Spy

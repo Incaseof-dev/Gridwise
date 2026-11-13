@@ -1,0 +1,47 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: interstellar-railroad-1-of-4
+kind: mission
+name: Interstellar Railroad (1 of 4)
+level: 1
+enemyFaction: Minmatar Republic
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Interstellar Railroad (1 of 4)
+    url: https://wiki.eveuniversity.org/Interstellar_Railroad_(1_of_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223289"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Approach the Amarr-Caldari Mediation Center, pick up the Amarrian Diplomat (1.0 m3) and bring him to agent's station.
+notes:
+  - text: "Suggested ships: Frigate, Destroyer"
+  - text: "Blitz: Approach Amarr-Caldari Mediation Center and wait for Amarr Diplomat to appear in your cargohold."
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: "Next: Interstellar Railroad (2 of 4)"
+    waves:
+      - id: initial-group-50km
+        trigger:
+          on: warpIn
+          text: Initial Group, 50km
+        spawns:
+          - count: "1"
+            class: Destroyer
+            names:
+              - Republic Bormin
+            note: Spawns when approaching the structure
+      - id: approach-structure
+        trigger:
+          on: warpIn
+          text: Approach Structure
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Amarr-Caldari Mediation Center

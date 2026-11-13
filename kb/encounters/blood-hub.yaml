@@ -1,0 +1,111 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: blood-hub
+kind: anomaly
+name: Blood Hub
+dedRating: null
+anomalyClass: 8
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Blood Hub
+    url: https://wiki.eveuniversity.org/Blood_Hub
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225148"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: The site consists of single ungated area. Warping to beacon for close range would require a very good tank to handle the swarm’s incoming damage. Using a propulsion module or a Micro Jump Drive is recommended. With the initial group and 3 triggered spawns, the site totals of 27 ships.
+  - text: text-top|300px|thumb|The site is an open Deadspace pocket, one may warp to preferred distance.
+  - text: "Escalation: The anomaly can escalate to Blood Raider Prison Camp."
+lootNotes:
+  - text: The site rewards 9 million in bounties and the possible commander can drop faction modules, implants or blueprints.
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: 2 - 3
+            class: Frigate
+            names:
+              - Elder Corpii Engraver
+              - Elder Corpii Diviner
+          - count: "2"
+            class: Battleship
+            names:
+              - Corpus Monsignor
+              - Corpus Cardinal
+          - count: "4"
+            class: Sentry
+            names:
+              - Tower Sentry Blood Raider II
+      - id: 1st-reinforcement-spawn
+        trigger:
+          on: other
+          text: 1st Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 3 - 4
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Shadow Sage
+              - Elder Corpum Arch Sage
+              - Elder Corpum Dark Priest
+          - count: 3 - 4
+            class: Battleship
+            names:
+              - Corpus Patriarch
+              - Corpus Pope
+      - id: 2nd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 2nd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 3 - 4
+            class: Destroyer
+            names:
+              - Corpior Templar
+              - Corpior Cleric
+              - Corpior Devoter
+          - count: 3 - 4
+            class: Battlecruiser
+            names:
+              - Corpatis Exorcist
+              - Corpatis Phantom
+          - count: 3 - 4
+            class: Battleship
+            names:
+              - Corpus Pope
+      - id: 3rd-reinforcement-spawn-23-28km
+        trigger:
+          on: other
+          text: 3rd Reinforcement Spawn (23- 28km)
+          confidence: inferred
+        spawns:
+          - count: 3 - 4
+            class: Battlecruiser
+            names:
+              - Corpatis Fanatic
+              - Corpatis Exorcist
+          - count: 2 - 4
+            class: Battleship
+            names:
+              - Corpus Pope
+              - Corpus Patriarch
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Dark Blood Apostle
+            group: Possible Rare Spawn
+            drop: Possible Faction charges, modules or tags
+    onWarpIn: The Amarr Empire has had its share of religious cults and fanatics in the past, but few have been as successful, or as highly feared, as the Blood Raiders. The Blood Raiders are a sect of an ancient cult called Sani Sabik, who use blood in their rituals. The Blood Raiders believe that cloned bodies have "purer" blood than other bodies, and this explains while they operate mainly in space, attacking unwary spacefarers and draining their bodies of blood. The Blood Raiders are led by the fearsome Omir Sarikusa, who has remained on top of the DED's most wanted list for many years now. Under Sarikusa's leadership, the Blood Raiders have become more organized, establishing several bases in the Bleak Lands region.
+sde:
+  dungeonIds:
+    - 2151

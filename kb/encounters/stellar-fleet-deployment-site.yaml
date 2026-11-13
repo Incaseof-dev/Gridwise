@@ -1,0 +1,141 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: stellar-fleet-deployment-site
+kind: anomaly
+name: Stellar Fleet Deployment Site
+dedRating: null
+enemyFaction: Triglavian Collective
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Stellar Fleet Deployment Site
+    url: https://wiki.eveuniversity.org/Stellar_Fleet_Deployment_Site
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "171208"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: T1 Cruiser and below"
+notes:
+  - text: Stellar Fleet Deployment Site appear every 5 hours and are centered around the Dazh Liminality Locus Structure. They spawn in Triglavian Minor Victory systems and in Pochven.
+  - text: The Dazh Liminality Locus projects a System-wide Effect.
+  - text: Kikimoras deploy powerful Structures and are high priority targets.
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "1"
+            class: Destroyer
+            names:
+              - Hospodar Kikimora
+          - count: "1"
+            class: Destroyer
+            names:
+              - Raznaborg Kikimora
+            note: Deploys Structures
+          - count: "1"
+            class: Battleship
+            names:
+              - Raznaborg Leshak
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Stellar Transfer Conduit
+            note: "Only open to the following ships: Frigate, Cruiser, Capsule, Shuttle, Corvette, Assault Frigate, Destroyer, Interdicter, Covert Ops, Intercepter, Stealth Bomber, Electronic Attack Ship, Compact Exploration Ship, Expedition Frigate, Tactical Destroyer, Logistics Frigate, Command Destroyer."
+  - name: 1st Room
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: 4-7
+            class: Frigate
+            names:
+              - Damavik
+          - count: 0-2
+            class: Frigate
+            names:
+              - Raznaborg Damavik
+          - count: "2"
+            class: Frigate
+            names:
+              - Hospodar Damavik
+          - count: 2-5
+            class: Destroyer
+            names:
+              - Kikimora
+          - count: "2"
+            class: Destroyer
+            names:
+              - Raznaborg Kikimora
+          - count: 3-5
+            class: Destroyer
+            names:
+              - Raznaborg Kikimora
+            note: Deploys Structures
+          - count: "3"
+            class: Cruiser
+            names:
+              - Rodiva
+          - count: 0-3
+            class: Cruiser
+            names:
+              - Raznaborg Rodiva
+          - count: 0-1
+            class: Cruiser
+            names:
+              - Hospodar Rodiva
+          - count: "1"
+            class: Cruiser
+            names:
+              - Vedmak
+          - count: "1"
+            class: Cruiser
+            names:
+              - Raznaborg Vedmak
+          - count: 0-2
+            class: Cruiser
+            names:
+              - Hospodar Vedmak
+          - count: 0-2
+            class: Battlecruiser
+            names:
+              - Raznaborg Drekavac
+          - count: 1-2
+            class: Battleship
+            names:
+              - Raznaborg Leshak
+          - count: 1-2
+            class: Industrial
+            names:
+              - Dazh Koliada
+            note: The more Dazh Koliada there are the larger their escort Fleet
+          - count: "2"
+            class: Sentry
+            names:
+              - Entropic Disintegrator Werpost
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Dazh Liminality Locus
+            note: Projects a System-wide Effect
+sde:
+  dungeonIds:
+    - 8597

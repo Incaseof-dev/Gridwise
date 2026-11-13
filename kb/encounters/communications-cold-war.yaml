@@ -1,0 +1,103 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: communications-cold-war
+kind: mission
+name: Communications Cold War
+level: 2
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Communications Cold War
+    url: https://wiki.eveuniversity.org/Communications_Cold_War
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231418"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the Gallente communications array and the Federation pilots guarding it.
+restrictions:
+  - text: "Ship size limit: Cruiser"
+ewar:
+  - kind: web
+notes:
+  - text: No hostiles at initial gate. The Communications Tower in the second pocket has quite a lot of hp.
+pockets:
+  - name: 1st Pocket
+    notes:
+      - text: All ships aggro on warp-in.
+    waves:
+      - id: initial-hostiles
+        trigger:
+          on: warpIn
+          text: Initial Hostiles
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Tower Sentry Gallente I
+          - count: "2"
+            class: Sentry
+            names:
+              - Gallente Light Missile Battery
+          - count: "1"
+            class: Sentry
+            names:
+              - Gallente Stasis Tower
+            ewar:
+              - kind: web
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "2"
+            class: Structure
+            names:
+              - Bunker
+            drop: random low value loot
+  - name: 2nd Pocket
+    notes:
+      - text: All ships aggro on warp-in. You can ignore the sentry towers and still complete the mission.
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Communications Tower
+            note: Mission target
+      - id: initial-hostiles
+        trigger:
+          on: warpIn
+          text: Initial Hostiles
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Federation Hoplon
+              - Federation Kontos
+          - count: "2"
+            class: Cruiser
+            names:
+              - Federation Hastarius
+              - Federation Loras
+          - count: "2"
+            class: Sentry
+            names:
+              - Tower Sentry Gallente I
+          - count: "2"
+            class: Sentry
+            names:
+              - Gallente Light Missile Battery
+          - count: "1"
+            class: Sentry
+            names:
+              - Gallente Stasis Tower
+            ewar:
+              - kind: web

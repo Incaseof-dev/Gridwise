@@ -1,0 +1,51 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: success-comes-at-a-price
+kind: mission
+name: Success Comes At A Price
+level: 3
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Success Comes At A Price
+    url: https://wiki.eveuniversity.org/Success_Comes_At_A_Price
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191959"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy all enemy ships
+notes:
+  - text: "Blitz: Destroy all ships, ignore sentries."
+pockets:
+  - name: Warp-in
+    notes:
+      - text: All enemies aggro on warp-in
+    waves:
+      - id: single-group-30km
+        trigger:
+          on: other
+          text: Single Group (30km)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Rogue Agent
+          - count: "3"
+            class: Cruiser
+            names:
+              - Pithum Ascriber
+              - Pithum Silencer
+          - count: "2"
+            class: Sentry
+            names:
+              - Guristas Light Missile Battery
+            drop: Chance to drop missiles
+          - count: "1"
+            class: Cruiser
+            names:
+              - Guristas Emissary

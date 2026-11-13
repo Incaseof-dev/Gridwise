@@ -1,0 +1,67 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: lost-records
+kind: mission
+name: Lost Records
+level: 1
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Lost Records
+    url: https://wiki.eveuniversity.org/Lost_Records
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "230465"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Locate the records (1), place them in your cargo hold and get it back to me here.
+restrictions:
+  - text: "Ship size limit: Cruiser or smaller"
+notes:
+  - text: "Suggested ships: Destroyer"
+  - text: At warp-in the acceleration gate is about 40 km away.
+  - text: All enemies auto-aggro.
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: on-approach-to-gate-30km
+        trigger:
+          on: other
+          text: On Approach to Gate, 30km
+          confidence: inferred
+        spawns:
+          - count: "7"
+            class: Frigate
+            names:
+              - Coreli Initiate
+              - Coreli Scout
+  - name: Pocket
+    notes:
+      - text: "2026-04-09: No Destroyers (Group A) today, Previous run did not have the frigates. Only one of the groups show up?"
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Container
+            names:
+              - Cargo Container
+            group: Objective 30km
+            drop: Federation Court Logs
+          - count: 0-2
+            class: Destroyer
+            names:
+              - Corelior Soldier
+              - Corelior Trooper
+            group: Group A 30km
+          - count: 0-4
+            class: Frigate
+            names:
+              - Coreli Spy
+              - Coreli Agent
+            group: Group B, 20km

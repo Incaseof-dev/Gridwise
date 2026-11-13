@@ -1,0 +1,83 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: a-generals-best-friend
+kind: mission
+name: A General's Best Friend
+level: 4
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – A General's Best Friend
+    url: https://wiki.eveuniversity.org/A_General's_Best_Friend
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "206322"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: sensorDamp
+notes:
+  - text: "Suggested ships: Fast Frigate"
+  - text: No Standing loss
+  - text: "The Patriot Faction: The patriot faction has become increasingly influential since the breakdown in relations with the Federation. The patriots are led by the mighty Kaalakiota Corporation although Lai Dai and Wiyrkomi are often just as vocal in their beliefs. The patriots cultivate the Caldari heritage, reminisce about the great Raata Empire of old and joyously celebrate the reclamation of their homeworld, Caldari Prime."
+  - text: Ungated deadspace pocket one jump away in Obanen.
+  - text: "Blitz: take the Gate and approach the Caldari Navy Outpost."
+  - text: Complete the Mission remotely.
+  - text: "Tips: You do not have to destroy any ship"
+pockets:
+  - name: Warp-in
+    notes:
+      - text: "Caldari Navy Outpost 0018-D: WARNING! You are entering a Class 7 military zone. Unidentified vessels will be shot on sight."
+      - text: Gate Defenders spawn when you are about 20 km away from the Gate.
+    waves:
+      - id: structures-35-km
+        trigger:
+          on: other
+          text: Structures (35 km)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Newly Constructed Acceleration Gate
+            note: Unlocked
+      - id: gate-defenders
+        trigger:
+          on: warpIn
+          text: Gate Defenders
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Gallente Navy Nemesis
+            ewar:
+              - kind: sensorDamp
+          - count: "10"
+            class: Cruiser
+            names:
+              - Gallente Navy Arazu
+            ewar:
+              - kind: sensorDamp
+          - count: "6"
+            class: Battleship
+            names:
+              - Gallente Navy Sin
+            ewar:
+              - kind: sensorDamp
+  - name: Room 1
+    notes:
+      - text: "Agent Conversation: You best explain what it is you're doing here, pilot, apart from getting shot at by Gallente. That was a nice move uncovering them, but you still need to explain your presence. Immediately. Someone will be waiting for you at the Outpost."
+      - text: "Agent Conversation: Katsen old friend! What's with the new ride? I thought you hated those ships? Err, wait a second. Who exactly the hell are you? Katsen didn't tell me … oh, never mind. You're that egger he's been working with. Right, yes … I see now. Listen, I need you to talk with Katsen again. Tell him that I need fifty million ISK. I was going to ask him in person but obviously he's not here for that. And no, I can't speak over FTL with him myself, too risky to be … well, it's complicated. Just open up comms with him, you needn't travel back to Poinen."
+    waves:
+      - id: structures-30-km
+        trigger:
+          on: other
+          text: Structures (30 km)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Caldari Navy Outpost

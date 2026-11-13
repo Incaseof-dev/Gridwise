@@ -1,0 +1,69 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: convoy-attack-gallente-federation
+kind: mission
+name: Convoy Attack
+level: 5
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Convoy Attack (Gallente Federation)
+    url: https://wiki.eveuniversity.org/Convoy_Attack_(Gallente_Federation)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "194728"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy all enemy ships
+ewar:
+  - kind: neut
+  - kind: sensorDamp
+notes:
+  - text: No hostiles at initial gate. Freighters orbit at 70km, deal no damage, and have 142k hp. It is possible to throw off full-room aggro by leaving the room, returning and selectively aggressing certain groups that have approached quickly and separated from the others. Diviners and Dominators can be aggressed separately this way.
+pockets:
+  - name: 1st Pocket
+    notes:
+      - text: All ships aggro on initial warp-in. Federation Praktor Dionia neut for a total of 80gj/s.
+    waves:
+      - id: initial-hostiles
+        trigger:
+          on: warpIn
+          text: Initial Hostiles
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Elite Federation Matara
+            ewar:
+              - kind: sensorDamp
+          - count: "4"
+            class: Battleship
+            names:
+              - Federation Praktor Dionia
+            ewar:
+              - kind: neut
+              - kind: sensorDamp
+          - count: "2"
+            class: Battleship
+            names:
+              - Federation Praktor Hexeris
+          - count: "6"
+            class: Battleship
+            names:
+              - Federation Praktor Hyperion
+          - count: "2"
+            class: Battleship
+            names:
+              - Federation Praktor Phanix
+          - count: "3"
+            class: Battleship
+            names:
+              - Federation Praktor Polemo
+          - count: "4"
+            class: Freighter
+            names:
+              - Federation Freighter
+            drop: Various trade goods

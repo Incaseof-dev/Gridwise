@@ -1,0 +1,109 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: gone-berserk-level-4
+kind: mission
+name: Gone Berserk
+level: 4
+enemyFaction: Equilibrium of Mankind
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Gone Berserk (Level 4)
+    url: https://wiki.eveuniversity.org/Gone_Berserk_(Level_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225973"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite frigates"
+  - text: Single ungated pocket. You can [Fleet] warp to preferred distance. Auto aggro from Initial Group and spawns.
+  - text: The initial formation is composed of three groups with a Cruiser and a Battleship in each.
+  - text: Each Cruiser killed will trigger a spawn wave.
+  - text: Each wave is composed of four spawns for a total of 12 spawns.
+  - text: "Reminder: set your drones to passive to avoid triggering a swarm. AI of this mission seems to be different from most missions, as scooping sentry drone to bay and re-releasing them will not move aggro from drone to ship. An active hostile module is necessary to keep aggro at ship."
+  - text: Spawn composition and distance may vary with each wave.
+  - text: To manage aggro, work on a single chain of 4 waves/spawns, then kill the next Crusader from Initial defenders to cause spawn of subsequent chain. Flag the Cruisers at the beginning to make it easier to keep an eye on the triggers.
+  - text: The mission is flagged complete once you have killed ALL hostile ships, so you have to destroy the EoM Death Lord from all chains.
+  - text: Deathlord (last wave) uses missile over 100km range
+lootNotes:
+  - text: "bounties: 10.77M ISK"
+  - text: "loot & salvage: 14.4M ISK"
+  - text: "example salvage in 06-07-2024: Burned Logic Circuit 5"
+  - text: Fried Interface Circuit 22
+  - text: Tripped Power Circuit 25
+  - text: Charred Micro Circuit 23
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - EoM Crusader
+            triggers: Each one triggers reinforcement wave 1 on death
+          - count: "3"
+            class: Battleship
+            names:
+              - EoM Hydra
+      - id: reinforcement-wave-1-x3
+        trigger:
+          on: other
+          text: Reinforcement wave 1 (x3)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Cruiser
+            names:
+              - EoM Death Knight
+            triggers: Last one triggers reinforcement wave 2 on death
+      - id: reinforcement-wave-2-x3
+        trigger:
+          on: other
+          text: Reinforcement wave 2 (x3)
+          confidence: inferred
+        spawns:
+          - count: 0-2
+            class: Frigate
+            names:
+              - EoM Saboteur
+            ewar:
+              - kind: web
+          - count: "1"
+            class: Battleship
+            names:
+              - EoM Hydra
+            triggers: Triggers reinforcement wave 3 on death
+      - id: reinforcement-wave-3-x3
+        trigger:
+          on: other
+          text: Reinforcement wave 3 (x3)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Battleship
+            names:
+              - EoM Hydra
+          - count: "1"
+            class: Battleship
+            names:
+              - EoM Ogre
+            triggers: Triggers reinforcement wave 4 on death
+      - id: reinforcement-wave-4-x3
+        trigger:
+          on: other
+          text: Reinforcement wave 4 (x3)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Battleship
+            names:
+              - EoM Death Lord

@@ -1,0 +1,41 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: making-an-arrest
+kind: mission
+name: Making an Arrest
+level: null
+enemyFaction: null
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Making an Arrest
+    url: https://wiki.eveuniversity.org/Making_an_Arrest
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231021"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Suggested ships: Travel frigate/ceptor or shuttle"
+  - text: No combat
+  - text: "Terrus Harkan: Commodore Harkan is an old guard of the Kor-Azor family. After multiple tours with the Imperial Navy, he became the chief security officer for House Miyan. In his decades of service, he has only had one blemish. In YC 109, he led Miyan's forces into battle against those of Lord Darabi in Fensi, a battle which he lost when Miyan surrendered. Harkan's big mistake was objecting to Miyan's surrender in public. It was not long after that Harkan retired."
+  - text: thumb
+  - text: Travel to destination, and watch the explosion. There's no combat so you can travel in a shuttle.
+  - text: This mission can take place in a lowsec or a highsec system near Nishah, and cannot be completed remotely.
+  - text: "Note: If the route from Mission 15 to Mission 16 takes you through or near the Palas system, it may save time to leave your combat ship in Palas and continue to the Mission 16 destination in a shuttle or rookie ship."
+  - text: You will be instructed to fly towards Harkan's Manor, which will explode a couple of seconds later. (Using a pod will not trigger the explosion.)
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: structures-40-km-away
+        trigger:
+          on: other
+          text: Structures (40 km away)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Harkan's Manor
+            note: Will self-destruct

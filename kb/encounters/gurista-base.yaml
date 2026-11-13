@@ -1,0 +1,181 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: gurista-base
+kind: complex
+name: Gurista Base
+dedRating: null
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Gurista Base
+    url: https://wiki.eveuniversity.org/Gurista_Base
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223350"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: T2 Battleship"
+notes:
+  - text: The site is very similar to Provisional Gurista Outpost. This site is doable in an Extender fit Drake. MWD or long-range weapons are recommended due to enemies spawning very far away.
+  - text: Warping to the site lands you at an acceleration gate.
+  - text: "Escalation: This site can escalate to Consequences Smonsequences."
+  - text: 'Escalation: Escalation start: Guristas are the ones of the pirate factions who one usually thinks about as common thugs and loosely organized at best, but as far as you could see, this here was actually an advanced weapon lab run by these "common thugs", something is not right and you let your scanners go to work on the stations remains. While studying the ruined structure and ships, you get hold of some logs containing communication records which lead you to believe that this here operation was contracted and financed by an outside agent, or at least someone who didn’t identify himself as a part of the Guristas. In these records there are lists of orders and deliveries, everything going through a place called Zelig’s patch. That name rings a bell... well, you don’t know it personally, but your computers quickly connect this name with an entry in the regional trade registry, this is a trader in high tech lubricants and he even has an address...'
+loot:
+  - item: Dread Guristas Battleship modules
+    from: Dread Guristas Eradicator/Obliterator
+  - item: Rattlesnake BPC
+    from: Dread Guristas Eradicator/Obliterator
+    note: Rare drop
+lootNotes:
+  - text: You will get faction ammo and Dread Guristas dog tags. The commander battleship can drop Dread Guristas battleship modules and even a rare Rattlesnake BPC.
+pockets:
+  - name: First Pocket
+    notes:
+      - text: The acceleration gate to the second room is approximately 65 km away. It unlocks when all enemies are destroyed.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Wrecker
+              - Dire Pithi Plunderer
+            group: 15 km off
+          - count: "1"
+            class: Battleship
+            names:
+              - Pith Eliminator
+              - Pith Exterminator
+            group: 50 km off
+            ewar:
+              - kind: ecm
+            triggers: Triggers reinforcement wave
+          - count: 3-4
+            class: Cruiser
+            names:
+              - Pithum Inferno
+              - Pithum Mortifier
+            group: 100 km off
+      - id: reinforcement-wave
+        trigger:
+          on: other
+          text: Reinforcement wave
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Battlecruiser
+            names:
+              - Pithatis Revolter
+              - Pithatis Death Dealer
+            group: 175 km behind acceleration gate
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: Unlocks when all ships are destroyed
+  - name: Second Pocket
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Guristas Experimental Control
+              - Weapon Tower
+            triggers: Destroying triggers tower wave. Approaching may trigger reinforcements
+      - id: group-1
+        trigger:
+          on: other
+          text: Group 1
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Cruiser
+            names:
+              - Pithum Abolisher
+              - Pithum Eraser
+          - count: 3-4
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Annihilator
+              - Dire Pithum Killer
+              - Dire Pithum Nullifier
+            ewar:
+              - kind: ecm
+      - id: timed-wave-appears-140-km-from-warp-in
+        trigger:
+          on: other
+          text: Timed wave-appears 140 km from warp-in
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Nullifier
+              - Dire Pithum Murderer
+            ewar:
+              - kind: ecm
+          - count: 2-3
+            class: Battleship
+            names:
+              - Pith Eliminator
+              - Pith Exterminator
+            ewar:
+              - kind: ecm
+      - id: reinforcements-may-not-spawn-triggered-by-approaching-the-control-tower
+        trigger:
+          on: other
+          text: Reinforcements (may not spawn; triggered by approaching the Control Tower)
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Battlecruiser
+            names:
+              - Pithatis Revolter
+              - Pithatis Death Dealer
+      - id: tower-wave-triggered-by-destroying-the-control-tower
+        trigger:
+          on: other
+          text: Tower wave (triggered by destroying the Control Tower)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Guristas Cruise Missile Batteries
+          - count: 0-4
+            class: Cruiser
+            names:
+              - Pithum Inferno
+              - Pithum Mortifier
+            note: May not always spawn
+          - count: "4"
+            class: Battleship
+            names:
+              - Pith Dismantler
+              - Pith Extinguisher
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - Dread Guristas Eradicator
+              - Dread Guristas Obliterator
+            triggers: Escalation trigger
+            drop: Faction ammo/tags. May drop Dread Guristas battleship modules and a very rare Rattlesnake BPC. Wreck may produce T2 salvage
+    onWarpIn: Heuristic analysis of this location indicates that destroying the Guristas Experimental Control Tower would greatly improve your odds of uncovering further illicit activity.
+sde:
+  dungeonIds:
+    - 1460

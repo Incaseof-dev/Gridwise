@@ -1,0 +1,289 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: blood-haven
+kind: anomaly
+name: Blood Haven
+dedRating: null
+anomalyClass: 9
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Blood Haven
+    url: https://wiki.eveuniversity.org/Blood_Haven
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225188"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Escalation: This site can escalate to Blood Raider Naval Shipyard."
+lootNotes:
+  - text: Bounty is about 31 000 000
+pockets:
+  - name: Rock Haven Variant
+    waves:
+      - id: first-spawn
+        trigger:
+          on: other
+          text: First Spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Corpatis Exorcist
+            note: type list incomplete on the source page
+          - count: 3-4
+            class: Battleship
+            names:
+              - Corpus Patriarch
+              - Corpus Pope
+      - id: second-spawn
+        trigger:
+          on: other
+          text: Second Spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Elder Corpii Raider
+            note: type list incomplete on the source page
+          - count: 3-4
+            class: Battleship
+            names:
+              - Corpus Patriarch
+              - Corpus Pope
+      - id: third-spawn
+        trigger:
+          on: other
+          text: Third Spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Elder Corpii Upholder
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: type list incomplete on the source page
+          - count: 3-4
+            class: Battleship
+            names:
+              - Corpus Patriarch
+              - Corpus Pope
+      - id: fourth-spawn
+        trigger:
+          on: other
+          text: Fourth Spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Elder Corpii Seeker
+              - Elder Corpii Collector
+            ewar:
+              - kind: trackingDisruption
+          - count: 3-4
+            class: Battleship
+            names:
+              - Corpus Patriarch
+              - Corpus Pope
+      - id: fifth-spawn
+        trigger:
+          on: other
+          text: Fifth Spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Priest
+            ewar:
+              - kind: trackingDisruption
+              - kind: neut
+            note: type list incomplete on the source page
+          - count: 3-4
+            class: Battleship
+            names:
+              - Corpus Patriarch
+              - Corpus Pope
+      - id: commander-spawn
+        trigger:
+          on: other
+          text: Commander spawn
+          confidence: inferred
+        spawns:
+          - count: 3-8
+            class: Battlecruiser
+            names:
+              - Corpatis Exorcist
+              - Corpatis Fanatic
+              - Corpatis Bishop
+          - count: 4-8
+            class: Battleship
+            names:
+              - Corpus Patriarch
+              - Corpus Pope
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - Dark Blood Commander
+            drop: Drops Dark Blood tag, Blood ammunition crystal and possibly Dark Blood modules
+          - count: 0-1
+            class: Dreadnought
+            names:
+              - Blood
+              - Dark Blood Dreadnought
+            drop: Drops Capital Named Components and possibly Dark Blood modules
+            note: Dreadnought spawns are extremely rare.
+          - count: 0-1
+            class: Titan
+            names:
+              - Blood
+              - Dark Blood Titan
+            note: Titan spawns are extremely rare.
+    onWarpIn: I have detected a stargate nearby. Its design indicates that it belongs to someone of ill repute, such as smugglers or pirates.
+  - name: Gas Haven Variant (Elite Haven)
+    waves:
+      - id: first-spawn
+        trigger:
+          on: other
+          text: First Spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Cruiser
+            names:
+              - Elder Corpii
+          - count: 3-6
+            class: Battlecruiser
+            names:
+              - Corpatis
+          - count: 6-8
+            class: Battleship
+            names:
+              - Corpus Patriarch
+            triggers: triggers next wave
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Sentry
+            names:
+              - Factory Guard Sentry
+      - id: second-spawn
+        trigger:
+          on: other
+          text: Second Spawn
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Raider
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Elder Corpii Shadow Sage
+            triggers: triggers next wave
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corpatis Exorcist
+              - Corpatis Phantom
+          - count: "4"
+            class: Battleship
+            names:
+              - Corpus Patriarch
+      - id: third-spawn
+        trigger:
+          on: other
+          text: Third Spawn
+          confidence: inferred
+        spawns:
+          - count: 2-4
+            class: Elite Frigate
+            names:
+              - Elder Corpii Herald
+              - Elder Corpii Upholder
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Elder Corpii Fanatic
+              - Elder Corpii Seer
+              - Elder Corpii Bishop
+          - count: "4"
+            class: Battleship
+            names:
+              - Corpus Patriarch
+            triggers: triggers next wave
+            note: type list incomplete on the source page
+      - id: fourth-spawn
+        trigger:
+          on: other
+          text: Fourth Spawn
+          confidence: inferred
+        spawns:
+          - count: 2-4
+            class: Elite Frigate
+            names:
+              - Elder Corpii Herald
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Elder Corpii Exorcist
+            note: type list incomplete on the source page
+          - count: 3-4
+            class: Battleship
+            names:
+              - Corpus Pope
+              - Corpus Patriarch
+            triggers: triggers next wave
+      - id: fifth-spawn
+        trigger:
+          on: other
+          text: Fifth Spawn
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Collector
+              - Elder Corpii Seeker
+            ewar:
+              - kind: trackingDisruption
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Elder Corpii Exorcist
+              - Elder Corpii Shade
+              - Elder Corpii Seer
+          - count: 7-8
+            class: Battleship
+            names:
+              - Corpus Patriarch
+            triggers: triggers next wave
+            note: type list incomplete on the source page
+      - id: sixth-spawn
+        trigger:
+          on: other
+          text: Sixth Spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Elder Corpii Herald
+            note: type list incomplete on the source page
+          - count: 3-4
+            class: Battleship
+            names:
+              - Corpus Pope
+              - Corpus Patriarch
+sde:
+  dungeonIds:
+    - 2282

@@ -1,0 +1,130 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: pirate-invasion-sanshas-nation
+kind: mission
+name: Pirate Invasion
+level: 4
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Pirate Invasion (Sansha's Nation)
+    url: https://wiki.eveuniversity.org/Pirate_Invasion_(Sansha's_Nation)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "222518"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Kill pirates
+ewar:
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite frigates"
+  - text: Single gated pocket. At warp-in, you will see Group 4. Four other groups will spawn several seconds later.
+  - text: The spawn order is Group 2, Group 1, Group 3 and finally Group 5.
+  - text: It is recommended that you do not move your ship. The proximity aggro bubble for Group 4 is about 80km and you may get aggroed EITHER during warp-in or if you move towards it.
+  - text: Group 1 will auto-aggro immediately.
+  - text: Groups 2, 3, 4 & 5 will remain neutral until attacked or aggroed via proximity.
+  - text: Warning
+  - text: The two Loyal elite frigates in Group 1 will frequently warp scramble you in under 20 secs.
+  - text: Proximity aggro is a major factor in this mission. Please be aware that you can aggro a neutral group by just moving into its aggro bubble.
+  - text: "Aggro Notes: Attacking Group 1 does not aggro any other groups. You can safely deploy drones to attack this group."
+  - text: "Aggro Notes: Attacking Group 2 aggros Group 3 (and vice versa). You can safely deploy drones after the pair have been aggroed."
+  - text: "Aggro Notes: Attacking Group 4 aggros Group 5 (attacking Group 5 didn't aggro group 4). You can safely deploy drones after the pair have been aggroed."
+  - text: "Aggro Notes: Group 4 may aggro drones if they get too close to that group."
+  - text: "Tips: Be absolutely careful not to move towards the neutral groups. Move away from them to minimize setting off the proximity aggro"
+  - text: "Tips: Recommended order of elimination: Group 1, Group 5 & Group 4, finally Group 2 & Group 3."
+  - text: "Tips: Mission is flagged completed when ALL ships in Group 5 are killed."
+  - text: Blitz:Destroy all ships from Group 5 and warp out. Kill warp disruptor if needed.
+  - text: Ships ordered by distance. Not by spawn order. Ships spawn one group at a time over several seconds after you warp in.
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: ± 9.45M ISK (2025-04-21) by Verum Peto
+      - text: ± 5.15M ISK (2025-04-21) by Verum Peto
+      - text: ± 7.36M ISK (2025-04-21) by Verum Peto
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Servant
+              - Centii Loyal Minion
+            group: Group 1 (Ripped Superstructure, 30 km, auto aggro)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "5"
+            class: Battleship
+            names:
+              - Centus Mutant Lord
+              - Centus Savage Lord
+            group: Group 1 (Ripped Superstructure, 30 km, auto aggro)
+          - count: "3"
+            class: Destroyer
+            names:
+              - Centior Abomination
+              - Centior Devourer
+            group: Group 2 (Space shuttle wreck, 50 km)
+          - count: "3"
+            class: Cruiser
+            names:
+              - Centum Fiend
+              - Centum Hellhound
+            group: Group 2 (Space shuttle wreck, 50 km)
+          - count: "2"
+            class: Battleship
+            names:
+              - Centus Lord
+            group: Group 2 (Space shuttle wreck, 50 km)
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Servant
+              - Centii Loyal Minion
+            group: Group 3 (Amarr Trade Station Ruins left, 70 km)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Battleship
+            names:
+              - Centus Savage Lord
+              - Centus Plague Lord
+              - Centus Beast Lord
+            group: Group 3 (Amarr Trade Station Ruins left, 70 km)
+            ewar:
+              - kind: trackingDisruption
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Centatis Wraith
+              - Centatis Specter
+            group: Group 4 (Amarr Trade Station Ruins right, 80 km)
+          - count: "4"
+            class: Battleship
+            names:
+              - Centus Lord
+              - Centus Mutant Lord
+            group: Group 4 (Amarr Trade Station Ruins right, 80 km)
+          - count: "2"
+            class: Cruiser
+            names:
+              - Centum Fiend
+              - Centum Hellhound
+            group: Group 5 (Carrier Wreck, 100 km)
+          - count: "5"
+            class: Battleship
+            names:
+              - Centus Slave Lord
+              - Centus Slave Lord
+              - Centus Savage Lord
+              - Centus Mutant Lord
+            group: Group 5 (Carrier Wreck, 100 km)

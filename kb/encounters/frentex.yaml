@@ -1,0 +1,268 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: frentex
+kind: escalation
+name: Frentex
+dedRating: null
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Frentex
+    url: https://wiki.eveuniversity.org/Frentex
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "232293"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Destroyer"
+loot:
+  - item: Dark Blood Copper Tag
+    from: Dark Blood Commander Frigates
+    note: est. 10k ISK (wiki) · 100% drop rate
+  - item: (Dark) Blood Ammo
+    from: Dark Blood Commander Frigates
+    note: est. 6k - 58M ISK (wiki) · 100% drop rate
+  - item: Mid-grade Talisman Implant
+    from: Dark Blood Commander Frigates
+    note: est. 6M - 50M ISK (wiki) · rare
+  - item: Dark Blood module
+    from: Dark Blood Commander Frigates / Vlye Cadille
+    note: est. 10k - 130M ISK (wiki) · rare
+  - item: Corpii C-Type modules
+    from: Vlye Cadille
+    note: est. 300k - 93M ISK (wiki) · rare (up to 4x)
+  - item: Cruor BPC
+    from: Vlye Cadille
+    note: est. 35M ISK (wiki) · rare
+  - item: Mid-grade Amulet Implant
+    from: Dark Blood Commander Frigates
+    note: est. 40M - 200M+ ISK (wiki) · rare
+lootNotes:
+  - text: 35.000 ISK
+pockets:
+  - name: First location
+    notes:
+      - text: ----
+  - name: Warp-in
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Acceleration Gate
+            names:
+              - Newly Constructed Acceleration Gate
+      - id: wave
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Corpii Raider
+              - Corpii Diviner
+              - Corpii Reaver
+            note: type list incomplete on the source page
+          - count: 0-1
+            class: Commander Frigate
+            names:
+              - Domination Thug
+            triggers: Escalation trigger
+            drop: Can drop faction items
+            note: Angel Cartel
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corpior Visionary
+  - name: Single room
+    notes:
+      - text: On warp in, enemy ships warp out.
+      - text: "Escalation message:: It seems like the weird sound once in a while coming from your left dashboard is not from the navigation computer after all, at least it seems to have calculated the whereabouts of these Blood frigates pretty accurately. Not accurately enough though, as they warp out as soon as you enter space. Luckily your instruments manage to come up with a best approximation for their next destination."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Corpii Herald
+              - Corpii Upholder
+          - count: "?"
+            class: Frigate
+            names:
+              - Vlye Cadille
+  - name: Second location
+    notes:
+      - text: ----
+  - name: Warp-in
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Acceleration Gate
+            names:
+              - Newly Constructed Acceleration Gate
+            note: May trigger further escalation
+      - id: wave
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Corpii Raider
+              - Corpii Diviner
+              - Corpii Reaver
+            note: type list incomplete on the source page
+          - count: 0-1
+            class: Commander Frigate
+            names:
+              - Dark Blood Upholder
+            triggers: Destroying this may trigger further escalation
+            drop: Can drop a faction module
+          - count: 3-4
+            class: Destroyer
+            names:
+              - Corpior Friar
+              - Corpior Cleric
+  - name: Single room
+    notes:
+      - text: On warp in, enemy ships warp out.
+      - text: "Escalation message:: Again you warp in too far and the Blood ships slip away into space. Luckily they have left a predictable path."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Corpii Herald
+              - Corpii Upholder
+          - count: "?"
+            class: Frigate
+            names:
+              - Vlye Cadille
+  - name: Third location
+    notes:
+      - text: ----
+  - name: Warp-in
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Acceleration Gate
+            names:
+              - Newly Constructed Acceleration Gate
+      - id: wave
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Reaver
+              - Elder Corpii Diviner
+          - count: 0-1
+            class: Commander Frigate
+            names:
+              - Dark Blood Upholder
+            triggers: Escalation trigger
+            drop: Can drop faction items
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corpior Templar
+              - Corpior Devoter
+  - name: Single room
+    notes:
+      - text: Vlye slips away before you can be in range to engage.
+      - text: "Escalation:: During the fighting, the final ship managed to escape. Fortunately, your sensors picked up a distress signal from it and calculated a probable destination."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Corpii Herald
+              - Corpii Upholder
+          - count: "?"
+            class: Frigate
+            names:
+              - Vlye Cadille
+  - name: Fourth location
+    notes:
+      - text: ----
+      - text: "Escalation completed:: Obviously the distress signal made it through to the intended recipients, this was quite a reception. In any case, there are a bit less drug runners in space after this encounter..."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: initial defenders
+        spawns:
+          - count: 2-5
+            class: Frigate
+            names:
+              - Corpii Reaver
+              - Corpii Engraver
+          - count: 2-5
+            class: Destroyer
+            names:
+              - Corpior Friar
+          - count: 1-4
+            class: Destroyer
+            names:
+              - Corpior Cleric
+            triggers: Triggers next spawn
+      - id: first-spawn
+        trigger:
+          on: other
+          text: First spawn
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Corpii Seeker
+            ewar:
+              - kind: trackingDisruption
+      - id: overseer-spawn
+        trigger:
+          on: other
+          text: Overseer spawn
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Commander Frigate
+            names:
+              - Vlye Cadille
+            ewar:
+              - kind: web
+              - kind: warpScramble
+            drop: Faction items, Corpii C-Type modules, Cruor BPC
+sde:
+  dungeonIds:
+    - 1544

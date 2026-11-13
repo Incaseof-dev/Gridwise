@@ -1,0 +1,239 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: angel-hub
+kind: anomaly
+name: Angel Hub
+dedRating: null
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Angel Hub
+    url: https://wiki.eveuniversity.org/Angel_Hub
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "228830"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Note: Domination Spawns are much rarer when you are piloting a battleship."
+  - text: With the initial group and 3 triggered spawns, a total of 34 to 36 ships in the Small Armory variant and 16- 22 ships in the Dirty Shipyard variant (in parenthesis).
+  - text: There are two different variant of this site differentiated by a structure in the site, the Small Armory or the Dirty Shipyard. Ship count may vary as indicated. The site is an open Deadspace pocket, one may warp to preferred distance.
+  - text: ----
+  - text: ----
+  - text: "Escalation: This site can escalate to Cartel Prisoner Retention, Angel Capital Staging or Angel Shielded Starbase"
+  - text: "Escalation: Cartel Prisoner Retention: Your scanner has picked up a transmission originating from a nearby system. It would be wise to investigate this mysterious signal further."
+lootNotes:
+  - text: Possible faction battleship modules and ammo.
+pockets:
+  - name: Small Armory
+    notes:
+      - text: "Note: When piloting a T3 cruiser Domination spawn is a Saints, piloting a BS gets a Nephilim."
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "2"
+            class: Structure
+            names:
+              - Small Armory
+      - id: initial-defenders-43-47km
+        trigger:
+          on: warpIn
+          text: Initial Defenders (43- 47km)
+        spawns:
+          - count: 2- 3
+            class: Elite Frigate
+            names:
+              - Arch Gistii Ambusher
+              - Arch Gistii Impaler
+              - Arch Gistii Raider
+          - count: 2- 3
+            class: Battleship
+            names:
+              - Gist Malakim
+              - Gist Throne
+            triggers: Last killed triggers reinforcement spawn
+          - count: "4"
+            class: Sentry
+            names:
+              - Tower Sentry Angel II
+      - id: 1st-reinforcement-spawn-41-47km
+        trigger:
+          on: other
+          text: 1st Reinforcement Spawn (41- 47km)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+              - Gistatis Praefectus
+              - Gistatis Primus
+          - count: 3- 4
+            class: Battleship
+            names:
+              - Gist Commander
+              - Gist Warlord
+              - Gist Seraphim
+              - Gist Malakim
+      - id: 2nd-reinforcement-spawn-40-45
+        trigger:
+          on: other
+          text: 2nd Reinforcement Spawn (40- 45)
+          confidence: inferred
+        spawns:
+          - count: 3- 4
+            class: Destroyer
+            names:
+              - Gistior Defiler
+              - Gistior Haunter
+              - Gistior Shatterer
+              - Gistior Trasher
+          - count: 2- 3
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+              - Gistatis Praefectus
+              - Gistatis Tribuni
+              - Gistatis Tribunus
+          - count: "4"
+            class: Battleship
+            names:
+              - Gist Commander
+              - Gist Warlord
+              - Gist Seraphim
+              - Gist Malakim
+            triggers: Last Battleship
+      - id: 3rd-reinforcement-spawn-40-45
+        trigger:
+          on: other
+          text: 3rd Reinforcement Spawn (40- 45)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Liquidator
+              - Arch Gistum Marauder
+              - Arch Gistum Phalanx
+          - count: "4"
+            class: Battleship
+            names:
+              - Gist General
+              - Gist Commander
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Domination Saint
+              - Domination Nephilim
+            drop: Faction Warp Disruptor, Faction charges
+            note: "encounter on Dec 23 and 24, 2020,Loot: Faction Ammo, Faction Warp Disruptor"
+  - name: Dirty Shipyard
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Dirty Shipyard
+      - id: initial-defenders-23-38km
+        trigger:
+          on: warpIn
+          text: Initial Defenders (23- 38km)
+        spawns:
+          - count: 2- 3
+            class: Cruiser
+            names:
+              - Gistum Centurion
+              - Gistum Marauder
+          - count: 2- 3
+            class: Battleship
+            names:
+              - Gist Malakim
+              - Gist Throne
+          - count: "2"
+            class: Sentry
+            names:
+              - Tower Sentry Angel II
+          - count: "2"
+            class: Sentry
+            names:
+              - Angel Heavy Missile Battery
+          - count: "2"
+            class: Sentry
+            names:
+              - Angel Cruise Missile Battery
+      - id: 1st-reinforcement-spawn-23-38km
+        trigger:
+          on: other
+          text: 1st Reinforcement Spawn (23- 38km)
+          confidence: inferred
+        spawns:
+          - count: 2- 3
+            class: Destroyer
+            names:
+              - Gistior Seizer
+          - count: 2- 3
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Seraphim
+      - id: 2nd-reinforcement-spawn-23-38km
+        trigger:
+          on: other
+          text: 2nd Reinforcement Spawn (23- 38km)
+          confidence: inferred
+        spawns:
+          - count: 2- 3
+            class: Frigate
+            names:
+              - Gistii Hunter
+              - Gistii Raider
+          - count: 2- 3
+            class: Battleship
+            names:
+              - Gist Throne
+              - Gist Malakim
+      - id: 3rd-reinforcement-spawn-23-28km
+        trigger:
+          on: other
+          text: 3rd Reinforcement Spawn (23- 28km)
+          confidence: inferred
+        spawns:
+          - count: 2- 4
+            class: Battlecruiser
+            names:
+              - Gistatis Praefectus
+              - Gistatis Primus
+              - Gistatis Tribunus
+              - Gistatis Legatus
+          - count: 2- 3
+            class: Battleship
+            names:
+              - Gist Warlord
+              - Gist War General
+            triggers: Possible escalation trigger or commander spawn
+      - id: possible-commander-spawn
+        trigger:
+          on: other
+          text: Possible Commander Spawn
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Domination Warlord
+              - Domination Saint
+              - Domination Nephilim
+            drop: Faction modules and charges
+            note: encounter on Jan 2, 2026
+sde:
+  dungeonIds:
+    - 2146

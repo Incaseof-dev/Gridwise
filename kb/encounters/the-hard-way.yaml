@@ -1,0 +1,184 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-hard-way
+kind: mission
+name: The Hard Way
+level: 5
+enemyFaction: Amarr Empire
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Hard Way
+    url: https://wiki.eveuniversity.org/The_Hard_Way
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "198258"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: neut
+  - kind: nos
+  - kind: trackingDisruption
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: All Frigates"
+  - text: "Suggested ships: (1) Maelstrom w/ Passive Tank and (1) Maelstrom w/ Shield Transporters but recommend more DPS"
+  - text: Mission requires the player to be able to use a Codebreaker module for hacking
+  - text: "Part 2 of 5 (Part 1 covered here: Location Location (Amarr))"
+  - text: "Space type: Deadspace with Gate"
+  - text: Acceleration Gate into Deadspace
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: image
+      - text: On occasion, additional ships spawn after smaller ships destroyed
+      - text: Hack the Communications Hub with a Codebreaker I module to retrieve the objective
+      - text: "Tips: Use a Passive Tank or plan a capacitor that receives an additional 100 units/s"
+      - text: "Tips: Maximum damage dealing of initial group if it gets into range is 2790 hp/s (EM 56%, Therm 44%)"
+      - text: Part 1 of 5 Location Location (Amarr) > * > Part 3 of 5 Prison Bust
+    waves:
+      - id: initial-group-25-80km
+        trigger:
+          on: warpIn
+          text: Initial Group (25-80km)
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Divine Imperial Napat
+            ewar:
+              - kind: web
+              - kind: trackingDisruption
+              - kind: warpScramble
+            note: Orbits at 10km
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Imperial Templar Phalanx
+            note: Orbits at 22km
+          - count: "11"
+            class: Battleship
+            names:
+              - Imperial Templar Dominator
+              - Imperial Templar Martyr
+              - Imperial Templar Ultara*
+              - Imperial Templar Judgment**
+            triggers: "* Ultara triggers reinforcement 1, ** Judgement triggers reinforcement 2"
+            note: Orbits of 17-49km
+          - count: "4"
+            class: Sentry
+            names:
+              - Cruise Missile Batteries
+          - count: "1"
+            class: Sentry
+            names:
+              - Amarr Energy Neutralizers II
+            ewar:
+              - kind: neut
+          - count: "2"
+            class: Sentry
+            names:
+              - Amarr Energy Neutralizer Sentry IIIs
+            ewar:
+              - kind: neut
+      - id: reinforcement-1
+        trigger:
+          on: other
+          text: Reinforcement 1
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Elite Cruiser
+            names:
+              - Divine Imperial Champion
+              - Divine Imperial Justicar
+            note: oOrbits at 14-32km
+      - id: reinforcement-2
+        trigger:
+          on: other
+          text: Reinforcement 2
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battleship
+            names:
+              - Imperial Templar Diviner
+            ewar:
+              - kind: trackingDisruption
+              - kind: neut
+            triggers: Triggers reinforcement 3
+            note: Orbits at 21km, NOS
+      - id: reinforcement-3
+        trigger:
+          on: other
+          text: Reinforcement 3
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Battleship
+            names:
+              - Imperial Templar Martyr
+            note: Orbits at 49km
+      - id: variation-spawn
+        trigger:
+          on: other
+          text: Variation spawn
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Divine Imperial Bahir
+          - count: "5"
+            class: Destroyer
+            names:
+              - Imperial Templar Caius
+              - Imperial Templar Crusader
+          - count: "7"
+            class: Battlecruiser
+            names:
+              - Imperial Templar Seer
+              - Imperial Templar Justicar
+              - Imperial Templar Champion
+      - id: amarr-relay-station-spawns-150-000-hp
+        trigger:
+          on: other
+          text: Amarr Relay Station spawns (150,000 HP)
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Imperial Templar Phalanx
+            group: Shield reduced to 70%
+            note: Orbits at 22km
+          - count: "6"
+            class: Battleship
+            names:
+              - Imperial Dominator
+              - Imperial Martyr
+            group: Armor reduced to 50%
+            ewar:
+              - kind: neut
+            note: Orbits of 17-44km, NOS
+          - count: "6"
+            class: Elite Cruiser
+            names:
+              - Divine Imperial Ambrose
+              - Divine Imperial Basil
+            group: Structure reduced to 90%
+            ewar:
+              - kind: neut
+            note: Orbits at 7-19km, NOS
+          - count: "6"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Napat
+            group: Structure reduced to 10%
+            ewar:
+              - kind: web
+              - kind: trackingDisruption
+              - kind: warpScramble
+            note: Orbits at 10km

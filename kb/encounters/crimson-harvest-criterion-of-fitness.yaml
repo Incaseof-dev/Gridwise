@@ -1,0 +1,168 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: crimson-harvest-criterion-of-fitness
+kind: anomaly
+name: Criterion of Fitness
+dedRating: null
+enemyFaction: Triglavian Collective
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Crimson Harvest (2026), section "Criterion of Fitness"
+    url: https://wiki.eveuniversity.org/Crimson_Harvest_(2026)#Criterion_of_Fitness
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "232560"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Part of the Crimson Harvest (2026) event. Event sites change from year to year.
+  - text: Gated site that can spawn anywhere in Known Space, requires a Criterion Cipher to access the site, which is dropped by the Pochven enemy boss spawns in Crimson Gauntlet and Tetrimon Base sites. The acceleration gate deactivates after a ship passes through it which effectively makes the site a solo run. The site is best run with a marauder but less well tanked ships are doable if you are okay with potentially skipping out on the site's full rewards.
+  - text: 'You fight three "trial rounds" (i.e. waves) of Triglavian ships identical in stats to those in Minor Victory systems and Pochven, with a 1-minute delay between each wave. The relative difficulty of each wave is determined by a challenge modifier that increases the difficulty based off of how fast you complete each wave and adds to an overall "fitness score", which has a maximum of 15 and determines the value of your rewards at the end. The difficulty modifier time seems to go as such:'
+  - text: "Sufficient: Wave cleared in 4 minutes. Gain 3? fitness. No challenge increase."
+  - text: "Efficient: Wave cleared in 2 minutes and 15 seconds. Gain 4 fitness. Challenge increase +1."
+  - text: "Glorified: Wave cleared in 1 minute and 30 seconds. Gain 5 fitness. Challenge increase +2."
+  - text: The first wave generally consists of around 5 ships of up to battlecruiser size and mostly Raznaborg and normal ship variants. Increasing the challenge score will cause subsequent waves to spawn an increasing number of ships with a higher likelihood of Hospodar elite NPC spawns. This caps out at roughly 4 battleships plus up to 10 escorts at wave 3.
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: After clearing wave 3 within any of the three timers, you will be informed that a "formidable Triglavian superior" is approaching. The boss wave spawns after a minute. Killing the boss spawns a Criterion Cache which drops a large amount of items that can be traded in the Triglavian LP store in Pochven. The value and quantity of the items in the cache scales based off of your fitness score.
+      - text: The Superior Drekavac and Leshak have a heavy neut (31 and 21 GJ/s, respectively). Zorya's Babaroga does roughly 550 DPS with its disintegrator and will periodically enter Bastion mode, which gives it a +200% damage bonus.
+      - text: You will generally get up to ~200-250m ISK worth of drops from each site. The NPCs in the first three waves have the same loot and salvage tables as their Pochven counterparts making it a good idea to salvage after your runs. The Drekavac/Leshak/Babaroga boss spawn drops similar loot to that of the other event bosses.
+    waves:
+      - id: wave-1-total-5-ships
+        trigger:
+          on: other
+          text: Wave 1 (total ~5 ships)
+          confidence: inferred
+        spawns:
+          - count: 0-2
+            class: Frigate
+            names:
+              - (Raznaborg) Damavik
+          - count: 0-2
+            class: Destroyer
+            names:
+              - (Raznaborg) Kikimora
+          - count: 0-1
+            class: Cruiser
+            names:
+              - (Raznaborg) Rodiva
+          - count: 0-1
+            class: Battlecruiser
+            names:
+              - (Raznaborg) Drekavac
+      - id: wave-2-total-10-ships-if-previous-round-was-glorified
+        trigger:
+          on: other
+          text: Wave 2 (total ~10 ships, if previous round was Glorified)
+          confidence: inferred
+        spawns:
+          - count: 0-2
+            class: Frigate
+            names:
+              - (Raznaborg) Damavik
+          - count: 0-2
+            class: Destroyer
+            names:
+              - (Raznaborg) Kikimora
+          - count: 0-1
+            class: Cruiser
+            names:
+              - (Raznaborg) Rodiva
+          - count: 0-3
+            class: Cruiser
+            names:
+              - (Raznaborg) Vedmak
+          - count: 0-3
+            class: Battlecruiser
+            names:
+              - (Raznaborg) Drekavac
+          - count: 0-1
+            class: Battleship
+            names:
+              - (Raznaborg) Leshak
+      - id: wave-3-total-10-15-ships-if-previous-round-was-glorified
+        trigger:
+          on: other
+          text: Wave 3 (total ~10-15 ships, if previous round was Glorified)
+          confidence: inferred
+        spawns:
+          - count: 0-3
+            class: Frigate
+            names:
+              - (Raznaborg
+              - Hospodar) Damavik
+          - count: 0-2
+            class: Destroyer
+            names:
+              - (Raznaborg
+              - Hospodar) Kikimora
+          - count: 0-2
+            class: Cruiser
+            names:
+              - (Raznaborg
+              - Hospodar) Rodiva
+          - count: 0-1
+            class: Cruiser
+            names:
+              - (Raznaborg
+              - Hospodar) Vedmak
+          - count: 0-3
+            class: Battlecruiser
+            names:
+              - (Raznaborg
+              - Hospodar) Drekavac
+          - count: 1-4
+            class: Battleship
+            names:
+              - (Raznaborg
+              - Hospodar) Leshak
+      - id: boss-wave
+        trigger:
+          on: other
+          text: Boss wave
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Commander Battlecruiser
+            names:
+              - Superior Drekavac
+            group: Fitness score <10
+            ewar:
+              - kind: neut
+            drop: Mutated Blood Samples, Glorified mutaplasmid BPCs, event boosters, cerebral accelerators
+            note: Neuts ~31 GJ/s. Kill to spawn the Criterion Cache.
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Superior Leshak
+            group: Fitness score 10-14
+            ewar:
+              - kind: neut
+            drop: Mutated Blood Samples, Glorified mutaplasmid BPCs, event boosters, cerebral accelerators
+            note: Neuts ~21 GJ/s. Kill to spawn the Criterion Cache.
+          - count: "1"
+            class: Overseer Battleship
+            names:
+              - Zorya's Babaroga
+            group: Fitness score 15
+            drop: Mutated Blood Samples, Glorified mutaplasmid BPCs, event boosters, cerebral accelerators, may drop Zorya's officer modules
+            note: Kill to spawn the Criterion Cache. Does 550 DPS before ramp and periodically enters Bastion mode, gaining +200% damage.
+      - id: cache-spawn
+        trigger:
+          on: other
+          text: Cache spawn
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Criterion Cache
+            drop: Corrupted/Partial/Intact Neurosynaptic Profiles, Interstellar Navigation Logs, Mutated Blood Samples
+aliases:
+  - "Crimson Harvest: Criterion of Fitness"
+sde:
+  dungeonIds:
+    - 14473

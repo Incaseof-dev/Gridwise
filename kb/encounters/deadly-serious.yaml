@@ -1,0 +1,92 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: deadly-serious
+kind: mission
+name: Deadly Serious
+level: 5
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Deadly Serious
+    url: https://wiki.eveuniversity.org/Deadly_Serious
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "194729"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Ensure the survival of the cloning facility by destroying all attacking Gallente
+ewar:
+  - kind: sensorDamp
+  - kind: web
+  - kind: warpScramble
+notes:
+  - text: "Web/warp disruption: Elite Federation Lixa (Web, Scram)"
+  - text: "Suggested ships: Marauder + Logistics, Onyx (See notes)"
+  - text: "Video: Solo Onyx"
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-group-30-70km
+        trigger:
+          on: warpIn
+          text: Initial Group, 30-70km
+        spawns:
+          - count: "10"
+            class: Battleship
+            names:
+              - Gallente Navy
+            ewar:
+              - kind: sensorDamp
+            note: Federation Covinus/Xenan/Praktor Navis Praetoria
+          - count: "7"
+            class: Battleship
+            names:
+              - Decloaked Federation Battleship
+            group: Reinforcement after last battleship is destroyed
+            ewar:
+              - kind: sensorDamp
+            note: Federation Covinus/Xenan/Praktor Navis Praetoria
+  - name: Pocket 2
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "8"
+            class: Elite Frigate
+            names:
+              - Gallente Wolf Pack
+            group: Initial Group
+            ewar:
+              - kind: web
+              - kind: sensorDamp
+              - kind: warpScramble
+            note: Elite Federation Lixa/Matara/Phalarica
+          - count: "14"
+            class: Battleship
+            names:
+              - Gallente Strike Force
+            group: Initial Group
+            ewar:
+              - kind: sensorDamp
+            note: Federation Covinus/Xenan/Praktor Navis Praetoria
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Gallente Wolf Pack
+            group: Reinforcement after 5 minutes
+            ewar:
+              - kind: sensorDamp
+            note: Elite Federation Matara
+          - count: "22"
+            class: Battleship
+            names:
+              - Gallente Reinforcements
+            group: Reinforcement after 5 minutes
+            ewar:
+              - kind: sensorDamp
+            note: Federation Covinus/Xenan/Praktor Navis Praetoria

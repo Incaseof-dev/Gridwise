@@ -1,0 +1,238 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: serpentis-logistical-outpost
+kind: complex
+name: Serpentis Logistical Outpost
+dedRating: 6
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Serpentis Logistical Outpost
+    url: https://wiki.eveuniversity.org/Serpentis_Logistical_Outpost
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231827"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Battleships"
+notes:
+  - text: "The site is located behind an acceleration gate that allows T2 Battleships or lower to access and consists of two parts: Part 1 is found by probe scanning or as an escalation. Completing Part 1 will always cause an escalation to Part 2 at another location."
+  - text: The Serpentis Logistical Outpost and Serpentis Logistical Outpost Part 2 are considered to be the hardest Serpentis Escalations.
+  - text: Use extreme caution when completing the sites due to the Scramming Frigs and T2 Neuting Towers
+  - text: "Escalation: This site always escalates to Serpentis Logistical Outpost Part 2 with the following message."
+  - text: 'Escalation: Escalation message:: "Serpentis Logistical Outpost P2 - After disposing of the defenders, you manage to decode some of the surviving ship data-cores. The information contained within those reveals the location of a second facility."'
+lootNotes:
+  - text: Clearing it all gives 23.000.000 ISK in bounties. This site has no notable loot drops.
+pockets:
+  - name: First Pocket
+    notes:
+      - text: You land right on top of the frigates, which mean you land in web and point range. The rest of the NPCs spawn about 30km away from you.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Spy
+              - Coreli Guardian Agent
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            triggers: Killing both frigates triggers wave 1
+          - count: 3-4
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Protector
+              - Corelum Guardian Chief Defender
+            ewar:
+              - kind: sensorDamp
+          - count: 2-3
+            class: Battleship
+            names:
+              - Core Admiral
+              - Core High Admiral
+            ewar:
+              - kind: sensorDamp
+            triggers: Highest Bounty Triggers Wave 2
+          - count: "2"
+            class: Sentry
+            names:
+              - Tower Sentry Serpentis II
+          - count: "2"
+            class: Sentry
+            names:
+              - Serpentis Heavy Missile Battery
+      - id: wave-1
+        trigger:
+          on: other
+          text: "Wave #1"
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Protector
+              - Corelum Guardian Chief Defender
+          - count: 2-4
+            class: Battleship
+            names:
+              - Core Admiral
+              - Core High Admiral
+      - id: wave-2
+        trigger:
+          on: other
+          text: "Wave #2"
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Patroler
+              - Coreli Guardian Watchman
+            ewar:
+              - kind: sensorDamp
+      - id: wave-3
+        trigger:
+          on: other
+          text: "Wave #3"
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Sentinel
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: 38 km from warpin - Locked until all NPCs are cleared
+    onWarpIn: This is an A-Class repair and resupply post, operated by the Serpentis. Not only is it important to their operations, but has also been rumoured to be one of many hideouts utilized by their resistance movement. They are supposedly planning a revolt against the vicious oppression of the shadowy ruling body, the Furies, and will defend themselves and their compatriots with vicious resistance if attacked.
+  - name: Second Pocket
+    notes:
+      - text: The Energy Neutralizing Sentries spawn by the Pressure Silo structure, so get ready to blow them up once they spawn, as they add a lot to the difficulty of this room.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 6-7
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Initiate
+              - Coreli Guardian Scout
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 3-4
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Infantry
+            ewar:
+              - kind: sensorDamp
+          - count: 8-10
+            class: Battleship
+            names:
+              - Core Vice Admiral
+              - Core Grand Admiral
+          - count: "2"
+            class: Sentry
+            names:
+              - Tower Sentry Serpentis II
+          - count: "2"
+            class: Sentry
+            names:
+              - Serpentis Cruise Missile Battery
+      - id: timed-spawn-1-minute-after-warp-in
+        trigger:
+          on: other
+          text: Timed Spawn (1 minute after warp-in)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Serpentis Energy Neutralizer Sentry II
+            ewar:
+              - kind: neut
+      - id: destroyer-wave-trigger-not-clear-probably-a-battleship-group
+        trigger:
+          on: other
+          text: Destroyer wave (trigger not clear, probably a battleship group)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Corelior Sentinel
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: 88 km from warpin
+  - name: Third Pocket
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Watchman
+            ewar:
+              - kind: sensorDamp
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Initiate
+              - Coreli Guardian Scout
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Infantry
+          - count: "3"
+            class: Battleship
+            names:
+              - Core Admiral
+              - Core High Admiral
+            triggers: Highest bounty battleship triggers escalation, usually the Core Admiral
+          - count: 9-10
+            class: Battleship
+            names:
+              - Core Vice Admiral
+            ewar:
+              - kind: sensorDamp
+            triggers: Highest bounty battleship triggers escalation, usually the Core Admiral
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Sentry
+            names:
+              - Tower Sentry Serpentis II
+          - count: "2"
+            class: Sentry
+            names:
+              - Serpentis Cruise Missile Battery
+sde:
+  dungeonIds:
+    - 2455

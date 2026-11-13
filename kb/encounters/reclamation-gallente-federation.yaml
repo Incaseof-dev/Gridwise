@@ -1,0 +1,110 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: reclamation-gallente-federation
+kind: mission
+name: Reclamation
+level: 5
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Reclamation (Gallente Federation)
+    url: https://wiki.eveuniversity.org/Reclamation_(Gallente_Federation)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "194939"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal:
+    - thermal
+  resist:
+    - thermal
+    - kinetic
+ewar:
+  - kind: warpScramble
+  - kind: neut
+  - kind: nos
+  - kind: sensorDamp
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite Frigates"
+pockets:
+  - name: Warp-in
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "12"
+            class: Elite Frigate
+            names:
+              - Elite Federation Libertus
+              - Elite Federation Manica
+            ewar:
+              - kind: warpDisruption
+          - count: "10"
+            class: Destroyer
+            names:
+              - Federation Praktor Phalarica
+              - Federation Praktor Machina
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Elite Federation Quadrieris
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Federation Praktor Arx
+            ewar:
+              - kind: sensorDamp
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Federation Praktor Auxilia
+            ewar:
+              - kind: sensorDamp
+          - count: "7"
+            class: Battleship
+            names:
+              - Federation Praktor Hyperion
+          - count: "1"
+            class: Sentry
+            names:
+              - Tower Sentry Gallente III
+          - count: "2"
+            class: Sentry
+            names:
+              - Gallente Energy Neutralizer Sentry III
+            ewar:
+              - kind: neut
+      - id: spawn
+        trigger:
+          on: other
+          text: Spawn
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Cruiser
+            names:
+              - Elite Federation Arx
+              - Elite Federation Auxillia
+          - count: "6"
+            class: Battleship
+            names:
+              - Federation Praktor Hyperion
+              - Federation Praktor Dionia
+              - Federation Praktor Polemo)
+          - count: "3"
+            class: Sentry
+            names:
+              - Tower Sentry Gallente III
+          - count: "1"
+            class: Sentry
+            names:
+              - Gallente Energy Neutralizer Sentry III
+            ewar:
+              - kind: neut

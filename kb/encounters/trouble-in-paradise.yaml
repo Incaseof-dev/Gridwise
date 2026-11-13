@@ -1,0 +1,266 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: trouble-in-paradise
+kind: escalation
+name: Trouble in Paradise
+dedRating: null
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Trouble in Paradise
+    url: https://wiki.eveuniversity.org/Trouble_in_Paradise
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "229985"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Trouble in Paradise is a four part expedition that can escalate from the Hierarchy combat site. The four parts are each about 5-8 jumps apart, and can take you far from the starting point. The rewards can be worth it though. The rogue drones in these combat sites do mostly explosive damage, with kinetic a close second. They are weak to EM damage.
+pockets:
+  - name: First Location
+    notes:
+      - text: "Access: Gateless, Open Access"
+      - text: The Sentient is the trigger for the escalation and contains loot. It is spawned from the beginning. This part can be blitzed by destroying the Sentient fast.
+      - text: "Escalation Message: This battle obviously took place only few minutes ago; smoldering wrecks litter the battlefield and as far as you can tell there are only drone wrecks aside from the destroyed ships. After a short while your scanners identify the ship that was calling in assistance and, surprisingly enough, its navigation module is still mostly intact. From the ship logs you learn that it was a part of a force designated to contain the threat posed to its hive from another strain of drones of a different hive. The newest log entries reveal that this ship was sent, together with a few others, on a sabotage mission and were supposed to blow up an array of moon harvesters and silos at this location."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Strain Sunder Alvi
+              - Strain Raider Alvi
+          - count: "4"
+            class: Destroyer
+            names:
+              - Dismantler
+              - Predator Alvior
+          - count: "7"
+            class: Elite Cruiser
+            names:
+              - Strain Violator Alvum
+              - Strain Atomizer Alvum
+              - Strain Bomber Alvum
+            triggers: Wave 1
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Striker
+              - Siege Alvatis
+          - count: "8"
+            class: Battleship
+            names:
+              - Alvus Queen
+              - Matriarch Alvus
+            triggers: Wave 2
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Sentient Matriarch Alvus
+            drop: Drone component, drone faction modules
+            note: Escalation trigger
+      - id: wave-1-last-cruiser-trigger-this
+        trigger:
+          on: other
+          text: Wave 1 (Last cruiser trigger this)
+          confidence: inferred
+        spawns:
+          - count: "7"
+            class: Elite Cruiser
+            names:
+              - Strain Violator Alvum
+              - Strain Atomizer Alvum
+              - Strain Bomber Alvum
+      - id: wave-2-last-battleship-trigger-this
+        trigger:
+          on: other
+          text: Wave 2 (Last battleship trigger this)
+          confidence: inferred
+        spawns:
+          - count: "7"
+            class: Elite Frigate
+            names:
+              - Strain Sunder Alvi
+              - Strain Raider Alvi
+  - name: Second Location
+    notes:
+      - text: "Access: Gateless, Open Access"
+      - text: Same as before, the Sentient is the trigger for the escalation and contains loot. It is spawned from the beginning. Can also be blitzed.
+      - text: "Escalation Message: The onslaught finally subsides when the last transports disappear into warp with their valuable cargo. Your instruments have no problem tracking them to their destination. However, the amount of contacts showing up at the resulting coordinates is suspiciously large."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Strain Sunder Alvi
+              - Strain Raider Alvi
+          - count: 3-4
+            class: Destroyer
+            names:
+              - Dismantler
+              - Predator Alvior
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Strain Violator Alvum
+              - Strain Atomizer Alvum
+              - Strain Bomber Alvum
+            triggers: Wave 1
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Striker Alvatis
+              - Siege Alvatis
+          - count: "7"
+            class: Battleship
+            names:
+              - Alvus Queen
+              - Matriarch Alvus
+            triggers: Wave 2
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Sentient Alvus Queen
+            drop: Drone component, drone faction modules
+            note: Escalation trigger
+      - id: wave-1-last-cruiser-trigger-this
+        trigger:
+          on: other
+          text: Wave 1 (Last cruiser trigger this)
+          confidence: inferred
+        spawns:
+          - count: 0-2
+            class: Elite Frigate
+            names:
+              - Strain Sunder Alvi
+              - Strain Raider Alvi
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Striker
+              - Siege Alvatis
+      - id: wave-2-last-battleship-trigger-this
+        trigger:
+          on: other
+          text: Wave 2 (Last battleship trigger this)
+          confidence: inferred
+        spawns:
+          - count: "7"
+            class: Elite Frigate
+            names:
+              - Strain Sunder Alvi
+              - Strain Raider Alvi
+  - name: Third Location
+    notes:
+      - text: Rats are at warp-in. The Sentient is the trigger for the escalation and contains loot. It is spawned from the beginning. Additional rats seem to spawn after a timer.
+      - text: "Escalation Message: After thwarting these ambushers desperate attempt to see the transports safely away, you pick up their signal once again and your instruments set course..."
+      - text: A 3rd wave spawned as I was warping off. -- Kelon Darklight 3 May 2021.
+      - text: "Escalation Message: Beating this hive makes you almost feel like disposing of the first one was more a mercy killing than anything else, as it would never have been able to keep up the fight with this one for long. You have never seen or heard of a drone hive of similar strength or scope and you hope you never will again."
+    waves:
+      - id: wave-1
+        trigger:
+          on: warpIn
+          text: Wave 1
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Raider
+              - Hunter Alvi
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Strain Splinter Alvi
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Butcher
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Centatis Deamon
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Sentient Patriarch Alvus
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Shatter
+              - Ripper
+              - Predator Alvior
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Enforcer
+              - Defeater Alvatis
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns: []
+  - name: Fourth Location
+    notes:
+      - text: Unable to finish site in ship I was in -- Kelon Darklight 2 May 2021.
+      - text: "- initial spawn"
+      - text: A 2nd wave spawned when attacking a frigate, which forced me off in a Vexor Navy Issue -- User:Kelon Darklight 3 May 2021.
+      - text: Rats at warp-in. 2nd spawns right after you spawn. Attack once 2nd spawn, attack once 3rd spawn. Hive Mother Appears.
+      - text: "Finish: Beating this hive makes you almost feel like disposing of the first one was more a mercy killing than anything else, as it would never have been able to keep up the fight with this one for long. You have never seen or heard of a drone hive of similar strength or scope and you hope you never will again."
+      - text: "04-2026: Just did one with a Proteus. Headshotted previous sites but had to full clear but the final wave on the last site. Got around 190mil in loot. Took a while to do, so not sure if this is worth it, especially if you need to go through enemy lands."
+      - text: Hierarchy Queen 88kk ISK and 15 kk head bounty
+    waves:
+      - id: wave-1
+        trigger:
+          on: warpIn
+          text: Wave 1
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Hunter
+              - Barracuda Alvi
+          - count: "6"
+            class: Elite Frigate
+            names:
+              - Strain Hunter
+              - Strain Devilfish
+              - Strain Barracuda Alvi
+          - count: "4"
+            class: Destroyer
+            names:
+              - Ripper
+              - Marauder
+              - Dismantler
+              - Shredder Alvior
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Strain Viral Infector Alvum
+              - Strain Violator Alvum
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Exterminator Alvatis
+          - count: "6"
+            class: Sentry
+            names:
+              - Drone Cruise Missile Battery
+sde:
+  dungeonIds:
+    - 1585

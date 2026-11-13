@@ -1,0 +1,184 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: small-misunderstanding
+kind: mission
+name: Small Misunderstanding
+level: 2
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Small Misunderstanding
+    url: https://wiki.eveuniversity.org/Small_Misunderstanding
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223267"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the damaged Caldari ship.
+notes:
+  - text: Deadspace, no gates
+  - text: Small Misunderstanding is a 3 part mission chain involving combat with Guristas Pirates.
+  - text: The "ship" you are tasked to destroy is actually a Large Collidable Structure. Make sure you have these visible on your overview because you might not see it in space.
+  - text: The wave are most likely timed.
+  - text: "Note: Both wave A as wave B have been spotted to spawn first."
+  - text: Empty pocket, but they will spawn after you get within 10 km of the buyer.
+pockets:
+  - name: Part 1 of 3
+    notes:
+      - text: "The Guristas: The worst enemy is the one who was once an ally. This is a lesson not lost on the Caldari Navy, for it was from within their own ranks that the seeds of the Guristas pirates were born. The Guristas were founded by two ex-Caldari Navy members now known only as \"Fatal\" and \"The Rabbit.\" Utilizing their knowledge of the Navy's procedures — and thus its weaknesses — these two renegades have confounded their previous employers for many years with their persistence and ingenuity. The Guristas cannot totally disown their militaristic origins: among pirates, they remain arguably the most honorable among a dishonorable bunch. Yet spacefarers shouldn't take too much comfort from that fact, or from their amusing bunny-skull logo. The Guristas will still slit your throat if there's profit involved. Honor, as many have learned, goes only so far when ISK is concerned."
+      - text: "Blitz: destroy the Static Caracal Navy Issue, warp out."
+  - name: Pocket 2
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "?"
+            class: Structure
+            names:
+              - Static Caracal Navy Issue
+            triggers: Destruction marks mission complete
+      - id: initial-forces-24km
+        trigger:
+          on: warpIn
+          text: Initial forces, 24km
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Unidentified Frigate [Pithi Defender]
+            ewar:
+              - kind: warpDisruption
+      - id: wave-a
+        trigger:
+          on: other
+          text: Wave A
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Guristas Ambusher [Pithi Infiltrator]
+          - count: "2"
+            class: Frigate
+            names:
+              - Guristas Ambusher [Pithi Invader]
+      - id: wave-b
+        trigger:
+          on: other
+          text: Wave B
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Guristas Ambusher [Pithi Infiltrator]
+          - count: "4"
+            class: Frigate
+            names:
+              - Guristas Ambusher [Pithi Invader]
+  - name: Pocket 4
+    notes:
+      - text: Ship logs (to complete the mission) appear in your cargo hold after the last kill.
+    waves:
+      - id: on-grid-50km-auto-aggro
+        trigger:
+          on: other
+          text: On grid, 50km (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Guristas [Pithi Infiltrator
+              - Guristas [Pithi Invader]
+            triggers: Last ship triggers wave 1
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Guristas [Pithi Infiltrator
+              - Guristas [Pithi Invader]
+            triggers: Last ship triggers wave 2
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Guristas [Pithi Infiltrator
+              - Guristas [Pithi Invader]
+  - name: Part 3 of 3
+    notes:
+      - text: "The Murky World of Covert Ops: Few have the skills to enter the world of Covert Ops, and fewer still survive long once they enter it. And of those who do survive, rare are those who can claim to be totally sane afterwards. One of the first lessons in Covert Ops is \"plausible deniability\"; this, along with the selective use of misinformation, allows a government and or a military entity to distance itself from its spies and operatives should their activities become known. Paradoxically, though, while every government and military organization requires Covert Ops to survive, it can be extremely harmful to admit such groups' existence, at least without a feasible back-up story — a story usually provided by the covert agents themselves. At times, the distance between a Covert Ops agency and its parent organization can become so byzantine that funding can present a dangerous optic. When that occurs, operatives may have to raise funds themselves, in ways only they can..."
+  - name: Pocket 6
+    notes:
+      - text: Pop-up when first wave shows up
+      - text: "Ambush!: Surprise, egger!"
+      - text: Pop-up when last ship destroyed
+      - text: "Objective Complete: Through no fault of your own, the buyer was destroyed in a Gurista ambush. Yoy should return to your agent."
+      - text: "Agent message at hand-in:: Congratulations, ! Not only have you done the impossible, but you've made me 100,000 ISK in a side bet! My partners thought you'd die long before this! Thanks a bunch! Here's your reward, and a little extra besides! Don't spend it all in one place, champ."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "?"
+            class: Structure
+            names:
+              - Buyer
+      - id: wave-1-10km
+        trigger:
+          on: other
+          text: Wave 1, 10km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Guristas Frigate [Pithi Invader]
+          - count: "2"
+            class: Destroyer
+            names:
+              - Guristas Destroyer [Pithior Anarchist]
+      - id: wave-2-10km
+        trigger:
+          on: other
+          text: Wave 2, 10km
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Guristas Frigates [Pithi Infiltrator
+              - Guristas Frigates [Pithi Invader]
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Guristas Frigate [Pithi Invader]
+          - count: "2"
+            class: Frigate
+            names:
+              - Guristas EW Frigate [Pithi Despoiler]
+            ewar:
+              - kind: ecm
+    onWarpIn: "Buyer: Took you long enough. Let's get this over with. I keep getting weird signals on my overview."

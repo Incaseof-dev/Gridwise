@@ -1,0 +1,63 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: freedom-and-commerce
+kind: mission
+name: Freedom And Commerce
+level: 1
+enemyFaction: Amarr Empire
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Freedom And Commerce
+    url: https://wiki.eveuniversity.org/Freedom_And_Commerce
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "210193"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the Slaver Ship and rescue the slaves.
+restrictions:
+  - text: "Ship size limit: Destroyer"
+ewar:
+  - kind: trackingDisruption
+notes:
+  - text: "Suggested ships: Frigate"
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: forces-on-grid
+        trigger:
+          on: other
+          text: Forces on grid
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Imperial Disciple
+              - Imperial Haran
+              - Imperial Matendi
+            group: Group A 20km (auto aggro)
+          - count: "2"
+            class: Frigate
+            names:
+              - Imperial Forian
+            group: Group A 20km (auto aggro)
+            ewar:
+              - kind: trackingDisruption
+          - count: "1"
+            class: Cruiser
+            names:
+              - Slaver Ship
+            group: Group B, 40km (auto aggro)
+            ewar:
+              - kind: trackingDisruption
+            note: On destruction Freed Slaves appear in cargo hold
+      - id: asteroids
+        trigger:
+          on: other
+          text: Asteroids
+          confidence: inferred
+        spawns: []

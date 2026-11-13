@@ -1,0 +1,95 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: insorum-hijacking
+kind: mission
+name: Insorum Hijacking
+level: 4
+enemyFaction: Minmatar Republic
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Insorum Hijacking
+    url: https://wiki.eveuniversity.org/Insorum_Hijacking
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "207624"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: targetPaint
+notes:
+  - text: Salvager module required
+  - text: "Blitz: Salvage the wreck and destroy Republic Tribal Jarl."
+  - text: "Triggers in Initial Group are: Republic Jotun (triggers Reinforcement 2)"
+  - text: "Triggers in Initial Group are: Republic Tribal Jarl (triggers Reinforcement 3)"
+lootNotes:
+  - text: "Tags: ~72M ISK (The Forge appraised 72.0m sell estimate / 71.9m buy estimate, on 2023-09-07)"
+  - text: "Note: though all ships on grid are Minmatar, some wrecks and their loot shows up as Caldari"
+  - text: "Other loot: ~10M ISK"
+  - text: "Salvage: ~2.2M ISK"
+  - text: "Note: Completed in 2 ticks killing everything (total 0.004 standing loss) on 2023-09-07 using a cheap RHML Praxis dealing 893DPS (explosive)"
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: initial-group-40km
+        trigger:
+          on: warpIn
+          text: Initial Group, 40km
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Chief Republic Kvarm
+            ewar:
+              - kind: targetPaint
+          - count: "4"
+            class: Cruiser
+            names:
+              - Chief Republic Rodul
+            triggers: Reinforcement 1
+          - count: "6"
+            class: Battleship
+            names:
+              - Republic Jotun
+              - Republic Jarl
+              - Republic Tribal Jotun
+              - Republic Tribal Jarl
+            triggers: Reinforcements 2 and 3
+          - count: "1"
+            class: Container
+            names:
+              - Convoy Wreck
+            note: Mission objective
+      - id: reinforcement-1-10km
+        trigger:
+          on: other
+          text: Reinforcement 1, 10km
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Battleship
+            names:
+              - Republic Sigur
+      - id: reinforcement-2
+        trigger:
+          on: other
+          text: Reinforcement 2
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Chief Republic Gleeda
+            ewar:
+              - kind: targetPaint
+      - id: reinforcement-3-35km
+        trigger:
+          on: other
+          text: Reinforcement 3, 35km
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Battleship
+            names:
+              - Republic Tribal Jotun

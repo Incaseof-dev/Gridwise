@@ -1,0 +1,121 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: blood-refuge
+kind: anomaly
+name: Blood Refuge
+dedRating: null
+anomalyClass: 3
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Blood Refuge
+    url: https://wiki.eveuniversity.org/Blood_Refuge
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "212610"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Blood Refuge is an unrated combat site belonging to the Blood Raiders pirate faction. It can be found via exploration as a cosmic anomaly within systems owned by the Amarr Empire and Ammatar Mandate. As an ungated complex, the limitations as to which ships can enter this site are tied to the security rating of the system where the anomaly spawns (up to T2 battleships for high-security systems, and titans in low-security and null-security systems). Completing this complex may award the player with valuable Dark Blood faction modules and ammunition.
+  - text: This combat site consists of a single ungated pocket of space containing a variety of frigate- and destroyer-sized enemy ships. Destroying all hostile ships may escalate into the DED rated, Mul-Zatah Monastery complex.
+  - text: "Escalation: This anomaly can escalate to Mul-Zatah Monastery."
+  - text: "Escalation: Mul-Zatah Monastery: Your scanner has picked up a transmission originating from a nearby system. It would be wise to investigate this mysterious signal further."
+loot:
+  - item: Dark Blood Silver Tag
+    from: Dark Blood Converter
+    note: est. 10k ISK (wiki) · 100% drop rate
+  - item: (Dark) Blood Ammo
+    from: Dark Blood Converter
+    note: est. 6k - 58M ISK (wiki) · 100% drop rate
+  - item: Dark Blood module
+    from: Dark Blood Converter
+    note: est. 10k - 130M ISK (wiki) · rare
+  - item: Mid-grade Amulet Implant
+    from: Dark Blood Converter
+    note: est. 6M - 50M ISK (wiki) · rare
+lootNotes:
+  - text: ~150.000 ISK
+pockets:
+  - name: Warp-in
+    notes:
+      - text: The site is an open Deadspace pocket.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Corpii Follower
+              - Corpii Worshiper
+          - count: "1"
+            class: Sentry
+            names:
+              - Tower Sentry Blood I
+          - count: "1"
+            class: Sentry
+            names:
+              - Blood Light Missile Battery
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Corpii Seeker
+              - Corpii Collector
+            ewar:
+              - kind: trackingDisruption
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Corpii Raider
+              - Corpii Reaver
+          - count: "2"
+            class: Destroyer
+            names:
+              - Corpior Visionary
+              - Corpior Templar
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Corpii Reaver
+              - Corpii Engraver
+          - count: "2"
+            class: Destroyer
+            names:
+              - Corpior Visionary
+              - Corpior Templar
+      - id: commander-spawn-optional
+        trigger:
+          on: other
+          text: Commander spawn (Optional)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Commander Destroyer
+            names:
+              - Dark Blood Converter
+            drop: May contain Dark Blood modules
+sde:
+  dungeonIds:
+    - 2316

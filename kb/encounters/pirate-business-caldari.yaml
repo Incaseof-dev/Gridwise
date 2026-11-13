@@ -1,0 +1,51 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: pirate-business-caldari
+kind: mission
+name: Pirate Business
+level: 3
+enemyFaction: Caldari State
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Pirate Business (Caldari)
+    url: https://wiki.eveuniversity.org/Pirate_Business_(Caldari)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "199167"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: ecm
+notes:
+  - text: "Space type: Deadspace with gates"
+  - text: The Holoreels drop from the last ship killed.
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: No aggro on Warp-in
+      - text: "Note: The group doesn't aggro totally when shot."
+    waves:
+      - id: 45-75km-huge-blob
+        trigger:
+          on: other
+          text: (45-75km, Huge Blob)
+          confidence: inferred
+        spawns: []
+  - name: Pocket 2
+    notes:
+      - text: No aggro on Warp-in
+      - text: "Aggro notes: Group 1 and 2 are linked, aggro when shot."
+      - text: "Aggro notes: Group 3 doesn't aggro if not shot, it also fires on drones."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: "?"
+            names:
+              - Caldari Transport Ship
+            group: Group 2 (40-45 km)

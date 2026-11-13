@@ -1,0 +1,48 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: intercept-the-saboteurs-blood-raiders
+kind: mission
+name: Intercept The Saboteurs
+level: 4
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Intercept The Saboteurs (Blood Raiders)
+    url: https://wiki.eveuniversity.org/Intercept_The_Saboteurs_(Blood_Raiders)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191758"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite frigates"
+  - text: "BLITZ: Works the same as Intercept The Saboteurs (Serpentis & Sansha's Nation). Last ship in center group drops the viral agent."
+  - text: Killing one of the transporters incurs a 2.4% standing penalty
+pockets:
+  - name: Warpin
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns: []
+  - name: 1st pocket
+    notes:
+      - text: You warp in about 55km from the nearest group. Three groups, attacking the left or right will aggro the middle one as well.
+      - text: Upon warp-in attack the left group. That way scramblers from the right group won't aggro you if you run into trouble.
+      - text: Keep your distance above 35km and most of the ships won't be able to attack you. Get too close, and they'll suck your cap.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Industrial
+            names:
+              - Blood Raider Transports

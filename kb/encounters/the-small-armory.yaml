@@ -1,0 +1,152 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-small-armory
+kind: mission
+name: The Small Armory
+level: 3
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Small Armory
+    url: https://wiki.eveuniversity.org/The_Small_Armory
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "203906"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the Cartel Small Armory and then report back to your agent.
+ewar:
+  - kind: web
+notes:
+  - text: "Suggested ships: Battlecruiser"
+  - text: "Blitz: Kill ships in pocket 1, then the Small Armory in pocket 2."
+  - text: Aside from Small Armory, no structures drop loot.
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Angel Bunker
+            drop: cap boosters (or nothing)
+      - id: group-1-40-45km-auto-aggro
+        trigger:
+          on: other
+          text: Group 1, 40-45km (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Gistatis Legionnaire
+              - Gistatis Primus
+          - count: "2"
+            class: Sentry
+            names:
+              - Angel Heavy Missile Battery
+          - count: "2"
+            class: Sentry
+            names:
+              - Tower Sentry Angel II
+      - id: group-2-25-35km
+        trigger:
+          on: other
+          text: Group 2, 25-35km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Gistii Hunter
+              - Gistii Impaler
+          - count: "2"
+            class: Destroyer
+            names:
+              - Gistior Shatterer
+              - Gistior Defacer
+          - count: "2"
+            class: Cruiser
+            names:
+              - Gistum Marauder
+              - Gistum Liquidator
+              - Gistum Phalanx
+      - id: group-3-75-80km
+        trigger:
+          on: other
+          text: Group 3, 75-80km
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Gistii Hunter
+              - Gistii Impaler
+          - count: "1"
+            class: Cruiser
+            names:
+              - Gistum Marauder
+              - Gistum Liquidator
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Gistatis Primus
+              - Gistatis Tribuni
+  - name: Pocket 2
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Small Armory
+            drop: drops 3-8 random ammo types
+            note: Mission objective
+      - id: group-1-60-70km-auto-aggro
+        trigger:
+          on: other
+          text: Group 1, 60-70km (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Destroyer
+            names:
+              - Gistior Shatterer
+              - Gistior Defacer
+          - count: "2"
+            class: Cruiser
+            names:
+              - Gistum Breaker
+              - Gistum Defeater
+            ewar:
+              - kind: web
+      - id: group-2-110-120km
+        trigger:
+          on: other
+          text: Group 2, 110-120km
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Angel Webifier
+              - Angel Viper
+            ewar:
+              - kind: web
+          - count: "2"
+            class: Cruiser
+            names:
+              - Gistum Breaker
+              - Gistum Defeater
+            ewar:
+              - kind: web

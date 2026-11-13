@@ -1,0 +1,173 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: pirate-business-minmatar-republic-level-4
+kind: mission
+name: Pirate Business
+level: 4
+enemyFaction: Minmatar Republic
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Pirate Business (Minmatar Republic) (Level 4)
+    url: https://wiki.eveuniversity.org/Pirate_Business_(Minmatar_Republic)_(Level_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "193393"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: targetPaint
+  - kind: web
+notes:
+  - text: "Web/warp disruption: Republic Tribal Solon (Web)"
+  - text: "Suggested ships: Battleship, T3C"
+pockets:
+  - name: 1st Pocket
+    notes:
+      - text: No auto-aggro.
+      - text: Groups 1 and 2 aggro together.
+      - text: Groups 3 and 4 aggro together.
+    waves:
+      - id: 1st-group
+        trigger:
+          on: other
+          text: 1st Group
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Republic Kvarm
+              - Republic Otur
+          - count: "3"
+            class: Cruiser
+            names:
+              - Republic Tribal Ormur
+              - Republic Tribal Rodul
+          - count: "2"
+            class: Battleship
+            names:
+              - Republic Jarl
+              - Republic Pytara
+      - id: 2nd-group
+        trigger:
+          on: other
+          text: 2nd Group
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Republic Kvarm
+              - Republic Otur
+              - Republic Gleeda
+            ewar:
+              - kind: targetPaint
+      - id: 3rd-group
+        trigger:
+          on: other
+          text: 3rd Group
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Cruiser
+            names:
+              - Republic Tribal Ormur
+              - Republic Tribal Rodul
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Republic Norn
+      - id: 4th-group
+        trigger:
+          on: other
+          text: 4th Group
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Republic Jarpur
+              - Republic Tribal Solon
+            ewar:
+              - kind: web
+          - count: "2"
+            class: Battleship
+            names:
+              - Republic Pytara
+              - Republic Jotun
+  - name: 2nd Pocket
+    notes:
+      - text: No auto-aggro.
+      - text: Groups 1, 2, and 4 aggro individually.
+      - text: Shooting 3rd Group will aggro entire pocket.
+    waves:
+      - id: 1st-group
+        trigger:
+          on: other
+          text: 1st Group
+          confidence: inferred
+        spawns:
+          - count: "10"
+            class: Frigate
+            names:
+              - Republic Kvarm
+              - Republic Otur
+              - Republic Gleeda
+              - Republic Tribal Gleeda
+            ewar:
+              - kind: targetPaint
+      - id: 2nd-group
+        trigger:
+          on: other
+          text: 2nd Group
+          confidence: inferred
+        spawns:
+          - count: "8"
+            class: Cruiser
+            names:
+              - Republic Manadis
+              - Republic Rodul
+              - Republic Tribal Rodul
+            ewar:
+              - kind: targetPaint
+          - count: "2"
+            class: Battleship
+            names:
+              - Republic Pytara
+      - id: 3rd-group
+        trigger:
+          on: other
+          text: 3rd Group
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Cruiser
+            names:
+              - Republic Tribal Ormur
+              - Republic Tribal Rodul
+          - count: "4"
+            class: Battleship
+            names:
+              - Republic Jotun
+              - Republic Pytara
+              - Republic Sigur
+          - count: "2"
+            class: Industrial
+            names:
+              - Minmatar Personnel Transport
+      - id: 4th-group
+        trigger:
+          on: other
+          text: 4th Group
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Republic Otur
+          - count: "4"
+            class: Cruiser
+            names:
+              - Republic Jarpur

@@ -1,0 +1,143 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-fox-hunt
+kind: mission
+name: The Fox Hunt
+level: 1
+enemyFaction: Minmatar Republic
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Fox Hunt
+    url: https://wiki.eveuniversity.org/The_Fox_Hunt
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "198277"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal: []
+  resist:
+    - explosive
+    - kinetic
+    - thermal
+    - em
+restrictions:
+  - text: "Ship size limit: Only T1 Frigates/Destroyers allowed."
+ewar:
+  - kind: targetPaint
+notes:
+  - text: "Space type: Deadspace (mwd does work)"
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: group-1-25km-agressive
+        trigger:
+          on: other
+          text: Group 1 (25km) agressive
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Republic Baldur
+              - Republic Takan
+          - count: "1"
+            class: Destroyer
+            names:
+              - Republic Faxi
+            triggers: Reinforcement
+      - id: reinforcement
+        trigger:
+          on: other
+          text: Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigates
+            names:
+              - Republic Otur
+              - Republic Baldur
+      - id: group-2-75km-aggressive
+        trigger:
+          on: other
+          text: Group 2 (75km) aggressive
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Refueling Facility Gardian
+            ewar:
+              - kind: targetPaint
+      - id: group-3-100km-aggro-at-30km
+        trigger:
+          on: other
+          text: Group 3 (100km) aggro at 30km
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Republic Radur
+              - Republic Skani
+              - Republic Kvarm
+  - name: Pocket 2
+    waves:
+      - id: group-1-50km-aggressive
+        trigger:
+          on: other
+          text: Group 1 (50km) aggressive
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Republic Baldur
+            triggers: Reinforcement
+          - count: "1"
+            class: Frigate
+            names:
+              - Republic Tribal Gleeda
+            ewar:
+              - kind: targetPaint
+      - id: reinforcement
+        trigger:
+          on: other
+          text: Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Republic Baldur
+          - count: "1"
+            class: Destroyer
+            names:
+              - Republic Austri
+      - id: group-2-90km-aggressive
+        trigger:
+          on: other
+          text: Group 2 (90km) aggressive
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Republic Takan
+  - name: Pocket 3
+    notes:
+      - text: Mission objective is in container near this group.
+    waves:
+      - id: group-1-90km-aggressive
+        trigger:
+          on: other
+          text: Group 1 (90km) aggressive
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Republic Baldur
+              - Republic Otur

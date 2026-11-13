@@ -1,0 +1,205 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: gurista-productions-shipment
+kind: escalation
+name: Guristas Productions Shipment
+dedRating: null
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Gurista Productions Shipment
+    url: https://wiki.eveuniversity.org/Gurista_Productions_Shipment
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "229652"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Expedition start:: As the bits and pieces from the disintegrated station charge into space, carrying the news of heightened entropy in the universe, your instruments receive an unusual message. It's obviously being transmitted from the Guristas and even though the person on the other end does not introduce himself as such, the special cypher reveals it is indeed theirs. He demands speaking over a secure channel and after you have established one, he continues with sarcastic congratulations on your victory. He then gives you an offer: If you travel to three different locations as he instructs and assassinate the Guristas leaders operating there, he will reward you handsomely. He then gives you coordinates to a location in a \"take it or leave it\" manner before bidding you farewell and adds that he will contact you after the first target is destroyed."
+lootNotes:
+  - text: Dread Guristas Stasis Webifier - 06/11/2014.
+  - text: Dread Guristas Anti-Thermal Shield Hardener - 06/11/2014.
+  - text: Dread Guristas Heavy Missile Launcher - 22/03/2020.
+  - text: Dread Guristas Medium Graviton Smartbomb, Pithum A-Type Medium Shield Booster - 25/08/2021.
+  - text: Pithum A-Type Explosive Shield Amplifier, Pithum A-Type EM Shield Amplifier, Pithum A-Type Medium Shield Booster - 25/02/2026.
+pockets:
+  - name: First Location
+    notes:
+      - text: If there's no Faction cruiser in the pocket, jump through the Newly Constructed Acceleration Gate to get an escalation.
+      - text: "Expedition continue:: The convoy from which you picked up this transmission seems to have left before you got here. Your systems have down traced their new destination."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "5"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Abolisher
+              - Dire Pithum Eraser
+          - count: 0-1
+            class: Commander Cruiser
+            names:
+              - Dread Guristas Nullifier
+              - Dread Guristas Murderer
+            triggers: Escalation trigger
+            drop: Can drop faction modules
+          - count: 4-6
+            class: Battlecruiser
+            names:
+              - Pithatis Assassin
+  - name: Second Location
+    notes:
+      - text: "Dead End message:: No ships here and it looks like the Gurista convoy has managed to slip away. You have no clues left to follow."
+      - text: "Escalation message:: No ships here and it looks like the Gurista convoy has managed to slip away again. The only possible clue you have is one further location listed in the flight plan, even though by the looks of it they have abandoned it altogether."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Pithior Guerilla
+              - Pithior Renegade
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Inferno
+              - Dire Pithum Mortifier
+          - count: "1"
+            class: Commander Cruiser
+            names:
+              - Dread Guristas Nullifier
+            triggers: Escalation trigger
+            drop: Can drop faction modules
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Pithatis Revolter
+              - Pithatis Death Dealer
+  - name: Third Location
+    notes:
+      - text: You land on an acceleration gate. There is no reason to fly through it unless it is for the escalation.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Pithior Supremacist
+              - Pithior Terrorist
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Abolisher
+              - Dire Pithum Eraser
+          - count: 0-1
+            class: Commander Cruiser
+            names:
+              - Dread Guristas Inferno
+            triggers: Destroying triggers escalation
+            drop: may drop Dread Guristas faction modules
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Pithatis Revolter
+              - Pithatis Death Dealer
+  - name: First Pocket
+    notes:
+      - text: No enemies present, just a wrecked stargate in a brown cloud.
+      - text: "Escalation trigger: No ships here, but it looks like a few ship wrecks have been left behind. You investigate one of them to discover a list of coordinates, one of which is complete and close by."
+  - name: Fourth Location (Null sec)
+    notes:
+      - text: This location can be in null security space but this can vary. You land on an acceleration gate.
+  - name: First Pocket
+    notes:
+      - text: The acceleration gate is 45 km from warp-in.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Invader
+              - Dire Pithi Infiltrator
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "5"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Annihilator
+              - Dire Pithum Killer
+              - Dire Pithum Nullifier
+            ewar:
+              - kind: ecm
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Battleship
+            names:
+              - Pith Eradicator
+              - Pith Obliterator
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: Locked
+  - name: Second Pocket
+    notes:
+      - text: The Dread Pithum Vindicator does not have significant tank, and can be taken out fairly easily. It does somewhat higher damage with its turrets and missiles, though.
+      - text: "Expedition end: This was just a supply station like any other usually associated with the large empires and you wonder who it could have possibly been servicing out here in the middle of nowhere. Surely the Guristas have no need for a complex of this size way out here, or do they?"
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Pithi Destructor
+              - Pithi Demolisher
+          - count: 1-3
+            class: Elite Frigate
+            names:
+              - Dire Pithi Arrogator
+              - Dire Pithi Imputor
+              - Dire Pithi Invader
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: type list incomplete on the source page
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Annihilator
+              - Dire Pithum Killer
+            ewar:
+              - kind: ecm
+          - count: "1"
+            class: Overseer Cruiser
+            names:
+              - Dread Pithum Vindicator
+            triggers: Destroying ends expedition
+            drop: May contain Pithum A-Type or Dread Guristas faction modules
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Pithatis Assassin
+              - Pithatis Assaulter

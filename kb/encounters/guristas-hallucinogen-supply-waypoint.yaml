@@ -1,0 +1,215 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: guristas-hallucinogen-supply-waypoint
+kind: complex
+name: Guristas Hallucinogen Supply Waypoint
+dedRating: 5
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Guristas Hallucinogen Supply Waypoint
+    url: https://wiki.eveuniversity.org/Guristas_Hallucinogen_Supply_Waypoint
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231533"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Battleships"
+notes:
+  - text: The site consists of a volume of space with an acceleration gate and contains various structures and their defending pirates.
+  - text: This site's acceleration gate allows all subcapitals to enter.
+  - text: "Warning: The DPS in the Second/third rooms becomes quite heavy. Do not attempt this site if you do not know what you are doing or you risk losing your ship quite easily."
+loot:
+  - item: 18th Tier Overseer's Personal Effects
+    from: Gurista Distributor
+    note: est. 43.2M ISK (wiki) · 100% drop rate
+  - item: Pithum B-Type module
+    from: Gurista Distributor
+    note: est. 100k-560M ISK (wiki) · Up to 3x
+  - item: Gila BPC
+    from: Gurista Distributor
+  - item: Pithum B-Type Multispectrum Shield Hardener
+    note: est. About 560M ISK (wiki) · Most valuable loot · possible deadspace modules
+  - item: Pithum B-Type Medium Shield Booster
+    note: est. About 200M ISK (wiki) · Less valuable loot · possible deadspace modules
+  - item: Pithum B-Type Medium Remote Shield Booster
+    note: est. About 34M ISK (wiki) · possible deadspace modules
+  - item: Pithum B-Type EM Shield Amplifier
+    note: est. About 34M ISK (wiki) · possible deadspace modules
+  - item: Pithum B-Type Thermal Shield Amplifier
+    note: est. Valueless (wiki) · possible deadspace modules
+  - item: Pithum B-Type Kinetic Shield Amplifier
+    note: est. Valueless (wiki) · possible deadspace modules
+  - item: Pithum B-Type Explosive Shield Amplifier
+    note: est. Valueless (wiki) · possible deadspace modules
+pockets:
+  - name: Room 1
+    notes:
+      - text: All ships will auto-aggro.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "21"
+            class: Frigate
+            names:
+              - Pithi Demolisher
+              - Pithi Destructor
+          - count: 7-8
+            class: Cruiser
+            names:
+              - Pithum Abolisher
+              - Pithum Eraser
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Pithatis Executor
+          - count: "2"
+            class: Battleship
+            names:
+              - Pith Extinguisher
+          - count: 1-2
+            class: Battleship
+            names:
+              - Pith Eliminator
+            ewar:
+              - kind: ecm
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+            note: Unlocks when all defenders are dead.
+  - name: Room 2
+    notes:
+      - text: "Threat Assessment: These storage areas and warehouses are absolutely full of hallucinogens. It looks like there's a thick layer of additional security between the receiving area and the production facility."
+      - text: Significant amount of (mostly) kinetic damage in this room. Prioritize battlecruisers and battleships first since their missiles make up most of the incoming damage and have long range.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "8"
+            class: Sentry
+            names:
+              - Guristas Sentry Gun
+          - count: "6"
+            class: Frigate
+            names:
+              - Pithi Demolisher
+              - Pithi Destructor
+          - count: "3"
+            class: Destroyer
+            names:
+              - Pithior Anarchist
+              - Pithior Nihilist
+          - count: "5"
+            class: Cruiser
+            names:
+              - Pithum Abolisher
+              - Pithum Eraser
+              - Pithum Inferno
+              - Pithum Mortifier
+          - count: "11"
+            class: Battlecruiser
+            names:
+              - Pithatis Enforcer
+              - Pithatis Executor
+          - count: "9"
+            class: Battleship
+            names:
+              - Pith Conquistador
+              - Pith Destroyer
+              - Pith Extinguisher
+          - count: "1"
+            class: Battleship
+            names:
+              - Pith Eliminator
+            ewar:
+              - kind: ecm
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+            note: Unlocks when all defenders are dead.
+  - name: Room 3
+    notes:
+      - text: "Distributor Detected:: There's the culprit, a Gurista Distributor. It's going to take a long time for these filthy pirates to replace such an integral part of their organization."
+      - text: Kill Guristas Distributor then either loot his wreck or bookmark it, warp out, and come back a few minutes later to pick up the loot. Triple Stasis Tower spawn will reduce your speed to <10 m/s, making you take a LOT of damage, especially if you rely on speed-tanking.
+      - text: "Upon killing Gurista Distributor: \"Distributor Down. The Gurista distributor's frozen corpse is floating in a cloud of his own product. Given how tough his ship was, there's probably some valuable loot in the wreck.\""
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Sentry
+            names:
+              - Guristas Stasis Tower
+            ewar:
+              - kind: web
+          - count: "9"
+            class: Sentry
+            names:
+              - Tower Sentry Guristas II
+          - count: "2"
+            class: Sentry
+            names:
+              - Guristas Light Missile Battery
+          - count: "1"
+            class: Sentry
+            names:
+              - Guristas Heavy Missile Battery
+          - count: "1"
+            class: Sentry
+            names:
+              - Guristas Cruise Missile Battery
+          - count: "11"
+            class: Frigate
+            names:
+              - Pithi Arrogator
+              - Pithi Demolisher
+              - Pithi Destructor
+              - Pithi Imputor
+          - count: "1"
+            class: Destroyer
+            names:
+              - Pithior Nihilist
+          - count: "10"
+            class: Cruiser
+            names:
+              - Pithum Abolisher
+              - Pithum Eraser
+          - count: "6"
+            class: Battleship
+            names:
+              - Pith Conquistador
+              - Pith Extinguisher
+              - Pith Massacrer
+              - Pith Eliminator
+            ewar:
+              - kind: ecm
+          - count: "1"
+            class: Overseer Battlecruiser
+            names:
+              - Gurista Distributor
+            drop: Contains 18th Tier Overseers Effects, and may contain Pithum B-type cruiser modules, Dread Guristas faction modules and rarely a Gila BPC.
+sde:
+  dungeonIds:
+    - 5242

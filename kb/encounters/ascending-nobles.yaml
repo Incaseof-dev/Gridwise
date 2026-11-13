@@ -1,0 +1,152 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: ascending-nobles
+kind: mission
+name: Ascending Nobles
+level: null
+enemyFaction: Mercenaries (Amarr ships)
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Ascending Nobles
+    url: https://wiki.eveuniversity.org/Ascending_Nobles
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231007"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal:
+    - em
+    - thermal
+  resist:
+    - em
+    - thermal
+objectives:
+  - text: Destroy enemy ships, then retrieve Mina Darabi near the Amarr Chapel.
+ewar:
+  - kind: neut
+  - kind: trackingDisruption
+notes:
+  - text: Elite battleships, time limit
+  - text: thumb
+  - text: "Lord Darabi: Rumor has it that Lord Darabi was imprisoned by Karsoth for daring to publicly disagree (albeit slightly) with Karsoth's policies about the Succession. When Empress Sarum returned, Darabi was freed, but rumors persist that he is not in the most stable condition. Mina Darabi drops in an untractorable container so you have to fly all the way to it."
+  - text: "[Video: [Typhoon June 2021]"
+  - text: The destination is Reteka (7 jumps).
+  - text: This mission can be requested and accepted remotely.
+  - text: "Tips: All spawns start approximately 80k from warp in."
+  - text: "Tips: The Veteran/Elite battleships do very heavy damage if you let them get close (They orbit ~49k and hit hard up to 60k away)."
+  - text: "Tips: The elite battleships are very slow (139 m/s). If you keep them at 60+ km tanking won't be hard."
+  - text: "Tips: The green-crewed battleships on the other hand are very weak for battleships."
+  - text: Single gated deadspace pocket. Once all ships are destroyed the mission object drops near the Amarr chapel.
+  - text: The last ship destroyed in each group will trigger the next wave.
+  - text: "If the mission is not completed within 30 minutes after Mina Darabi is collected, the following message will appear:"
+  - text: "Pop-up message:: I know salvaging is fun, but there are several hostile ships inbound. I suggest we retreat now. Mina Darabi is too valuable an informant to lose."
+  - text: Approximately 5-10 seconds after that message appears, a new battle group will spawn. There are no bounties and relatively poor salvage from this spawn.
+pockets:
+  - name: Room 1
+    notes:
+      - text: The Elite Battleships have poor tracking against AB-fit cruisers provided they orbit close (within 20 km) however their spawn distance means that you will take heavy damage trying to burn at them and get under their guns. Unless you have long-range (60+ km) weapons for sniping or are prepared to face-tank roughly 1500 DPS EM/Thermal damage, you may want to lead them towards the warp-in beacon, then warp out and back into the mission pocket to get immediately under their guns.
+      - text: Mina Darabi spawns near the Amarr Chapel.
+    waves:
+      - id: initial-group-90-km-from-warp-in
+        trigger:
+          on: warpIn
+          text: Initial Group (90 km from warp-in)
+        spawns:
+          - count: "5"
+            class: Elite Battleship
+            names:
+              - Independent Veteran Abaddon
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Sentry
+            names:
+              - Amarr Light Missile Battery
+            note: Mjolnir missiles (EM)
+          - count: "2"
+            class: Sentry
+            names:
+              - Amarr Cruise Missile Battery
+            note: Mjolnir missiles (EM)
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: "8"
+            class: Elite Cruiser
+            names:
+              - Independent Veteran Omen
+            ewar:
+              - kind: trackingDisruption
+              - kind: neut
+            note: Energy neutralizer - 25km range; type list incomplete on the source page
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "7"
+            class: Battleship
+            names:
+              - Independent Green-Crewed Abaddon
+            note: type list incomplete on the source page
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Battleship
+            names:
+              - Independent Abaddon
+            triggers: Last ship destroyed completes the mission objective
+            note: type list incomplete on the source page
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Amarr Chapel
+  - name: Additional Spawn
+    notes:
+      - text: This spawn is incredibly strong. It is suggested that pilots bring additional fleet members with logistics. Ships do not award bounties, but may drop faction tags and loot/salvage. Loot is ≈ 7.5M and salvage ≈ 2.5M [2023-12-06]
+    waves:
+      - id: additional-spawn
+        trigger:
+          on: other
+          text: Additional Spawn
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Elite Frigate
+            names:
+              - Independent Veteran Crucifier
+              - Independent Veteran Inquisitor
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "6"
+            class: Elite Cruiser
+            names:
+              - Independent Veteran Omen
+              - Independent Veteran Maller
+              - Independent Veteran Augoror
+            ewar:
+              - kind: trackingDisruption
+              - kind: neut
+          - count: "6"
+            class: Elite Battleship
+            names:
+              - Independent Veteran Armageddon
+            ewar:
+              - kind: neut
+            note: type list incomplete on the source page

@@ -1,0 +1,131 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: provisional-blood-outpost
+kind: complex
+name: Provisional Blood Outpost
+dedRating: null
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Provisional Blood Outpost
+    url: https://wiki.eveuniversity.org/Provisional_Blood_Outpost
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "230593"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Battlecruiser"
+notes:
+  - text: The site is located behind an acceleration gate. Battlecruisers (T1/T2) and below can access it.
+  - text: A passive shield-tanked Drake can run this site slowly. The rats are not difficult, but they are very spread out, so bring a MWD.
+  - text: Each new wave spawns when the previous one is destroyed. All enemy waves spawn around the cluster of structures.
+  - text: "Escalation: This site may escalate into Blood Surveillance Squad after you destroy every ship and/or the Blood Raider Chapel."
+lootNotes:
+  - text: "Bounty: about 1,000,000 ISK"
+  - text: "Loot: unknown loot & salvage"
+pockets:
+  - name: First Pocket
+    waves:
+      - id: initial-grid
+        trigger:
+          on: warpIn
+          text: Initial Grid
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Corpii Reaver
+              - Corpii Engraver
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corpum Arch Engraver
+      - id: wave-2-spawns-upon-approaching-blood-raider-bunker
+        trigger:
+          on: other
+          text: "Wave #2 - spawns upon approaching Blood Raider Bunker"
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Corpii Collector
+              - Corpii Seeker
+      - id: wave-3-spawns-upon-approaching-abandoned-shipyard
+        trigger:
+          on: other
+          text: "Wave #3 - spawns upon approaching Abandoned Shipyard"
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Corpii Reaver
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corpum Arch Sage
+  - name: Second Pocket
+    waves:
+      - id: initial-grid
+        trigger:
+          on: warpIn
+          text: Initial Grid
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Corpii Seeker
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Corpatis Seer
+      - id: wave-2-spawns-upon-damaging-blood-raider-chapel
+        trigger:
+          on: other
+          text: "Wave #2 - spawns upon damaging Blood Raider Chapel"
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Corpii Raider
+              - Corpii Diviner
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corpum Arch Reaver
+              - Corpum Arch Priest
+      - id: wave-3-spawns-60-seconds-after-wave-2
+        trigger:
+          on: other
+          text: "Wave #3 - spawns 60 seconds after wave 2"
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Seeker
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Corpum Arch Priest
+              - Corpum Arch Sage
+      - id: faction-ship-may-not-spawn-can-spawn-at-any-time
+        trigger:
+          on: other
+          text: Faction Ship - may not spawn, can spawn at any time
+          confidence: inferred
+        spawns:
+          - count: 0-1
+            class: Cruiser
+            names:
+              - Dark Blood Cruiser
+            drop: Possible low-tier faction modules
+sde:
+  dungeonIds:
+    - 1410

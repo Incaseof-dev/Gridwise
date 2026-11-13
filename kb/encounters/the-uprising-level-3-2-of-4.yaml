@@ -1,0 +1,73 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-uprising-level-3-2-of-4
+kind: mission
+name: The Uprising (2 of 4)
+level: 3
+enemyFaction: Mordu's Legion Command
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Uprising (Level 3) (2 of 4)
+    url: https://wiki.eveuniversity.org/The_Uprising_(Level_3)_(2_of_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223244"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: web
+  - kind: warpScramble
+notes:
+  - text: "Web/warp disruption: Mordus Bounty Hunter (Web, Scram)"
+  - text: "Suggested ships: Battlecruiser"
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: The spawns are timed; this can lead to a long period where there is nothing to fight.
+      - text: The 1st Wave may not have spawned already, upon arrival.
+      - text: "Next: The Uprising (Level 3) (3 of 4)"
+    waves:
+      - id: timed-spawns
+        trigger:
+          on: other
+          text: Timed Spawns
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Mordus Cheetah
+              - Mordus Katana
+            group: 1st Wave
+          - count: "10"
+            class: Frigate
+            names:
+              - Mordus Gladius
+              - Mordus Sabre
+            group: 2nd Wave
+          - count: "6"
+            class: Frigate
+            names:
+              - Mordus Katana
+              - Mordus Sabre
+            group: 3rd Wave
+          - count: "8"
+            class: Frigate
+            names:
+              - Mordus Rapier
+            group: 4th Wave
+          - count: "1"
+            class: Frigate
+            names:
+              - Mordus Katana
+            group: 5th Wave
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Mordus Bounty Hunter
+            group: 5th Wave
+            ewar:
+              - kind: web
+              - kind: warpScramble

@@ -1,0 +1,265 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: incipient-drone-swarm
+kind: anomaly
+name: Incipient Drone Swarm
+dedRating: null
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Incipient Drone Swarm
+    url: https://wiki.eveuniversity.org/Incipient_Drone_Swarm
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "229455"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: The site has three waves, each dealing around 200 DPS. The Rogue Drones (excluding Vexing and Punishing types) have a lot of EWAR, but it is very weak and can be easily ignored.
+  - text: All rats, except for the occasional "Overmind" ships, are drone-sized targets. None of the ships, including battleships, warp scramble. Rats can drop Interstellar Navigation Logs which can be traded to Triglavian stations for valuable items. The salvage is the same as with Rogue Drones in K-Space.
+  - text: The Overminds deal around 50-100 DPS each and are limited to a 58 km range, but have very high tracking within that range (100+, equivalent to frigate tracking speeds). They have a lot of EHP, often around or over 100K, but can be tanked fairly easily. Most of them have a large signature radius and can be hit relatively easily. They will orbit you at around 45-50 km. Recommended weapons to destroy them include torpedoes and cruise missiles due to their good application and high damage to battleships and above. (Use turrets for the Overmind Broodlord Omega since its signature radius is small (25m) meaning large missiles will not apply well to it and its shield tank is strong enough to shrug off what little missile damage can be dealt.)
+  - text: The Grazing Phase-0 Forager deals no damage and has no EWAR, but has a lot of structure HP and can take a while to destroy. It has the signature radius of a battleship, though.
+  - text: Each wave can have up to 8 or 9 ships.
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: Additional waves are triggered when all non-Overmind/Forager ships are destroyed.
+      - text: Once a certain number of enemies from the last wave are destroyed the rest of the ships warp off and the site is considered complete.
+      - text: Completing the site awards a 8,500,000 ISK payout from Triglavian Collective. The ISK is scaled depending on how many people run the site.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 0-3
+            class: Frigate
+            names:
+              - Punishing
+              - Interfering
+              - Obstructing
+              - Vexing Phase-I Swarmer
+            ewar:
+              - kind: targetPaint
+              - kind: web
+              - kind: sensorDamp
+          - count: 0-3
+            class: Destroyer
+            names:
+              - Punishing
+              - Interfering
+              - Obstructing
+              - Vexing Phase-II Legionary
+            ewar:
+              - kind: targetPaint
+              - kind: web
+              - kind: sensorDamp
+          - count: 0-3
+            class: Cruiser
+            names:
+              - Punishing
+              - Interfering
+              - Obstructing
+              - Vexing Phase-III Legionary
+            ewar:
+              - kind: targetPaint
+              - kind: web
+              - kind: sensorDamp
+          - count: 0-3
+            class: Battlecruiser
+            names:
+              - Punishing
+              - Interfering
+              - Obstructing
+              - Vexing Phase-IV Legionary
+            ewar:
+              - kind: targetPaint
+              - kind: web
+              - kind: sensorDamp
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: 0-4
+            class: Frigate
+            names:
+              - Punishing
+              - Interfering
+              - Obstructing
+              - Vexing Phase-I Swarmer
+            ewar:
+              - kind: targetPaint
+              - kind: web
+              - kind: sensorDamp
+          - count: 0-4
+            class: Destroyer
+            names:
+              - Punishing
+              - Interfering
+              - Obstructing
+              - Vexing Phase-II Legionary
+            ewar:
+              - kind: targetPaint
+              - kind: web
+              - kind: sensorDamp
+          - count: 0-4
+            class: Cruiser
+            names:
+              - Punishing
+              - Interfering
+              - Obstructing
+              - Vexing Phase-III Legionary
+            ewar:
+              - kind: targetPaint
+              - kind: web
+              - kind: sensorDamp
+          - count: 0-4
+            class: Battlecruiser
+            names:
+              - Punishing
+              - Interfering
+              - Obstructing
+              - Vexing Phase-IV Legionary
+            ewar:
+              - kind: targetPaint
+              - kind: web
+              - kind: sensorDamp
+          - count: 0-1
+            class: Battleship
+            names:
+              - Grazing Phase-0 Forager
+            group: Possible additional spawn
+            drop: Drops around 200 Interstellar Navigation Logs
+            note: Does no damage or EWAR, but has strong structure HP
+          - count: 0-1
+            class: Battleship
+            names:
+              - Overmind Destructor Delta
+              - Overmind Destructor Epsilon
+            group: Possible additional spawn
+            drop: Drops around 150-300 Interstellar Navigation Logs
+          - count: 0-1
+            class: Battleship
+            names:
+              - Overmind Interruptor Iota
+              - Overmind Interruptor Lambda
+            group: Possible additional spawn
+            drop: Drops around 150-300 Interstellar Navigation Logs
+          - count: 0-1
+            class: Carrier
+            names:
+              - Overmind Broodlord Alpha
+            group: Possible additional spawn
+            drop: Drops around 400 Interstellar Navigation Logs
+          - count: 0-1
+            class: Supercarrier
+            names:
+              - Overmind Broodlord Omega
+            group: Possible additional spawn
+            drop: Drops around 400 Interstellar Navigation Logs
+            note: Broodlord Omega deals around 250 DPS with a 400 EHP/s tank
+          - count: 0-1
+            class: Supercarrier
+            names:
+              - Overmind Progenitor Zero
+            group: Possible additional spawn
+            drop: "? (i didnt kill this thing since it has 864k structure.)"
+            note: Has no shield or armor, but has 864k structure.
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: 0-6
+            class: Frigate
+            names:
+              - Punishing
+              - Interfering
+              - Obstructing
+              - Vexing Phase-I Swarmer
+            ewar:
+              - kind: targetPaint
+              - kind: web
+              - kind: sensorDamp
+          - count: 0-6
+            class: Destroyer
+            names:
+              - Punishing
+              - Interfering
+              - Obstructing
+              - Vexing Phase-II Legionary
+            ewar:
+              - kind: targetPaint
+              - kind: web
+              - kind: sensorDamp
+          - count: 0-6
+            class: Cruiser
+            names:
+              - Punishing
+              - Interfering
+              - Obstructing
+              - Vexing Phase-III Legionary
+            ewar:
+              - kind: targetPaint
+              - kind: web
+              - kind: sensorDamp
+          - count: 0-6
+            class: Battlecruiser
+            names:
+              - Punishing
+              - Interfering
+              - Obstructing
+              - Vexing Phase-IV Legionary
+            ewar:
+              - kind: targetPaint
+              - kind: web
+              - kind: sensorDamp
+          - count: 0-1
+            class: Battleship
+            names:
+              - Grazing Phase-0 Forager
+            group: Possible additional spawn
+            drop: Drops around 200 Interstellar Navigation Logs
+            note: Does no damage or EWAR, but has strong structure HP
+          - count: 0-1
+            class: Battleship
+            names:
+              - Overmind Destructor Delta
+              - Overmind Destructor Epsilon
+            group: Possible additional spawn
+            drop: Drops around 150-300 Interstellar Navigation Logs
+          - count: 0-1
+            class: Battleship
+            names:
+              - Overmind Interruptor Iota
+              - Overmind Interruptor Lambda
+            group: Possible additional spawn
+            drop: Drops around 150-300 Interstellar Navigation Logs
+          - count: 0-1
+            class: Carrier
+            names:
+              - Overmind Broodlord Alpha
+            group: Possible additional spawn
+            drop: Drops around 400 Interstellar Navigation Logs
+          - count: 0-1
+            class: Supercarrier
+            names:
+              - Overmind Broodlord Omega
+            group: Possible additional spawn
+            drop: Drops around 400 Interstellar Navigation Logs
+            note: Broodlord Omega deals around 250 DPS with a 400 EHP/s tank
+          - count: 0-1
+            class: Supercarrier
+            names:
+              - Overmind Progenitor Zero
+            group: Possible additional spawn
+            drop: "? (i didnt kill this thing since it has 864k structure.)"
+            note: Has no shield or armor, but has 864k structure.
+sde:
+  dungeonIds:
+    - 9007

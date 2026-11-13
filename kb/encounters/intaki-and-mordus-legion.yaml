@@ -1,0 +1,42 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: intaki-and-mordus-legion
+kind: mission
+name: Intaki and Mordus Legion
+level: 3
+enemyFaction: Mordu's Legion Command
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Intaki and Mordus Legion
+    url: https://wiki.eveuniversity.org/Intaki_and_Mordus_Legion
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "195552"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: targetPaint
+notes:
+  - text: "Suggested ships: Battleship, Battlecruiser"
+  - text: "Space type: Deadspace"
+  - text: "Recommended generic setup: All Ranges, Active Tank"
+  - text: All ships come at you as soon as you initiate combat. They will orbit you at varying distances, from 2500m to 20km, and the battleship will try to stay at 30km. They fire a variety of hybrid weapons and all sizes of tracking kinetic missiles. Overall damage taken is high.
+  - text: "Tips: Get close to the Battleship and orbit it so it can't hit you."
+  - text: "Tips: If your ship is fast enough to avoid the hybrid turrets, you only need kinetic resistance to survive the missiles."
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: group-1-40km-aggro
+        trigger:
+          on: other
+          text: Group 1 (40km - Aggro)
+          confidence: inferred
+        spawns: []
+      - id: group-2-60km-aggro
+        trigger:
+          on: other
+          text: Group 2 (60km - Aggro)
+          confidence: inferred
+        spawns: []

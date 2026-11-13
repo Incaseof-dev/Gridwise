@@ -1,0 +1,60 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: in-the-midst-of-deadspace-3-of-5
+kind: mission
+name: In The Midst of Deadspace (3 of 5)
+level: 4
+enemyFaction: Amarr Empire
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – In The Midst of Deadspace (3 of 5)
+    url: https://wiki.eveuniversity.org/In_The_Midst_of_Deadspace_(3_of_5)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223445"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Find armory in slave compound room deadspace area, destroy enemies, and retrieve Imperial Navy Gate Permit container.
+ewar:
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Suggested ships: Battleship, Marauder, T3C"
+  - text: Prop mod recommended!
+  - text: Force Field can be flown straight through, and cargo container can be retrieved from within.
+  - text: The gate permit is required for Parts 4 and 5.
+  - text: Rats may drop a Basic implant; implant reward also available for fast completion. In addition to the permit, container also contains 20x small arms
+  - text: "Next: In The Midst of Deadspace (4 of 5)"
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: Empty
+  - name: Pocket 2
+    notes:
+      - text: Empty
+  - name: Pocket 3
+    waves:
+      - id: initial-group-50-70km-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group (50-70km) (auto-aggro)
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Imperial Navy Delta II Support Frigate
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "6"
+            class: Cruiser
+            names:
+              - Imperial Navy Officer
+              - Imperial Navy Omen
+          - count: "2"
+            class: Battleship
+            names:
+              - Imperial Navy Apocalypse

@@ -1,0 +1,42 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: dead-end-intercept
+kind: mission
+name: Dead End Intercept
+level: 4
+enemyFaction: Minmatar Republic
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Dead End Intercept
+    url: https://wiki.eveuniversity.org/Dead_End_Intercept
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "220747"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Intercept the counteragent. Retrieve 1x Singed Datapad (0.1 m3)
+notes:
+  - text: No Minmatar Standing loss
+  - text: thumb|right|192px
+  - text: "RSS Residential Suites: This reconfigured station houses thousands of RSS agents along with their families, and serves as just one of many secure locations for employees to settle down. Often the line of work RSS agents undertake brings with it a risk for recriminations. In order to minimize the threat to their families and keep agent's minds on the job, the RSS often heavily subsidizes the accommodation at these residential suites. For them it is just another way to approach internal security; the cost of these subsidies pales in comparison to the amounts the Amarr would pay for just one good defector, and the damage done from a high-level leak would be significant for an entity that built itself on the security of information."
+  - text: There is a counter agent in Republic Security Services. Intercept and destroy them.
+  - text: The encounter will likely be in one of the neighboring systems. You can warp in at your desired range, and upon arrival there will be a number of friendly craft. Wait a moment for Lomar Vujik to appear and recover the Singed Datapad from their Cargo Container.
+  - text: "Tips: Lomar Vujik deals up to 500 DPS over 80 km and uses a Microwarpdrive to approach at 1000 m/s"
+  - text: "Tips: Lomar Vujik's lowest resistance is 49% Explosive, and has similar tank to a standard NPC battleship"
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: wave-1-50km
+        trigger:
+          on: other
+          text: Wave 1 (50km)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Elite Battleship
+            names:
+              - Lomar Vujik
+            drop: Singed Datapad

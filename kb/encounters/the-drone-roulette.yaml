@@ -1,0 +1,144 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-drone-roulette
+kind: escalation
+name: The Drone Roulette
+dedRating: null
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Drone Roulette
+    url: https://wiki.eveuniversity.org/The_Drone_Roulette
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "217305"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "The Drone Roulette: Among the debris from this formidable hive, you find a blown out hangar containing a few burnt out space ships of various types, probably the possessions of some unfortunate adventurers that came here before you and didn't live to tell the story. As your scanners routinely run through this material, they come across some report with information on a few sister hives to this one. The explorer seems to have found that each of these so called 'Independence hives' are surrounded with outposts that serve both as an early warning system against intruders on the drones territory and also as a resource gathering facility. It seems that if the hive is attacked, the drones from the outposts warp instantly back to defend it. One interesting bit of information the unfortunate explorer has noted is that the drones frequently move the hive itself between these outposts, so hunting these things is like playing Russian roulette, you never know if you are fortunate enough to hit an outpost and thereby reduce the inevitable resistance at the main hive, or if you are warping straight into the lair of the drones. The report continues to list four locations, the nearest one being..."
+  - text: This expedition can escalate from Independence. This escalation can also re-escalate to another drone roulette. The last part of this escalation may be received randomly after any stage.
+pockets:
+  - name: First location
+    notes:
+      - text: "Escalation Message: Furtunately, these coordinates led you only to an outpost where you managed to pull some teeth from the drone hive that is looming out there somewhere. The question is where? You have three locations left and the next one is here..."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Silverfish Alvi
+          - count: "6"
+            class: Elite Frigate
+            names:
+              - Strain Raider
+            note: type list incomplete on the source page
+          - count: "4"
+            class: Cruiser
+            names:
+              - Nuker
+            note: type list incomplete on the source page
+          - count: "7"
+            class: Elite Cruiser
+            names:
+              - Strain Devastator
+              - Strain Annihilator Alvum
+          - count: "5"
+            class: Sentry
+            names:
+              - Drone Cruise Missile Battery
+  - name: Second location
+    notes:
+      - text: "Escalation Message: Again you were fortunate enough to hit an outpost and now there are only two locations left unexplored. That should mean there is a fifty fifty chance you hit the hive itself, given there is one out there..."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Splinter Alvi
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Strain Raider
+              - Strain Sunder Alvi
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Strain Bomber
+              - Strain Disintegrator Alvum
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Exterminator
+              - Siege Alvatis
+          - count: "3"
+            class: Battleship
+            names:
+              - Alvus Ruler
+              - Supreme alvus parasite
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Corpii Raider
+              - Corpii Visionary
+            triggers: Escalation trigger
+            drop: Can drop faction items.
+          - count: "5"
+            class: Sentry
+            names:
+              - Drone Cruise Missile Battery
+  - name: Third location
+    notes:
+      - text: "Escalation Message: Another outpost. You stop for a second, weighting the possibilities of having such luck as to clear out all the outposts as you seem to have done, against the chances of there being no hive out there at all. With one location left unexplored there only one way to find out..."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "7"
+            class: Frigate
+            names:
+              - Splinter
+              - Render
+              - Decimator Alvi
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Strain Hunter
+              - Strain Silverfish Alvi
+          - count: "7"
+            class: Elite Cruiser
+            names:
+              - Strain Devastator
+              - Strain Annihilator Alvum
+          - count: "4"
+            class: Battleship
+            names:
+              - Inner Circle Defenses
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Sentient Domination
+            triggers: Escalation trigger
+            drop: Can drop faction items.
+          - count: "6"
+            class: Sentry
+            names:
+              - Drone Cruise Missile Battery
+  - name: Fourth location
+    notes:
+      - text: Large number of drones. The dozen-plus elite frigates have points and webs and their destruction triggers additional spawns, recommend sniping the frigates from range. A "drone hive mother" may also spawn.
+    onWarpIn: Rats! Lady luck is not in a good mood today, you have stumbled right into the hive! Now is do or die, the drones know their home has been infiltrated and they will probably melt away into space if you retreat.
+sde:
+  dungeonIds:
+    - 1583

@@ -1,0 +1,48 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: murderer-brought-to-justice
+kind: mission
+name: Murderer Brought To Justice
+level: 2
+enemyFaction: Rogue Pirates & Shazzyr/Durim/Roland & Shogon
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Murderer Brought To Justice
+    url: https://wiki.eveuniversity.org/Murderer_Brought_To_Justice
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "229596"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal:
+    - thermal
+    - kinetic
+  resist:
+    - em
+    - explosive
+objectives:
+  - text: Find and destroy the murderer and his guards, then report back to your agent.
+notes:
+  - text: not possible.
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-spawn
+        trigger:
+          on: warpIn
+          text: Initial Spawn
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Durim
+              - Shogon
+              - Shazzyr
+              - Roland
+          - count: "3"
+            class: Cruiser
+            names:
+              - Rogue Pirate Escort

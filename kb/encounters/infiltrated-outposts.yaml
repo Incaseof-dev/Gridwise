@@ -1,0 +1,186 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: infiltrated-outposts
+kind: mission
+name: Infiltrated Outposts
+level: 4
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Infiltrated Outposts
+    url: https://wiki.eveuniversity.org/Infiltrated_Outposts
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231478"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy rogue drones and their bunker
+ewar:
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite Frigate"
+  - text: The number of ships in groups may vary.
+  - text: "Tip: The drone bunkers in the 1st pocket are not part of the mission objective, so they can be ignored."
+  - text: "Tip: Fitting an Afterburner might be useful to burn to the gate."
+  - text: "Blitz: Eliminate all ships in the 1st pocket to unlock the warp gate."
+  - text: "Blitz: Eliminate all ships in the 2nd group and destroy the Bunker, done."
+  - text: "Blitz: You do not have to kill the third and furthest group in the second pocket."
+lootNotes:
+  - text: "Salvage: ± 1.7 Mil ISK"
+  - text: "Bounty: ± 4.1 Mil ISK"
+pockets:
+  - name: 1st Pocket
+    notes:
+      - text: Auto aggro from the 1st group, 2nd group remains neutral. The warp gate to the next pocket is ~33km away and locked until all hostiles are cleared.
+      - text: If you get stuck colliding with the structures when you try to use the acceleration gate, just blow up the structure that is stopping the warp. The large structure has less HP than you may assume.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Sunder
+            group: Group 1 (25-30 km)
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Cruiser
+            names:
+              - Viral Infector Alvum
+            group: Group 1 (25-30 km)
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Defeater Alvatis
+            group: Group 1 (25-30 km)
+          - count: "1"
+            class: Battleship
+            names:
+              - Alvus Controller
+            group: Group 1 (25-30 km)
+          - count: "3"
+            class: Frigate
+            names:
+              - Sunder
+            group: Group 2 (45-50 km)
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Cruiser
+            names:
+              - Viral Infector Alvum
+            group: Group 2 (45-50 km)
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Defeater Alvatis
+            group: Group 2 (45-50 km)
+  - name: 2nd Pocket
+    notes:
+      - text: Destroy group 2 and the bunker next to them to complete the mission. The battleships on the side belong to group 2.
+      - text: Attacking the 2nd Group (or its bunker) will aggro the entire pocket.
+      - text: Attacking either the 1st or 3rd group will aggro the other group (3rd or 1st).
+      - text: Drones that get too close to any remaining neutral group will be attacked.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Raider Alvi
+            group: Group 1 (50 km)
+          - count: "5"
+            class: Elite Frigate
+            names:
+              - Strain Infester
+            group: Group 1 (50 km)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: type list incomplete on the source page
+          - count: 4-5
+            class: Cruiser
+            names:
+              - Devastator
+              - Disintegrator Alvum
+            group: Group 1 (50 km)
+          - count: "1"
+            class: Battleship
+            names:
+              - Alvus Controller
+            group: Group 1 (50 km)
+          - count: "1"
+            class: Frigate
+            names:
+              - Raider Alvi
+            group: Group 2 (75 km)
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Strain Infester
+            group: Group 2 (75 km)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Cruiser
+            names:
+              - Disintegrator Alvum
+            group: Group 2 (75 km)
+          - count: 4-5
+            class: Battlecruiser
+            names:
+              - Devastator
+              - Disintegrator Alvum
+            group: Group 2 (75 km)
+          - count: "1"
+            class: Battleship
+            names:
+              - Swarm Preserver Alvus
+              - Alvus Controller
+            group: Group 2 (75 km)
+          - count: "1"
+            class: Structure
+            names:
+              - Drone Bunker
+            group: Group 2 (75 km)
+          - count: 4-5
+            class: Frigate
+            names:
+              - Raider Alvi
+            group: Group 3 (80-90 km)
+          - count: 1-2
+            class: Elite Frigate
+            names:
+              - Strain Infester
+            group: Group 3 (80-90 km)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Cruiser
+            names:
+              - Disintegrator Alvum
+            group: Group 3 (80-90 km)
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Devastator
+              - Disintegrator Alvum
+            group: Group 3 (80-90 km)
+          - count: "1"
+            class: Battleship
+            names:
+              - Swarm Preserver Alvus
+              - Alvus Controller
+            group: Group 3 (80-90 km)

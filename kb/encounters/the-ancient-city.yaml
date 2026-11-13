@@ -1,0 +1,215 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-ancient-city
+kind: escalation
+name: The Ancient City
+dedRating: null
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Ancient City
+    url: https://wiki.eveuniversity.org/The_Ancient_City
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "224010"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: The Ancient City is an extremely difficult escalation from the Sansha Provincial HQ and possibly other Sansha sites.
+  - text: "Site Description: As the dust settles from the battle, you receive a transmission from someone claiming to be a local vigilante who congratulates you on a job well done. Your computers run a check on his ship ID's and other info they can gather on him in such a short period of time, but come up with nothing. He is at least not part of any pirate faction, nor seems he to represent any of the official states in the galaxy. This person continues to welcome you to the area and offers to point you to some other Sansha bases he knows about and have been a menace for the local population. If you want to come and meet him, he will lead the way."
+  - text: This escalation has 4 locations, typically each location is 6-10 jumps between each other and can cross regional boundaries. Locations 1-3 are easier to blitz, but Location 4 is one of the hardest sites that exists in Eve.
+  - text: It is not guaranteed for each location to escalate. After each location, killing the True Sansha Battleship will either trigger the escalation to the next location or not. If not, your time with the site is over.
+  - text: Full details for this expedition are not currently available, the below is provided as best effort because this is a rare escalation.
+  - text: No rats warp disrupt/scram in this entire escalation as of writing.
+pockets:
+  - name: Location 1
+    notes:
+      - text: "Blitz: Warp in, kill the True Sansha battleship, bookmark the wreck, warp out. Wait 2 minutes for site to despawn, warp to bookmark and loot."
+      - text: No gate, you will warp in and the rats will be on the outside of an acceleration gate that does not work. No ewar reported in this room
+      - text: "On gate activation to empty pocket: message in local: \"Orso Di Cura: Good to see you decided to come. I can not promise you any payment if you take on these Sansha bases, but you will earn fame among the locals and the fortune the Sansha leave behind. I'm going to send a couple of my spy drones to see if the Sansha are still where they were yesterday.\""
+      - text: 'On escalation: The radio crackles, it is the vigilante all excited, who whispers in a conspiratorial tone "They are still here! Come quick and we shall introduce them to pain!"'
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Centii Manslayer
+              - Centii Butcher
+              - Centii Loyal Enslaver
+          - count: "3"
+            class: Cruiser
+            names:
+              - Centatis Wraith
+              - Centatis Behemoth
+          - count: "8"
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Dread Lord
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - True Sansha's Dread Lord
+            triggers: Upon death, possible escalation to the next location
+            drop: 12m bounty, wreck contains possible True Sansha faction modules, ammo/tags, Nightmare BPC and produces T2 salvage
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Newly Constructed Acceleration Gate
+            triggers: Possible trigger if TS doesn't trigger
+            note: Warps to an empty pocket
+  - name: Location 2
+    notes:
+      - text: "Blitz: Warp in, kill the True Sansha battleship, bookmark the wreck, warp out. Wait 2 minutes for site to despawn, warp to bookmark and loot."
+      - text: "Tip: True Sansha spawn is off to the right, away from the other groups. You can warp to the site cloaked (be careful not to be decloaked by the beacon), bookmark the center and then look for a good celestial behind the true sansha spawn. Warp out to that celestial, then warp to your bookmark at 30km. You'll land right on the TS spawn for a quick kill. Bookmark wreck and warp out, loot in 2 minutes after the site despawns."
+      - text: Rats are in 2 main groups with 2 tiny groups on the side. Full site aggros on land. This site has a lot of DPS that will easily break a T3 Cruiser.
+      - text: 'No escalation: "We sure did show them! You sure are better than no one to have around when the missiles are flying! But there is no time to float here fabulating, we must press on, another division of this same group is close by! I will pop over and scout, check if they are there still!" All these exclamation marks make you dizzy. It may well be that this guy is not much of a fighter, but he is no coward and you wonder if it is not hard to do scouting missions on an industrial... Around 30 seconds later you receive a transmission "OMG the bastards have scrambled me!! I am getting killed here! Help! Help! I am at moon six, where is everyone, come.." and then the transmission stops. You turn off the radio, there are too many "moon 6" around for you to go looking, and besides, this guy has probably already been turned into two tablespoons of space dust by now.'
+    waves:
+      - id: pocket-defenders
+        trigger:
+          on: warpIn
+          text: Pocket defenders
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Centii Loyal Savage
+              - Centii Loyal Slavehunter
+          - count: "11"
+            class: Cruiser
+            names:
+              - Centum Loyal Mutilator
+              - Centum Loyal Fiend
+              - Centum Loyal Hellhound
+          - count: "9"
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Dread Lord
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - True Sansha's Dread Lord
+            triggers: Upon death, possible escalation to the next location
+            drop: Wreck contains possible True Sansha faction modules, ammo/tags, Nightmare BPC and produces T2 salvage
+          - count: "2"
+            class: Sentry
+            names:
+              - Sansha Stasis Tower
+            ewar:
+              - kind: web
+          - count: "6"
+            class: Sentry
+            names:
+              - Sansha Tower Sentry
+  - name: Location 3
+    notes:
+      - text: "Blitz: Warp in, kill the True Sansha battleship, bookmark the wreck, warp out. Wait 2 minutes for site to despawn, warp to bookmark and loot. No need to get Wave 1 unless you want the bounties."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - True Sansha
+            triggers: Upon death, possible escalation to the next location
+            drop: Wreck contains possible True Sansha faction modules, ammo/tags, Nightmare BPC and produces T2 salvage
+          - count: "2"
+            class: Sentry
+            names:
+              - Sansha Stasis Tower
+            ewar:
+              - kind: web
+          - count: "2"
+            class: Sentry
+            names:
+              - Siege Pulse Laser Sentries
+          - count: "1"
+            class: Station
+            names:
+              - Sansha Battletower
+            triggers: Next wave of rats
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns: []
+  - name: Location 4
+    notes:
+      - text: This site is ungated and therefore can be run with capitals.
+      - text: When you warp in, you will be 200km from the structure you need to shoot. This site is NOT deadspace so you can actually warp around on grid. The various waves will spawn in different spots around the site, so you will need to either warp around or MJD as needed.
+    waves:
+      - id: initial-pocket
+        trigger:
+          on: warpIn
+          text: Initial Pocket
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Sansha Organization Center
+            triggers: Triggers multiple waves 1 to 5. Unknown what health triggers next wave, so shoot until the next wave is triggered
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Sansha Stasis Tower
+            ewar:
+              - kind: web
+          - count: "2"
+            class: Sentry
+            names:
+              - Siege Pulse Laser Sentries
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns: []
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns: []
+      - id: wave-4
+        trigger:
+          on: other
+          text: Wave 4
+          confidence: inferred
+        spawns: []
+      - id: wave-5
+        trigger:
+          on: other
+          text: Wave 5
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Fighter
+            names:
+              - Spider Drone
+            ewar:
+              - kind: web
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Colonial Master Diabolus Maytor
+            drop: Wreck contains possible True Sansha faction modules, ammo/tags, Nightmare BPC and produces T2 salvage
+sde:
+  dungeonIds:
+    - 1903

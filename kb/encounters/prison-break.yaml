@@ -1,0 +1,308 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: prison-break
+kind: mission
+name: Prison Break
+level: 5
+enemyFaction: Rogue Drones & CONCORD
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Prison Break
+    url: https://wiki.eveuniversity.org/Prison_Break
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "221275"
+defaults:
+  confidence: verified
+  source: uni
+lootNotes:
+  - text: Rough guide
+  - text: Concord tags = 300 mil
+  - text: Salvage = 50 mil
+  - text: Bounty = 115 mil
+  - text: Loot = 18km3
+pockets:
+  - name: Part 1 of 2
+    notes:
+      - text: "Space type: Deadspace, Allows direct warp to bookmarks or gang mates."
+      - text: "First a few things to know about this mission:"
+      - text: It’s bugged, you can’t finish it properly yet. Yes I have bug reported this. And you can still finish it (you have to travel 10,000km in a ship, twice).
+      - text: You can warp directly into any part of the mission despite it being a deadspace.
+      - text: The rats don’t warp scramble (or at least they haven’t scrammed me)
+      - text: Spawns vary in numbers a bit for the 3 main rooms, numbers below are just guidelines.
+      - text: This fix worked for my mission, but CCP may change/fix this mission. I reported this fix and workaround at 17 June 2011 (confirmed still bugged and work around still works at 12 May 2012), see how out of date this is before trying the mission.
+      - text: There are 3 rooms in this mission that have a basic structure of 2 gates 1 active that leads to a guard room and 1 inactive that leads to the next room. Kill all the spawns in the room for a key to drop take that to the guard room and kill all the spawns there for the guard post to appear, drop the key in the guard post for the inactive gate to become active. This works for the first room but it does not work for the second or third room.
+      - text: Since you can warp to anywhere in the mission grab a fast ship, align yourself with the gate and travel 10,000km to get to the room, bookmark and come back with a fleet. With a 5 km/s cepter it took roughly 30 minutes to travel to the next room. This won’t work for the second broken gate as the inactive gate is also facing the wrong direction (it’s instead facing the same way as the guard post so if you try and travel you’ll just end up at the guard post) the real direction is roughly 90 degrees to the left of where it is pointing which is very hard to get to if you try to align yourself with that gate.
+      - text: However all 3 rooms and the final room are in a straight line. So if you warp from the first room to the second room you should be facing the right direction to reach the 3rd room and same for the 4th. You will however need to make sure it’s the same spot your warping between in these two rooms, therefore bookmark the beacons and warp between those to align yourself to travel to the next room.
+      - text: "Tips: The third rooms CONCORD spawn starts off at close range which lets the frigates and cruisers get damage on you much earlier, it is the hardest to tank of all the spawns"
+      - text: "Tips: CONCORD frigates and cruisers often orbit at point blank range (especially the ones at the initial warp in) Smartbombs are extremely effective (even T1 have enough range). However the CONCORD cruisers have a very high shield regenaration, you will need to bring 2 Large smartbombs or they will out rep the damage."
+      - text: "Tips: This mission can be farmed for loot/tags/bounty as it resets every downtime and bookmarks from a previous downtime will still work."
+  - name: Warp-in
+    notes:
+      - text: Initially nothing here except an acceleration gate that leads you to the first room
+      - text: However during the first guard post room this acceleration gate will become inactive MAKE SURE TO MAKE BOOKMARKS IN ALL THE ROOMS.
+      - text: "Various CONCORD type rats will also spawn here at various stages of the mission. At the end there will be a total of roughly:"
+    waves:
+      - id: split-amongst-5-groups
+        trigger:
+          on: other
+          text: Split amongst 5 groups
+          confidence: inferred
+        spawns: []
+  - name: Room 1
+    waves:
+      - id: initial-forces-drones-immediate-aggro
+        trigger:
+          on: warpIn
+          text: Initial forces - Drones - immediate aggro
+        spawns: []
+      - id: wave-1-drones-after-killing-a-couple-of-ships
+        trigger:
+          on: other
+          text: Wave 1 – Drones - After Killing a couple of ships
+          confidence: inferred
+        spawns: []
+      - id: wave-2-concord-when-nearly-all-the-drones-are-dead
+        trigger:
+          on: other
+          text: Wave 2 – CONCORD – When nearly all the drones are dead
+          confidence: inferred
+        spawns: []
+  - name: Gate house room
+    waves:
+      - id: initial-forces
+        trigger:
+          on: warpIn
+          text: Initial forces
+        spawns:
+          - count: "1"
+            class: Cruiser
+            names:
+              - CONCORD
+            triggers: Triggers reinforcement 1
+      - id: reinforcement-1
+        trigger:
+          on: other
+          text: Reinforcement 1
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Cruiser
+            names:
+              - CONCORD
+            triggers: Triggers reinforcement 2
+      - id: reinforcement-2
+        trigger:
+          on: other
+          text: Reinforcement 2
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Cruiser
+            names:
+              - CONCORD
+            triggers: Triggers reinforcement 3
+      - id: reinforcement-3
+        trigger:
+          on: other
+          text: Reinforcement 3
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Cruiser
+            names:
+              - CONCORD
+            triggers: Triggers reinforcement 24
+      - id: reinforcement-4
+        trigger:
+          on: other
+          text: Reinforcement 4
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Battleship
+            names:
+              - CONCORD
+  - name: Back in room 1
+    notes:
+      - text: A large new wave of CONCORD ships has appeared.
+    waves:
+      - id: immediate-aggro
+        trigger:
+          on: other
+          text: Immediate aggro
+          confidence: inferred
+        spawns: []
+  - name: Room 2 - Beta room
+    waves:
+      - id: initial-forces-drones-immediate-aggro
+        trigger:
+          on: warpIn
+          text: Initial forces - Drones immediate aggro
+        spawns: []
+      - id: wave-1-drones-spawns-after-killing-a-small-amount-of-ships
+        trigger:
+          on: other
+          text: Wave 1 – Drones – Spawns after killing a small amount of ships
+          confidence: inferred
+        spawns: []
+      - id: wave-2-concord
+        trigger:
+          on: other
+          text: Wave 2 – CONCORD
+          confidence: inferred
+        spawns: []
+  - name: Guard Post 2
+    waves:
+      - id: initial-forces-concord
+        trigger:
+          on: warpIn
+          text: Initial forces - CONCORD
+        spawns: []
+      - id: reinforcement-1-concord
+        trigger:
+          on: other
+          text: Reinforcement 1 - CONCORD
+          confidence: inferred
+        spawns: []
+      - id: reinforcement-2-concord
+        trigger:
+          on: other
+          text: Reinforcement 2 - CONCORD
+          confidence: inferred
+        spawns: []
+      - id: reinforcement-3-concord
+        trigger:
+          on: other
+          text: Reinforcement 3 - CONCORD
+          confidence: inferred
+        spawns: []
+      - id: reinforcement-4-concord
+        trigger:
+          on: other
+          text: Reinforcement 4 - CONCORD
+          confidence: inferred
+        spawns: []
+  - name: Back in Room 2
+    notes:
+      - text: A large new wave of CONCORD ships has appeared.
+    waves:
+      - id: immediate-aggro
+        trigger:
+          on: other
+          text: Immediate aggro
+          confidence: inferred
+        spawns: []
+  - name: Room 3 - LCO room
+    waves:
+      - id: initial-forces-drones-immediate-aggro
+        trigger:
+          on: warpIn
+          text: Initial forces - Drones- Immediate aggro
+        spawns: []
+      - id: wave-1-drones-after-killing-a-small-number-of-drones
+        trigger:
+          on: other
+          text: Wave 1 – Drones – After killing a small number of drones
+          confidence: inferred
+        spawns: []
+      - id: wave-2-concord-after-killing-nearly-all-drones
+        trigger:
+          on: other
+          text: Wave 2 – CONCORD – After killing nearly all drones
+          confidence: inferred
+        spawns: []
+  - name: Guard Post 3
+    waves:
+      - id: initial-forces-concord
+        trigger:
+          on: warpIn
+          text: Initial forces - CONCORD
+        spawns: []
+      - id: reinforcement-1-concord
+        trigger:
+          on: other
+          text: Reinforcement 1 - CONCORD
+          confidence: inferred
+        spawns: []
+      - id: reinforcement-2-concord
+        trigger:
+          on: other
+          text: Reinforcement 2 - CONCORD
+          confidence: inferred
+        spawns: []
+      - id: reinforcement-3-concord
+        trigger:
+          on: other
+          text: Reinforcement 3 - CONCORD
+          confidence: inferred
+        spawns: []
+      - id: reinforcement-4-concord
+        trigger:
+          on: other
+          text: Reinforcement 4 - CONCORD
+          confidence: inferred
+        spawns: []
+  - name: Back in Room 3
+    notes:
+      - text: A large new wave of CONCORD ships has appeared.
+    waves:
+      - id: immediate-aggro
+        trigger:
+          on: other
+          text: Immediate aggro
+          confidence: inferred
+        spawns: []
+  - name: Room 4
+    notes:
+      - text: Destroy this battleship for the Solitary Confinement spawn container to show up, go up to container and 2 containers will appear outside of it with the mission objective in them (take both containers).
+    waves:
+      - id: initial-forces-concord
+        trigger:
+          on: warpIn
+          text: Initial forces – CONCORD
+        spawns: []
+      - id: reinforcement-1-concord
+        trigger:
+          on: other
+          text: Reinforcement 1 - CONCORD
+          confidence: inferred
+        spawns: []
+      - id: reinforcement-2-concord
+        trigger:
+          on: other
+          text: Reinforcement 2 - CONCORD
+          confidence: inferred
+        spawns: []
+      - id: reinforcement-3-concord
+        trigger:
+          on: other
+          text: Reinforcement 3 - CONCORD
+          confidence: inferred
+        spawns: []
+      - id: reinforcement-5-concord
+        trigger:
+          on: other
+          text: Reinforcement 5 - CONCORD
+          confidence: inferred
+        spawns: []
+  - name: Part 2 of 2
+    notes:
+      - text: Very short, you just have to take the DNA from the first mission and drop it in one of the two cans.
+      - text: A few ships appear the closer you get to the can you choose. When you drop the DNA in the can another can drops with a 12th tier overseer's affects (9.9 mil). Both cans seem to give the same result.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns: []
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "2"
+            class: Container
+            names:
+              - Container

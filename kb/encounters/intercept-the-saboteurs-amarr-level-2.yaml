@@ -1,0 +1,118 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: intercept-the-saboteurs-amarr-level-2
+kind: mission
+name: Intercept The Saboteurs
+level: 2
+enemyFaction: Amarr Empire
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Intercept The Saboteurs (Amarr) (Level 2)
+    url: https://wiki.eveuniversity.org/Intercept_The_Saboteurs_(Amarr)_(Level_2)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191754"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Intercept the transport ships and retrieve 40x Confiscated Viral Agent (20).
+ewar:
+  - kind: trackingDisruption
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Divine Imperial frigates point,"
+  - text: "Suggested ships: Rupture, Thorax, Vexor"
+  - text: "Blitz: The transports in group 3 can be skipped."
+pockets:
+  - name: Warp-in
+    notes:
+      - text: The gate is locked. All enemies need to be destroyed.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Imperial Felix
+              - Imperial Paladin
+  - name: Single Pocket
+    notes:
+      - text: The Bestowers (Amarr Haulers) in this room all drop Vitoc, a drug you can sell to Sisters of EVE at their stations. The last one you pop drops the mission item in a cargo container separate from the wreck.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 1-2
+            class: Frigate
+            names:
+              - Imperial Forian
+            group: Group 1 (25km)
+            ewar:
+              - kind: trackingDisruption
+          - count: 6-7
+            class: Frigate
+            names:
+              - Imperial Felix
+              - Imperial Matendi
+              - Imperial Paladin
+            group: Group 1 (25km)
+          - count: "2"
+            class: Frigate
+            names:
+              - Imperial Forian
+            group: Group 2 (100km)
+            ewar:
+              - kind: trackingDisruption
+          - count: "6"
+            class: Frigate
+            names:
+              - Imperial Felix
+              - Imperial Matendi
+              - Imperial Paladin
+            group: Group 2 (100km)
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Nabih
+              - Divine Imperial Felix
+            group: Group 2 (100km)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Cruiser
+            names:
+              - Amarr Slave Transport Ship
+            group: Group 2 (100km)
+          - count: 4-6
+            class: Frigate
+            names:
+              - Imperial Felix
+              - Imperial Paladin
+            group: Group 3 (120km)
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Nabih
+            group: Group 3 (120km)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Destroyer
+            names:
+              - Imperial Exarp
+              - Imperial Caius
+            group: Group 3 (120km)
+          - count: "2"
+            class: Cruiser
+            names:
+              - Amarr Slave Transport Ship
+            group: Group 3 (120km)

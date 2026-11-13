@@ -1,0 +1,23 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: history-in-the-making
+kind: mission
+name: History In The Making
+level: 4
+enemyFaction: null
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – History In The Making
+    url: https://wiki.eveuniversity.org/History_In_The_Making
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "206427"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Report to Hiva Shesha in Tanoo
+notes:
+  - text: thumb|right|192px
+  - text: Report to Hiva Shesha in Tanoo thirteen jumps away at the Krusual Mobile Library Beacon.

@@ -1,0 +1,90 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: federal-confidence
+kind: mission
+name: Federal Confidence
+level: 4
+enemyFaction: Caldari State
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Federal Confidence
+    url: https://wiki.eveuniversity.org/Federal_Confidence
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "193391"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Retrieve 1x Encoded Data Chip
+ewar:
+  - kind: neut
+  - kind: ecm
+  - kind: sensorDamp
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: Group 3 will aggro when the Public Confidence Operative or the missile batteries are attacked.
+      - text: Destroying the last ship in Group 3 triggers Reinforcement.
+      - text: Last ship in Spawn 2 drops a cargo container with the objective item.
+    waves:
+      - id: group-1-30km-auto-aggro
+        trigger:
+          on: other
+          text: Group 1, 30km (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Cruiser
+            names:
+              - Taibu State Bajo
+              - Taibu State Samurai
+          - count: "1"
+            class: Battleship
+            names:
+              - Public Confidence Operative
+            ewar:
+              - kind: neut
+              - kind: sensorDamp
+            note: Federation Praktor Dionia type
+      - id: group-2-40km-auto-aggro
+        trigger:
+          on: other
+          text: Group 2, 40km (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Caldari Cruise Missile Battery
+          - count: "2"
+            class: Sentry
+            names:
+              - Tower Sentry Caldari III
+      - id: group-3-55km
+        trigger:
+          on: other
+          text: Group 3, 55km
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Battleship
+            names:
+              - State Zen
+              - State Oshiro
+              - State Shukuro Tenno
+            ewar:
+              - kind: ecm
+      - id: reinforcement-55km-auto-aggro
+        trigger:
+          on: other
+          text: Reinforcement, 55km (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battleship
+            names:
+              - State Shukuro Bishamon
+              - State Shukuro Shogun
+            note: Drops 1x Encoded Data Chip (0.1 m3)

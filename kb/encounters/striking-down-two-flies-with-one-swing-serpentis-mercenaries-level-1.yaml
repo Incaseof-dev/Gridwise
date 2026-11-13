@@ -1,0 +1,52 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: striking-down-two-flies-with-one-swing-serpentis-mercenaries-level-1
+kind: mission
+name: Striking Down Two Flies With One Swing
+level: 1
+enemyFaction: Serpentis & Mercenaries
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Striking Down Two Flies With One Swing (Serpentis & Mercenaries) (Level 1)
+    url: https://wiki.eveuniversity.org/Striking_Down_Two_Flies_With_One_Swing_(Serpentis_%26_Mercenaries)_(Level_1)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191958"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Space Type: Normal"
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: "Blitz: Destroying the Repair Station is the only requirement."
+      - text: "Warp in, you will see the repair station and three auxiliary power arrays. Once you shoot the Repair Station, the following will appear:"
+    waves:
+      - id: wave-1-on-attacking-the-repair-station
+        trigger:
+          on: other
+          text: Wave 1, on attacking the repair station
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Corelli Initiate
+              - Corelli Scout
+          - count: "4"
+            class: Sentry
+            names:
+              - Point Defense Batteries
+      - id: wave-2-on-destroying-the-repair-station
+        trigger:
+          on: other
+          text: Wave 2, on destroying the repair station
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Mercenary Rookie
+              - Mercenary Fighter

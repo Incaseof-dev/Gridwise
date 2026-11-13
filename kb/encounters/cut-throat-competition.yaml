@@ -1,0 +1,112 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: cut-throat-competition
+kind: mission
+name: Cut-Throat Competition
+level: 3
+enemyFaction: Mercenaries & Mercenaries (Caldari-type ships, dropping Caldari Navy tags, but no Caldari standings penalty)
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Cut-Throat Competition
+    url: https://wiki.eveuniversity.org/Cut-Throat_Competition
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223632"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: ecm
+notes:
+  - text: "Tips: Use two Sensor Boosters with ECCM scripts to reduce chances of being jammed. (Only if needed, sometimes jammers never spawn.)"
+  - text: "Tips: Kill the Recon Ships (Jammers) before triggering the third wave."
+  - text: "Blitz: Destroy all ships in group 2 (Blackbirds only, not the Moa), and destroy the repair outpost."
+  - text: "Blitz: If second wave is triggered, continue to focus on Blackbirds until mission completes."
+  - text: Enemy cruisers in the first pocket stay at 35km range.
+  - text: Gate is locked until all NPCs destroyed
+lootNotes:
+  - text: "Loot: ~19 Mil ISK (Caldari Navy Commodore Insignia I x27 + Caldari Navy Commodore Insignia II x22) (2024/01/28)"
+  - text: "Loot: ~18 Mil ISK (Caldari Navy Commodore Insignia I x27 + Caldari Navy Commodore Insignia II x17) (2024/09/11)"
+  - text: "Salvage: ~1 Mil ISK (2024/09/11)"
+npcs:
+  Rival Security [State Shukuro Ashura]:
+    sdeTypes:
+      - Moa
+    class: Cruiser
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "5"
+            class: Cruiser
+            names:
+              - Rival Security [State Shukuro Chugen
+              - Rival Security [State Shukuro Ashigaru]
+  - name: Pocket
+    notes:
+      - text: The Moa has been observed to not spawn.
+      - text: Be prepared for a lot of incoming kinetic damage once aggroed entire room
+    waves:
+      - id: group-1
+        trigger:
+          on: warpIn
+          text: Group 1
+        spawns:
+          - count: "2"
+            class: Cruiser
+            names:
+              - Rival Security [State Shukuro Chugen
+              - Rival Security [State Shukuro Ashugaru]
+            triggers: triggers wave 1 when all ships are destroyed
+          - count: "1"
+            class: Cruiser
+            names:
+              - Rival Security [State Shukuro Ashura]
+            note: Rare chance of spawning
+          - count: "10"
+            class: Cruiser
+            names:
+              - Rival Security [State Shukuro Chugen
+              - Rival Security [State Shukuro Ashugaru]
+            group: Group 2
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Rival Security Specialist [Taibu State Tendai
+              - Rival Security Specialist [Taibu State Sohei]
+            group: Wave 1
+            ewar:
+              - kind: ecm
+            triggers: Last ship triggers wave 2
+            note: Specialist rare spawn and most likely be normal versions
+          - count: "2"
+            class: Cruiser
+            names:
+              - Rival Security [State Chugen
+              - Rival Security [State Ashugaru]
+            group: Wave 1
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Rival Security Heavy [Taibu State Oni
+              - Rival Security Heavy [Taibu State Kanpaku]
+            group: Wave 2
+            note: May not spawn
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Rival Security [State Oni
+              - Rival Security [State Ronin]
+            group: Wave 2
+            triggers: Last ship triggers wave 3
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Rival Security [State Kanpaku
+              - Shukuro Bajo]
+            group: Wave 3

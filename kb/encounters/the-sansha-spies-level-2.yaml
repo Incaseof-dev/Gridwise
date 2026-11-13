@@ -1,0 +1,44 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-sansha-spies-level-2
+kind: mission
+name: The Sansha Spies
+level: 2
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Sansha Spies (Level 2)
+    url: https://wiki.eveuniversity.org/The_Sansha_Spies_(Level_2)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "192040"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Kill the Sansha Spy
+notes:
+  - text: "Suggested ships: Cruiser"
+  - text: "Blitz: Kill the Spy and warp out."
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: initial-group-30-60km-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group, 30-60km (auto-aggro)
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Sansha Sentry I
+          - count: "7"
+            class: Frigate
+            names:
+              - Centii Servant
+          - count: 1-2
+            class: Destroyer
+            names:
+              - Sansha Spy
+            note: Centior Cannibal type

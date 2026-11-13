@@ -1,0 +1,93 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: friendly-spies
+kind: mission
+name: Friendly Spies
+level: 3
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Friendly Spies
+    url: https://wiki.eveuniversity.org/Friendly_Spies
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "203312"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Go in there and blow up the Radio Telescope.
+ewar:
+  - kind: sensorDamp
+notes:
+  - text: "Suggested ships: Drake"
+  - text: "Blitz: Destroy the Radio Telescope and warp-out."
+  - text: That will finish the mission quickly; however, even if you kill all the ships, there is no standings loss incurred (and the tags have a significant amount of value)
+pockets:
+  - name: Warp-in
+    notes:
+      - text: Initial spawn is 20-30km away from warp-in. Upon destruction of the last ship in a group, a new reinforcement wave will spawn.
+      - text: The Radio Telescope is 29km from warp-in.
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Structure
+            names:
+              - Radio Telescope
+            triggers: Marks mission complete
+      - id: initial-20-30km-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial (20-30km, Auto aggro)
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Federation Arcus
+              - Federation Matara
+          - count: "2"
+            class: Cruiser
+            names:
+              - Federation Nauclarius
+              - Federation Praktor Hippeus
+            ewar:
+              - kind: sensorDamp
+      - id: 1st-reinforcement
+        trigger:
+          on: other
+          text: 1st Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Elite Federation Insidiator
+            ewar:
+              - kind: sensorDamp
+          - count: "2"
+            class: Cruiser
+            names:
+              - Federation Praktor Centurion
+              - Federation Praktor Legionarius
+      - id: 2nd-reinforcement
+        trigger:
+          on: other
+          text: 2nd Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Elite Federation Machina
+              - Elite Federation Phalarica
+            ewar:
+              - kind: sensorDamp
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Federation Calo

@@ -1,0 +1,212 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: minor-sansha-annex
+kind: complex
+name: Minor Sansha Annex
+dedRating: null
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Minor Sansha Annex
+    url: https://wiki.eveuniversity.org/Minor_Sansha_Annex
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231537"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: This site is very similar to Sansha Watch.
+  - text: Upon warping to the site you will land at an acceleration gate.
+  - text: "Escalation: Destroying the True Sansha commander may escalate the site to Sansha Owned Station."
+  - text: "Escalation: Escalation start: To your surprise, the Overseer seems to have spent the last moments of his life sending some message to your ship on a private channel, a fact you learn from a blinking entry on your communication panel a few seconds after his innards slid across your windshield, bounced along your fuselage and were sucked into your thrusters. It appears he wanted to save his life by telling you the whereabouts of some place you could load your cargohold with riches, but before he could get very far with his offer, his journey ended. All you have is some hysteric babble about a hidden mining station at a certain location."
+loot:
+  - item: + Commander and other valuable loot
+  - item: True Sansha Cruiser modules
+    note: From True Sansha battlecruiser
+  - item: Faction ammo/tags
+    note: From True Sansha battlecruiser
+npcs:
+  Centus Slave Commander:
+    sdeTypes:
+      - Centus Savage
+      - Centus Plague Lord
+    class: Battleship
+  Supervisor's Wingman:
+    sdeTypes:
+      - Centii Loyal Minion
+      - Centii Loyal Servant
+    class: Elite Frigate
+  Supervisor's Minion:
+    sdeTypes:
+      - Centum Loyal Mutilator
+      - Centum Loyal Torturer
+    class: Elite Cruiser
+  Centus Militant Supervisor:
+    sdeTypes:
+      - Centus Dark Lord
+      - Centus Overlord
+    class: Battleship
+pockets:
+  - name: First Pocket
+    notes:
+      - text: Approach the acceleration gate to trigger the proximity wave.
+    waves:
+      - id: initial-defenders-2-groups-both-30km-from-warp-in
+        trigger:
+          on: warpIn
+          text: Initial defenders (2 Groups, both ~30km from warp-in)
+        spawns:
+          - count: 5-6
+            class: Sentry
+            names:
+              - Centus Light Defense Battery
+            note: Sansha Light Missile Battery
+          - count: 7-8
+            class: Sentry
+            names:
+              - Centus Heavy Defense Battery
+            note: Sansha Heavy Missile Battery
+          - count: 1-2
+            class: Frigate
+            names:
+              - Centii Facility Patroller
+            note: Centii Plague/Enslaver
+          - count: 1-2
+            class: Battleship
+            names:
+              - Centus Facility Patroller
+            note: Centus Lord/Slave Lord
+      - id: acceleration-gate-proximity-wave
+        trigger:
+          on: other
+          text: Acceleration Gate proximity wave
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Destroyer
+            names:
+              - Centior Abomination
+              - Centior Devourer
+          - count: 1-2
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Beast
+              - Centum Loyal Juggernaut
+            ewar:
+              - kind: trackingDisruption
+          - count: 4-5
+            class: Battleship
+            names:
+              - Centus Mutant Lord
+              - Centus Savage Lord
+          - count: "1"
+            class: Battleship
+            names:
+              - Centus Slave Commander
+            ewar:
+              - kind: trackingDisruption
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            triggers: Approaching triggers gate proximity wave
+            note: Locked until Slave Commander is destroyed
+    onWarpIn: Previous explorers have commented that one of the gates requires a passkey. Alternatively, it can be bypassed by convincing the commander to unlock it. The overseer guards the Mind Control Tower vigorously.
+  - name: Second Pocket
+    notes:
+      - text: "Blitz: Destroy the True Sansha battlecruiser, bookmark his wreck, warp out and come back in a few minutes to pick up the loot."
+      - text: Full room aggro on warp-in. The fleet is spread out in several groups at significant distances across the pocket so immediate incoming damage will be low. Most of them will be ~50 km away; one battleship will spawn at a high angle above you 90 km away and can be ignored.
+      - text: True Sansha Battlecruiser will not be immediately present on warp-in. After roughly 30 seconds in the pocket a loud alarm will sound in local and (sometimes) spawn the commander. Shoot the Mind Control Tower and kill the Centus Militant Supervisor if no commander spawns to despawn the site.
+    waves:
+      - id: single-defending-fleet
+        trigger:
+          on: other
+          text: Single defending fleet
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Sentry
+            names:
+              - Centus Heavy Missile Battery
+            group: Normal ships
+          - count: 1-2
+            class: Elite Frigate
+            names:
+              - Centii Loyal Minion
+              - Centii Loyal Servant
+            group: Normal ships
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 1-2
+            class: Elite Frigate
+            names:
+              - Centii Loyal Savage
+              - Centii Loyal Slavehunter
+            group: Normal ships
+            ewar:
+              - kind: trackingDisruption
+          - count: 5-9
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centatis Daemon
+            group: Normal ships
+          - count: 0-1
+            class: Commander Battlecruiser
+            names:
+              - True Sansha's Phantasm
+              - True Sansha's Specter
+            group: Normal ships
+            triggers: Destroying can trigger escalation
+            drop: Possible True Sansha faction modules
+          - count: 5-8
+            class: Battleship
+            names:
+              - Centus Lord
+              - Centus Slave Lord
+            group: Normal ships
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Supervisor's Wingman
+            group: Supervisor wave
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "5"
+            class: Elite Cruiser
+            names:
+              - Supervisor's Minion
+            group: Supervisor wave
+          - count: "1"
+            class: Battleship
+            names:
+              - Centus Militant Supervisor
+            group: Supervisor wave
+            triggers: Destroying despawns site and may trigger escalation
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Structure
+            names:
+              - Centus Bunker
+            drop: T1 ammo
+          - count: "1"
+            class: Structure
+            names:
+              - Sansha Mind Control Tower
+            triggers: Attacking triggers supervisor wave
+sde:
+  dungeonIds:
+    - 1633

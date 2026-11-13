@@ -1,0 +1,27 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: mistaken-identity
+kind: mission
+name: Mistaken Identity
+level: 3
+enemyFaction: null
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Mistaken Identity
+    url: https://wiki.eveuniversity.org/Mistaken_Identity
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "206605"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Report to Abdiel Verat at K-QWHE V - Moon 4 - Archangels Assembly Plant
+notes:
+  - text: Mistaken Identity is the Amarr way of starting the Angel Sound Epic Arc.
+  - text: It can be picked up from Arajna Ashia at the Abandoned Research Station Sigma Nine Beacon.
+  - text: "To accept the Missions you need 3.00 Standing with either:"
+  - text: Arajna Ashia
+  - text: Amarr Navy
+  - text: Amarr Empire

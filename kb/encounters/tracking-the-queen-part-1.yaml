@@ -1,0 +1,72 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: tracking-the-queen-part-1
+kind: mission
+name: Tracking the Queen
+level: null
+enemyFaction: Mordu's Legion Command
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Tracking the Queen (Part 1)
+    url: https://wiki.eveuniversity.org/Tracking_the_Queen_(Part_1)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "205951"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Get the Scope reporter out of Mordu's Legion space and destroy his captors.
+ewar:
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Yes"
+  - text: Combat is optional
+  - text: "Mordu’s Legion: The Legion, mostly consisting of old Caldari veterans from the war with the Federation and young hotheads eager for action, is the largest and most famous mercenary corps in New Eden. They accept members from any race, as long as they are not known enemies of the Caldari State, and non-Caldari that have served in the Legion for a long time are offered Caldari citizenship on their retirement. The Legion is often employed by governments to settle issues that are not directly under anyone’s jurisdiction, especially when fast deployment and swift results are needed. Their reputation as combat experts as well as fair and honest warriors has never been tarnished."
+  - text: Objective
+  - text: Get the Scope reporter, Corin Risia (1 m³) and return him to Sister Alitura at the Arnon IX - Moon 3 - Sisters of EVE Bureau station
+  - text: 'Possible glitch on mission reads "and destroy his captors." This will not let you turn in the mission by snatch and grabbing Risia. Warping back to the mission and briefly engaging frigates allowed mission completion of the mission. Note: In this instance, Mordus frigates were heavily tanked and used web and point. I warped out when scram failed.'
+  - text: Notes
+  - text: Fit an afterburner or micro warp drive on your ship if you can - speed helps here. When you warp into the mission, Risia's Wrecked Ship container will be about 45 km away. Make a beeline for it, and loot it to put Risia into your cargo hold. When you do this, you'll see seven Mordus frigates appear at 45-60 km range. You do not need to destroy these ships to fulfill the mission - just warp back to Sister Alitura's station before they can get in range. If you wait too long, the enemy frigates will web you - don't wait around to let this happen.
+  - text: "On arrival - Corin Risia: Hey! Get me out of here before a patrol finds us here!"
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: The Bounty Hunter leaves its group and rapidly approaches. At about 20km the web starts.
+      - text: "Next Part: Tracking the Queen (Part 2)"
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "?"
+            class: Container
+            names:
+              - Risia Wrecked Ship
+            drop: Corin Risia
+      - id: patrol
+        trigger:
+          on: other
+          text: Patrol
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Mordus Gladius
+            group: Group A (59-60km)
+          - count: "3"
+            class: Frigate
+            names:
+              - Mordus Katana
+            group: Group B (55-60km)
+          - count: "1"
+            class: Frigate
+            names:
+              - Mordus Bounty Hunter
+            group: Group B (55-60km)
+            ewar:
+              - kind: web

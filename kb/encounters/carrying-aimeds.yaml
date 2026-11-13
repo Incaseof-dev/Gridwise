@@ -1,0 +1,56 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: carrying-aimeds
+kind: mission
+name: Carrying AIMEDs
+level: 1
+enemyFaction: Mercenaries
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Carrying AIMEDs
+    url: https://wiki.eveuniversity.org/Carrying_AIMEDs
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "221345"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Pick up the AIMEDs (25) and return them to your agent.
+notes:
+  - text: 'AIMEDs: Medical doctors being in such short supply, and thus in high demand, few of them are willing to risk their lives for a less lucrative practice than the one they can run comfortably planet-side. On stations, robotic AI Medical Doctors (AIMEDs, more commonly known as "AI Docs" or just "AIDs") are much more common than human medical practitioners, and much more affordable.'
+pockets:
+  - name: Warp-in
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Mercenary Rookie
+              - Mercenary Fighter
+  - name: pocket
+    notes:
+      - text: Aggro from Group 2 when they show up. Aggro from Group 1 if You get at around 20km range to them.
+      - text: Killing group 2 spawns the container with the AIMEDs.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Mercenary Rookie
+            group: Group 1 (16-25 km)
+          - count: "2"
+            class: Frigate
+            names:
+              - Mercenary Thief
+            group: Group 2 (20 km) after a short delay
+            triggers: Triggers spawning of the container

@@ -1,0 +1,202 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: angel-fortress
+kind: complex
+name: Angel Fortress
+dedRating: null
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Angel Fortress
+    url: https://wiki.eveuniversity.org/Angel_Fortress
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "210714"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: No hostiles on warp-in.
+  - text: "Escalation: This site can escalate to Operation Spring Cleaning."
+  - text: 'Escalation: Escalation trigger:: In the ruins of this Angel structure you come across some logs containing a report from a ship identified as "Angel of Death". The ship is reporting the progress of operation "Spring Cleaning", where a squadron of Angels roam around the region and wipe out anyone the they view as a threat to their domination in the area. This gang has obviously been busy the last days, the log contains long lists of "confiscated" materials, destroyed structures and recycled biomass, the last item presumably being a measure of how many people they have murdered in the process. The list is a bit vague when it comes to identifying exactly who is being killed, which target is yet to be taken out and where these places are, but you try to extract the specifics and feed it into your databanks, which then relay the info to various search engines and registers in the region in the hope of being able to pinpoint some of the locations. Soon you get feedback indicating where to find one of these places: a small research station where scientists from the Caille University have a field laboratory. Or at least had one.. if the Angels have not him them already, there is only one way to find out.'
+pockets:
+  - name: 1st pocket
+    waves:
+      - id: structure-52km-from-warp-in
+        trigger:
+          on: other
+          text: Structure - 52km from warp-in
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: locked till everything is destroyed
+      - id: right-flank-squad-50-61km
+        trigger:
+          on: other
+          text: Right Flank Squad (50- 61km)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+          - count: "3"
+            class: Battleship
+            names:
+              - Gist Malakim
+              - Gist Throne
+      - id: main-squad-gate-perch-57-98km
+        trigger:
+          on: other
+          text: Main Squad, Gate Perch (57- 98km)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Hijacker
+              - Arch Gistii Thug
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Outlaw
+              - Arch Gistii Rogue
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Centurion
+              - Arch Gistum Liquidator
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Gistatis Primus
+              - Gistatis Tribuni
+              - Gistatis Praefectus
+          - count: "6"
+            class: Battleship
+            names:
+              - Gist Malakim
+              - Gist Throne
+      - id: left-flank-squad-92-98km
+        trigger:
+          on: other
+          text: Left Flank Squad (92- 98km)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Gistum Liquidator
+              - Gistum Marauder
+          - count: "2"
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Throne
+  - name: 2nd pocket
+    notes:
+      - text: Elite Frigs do use warp disruptors on occasion
+      - text: Domination 100MN Afterburner
+    waves:
+      - id: structures
+        trigger:
+          on: other
+          text: Structures)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Battle Station
+            triggers: triggers Reinforcement Spawn; destruction may trigger an escalation
+            drop: Random charges and modules
+      - id: initial-defenders-3-squads-53-85km
+        trigger:
+          on: warpIn
+          text: Initial Defenders (3 squads, 53 - 85km)
+        spawns:
+          - count: "8"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Hijacker
+              - Arch Gistii Thug
+              - Arch Gistii Rogue
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Outlaw
+              - Arch Gistii Raider
+              - Arch Gistii Ambusher
+          - count: "3"
+            class: Cruiser
+            names:
+              - Gistum Centurion
+              - Gistum Liquidator
+              - Gistum Phalanx
+          - count: "7"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Liquidator
+              - Arch Gistum Marauder
+              - Arch Gistum Centurion
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+              - Gistatis Tribunus
+          - count: 6-7
+            class: Battleship
+            names:
+              - Gist Throne
+              - Gist Malakim
+          - count: "2"
+            class: Sentry
+            names:
+              - Angel Stasis Tower
+            ewar:
+              - kind: web
+            note: 53km away from warp-in
+          - count: "2"
+            class: Sentry
+            names:
+              - Angel Heavy Missile Battery
+      - id: reinforcement-spawn
+        trigger:
+          on: other
+          text: Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Ruffian
+              - Arch Gistii Nomad
+            ewar:
+              - kind: targetPaint
+          - count: "3"
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Seraphim
+            triggers: May trigger an escalation
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - Domination Warlord
+            triggers: May trigger an escalation
+            drop: Possible Domination modules, Machariel BPC (rare)
+            note: 7.5 mil bounty
+    onWarpIn: Heuristic analysis of this location indicates that destroying the Angel Battlestation would greatly improve your odds of uncovering further illicit activity.
+sde:
+  dungeonIds:
+    - 1261

@@ -1,0 +1,218 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: cleaning-house
+kind: mission
+name: Cleaning House
+level: 5
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Cleaning House
+    url: https://wiki.eveuniversity.org/Cleaning_House
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "219379"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy all enemy ships
+ewar:
+  - kind: web
+  - kind: neut
+  - kind: trackingDisruption
+notes:
+  - text: Mission is in deadspace, you will always be warping to the entry point(at range is allowed) and cannot warp to fleet members/bookmarks directly.
+  - text: "Blitz: Blow up the Sansha Outpost, kill Wave 10."
+pockets:
+  - name: Warp-in
+    notes:
+      - text: Aggro on warp-in. Waves 1 to 7 are triggered by random kills in the initial frigates. Wave 8 and 9 trigger on random kills among first 7 waves. Wave 10 spawns at 90% shield on the Sansha Outpost. Each neutralizer hits for 40gj/s.
+    waves:
+      - id: initial-hostiles-35km
+        trigger:
+          on: warpIn
+          text: Initial Hostiles (35km)
+        spawns:
+          - count: "24"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Butcher
+              - Centii Loyal Manslayer
+            triggers: Wave 1-7
+          - count: "8"
+            class: Sentry
+            names:
+              - Tower Sentry Sansha III
+          - count: "4"
+            class: Sentry
+            names:
+              - Sansha Stasis Tower
+            ewar:
+              - kind: web
+          - count: "2"
+            class: Sentry
+            names:
+              - Sansha Energy Neutralizer III
+            ewar:
+              - kind: neut
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Sansha Outpost
+            triggers: Wave 10
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Mutilator
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "8"
+            class: Sentry
+            names:
+              - Sansha Sentry Gun
+            note: slow spawn
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Centatis Wraith
+      - id: wave-4
+        trigger:
+          on: other
+          text: Wave 4
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Juggernaut
+            ewar:
+              - kind: trackingDisruption
+          - count: "3"
+            class: Battleship
+            names:
+              - Centus Dread Lord
+              - Centus Tyrant
+      - id: wave-5
+        trigger:
+          on: other
+          text: Wave 5
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Execrator
+              - Centum Loyal Juggernaut
+            ewar:
+              - kind: trackingDisruption
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Battleship
+            names:
+              - Centus Tyrant
+      - id: wave-6
+        trigger:
+          on: other
+          text: Wave 6
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Battleship
+            names:
+              - Centus Dread Lord
+      - id: wave-7
+        trigger:
+          on: other
+          text: Wave 7
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Slaughterer
+            ewar:
+              - kind: trackingDisruption
+          - count: "1"
+            class: Battleship
+            names:
+              - Centus Tyrant
+      - id: wave-8-on-random-kills-in-prior-waves
+        trigger:
+          on: other
+          text: Wave 8(On random kills in prior waves)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Juggernaut
+            ewar:
+              - kind: trackingDisruption
+          - count: "2"
+            class: Battleship
+            names:
+              - Centus Dread Lord
+      - id: wave-9-on-random-kills-in-prior-waves
+        trigger:
+          on: other
+          text: Wave 9(On random kills in prior waves)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Centatis Specter
+          - count: "4"
+            class: Battleship
+            names:
+              - Centus Dread Lord
+      - id: wave-10-on-sansha-outpost-90-shields
+        trigger:
+          on: other
+          text: Wave 10(On Sansha Outpost 90% shields)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Centior Horror
+              - Centior Devourer
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Hellhound
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Centatis Phantasm
+          - count: "3"
+            class: Battleship
+            names:
+              - Centus Dread Lord

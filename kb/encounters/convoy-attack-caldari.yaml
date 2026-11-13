@@ -1,0 +1,72 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: convoy-attack-caldari
+kind: mission
+name: Convoy Attack
+level: 5
+enemyFaction: Caldari State
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Convoy Attack (Caldari)
+    url: https://wiki.eveuniversity.org/Convoy_Attack_(Caldari)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191621"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy all enemy ships
+ewar:
+  - kind: neut
+  - kind: ecm
+notes:
+  - text: No hostiles at initial gate. Freighters orbit at 70km, deal no damage, and have 142k hp. It is possible to throw off full-room aggro by leaving the room, returning and selectively aggressing certain groups that have approached quickly and separated from the others. Diviners and Dominators can be aggressed separately this way.
+pockets:
+  - name: 1st Pocket
+    notes:
+      - text: All ships aggro on initial warp-in. State Shukuro Turushima neut for a total of 80gj/s.
+    waves:
+      - id: initial-hostiles
+        trigger:
+          on: warpIn
+          text: Initial Hostiles
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Taibu State Tachi
+            ewar:
+              - kind: ecm
+          - count: "4"
+            class: Battleship
+            names:
+              - State Shukuro Turushima
+            ewar:
+              - kind: neut
+              - kind: ecm
+          - count: "1"
+            class: Battleship
+            names:
+              - State Shukuro Tenno
+            ewar:
+              - kind: ecm
+          - count: "8"
+            class: Battleship
+            names:
+              - State Shukuro Bishamon
+              - State Shukuro Shogun
+          - count: "1"
+            class: Battleship
+            names:
+              - State Shukuro Taisho
+          - count: "3"
+            class: Battleship
+            names:
+              - State Shukuro Nagashin
+          - count: "4"
+            class: Freighter
+            names:
+              - State Freighter
+            drop: Various trade goods

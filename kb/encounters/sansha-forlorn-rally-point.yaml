@@ -1,0 +1,142 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: sansha-forlorn-rally-point
+kind: anomaly
+name: Sansha Forlorn Rally Point
+dedRating: null
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Sansha Forlorn Rally Point
+    url: https://wiki.eveuniversity.org/Sansha_Forlorn_Rally_Point
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225178"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Warping to beacon for close range would require a very good tank to handle the swarm’s incoming damage. Using a propulsion module or a Micro Jump Drive is recommended. Ship count vary as indicated. Single ungated normal space pocket.
+  - text: "Escalation: This anomaly can escalate to the 8/10 Sansha DED site Sansha Prison Camp"
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "6"
+            class: Destroyer
+            names:
+              - Centior Abomination
+              - Centior Monster
+          - count: "4"
+            class: Cruiser
+            names:
+              - Centum Torturer
+              - Centum Mutilator
+            triggers: "Triggers Wave #1"
+      - id: wave-1
+        trigger:
+          on: other
+          text: "Wave #1"
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Cruiser
+            names:
+              - Centum Mutilator
+          - count: 4-5
+            class: Battlecruiser
+            names:
+              - Centatis Devil
+              - Centatis Wraith
+            triggers: "Triggers Wave #2"
+          - count: "4"
+            class: Battleship
+            names:
+              - Centus Mutant Lord
+              - Centus Savage Lord
+      - id: wave-2
+        trigger:
+          on: other
+          text: "Wave #2"
+          confidence: inferred
+        spawns:
+          - count: 4-5
+            class: Cruiser
+            names:
+              - Centum Fiend
+              - Centum Hellhound
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Centatis Daemon
+            triggers: "Triggers Wave #3"
+          - count: "1"
+            class: Battleship
+            names:
+              - Centus Beast Lord
+            ewar:
+              - kind: trackingDisruption
+          - count: "2"
+            class: Battleship
+            names:
+              - Centus Savage Lord
+      - id: wave-3
+        trigger:
+          on: other
+          text: "Wave #3"
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Torturer
+              - Centum Loyal Mutilator
+            triggers: "Triggers Wave #4"
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centatis Daemon
+          - count: "4"
+            class: Battleship
+            names:
+              - Centus Dark Lord
+              - Centus Overlord
+      - id: wave-4
+        trigger:
+          on: other
+          text: "Wave #4"
+          confidence: inferred
+        spawns:
+          - count: 4-5
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Fiend
+              - Centum Loyal Hellhound
+          - count: "4"
+            class: Battleship
+            names:
+              - Centus Overlord
+              - Centus Dark Lord
+      - id: bonus-spawn
+        trigger:
+          on: other
+          text: Bonus Spawn
+          confidence: inferred
+        spawns:
+          - count: 0-1
+            class: Commander Cruiser
+            names:
+              - True Sansha's Beast
+              - True Sansha's Juggernaut
+            ewar:
+              - kind: trackingDisruption
+            drop: Faction loot, possible True Sansha faction modules
+sde:
+  dungeonIds:
+    - 3449

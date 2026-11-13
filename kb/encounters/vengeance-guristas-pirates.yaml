@@ -1,0 +1,184 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: vengeance-guristas-pirates
+kind: mission
+name: Vengeance
+level: 4
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Vengeance (Guristas Pirates)
+    url: https://wiki.eveuniversity.org/Vengeance_(Guristas_Pirates)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "229370"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: ecm
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Guristas Kyoukan/Webifier (Web, Warp Disrupt)"
+  - text: "Suggested ships: Battleship, Marauder, T3C"
+  - text: ", [Ishtar August 2014], [Kronos November 2013], [Sniper Maelstrom April 2013], [Golem September 2012]"
+  - text: "Blitz: Not possible, all ships must be destroyed."
+  - text: Structures drop no loot, except Guristas War Installation (T1 loot, ammo)
+lootNotes:
+  - text: "Loot: ± 3 Mil ISK"
+  - text: "Salvage: ± 2.8 Mil ISK"
+  - text: "Bounty: ± 9.6 Mil ISK"
+pockets:
+  - name: 1st Pocket
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Pithatis Assaulter
+            group: Group 1, 24km
+          - count: "3"
+            class: Frigate
+            names:
+              - Guristas Kyoukan
+              - Guristas Webifier
+            group: Group 2, 23km
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "4"
+            class: Cruiser
+            names:
+              - Pithum Abolisher
+              - Pithum Eraser
+            group: Group 2, 23km
+          - count: "1"
+            class: Battleship
+            names:
+              - Pith Eradicator
+            group: Group 2, 23km
+          - count: "3"
+            class: Cruiser
+            names:
+              - Pithum Abolisher
+              - Pithum Eraser
+            group: Group 3, 21km
+          - count: "4"
+            class: Battleship
+            names:
+              - Pith Dismantler
+              - Pith Eliminator
+            group: Group 3, 21km
+            ewar:
+              - kind: ecm
+          - count: "2"
+            class: Destroyer
+            names:
+              - Pithior Terrorist
+            group: Group 4, 18km
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Pithatis Assassin
+            group: Group 4, 18km
+  - name: 2nd Pocket
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Pithum Abolisher
+              - Pithum Eraser
+            group: Group 1, 5-10km (auto-aggro)
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Pithatis Assassin
+              - Pithatis Assaulter
+            group: Group 2, 30-35km
+          - count: "1"
+            class: Battleship
+            names:
+              - Pith Eliminator
+              - Pith Extinguisher
+            group: Group 2, 30-35km
+            ewar:
+              - kind: ecm
+          - count: "2"
+            class: Battleship
+            names:
+              - Pith Eliminator
+              - Pith Extinguisher
+            group: Group 3, 35-40km
+            ewar:
+              - kind: ecm
+          - count: "2"
+            class: Destroyer
+            names:
+              - Pithior Terrorist
+              - Pithior Supremacist
+            group: Group 4, 30-35km
+          - count: "3"
+            class: Cruiser
+            names:
+              - Pithum Abolisher
+              - Pithum Eraser
+            group: Group 4, 30-35km
+  - name: 3rd Pocket
+    notes:
+      - text: "Rachen Mysuna stats: 1457 Ki damage missiles, 50km orbit, 145-290 m/s speed, may use shield booster."
+      - text: "Note: Tower sentries do a small amount of EM damage"
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Pithatis Assaulter
+              - Pithatis Enforcer
+            group: Group 1, 2-5km (auto-aggro)
+          - count: "4"
+            class: Frigate
+            names:
+              - Guristas Kyoukan
+              - Guristas Webifier
+            group: Group 2, 70-100km
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Pithatis Assassin
+              - Pithatis Assaulter
+            group: Group 2, 70-100km
+          - count: "1"
+            class: Battleship
+            names:
+              - Pith Extinguisher
+            group: Group 2, 70-100km
+          - count: "1"
+            class: Battleship
+            names:
+              - Rachen Mysuna
+            group: Group 2, 70-100km
+            drop: May drop faction loot
+            note: Uses missiles and turrets
+          - count: "4"
+            class: Sentry
+            names:
+              - Tower Sentry Guristas III
+            group: Group 2, 70-100km

@@ -1,0 +1,288 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: crimson-hand-supply-depot
+kind: complex
+name: Crimson Hand Supply Depot
+dedRating: 6
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Crimson Hand Supply Depot
+    url: https://wiki.eveuniversity.org/Crimson_Hand_Supply_Depot
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "230240"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Battleships"
+notes:
+  - text: The site is behind an acceleration gate. Warping to the side lands you at 0 on the gate.
+  - text: This site is rated DED 6/10. 3 Battlecruisers and a Battleship ran this site easily.
+  - text: Warping to the site lands on an acceleration gate at 0.
+  - text: Crimson Lord has 380 HP/sec active shield repair with 0 EM resist and additionally repairs 1500 armor HP every 25 seconds. You will need very high sustained damage output in excess of 700-800 DPS to volley through its shield and armor tank in a decent amount of time.
+loot:
+  - item: 19th Tier Overseer's Effects
+    from: Crimson Lord
+    note: est. 51M ISK (wiki) · 100% drop rate
+  - item: Corpum Cruiser A-type Module
+    from: Crimson Lord
+  - item: Dark Blood Faction Module
+    from: Crimson Lord
+  - item: Dark Blood Faction Module
+    from: Crimson Sentinel
+    note: Fairly rare
+  - item: Dark Blood Faction Module
+    from: Crimson Hand Container
+lootNotes:
+  - text: You can get about 24 million ISK in bounties and a similar amount of meta module loot. There are two opportunities to get Corpum Cruiser A-type Module drops, and you are guaranteed a 19th Tier Officer's Personal Effects (~51 million ISK).
+npcs:
+  Sentry Gun:
+    sdeTypes:
+      - Tower Sentry Bloodraider I
+      - Tower Sentry Bloodraider II
+    class: Sentry
+pockets:
+  - name: Room 1
+    notes:
+      - text: Rats in this room can be from Serpentis and Angel factions along with Blood Raiders. The acceleration gate to second room is 70 km away. Sentries do not need to be destroyed to proceed.
+      - text: Acceleration Gate is 60km away. Blowing up the Gate Security structure gives you a key (Crimson Hand Level 1 Passcard) which is not needed for the gate.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Sentry
+            names:
+              - Tower Sentry Angel I
+            group: 30 km from warp-in
+          - count: "1"
+            class: Destroyer
+            names:
+              - Crimson Squire
+            group: 30 km from warp-in
+          - count: "2"
+            class: Destroyer
+            names:
+              - Gistior Seizer
+              - Gistior Trasher
+            group: 30 km from warp-in
+          - count: "2"
+            class: Destroyer
+            names:
+              - Gistior Defacer
+              - Gistior Defiler
+            group: Right group (40 km away)
+          - count: "1"
+            class: Sentry
+            names:
+              - Sentry Gun
+            group: Left group (60 km away)
+          - count: "1"
+            class: Destroyer
+            names:
+              - Crimson Squire
+            group: Left group (60 km away)
+          - count: "2"
+            class: Destroyer
+            names:
+              - Corpior Devoter
+              - Corpior Friar
+            group: Left group (60 km away)
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corelior Infantry
+              - Corelior Sentinel
+            group: Right group (75 km away)
+          - count: "1"
+            class: Sentry
+            names:
+              - Sentry Gun
+            group: Left group (100 km away)
+          - count: "1"
+            class: Destroyer
+            names:
+              - Crimson Squire
+            group: Left group (100 km away)
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corelior Infantry
+              - Corelior Sentinel
+            group: Left group (100 km away)
+          - count: "2"
+            class: Sentry
+            names:
+              - Perimeter Sentry
+            group: Camping acceleration gate
+          - count: "2"
+            class: Destroyer
+            names:
+              - Crimson Squire
+            group: Camping acceleration gate
+          - count: "3"
+            class: Battleship
+            names:
+              - Crimson Paladin
+            group: Camping acceleration gate
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Gate Security
+            drop: Drops key that is not required to activate gate
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: Locked until room is cleared
+    onWarpIn: "According to reliable sources within the Amarr Navy, this deadspace complex is currently occupied by a large contingency of Crimson Hand cultists. Intelligence indicates that the Crimson Hand, a militant splinter group of the Bloodraider Covenant, is currently engaged in a massive military buildup. While their continued alliance with Omir Sarikusa is in question, they do seem to be planning something big. DED Threat Assessment: Serious (6 of 10)"
+  - name: Industrial Sector
+    notes:
+      - text: Acceleration gate 40 km from landing. Enemies spawn 25-60 km from landing. Red container may drop Blood Raider Cruiser Module, and contains an unnecessary key to the acceleration gate.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Blood Stasis Tower
+            ewar:
+              - kind: web
+          - count: "3"
+            class: Sentry
+            names:
+              - Sentry Gun
+          - count: "2"
+            class: Sentry
+            names:
+              - Blood Cruise Missile Battery
+          - count: "8"
+            class: Destroyer
+            names:
+              - Crimson Squire
+          - count: "5"
+            class: Battleship
+            names:
+              - Crimson Elder
+            ewar:
+              - kind: neut
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Red Container
+            names:
+              - Crimson Hand Container
+            drop: Possible Dark Blood module and an unnecessary key
+            note: Not locked
+    onWarpIn: "Industrial sector: Registered visitors entering this sector should report to the outpost security office as soon as they arrive. Failure to do so will be considered an act of aggression and handled with lethal force. Urgent!!! To all military personnel: Intruder alert! Report to battle stations immediately!"
+  - name: Central Processing
+    notes:
+      - text: Crimson Sentinel has strong active shield tank (240 HP/s), high structure hitpoints (100k), and webs to 50 km. Save it for last, even with massive DPS it takes a long time to kill. It shoots battleship-grade Mjolnir torpedoes that deal 250 DPS EM with 1500 alpha - low enough to be able to speed tank.
+      - text: Rats spawn 50-60 km from landing. There are two acceleration gates 48 km from landing leading to the last two rooms of the complex. The Sentinel may drop Dark Blood faction modules as well as a key (Crimson Hand Level 3 Passcard) which is not required for both gates.
+      - text: BSs are all tier 1 battleships (300-400k bounty , not such a threat) they have a little hp and deal relatively low damage.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Sentry
+            names:
+              - Crimson Sentinel
+            ewar:
+              - kind: web
+            drop: may drop Dark Blood faction modules and a key not needed for either gate
+          - count: "12"
+            class: Battleship
+            names:
+              - Crimson Paladin
+              - Crimson Elder
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Command Sector
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Supply Sector
+    onWarpIn: "Central Processing: The center point of the Crimson Hand depot, this area provides protection and access control to the more sensitive supply areas of the complex. Visitors are not allowed past this point unless they have been granted clearance by a senior officer. No exceptions will be tolerated. Warning!! Be advised. Industrial sector has been compromised. Sentinel personnel, report to battle stations. Battle group Alpha and Beta, prepare to engage hostiles. Other battle groups stand by for further orders."
+  - name: Supply Sector
+    notes:
+      - text: This room is optional. Enemies spawn between 30 and 110 km from landing in multiple groups that can be engaged mostly individually. An acceleration gate at landing will return you to the Central Processing room.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "14"
+            class: Sentry
+            names:
+              - Sentry Gun (only shoot 30 km)
+          - count: "8"
+            class: Sentry
+            names:
+              - Blood Cruise Missile Batteries
+          - count: "21"
+            class: Destroyer
+            names:
+              - Crimson Squire
+          - count: "5"
+            class: Battleship
+            names:
+              - Crimson Elder
+    onWarpIn: This area is the primary supply sector for Crimson Hand battle groups in this system. Incoming personnel should report to their appropriate supply stations. Personnel assigned to the Command sector should go to the Administrative Offices on level 34 of the Supply Tower. Red Alert!!! Sentinel has fallen. I repeat, sentinel has fallen. All battle groups prepare to engage the enemy. Protect the supply rig at all cost. Hostiles must not gain access to the Administrative sector.
+  - name: Command Sector
+    notes:
+      - text: Ships and cruise missile batteries spawn between 40-50 km from landing. Sentry guns are split in three groups, 30, 50, 65 km away from landing.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "14"
+            class: Sentry
+            names:
+              - Sentry Gun (only shoot 30 km)
+          - count: "4"
+            class: Sentry
+            names:
+              - Blood Cruise Missile Batteries
+          - count: "6"
+            class: Battleship
+            names:
+              - Crimson Elder
+            ewar:
+              - kind: neut
+          - count: "1"
+            class: Overseer Battleship
+            names:
+              - Crimson Lord
+            drop: may drop Corpum A-Type Cruiser Module, Dark Blood Faction Module, 19th Tier Overseers, 5m ISK bounty
+    onWarpIn: Logging on to network ...... GRANTED. System purge in progress. Shut down in 3 . . . 2 . . . 1 . . . Connection was rejected by host.... Logging on to network ...... FAILED Failed to connect to host.
+sde:
+  dungeonIds:
+    - 2245

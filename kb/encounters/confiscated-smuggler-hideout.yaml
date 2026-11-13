@@ -1,0 +1,128 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: confiscated-smuggler-hideout
+kind: anomaly
+name: Confiscated Smuggler Hideout
+dedRating: null
+anomalyClass: 3
+enemyFaction: null
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Confiscated Smuggler Hideout
+    url: https://wiki.eveuniversity.org/Confiscated_Smuggler_Hideout
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "186377"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal:
+    - em
+    - thermal
+    - kinetic
+    - explosive
+  resist:
+    - em
+    - thermal
+    - kinetic
+    - explosive
+restrictions:
+  - text: "Ship size limit: T2 Battlecruiser, T3 Cruisers"
+notes:
+  - text: NPCs do not drop any loot except the boss. Salvaging is pretty useless in this site.
+  - text: Each room contain 2 waves. All remaining NPCs will warp away when the boss is destroyed so go immediately for him when he appears.
+  - text: Interestingly, the vorton projector used by the Thunderchild can chain and damage to other NPCs.
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: list-of-possible-npcs-to-face
+        trigger:
+          on: other
+          text: "List of possible NPCs to face:"
+          confidence: inferred
+        spawns:
+          - count: 0-4
+            class: Frigate
+            names:
+              - SARO Skybreaker
+            ewar:
+              - kind: targetPaint
+          - count: 0-4
+            class: Frigate
+            names:
+              - SARO Pacifier
+            ewar:
+              - kind: neut
+              - kind: warpDisruption
+          - count: 0-4
+            class: Frigate
+            names:
+              - SARO Nemesis
+            ewar:
+              - kind: sensorDamp
+          - count: 0-3
+            class: Destroyer
+            names:
+              - SARO Confessor
+            ewar:
+              - kind: web
+          - count: 0-3
+            class: Cruiser
+            names:
+              - SARO Enforcer
+            ewar:
+              - kind: neut
+              - kind: warpDisruption
+          - count: 0-3
+            class: Cruiser
+            names:
+              - SARO Stormbringer
+            ewar:
+              - kind: targetPaint
+          - count: 0-3
+            class: Cruiser
+            names:
+              - SARO Curse
+            ewar:
+              - kind: neut
+              - kind: trackingDisruption
+            note: Neut is quite heavy
+          - count: 0-3
+            class: Cruiser
+            names:
+              - SARO Phobos
+            ewar:
+              - kind: web
+              - kind: warpScramble
+            note: Orbit very close (5km)
+          - count: 0-2
+            class: Battlecruiser
+            names:
+              - SARO Talos
+          - count: "1"
+            class: Battleship
+            names:
+              - SARO Captain
+            group: Second Room Only
+            ewar:
+              - kind: neut
+              - kind: web
+              - kind: warpDisruption
+            drop: Smuggler Lockboxes, event boosters, hardwiring implants
+            note: Marshal hull
+          - count: "1"
+            class: Battleship
+            names:
+              - SARO Captain
+            group: Second Room Only
+            ewar:
+              - kind: neut
+              - kind: web
+              - kind: warpDisruption
+            drop: Smuggler Lockboxes, event boosters, hardwiring implants, condenser packs T1, large vorton projector (rare)
+            note: Thunderchild hull
+sde:
+  dungeonIds:
+    - 9406

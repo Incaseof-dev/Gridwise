@@ -1,0 +1,143 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: blood-raider-temple-complex-the-inner-sanctum
+kind: escalation
+name: Blood Raider Temple Complex (The Inner Sanctum)
+dedRating: null
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Blood Raider Temple Complex (The Inner Sanctum)
+    url: https://wiki.eveuniversity.org/Blood_Raider_Temple_Complex_(The_Inner_Sanctum)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "211587"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: T2 Battleship"
+notes:
+  - text: This expedition only has one part, but it is VERY hard compared to its Dark Blood Fleet Staging Point variant. Advise bringing a friend or two in ships with a very strong tank and remote capacitor transmitters. Alternatively, bring ships that require little to no cap to operate. The first section is ungated, so capitals can be brought in. Past the acceleration gate, though, only T2 Battleships and below are allowed to enter.
+pockets:
+  - name: Warp-in point
+    notes:
+      - text: Due to heavy neuting, the energy neutralizer towers should be a very high priority. They have high armor and structure hitpoints, though, so your ship should be able to deal enough DPS to break them quickly. There are a lot of elite frigates in this room which like to target drones, so watch them and recall them if necessary.
+      - text: None of the structures drop loot. The acceleration gate is 60 km from warp-in.
+    waves:
+      - id: initial-spawn
+        trigger:
+          on: warpIn
+          text: Initial spawn
+        spawns:
+          - count: "4"
+            class: Sentry
+            names:
+              - Blood Energy Neutralizer Sentry III
+            ewar:
+              - kind: neut
+            note: Neuts 40 GJ/s at 250 km range
+          - count: "2"
+            class: Sentry
+            names:
+              - Blood Light Missile Battery
+          - count: "2"
+            class: Sentry
+            names:
+              - Blood Cruise Missile Battery
+          - count: "4"
+            class: Sentry
+            names:
+              - Tower Sentry Bloodraider II
+          - count: "4"
+            class: Sentry
+            names:
+              - Tower Sentry Bloodraider III
+          - count: "8"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Collector
+              - Elder Corpii Seeker
+              - Elder Corpii Herald
+              - Elder Corpii Upholder
+            ewar:
+              - kind: web
+              - kind: trackingDisruption
+              - kind: warpDisruption
+            triggers: Attacking any one triggers elite reinforcments
+            note: Collectors/Seekers tracking disrupt; Heralds/Upholders web and warp disrupt
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Arch Priest
+              - Elder Corpum Arch Sage
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corpatis Exorcist
+              - Corpatis Phantom
+          - count: "7"
+            class: Battleship
+            names:
+              - Corpus Patriarch
+              - Corpus Pope
+            triggers: Triggers battleship reinforcements upon attacking any one and destroying any one
+      - id: elite-reinforcements-triggered-by-attacking-elite-frigates-from-initial-spawn
+        trigger:
+          on: warpIn
+          text: Elite reinforcements (triggered by attacking elite frigates from initial spawn)
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Reaver
+              - Elder Corpii Engraver
+      - id: battleship-reinforcements-triggered-by-attacking-battleships-from-initial-spawn
+        trigger:
+          on: warpIn
+          text: Battleship reinforcements (triggered by attacking battleships from initial spawn)
+        spawns:
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Arch Priest
+              - Elder Corpum Shadow Sage
+          - count: "3"
+            class: Battleship
+            names:
+              - Corpus Archbishop
+              - Corpus Harbinger
+            ewar:
+              - kind: neut
+      - id: battleship-reinforcements-triggered-by-destroying-any-battleship-from-initial-spawn
+        trigger:
+          on: warpIn
+          text: Battleship reinforcements (triggered by destroying any battleship from initial spawn)
+        spawns:
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corpatis Fanatic
+              - Corpatis Exorcist
+          - count: "3"
+            class: Battleship
+            names:
+              - Corpus Archbishop
+              - Corpus Harbinger
+            ewar:
+              - kind: neut
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: Locked until room is cleared
+  - name: Second Pocket
+    notes:
+      - text: Be EXTREMELY careful in this room; there are many trigger ships and triggering several waves at once can overwhelm you.
+      - text: 8x Sentry Tower Sentry Bloodraider III in the second room. Neut pressure is extreme.

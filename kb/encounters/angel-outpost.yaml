@@ -1,0 +1,106 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: angel-outpost
+kind: complex
+name: Angel Outpost
+dedRating: null
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Angel Outpost
+    url: https://wiki.eveuniversity.org/Angel_Outpost
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223057"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Battlecruiser/T3C"
+notes:
+  - text: To complete this site you will need quite strong tank to survive the high dps present in the second pocket - a T2 tanked Drake should have no trouble.
+  - text: "Escalation: This site may escalate to Salvation Angel's Shipment. If no Domination Defeater spawns, destroying the Angel Battlestation can lead to escalation."
+lootNotes:
+  - text: "Bounty: about 4,500,000 ISK"
+  - text: "Loot/salvage: about 4,000,000 ISK"
+pockets:
+  - name: First pocket
+    notes:
+      - text: "Note: The separate groups of rats can be aggressed separately."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 5-6
+            class: Frigate
+            names:
+              - Gistii Hunter
+              - Gistii Impaler
+          - count: 9-12
+            class: Destroyer
+            names:
+              - Gistior Seizer
+              - Gistior Trasher
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Liquidator
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Gistatis Legionnaire
+              - Gistatis Praefectus
+  - name: Second pocket
+    waves:
+      - id: wave-1
+        trigger:
+          on: other
+          text: "Wave #1"
+          confidence: inferred
+        spawns:
+          - count: "8"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Raider
+              - Arch Gistii Rufian
+            ewar:
+              - kind: web
+              - kind: targetPaint
+              - kind: warpDisruption
+            note: type list incomplete on the source page
+          - count: "4"
+            class: Destroyer
+            names:
+              - Gistior Seizer
+              - Gistior Trasher
+            note: type list incomplete on the source page
+          - count: "4"
+            class: Cruiser
+            names:
+              - Gistum Crusher
+              - Gistum Phalanx
+            note: type list incomplete on the source page
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Gistatis Legionnaire
+              - Gistatis Praefectus
+            note: type list incomplete on the source page
+      - id: wave-2
+        trigger:
+          on: other
+          text: "Wave #2"
+          confidence: inferred
+        spawns:
+          - count: 0-1
+            class: Cruiser
+            names:
+              - Domination Defeater
+            drop: Possible Cynabal BPC, faction ammo, Domination module and/or implant
+sde:
+  dungeonIds:
+    - 1250

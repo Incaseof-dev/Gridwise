@@ -1,0 +1,146 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: blood-lookout
+kind: complex
+name: Blood Lookout
+dedRating: null
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Blood Lookout
+    url: https://wiki.eveuniversity.org/Blood_Lookout
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "186939"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Unknown (Permits T3 Cruisers)"
+notes:
+  - text: "Escalation: ----"
+  - text: "Escalation: Destroying the Dark Blood Frigate may trigger an escalation to Following the Blood. If the Dark Blood frigate does not spawn then the escalation trigger is the Blood Raider Bunker."
+pockets:
+  - name: First Room
+    notes:
+      - text: ----
+      - text: Destroying all the defenders will unlock the acceleration gate.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "7"
+            class: Frigate
+            names:
+              - Corpii Reaver
+              - Corpii Engraver
+          - count: "5"
+            class: Destroyer
+            names:
+              - Corpior Visionary
+              - Corpior Devoter
+              - Corpior Converter
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corpum Arch Engraver
+          - count: "1"
+            class: Sentry
+            names:
+              - Blood Light Missile Battery
+  - name: Second Room
+    notes:
+      - text: ----
+      - text: All Group 1 - 3 are present on warp in. Destroying Group 2 (the group to the left at around 50 km) will trigger the commander spawn. If no commander spawns then the "Blood Raider Bunker" is the second escalation trigger.
+      - text: File:Blood_Lookout_Room_2.jpg‎
+    waves:
+      - id: group-1
+        trigger:
+          on: warpIn
+          text: Group 1
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Corpii Reaver
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corpior Devoter
+              - Corpior Templar
+      - id: group-2
+        trigger:
+          on: other
+          text: Group 2
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Corpii Upholder
+              - Corpii Herald
+          - count: "2"
+            class: Destroyer
+            names:
+              - Corpior Friar
+              - Corpior Converter
+          - count: "2"
+            class: Cruiser
+            names:
+              - Corpum Arch Priest
+              - Corpum Arch Sage
+      - id: group-3
+        trigger:
+          on: other
+          text: Group 3
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Corpii Reaver
+      - id: commander-wave
+        trigger:
+          on: other
+          text: Commander Wave
+          confidence: inferred
+        spawns:
+          - count: 0-1
+            class: Commander Frigate
+            names:
+              - Dark Blood Upholder
+            triggers: Escalation
+            drop: Faction Loot
+          - count: "3"
+            class: Frigate
+            names:
+              - Corpior Reaver
+          - count: "4"
+            class: Destroyer
+            names:
+              - Corpior Converter
+              - Corpior Visionary
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "4"
+            class: Structure
+            names:
+              - Solar Harvester
+          - count: "1"
+            class: Structure
+            names:
+              - Elemental Base
+          - count: "1"
+            class: Structure
+            names:
+              - Blood Raider Bunker
+            triggers: Alternate escalation trigger
+sde:
+  dungeonIds:
+    - 1239

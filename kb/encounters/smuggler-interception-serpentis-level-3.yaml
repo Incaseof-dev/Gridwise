@@ -1,0 +1,142 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: smuggler-interception-serpentis-level-3
+kind: mission
+name: Smuggler Interception
+level: 3
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Smuggler Interception (Serpentis) (Level 3)
+    url: https://wiki.eveuniversity.org/Smuggler_Interception_(Serpentis)_(Level_3)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "212819"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy convoy and return with cargo to agent. 10x Militants(20)
+restrictions:
+  - text: "Ship size limit: Battleship"
+ewar:
+  - kind: sensorDamp
+notes:
+  - text: "Suggested ships: Battlecruiser"
+  - text: "Blitz: Take already unlocked gate in 1st pocket. Destroy all ships from group 2 in 2nd pocket. Loot militants from one of the transports."
+  - text: No hostiles at initial gate.
+pockets:
+  - name: 1st Pocket
+    notes:
+      - text: No automatic aggro. Gate is unlocked so you can skip the room.
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate (63km)
+      - id: initial-flanking-the-gate
+        trigger:
+          on: warpIn
+          text: Initial. Flanking the gate.
+        spawns:
+          - count: 6-7
+            class: Frigate
+            names:
+              - Coreli Spy
+              - Coreli Agent
+              - Coreli Guard
+              - Coreli Safeguard
+            group: Group 1 (50-70 km)
+          - count: "1"
+            class: Cruiser
+            names:
+              - Corelum Chief Guard
+              - Corelum Chief Safeguard
+            group: Group 1 (50-70 km)
+            ewar:
+              - kind: sensorDamp
+          - count: 4-5
+            class: Frigate
+            names:
+              - Coreli Guard
+              - Coreli Safeguard
+            group: Group 2 (65-75 km)
+          - count: "2"
+            class: Cruiser
+            names:
+              - Corelum Chief Defender
+              - Corelum Chief Protector
+            group: Group 2 (65-75 km)
+      - id: mining
+        trigger:
+          on: other
+          text: Mining
+          confidence: inferred
+        spawns: []
+  - name: 2nd Pocket
+    notes:
+      - text: No automatic aggro.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Coreli Infantry
+              - Coreli Soldier
+            group: Group 1 (Left, 45-55 km)
+          - count: "2"
+            class: Cruiser
+            names:
+              - Corelum Chief Defender
+              - Corelum Chief Protector
+            group: Group 1 (Left, 45-55 km)
+          - count: "2"
+            class: Cruiser
+            names:
+              - Serpentis Personnel Transport
+            group: Group 2 (Middle, 45-55 km)
+            drop: Drops 10 militants
+          - count: "5"
+            class: Cruiser
+            names:
+              - Corelum Chief Watchman
+              - Corelum Chief Patroller
+            group: Group 2 (Middle, 45-55 km)
+            ewar:
+              - kind: sensorDamp
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Corelatis Platoon Leader
+              - Corelatis Squad Leader
+            group: Group 2 (Middle, 45-55 km)
+          - count: "9"
+            class: Frigate
+            names:
+              - Coreli Spy
+              - Coreli Agent
+              - Coreli Guard
+              - Coreli Safeguard
+            group: Group 3 (Right, 45-55 km)
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corelior Infantry
+              - Corelior Soldier
+            group: Group 3 (Right, 45-55 km)
+      - id: mining
+        trigger:
+          on: other
+          text: Mining
+          confidence: inferred
+        spawns: []

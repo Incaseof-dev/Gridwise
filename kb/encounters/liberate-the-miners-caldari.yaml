@@ -1,0 +1,143 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: liberate-the-miners-caldari
+kind: mission
+name: Liberate the Miners
+level: 5
+enemyFaction: Caldari State
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Liberate the Miners (Caldari)
+    url: https://wiki.eveuniversity.org/Liberate_the_Miners_(Caldari)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "199343"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: neut
+  - kind: ecm
+  - kind: web
+  - kind: warpScramble
+notes:
+  - text: "Web/warp disruption: Stasis Towers, All Frigates 25-50% chances of Web and/or Scramble"
+  - text: "Suggested ships: Completed in Maelstrom w/ Passive Tank but recommend more support"
+  - text: Acceleration Gate into Deadspace
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: "Notes: Consider auto-targeting missiles and setting drones to “Aggressive” for when you are unable to target because of Jammers"
+      - text: "Notes: Use a Passive Tank and save time by not having to destroy Energy Neutralizer Sentries which re-spawn themselves 3 times, and then spawn frigates"
+      - text: "Notes: Or plan a capacitor that receives an additional 80 units/s"
+      - text: "Notes: Maximum damage dealing of initial groups are 1,740 hp/s (Kin: 84%, Therm: 16%)"
+      - text: "Notes: Final Nagashins quickly retreat to 68k orbits so try to be in close position before they spawn"
+      - text: "Notes: Mission flagged complete when all ships are destroyed"
+    waves:
+      - id: group-1
+        trigger:
+          on: warpIn
+          text: Group 1
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Caldari Heavy Missile Battery
+          - count: "5"
+            class: Sentry
+            names:
+              - Caldari Cruise Missile Battery
+          - count: "2"
+            class: Sentry
+            names:
+              - Tower Sentry Caldari III
+          - count: "2"
+            class: Sentry
+            names:
+              - Caldari Stasis Tower
+            ewar:
+              - kind: web
+          - count: "2"
+            class: Sentry
+            names:
+              - Caldari Energy Neutralizer Sentry III
+            ewar:
+              - kind: neut
+            note: Destroying Neutralizers will spawn replacements 3 times, after which there will spawn 6 jamming frigates
+      - id: group-2
+        trigger:
+          on: other
+          text: Group 2
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battleship
+            names:
+              - State Shukuro Shogun
+      - id: group-3
+        trigger:
+          on: other
+          text: Group 3
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Taibu State Nagasa
+              - Taibu State Shinai
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "2"
+            class: Frigate
+            names:
+              - Taibu State Tachi
+            ewar:
+              - kind: ecm
+              - kind: warpScramble
+          - count: "4"
+            class: Battleship
+            names:
+              - State Shukuro Daijo
+              - State Shukuro Bishamon
+      - id: group-4
+        trigger:
+          on: other
+          text: Group 4
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battleship
+            names:
+              - State Shukuro Taisho
+              - State Shukuro Tenno
+            ewar:
+              - kind: ecm
+      - id: spawns
+        trigger:
+          on: other
+          text: Spawns
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battleship
+            names:
+              - State Shukuro Shogun
+              - State Shukuro Bishamon
+          - count: "4"
+            class: Battleship
+            names:
+              - State Zen
+              - State Oshiro
+            ewar:
+              - kind: ecm
+          - count: "4"
+            class: Battleship
+            names:
+              - State Shukuro Bishamon
+              - State Shukuro Shogun
+          - count: "2"
+            class: Battleship
+            names:
+              - State Shukuro Nagashin

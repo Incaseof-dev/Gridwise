@@ -1,0 +1,193 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: angel-mineral-acquisition-outpost-2nd-part
+kind: escalation
+name: Angel Mineral Acquisition Outpost, 2nd Part
+dedRating: null
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Angel Mineral Acquisition Outpost, 2nd Part
+    url: https://wiki.eveuniversity.org/Angel_Mineral_Acquisition_Outpost%2C_2nd_Part
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "232559"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: T2 Battleship"
+pockets:
+  - name: 1st pocket
+    notes:
+      - text: ----
+    waves:
+      - id: initial-defenders-50-80km
+        trigger:
+          on: warpIn
+          text: Initial Defenders (50-80km)
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Gistior Defiler
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Cruiser
+            names:
+              - Gistum Liquidator
+              - Gistum Marauder
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+            note: type list incomplete on the source page
+          - count: "12"
+            class: Battleship
+            names:
+              - Gist Commander
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Sentry
+            names:
+              - Angel Energy Neutralizer Tower
+            ewar:
+              - kind: neut
+            note: May not spawn
+          - count: "6"
+            class: Sentry
+            names:
+              - Angel Cruise Missile Battery
+      - id: 1st-reinforcement-spawn
+        trigger:
+          on: other
+          text: 1st Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Battleship
+            names:
+              - Gist Commander
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Sentry
+            names:
+              - Angel Stasis Tower
+            ewar:
+              - kind: web
+            note: May not spawn
+      - id: 2nd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 2nd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Hijacker
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Cruiser
+            names:
+              - Gistum Liquidator
+              - Gistum Marauder
+          - count: "2"
+            class: Battleship
+            names:
+              - Gist Commander
+            note: type list incomplete on the source page
+  - name: 2nd Pocket
+    notes:
+      - text: ----
+      - text: It is possible to blitz this pocket by shooting the triggers, but expect high incoming damage.
+      - text: Hashi Keptzh deals very high damage at short to moderate range (495 DPS EM/Kin turrets w/ 20 km optimal, 450 DPS Explosive missiles w/ 34 km range) and needs at least 450 DPS in raw Explosive to effectively break his shield tank. He has -90% web within 15km and will approach you with microwarpdrive.
+    waves:
+      - id: initial-defenders-45-60km
+        trigger:
+          on: warpIn
+          text: Initial Defenders (45-60km)
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Gistior Defiler
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Cruiser
+            names:
+              - Gistum Liquidator
+              - Gistum Marauder
+          - count: "5"
+            class: Battleship
+            names:
+              - Gist Commander
+            triggers: Highest bounty
+            note: type list incomplete on the source page
+          - count: "7"
+            class: Sentry
+            names:
+              - Angel Cruise Missile Battery
+      - id: 1st-reinforcement-spawn
+        trigger:
+          on: other
+          text: 1st Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Gistior Defiler
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Battleship
+            names:
+              - Gist Commander
+            triggers: Highest bounty
+            note: type list incomplete on the source page
+      - id: 2nd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 2nd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Hijacker
+              - Arch Gistii Impaler
+              - Arch Gistii Raider
+              - Arch Gistii Rogue
+          - count: "3"
+            class: Cruiser
+            names:
+              - Gistum Liquidator
+              - Gistum Marauder
+          - count: "3"
+            class: Battleship
+            names:
+              - Gist Commander
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Overseer Battleship
+            names:
+              - Hashi Keptzh
+            ewar:
+              - kind: web
+            drop: 19th Tier Overseer's Personal Effects, Domination and Gistum A-Type modules, and a possible Cynabal BPC
+      - id: notable-structures
+        trigger:
+          on: warpIn
+          text: Notable structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Rent-A-Dream Pleasure Gardens
+            drop: Commodity drugs

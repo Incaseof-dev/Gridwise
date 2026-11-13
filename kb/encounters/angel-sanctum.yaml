@@ -1,0 +1,143 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: angel-sanctum
+kind: anomaly
+name: Angel Sanctum
+dedRating: null
+anomalyClass: 10
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Angel Sanctum
+    url: https://wiki.eveuniversity.org/Angel_Sanctum
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225189"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Not gated"
+notes:
+  - text: Normal open deadspace pocket which you can choose warp distance for. There are 2 variants for this site, Ring and Station, that will decide the waves of the enemy.
+  - text: This variant will have 5 rings of explosion dampening arrays that you can use to orbit the waves.
+  - text: "Escalation: Angel Shielded Starbase"
+  - text: "Escalation: Angel Capital Staging area"
+  - text: "Escalation: Angel Naval Shipyard"
+  - text: "Escalation: Angel Occupied Mine"
+  - text: 7 waves
+lootNotes:
+  - text: Approximately 45 million in bounties.
+pockets:
+  - name: Ring Spawn Variant
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Gistatsis Praefectus
+              - Gistatsis Legatus
+              - Gistatsis Primus
+          - count: "8"
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Seraphim
+      - id: first-wave
+        trigger:
+          on: other
+          text: First Wave
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Gistatsis Praefectus
+              - Gistatsis Tribuni
+              - Gistatsis Primus
+          - count: 3-4
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Seraphim
+      - id: second-wave
+        trigger:
+          on: other
+          text: Second Wave
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Cruiser
+            names:
+              - Arch Gistum Defeater
+              - Arch Gistum Smasher
+              - Arch Gistum Breaker
+          - count: "4"
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Seraphim
+      - id: third-wave
+        trigger:
+          on: other
+          text: Third Wave
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Arch Gistii Rogue
+              - Arch Gistii Hijacker
+              - Arch Gistii Thug
+            ewar:
+              - kind: warpDisruption
+          - count: "4"
+            class: Battleship
+            names:
+              - Gist Cherubim
+      - id: fourth-wave-final
+        trigger:
+          on: other
+          text: Fourth Wave (Final)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Arch Gistii Hijacker
+              - Arch Gistii Outlaw
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Gistatsis Praefectus
+              - Gistatsis Legatus
+              - Gistatsis Legionnaire
+          - count: 7-8
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Seraphim
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - Domination Saint
+              - Domination Warlord
+            group: Possible Rare Spawn
+            drop: Possible Domination Battleship modules, Faction charges
+          - count: 0-1
+            class: Dreadnought
+            names:
+              - Angel Dreadnought
+            group: Possible Rare Spawn
+            ewar:
+              - kind: web
+            drop: Possible Domination Battleship modules, Faction charges
+            note: Dreadnought spawns are extremely rare.
+sde:
+  dungeonIds:
+    - 2311

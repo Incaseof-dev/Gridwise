@@ -1,0 +1,60 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: an-end-to-eavesdropping
+kind: mission
+name: An End to Eavesdropping
+level: 1
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – An End to Eavesdropping
+    url: https://wiki.eveuniversity.org/An_End_to_Eavesdropping
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "216125"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the listening post and any ships defending it.
+ewar:
+  - kind: sensorDamp
+notes:
+  - text: "The Federal Intelligence Office: The Gallente FIO answers directly to the Gallente President. Its works are shrouded in secrecy and covert operations. Among their spying operations are the construction and operation of numerous small, covert listening posts designed to glean information from enemy signals and communications."
+pockets:
+  - name: Warp-in
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Structure
+            names:
+              - Listening Post
+            note: Mission objective
+          - count: "8"
+            class: Structure
+            names:
+              - Gallente Barricade
+      - id: initial-hostiles
+        trigger:
+          on: warpIn
+          text: Initial Hostiles
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Federation Libertus
+              - Federation Manica
+            ewar:
+              - kind: sensorDamp
+          - count: "10"
+            class: Frigate
+            names:
+              - Federation Clavis
+              - Federation Hastile
+              - Federation Hoplon
+              - Federation Kontos

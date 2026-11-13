@@ -1,0 +1,137 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: ruins
+kind: complex
+name: Ruins
+dedRating: null
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Ruins
+    url: https://wiki.eveuniversity.org/Ruins
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "230499"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Unknown, T3C can enter"
+notes:
+  - text: When you warp in only frigates are on site. Rest of the initial defenders spawn shortly. Only Strain Splinter/Render/Decimator/Infester Alvi frigate types will web and point.
+  - text: 'Escalation: Menacing Mechanics:: This drone operation was so small that it could hardly be called a "hive", there were no substantial assembly plants or other major factories here. It looked more like a maintenance station, something that does not rhyme with what you have heard about drones and how they operate, as they usually are confined to self sufficient hives and perhaps operating small resource gathering satellite ops. But a drone maintenance station, servicing several other hives or passersby is almost unheard of. After scanning through the remaining debris, your instruments gather some service logs, further supporting the idea this was an open maintenance station. Most of the serviced ships seem to have been standard drone vessels, but you can also see some entries naming ships used by humans, even though it does not say anything about who was flying them. Some of the log entries contain extra notes on these customers and among them you find something that looks like coordinates in a system not too far away.'
+  - text: "Escalation: Can escalate to Menacing Mechanics."
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Salvager Drone
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "6"
+            class: Frigate
+            names:
+              - Silverfish
+              - Hunter Alvi
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Strain Render Alvi
+            ewar:
+              - kind: warpDisruption
+      - id: additional-defenders-on-short-timer
+        trigger:
+          on: timer
+          text: Additional defenders on short timer
+        spawns:
+          - count: "5"
+            class: Cruiser
+            names:
+              - Infestious Drone
+      - id: additional-defenders-on-timer
+        trigger:
+          on: timer
+          text: Additional defenders on timer
+        spawns:
+          - count: "2"
+            class: Battleship
+            names:
+              - Swarm Preserver Alvus
+      - id: wave-2
+        trigger:
+          on: other
+          text: "Wave #2"
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Elite Frigate
+            names:
+              - Strain Barracuda Alvi
+          - count: "2"
+            class: Battleship
+            names:
+              - Alvus Controller
+              - Swarm Preserver Alvus
+      - id: wave-3
+        trigger:
+          on: other
+          text: "Wave #3"
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Strain Hunter
+              - Strain Silverfish Alvi
+            triggers: "Finishing wave #3 spawns commander wave"
+          - count: 2-3
+            class: Battlecruiser
+            names:
+              - Exterminator Alvatis
+            triggers: "Finishing wave #3 spawns commander wave"
+      - id: wave-4-commander-wave
+        trigger:
+          on: other
+          text: "wave #4, commander wave"
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Striker
+              - Exterminator Alvatis
+          - count: "1"
+            class: Commander Battlecruiser
+            names:
+              - Sentient Defeater Alvatis
+            triggers: Escalation trigger
+            drop: drone components, can drop chip for stratios
+          - count: 2-3
+            class: Battleship
+            names:
+              - Alvus Controller
+              - Swarm Preserver Alvus
+            triggers: triggers wave 5#
+      - id: wave-5
+        trigger:
+          on: other
+          text: "wave #5"
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Strain Sunder
+              - Strain Raider Alvi
+sde:
+  dungeonIds:
+    - 1262

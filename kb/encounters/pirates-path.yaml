@@ -1,0 +1,351 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: pirates-path
+kind: escalation
+name: Pirate’s Path
+dedRating: null
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Pirate's Path
+    url: https://wiki.eveuniversity.org/Pirate's_Path
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "200634"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Pirate's Path is an escalation of Guristas Military Complex.
+pockets:
+  - name: Pirate’s Path, Part 1
+    notes:
+      - text: "Access: Gateless, Open Access"
+  - name: Room 1 (ungated)
+    notes:
+      - text: The escalation may end after killing the Dread Guristas Exterminator.
+      - text: "Language: (did not capture this)"
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Acceleration Gate
+            names:
+              - To room 2
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "4"
+            class: Cruiser
+            names:
+              - Pithum Abolisher
+              - Pithum Inferno
+              - Pithum Mortifier
+          - count: "3"
+            class: Battleship
+            names:
+              - Ptih Massacrer
+              - Ptih Usurper
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - Dread Guristas Exterminator
+            ewar:
+              - kind: ecm
+            triggers: Escalation trigger
+            drop: Dread Guristas Battleship Modules
+  - name: Room 2
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "1"
+            class: Cruiser
+            names:
+              - Guristas Terrorist Scout
+            triggers: Alternate escalation trigger
+  - name: Pirate’s Path, Part 2
+    notes:
+      - text: "Access: Gateless, Open Access"
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Station
+            names:
+              - Station
+            triggers: Triggers Station Wave
+          - count: "?"
+            class: Structure
+            names:
+              - Terrrorist Raid Center
+            triggers: Escalation trigger
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Pithior Guerilla
+          - count: "4"
+            class: Battleship
+            names:
+              - Pith Usurper
+      - id: station-wave
+        trigger:
+          on: other
+          text: Station Wave
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Elite Frigate
+            names:
+              - Frigate) Dire Pithi ?
+            ewar:
+              - kind: web
+              - kind: ecm
+              - kind: warpScramble
+          - count: "5"
+            class: Battleship
+            names:
+              - Pith ?
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - Dread Guristas Battleship
+            triggers: Escalation Trigger
+            drop: Dread Guristas Battleship Modules
+          - count: "8"
+            class: Sentry
+            names:
+              - Cruise Missile Battery
+  - name: Pirate’s Path, Part 3
+    notes:
+      - text: "Access: Gateless, Open Access"
+  - name: Room 1
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Pithi ?
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum ?
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Pithatis ?
+          - count: "4"
+            class: Battleship
+            names:
+              - Pith ?
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - Dread Guristas ?
+            triggers: Escalation trigger?
+            drop: may contain Dread Guristas Battleship Modules
+  - name: Room 2
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Structure
+            names:
+              - Guidance Beacon
+            triggers: Escalation Trigger
+          - count: "?"
+            class: Structure
+            names:
+              - Terrorist Raid Center
+            triggers: Attacking Triggers Center Wave
+      - id: canter-wave
+        trigger:
+          on: other
+          text: Canter Wave
+          confidence: inferred
+        spawns: []
+  - name: Pirate’s Path, Part 4
+    notes:
+      - text: "Access: Gateless, Open Access"
+      - text: Spawns 1-5 arrive in waves over a few minutes.
+    waves:
+      - id: first-spawn
+        trigger:
+          on: other
+          text: First Spawn
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battleship
+            names:
+              - Pith Massacrer
+      - id: second-spawn
+        trigger:
+          on: other
+          text: Second Spawn
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battleship
+            names:
+              - Pith Usurper
+      - id: third-spwan
+        trigger:
+          on: other
+          text: Third Spwan
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Mortifier
+          - count: "3"
+            class: Battleship
+            names:
+              - Pith Usurper
+      - id: fourth-spawn
+        trigger:
+          on: other
+          text: Fourth Spawn
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Pithatis Death Dealer
+          - count: "2"
+            class: Battleship
+            names:
+              - Pith Usurper
+      - id: fifth-spawn
+        trigger:
+          on: other
+          text: Fifth Spawn
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Killer
+            ewar:
+              - kind: ecm
+          - count: "2"
+            class: Battleship
+            names:
+              - Pith Massacrer
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Guristas Relay Commander
+            triggers: Reinforcement 1
+      - id: reinforcement-1
+        trigger:
+          on: other
+          text: Reinforcement 1
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Arrogator
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Despoiler
+            ewar:
+              - kind: ecm
+          - count: "3"
+            class: Destroyer
+            names:
+              - Pithior Terrorist
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Nullifier
+            ewar:
+              - kind: ecm
+          - count: "7"
+            class: Battleship
+            names:
+              - Pith Massacrer
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Guristas Relay Commander
+            triggers: Reinforcement 2
+      - id: reinforcement-2
+        trigger:
+          on: other
+          text: Reinforcement 2
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Elite Frigate
+            names:
+              - Haruo's Genin
+            ewar:
+              - kind: web
+              - kind: warpScramble
+            note: Renamed Dire Pithi Invader/Infiltrator
+          - count: "6"
+            class: Elite Cruiser
+            names:
+              - Haruo's Chunin
+            ewar:
+              - kind: ecm
+            note: renamed Dire Pithum Annihilator/Nullifier
+          - count: "6"
+            class: Battleship
+            names:
+              - Haruo's Jonin
+            note: Renamed Pith Usurper
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Haruo Wako
+            drop: Pith A-Type Modules, Dread Guristas Battleship Modules
+      - id: mercenary-wave-triggered-by-attacking-the-stargate
+        trigger:
+          on: other
+          text: Mercenary Wave (Triggered by attacking the Stargate)
+          confidence: inferred
+        spawns:
+          - count: "8"
+            class: Frigate
+            names:
+              - Space Trucker
+            ewar:
+              - kind: web
+              - kind: warpScramble
+            note: Renamed Mercenary Wingman
+          - count: "10"
+            class: Battleship
+            names:
+              - Space Trucker
+            note: Renamed Mercenary Overlord

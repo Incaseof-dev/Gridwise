@@ -1,0 +1,118 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: smuggler-hideout
+kind: anomaly
+name: Smuggler Hideout
+dedRating: null
+anomalyClass: 3
+enemyFaction: null
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Smuggler Hideout
+    url: https://wiki.eveuniversity.org/Smuggler_Hideout
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "219242"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal:
+    - em
+    - thermal
+    - kinetic
+    - explosive
+  resist:
+    - em
+    - thermal
+    - kinetic
+    - explosive
+restrictions:
+  - text: "Ship size limit: T2 Battlecruiser, T3 Cruisers"
+notes:
+  - text: The Smuggler Hideout is a Capsuleer Day XIX event site. It consists of two gated pockets. You have to clear most of the NPCs in the first pocket to make the acceleration gate to the second pocket usable. In the second pocket your goal is to destroy the Smuggler Underboss which drops various loot. The number of NPC spawns and their size depends on the highest ship class used, especially T3 cruisers lead to significantly more NPCs. The number of ships entering doesn't affect the spawns though. A full clear will net you 7.5 million ISK in bounties (before tax).
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: list-of-possible-npcs-to-face
+        trigger:
+          on: other
+          text: "List of possible NPCs to face:"
+          confidence: inferred
+        spawns:
+          - count: 0-3
+            class: Frigate
+            names:
+              - Smuggler Raptor
+            ewar:
+              - kind: warpDisruption
+          - count: 0-2
+            class: Frigate
+            names:
+              - Smuggler Hyena
+            ewar:
+              - kind: targetPaint
+              - kind: web
+          - count: 0-5
+            class: Frigate
+            names:
+              - Smuggler Manticore
+            ewar:
+              - kind: targetPaint
+          - count: 0-3
+            class: Destroyer
+            names:
+              - Smuggler Draugur
+            ewar:
+              - kind: neut
+            note: Damage spools up, Triglavian salvage
+          - count: 0-2
+            class: Cruiser
+            names:
+              - Smuggler Cerberus
+            ewar:
+              - kind: warpDisruption
+          - count: 0-2
+            class: Cruiser
+            names:
+              - Smuggler Rapier
+            ewar:
+              - kind: targetPaint
+              - kind: web
+          - count: 0-2
+            class: Cruiser
+            names:
+              - Smuggler Ikitursa
+            ewar:
+              - kind: neut
+            note: Damage spools up, Triglavian salvage
+          - count: 0-2
+            class: Battlecruiser
+            names:
+              - Smuggler Tornado
+          - count: "1"
+            class: Battleship
+            names:
+              - Smuggler Underboss
+            group: Second Room Only
+            ewar:
+              - kind: neut
+              - kind: web
+              - kind: warpDisruption
+            drop: Smuggler Lockboxes, event boosters, hardwiring implants
+            note: Panther hull
+          - count: "1"
+            class: Battleship
+            names:
+              - Smuggler Underboss
+            group: Second Room Only
+            ewar:
+              - kind: ecm
+              - kind: neut
+              - kind: warpDisruption
+            drop: Smuggler Lockboxes, event boosters, hardwiring implants
+            note: Widow hull
+sde:
+  dungeonIds:
+    - 9404

@@ -1,0 +1,53 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: eliminate-the-pirate-campers-guristas-pirates
+kind: mission
+name: Eliminate the Pirate Campers
+level: 2
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Eliminate the Pirate Campers (Guristas Pirates)
+    url: https://wiki.eveuniversity.org/Eliminate_the_Pirate_Campers_(Guristas_Pirates)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "203056"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Eliminate the Guristas ships roaming around the stargate near the coordinates of your bookmark.
+ewar:
+  - kind: ecm
+notes:
+  - text: "Suggested ships: Assault Frigate, Destroyer, Cruiser"
+pockets:
+  - name: Warp-in
+    waves:
+      - id: initial-group-10km-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group, 10km (auto-aggro)
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Pithi Saboteur
+              - Pithi Despoiler
+              - Pithi Wrecker
+              - Pithi Plunderer
+            ewar:
+              - kind: ecm
+            note: Pithi Saboteur/Despoiler Target Jams
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Despoiler
+              - Dire Pithi Demolisher
+              - Dire Pithi Wrecker
+              - Dire Pithi Destructor
+              - Dire Pithi Plunderer
+            ewar:
+              - kind: ecm
+            note: Dire Pithi Despoiler Target Jams

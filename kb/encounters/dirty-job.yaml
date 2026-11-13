@@ -1,0 +1,228 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: dirty-job
+kind: mission
+name: Dirty Job
+level: 5
+enemyFaction: Minmatar Republic & Mercenaries
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Dirty Job
+    url: https://wiki.eveuniversity.org/Dirty_Job
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191648"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: neut
+notes:
+  - text: "Suggested ships: Passive Battleship + Logistics, Capital (no gates)"
+  - text: "Neut counters:"
+  - text: Use a Passive tank
+  - text: Get the carrier's neut on your drones
+  - text: Plan a capacitor that receives an extra 40 units/s
+  - text: "Orbit ranges:"
+  - text: "Fighters: 3km"
+  - text: "Frigates: 8km"
+  - text: "Cruisers: 15-17km"
+  - text: "Battleships: 4km"
+pockets:
+  - name: Warp-In
+    waves:
+      - id: initial-group-20km
+        trigger:
+          on: warpIn
+          text: Initial Group, 20km
+        spawns:
+          - count: "1"
+            class: Carrier
+            names:
+              - Republic Harkal
+            ewar:
+              - kind: neut
+            note: Immune to offensive modifiers
+          - count: "5"
+            class: Fighter
+            names:
+              - Republic Fighter
+            group: Shooting the carrier
+            triggers: Reinforcement 1
+            note: Will replace itself up to 8 times, if destroyed
+          - count: "3"
+            class: Frigate
+            names:
+              - Mercenary Elite Fighter
+            group: 90% Armor
+            triggers: Reinforcement 2a
+          - count: "4"
+            class: Frigate
+            names:
+              - Mercenary Elite Fighter
+            group: 50% Armor
+            triggers: Reinforcement 3a
+          - count: "3"
+            class: Frigate
+            names:
+              - Mercenary Elite Fighter
+            group: 10% Armor
+            triggers: Reinforcement 4a
+          - count: "1"
+            class: Frigate
+            names:
+              - Mercenary Elite Fighter
+            group: 90% Structure
+            triggers: Reinforcement 5a
+          - count: "2"
+            class: Frigate
+            names:
+              - Mercenary Elite Fighter
+            group: 50% Structure
+            triggers: Reinforcement 6a
+      - id: reinforcement-1
+        trigger:
+          on: other
+          text: Reinforcement 1
+          confidence: inferred
+        spawns:
+          - count: 5-40
+            class: Fighter
+            names:
+              - Republic Fighter
+      - id: reinforcement-2
+        trigger:
+          on: other
+          text: Reinforcement 2
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Mercenary Elite Fighter
+            group: Reinforcement 2a
+          - count: "7"
+            class: Cruiser
+            names:
+              - Mercenary Commander
+            group: Reinforcement 2a
+            triggers: Reinforcement 2b
+          - count: "2"
+            class: Cruiser
+            names:
+              - Mercenary Corporal
+            group: Reinforcement 2b
+          - count: "1"
+            class: Battleship
+            names:
+              - Mercenary Overlord
+            group: Reinforcement 2b
+      - id: reinforcement-3
+        trigger:
+          on: other
+          text: Reinforcement 3
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Mercenary Elite Fighter
+            group: Reinforcement 3a
+          - count: "7"
+            class: Cruiser
+            names:
+              - Mercenary Commander
+            group: Reinforcement 3a
+            triggers: Reinforcement 3b
+          - count: "3"
+            class: Cruiser
+            names:
+              - Mercenary Corporal
+            group: Reinforcement 3b
+          - count: "1"
+            class: Battleship
+            names:
+              - Mercenary Overlord
+            group: Reinforcement 3b
+      - id: reinforcement-4
+        trigger:
+          on: other
+          text: Reinforcement 4
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Mercenary Elite Fighter
+            group: Reinforcement 4a
+          - count: "7"
+            class: Cruiser
+            names:
+              - Mercenary Commander
+            group: Reinforcement 4a
+            triggers: Reinforcement 4b
+          - count: "2"
+            class: Cruiser
+            names:
+              - Mercenary Corporal
+            group: Reinforcement 4b
+          - count: "1"
+            class: Battleship
+            names:
+              - Mercenary Overlord
+            group: Reinforcement 4b
+      - id: reinforcement-5
+        trigger:
+          on: other
+          text: Reinforcement 5
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Mercenary Elite Fighter
+            group: Reinforcement 5a
+          - count: "7"
+            class: Cruiser
+            names:
+              - Mercenary Commander
+            group: Reinforcement 5a
+            triggers: Reinforcement 5b
+          - count: "5"
+            class: Cruiser
+            names:
+              - Mercenary Corporal
+            group: Reinforcement 5b
+          - count: "1"
+            class: Battleship
+            names:
+              - Mercenary Overlord
+            group: Reinforcement 5b
+      - id: reinforcement-6
+        trigger:
+          on: other
+          text: Reinforcement 6
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Mercenary Elite Fighter
+            group: Reinforcement 6a
+          - count: "3"
+            class: Cruiser
+            names:
+              - Mercenary Commander
+            group: Reinforcement 6a
+            triggers: Reinforcement 6b
+          - count: "3"
+            class: Cruiser
+            names:
+              - Mercenary Corporal
+            group: Reinforcement 6b
+          - count: "3"
+            class: Battleship
+            names:
+              - Mercenary Overlord
+            group: Reinforcement 6b

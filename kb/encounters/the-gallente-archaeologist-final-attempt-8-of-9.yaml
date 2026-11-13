@@ -1,0 +1,298 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-gallente-archaeologist-final-attempt-8-of-9
+kind: mission
+name: The Gallente Archaeologist - Final Attempt (8 of 9)
+level: 4
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Gallente Archaeologist - Final Attempt (8 of 9)
+    url: https://wiki.eveuniversity.org/The_Gallente_Archaeologist_-_Final_Attempt_(8_of_9)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223385"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal:
+    - thermal
+    - kinetic
+  resist: []
+ewar:
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Warp disruption frigates"
+  - text: This mission is a part of the mission chain The Gallente Archaeologist
+  - text: You have to destroy the Federation Navy Fleet Commander in room 4.
+  - text: "Notes: The best damage to deal is thermal; but kinetic is mostly okay except against the Orion battleships, which have a very high kinetic resist."
+lootNotes:
+  - text: "The commanders also have a chance to drop faction modules, a lot of meta modules drop and following dog tags:"
+  - text: 18 Federation Navy Command Sergeant Major Insignia I
+  - text: 8 Federation Navy Fleet Captain Insignia I
+  - text: 10 Federation Navy Fleet Colonel Insignia I
+  - text: 29 Federation Navy Fleet Colonel Insignia II
+  - text: 2 Federation Navy Fleet Commander Insignia
+  - text: 42 Federation Navy Fleet Major Insignia I
+  - text: 1 Federation Navy Raid Leader Insignia
+  - text: 6 Federation Navy Sergeant Insignia I
+  - text: 21 Federation Navy Sergeant Insignia II
+  - text: 19 Federation Navy Sergeant Insignia III
+pockets:
+  - name: Room 1
+    waves:
+      - id: group-1-at-45-km
+        trigger:
+          on: other
+          text: Group 1 (at 45 km)
+          confidence: inferred
+        spawns:
+          - count: "8"
+            class: Frigate
+            names:
+              - Federation Navy Officer
+          - count: "5"
+            class: Elite Frigate
+            names:
+              - Federation Navy Gamma II Support Frigate
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "5"
+            class: Cruiser
+            names:
+              - Federation Navy Thorax
+          - count: "?"
+            class: Battleship
+            names:
+              - Federation Navy Dominix
+              - Federation Navy Orion
+      - id: group-2-at-65-km
+        trigger:
+          on: other
+          text: Group 2 (at 65 km)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Federation Navy Gamma I Support Frigate
+            ewar:
+              - kind: web
+          - count: "6"
+            class: Cruiser
+            names:
+              - Federation Navy Vexor
+          - count: "2"
+            class: Battleship
+            names:
+              - Federation Navy Dominix
+  - name: Room 2
+    waves:
+      - id: group-1-at-45-km
+        trigger:
+          on: other
+          text: Group 1 (at 45 km)
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Cruiser
+            names:
+              - Federation Navy Thorax
+          - count: "4"
+            class: Battleship
+            names:
+              - Federation Navy Dominix
+              - Federation Navy Megathron
+      - id: group-2-at-50-km
+        trigger:
+          on: other
+          text: Group 2 (at 50 km)
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Cruiser
+            names:
+              - Federation Navy Thorax
+          - count: "6"
+            class: Cruiser
+            names:
+              - Federation Navy Raid Leader
+            drop: 3% hardwiring implant
+          - count: "4"
+            class: Battleship
+            names:
+              - Federation Navy Dominix
+              - Federation Navy Megathron
+      - id: group-3-at-60-km
+        trigger:
+          on: other
+          text: Group 3 (at 60 km)
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Elite Frigate
+            names:
+              - Federation Navy Gamma II Support Frigate
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "5"
+            class: Cruiser
+            names:
+              - Federation Navy Thorax
+          - count: "3"
+            class: Battleship
+            names:
+              - Federation Navy Dominix
+              - Federation Navy Megathron
+              - Federation Navy Orion
+  - name: Room 3
+    waves:
+      - id: group-1-at-22-km
+        trigger:
+          on: other
+          text: Group 1 (at 22 km)
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Cruiser
+            names:
+              - Federation Navy Thorax
+          - count: "2"
+            class: Battleship
+            names:
+              - Federation Navy Dominix
+              - Federation Navy Orion
+      - id: group-2-at-40-km
+        trigger:
+          on: other
+          text: Group 2 (at 40 km)
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Elite Frigate
+            names:
+              - Federation Navy Gamma II Support Frigate
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "5"
+            class: Cruiser
+            names:
+              - Federation Navy Thorax
+          - count: "2"
+            class: Battleship
+            names:
+              - Federation Navy Megathron
+              - Federation Navy Orion
+      - id: group-3-at-58-km
+        trigger:
+          on: other
+          text: Group 3 (at 58 km)
+          confidence: inferred
+        spawns:
+          - count: "12"
+            class: Frigate
+            names:
+              - Federation Navy Officer
+              - Federation Navy Soldier
+          - count: "4"
+            class: Cruiser
+            names:
+              - Federation Navy Thorax
+          - count: "2"
+            class: Battleship
+            names:
+              - Federation Navy Megathron
+              - Federation Navy Orion
+  - name: Room 4
+    waves:
+      - id: sentry-group-at-30-60-km
+        trigger:
+          on: other
+          text: Sentry Group (at 30-60 km)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Sentry
+            names:
+              - Gallente Sentry Gun
+      - id: at-80-km
+        trigger:
+          on: other
+          text: at 80 km
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Federation Navy Gamma II Support Frigate
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "7"
+            class: Cruiser
+            names:
+              - Federation Navy Thorax
+          - count: "1"
+            class: Battleship
+            names:
+              - Federation Navy Orion
+          - count: "1"
+            class: Battleship
+            names:
+              - Federation Navy Fleet Commander
+            drop: 3% hardwiring implant
+  - name: Room 5 (bonus room)
+    waves:
+      - id: at-0-km
+        trigger:
+          on: other
+          text: at 0 km
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Cruiser
+            names:
+              - Federation Navy Vexor
+      - id: at-40-km
+        trigger:
+          on: other
+          text: at 40 km
+          confidence: inferred
+        spawns:
+          - count: "10"
+            class: Elite Frigate
+            names:
+              - Federation Navy Delta
+              - Federation Navy Gamma II Support Frigate
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "8"
+            class: Cruiser
+            names:
+              - Federation Navy Thorax
+          - count: "3"
+            class: Battleship
+            names:
+              - Federation Navy Dominix
+              - Federation Navy Orion
+          - count: "1"
+            class: Battleship
+            names:
+              - Federation Navy Fleet Commander
+            drop: 3% hardwiring implant
+          - count: "1"
+            class: Battleship
+            names:
+              - General Luther Veron
+            drop: 3% hardwiring implant, Luther Veron's Head
+          - count: "4"
+            class: Sentry
+            names:
+              - Gallente Sentry Gun

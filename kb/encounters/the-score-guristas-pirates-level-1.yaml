@@ -1,0 +1,95 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-score-guristas-pirates-level-1
+kind: mission
+name: The Score
+level: 1
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Score (Guristas Pirates) (Level 1)
+    url: https://wiki.eveuniversity.org/The_Score_(Guristas_Pirates)_(Level_1)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "192048"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Time to settle the score. Go and destroy all the ships at the encounter.
+ewar:
+  - kind: ecm
+notes:
+  - text: "Suggested ships: Destroyer"
+  - text: "Blitz: Destroy Group 2."
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: group-1-40km
+        trigger:
+          on: other
+          text: Group 1, 40km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Pithi Saboteur
+              - Pithi Despoiler
+            ewar:
+              - kind: ecm
+      - id: group-2-50km
+        trigger:
+          on: other
+          text: Group 2, 50km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Pithi Saboteur
+              - Pithi Despoiler
+              - Pithi Wrecker
+            ewar:
+              - kind: ecm
+          - count: "1"
+            class: Destroyer
+            names:
+              - Pithior Renegade
+              - Pithior Anarchist
+      - id: group-3-40km
+        trigger:
+          on: other
+          text: Group 3, 40km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Pithi Plunderer
+              - Pithi Wrecker
+              - Pithi Destructor
+      - id: structures-no-loot
+        trigger:
+          on: other
+          text: Structures, No Loot
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Structure
+            names:
+              - Stationary Mammoth
+          - count: "1"
+            class: Structure
+            names:
+              - Stationary Badger II
+          - count: "2"
+            class: Structure
+            names:
+              - Dirty Shipyard
+          - count: "1"
+            class: Structure
+            names:
+              - LCO Cargo Rig
+            note: Cannot be damaged

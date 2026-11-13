@@ -1,0 +1,63 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: soft-drink-wars
+kind: mission
+name: Soft Drink Wars
+level: 1
+enemyFaction: Mercenaries & Depends on the named pirate
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Soft Drink Wars
+    url: https://wiki.eveuniversity.org/Soft_Drink_Wars
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "230771"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Recover the Quafe Unleashed formula and return it to your agent (0.1 m3).
+restrictions:
+  - text: "Ship size limit: Smaller then battlecruiser"
+notes:
+  - text: Seems like pirate name and structures in pocket depend on the mission region or the faction that gives the mission.
+  - text: One of the pocket structure drops some commodities.
+pockets:
+  - name: Warp-in
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Mercenary Rookies
+            group: Mercenary's warp in as named pirate warps out
+  - name: Pocket 1
+    notes:
+      - text: "Agent message after completing the mission:: Nice work. But I wonder why the formula has this psychotropic drug in it...? Hm. Well, never mind. Sometimes it's best not to know."
+    waves:
+      - id: group-of-pirates-20-30-km
+        trigger:
+          on: other
+          text: Group of pirates, 20-30 km
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Mercenary Rookie
+            group: Group A, on grid
+          - count: "1"
+            class: Frigate
+            names:
+              - Mercenary Leader [Mercenary Fighter]
+            group: Group A, on grid
+          - count: "3"
+            class: Frigate
+            names:
+              - Mercenary Rookies
+            group: Group B, slight delay

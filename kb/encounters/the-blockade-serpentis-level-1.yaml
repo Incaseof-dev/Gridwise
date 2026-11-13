@@ -1,0 +1,108 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-blockade-serpentis-level-1
+kind: mission
+name: The Blockade
+level: 1
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Blockade (Serpentis) (Level 1)
+    url: https://wiki.eveuniversity.org/The_Blockade_(Serpentis)_(Level_1)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191990"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal:
+    - kinetic
+    - thermal
+  resist:
+    - thermal
+    - kinetic
+objectives:
+  - text: Kill pirates
+ewar:
+  - kind: web
+  - kind: sensorDamp
+notes:
+  - text: "Suggested ships: Caracal"
+  - text: Light Sensor Dampening.
+  - text: Single ungated normal space pocket. Initial Group aggro at warp-in. Spawn may aggro drones.
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: "Mission area contains considerable amount of ores: Veldspar"
+      - text: Structures drop no loot
+    waves:
+      - id: initial-defenders-20km
+        trigger:
+          on: warpIn
+          text: Initial defenders (20km)
+        spawns:
+          - count: "1"
+            class: Sentry
+            names:
+              - Starbase Sentry Tower
+            ewar:
+              - kind: web
+          - count: "5"
+            class: Frigate
+            names:
+              - Coreli Initiate
+              - Coreli Guard
+      - id: first-spawn-50-60km
+        trigger:
+          on: other
+          text: First Spawn (50 - 60km)
+          confidence: inferred
+        spawns:
+          - count: "7"
+            class: Frigate
+            names:
+              - Coreli Initiate
+              - Coreli Guard
+              - Coreli Scout
+      - id: second-spawn-100km
+        trigger:
+          on: other
+          text: Second Spawn (100km)
+          confidence: inferred
+        spawns:
+          - count: "7"
+            class: Frigate
+            names:
+              - Coreli Initiate
+              - Coreli Watchman
+            ewar:
+              - kind: sensorDamp
+      - id: third-spawn-115-130km
+        trigger:
+          on: other
+          text: Third Spawn (115 - 130km)
+          confidence: inferred
+        spawns:
+          - count: "8"
+            class: Frigate
+            names:
+              - Coreli Initiate
+              - Coreli Scout
+              - Coreli Patroller
+            ewar:
+              - kind: sensorDamp
+      - id: fourth-spawn-15km
+        trigger:
+          on: other
+          text: Fourth Spawn (15km)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Coreli Safeguard
+              - Coreli Watchman
+            ewar:
+              - kind: sensorDamp

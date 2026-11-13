@@ -1,0 +1,113 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: retribution-sanshas-nation
+kind: mission
+name: Retribution
+level: 3
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Retribution (Sansha's Nation)
+    url: https://wiki.eveuniversity.org/Retribution_(Sansha's_Nation)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191886"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the Sansha Outpost
+ewar:
+  - kind: trackingDisruption
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Sansha Berserker/Demon"
+  - text: No hostiles at initial gate.
+  - text: "Blitz: Destroy Sansha Outpost (Will draw aggro from entire pocket)."
+pockets:
+  - name: 1st Pocket
+    notes:
+      - text: No initial aggro on warp-in. Mission completion on destruction of Sansha Outpost.
+    waves:
+      - id: initial-hostiles
+        trigger:
+          on: warpIn
+          text: Initial Hostiles
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Centii Plague
+              - Centii Enslaver
+            group: Group 1 (25-35km, Scanner Post)
+          - count: "2"
+            class: Cruiser
+            names:
+              - Centum Slaughterer
+              - Centum Execrator
+            group: Group 1 (25-35km, Scanner Post)
+            ewar:
+              - kind: trackingDisruption
+          - count: "1"
+            class: Frigate
+            names:
+              - Centii Butcher
+              - Centii Manslayer
+            group: Group 2 (35-45km, Ghost Ship)
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Sansha Berserker
+              - Sansha Demon
+            group: Group 2 (35-45km, Ghost Ship)
+            ewar:
+              - kind: warpDisruption
+          - count: "1"
+            class: Cruiser
+            names:
+              - Centum Execrator
+              - Centum Slaughterer
+            group: Group 2 (35-45km, Ghost Ship)
+            ewar:
+              - kind: trackingDisruption
+          - count: "1"
+            class: Frigate
+            names:
+              - Centii Butcher
+              - Centii Manslayer
+            group: Group 3 (35-45km, Slave Worker Facility)
+          - count: "2"
+            class: Cruiser
+            names:
+              - Centum Torturer
+              - Centum Mutilator
+            group: Group 3 (35-45km, Slave Worker Facility)
+          - count: "4"
+            class: Frigate
+            names:
+              - Centii Butcher
+              - Centii Manslayer
+            group: Group 4 (65-75km, Small Armory)
+          - count: "2"
+            class: Cruiser
+            names:
+              - Centum Fiend
+              - Centum Hellhound
+            group: Group 4 (65-75km, Small Armory)
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Small Armory
+            drop: Various ammunition
+          - count: "1"
+            class: Structure
+            names:
+              - Sansha Outpost
+            triggers: Mission completion trigger

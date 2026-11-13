@@ -1,0 +1,77 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: mysterious-sightings
+kind: mission
+name: Mysterious Sightings
+level: 1
+enemyFaction: Unidentified
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Mysterious Sightings
+    url: https://wiki.eveuniversity.org/Mysterious_Sightings
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231141"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Look for signs of any "alien activity".
+notes:
+  - text: Mysterious Sightings is a 4 part mission chain consisting of 3 Encounter missions and a Courier mission. It involves combat with the Serpentis.
+  - text: "Ancient Peoples: There are a number of ancient races who have left traces of their civilizations scattered throughout the EVE universe: The Takmahl, masters of cybernetics and bioengineering; the Talocan, with their hyper-advanced spatial manipulation technology; and Yan Jung, who excelled in gravitronics and force field theories. Others include the mysterious Sleepers, who some say are the ancestors of the enigmatic Jovians. Those who wish to learn more of these ancient peoples are well-advised to develop their Science and Archaeology skills."
+  - text: The Unidentified Spacecraft destroys the Federation Scouts and warps out.
+  - text: Deliver 1 unit of reports to station.
+  - text: Industrial is destroyed upon engaging the frigates.
+pockets:
+  - name: Mysterious Sightings (1 of 4 )
+    waves:
+      - id: on-grid
+        trigger:
+          on: other
+          text: On grid
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Federation Scout [Federation Kontos
+              - Federation Scout [Federation Kopis]
+          - count: "1"
+            class: Destroyer
+            names:
+              - Unidentified Spacecraft
+  - name: Mysterious Sightings (3 of 4)
+    notes:
+      - text: Complex is composed of 4 rooms in a square. The diagonal gates cross to the opposite corner while the other two cross along the side they are on. You start in the lower right corner of the square.
+      - text: You will find the Unidentified Spaceship in one of the four rooms randomly sitting 35km off the Beacon you land on.
+      - text: Target the Unidentified Spaceship and mission completes as he warps away. If you do not target him before he warps away he will be in one of the other 3 rooms.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Destroyer
+            names:
+              - Unidentified Spacecraft
+  - name: Mysterious Sightings (4 of 4)
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "8"
+            class: Frigate
+            names:
+              - Coreli Initiate
+              - Coreli Scout
+              - Coreli Spy
+              - Coreli Agent
+          - count: "1"
+            class: Industrial
+            names:
+              - Republic Industrial

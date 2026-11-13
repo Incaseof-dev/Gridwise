@@ -1,0 +1,123 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: rogue-drone-outgrowth-colony
+kind: anomaly
+name: Rogue Drone Outgrowth Colony
+dedRating: null
+enemyFaction: null
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Rogue Drone Outgrowth Colony
+    url: https://wiki.eveuniversity.org/Rogue_Drone_Outgrowth_Colony
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223323"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Advanced Drone Outgrowth Colony
+  - text: TBA
+pockets:
+  - name: Room 1
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+            note: Only available to frigates and destroyers
+  - name: Room 2
+    waves:
+      - id: waves-3x
+        trigger:
+          on: other
+          text: Waves 3x
+          confidence: inferred
+        spawns:
+          - count: 4-8
+            class: Frigate
+            names:
+              - Colony Nest Forager
+            ewar:
+              - kind: warpDisruption
+          - count: 4-8
+            class: Frigate
+            names:
+              - Colony Nest Scavenger
+            ewar:
+              - kind: web
+          - count: 4-8
+            class: Destroyer
+            names:
+              - Colony Nest Guardian
+            ewar:
+              - kind: neut
+          - count: 4-8
+            class: Destroyer
+            names:
+              - Colony Nest Sentinel
+            ewar:
+              - kind: targetPaint
+          - count: "1"
+            class: Structure
+            names:
+              - Deactivated Acceleration Gate
+            group: Acceleration Gate
+            note: Turns into acceleration gate after all enemies destroyed
+  - name: Room 3
+    notes:
+      - text: The Colony Nest Overseer is very powerful and very dangerous. It will randomly warp-in when there is 1-4 enemies left (unconfirmed). It uses Web at 10km, Neut at 5km, and Disrupt at 25km. It will warp-in at 400-500km away. After that it will warp about 20km from you. There it instantly locks you, but does not instantly disrupt (2 second delay until it activates its disruptor).
+      - text: It will drop 3 Overseer Effects, but Rarely drops Random Kador, Semiotique, Valimor Legacy, and Wiyrkomi SKINs, Random Dose, Drone BPC.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 4-8
+            class: Frigate
+            names:
+              - Colony Nest Forager
+            group: Waves 2x
+            ewar:
+              - kind: warpDisruption
+          - count: 4-8
+            class: Frigate
+            names:
+              - Colony Nest Scavenger
+            group: Waves 2x
+            ewar:
+              - kind: web
+          - count: 4-8
+            class: Destroyer
+            names:
+              - Colony Nest Guardian
+            group: Waves 2x
+            ewar:
+              - kind: neut
+          - count: 4-8
+            class: Destroyer
+            names:
+              - Colony Nest Sentinel
+            group: Waves 2x
+            ewar:
+              - kind: targetPaint
+          - count: "1"
+            class: Cruiser
+            names:
+              - Colony Nest Overseer
+            group: Timed Wave 3
+            ewar:
+              - kind: neut
+              - kind: web
+              - kind: warpDisruption
+            drop: 3 Overseer Effects, Random Semiotique, Kador, Valimor Legacy SKIN (Rare), Random Dose (Rare), Drone BPC (may be any drone type e.g. Integrated, Augmented, etc. also very rare), Intercepted Rogue Drone Communications Fragment (Rare)
+sde:
+  dungeonIds:
+    - 9215

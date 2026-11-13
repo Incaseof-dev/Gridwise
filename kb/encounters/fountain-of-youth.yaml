@@ -1,0 +1,355 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: fountain-of-youth
+kind: escalation
+name: Fountain of Youth
+dedRating: null
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Fountain of Youth
+    url: https://wiki.eveuniversity.org/Fountain_of_Youth
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "167489"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: This expedition is a very hard one, and may require several people in strong ships (T3C, well-tanked Battleship or Marauder is advised). The first and second locations can be done solo, but the last two locations have very high incoming DPS that can overwhelm a ship running solo.
+  - text: "Escalation start: As the dust settles from the battle, you receive a transmission from someone claiming to be a local vigilante who congratulates you on a job well done. Your computers run a check on his ship ID's and other info they can gather on him in such a short period of time, but come up with nothing. He appears to represent neither a pirate faction nor one of the empires. This person continues to welcome you to the area and offers to point you to some other Blood bases he knows about and have been a menace for the local population. If you want to come and meet him, he will lead the way."
+pockets:
+  - name: First Location
+    notes:
+      - text: You land at 0 on an acceleration gate. Take it if no commander spawns or if destroying it doesn't trigger escalation.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Elder Corpii Reaver
+              - Elder Corpii Engraver
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corpatis Fanatic
+              - Corpatis Bishop
+          - count: "7"
+            class: Battleship
+            names:
+              - Corpus Patriarch
+              - Corpus Pope
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - Dark Blood Cardinal
+              - Dark Blood Patriarch
+            triggers: Escalation trigger
+            drop: may drop Dark Blood faction modules or an implant
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Newly Constructed Acceleration Gate
+            note: Not locked
+  - name: First Pocket
+    notes:
+      - text: Simple warp-in can trigger escalation.
+      - text: "Escalation trigger: The radio crackles with the vigilante's excited whispering. \"They're still here! Come quick and we'll show them a whole new definition of pain!\""
+    waves:
+      - id: passive-ships-and-structures
+        trigger:
+          on: warpIn
+          text: Passive ships and structures
+        spawns:
+          - count: "2"
+            class: Neutral Drone
+            names:
+              - Spy Drone
+            note: Warps away after a few seconds
+          - count: "1"
+            class: Neutral Cruiser
+            names:
+              - Cura Gigno
+          - count: "60"
+            class: Structure
+            names:
+              - Storage Silo
+  - name: Second Location
+    notes:
+      - text: Ungated pocket. Incoming damage is VERY high. Recommend using a sniper ship to pick of the enemies or activate an MJD away from the rats when you land. Alternatively use a strongly tanked ship that can tank the DPS (like a well-tanked T3 Cruiser).
+      - text: Attack the Blood Control Center or the Blood Raider Chapels to trigger escalation if none if received from the commander.
+      - text: 'Escalation dead-end: "We sure did show them! You sure are better than no one to have around when the missiles are flying! But there is no time to float here fabulating, we must press on, another division of this same group is close by! I will pop over and scout, check if they are there still! " All these exclamation marks make you dizzy. It may well be that this guy is not much of a fighter, but he is no coward and you wonder if it is not hard to do scouting missions on an industrial ... Around 30 seconds later you receive a transmission "OMG the bastards have scrambled me !! I am getting killed here! Help! Help! I am at moon six, where is everyone, come .. "and then the transmission stops. You turn off the radio, there are too many "moon 6" around for you to go looking, and besides...'
+      - text: 'Escalation trigger: "We sure did show them! You sure are better than no one to have around when the missiles are flying! But there is no time to float here fabulating, we must press on, another division of this same group is close by! "'
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "6"
+            class: Sentry
+            names:
+              - Blood Cruise Missile Battery
+            triggers: Destroying each cruise missile battery triggers a smartbomb wave
+          - count: 14-19
+            class: Elite Frigate
+            names:
+              - Elder Corpii Upholder
+              - Elder Corpii Worshipper
+              - Elder Corpii Herald
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 18-20
+            class: Battleship
+            names:
+              - Corpus Patriarch
+              - Corpus Pope
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - Dark Blood Pope
+            triggers: Escalation trigger
+            drop: may contain Dark Blood faction modules
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Blood Control Center
+            triggers: Alternate escalation trigger
+          - count: "4"
+            class: Structure
+            names:
+              - Blood Raider Chapel
+            triggers: Attacking any one may trigger escalation
+  - name: Third Location
+    notes:
+      - text: "From Cura Gigno:: Cura Gigno: I hope you will manage without me, but I am going to check the next and last target. It's one of the Blood's holy places, some Fountain of Youth thing, quite a splash! We don't want them to get away. I will hold them busy till you arrive!"
+      - text: "Warning: The two stasis towers web you very hard, so expect high incoming damage."
+      - text: The Blood Defense Outpost has very strong active shield and armor tank that requires about 1000 DPS to break (the equivalent of the firepower of 3 battleships). It only drops T1 ammo and meta modules, so don't bother wasting ammo to destroy it unless you need the escalation.
+      - text: "Escalation trigger: \"I will hold them busy till you arrive!\" Yeah, right. The only way he is going to slow them down is to stun them with a steady flow of exclamation marks. The Dark Bloods are no joke. This innermost circle of the Blood Raiders is legendary for its brutality and the unparalleled skill of its pilots. Your radio crackles to life again when this chatty would-be vigilante sends a message to his newfound friend: \"Yes, they are here, and it seems the element of surprise is on our side! I suggest that you open with a full frontal assault so I can charge from the side, flank them, and then we can crush them between us! I will need to stay off the air for now, though: I am launching a covert ops through stealth tactics in order to get into position! Good luck !! \" Come to think of it, this guy might be a 12-year-old who has stolen his mom's ship. But there is nothing to wait for; there are the coordinates, and the enemy is waiting."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "1"
+            class: Sentry
+            names:
+              - Blood Defense Outpost
+            ewar:
+              - kind: web
+            triggers: Attacking triggers outpost reinforcements
+            drop: Meta modules, T1 ammo
+            note: Fires Citadel Mjolnir torpedoes that deal ~1500 EM damage every 18 seconds
+          - count: "2"
+            class: Sentry
+            names:
+              - Siege Beam Laser Sentry
+            note: High DPS and tank
+          - count: "2"
+            class: Sentry
+            names:
+              - Blood Stasis Tower
+            ewar:
+              - kind: web
+          - count: "1"
+            class: Destroyer
+            names:
+              - Corpior Converter
+          - count: "2"
+            class: Cruiser
+            names:
+              - Corpum Dark Priest
+              - Corpum Shadow Sage
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Priest
+              - Elder Corpum Sage
+            ewar:
+              - kind: neut
+          - count: "8"
+            class: Battleship
+            names:
+              - Corpus Patriarch
+              - Corpus Pope
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - Dark Blood Pope
+            triggers: Escalation trigger
+            drop: may drop Dark Blood faction modules or an implant; wreck may produce Tech 2 salvage
+      - id: outpost-reinforcements
+        trigger:
+          on: other
+          text: Outpost reinforcements
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Follower
+              - Elder Corpii Herald
+              - Elder Corpii Upholder
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Arch Priest
+              - Elder Corpum Arch Sage
+          - count: "11"
+            class: Battleship
+            names:
+              - Corpus Patriarch
+              - Corpus Pope
+  - name: Fourth Location
+    notes:
+      - text: This site is very hard, and will require multiple people in strongly tanked ships. Double Stasis towers will make you take a lot of damage. Recommend high resists against EM and Thermal damage. Avoid attacking the Blood Raider Military Outpost unless you can tank the incoming damage. The structure itself drops no loot. The site has 3 waves, and if you spawn 2 at once, the site is almost impossible.
+      - text: The final wave is the overseer wave. It spawns when the Blood Raider Military Outpost is at 55% structure.
+      - text: "Expedition end: This was a hard fight and even though your friend didn't fire many shots, he did his best to call them. Gutsy little fellow. You would think that by now he should have used half of all superlatives in the English language to describe your victory, but surprisingly enough he is dead silent there where he is orbiting the remains of this holy place. Closer inspection reveals that he has taken a direct hit and even though his ship looks intact, all the airlocks have been blasted out and either he must have died from the explosion, or he is lying there frozen from the exposure. It is kind of sad ... not that you will miss him personally, but you can be darn sure that if he had lived to run around and tell the story, you would have been a legendary hero 24 hours from now."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Station
+            names:
+              - Blood Raider Military Outpost
+            triggers: Triggers reinforcements at different intervals
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Blood Stasis Tower
+            ewar:
+              - kind: web
+          - count: "5"
+            class: Sentry
+            names:
+              - Siege Beam Laser Sentry
+            note: High DPS and tank
+          - count: "5"
+            class: Sentry
+            names:
+              - Siege Pulse Laser Sentry
+            note: High DPS and tank
+          - count: "2"
+            class: Frigate
+            names:
+              - Corpii Reaver
+              - Corpii Engraver
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Worshipper
+              - Elder Corpii Herald
+              - Elder Corpii Upholder
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "9"
+            class: Destroyer
+            names:
+              - Corpior Cleric
+              - Corpior Devoter
+              - Corpior Friar
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Arch Templar
+              - Elder Corpum Revenant
+            ewar:
+              - kind: trackingDisruption
+          - count: "19"
+            class: Battleship
+            names:
+              - Corpus Patriarch
+              - Corpus Pope
+      - id: reinforcements-military-outpost-attacked
+        trigger:
+          on: other
+          text: Reinforcements (Military Outpost attacked)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Herald
+              - Elder Corpii Upholder
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "8"
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Arch Templar
+              - Elder Corpum Revenant
+              - Elder Corpum Arch Priest
+              - Elder Corpum Arch Sage
+            ewar:
+              - kind: neut
+              - kind: trackingDisruption
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corpatis Bishop
+              - Corpatis Seer
+              - Corpatis Fanatic
+          - count: "15"
+            class: Battleship
+            names:
+              - Corpus Patriarch
+              - Corpus Pope
+      - id: overseer-wave-outpost-55-structure
+        trigger:
+          on: other
+          text: Overseer wave (Outpost 55% structure)
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Drone
+            names:
+              - Spider Drone II
+            ewar:
+              - kind: web
+          - count: "8"
+            class: Elite Frigate
+            names:
+              - Padio's Disciple
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "1"
+            class: Overseer Battleship
+            names:
+              - High Ritualist Padio Atour
+            drop: Corpus X-Type modules, possible Dark Blood faction modules or a Bhaalgorn BPC
+            note: Immune to EWAR; has a very high strong passive/active armor tank
+sde:
+  dungeonIds:
+    - 1863

@@ -1,0 +1,113 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-wildcat-strike
+kind: mission
+name: The Wildcat Strike
+level: 4
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Wildcat Strike
+    url: https://wiki.eveuniversity.org/The_Wildcat_Strike
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "210192"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: End the strike by destroying all military assets in the area.
+notes:
+  - text: "Suggested ships: Raven, CNR"
+  - text: "Blitz: Destroy ships at warp-in, take acceleration gate no kills necessary in the room."
+pockets:
+  - name: Warp-in
+    notes:
+      - text: Auto-aggro from all after a few seconds.
+      - text: If you need more range make a bookmark and warp out. Then warp to your bookmark at your optimal range.
+      - text: Respawn is triggered by killing the last drone from the initial spawn.
+      - text: The gate is 41km from warp-in
+    waves:
+      - id: initial-spawn-41-km-from-warp-in
+        trigger:
+          on: warpIn
+          text: Initial spawn (41 km from warp-in)
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Reprogrammed Mining Drone
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Reprogrammed Mining Drone
+          - count: "2"
+            class: Sentry
+            names:
+              - Tower Sentry Caldari III
+          - count: "2"
+            class: Sentry
+            names:
+              - Caldari Cruise Missile Battery
+      - id: respawn-25-km-from-warp-in
+        trigger:
+          on: other
+          text: Respawn (25 km from warp-in)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Reprogrammed Mining Drone
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Reprogrammed Mining Drone
+  - name: Pocket
+    notes:
+      - text: Aggroing the left or right group first will also aggro the middle group, but not the other side. So if you shoot at the left group first, the right one will not aggro, but shoot at the right one first and the left will not aggro. Shooting the middle group __will__ agro both the left and right groups as well.
+      - text: Drones do not pull aggro from left side.
+      - text: Mission is marked complete once you land in the second pocket.
+      - text: "Structures: No Structure drop loot."
+      - text: "Mining: In Pocket 1 are 5 Roids of Veldspar 55466 Units"
+      - text: "Bounty: 3,558,934 ISK"
+      - text: "Loot: 0 (Rogue Drones drops nothing)"
+      - text: "Salvage: 1,450,000 ISK"
+    waves:
+      - id: 3-groups-no-auto-aggro
+        trigger:
+          on: other
+          text: 3 Groups, no auto-aggro
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Reprogrammed Mining Drone
+            group: Right Group (22-25 km from warp-in)
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Reprogrammed Mining Drone
+            group: Middle Group (24-25 km from warp-in)
+          - count: "5"
+            class: Elite Cruiser
+            names:
+              - Reprogrammed Mining Drone
+            group: Middle Group (24-25 km from warp-in)
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Reprogrammed Mining Drone
+            group: Middle Group (24-25 km from warp-in)
+          - count: "3"
+            class: Frigate
+            names:
+              - Reprogrammed Mining Drone
+            group: Left Group (29-30 km from warp-in)
+          - count: "3"
+            class: Cruiser
+            names:
+              - Reprogrammed Mining Drone
+            group: Left Group (29-30 km from warp-in)

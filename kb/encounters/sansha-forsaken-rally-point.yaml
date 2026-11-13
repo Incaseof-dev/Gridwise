@@ -1,0 +1,143 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: sansha-forsaken-rally-point
+kind: anomaly
+name: Sansha Forsaken Rally Point
+dedRating: null
+anomalyClass: 6
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Sansha Forsaken Rally Point
+    url: https://wiki.eveuniversity.org/Sansha_Forsaken_Rally_Point
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225167"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Ungated pocket with multiple waves of rats.
+  - text: "Escalation: Sansha Rallying Point can escalate to Sansha Prison Camp."
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: 0-3
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Hellhound
+          - count: 1-2
+            class: Battleship
+            names:
+              - Centus Plague Lord
+      - id: wave-1
+        trigger:
+          on: other
+          text: "Wave #1"
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Manslayer
+              - Centii Loyal Enslaver
+          - count: "1"
+            class: Battleship
+            names:
+              - Centus Plague Lord
+          - count: "1"
+            class: Battleship
+            names:
+              - Centus Beast Lord
+            ewar:
+              - kind: trackingDisruption
+      - id: wave-2
+        trigger:
+          on: other
+          text: "Wave #2"
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Cruiser
+            names:
+              - Centum Torturer
+              - Centum Mutilator
+          - count: "2"
+            class: Battleship
+            names:
+              - Centus Overlord
+              - Centus Dark Lord
+      - id: wave-3
+        trigger:
+          on: other
+          text: "Wave #3"
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Centii loyal Ravener
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Centii loyal Servant
+          - count: "2"
+            class: Battleship
+            names:
+              - Centus Dread Lord
+              - Centus Tyrant
+      - id: wave-4
+        trigger:
+          on: other
+          text: "Wave #4"
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Centatis Specter
+              - Centatis Phantasm
+          - count: "4"
+            class: Battleship
+            names:
+              - Centus Dark Lord
+              - Centus Tyrant
+      - id: wave-5
+        trigger:
+          on: other
+          text: "Wave #5"
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Fiend
+              - Centum Loyal Mutilator
+          - count: "3"
+            class: Battleship
+            names:
+              - Centus Dark Lord
+              - Centus Tyrant
+      - id: wave-6
+        trigger:
+          on: other
+          text: "Wave #6"
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Battleship
+            names:
+              - Centus Dark Lord
+              - Centus Overlord
+sde:
+  dungeonIds:
+    - 3444

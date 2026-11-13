@@ -1,0 +1,107 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: cargo-delivery-blood-raiders-level-4
+kind: mission
+name: Cargo Delivery
+level: 4
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Cargo Delivery (Blood Raiders) (Level 4)
+    url: https://wiki.eveuniversity.org/Cargo_Delivery_(Blood_Raiders)_(Level_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191606"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal: []
+  resist:
+    - em
+    - thermal
+objectives:
+  - text: Deliver 10 units of Quafe Ultra (1.0 m3)
+ewar:
+  - kind: neut
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite frigates"
+  - text: "Suggested ships: Battleship (Blitz: fast Frigate or Shuttle)"
+  - text: "Blitz: Warp to the mission in a shuttle or fast frigate with a MWD."
+  - text: "Blitz: Approach and open the Warehouse container, align, loot and warp out."
+pockets:
+  - name: Single ungated Pocket
+    notes:
+      - text: Looting the Quafe Ultra from the Warehouse (40km) triggers the spawn, potentially scrambling you.
+      - text: A second [optional] spawn is triggered by killing the Destroyer (Corpior Friar).
+      - text: Beware that this spawn has up to 6 Battleships with Nosferatus on top of the container, so if you intend to fight be prepared to warp out before you get capped out (beware of warp disruptors).
+      - text: The battleships are also of the more stronger variants. Combined with neuts they pose a serious threath.
+      - text: Loot the Warehouse with a shuttle, come back with a Battleship, Micro Jump and snipe if needed.
+      - text: Done with a T2 fit Dominix from warp in (~646 DPS, 112.9 ehp/s rep, 16 min cap).
+      - text: If you can get outside their effective gun range (about 40 km) you can easily snipe them safely.
+    waves:
+      - id: first-spawn-15-63km
+        trigger:
+          on: other
+          text: First Spawn (15-63km)
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Elite Frigate
+            names:
+              - Elder Corpii Herald
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Destroyer
+            names:
+              - Corpior Cleric
+            triggers: Last killed triggers second spawn
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Shadow Sage
+              - Elder Corpum Dark Priest
+          - count: 2-3
+            class: Battlecruiser
+            names:
+              - Corpatis Exorcist
+              - Corpatis Phantom
+      - id: second-spawn-16-52km
+        trigger:
+          on: other
+          text: Second Spawn (16-52km)
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Elder Corpii Diviner
+              - Elder Corpii Engraver
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Corpum Arch Priest
+              - Corpum Arch Sage
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Corpatis Exorcist
+          - count: "5"
+            class: Battleship
+            names:
+              - Corpus Archbishop
+            ewar:
+              - kind: neut
+            note: NOS:25km range, 25% chance, 350 units
+          - count: "1"
+            class: Battleship
+            names:
+              - Kubi Gayar

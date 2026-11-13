@@ -1,0 +1,102 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: blood-hideaway
+kind: anomaly
+name: Blood Hideaway
+dedRating: null
+anomalyClass: 1
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Blood Hideaway
+    url: https://wiki.eveuniversity.org/Blood_Hideaway
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225113"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Rating: Class 1 Level 1"
+  - text: Blood Hideaway is an unrated combat site belonging to the Blood Raiders pirate faction. It can be found via exploration as a cosmic anomaly within systems owned by the Amarr Empire and Ammatar Mandate. As an ungated complex, the limitations as to which ships can complete this site are tied to the security rating of the system where the anomaly spawns (T2 Battleships for high-security systems, and up to Titans in low-security and null-security systems). Completing this complex may award the player with valuable Dark Blood faction modules and ammunition.
+  - text: "This combat site consists of a single ungated pocket of space containing a variety of Frigate-sized enemy ships. Three variations of this combat anomaly exist: Blood Hidden Hideaway, Blood Forsaken Hideaway and Blood Forlorn Hideaway."
+  - text: Single ungated pocket. The last ship destroyed in each wave spawns the next wave.
+  - text: "Escalation: Needs information"
+loot:
+  - item: Dark Blood Copper Tag
+    from: Dark Blood Seeker
+    note: est. 10k ISK (wiki) · 100% drop rate
+  - item: (Dark) Blood Ammo
+    from: Dark Blood Seeker
+    note: est. 6k - 58M ISK (wiki) · 100% drop rate
+  - item: Dark Blood module
+    from: Dark Blood Seeker
+    note: est. 10k - 130M ISK (wiki) · rare
+  - item: Mid-grade Amulet Implant
+    from: Dark Blood Seeker
+    note: est. 6M - 50M ISK (wiki) · rare
+lootNotes:
+  - text: 35.000 ISK
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Corpii Worshipper
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Frigate
+            names:
+              - Corpii Herald
+              - Corpii Upholder
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Corpii Worshipper
+              - Corpii Follower
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Corpii Herald
+              - Corpii Upholder
+              - Corpii Diviner
+      - id: wave-4
+        trigger:
+          on: other
+          text: Wave 4
+          confidence: inferred
+        spawns:
+          - count: 0-1
+            class: Commander Frigate
+            names:
+              - Dark Blood Seeker
+            ewar:
+              - kind: trackingDisruption
+            drop: Faction tags/ammo, may drop implants or Dark Blood faction modules
+sde:
+  dungeonIds:
+    - 2141

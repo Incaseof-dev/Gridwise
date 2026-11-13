@@ -1,0 +1,240 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: codename-redress
+kind: mission
+name: "Codename : Redress"
+level: 5
+enemyFaction: Minmatar Republic
+review: unreviewed
+sources:
+  uni:
+    title: "EVE University Wiki – Codename : Redress"
+    url: https://wiki.eveuniversity.org/Codename_%3A_Redress
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223359"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Retrieve items from Databank
+ewar:
+  - kind: web
+  - kind: targetPaint
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Chief Republic Ivan"
+  - text: "Notes: To complete this mission, you will require a ship with a hacking module online, as well as a cargo capacity of at least 2,000 m3 volume (and preferably one with a capacity of 6,000 m3)."
+pockets:
+  - name: 1st Pocket
+    notes:
+      - text: 160gj/s of total neut.
+    waves:
+      - id: initial-hostiles
+        trigger:
+          on: warpIn
+          text: Initial Hostiles
+        spawns:
+          - count: "3"
+            class: Sentry
+            names:
+              - Tower Sentry Minmatar III
+          - count: "6"
+            class: Sentry
+            names:
+              - Minmatar Cruise Missile Battery
+          - count: "7"
+            class: Sentry
+            names:
+              - Minmatar Stasis Tower
+            ewar:
+              - kind: web
+          - count: "4"
+            class: Sentry
+            names:
+              - Minmatar Energy Neutralizer Sentry III
+            ewar:
+              - kind: neut
+  - name: 2nd Pocket
+    notes:
+      - text: There are 5 databanks in this room that will either spawn a Wave 1 or deal 400 damage.
+    waves:
+      - id: initial-hostiles
+        trigger:
+          on: warpIn
+          text: Initial Hostiles
+        spawns:
+          - count: "11"
+            class: Elite Frigate
+            names:
+              - Chief Republic Gleeda
+              - Chief Republic Hrakt
+              - Chief Republic Ivan
+              - Chief Republic Takan
+            ewar:
+              - kind: targetPaint
+              - kind: web
+              - kind: warpDisruption
+            note: Ivan scram/web and Gleeda TP
+          - count: "6"
+            class: Elite Cruiser
+            names:
+              - Chief Republic Jarpur
+              - Chief Republic Orka
+              - Chief Republic Pafi
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Republic Tribal Norn
+              - Republic Tribal Nutia
+              - Republic Tribal Venis
+          - count: "10"
+            class: Battleship
+            names:
+              - Republic Tribal Jotun
+              - Republic Tribal Pytara
+              - Republic Tribal Ymir
+            ewar:
+              - kind: targetPaint
+            note: Pytara TP
+          - count: "2"
+            class: Sentry
+            names:
+              - Tower Sentry Minmatar III
+          - count: "4"
+            class: Sentry
+            names:
+              - Minmatar Cruise Missile Battery
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Chief Republic Hrakt
+              - Chief Republic Takan
+  - name: 3rd Pocket
+    notes:
+      - text: There are 4 databanks in this room, the fourth one hacked will spawn Wave 1.
+    waves:
+      - id: initial-hostiles
+        trigger:
+          on: warpIn
+          text: Initial Hostiles
+        spawns:
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Republic Tribal Norn
+              - Republic Tribal Nutia
+          - count: "5"
+            class: Battleship
+            names:
+              - Republic Tribal Jotun
+              - Republic Tribal Sigur
+              - Republic Tribal Ymir
+          - count: "6"
+            class: Sentry
+            names:
+              - Tower Sentry Minmatar III
+          - count: "2"
+            class: Sentry
+            names:
+              - Minmatar Cruise Missile Battery
+          - count: "4"
+            class: Sentry
+            names:
+              - Minmatar Energy Neutralizer Sentry III
+            ewar:
+              - kind: neut
+      - id: wave-1-on-hacking-last-can
+        trigger:
+          on: other
+          text: Wave 1 (On hacking last can)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Chief Republic Hrakt
+              - Chief Republic Takan
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Chief Republic Jarpu
+              - Chief Republic Orka
+              - Chief Republic Pafi
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Republic Tribal Norn
+              - Republic Tribal Nutia
+  - name: 4th Pocket
+    notes:
+      - text: 6 databanks that do not cause any waves to spawn.
+    waves:
+      - id: initial-hostiles
+        trigger:
+          on: warpIn
+          text: Initial Hostiles
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Chief Republic Gleeda
+            ewar:
+              - kind: targetPaint
+            triggers: Wave 1
+          - count: "8"
+            class: Elite Cruiser
+            names:
+              - Chief Republic Jarpur
+              - Chief Republic Orka
+              - Chief Republic Rodul
+            triggers: Wave 2
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Republic Tribal Venis
+          - count: "6"
+            class: Battleship
+            names:
+              - Republic Tribal Jotun
+              - Republic Tribal Sigur
+              - Republic Tribal Ymir
+            triggers: Wave 3
+      - id: wave-1-on-last-elite-frigate-kill
+        trigger:
+          on: other
+          text: Wave 1 (On last elite frigate kill)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Chief Republic Ivan
+            ewar:
+              - kind: web
+      - id: wave-2-on-last-elite-cruiser-kill
+        trigger:
+          on: other
+          text: Wave 2 (On last elite cruiser kill)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Republic Tribal Norn
+      - id: wave-3-on-last-battleship-kill
+        trigger:
+          on: other
+          text: Wave 3 (On last battleship kill)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battleship
+            names:
+              - Republic Tribal Ymir

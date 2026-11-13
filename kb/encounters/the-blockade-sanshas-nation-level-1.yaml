@@ -1,0 +1,120 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-blockade-sanshas-nation-level-1
+kind: mission
+name: The Blockade
+level: 1
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Blockade (Sansha's Nation) (Level 1)
+    url: https://wiki.eveuniversity.org/The_Blockade_(Sansha's_Nation)_(Level_1)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191987"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Kill their high-ranking officers
+ewar:
+  - kind: trackingDisruption
+  - kind: web
+notes:
+  - text: "Web/warp disruption: Starbase Stasis Tower (Web)"
+  - text: "Suggested ships: Frigate"
+  - text: "Video: Punisher"
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: "Blitz: Destroy the Stasis Tower and then the triggers for each wave."
+    waves:
+      - id: initial-group-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group, Auto-aggro
+        spawns:
+          - count: "1"
+            class: Tower
+            names:
+              - Starbase Stasis Tower
+            ewar:
+              - kind: web
+          - count: "3"
+            class: Frigate
+            names:
+              - Centii Minion
+          - count: "1"
+            class: Frigate
+            names:
+              - Centii Plague
+            triggers: Spawns reinforcement 1
+      - id: reinforcement-1-100-140km
+        trigger:
+          on: other
+          text: Reinforcement 1, 100-140km
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Centii Minion
+              - Centii Servant
+          - count: "1"
+            class: Frigate
+            names:
+              - Centii Ravener
+            triggers: Spawns reinforcement 2
+      - id: reinforcement-2
+        trigger:
+          on: other
+          text: Reinforcement 2
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Centii Servant
+          - count: "1"
+            class: Frigate
+            names:
+              - Centii Savage
+            ewar:
+              - kind: trackingDisruption
+            triggers: Spawns reinforcement 3
+      - id: reinforcement-3
+        trigger:
+          on: other
+          text: Reinforcement 3
+          confidence: inferred
+        spawns:
+          - count: "7"
+            class: Frigate
+            names:
+              - Centii Minion
+              - Centii Servant
+          - count: "1"
+            class: Frigate
+            names:
+              - Centii Slavehunter
+            ewar:
+              - kind: trackingDisruption
+            triggers: Spawns reinforcement 4
+      - id: reinforcement-4
+        trigger:
+          on: other
+          text: Reinforcement 4
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Centii Savage
+            ewar:
+              - kind: trackingDisruption
+          - count: "1"
+            class: Frigate
+            names:
+              - Centii Plague
+            note: Mission objective

@@ -1,0 +1,150 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: provisional-sansha-outpost
+kind: complex
+name: Provisional Sansha Outpost
+dedRating: null
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Provisional Sansha Outpost
+    url: https://wiki.eveuniversity.org/Provisional_Sansha_Outpost
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "174588"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: The site rats are very far from each other, make sure to bring long range weapons and an MWD.
+pockets:
+  - name: First Room
+    notes:
+      - text: Structures on site
+    waves:
+      - id: first-wave-2-groups-100km-away
+        trigger:
+          on: other
+          text: First Wave - 2 groups ~100km away
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Centii Enslaver
+              - Centii Plague
+            group: Group 1 (100 km to the left)
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Cruiser
+            names:
+              - Centum Beast
+              - Centum Juggernaut
+            group: Group 2 (100 km to the right
+            ewar:
+              - kind: trackingDisruption
+      - id: second-wave-triggered-by-approaching-the-acceleration-gate-located-70-km-away-from-the-gate
+        trigger:
+          on: other
+          text: Second Wave - Triggered by approaching the Acceleration Gate - located 70 km away from the gate
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Centii Loyal Plague
+              - Centii Loyal Minion...
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 2-3
+            class: Destroyer
+            names:
+              - Centior Abomination
+              - Centior Devourer
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: 60km away
+  - name: Second Room
+    notes:
+      - text: ----
+      - text: Structures on site
+    waves:
+      - id: initial-defenders-70km-away-immediately-aggro
+        trigger:
+          on: warpIn
+          text: Initial defenders - 70km away immediately Aggro
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Centii Enslaver
+              - Centii Plague
+            triggers: Wave 2
+            note: type list incomplete on the source page
+      - id: timed-wave-approx-1-minute
+        trigger:
+          on: other
+          text: Timed wave (approx. 1 minute)
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Centum Fiend
+              - Centum Hellhound
+      - id: wave-2-60km
+        trigger:
+          on: other
+          text: Wave 2, 60km
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Destroyer
+            names:
+              - Centior Horror
+              - Centior Monster
+            triggers: Triggers Wave 3
+          - count: 0-1
+            class: Commander Cruiser
+            names:
+              - True Sansha Beast
+              - True Sansha Juggernaut
+            triggers: May trigger Escalation
+            drop: Faction modules
+      - id: third-wave
+        trigger:
+          on: other
+          text: Third Wave
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Centum Mutilator
+              - Centum Torturer
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Bunker
+          - count: "1"
+            class: Structure
+            names:
+              - Sansha Minor Refinery
+            triggers: May trigger Escalation
+sde:
+  dungeonIds:
+    - 1411

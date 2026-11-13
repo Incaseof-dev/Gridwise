@@ -1,0 +1,130 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: blood-port
+kind: anomaly
+name: Blood Port
+dedRating: null
+enemyFaction: Blood
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Blood Port
+    url: https://wiki.eveuniversity.org/Blood_Port
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "230338"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: The Blood Port is a combat anomaly found in Blood Raiders infested regions.
+  - text: The site consists of single ungated pocket. Reinforcement spawns are triggered by the last hostile ship destroyed. With the initial defending fleet and 3 triggered spawns, a total of around 25 ships.
+  - text: "Escalation: The anomaly can escalate to Blood Raider Coordination Center."
+lootNotes:
+  - text: ~13 Million Isk bounty, 2-3 Million salvage
+pockets:
+  - name: Slave Mine Variant
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "2"
+            class: Structure
+            names:
+              - Cloven Red Asteroid
+          - count: "1"
+            class: Structure
+            names:
+              - Asteroid Slave Mine
+      - id: initial-defending-fleet
+        trigger:
+          on: warpIn
+          text: Initial Defending Fleet
+        spawns:
+          - count: 3-4
+            class: Destroyer
+            names:
+              - Corpior Cleric
+              - Corpior Converter
+              - Corpior Friar
+              - Corpior Visionary
+          - count: 3-4
+            class: Cruiser
+            names:
+              - Corpum Dark Priest
+              - Corpum Shadow Sage
+          - count: "2"
+            class: Sentry
+            names:
+              - Tower Sentry Blood II
+          - count: "2"
+            class: Sentry
+            names:
+              - Blood Heavy Missile Battery
+      - id: 1st-reinforcement-spawn
+        trigger:
+          on: other
+          text: 1st Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Destroyer
+            names:
+              - Corpior Cleric
+              - Corpior Converter
+              - Corpior Friar
+              - Corpior Visionary
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Corpatis Dark Priest
+              - Shadow Sage
+      - id: 2nd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 2nd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Corpum Engraver
+              - Corpum Exorcist
+              - Corpum Reaver
+              - Corpum Revenant
+              - Corpum Sage
+          - count: 2-3
+            class: Battleship
+            names:
+              - Cardinal
+              - Monsignor Corpus
+      - id: 3rd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 3rd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Corpatis Bishop
+              - Corpatis Fanatic
+              - Corpatis Seer
+              - Corpatis Shade
+              - Corpatis Phantom
+          - count: 3-4
+            class: Battleship
+            names:
+              - Patriarch
+              - Pope Corpus
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Dark Blood Oracle
+            group: Possible Rare Spawn
+            drop: Possible Faction charges, modules or tags
+sde:
+  dungeonIds:
+    - 2130

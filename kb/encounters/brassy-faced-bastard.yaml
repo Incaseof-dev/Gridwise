@@ -1,0 +1,102 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: brassy-faced-bastard
+kind: mission
+name: Brassy Faced Bastard
+level: null
+enemyFaction: Caldari State
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Brassy Faced Bastard
+    url: https://wiki.eveuniversity.org/Brassy_Faced_Bastard
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "229743"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Retrieve 1x Capital Ship Design – “Dictator” (0.1 m3)
+ewar:
+  - kind: ecm
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite frigate"
+pockets:
+  - name: First room
+    notes:
+      - text: The guards are initially friendly unless fired upon. After getting close to either group, they will turn hostile. It is required to clear both groups to use the acceleration gate.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "8"
+            class: Frigate
+            names:
+              - Caldari Frigate Vessel
+          - count: "2"
+            class: Cruiser
+            names:
+              - Caldari Cruiser Vessel
+  - name: Second room
+    notes:
+      - text: The Taibu State Shirasaya might web and warp scramble your ship. Destroying all destroyer class ships from the initial group will trigger spawning of reinforcement wave 1. The capital ship design blueprint is found inside the Assembly Station DC105-A structure. The Structure is lootable without killing all enemies on grid.
+      - text: The Taibu State Suriage will point
+      - text: The Taibu State Shuriken will use ECM
+      - text: The Taibu State Suriage and Taibu State Shuriken are the 2 most important to kill when you arrive on grid
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Container
+            names:
+              - Assembly Station DC105-A
+            drop: 1x Capital Ship Design – “Dictator” (0.1 m3) (Mission objective)
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - State Shukoro Shuriken
+          - count: "1"
+            class: Frigate
+            names:
+              - Taibu State Shuriken
+            ewar:
+              - kind: ecm
+          - count: "1"
+            class: Frigate
+            names:
+              - Taibu State Suriage
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Destroyer
+            names:
+              - State Yumi
+            triggers: Triggers reinforcements
+      - id: reinforcements
+        trigger:
+          on: other
+          text: Reinforcements
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - State Shukoro Choji
+          - count: "1"
+            class: Cruiser
+            names:
+              - State Dogo

@@ -1,0 +1,213 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: evolution
+kind: mission
+name: Evolution
+level: 4
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Evolution
+    url: https://wiki.eveuniversity.org/Evolution
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231834"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the Infested Station
+ewar:
+  - kind: neut
+  - kind: web
+notes:
+  - text: "Web/warp disruption: Webbing Drone Stasis Sentry I and Strain Splinter Alvi"
+  - text: "Blitz: Destroy the Infested Station and warp out."
+  - text: "Trophies or warnings?: These ships weren't destroyed here; they were brought here for a reason."
+  - text: "Pathfinder gate: The Pathfinder Gate is a gizmo first produced by Kaalakiota corporation, as a handy navigational device in space that directs travelers to areas within and around the solarsystem. It was originally created for tourist attractions as a quick and easy way to navigate between important sites within a solar-system. However recently it has become quite popular within military and pirate circles, as a way to limit the risk of losing highly-sensitive coordinates to the enemy. Instead of handing out bookmarks to every ship in the fleet, there would be a single Pathfinder Gate which would direct the ships from a common meetingplace. That way keeping the coordinates hidden would be that much simpler, as well as preventing hackers from uncovering the coordinates by breaking into a computer mainframe of a ship of the fleet. You must approach the Pathfinder Gate before you can activate it."
+lootNotes:
+  - text: (without bonus pocket)
+  - text: "Loot: -"
+  - text: "Salvage: ~1,6M ISK"
+  - text: "Bounty: ~21,3M ISK"
+pockets:
+  - name: 1st pocket
+    notes:
+      - text: "Hard at work: While the drones circling the infested station seem to be on defensive alert. The ones circling each of the wrecks littering this area seem much more interested in working than fighting."
+      - text: When you warp in only some of the frigates are present. Rest of the ships spawn in few seconds.
+      - text: One of the battleships in each wave triggers the next wave 1.
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Infested Station
+            triggers: Mission objective
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "17"
+            class: Frigate
+            names:
+              - Worker Drone
+            triggers: Triggers wave 1
+          - count: 4-6
+            class: Battleship
+            names:
+              - Alvus Queen
+              - Matriarch Alvus
+            triggers: Triggers wave 1
+          - count: "2"
+            class: Sentry
+            names:
+              - Drone Cruise Missile Battery
+          - count: "1"
+            class: Sentry
+            names:
+              - Drone Stasis Tower
+            ewar:
+              - kind: web
+          - count: "1"
+            class: Sentry
+            names:
+              - Drone Energy Neutralizer Sentry
+            ewar:
+              - kind: neut
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Enforcer Alvatis
+          - count: "5"
+            class: Battleship
+            names:
+              - Alvus Queen
+              - Alvus Matriarch
+            triggers: Triggers wave 3
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Strain Atomizer
+            note: type list incomplete on the source page
+          - count: "5"
+            class: Battleship
+            names:
+              - Alvus Queen
+              - Matriarc Alvus
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Siege
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Battleship
+            names:
+              - Alvus Queen
+              - Matriarc Alvus
+  - name: Bonus pocket
+    notes:
+      - text: "Too quiet: Your mission is technically complted... But are there survivors within the wreckage of that carrier?"
+      - text: "Warning: very high incoming damage."
+      - text: When you warp in there is a Caldari carrier wreck, called "State Izanaki Wreck", present. Drones will spawn in few seconds.
+      - text: The carrier wreck contains 1125 small arms, 370 marines, Caldari Navy Fleet Rear-Admiral Insignia and few meta modules.
+      - text: "(Updated June 30,2026: I got the mission from SOE. Only an Imperial Navy Fleet Rear-Admiral Insignia and a meta module found in Amarr Carrier wreck. Estimated 3 million）"
+      - text: "Tips: Spawns appear at one minute intervals. Kill the point first."
+      - text: "Tips: A MJD is recommended as warping out may cause a re-spawn."
+      - text: "Tips: Incoming damage may exceed 4,000- 6,000 DPS. Fit accordingly."
+    waves:
+      - id: wave-1
+        trigger:
+          on: warpIn
+          text: Wave 1
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Devilfish Alvi
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Strain Sunder Alvi
+              - Strain Raider Alvi
+            ewar:
+              - kind: warpDisruption
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Striker Alvatis
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Battleship
+            names:
+              - Alvus Queen
+              - Alvus Matriarc
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Strain Sunder Alvi
+              - Strain Raider Alvi
+            ewar:
+              - kind: warpDisruption
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Striker Alvatis
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Battleship
+            names:
+              - Alvus Queen
+              - Alvus Matriarc
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Strain Sunder Alvi
+              - Strain Raider Alvi
+            ewar:
+              - kind: warpDisruption
+          - count: "3"
+            class: Cruiser
+            names:
+              - Striker Alvatis
+            note: type list incomplete on the source page
+          - count: "5"
+            class: Battleship
+            names:
+              - Alvus Queen
+              - Alvus Matriarc

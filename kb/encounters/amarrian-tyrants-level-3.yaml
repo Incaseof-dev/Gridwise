@@ -1,0 +1,56 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: amarrian-tyrants-level-3
+kind: mission
+name: Amarrian Tyrants
+level: 3
+enemyFaction: Amarr Empire
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Amarrian Tyrants (Level 3)
+    url: https://wiki.eveuniversity.org/Amarrian_Tyrants_(Level_3)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "205166"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy all Amarr ships.
+restrictions:
+  - text: "Ship size limit: Battleships"
+notes:
+  - text: Amarrian Tyrants is a mission involving combat against the Amarr Empire. There are multiple level variants.
+pockets:
+  - name: Single pocket
+    notes:
+      - text: Mission objective is marked complete upon destruction of General Strangelove.
+      - text: Bunkers found in this deadspace pocket may drop various ammunition.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 4-5
+            class: Frigate
+            names:
+              - Amarr Navy Soldier
+              - Amarr Navy Crucifier
+              - Amarr Navy Scout
+              - Amarr Navy Detective
+          - count: 1-2
+            class: Cruiser
+            names:
+              - Amarr Navy Officer
+              - Amarr Navy Omen
+          - count: "1"
+            class: Cruiser
+            names:
+              - General Strangelove
+            note: Renamed Imperial Navy Mallet
+          - count: 0-1
+            class: Sentry
+            names:
+              - Tower Sentry Amarr II

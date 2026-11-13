@@ -1,0 +1,294 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: angel-rally-point
+kind: anomaly
+name: Angel Rally Point
+dedRating: null
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Angel Rally Point
+    url: https://wiki.eveuniversity.org/Angel_Rally_Point
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "228511"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Angel Rally Point has 2 variations.
+  - text: Variation 1 "Workers Quarters"
+  - text: Variation 2 "Fuel Silos"
+  - text: Single ungated normal space pocket. Spawns are triggered by the last ship killed unless otherwise tagged.
+  - text: "Escalation: Angel Mineral Acquisition Outpost: Your scanner has picked up a transmission originating from a nearby system. It would be wise to investigate this mysterious signal further."
+  - text: "Escalation: This site can escalate to Angel Mineral Acquisition Outpost."
+lootNotes:
+  - text: Possible faction cruiser modules and charges from commander battlecruiser.
+pockets:
+  - name: Variation 1 (Workers Quarters)
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: 3-4
+            class: Destroyer
+            names:
+              - Gistior Defacer
+              - Gistior Seizer
+              - Gistior Trasher
+              - Gistior Defiler
+              - Gistior Shatterer
+          - count: 3-4
+            class: Cruiser
+            names:
+              - Gistum Centurion
+              - Gistum Phalanx
+          - count: "2"
+            class: Sentry
+            names:
+              - Tower Sentry Angel I
+      - id: 1st-reinforcement-spawn-from-angel-lookout
+        trigger:
+          on: other
+          text: 1st Reinforcement Spawn (From Angel Lookout)
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Arch Gistii Hijacker
+              - Arch Gistii Rogue
+              - Arch Gistii Thug
+              - Arch Gistii Outlaw
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Gistum Liquidator
+              - Gistum Marauder
+      - id: 2nd-reinforcement-spawn-from-angel-lookout
+        trigger:
+          on: other
+          text: 2nd Reinforcement Spawn (From Angel Lookout)
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Elite Frigate
+            names:
+              - Arch Gistii Rogue
+              - Arch Gistii Hijacker
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+              - Gistatis Tribunus
+            triggers: Last ship killed of this class
+      - id: 3rd-reinforcement-spawn-from-angel-lookout
+        trigger:
+          on: other
+          text: 3rd Reinforcement Spawn (From Angel Lookout)
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Cruiser
+            names:
+              - Gistum Centurion
+              - Gistum Marauder
+              - Gistum Phalanx
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Gistatis Tribunus
+              - Gistatis Legatus
+      - id: 4th-reinforcement-spawn-from-angel-lookout
+        trigger:
+          on: other
+          text: 4th Reinforcement Spawn (From Angel Lookout)
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Battlecruiser
+            names:
+              - Gistatis Primus
+              - Gistatis Praefectus
+              - Gistatis Tribunus
+              - Gistatis Tribuni
+          - count: 1-2
+            class: Battleship
+            names:
+              - Gist Warlord
+            triggers: Escalation trigger
+          - count: "1"
+            class: Commander Battlecruiser
+            names:
+              - Domination Legionnaire
+            group: Possible Rare Spawn
+            drop: Faction modules and charges
+  - name: Variation 2 (Fuel Silos)
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Gistii Hunter
+              - Gistii Raider
+              - Gistii Ambusher
+          - count: "4"
+            class: Destroyer
+            names:
+              - Gistior Defacer
+              - Gistior Seizer
+              - Gistior Trasher
+              - Gistior Defiler
+              - Gistior Shatterer
+          - count: "2"
+            class: Sentry
+            names:
+              - Tower Sentry Angel I
+          - count: "2"
+            class: Sentry
+            names:
+              - Angel Heavy Missile Battery
+      - id: 1st-reinforcement-spawn-from-angel-lookout
+        trigger:
+          on: other
+          text: 1st Reinforcement Spawn (From Angel Lookout)
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Gistii Hunter
+              - Gistii Raider
+              - Gistii Ambusher
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Gistum Phalanx
+              - Gistum Centurion
+      - id: 2nd-reinforcement-spawn-from-angel-lookout
+        trigger:
+          on: other
+          text: 2nd Reinforcement Spawn (From Angel Lookout)
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Arch Gistii Hijacker
+              - Arch Gistii Outlaw
+              - Arch Gistii Raider
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Gistum Legatus
+              - Gistum Tribunus
+      - id: 3rd-reinforcement-spawn-from-angel-lookout
+        trigger:
+          on: other
+          text: 3rd Reinforcement Spawn (From Angel Lookout)
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Gistii Hunter
+              - Gistii Raider
+              - Gistii Ambusher
+          - count: 2-3
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+              - Gistatis Tribunus
+      - id: 4th-reinforcement-spawn-from-angel-lookout
+        trigger:
+          on: other
+          text: 4th Reinforcement Spawn (From Angel Lookout)
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Elite Frigate
+            names:
+              - Arch Gistii Hijacker
+              - Arch Gistii Outlaw
+              - Arch Gistii Raider
+              - Arch Gistii Impaler
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 1-2
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+              - Gistatis Tribunus
+      - id: 5th-reinforcement-spawn-from-angel-lookout
+        trigger:
+          on: other
+          text: 5th Reinforcement Spawn (From Angel Lookout)
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+              - Gistatis Tribunus
+      - id: 6th-reinforcement-spawn-from-angel-lookout
+        trigger:
+          on: other
+          text: 6th Reinforcement Spawn (From Angel Lookout)
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Maruader
+              - Arch Gistum Centurion
+              - Arch Gistum Liquidator
+          - count: 2-3
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+              - Gistatis Tribunus
+      - id: 7th-reinforcement-spawn-from-angel-lookout
+        trigger:
+          on: other
+          text: 7th Reinforcement Spawn (From Angel Lookout)
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Battlecruiser
+            names:
+              - Gistatis Praefectus
+              - Gistatis Tribuni
+          - count: 1-2
+            class: Battleship
+            names:
+              - Gist Nephilim
+              - Gist Saint
+            ewar:
+              - kind: targetPaint
+            triggers: Escalation trigger
+          - count: "1"
+            class: Commander Battlecruiser
+            names:
+              - Domination Primus
+            group: Possible Rare Spawn
+            drop: Faction modules and charges
+sde:
+  dungeonIds:
+    - 2113

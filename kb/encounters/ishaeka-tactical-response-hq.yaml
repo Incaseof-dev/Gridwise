@@ -1,0 +1,254 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: ishaeka-tactical-response-hq
+kind: complex
+name: ISHAEKA Tactical Response HQ
+dedRating: null
+enemyFaction: null
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – ISHAEKA Tactical Response HQ
+    url: https://wiki.eveuniversity.org/ISHAEKA_Tactical_Response_HQ
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "157117"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: AVOID using cap-dependent modules in this site, you will likely lose your ship.
+  - text: The sentries have very short range but deal heavy EM damage.
+loot:
+  - item: Imperial Navy faction modules
+    from: ISHAEKA Monalaz Commander
+    note: Up to 3x
+  - item: 3-5% Hardwiring implant
+    from: ISHAEKA Monalaz Commander
+  - item: Apocalypse Navy Issue BPC
+    from: ISHAEKA Monalaz Commander
+lootNotes:
+  - text: Typical loot drop from the rats is just metal scraps, T1 ammo, drones, possible meta modules and insignias. The ISHAEKA Monalaz Commander can drop meta and Imperial Navy faction modules and possibly 3% and 5% skill hardwiring implants. Rarely it can contain a one-run Apocalypse Navy Issue BPC.
+npcs:
+  Justicar:
+    sdeTypes:
+      - Divine Imperial Forian
+      - Divine Imperial Valok
+      - Divine Imperial Sixtus
+      - Imperial Muzakir
+      - Imperial Mathura
+      - Divine Imperial Imran
+      - Divine Imperial Champion
+      - Divine Imperial Equalizer
+      - Divine Imperial Justicar
+      - Divine Imperial Avenger
+      - Imperial Templar Judgement
+      - Imperial Templar Torah
+      - Imperial Templar Ultara
+      - Imperial Templar Dominator
+      - Imperial Martyr
+      - Imperial Templar Diviner
+    class: Battleship
+  ISHAEKA Response Team Alpha:
+    sdeTypes:
+      - DED Army Colonel
+    class: Battleship
+  ISHAEKA Response Team Beta:
+    sdeTypes:
+      - DED Captain
+    class: Cruiser
+  Justicar Torah:
+    sdeTypes:
+      - Imperial Martyr
+      - Imperial Ultara
+      - Imperial Templar Torah
+    class: Battleship
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Justicar Heavy Missile Battery
+            note: Renamed Amarr Heavy Missile Battery
+          - count: "6"
+            class: Sentry
+            names:
+              - Justicar Cruise Missile Battery
+            note: Renamed Amarr Cruise Missile Battery
+          - count: "2"
+            class: Sentry
+            names:
+              - Justicar Stasis Tower
+            ewar:
+              - kind: web
+            note: Renamed Amarr Stasis Tower
+          - count: "10"
+            class: Elite Frigate
+            names:
+              - Justicar
+            note: type list incomplete on the source page
+          - count: "5"
+            class: Cruiser
+            names:
+              - Justicar
+          - count: "5"
+            class: Battleship
+            names:
+              - ISHAEKA Response Team Alpha
+            note: Range of nearly 100 km
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Justicar Haven
+            note: Locked until all ships are destroyed
+    onWarpIn: Warning! You are entering a secure DED facility. Capsuleer access is strictly forbidden. Any further attempt to trespass in this area will be met by lethal force. This is your only warning.
+  - name: Pocket 1
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - ISHAEKA Response Team Gamma (DED Soldier 3rd Class)
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Justicar
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "5"
+            class: Cruiser
+            names:
+              - ISHAEKA Response Team Beta
+          - count: "4"
+            class: Battleship
+            names:
+              - ISHAEKA Response Team Alpha
+      - id: timed-wave-spawns-shortly-after-warpin
+        trigger:
+          on: other
+          text: Timed wave (spawns shortly after warpin)
+          confidence: inferred
+        spawns:
+          - count: 9-10
+            class: Battleship
+            names:
+              - Justicar Torah
+            ewar:
+              - kind: neut
+            note: Martyr neuts
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Gate to ISHAEKA Fleet Staging Area
+            note: Unlocks when all defenders are destroyed
+    onWarpIn: Brothers, arise! We must purge the interlopers! All battleships to arms! You are a fool to have come here, capsuleer.
+  - name: Pocket 2
+    notes:
+      - text: "Upon taking the gate: We are under heavy attack! Capsuleers are breaching our staging area! All local files are to be transferred immediately from the archives to a secure location offsite. Initiate burn protocols for all hard data. DED forces will delay the capsuleer incursion at the staging area until we can secure all intelligence. All remaining forces, rally to the archives!"
+      - text: The Justicar Archives gate continues forward in the complex, while the Justicar Haven gate leads back to the first pocket.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "8"
+            class: Frigate
+            names:
+              - ISHAEKA Response Team Gamma
+          - count: "4"
+            class: Cruiser
+            names:
+              - ISHAEKA Response Team Beta (DED Officer 2nd Class)
+          - count: "8"
+            class: Cruiser
+            names:
+              - ISHAEKA Response Team Beta (DED Officer 1st Class)
+          - count: "11"
+            class: Battleship
+            names:
+              - ISHAEKA Response Team Alpha
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Justicar Archives
+            note: Locked until room is cleared
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Justicar Haven
+            note: Locked until room is cleared
+  - name: Pocket 3 (Justicar Archives)
+    notes:
+      - text: "Blitz: Destroy ISHAEKA Monalaz Commander, bookmark his wreck, warp out and come back later to pick up the loot. Imperial Templar Diviner has VERY heavy neuts, as well as strong tracking disruption."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Justicar
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "6"
+            class: Elite Frigate
+            names:
+              - Justicar
+            ewar:
+              - kind: trackingDisruption
+          - count: "6"
+            class: Elite Cruiser
+            names:
+              - Justicar
+          - count: "7"
+            class: Battleship
+            names:
+              - Justicar
+          - count: "5"
+            class: Battleship
+            names:
+              - Justicar
+            ewar:
+              - kind: neut
+              - kind: trackingDisruption
+            note: Imperial Templar Diviner neuts 20 GJ/s and tracking disrupts
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - ISHAEKA Monalaz Commander
+            drop: Can drop meta and Imperial Navy faction modules, as well as possible 3% and 5% implants. Rarely can contain an Apocalypse Navy Issue BPC
+            note: Immune to EWAR
+    onWarpIn: The information you have come for is gone. All that awaits you now is the cleansing light of Amarrian laser fire! All pilots engage!
+sde:
+  dungeonIds:
+    - 5204

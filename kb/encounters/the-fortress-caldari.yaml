@@ -1,0 +1,133 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-fortress-caldari
+kind: mission
+name: The Fortress
+level: 5
+enemyFaction: Caldari State
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Fortress (Caldari)
+    url: https://wiki.eveuniversity.org/The_Fortress_(Caldari)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "198291"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: neut
+  - kind: ecm
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: All Frigates"
+  - text: "Suggested ships: (1) Maelstrom w/ Passive Tank and (1) Maelstrom w/ Shield Transporters"
+  - text: "Space type: Normal Space. No Gate"
+pockets:
+  - name: Warp-in
+    notes:
+      - text: Ships 45-50km from warp-in unless you select to warp to a different distance. All ships aggro at warp-in.
+      - text: "Tips: Use a Passive Tank and save time by not having to destroy Energy Neutralizer Sentries"
+      - text: "Tips: Maximum damage dealing of initial groups are 1,695hp/s (Kin 85%, Therm 15%)"
+      - text: "Tips: Mission flagged complete Maintenance Array is destroyed, whether all ships are destroyed or not"
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Structure
+            names:
+              - Capital Ship Maintenance Array Spawns
+            triggers: Damage level triggers reinforcements 1 to 3
+      - id: initial-forces
+        trigger:
+          on: warpIn
+          text: Initial forces
+        spawns:
+          - count: "8"
+            class: Elite Frigate
+            names:
+              - Taibu State Nagasa
+              - Taibu State Shinai
+            ewar:
+              - kind: web
+              - kind: warpScramble
+            note: Orbits at 3km
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - State Shukuro Bajo
+              - State Shukuro Samurai
+            note: Orbits at 23km
+          - count: "9"
+            class: Battleship
+            names:
+              - State Shukuro Bishamon
+              - State Shukuro Daijo
+              - State Shukuro Shogun
+            note: Orbits at 33 - 35km
+          - count: "7"
+            class: Sentry
+            names:
+              - Caldari Energy Neutralizer Sentry III
+            ewar:
+              - kind: neut
+          - count: "5"
+            class: Sentry
+            names:
+              - Caldari Cruise Missile Battery
+          - count: "4"
+            class: Sentry
+            names:
+              - Tower Sentry Caldari III
+      - id: capital-ship-maintenance-array-spawns
+        trigger:
+          on: other
+          text: Capital Ship Maintenance Array Spawns
+          confidence: inferred
+        spawns:
+          - count: "10"
+            class: Fighter
+            names:
+              - Capital Ship Maintenance Guards
+            group: Maintenance Array reduced to 40% Shields
+            note: Renamed State Fighter
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Taibu State Nagasa
+            group: Maintenance Array reduced to 0% Shields
+            ewar:
+              - kind: web
+              - kind: warpScramble
+            note: Orbits at 3km
+          - count: "6"
+            class: Elite Cruiser
+            names:
+              - Taibu State Daimyo
+              - Taibu State Shugo
+            group: Maintenance Array reduced to 0% Shields
+            ewar:
+              - kind: ecm
+            note: Orbits at 17km
+          - count: "8"
+            class: Battleship
+            names:
+              - State Shukuro Shogun
+            group: Maintenance Array reduced to 0% Shields
+            note: Orbits at 33km
+          - count: "4"
+            class: Sentry
+            names:
+              - Tower Sentry Caldari III
+            group: Maintenance Array reduced to 0% Shields
+          - count: "10"
+            class: Fighter
+            names:
+              - Capital Ship Maintenance Guards
+            group: Maintenance Array reduced to 50% Hull
+            note: Renamed State Fighter

@@ -1,0 +1,155 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: studio-i
+kind: mission
+name: Studio I
+level: 4
+enemyFaction: The Syndicate
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Studio I
+    url: https://wiki.eveuniversity.org/Studio_I
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "230824"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal:
+    - kinetic
+    - thermal
+  resist:
+    - thermal
+    - kinetic
+objectives:
+  - text: Destroy Studio I
+ewar:
+  - kind: neut
+  - kind: sensorDamp
+notes:
+  - text: "Suggested ships: Sniping battleship"
+  - text: Extreme damage
+  - text: Gated semi-deadspace pocket two jumps away in Osmeden. You can warp around in both rooms freely.
+  - text: "Blitz: strongly discouraged; destroy all ships at warp-in, take the Gate and destroy Studio I Structure."
+  - text: "Tips: Complete the Mission by destroying the Studio I Structure"
+  - text: "Tips: The Studio I has about 150,000 hitpoints, evenly spread out across shield, armor and hull"
+  - text: "Tips: Studio I drops the Holoreel: Wanted for Love lore item"
+  - text: "Tips: Warp at 100 km and use propulsion modules to keep away from Elite Battleships"
+  - text: "Tips: Create Bookmarks and warp between two of them to get distance from the enemy"
+  - text: "Tips: Use miscellaneous Structures as warp points"
+  - text: "Tips: Align to a Structure and warp away if you need to"
+  - text: "Tips: Overheat your Shield or Armour modules"
+  - text: "Tips: Destroy Frigates and Cruisers first, although the frigates are extremely slow and not a threat to snipers"
+  - text: "Tips: Elite Battleships will try to approach to 10km, while normal battleships will stay at 50km; both have difficulty tracking an afterburning cruiser."
+  - text: "Tips: 3% Syndicate Faction Standing loss for destroying the Studio I Structure. Normal Syndicate faction standing loss for ship kills, even the Pator 6 frigates."
+pockets:
+  - name: Warp-in
+    notes:
+      - text: The two groups are 60-90km from the warp-in, and far apart from each other. Approaching or attacking either group will draw full room aggro.
+      - text: "Studio I: Unlicensed studios are a rare breed in the Gallente Federation. With the freedoms instilled into Gallente culture, the power of expression has almost limitless boundaries with which to explore. But there's a market for everything, and warped minds require debased stimulation, a desire fulfilled by unlicensed studios such as Studio I. The underworld is sick and diseased, and this studio is more impetus for wanton depravity."
+    waves:
+      - id: group-1
+        trigger:
+          on: warpIn
+          text: Group 1
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Syndicate Elite Frigate
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Syndicate Elite Cruiser
+            ewar:
+              - kind: neut
+              - kind: sensorDamp
+          - count: "2"
+            class: Elite Battleship
+            names:
+              - Syndicate Elite Battleship
+      - id: group-2
+        trigger:
+          on: other
+          text: Group 2
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Syndicate Elite Frigate
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Syndicate Elite Cruiser
+            ewar:
+              - kind: neut
+              - kind: sensorDamp
+          - count: "3"
+            class: Elite Battleship
+            names:
+              - Syndicate Elite Battleship
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+            note: Locked. All enemy ships need to be destroyed to unlock.
+  - name: Room 1
+    notes:
+      - text: Make a ping bookmark as you warp in, and use the asteroids as warp points. Unlike the first room, you can warp directly to a spot in this room from the outside.
+      - text: "Grab the kid and go: I don't know how they discovered our location, but let's get out of here. You Matari bastards, take the kid with you and meet up with us. Deliver the senator's son to us, then get out of this region. You'll never work with us again. Same with you, Gian. The deal's off. Your sick plans are shut down."
+      - text: Structures on site
+      - text: The structure damage wave spawns directly underneath the Studio I structure. The Elite Battleships do a combined total of 1800 DPS Kinetic/Thermal but have limited range. Keeping at range of at least 40 km (or spiraling in <10 km orbit, in a well-tanked T3C or similar) will mitigate most of their damage.
+    waves:
+      - id: initial-defenders-in-5-groups
+        trigger:
+          on: warpIn
+          text: Initial defenders (in 5 groups)
+        spawns:
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Syndicate Elite Cruiser
+            ewar:
+              - kind: neut
+              - kind: sensorDamp
+          - count: "10"
+            class: Battleship
+            names:
+              - Syndicate Battleship
+          - count: "2"
+            class: Elite Battleship
+            names:
+              - Syndicate Elite Battleship
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Station
+            names:
+              - Studio I
+            triggers: On Structure Damage spawns a reinforcement wave. Destroy to complete the mission
+            drop: "Holoreel: Wanted for Love"
+      - id: studio-i-structure-damage-wave
+        trigger:
+          on: other
+          text: Studio I Structure Damage Wave
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Elite Frigate
+            names:
+              - Pator 6 Elite Frigate
+          - count: "6"
+            class: Elite Battleship
+            names:
+              - Syndicate Elite Battleship

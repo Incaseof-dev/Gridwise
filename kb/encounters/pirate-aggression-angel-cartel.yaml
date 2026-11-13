@@ -1,0 +1,39 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: pirate-aggression-angel-cartel
+kind: mission
+name: Pirate Aggression
+level: 1
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Pirate Aggression (Angel Cartel)
+    url: https://wiki.eveuniversity.org/Pirate_Aggression_(Angel_Cartel)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "230763"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the Angel Cartel at the location specified in the mission details in your Opportunities interface and then report back to your agent.
+notes:
+  - text: Normal space
+  - text: As this is not a deadspace area "Warp to distance" is possible.
+  - text: No mineable asteroids.
+  - text: The structures drop no loot.
+pockets:
+  - name: Warp-in
+    notes:
+      - text: You warp straight into the pack. Aggro at once.
+    waves:
+      - id: initial-group-6-8-km
+        trigger:
+          on: warpIn
+          text: Initial group, 6-8 km
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Gistii Hijacker

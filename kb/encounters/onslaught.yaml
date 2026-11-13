@@ -1,0 +1,125 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: onslaught
+kind: mission
+name: Onslaught
+level: 1
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Onslaught
+    url: https://wiki.eveuniversity.org/Onslaught
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231192"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Make contact with a small operation that's fallen silent during a mining rights standoff.
+notes:
+  - text: Single pocket without gate.
+  - text: "Walkthrough: Pick up the 4x scientists (4m³) at the Survey Post container (10km) then place them in the Mining Outpost container (30km)."
+  - text: "Walkthrough: Kill all the drones that spawn"
+  - text: "Walkthrough: Killing the last Drone flags the mission complete."
+  - text: The dust cloud here causes area damage to any player-owned entities nearby, including drones.
+  - text: Triggered by the first rogue drone spawn, the damage inflicted seems to continue until the last rogue drone is killed.
+  - text: After that, the area is safe for mining.
+  - text: Overall damage seems to be around 400-500 HP total, so it's quite manageable even in a frigate.
+  - text: You can also use an afterburner or Microwarpdrive to move approximately 35 to 40 km 'above' or below' the dust cloud and wait for the drones to come to you. This is useful if using a ship armed only with drones.
+  - text: Whilst fighting drones are unaffected by the dust cloud, do not try to use salavage drones to salvage the frigate wrecks as these will be destroyed by the damaging effects. If you want to salvage, fly just outside the dust cloud (approximately 57kms from the mining outpost) and then pull the wrecks towards you using a Mobile Tractor Unit.
+  - text: and
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: "Popup on approaching Survey Post: Stranded Scientists - Hailing unknown ship! SOS! Please! Our life support is failing and we need your help. Please! Save us!"
+      - text: "Popup on piking up scientists: Scientist’s Message - Please, get us to the mining outpost as fast as you can!"
+      - text: "Popup on delivering scientists: Crew's Message - Thank you! Thank you for your help! But the only way we'll get out of here alive is if you clear the last of the drones out. Our lasers are down."
+      - text: "Popup on destroying last enemy: Crew's Message - We're clear! We're clear! Thank you! We'd all be dead without your help!"
+      - text: "Mineable Asteroids: From 10km to 30km"
+      - text: "Mineable Asteroids: 45x Veldspar (1.5M units)"
+      - text: "Mineable Asteroids: 30x Plagioclase (814k units)"
+      - text: "Mineable Asteroids: 16x Pyroxeres (480k units)"
+      - text: Minable asteroids confirmed to still exist as of 2025-07-23. (CCP removed minable asteroids from a lot of missions during or before 2023.)
+      - text: "Structures: No loot."
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Container
+            names:
+              - Survey Post
+            triggers: Picking up the scientists triggers spawn 1
+            note: Rescue scientists here
+          - count: "?"
+            class: Container
+            names:
+              - Mining Outpost
+            note: Cilis Leglise’s Headquarters. Deliver scientist's here
+          - count: "?"
+            class: Structure
+            names:
+              - Mining Outpost
+      - id: spawn-1-on-picking-up-the-scientists-20-30km-auto-agro
+        trigger:
+          on: other
+          text: Spawn 1 On picking up the scientists (20-30km, auto agro)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Mining Drone [Infester
+              - Splinter Alvi]
+            triggers: Last one destroyed triggers next wave
+      - id: spawn-2-10-20km-auto-aggro
+        trigger:
+          on: other
+          text: Spawn 2 (10-20km, auto aggro))
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Mining Drone [Infester
+              - Splinter Alvi]
+            triggers: Last one destroyed triggers next wave
+      - id: spawn-3-15-20km-auto-aggro
+        trigger:
+          on: other
+          text: Spawn 3 (15-20km, auto aggro))
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Mining Drone [Infester
+              - Splinter Alvi]
+      - id: spawn-4-on-delivering-scientists-20-30km-auto-aggro
+        trigger:
+          on: other
+          text: Spawn 4 On delivering scientists (20-30km, auto aggro)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Mining Drone [Infester
+              - Splinter Alvi]
+            triggers: Last one destroyed triggers next wave
+      - id: spawn-5-15-30km-auto-aggro
+        trigger:
+          on: other
+          text: Spawn 5 (15-30km, auto aggro)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Mining Drone [Infester
+              - Splinter Alvi]
+    onWarpIn: Are we glad to see you! ORE is tearing this field apart. All this debris is their doing. They're chewing up rock and spitting it out. Impacts have battered our equipment and knocked out power. But we can't cut out yet! We have a crew of scientists out there somewhere. We've lost contact. Find them before it's too late!

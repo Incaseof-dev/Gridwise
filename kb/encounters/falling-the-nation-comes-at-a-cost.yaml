@@ -1,0 +1,36 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: falling-the-nation-comes-at-a-cost
+kind: mission
+name: Falling the Nation Comes at a Cost
+level: 3
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Falling the Nation Comes at a Cost
+    url: https://wiki.eveuniversity.org/Falling_the_Nation_Comes_at_a_Cost
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191692"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the Renegade Slavers
+notes:
+  - text: "Suggested ships: HAC, Battlecruiser"
+  - text: This mission changes NPCs depending upon the corporation/faction you've received the mission with. (I.e., Mission done with True Power (Sansha) and enemy was Sansha. Mission done with Amarr and enemy was Amarr, etc.)
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: 30-40km
+        trigger:
+          on: other
+          text: 30-40km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Renegade Sansha's Slaver

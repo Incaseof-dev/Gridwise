@@ -1,0 +1,115 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: illegal-activity-level-3-3-of-3
+kind: mission
+name: Illegal Activity (3 of 3)
+level: 3
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Illegal Activity (Level 3) (3 of 3)
+    url: https://wiki.eveuniversity.org/Illegal_Activity_(Level_3)_(3_of_3)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "218654"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Find a way to get through the acceleration gate. When you are at the other side wait until the Roden Shipyard convoy arrives, then destroy it.
+ewar:
+  - kind: web
+notes:
+  - text: "Blitz: Kill then loot the R.S. Officer, activate the gate. The courier(s) will take a few mins to arrive so kill ships around the next gate, destroy the Roden Shipyard Courier when they spawn. (requires lots of tank)"
+  - text: R.S. Officer Passcard is required for unlocking gate
+lootNotes:
+  - text: "Loot: ~4.7 Mil ISK"
+  - text: "Loot: ~8.5 Mil ISK + Salvage: ~614k ISK (2024/09/08)"
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: warp-in
+        trigger:
+          on: other
+          text: Warp-in
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Cruiser
+            names:
+              - R.S. Officer
+            drop: R.S. Officer Passcard
+  - name: 2nd Pocket
+    waves:
+      - id: 2nd-pocket
+        trigger:
+          on: other
+          text: 2nd Pocket
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Cruiser
+            names:
+              - Federation Navy Vexor
+            group: Group 1
+            drop: Federation Navy Fleet Captain Insignia I
+          - count: "1"
+            class: Sentry
+            names:
+              - Gallente Sentry Gun
+            group: Group 1
+          - count: "1"
+            class: Cruiser
+            names:
+              - Federation Navy Vexor
+            group: Group 2
+            drop: Federation Navy Fleet Captain Insignia I
+          - count: "1"
+            class: Sentry
+            names:
+              - Gallente Sentry Gun
+            group: Group 2
+          - count: "1"
+            class: Cruiser
+            names:
+              - Federation Navy Vexor
+            group: Group 3
+            drop: Federation Navy Fleet Captain Insignia I
+          - count: "1"
+            class: Sentry
+            names:
+              - Gallente Sentry Gun
+            group: Group 3
+          - count: "5"
+            class: Frigate
+            names:
+              - Convoy Escort
+            group: Group 4 (middle, Roden Shipyard convoy)
+            drop: Federation Navy Command Sergeant Major Insignia I
+          - count: "2"
+            class: Hauler
+            names:
+              - Roden Shipyard Courier
+            group: Group 4 (middle, Roden Shipyard convoy)
+            triggers: Mission Completion
+          - count: "2"
+            class: Frigate
+            names:
+              - Federation Navy Gamma I Support Frigate
+            group: Group 5 (right side)
+            ewar:
+              - kind: web
+            drop: Federation Navy Sergeant Insignia III
+          - count: "2"
+            class: Cruiser
+            names:
+              - Federation Navy Vexor
+            group: Group 5 (right side)
+            drop: Federation Navy Fleet Captain Insignia I
+          - count: "3"
+            class: Cruiser
+            names:
+              - Federation Navy Thorax
+            group: Group 6 (left side)
+            drop: Federation Navy Fleet Major Insignia I

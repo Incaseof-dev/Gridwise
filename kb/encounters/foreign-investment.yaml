@@ -1,0 +1,66 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: foreign-investment
+kind: mission
+name: Foreign Investment
+level: 2
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Foreign Investment
+    url: https://wiki.eveuniversity.org/Foreign_Investment
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "212904"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the Federation Navy guards and their headquarters
+ewar:
+  - kind: sensorDamp
+notes:
+  - text: "Suggested ships: Destroyer, Cruiser"
+  - text: Objective requires Large Collidable Structures to see on overview
+  - text: "Lore Blurb: Iyen-Oursta Loopholes: Gallente Navy ships are not often allowed inside State borders – at least not officially. Conditions determined in the Iyen-Oursta Treaty at the end of the war place strict conditions on the manner in which each nation's fleets enter the other's sovereign space. One of the current laws allows such deployments, though, if they are hired by a third party as part of usual trade business. Additionally, they must meet stringent size and composition requirements that greatly limit any damage they could potentially cause. Since official search and rescue missions are, by treaty, conducted exclusively by the nation that owns the space, further \"hostile\" forces cannot legally be sent to recover hired navy forces that go missing."
+loot:
+  - item: Federation Navy Midshipman Insignia II
+  - item: Federation Navy Midshipman Insignia III
+  - item: Federation Navy Sergeant Insignia I
+lootNotes:
+  - text: "Tags: ~90k ISK (estimate)"
+pockets:
+  - name: Warp-In
+    waves:
+      - id: initial-group-25km-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group, 25km (auto-aggro)
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Gallente Navy
+            ewar:
+              - kind: sensorDamp
+          - count: "2"
+            class: Destroyer
+            names:
+              - Gallente Navy
+  - name: Pocket 1
+    waves:
+      - id: initial-group-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group (auto-aggro)
+        spawns:
+          - count: "4"
+            class: Sentry
+            names:
+              - Gallente Light Missile Battery
+          - count: "1"
+            class: Structure
+            names:
+              - Gallente Company HQ
+            triggers: Triggers mission completion once destroyed

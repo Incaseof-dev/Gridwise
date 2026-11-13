@@ -1,0 +1,92 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-serpentis-spies-level-4
+kind: mission
+name: Serpentis Spies
+level: 4
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Serpentis Spies (Level 4)
+    url: https://wiki.eveuniversity.org/The_Serpentis_Spies_(Level_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "192060"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal:
+    - kinetic
+    - thermal
+  resist:
+    - thermal
+    - kinetic
+notes:
+  - text: "Suggested ships: Ishtar, Deimos, Raven, Dominix, Abaddon"
+  - text: No Hostiles at initial gate.
+  - text: ===Single Pocket:===
+  - text: Auto aggro from Sentry Towers, attack draws aggro from Hostiles.
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: Take out all the ships. You don't have to take out the towers.
+      - text: Damage from Sentries is minimal, take them out to draw aggro from the ships so they'll close in.
+      - text: Either fit an AB, MWD or MJD to go after them or bring Warden II to snipe.
+      - text: No loot.
+      - text: "Loot + Salvage: 1.0 mil"
+      - text: "Bounty: 1.3 mil"
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Tower Sentry Serpentis III
+            group: "Tower Sentry (52- 82km):"
+          - count: "2"
+            class: Sentry
+            names:
+              - Tower Sentry Serpentis II
+            group: "Tower Sentry (52- 82km):"
+          - count: "3"
+            class: Sentry
+            names:
+              - Tower Sentry Serpentis I
+            group: "Tower Sentry (52- 82km):"
+          - count: "4"
+            class: Frigate
+            names:
+              - Mordus Gladius
+            group: "Single Group (135- 140km):"
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Bounty Hunter
+            group: "Single Group (135- 140km):"
+          - count: "5"
+            class: Cruiser
+            names:
+              - Mordus Puma
+              - Mordus Lion
+            group: "Single Group (135- 140km):"
+          - count: "4"
+            class: Destroyer
+            names:
+              - Corelior Soldiers
+              - Corelior Infantry
+            group: Group 3 (75-90 km, Minmatar Trade Station Ruins)
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Serpentis Spies
+            group: Group 3 (75-90 km, Minmatar Trade Station Ruins)
+          - count: "1"
+            class: Battleship
+            names:
+              - Core Port Admiral
+            group: Group 3 (75-90 km, Minmatar Trade Station Ruins)

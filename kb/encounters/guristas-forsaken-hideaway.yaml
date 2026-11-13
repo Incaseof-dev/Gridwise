@@ -1,0 +1,92 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: guristas-forsaken-hideaway
+kind: anomaly
+name: Guristas Forsaken Hideaway
+dedRating: null
+anomalyClass: 1
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Guristas Forsaken Hideaway
+    url: https://wiki.eveuniversity.org/Guristas_Forsaken_Hideaway
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225158"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Single open normal space pocket. Killing the last hostile ship triggers a reinforcement spawn.
+  - text: "Escalation: This site does not appear to escalate."
+lootNotes:
+  - text: ~ 400.000 ISK in bounty
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-defending-fleet
+        trigger:
+          on: warpIn
+          text: Initial Defending Fleet
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Pithii Destructor
+              - Pithii Plunderer
+          - count: 2-3
+            class: Destroyer
+            names:
+              - Pithior Supremacist
+              - Pithior Terrorist
+      - id: 1st-reinforcement-spawn
+        trigger:
+          on: other
+          text: 1st Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Dire Pithii Wrecker
+              - Dire Pithii Demolisher
+          - count: 2-3
+            class: Destroyer
+            names:
+              - Pithior Supremacist
+              - Pithior Terrorist
+      - id: 2nd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 2nd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Pithii Wrecker
+              - Pithii Destructor
+              - Pithii Demolisher
+          - count: 3-4
+            class: Destroyer
+            names:
+              - Pithior Supremacist
+              - Pithior Terrorist
+      - id: possible-rare-spawn
+        trigger:
+          on: other
+          text: Possible Rare Spawn
+          confidence: inferred
+        spawns:
+          - count: 0-1
+            class: Elite Frigate
+            names:
+              - Dread Gurista Despoiler
+            ewar:
+              - kind: ecm
+            drop: faction modules
+    onWarpIn: Formed by two former members of the Caldari Navy who go by the names "Fatal" and "the Rabbit" the Guristas are a constant thorn in the side of the Caldari State. Traditional pirates in the sense that their operation is not based around some creed or ideology, the Guristas are motivated by plain and simple greed. They have bases close to Caldari space, and from them they embark on daring raids, often into the State itself. Though the Guristas are conisdered more honorable than many of their piratical counterparts, they are still extremely dangerous, and not to be trifled with.
+sde:
+  dungeonIds:
+    - 3423

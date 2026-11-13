@@ -1,0 +1,203 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: blood-raider-coordination-center
+kind: complex
+name: Blood Raider Coordination Center
+dedRating: 7
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Blood Raider Coordination Center
+    url: https://wiki.eveuniversity.org/Blood_Raider_Coordination_Center
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "221585"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: T2 Battleship"
+notes:
+  - text: Blood Raider Coordination Center is a null security DED 7/10 site found through exploration.
+  - text: Upon warping to the site you will arrive at an acceleration gate. It's possible to do this site in a ratting Ishtar but may take 3 hours to do in that manner.
+  - text: "Database Information: The Blood Raider Covenant is infamous for its organized strike capabilities. It is no surprise, then, that Blood Raider coordination centers are a common encounter for capsuleer and DED forces in nullsec. Numerous battle reports support the theory that each complex serves as a primary base for a Dark Blood Hunter, a specialist in tracking, subduing, and harvesting the biomass of capsuleers. Because of the Blood Hunter's influence, the threat to civilian and Imperial assets posed by such coordination centers has been on the decline. The DED is more than willing to leave the Blood Hunters as a capsuleers' problem. DED Threat Assessment: 7 of 10"
+loot:
+  - item: 20th Tier Overseer's Effects
+    from: Dark Blood Hunter
+    note: est. 61.2M ISK (wiki) · 100% drop rate
+  - item: Corpus C-Type module
+    from: Dark Blood Hunter
+  - item: Bhaalgorn BPC
+    from: Dark Blood Hunter
+  - item: Dark Blood module
+    from: Dark Blood Cardinal
+  - item: Dark Blood module
+    from: Dark Blood Sage
+lootNotes:
+  - text: Bounty for this site is about 65-70 million isk.
+pockets:
+  - name: 1st pocket
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "13"
+            class: Destroyer
+            names:
+              - Corpior Conventer
+              - Corpior Templar
+              - Corpior VIsionary
+          - count: "9"
+            class: Battlecruiser
+            names:
+              - Corpatis Seer
+              - Corpatis Shade
+          - count: "8"
+            class: Battleship
+            names:
+              - Corpus Monsignor
+              - Corpus Cardinal
+              - Corpus Harbringer
+            ewar:
+              - kind: neut
+  - name: 2nd pocket
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "11"
+            class: Destroyer
+            names:
+              - Corpior Conventer
+              - Corpior Templar
+              - Corpior VIsionary
+          - count: "9"
+            class: Battlecruiser
+            names:
+              - Corpatis Seer
+              - Corpatis Shade
+          - count: "9"
+            class: Battleship
+            names:
+              - Corpus Monsignor
+              - Corpus Cardinal
+              - Corpus Harbringer
+            ewar:
+              - kind: neut
+  - name: 3rd pocket
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "12"
+            class: Destroyer
+            names:
+              - Corpior Conventer
+              - Corpior Templar
+              - Corpior VIsionary
+          - count: "11"
+            class: Battlecruiser
+            names:
+              - Corpatis Seer
+              - Corpatis Shade
+              - Corpatis Fanatic
+          - count: "1"
+            class: Overseer Cruiser
+            names:
+              - Dark Blood Sage
+            drop: Can drop faction modules
+          - count: "9"
+            class: Battleship
+            names:
+              - Corpus Monsignor
+              - Corpus Cardinal
+              - Corpus Harbringer
+            ewar:
+              - kind: neut
+  - name: 4th pocket
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "12"
+            class: Destroyer
+            names:
+              - Corpior Conventer
+              - Corpior Templar
+              - Corpior VIsionary
+          - count: "13"
+            class: Battlecruiser
+            names:
+              - Corpatis Seer
+              - Corpatis Shade
+          - count: "1"
+            class: Overseer Battleship
+            names:
+              - Dark Blood Cardinal
+            drop: Can drop faction modules
+          - count: "9"
+            class: Battleship
+            names:
+              - Corpus Monsignor
+              - Corpus Cardinal
+              - Corpus Harbringer
+            ewar:
+              - kind: neut
+  - name: 5th pocket
+    notes:
+      - text: You land ~60km from the tower and it webs you at that range. It has low health, but when you're webbed you're going to be taking a lot of damage. In an armour ratting Ishtar, I used warrior drones to kill the tower, due to their speed, and overheated tank and prop during this time, as well as aligning out. I had a DCU2 fitted rather than an ADC, though. I believe that the site despawns a certain amount of time after you kill the Dark Blood Hunter, but you may not have enough time to kill that guy if you leave the tower up.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "1"
+            class: Sentry
+            names:
+              - Blood Stasis Tower
+            ewar:
+              - kind: web
+          - count: "16"
+            class: Destroyer
+            names:
+              - Corpior Conventer
+              - Corpior Templar
+              - Corpior VIsionary
+          - count: 1-3
+            class: Cruiser
+            names:
+              - Corpum Shadow Sage
+          - count: "10"
+            class: Battlecruiser
+            names:
+              - Corpatis Seer
+              - Corpatis Shade
+              - Corpatis Bishop
+          - count: "11"
+            class: Battleship
+            names:
+              - Corpus Monsignor
+              - Corpus Cardinal
+              - Corpus Harbringer
+            ewar:
+              - kind: neut
+          - count: "1"
+            class: Overseer Battleship
+            names:
+              - Dark Blood Hunter
+            ewar:
+              - kind: web
+            drop: 20th tier OPE. Can drop Corpus C-type Modules and Bhaalgorn BPC.
+sde:
+  dungeonIds:
+    - 5237

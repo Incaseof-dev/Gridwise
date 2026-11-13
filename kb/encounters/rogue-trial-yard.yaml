@@ -1,0 +1,183 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: rogue-trial-yard
+kind: complex
+name: Rogue Trial Yard
+dedRating: null
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Rogue Trial Yard
+    url: https://wiki.eveuniversity.org/Rogue_Trial_Yard
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "230501"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Battlecruisers"
+notes:
+  - text: This combat site is a Unrated Complex which can be found in Low-sec via exploration. Its signal strength is high (20%), making it easy to scan down.
+  - text: "Escalation: Killing the Sentient Annihilator Alvum may start the escalation chain Moving Day."
+  - text: "Escalation: Expeditions: Moving Day: Mid fight you noticed a transport ship coming in from warp accompanied by a few drone escorts and after some targeted scans your instruments get a suspicious reading along their incoming warp trajectory."
+lootNotes:
+  - text: Total bounty about 1.8 M ISK. (recent 01/2017 run gave 2.69M ISK, plus ~11M ISK in Rogue Drone Component drops)
+  - text: "may drop sentient drone components: Sentient Damage Control, 2017-08-26, 270 mill +"
+  - text: Sentient Drone Navigation Computer, 2018-04-29, ~135M
+  - text: Rogue Drone 43-X Nexus Chip, 2020-10-19, ~119M ISK
+  - text: "Red box doesn't work: 4mil bounty and 5.6mil salvage/loot 2023-01-29"
+pockets:
+  - name: First Pocket
+    notes:
+      - text: Spatial Rift is roughly 7-10km from warp-in. Depending on the angle that you land you may end up <5 km from the rift and immediately trigger the proximity spawn.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Digger Drone
+          - count: 2-3
+            class: Frigate
+            names:
+              - Harvester Drone
+          - count: "3"
+            class: Cruiser
+            names:
+              - Devastator Alvum
+      - id: wave-2-timed-spawn
+        trigger:
+          on: other
+          text: "Wave #2 - timed spawn"
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Hunter Alvi
+          - count: "2"
+            class: Frigate
+            names:
+              - Strain Silverfish Alvi
+          - count: "6"
+            class: Cruiser
+            names:
+              - Assault Drone
+      - id: wave-2-wave-3-spatial-rift-proximity-spawn-5000m
+        trigger:
+          on: other
+          text: "Wave #2 - Wave #3 - Spatial Rift proximity spawn (~5000m)"
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Frigate
+            names:
+              - Barracuda
+              - Hunter
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Frigate
+            names:
+              - Strain Silverfish Alvi
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Spatial Rift
+            note: Unlocked
+  - name: Second Pocket
+    notes:
+      - text: Frigates will be 25-30km away and will aggro very quickly. Destroyers are 50-60km away and will not aggro unless approached or attacked.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Decimator
+              - Render
+              - Splinter
+              - Sunder Alvi
+          - count: "6"
+            class: Frigate
+            names:
+              - Harvester Drone
+            triggers: Trigger for Commander Wave
+          - count: "2"
+            class: Destroyer
+            names:
+              - Marauder
+              - Dismantler Alvior
+            triggers: "Trigger for Wave #2 upon aggression"
+      - id: commander-wave
+        trigger:
+          on: other
+          text: Commander Wave
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Cruiser
+            names:
+              - Violator Alvum
+          - count: "1"
+            class: Commander Cruiser
+            names:
+              - Sentient Viral Infector Alvum
+            triggers: escalation trigger
+            drop: Wreck may contain rogue drone 43-x nexus chip or faction modules, may produce Tech 2 salvage
+      - id: wave-2
+        trigger:
+          on: other
+          text: "Wave #2"
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Predator
+              - Dismantler Alvior
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Striker Alvatis
+      - id: wave-3-may-triggered-by-accessing-one-of-the-container
+        trigger:
+          on: other
+          text: "Wave #3 (may triggered by accessing one of the container)"
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Strain Viral Invector Alvum
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Defeater
+              - Enforcer
+            note: type list incomplete on the source page
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "5"
+            class: Red Container
+            names:
+              - Container With Blast Marks
+            drop: No known drop
+sde:
+  dungeonIds:
+    - 1249

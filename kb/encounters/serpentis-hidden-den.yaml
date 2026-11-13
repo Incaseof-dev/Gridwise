@@ -1,0 +1,245 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: serpentis-hidden-den
+kind: anomaly
+name: Serpentis Hidden Den
+dedRating: null
+anomalyClass: 4
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Serpentis Hidden Den
+    url: https://wiki.eveuniversity.org/Serpentis_Hidden_Den
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225156"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Escalation: This site can escalate to Serpentis Corporation Hydroponics Site."
+  - text: "Escalation: Serpentis Corporation Hydroponics Site: Your scanner has picked up a transmission originating from a nearby system. It would be wise to investigate this mysterious signal further."
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: 9-11
+            class: Frigate
+            names:
+              - Coreli Defender
+              - Coreli Guard
+              - Coreli Protector
+              - Coreli Safeguard
+          - count: 9-10
+            class: Destroyer
+            names:
+              - Colerior artillery
+              - Colerior Cannoner
+          - count: 4-5
+            class: Cruiser
+            names:
+              - Corelum Chief Defender
+              - Corelum Chief Protector
+            triggers: Trigger
+          - count: 2-3
+            class: Battlecruiser
+            names:
+              - Corelatis Captain
+              - Corelatis Platoon Leader
+          - count: "1"
+            class: Sentry
+            names:
+              - Serpentis Heavy Missile Battery
+      - id: spawn-1
+        trigger:
+          on: other
+          text: Spawn 1
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Coreli Guard
+              - Coreli Safeguard
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corelum Chief Scout
+              - Corelum Chief Spy
+            triggers: Trigger
+      - id: spawn-2
+        trigger:
+          on: other
+          text: Spawn 2
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Coreli Guard
+              - Coreli Safeguard
+          - count: 2-3
+            class: Destroyer
+            names:
+              - Corelior Artillery
+              - Corelior Cannoneer
+            triggers: Trigger
+      - id: spawn-3
+        trigger:
+          on: other
+          text: Spawn 3
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Coreli Patroller
+              - Coreli Watchman
+            ewar:
+              - kind: sensorDamp
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Corelum Chief Defender
+              - Corelum Chief Protector
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corelatis Captain Sentry
+              - Corelatis High Captain
+            triggers: Trigger
+      - id: spawn-4
+        trigger:
+          on: other
+          text: Spawn 4
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Coreli Patroller
+              - Coreli Watchman
+            ewar:
+              - kind: sensorDamp
+          - count: 4-5
+            class: Battlecruiser
+            names:
+              - Corelatis Captain Sentry
+              - Corelatis High Captain
+              - Corelatis Platoon Leader
+              - Corelatis Squad Leader
+            triggers: Trigger
+          - count: 1-2
+            class: Battleship
+            names:
+              - Core Baron
+              - Core Commodore
+      - id: spawn-5
+        trigger:
+          on: other
+          text: Spawn 5
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Coreli Patroller
+              - Coreli Watchman
+            ewar:
+              - kind: sensorDamp
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Corelum Chief Defender
+              - Corelum Chief Protector
+            triggers: Trigger
+      - id: spawn-6
+        trigger:
+          on: other
+          text: Spawn 6
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Agent
+              - Coreli Guardian Scout
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Cruiser
+            names:
+              - Corelum Chief Scout
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corelatis Captain Sentry
+              - Corelatis High Captain
+            triggers: Trigger
+      - id: spawn-7
+        trigger:
+          on: other
+          text: Spawn 7
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigates
+            names:
+              - Coreli Guard
+              - Coreli Safeguard
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Corelum Chief Defender
+              - Corelum Chief Protector
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corelatis Captain Sentry
+              - Corelatis High Captain
+            triggers: Trigger
+      - id: spawn-8
+        trigger:
+          on: other
+          text: Spawn 8
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigates
+            names:
+              - Coreli Guardian Agent
+              - Coreli Guardian Initiate
+              - Coreli Guardian Scout
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Corelum Chief Scout
+              - Corelum Chief Spy
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Corelatis Captain Sentry
+              - Corelatis High Captain
+      - id: bonus-spawn
+        trigger:
+          on: other
+          text: Bonus spawn
+          confidence: inferred
+        spawns:
+          - count: 0-1
+            class: Commander Frigate
+            names:
+              - Shadow Serpentis
+            drop: drops
+sde:
+  dungeonIds:
+    - 3460

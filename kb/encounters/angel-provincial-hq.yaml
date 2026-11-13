@@ -1,0 +1,185 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: angel-provincial-hq
+kind: complex
+name: Angel Provincial HQ
+dedRating: null
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Angel Provincial HQ
+    url: https://wiki.eveuniversity.org/Angel_Provincial_HQ
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231838"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: T2 Battleship"
+notes:
+  - text: Angel Provincial HQ is a null security unrated site found through exploration.
+  - text: "Escalation: The site can escalate to Special Forces."
+  - text: "Escalation: Escalation message:: As the dust settles from the battle, you receive a transmission from someone claiming to be a local vigilante who congratulates you on a job well done. Your computers run a check on his ship ID´s and other info they can gather on him in such a short period of time, but come up with nothing. He is at least not a part of any pirate faction, nor seems he to represent any of the official states in the galaxy. This person continues to welcome you to the area and offers to point you to some other Angel bases he knows about and have been a menace for the local population. If you want to come and meet him, he will lead the way."
+npcs:
+  Gist Militant Overseer:
+    sdeTypes:
+      - Supervisor
+    class: Commander Battleship
+pockets:
+  - name: Warp-in
+    notes:
+      - text: Upon warping to the site you will arrive at an acceleration gate.
+  - name: 1st pocket
+    notes:
+      - text: Attacking the four Gist Arena Guardian battleships will trigger an additional wave each.
+      - text: Killing the battleships that spawn in reinforcement waves does not trigger reinforcements.
+      - text: Killing the Gist Gate Guardian or having a Domination Crystal Tag in your cargo unlocks the gate.
+      - text: Do not try to blitz, it is really hard to tank.
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+            note: Unlocked after Gist Gate Guardian is dead or if you have Domination Crystal Tag in your cargo.
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Nomad
+              - Arch Gistii Ruffian
+            ewar:
+              - kind: targetPaint
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Outlaw
+              - Arch Gistii Thug
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Destroyer
+            names:
+              - Gistior Seizer
+          - count: 17-20
+            class: Cruiser
+            names:
+              - Arch Gistum Centurion
+            note: type list incomplete on the source page
+          - count: "4"
+            class: Battleship
+            names:
+              - Gist Arena Guardian
+            triggers: Attacking triggers extra wave x4
+          - count: "1"
+            class: Battleship
+            names:
+              - Gist Gate Guardian
+            triggers: Triggers gate unlock
+      - id: battleship-waves-x4
+        trigger:
+          on: other
+          text: Battleship waves (x4)
+          confidence: inferred
+        spawns:
+          - count: "?"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum
+          - count: "4"
+            class: Drone
+            names:
+              - Spider Drone
+            group: OR
+            ewar:
+              - kind: web
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Gistatis Tribuni
+            group: OR
+          - count: "4"
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Seraphim
+            group: OR
+  - name: 2nd pocket
+    notes:
+      - text: Structures
+      - text: 2 x Battlestation (no worthwhile loot). Attacking either Triggers Commander Wave)
+      - text: "drop may contain: Domination stasis webifier,"
+      - text: "drop may contain: Domination armor hardener,"
+      - text: "drop may contain: Domination shield hardener,"
+      - text: "drop may contain: Domination Heavy Stasis Grappler"
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: 8-10
+            class: Elite Frigate
+            names:
+              - Arch Gistii Outlaw
+              - Arch Gistii Thug
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: type list incomplete on the source page
+          - count: 8-10
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Phalanx
+          - count: 4-6
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Seraphim
+          - count: "4"
+            class: Sentry
+            names:
+              - Siege Autocannon Sentry
+            note: High DPS and tank
+      - id: commander-wave
+        trigger:
+          on: other
+          text: Commander wave
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Arch Gistii
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 8-10
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Phalanx
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Gist Militant Overseer
+            triggers: Escalation trigger
+            drop: Can drop faction items
+          - count: 2-4
+            class: Sentry
+            names:
+              - Siege Autocannon Sentry
+            note: High DPS and tank
+sde:
+  dungeonIds:
+    - 1643

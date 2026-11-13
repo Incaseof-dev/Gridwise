@@ -1,0 +1,106 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-infested-ruins
+kind: mission
+name: The Infested Ruins
+level: 4
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Infested Ruins
+    url: https://wiki.eveuniversity.org/The_Infested_Ruins
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "215082"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy Lesser Hives
+notes:
+  - text: "Blitz: Destroy Lesser Hive, then warp out."
+pockets:
+  - name: Single Room
+    notes:
+      - text: All spawns will aggro when you shoot the Lesser Hive.
+    waves:
+      - id: group-1-10-40km-auto-aggro
+        trigger:
+          on: other
+          text: Group 1, 10-40km, Auto-Aggro
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Sentry
+            names:
+              - Cruise Missile Battery
+            note: Right hand most battery will spawn 2 if shot. Recommend last to be killed.
+      - id: group-2-90km
+        trigger:
+          on: other
+          text: Group 2, 90km
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Strain Render
+              - Strain Splinter Alvi
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "1"
+            class: Frigate
+            names:
+              - Silverfish Alvi
+          - count: "6"
+            class: Cruiser
+            names:
+              - Violator Alvum
+      - id: group-3-90km
+        trigger:
+          on: other
+          text: Group 3, 90km
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Cruiser
+            names:
+              - Violator Alvum
+          - count: "1"
+            class: Battleship
+            names:
+              - Alvum Controller
+      - id: group-4-115km
+        trigger:
+          on: other
+          text: Group 4, 115km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Raider Alvi
+          - count: "5"
+            class: Cruiser
+            names:
+              - Disintegrator Alvum
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Enforcer Alvatis
+          - count: "1"
+            class: Battleship
+            names:
+              - Alvum Controller
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Lesser Hive
+            triggers: Mission objective

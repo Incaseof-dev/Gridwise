@@ -1,0 +1,162 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: unauthorized-military-presence-guristas-pirates-level-3
+kind: mission
+name: Unauthorized Military Presence
+level: 3
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Unauthorized Military Presence (Guristas Pirates) (Level 3)
+    url: https://wiki.eveuniversity.org/Unauthorized_Military_Presence_(Guristas_Pirates)_(Level_3)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "230475"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: ecm
+notes:
+  - text: "Suggested ships: Battlecruiser, HAC, AF"
+  - text: There is a rare chance that one of the wrecks may contain a Guristas Brass Tag worth about 17 million ISK.
+  - text: NPCs are sorted in bounty order.
+lootNotes:
+  - text: "Bounty: ~734k ISK"
+  - text: "Salvage: ~300k ISK"
+pockets:
+  - name: Warp-in
+    notes:
+      - text: "Blitz: The acceleration gate is not locked"
+    waves:
+      - id: initial-group-15-25km-aggro-on-approach-to-gate
+        trigger:
+          on: warpIn
+          text: Initial Group, 15-25km (aggro on approach to gate)
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Pithi Plunderer
+              - Pithi Wrecker
+              - Pithi Despoiler
+              - Pithi Saboteur
+            ewar:
+              - kind: ecm
+            note: Despoiler and Saboteur do EWAR
+  - name: Pocket
+    notes:
+      - text: "Blitz: Destroy Guristas Personnel Transport and loot."
+      - text: This reinforcement spawns at the location of group C and attacking it aggros group C if they are still around.
+      - text: There is a rare chance that one of the wrecks may contain a Guristas Brass Tag worth about 17 million ISK.
+    waves:
+      - id: initial-forces
+        trigger:
+          on: warpIn
+          text: Initial Forces
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Pithi Plunderer
+              - Pithi Wrecker
+              - Pithi Despoiler
+              - Pithi Saboteur
+            group: Group A, 30-40km
+            ewar:
+              - kind: ecm
+            triggers: Attacking triggers reinforcement A
+            note: Despoiler and Saboteur do EWAR
+          - count: "4"
+            class: Cruiser
+            names:
+              - Pithum Silencer
+              - Pithum Ascriber
+              - Pithum Annihilator
+              - Pithum Mortifier
+            group: Group A, 30-40km
+          - count: "4"
+            class: Frigate
+            names:
+              - Pithi Plunderer
+              - Pithi Despoiler
+            group: Group B, 70-80km
+            ewar:
+              - kind: ecm
+            note: Despoiler does EWAR
+          - count: "1"
+            class: Cruiser
+            names:
+              - Pithum Annihilator
+              - Pithum Mortifier
+            group: Group B, 70-80km
+            triggers: Destruction triggers reinforcement B
+          - count: "4"
+            class: Frigate
+            names:
+              - Pithi Plunderer
+              - Pithi Wrecker
+              - Pithi Despoiler
+              - Pithi Saboteur
+            group: Group C, 90km
+            ewar:
+              - kind: ecm
+            triggers: Attacking triggers reinforcement C-1
+            note: Despoiler and Saboteur do EWAR
+          - count: "1"
+            class: Cruiser
+            names:
+              - Guristas Personnel Transport
+            group: Group C, 90km
+            triggers: Attacking triggers reinforcement C-2
+      - id: reinforcement-a-90km
+        trigger:
+          on: other
+          text: Reinforcement A, 90km
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Cruiser
+            names:
+              - Pithum Inferno
+      - id: reinforcement-b-70-80km
+        trigger:
+          on: other
+          text: Reinforcement B, 70-80km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Pithum Silencer
+              - Pithum Ascriber
+      - id: reinforcement-c-1
+        trigger:
+          on: other
+          text: Reinforcement C-1
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Pithi Despoiler
+              - Pithi Destructor
+            ewar:
+              - kind: ecm
+            note: Despoiler does EWAR
+      - id: reinforcement-c-2-90km
+        trigger:
+          on: other
+          text: Reinforcement C-2, 90km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Pithum Silencer
+              - Pithum Killer
+              - Pithum Murderer
+            ewar:
+              - kind: ecm
+            note: Killer and Murderer do EWAR

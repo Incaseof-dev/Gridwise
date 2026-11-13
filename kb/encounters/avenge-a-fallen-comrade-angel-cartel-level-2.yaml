@@ -1,0 +1,74 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: avenge-a-fallen-comrade-angel-cartel-level-2
+kind: mission
+name: Avenge a Fallen Comrade
+level: 2
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Avenge a Fallen Comrade (Angel Cartel) (Level 2)
+    url: https://wiki.eveuniversity.org/Avenge_a_Fallen_Comrade_(Angel_Cartel)_(Level_2)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191577"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the habitat of the pirate leaders then report back to your agent.
+notes:
+  - text: "Suggested ships: Destroyer"
+  - text: "Blitz: Destroy habitat."
+  - text: No hostiles at initial gate.
+pockets:
+  - name: Single pocket
+    notes:
+      - text: Warp in on top of group 1.
+      - text: Group 2-3 aggro individually on attack.
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Hangar Array
+            names:
+              - Habitat
+            triggers: Destruction marks mission complete.
+      - id: initial-forces
+        trigger:
+          on: warpIn
+          text: Initial forces
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Gistii Hijacker
+            group: Group 1 (Auto-aggro)
+          - count: "3"
+            class: Destroyer
+            names:
+              - Gistior Shatterer
+              - Gistior Defacer
+            group: Group 2 (40-50km)
+            triggers: Reinforcement
+          - count: "7"
+            class: Frigate
+            names:
+              - Gistii Hijacker
+              - Gistii Rogue
+            group: Group 3 (50-60km)
+      - id: reinforcement
+        trigger:
+          on: other
+          text: Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Gistii Ambusher
+              - Gistii Rogue

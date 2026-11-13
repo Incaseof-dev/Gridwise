@@ -1,0 +1,49 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: amarrian-tyrants-level-2
+kind: mission
+name: Amarrian Tyrants
+level: 2
+enemyFaction: Amarr Empire
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Amarrian Tyrants (Level 2)
+    url: https://wiki.eveuniversity.org/Amarrian_Tyrants_(Level_2)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "229668"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the Amarrian threat.
+notes:
+  - text: "Suggested ships: Ishkur"
+  - text: Massive standings losses to Amarr compared to what you gain with Minmatar (may be bugged, much greater than even Amarr battleship kills).
+  - text: "Blitz: Destroy the cruiser (or the Imperial Navy Detective) and return to agent."
+pockets:
+  - name: Single pocket
+    notes:
+      - text: The Imperial Navy Detective is only present when the cruiser is not and vice versa.
+    waves:
+      - id: 5-ships-20km
+        trigger:
+          on: other
+          text: 5 ships (~20km)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Imperial Navy Scout
+              - Imperial Navy Crucifer
+          - count: 0-1
+            class: Frigate
+            names:
+              - Imperial Navy Detective
+          - count: 0-1
+            class: Cruiser
+            names:
+              - Imperial Navy Officer
+              - Imperial Navy Omen

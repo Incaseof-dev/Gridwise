@@ -1,0 +1,168 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: smuggler-interception-angel-cartel-level-4
+kind: mission
+name: Smuggler Interception
+level: 4
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Smuggler Interception (Angel Cartel) (Level 4)
+    url: https://wiki.eveuniversity.org/Smuggler_Interception_(Angel_Cartel)_(Level_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "213658"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Retrieve 10x Militants (20 m3)
+ewar:
+  - kind: web
+  - kind: targetPaint
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite frigates"
+  - text: I've kited this in an armor tanked Kronos without ever getting into armor. All you need in both pockets is an AB to keep out of their range (70km), fit accordingly.
+  - text: I've sniped from the warp-in beacon in a Dominix with Bouncer II, starting with closest Hostile (group 2 was closer) only got to 75% Shield.
+  - text: In the 2nd pocket on the other hand, the hostiles close in fast, either burn off or Micro Jump when the heat gets too intense.
+  - text: "Pocket 1: Kill everything"
+  - text: "Pocket 2: Only the ships in the group with the Transports needs to be destroyed to complete the objective (don't forget to loot the 10 Militants)."
+lootNotes:
+  - text: "Loot & Salvage: 6.7 mil"
+  - text: "Bounty: 6 mil"
+pockets:
+  - name: 1st pocket
+    notes:
+      - text: Acceleration gate is 28km away from warp in. Gate is locked until all ships have been destroyed.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Gistum Crusher
+              - Gistum Smasher
+            group: Group 1 (80 km, Fortified Spatial Rift)
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Gist Commander
+              - Gist General
+              - Gist War General
+            group: Group 1 (80 km, Fortified Spatial Rift)
+          - count: "3"
+            class: Cruiser
+            names:
+              - Gistum Crusher
+              - Gistum Smasher
+            group: Group 2 (90km)
+            ewar:
+              - kind: targetPaint
+          - count: "3"
+            class: Battleship
+            names:
+              - Gist Commander
+              - Gist General
+            group: Group 2 (90km)
+          - count: "1"
+            class: Cruiser
+            names:
+              - Gistum Breaker
+            group: Group 3 (90 km, Dysfunctional Solar Harvester)
+            ewar:
+              - kind: web
+          - count: "2"
+            class: Cruiser
+            names:
+              - Gistum Centurion
+              - Gistum Defeater
+            group: Group 3 (90 km, Dysfunctional Solar Harvester)
+          - count: "2"
+            class: Frigate
+            names:
+              - Gistii Ambusher
+              - Gistii Raider
+            group: Group 4 (120 km, Minmatar Military Station Ruins)
+          - count: "3"
+            class: Cruiser
+            names:
+              - Gistum Liquidator
+            group: Group 4 (120 km, Minmatar Military Station Ruins)
+          - count: "2"
+            class: Battleship
+            names:
+              - Gist General
+            group: Group 4 (120 km, Minmatar Military Station Ruins)
+  - name: 2nd pocket
+    notes:
+      - text: All Groups Aggro Separately. The transporter ships drop the mission objective. Mission is marked completed once the group 2 is dead.
+      - text: "Standings gain/loss: Angel Cartel: -0.3% (Angel Cartel Personnel Transport)"
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Gistii Impaler
+            group: Group 1 (65 km, Ripped Superstructure)
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Rogue
+            group: Group 1 (65 km, Ripped Superstructure)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Destroyer
+            names:
+              - Gistior Defiler
+            group: Group 1 (65 km, Ripped Superstructure)
+          - count: "2"
+            class: Cruiser
+            names:
+              - Angel Cartel Personnel Transport
+            group: Group 2 (64-76 km, Spatial Rift)
+            drop: Drops the militants (mission objective)
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Gistatis Tribuni
+            group: Group 2 (64-76 km, Spatial Rift)
+          - count: "4"
+            class: Battleship
+            names:
+              - Gist Commander
+              - Gist War General
+            group: Group 2 (64-76 km, Spatial Rift)
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Gistatis Praefectus
+            group: Group 3 (70-8 2km, Ruined Monument)
+          - count: "4"
+            class: Battleship
+            names:
+              - Gist Gist Commander
+              - Gist General
+            group: Group 3 (70-8 2km, Ruined Monument)
+          - count: "2"
+            class: Frigate
+            names:
+              - Gistii Ambusher
+              - Gistii Raider
+            group: Group 4 (81-87 km, Space Shuttle Wreck)
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Gistatis Tribunus
+              - Gistatis Praefectus
+            group: Group 4 (81-87 km, Space Shuttle Wreck)

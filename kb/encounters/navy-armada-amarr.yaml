@@ -1,0 +1,33 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: navy-armada-amarr
+kind: mission
+name: Navy Armada
+level: 4
+enemyFaction: Amarr Empire
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Navy Armada (Amarr)
+    url: https://wiki.eveuniversity.org/Navy_Armada_(Amarr)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191810"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: neut
+  - kind: trackingDisruption
+notes:
+  - text: "Suggested ships: Battleship, HAC"
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: May [Fleet] warp to optimal distance.
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns: []

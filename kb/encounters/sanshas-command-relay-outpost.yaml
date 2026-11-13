@@ -1,0 +1,139 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: sanshas-command-relay-outpost
+kind: complex
+name: Sansha's Command Relay Outpost
+dedRating: 3
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Sansha's Command Relay Outpost
+    url: https://wiki.eveuniversity.org/Sansha's_Command_Relay_Outpost
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "218316"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Cruisers"
+notes:
+  - text: This combat site consists of 2 different areas accessed by an Acceleration gate. The gates will permit Frigates, Destroyers, Cruisers, and their Tech 2 counterparts.
+  - text: Pirate ship classes encountered within this combat site are Frigate and Destroyer classes. The names and amount of ships appearing may vary slightly from what is listed here.
+loot:
+  - item: 5th Tier Overseer's Personal Effects
+    from: Sansha Black ops Squad Leader
+    note: est. 180k Isk (wiki) · 100% drop rate
+  - item: True Sansha module
+    from: Sansha Black ops Squad Leader
+    note: rare
+  - item: 6th Tier Overseers Effects
+    from: Centus Black Ops Commander
+    note: est. 360k Isk (wiki) · 100% drop rate
+  - item: Centii A-type Module
+    from: Centus Black Ops Commander
+    note: Up to 4x
+  - item: True Sansha module
+    from: Centus Black Ops Commander
+    note: rare
+  - item: Succubus BPC
+    from: Centus Black Ops Commander
+    note: rare
+lootNotes:
+  - text: 530.000 ISK
+npcs:
+  Centus Black Ops Agent:
+    sdeTypes:
+      - Centii Enslaver
+      - Centii Plague
+    class: Frigate
+  Centus Black Ops Assassin:
+    sdeTypes:
+      - Centior Cannibal
+      - Centior Misshape
+    class: Destroyer
+  Centus Black Ops Veteran:
+    sdeTypes:
+      - Centior Monster
+      - Centior Abomination
+      - Centior Devourer
+    class: Destroyer
+pockets:
+  - name: Room 1
+    notes:
+      - text: The Squad Leader has much stronger resists and is immune to stasis webifiers, target painters, and possibly other EWAR. The Squad Leader drops a Command Relay Key which is needed to open the next gate and is reusable. All ships must be destroyed to unlock the next gate, in addition to the key. Note that the key is not used up by the gate.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Tower Sentry Sansha I
+          - count: "8"
+            class: Frigate
+            names:
+              - Centus Black Ops Agent
+          - count: "2"
+            class: Frigate
+            names:
+              - Centus Black Ops Agent
+          - count: "3"
+            class: Destroyer
+            names:
+              - Centus Black Ops Assassin
+          - count: "2"
+            class: Destroyer
+            names:
+              - Centus Black Ops Assassin
+          - count: "1"
+            class: Overseer Frigate
+            names:
+              - Sansha Black Ops Squad Leader
+            drop: Contains 5th tier Overseers personal effects and may contain *True Sansha modules* as well as producing Tech 2 Salvage
+    onWarpIn: "This small outpost acts as a monitoring and coordination hub for the Centus division of the Sansha armed forces in this sector. It also relays communications between neighboring battletowers. DED Threat Assessment: Unsafe (3 of 10)"
+  - name: Room 2
+    notes:
+      - text: "Upon taking the gate: Relay systems such as this one are the heart and soul of Sansha's Nation. Broadcasting a constant stream of strange and incomprehensible directives from a long-dead master. Even so, the Centus squadron guarding this base should not be dismissed as mere mindless drones."
+      - text: The damage in this room can exceed 600DPS if you are not careful; however, the room is mostly destroyers, and they only deal significant damage within 10km. The destroyers are also fairly squishy, so they die quickly, reducing room DPS.
+      - text: If you are in a well-fit (t2 or equivalent) cruiser, you can safely ignore everything except the Centus Black Ops Commander. Quickly kill him, burn to his wreck, loot, and warp off. Only one heavy missile battery will aggro on warp-in, so the sentries will not be a major concern as long as you keep your distance.
+      - text: As a T1 cruiser, you can launch a single light drone, make it shoot once in an overseer frigate, and scoop it back. This will trigger his aggro and lure him out of the group.
+      - text: The Centus Black Ops Commander has high omni resists in shield(90% to all damage types) but is weak in armor and structure.
+      - text: "Upon destroying the Centus Black Ops Commander, if the site was from an escalation:: The Black Ops Commander has been destroyed, and with that, this space is safe from Sansha's mindless slaves once more."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Sentry
+            names:
+              - Sansha Tachyon Beam Sentry
+          - count: "1"
+            class: Sentry
+            names:
+              - Sansha Sentry Gun
+          - count: "2"
+            class: Sentry
+            names:
+              - Sansha Heavy Missile Battery
+          - count: "1"
+            class: Destroyer
+            names:
+              - Centus Black Ops Veteran
+          - count: "13"
+            class: Destroyer
+            names:
+              - Centus Black Ops Veteran
+          - count: "1"
+            class: Overseer Frigate
+            names:
+              - Centus Black Ops Commander
+            drop: Contains 6th Tier Overseers Personal Effects. May also contain Centii A-type Frigate modules or a Succubus BPC. As well as producing Tech 2 Salvage.
+sde:
+  dungeonIds:
+    - 2251

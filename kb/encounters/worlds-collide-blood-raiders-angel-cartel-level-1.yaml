@@ -1,0 +1,169 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: worlds-collide-blood-raiders-angel-cartel-level-1
+kind: mission
+name: Worlds Collide
+level: 1
+enemyFaction: Angel Cartel & Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Worlds Collide (Blood Raiders & Angel Cartel) (Level 1)
+    url: https://wiki.eveuniversity.org/Worlds_Collide_(Blood_Raiders_%26_Angel_Cartel)_(Level_1)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "192112"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Destroyer or smaller"
+notes:
+  - text: The Damaged Heron contains the mission objective.
+pockets:
+  - name: Warp-In (Warzone)
+    waves:
+      - id: blood-base-gate-110km-auto-aggro
+        trigger:
+          on: other
+          text: Blood Base Gate, 110km (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Corpii Seeker
+              - Corpii Collector
+      - id: angel-base-gate-130km
+        trigger:
+          on: other
+          text: Angel Base Gate, 130km
+          confidence: inferred
+        spawns:
+          - count: "8"
+            class: Frigate
+            names:
+              - Gistii Hijacker
+              - Gistii Rogue
+          - count: "1"
+            class: Destroyer
+            names:
+              - Gistior Defacer
+  - name: Angel Base
+    waves:
+      - id: group-1-auto-aggro
+        trigger:
+          on: other
+          text: Group 1 (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Gistii Ambusher
+              - Gistii Hunter
+          - count: 0-1
+            class: Frigate
+            names:
+              - Angel Overseer
+            note: 50% spawn chance
+      - id: group-2
+        trigger:
+          on: other
+          text: Group 2
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Gistii Hijacker
+              - Gistii Rogue
+      - id: group-3
+        trigger:
+          on: other
+          text: Group 3
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Gistii Ambusher
+      - id: group-3-4
+        trigger:
+          on: other
+          text: Group 3
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Gistii Raider
+          - count: "1"
+            class: Destroyer
+            names:
+              - Gistior Shatterer
+  - name: Blood Base
+    waves:
+      - id: group-1-auto-aggro
+        trigger:
+          on: other
+          text: Group 1 (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Corpii Herald
+              - Corpii Upholder
+              - Corpii Raider
+              - Corpii Diviner
+      - id: group-2
+        trigger:
+          on: other
+          text: Group 2
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Blood Disciple
+          - count: "1"
+            class: Destroyer
+            names:
+              - Corpior Friar
+      - id: group-3
+        trigger:
+          on: other
+          text: Group 3
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Corpii Engraver
+              - Corpii Reaver
+  - name: Research Outpost
+    waves:
+      - id: group-1-auto-aggro
+        trigger:
+          on: other
+          text: Group 1 (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Corpii Herald
+              - Corpii Upholder
+      - id: group-2
+        trigger:
+          on: other
+          text: Group 2
+          confidence: inferred
+        spawns:
+          - count: "13"
+            class: Frigate
+            names:
+              - Corpii Follower
+              - Corpii Herald
+              - Corpii Upholder

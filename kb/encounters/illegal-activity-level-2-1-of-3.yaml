@@ -1,0 +1,61 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: illegal-activity-level-2-1-of-3
+kind: mission
+name: Illegal Activity (1 of 3)
+level: 2
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Illegal Activity (Level 2) (1 of 3)
+    url: https://wiki.eveuniversity.org/Illegal_Activity_(Level_2)_(1_of_3)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "193204"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Investigate the asteroid field and destroy any hostiles you meet there. Acquire 1x Gallente Light Marines (2)
+ewar:
+  - kind: web
+notes:
+  - text: "Suggested ships: Destroyer"
+  - text: Wait for the ore convoy to arrive. Then take out their combat escort and the reinforcements.
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: ore-convoy
+        trigger:
+          on: other
+          text: Ore convoy
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Federation Navy Soldier
+              - Delta II Support
+            group: combat escort (Auto aggro)
+            ewar:
+              - kind: web
+            triggers: Reinforcements
+            note: Delta II Support Frigate Webifies
+          - count: "4"
+            class: Frigate
+            names:
+              - Federation Navy Miner
+            group: Mining group (No aggro)
+      - id: reinforcements
+        trigger:
+          on: other
+          text: Reinforcements
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Federation Navy Atron
+              - Federation Navy Officer
+            drop: last ship destroyed drops container with mission item objective inside

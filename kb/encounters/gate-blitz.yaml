@@ -1,0 +1,79 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: gate-blitz
+kind: mission
+name: Gate Blitz
+level: 3
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Gate Blitz
+    url: https://wiki.eveuniversity.org/Gate_Blitz
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191715"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: sensorDamp
+notes:
+  - text: "Suggested ships: Cruiser, Stealth Bomber (Blitz)"
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: Groups 1 and 2 initially present in the pocket and will auto-aggro. Reinforcement wave appears after the first Industrial is destroyed and will auto-aggro.
+      - text: "Blitz: Destroy the three Federation Industrials."
+    waves:
+      - id: 1st-group-50km-from-warp-in-auto-aggro
+        trigger:
+          on: other
+          text: 1st Group, 50km from warp-in, auto-aggro
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Federation Praktor Harpago
+              - Federation Praktor Belos
+          - count: "5"
+            class: Cruiser
+            names:
+              - Federation Calo
+              - Federation Praktor Centurion
+              - Federation Legionarius
+          - count: "2"
+            class: Cruiser
+            names:
+              - Federation Praktor Hippeus
+              - Federation Nauclarius
+            ewar:
+              - kind: sensorDamp
+      - id: 2nd-group-67km-from-warp-in
+        trigger:
+          on: other
+          text: 2nd Group, 67km from warp-in
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Industrial
+            names:
+              - Federation Industrial
+            triggers: First destroyed spawns reinforcements
+      - id: reinforcement-wave-35km-auto-aggro
+        trigger:
+          on: other
+          text: Reinforcement Wave, 35km auto-aggro
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Federation Praktor Belos
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Elite Federation Arx
+            ewar:
+              - kind: sensorDamp

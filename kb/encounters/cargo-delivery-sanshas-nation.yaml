@@ -1,0 +1,63 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: cargo-delivery-sanshas-nation
+kind: mission
+name: Cargo Delivery
+level: 4
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Cargo Delivery (Sansha's Nation)
+    url: https://wiki.eveuniversity.org/Cargo_Delivery_(Sansha's_Nation)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "215270"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Retrieve the goods
+notes:
+  - text: The goods are in the lootable container on or near the Warehouse.
+  - text: "Blitz: Warp-in, grab the goods, warp out."
+pockets:
+  - name: Warp-in
+    notes:
+      - text: On warp-in, no rats are present.
+    waves:
+      - id: wave-1
+        trigger:
+          on: warpIn
+          text: Wave 1
+        spawns:
+          - count: "2"
+            class: Cruiser
+            names:
+              - Corelum Chief Sentinel
+            triggers: Wave 2
+          - count: "3"
+            class: Battleship
+            names:
+              - Core Port Admiral
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Cruiser
+            names:
+              - Corelum Guardian Chief Defender
+              - Corelum Guardian Chief Protector
+          - count: "2"
+            class: Battleship
+            names:
+              - Core Port
+              - Core Rear Admiral
+          - count: "1"
+            class: Battleship
+            names:
+              - Dune Conal
+            note: Renamed Core Port/Rear Admiral

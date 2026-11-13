@@ -1,0 +1,84 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: standard-mining-expedition
+kind: escalation
+name: Standard Mining Expedition
+dedRating: null
+enemyFaction: null
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Standard Mining Expedition
+    url: https://wiki.eveuniversity.org/Standard_Mining_Expedition
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "215924"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: In a standard mining expedition site, you need to mine 30,000 units of ore and deposit it in the friendly Orcas, while under attack from enemy frigates and cruisers.
+pockets:
+  - name: Amarr
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Friendly Industrial
+            names:
+              - Orca
+          - count: 2-3
+            class: Friendly Frigate
+            names:
+              - Imperial War Reserves Punisher
+            ewar:
+              - kind: web
+          - count: "3"
+            class: Friendly Cruiser
+            names:
+              - Imperial War Reserves Omen
+  - name: Caldari
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Friendly Industrial
+            names:
+              - Orca
+          - count: 2-3
+            class: Friendly Frigate
+            names:
+              - State Military Stockpile Merlin
+            ewar:
+              - kind: web
+          - count: "3"
+            class: Friendly Cruiser
+            names:
+              - State Military Stockpile Caracal
+  - name: Gallente
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Friendly Industrial
+            names:
+              - Orca
+          - count: 2-3
+            class: Friendly Frigate
+            names:
+              - Federal Strategic Materiel Incursus
+            ewar:
+              - kind: web
+          - count: "3"
+            class: Friendly Cruiser
+            names:
+              - Federal Strategic Materiel Thorax

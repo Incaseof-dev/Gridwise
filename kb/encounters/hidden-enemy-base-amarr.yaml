@@ -1,0 +1,293 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: hidden-enemy-base-amarr
+kind: mission
+name: Hidden Enemy Base
+level: 5
+enemyFaction: Amarr Empire
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Hidden Enemy Base (Amarr)
+    url: https://wiki.eveuniversity.org/Hidden_Enemy_Base_(Amarr)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223365"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: web
+  - kind: neut
+  - kind: trackingDisruption
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: All Frigates 25-35% chance each"
+  - text: Deadspace with multiple gated pockets. Two Remote Cloaking Array's must be destroyed before a hidden gate that leads to the Enemy Base will appear.
+  - text: "Tips: Use a Passive Tank and save time by not having to destroy Energy Neutralizer Sentries"
+  - text: "Tips: When being Tracking Disrupted, your turrets can still be used effectively against stationary Sentries and Batteries (while your drones handle the frigates)."
+  - text: "Tips: For Pockets 5 & 6, wait until all ships have spawned before bringing in a logistics ship"
+pockets:
+  - name: 1st pocket - Entry Point
+    notes:
+      - text: Empty pocket with 3 gates that lead to the pockets.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Gate to remote cloaking array pocket 2
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Gate to remote cloaking array pocket 3
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Gate to Pocket 4
+  - name: 2nd pocket
+    notes:
+      - text: Warp disruption, neuting, tracking disruption and heavy webbing. All ships will orbit at close ~10km orbit. Destroy the Remote Cloaking Array (50,000 HP) and take the Gate to return to the Entry Point Pocket.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "9"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Napat
+              - Divine Imperial Bahir
+            ewar:
+              - kind: web
+              - kind: trackingDisruption
+              - kind: warpDisruption
+          - count: "5"
+            class: Elite Cruiser
+            names:
+              - Divine Imperial Ambrose
+              - Divine Imperial Basil
+              - Divine Imperial Wrath
+            ewar:
+              - kind: neut
+              - kind: trackingDisruption
+          - count: "8"
+            class: Sentry
+            names:
+              - Amarr Stasis Tower
+            ewar:
+              - kind: web
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate to entry point
+          - count: "1"
+            class: Structure
+            names:
+              - Remote Cloaking Array
+            triggers: Needs to be killed
+  - name: 3rd pocket
+    notes:
+      - text: Frigates will orbit at ~4 km while battleships stay at ~45 km. Destroy the Remote Cloaking Array (50,000 HP) and take the Gate to return to the Entry Point Pocket.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "9"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Imran
+              - Divine Imperial Felix
+              - Divine Imperial Nabih
+              - Divine Imperial Sixtus
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "5"
+            class: Battleship
+            names:
+              - Imperial Templar Torah
+              - Imperial Templar Ultara
+          - count: "4"
+            class: Sentry
+            names:
+              - Amarr Energy Neutralizer Sentry I
+            ewar:
+              - kind: neut
+          - count: "5"
+            class: Sentry
+            names:
+              - Amarr Energy Neutralizer Sentry II
+            ewar:
+              - kind: neut
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate to entry point
+          - count: "1"
+            class: Structure
+            names:
+              - Remote Cloaking Array
+            triggers: Needs to be killed
+  - name: 4th pocket
+    notes:
+      - text: A gate to pocket 5 will be visible here if you destroyed the two Remote Cloaking Arrays in 2nd and 3rd pockets.
+      - text: Battlecruisers orbits at 10-20 km and battleships at 50 km.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "6"
+            class: Battlecruisers
+            names:
+              - Imperial Templar Champion
+              - Imperial Templar Justicar
+          - count: "6"
+            class: Battleship
+            names:
+              - Imperial Templar Martyr
+          - count: "1"
+            class: Sentry
+            names:
+              - Amarr Energy Neutralizer Sentry III
+            ewar:
+              - kind: neut
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate to 5th pocket
+  - name: 5th pocket
+    notes:
+      - text: Timed spawns. It takes 30 seconds for all 10 cruisers to spawn. Cruisers orbit at 10-22 km.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "10"
+            class: Cruiser
+            names:
+              - Divine Imperial Champion
+              - Divine Imperial Justicar
+          - count: "6"
+            class: Battleship
+            names:
+              - Imperial Templar Martyr
+          - count: "5"
+            class: Sentry
+            names:
+              - Amarr Heavy Missile Batteries
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate to 6th pocket
+  - name: 6th pocket - Enemy Base
+    notes:
+      - text: Timed spawns. It takes 60 seconds for all ships to spawn.
+      - text: Destroy the Amarr Station (150,000 hp). Mission is flagged complete when the station is destroyed.
+      - text: Frigates and cruisers orbit at ~10 km, battlecruisers at 10-20 km and battleships 15-50 km.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Napat
+            ewar:
+              - kind: web
+              - kind: trackingDisruption
+              - kind: warpDisruption
+            triggers: Triggers replacement frigates
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Imran
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Cruiser
+            names:
+              - Divine Imperial Tamir
+              - Divine Imperial Wrath
+            ewar:
+              - kind: neut
+              - kind: trackingDisruption
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Imperial Templar Champion
+              - Imperial Templar Justicar
+          - count: "10"
+            class: Battleship
+            names:
+              - Imperial Templar Dominator
+              - Imperial Templar Martyr
+          - count: "4"
+            class: Sentry
+            names:
+              - Amarr Heavy Missile Batteries
+          - count: "2"
+            class: Sentry
+            names:
+              - Amarr Energy Neutralizer Sentry II
+            ewar:
+              - kind: neut
+          - count: "2"
+            class: Sentry
+            names:
+              - Amarr Energy Neutralizer Sentry III
+            ewar:
+              - kind: neut
+      - id: replacement-frigates
+        trigger:
+          on: other
+          text: Replacement frigates
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Napat
+            ewar:
+              - kind: web
+              - kind: trackingDisruption
+              - kind: warpDisruption
+            triggers: Triggers replacement frigates

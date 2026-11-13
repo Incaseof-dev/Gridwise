@@ -1,0 +1,57 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-mordus-headhunters-level-1
+kind: mission
+name: The Mordus Headhunters
+level: 1
+enemyFaction: Mordu's Legion Command
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Mordus Headhunters (Level 1)
+    url: https://wiki.eveuniversity.org/The_Mordus_Headhunters_(Level_1)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231028"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy them all and make sure no one survives
+notes:
+  - text: "Suggested ships: Frigate, Destroyer"
+pockets:
+  - name: Warpin
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial group
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Mordus Rookie
+  - name: Pocket
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial group
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Mordus Rookie
+              - Mordus Rapier
+      - id: reinforcement-appears-after-2-or-3-minutes
+        trigger:
+          on: other
+          text: Reinforcement (appears after 2 or 3 minutes)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Mordus Rapier
+              - Mordus Gladius

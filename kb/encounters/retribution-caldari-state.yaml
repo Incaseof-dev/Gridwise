@@ -1,0 +1,65 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: retribution-caldari-state
+kind: mission
+name: Retribution
+level: 3
+enemyFaction: Caldari State
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Retribution (Caldari State)
+    url: https://wiki.eveuniversity.org/Retribution_(Caldari_State)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "203470"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: web
+notes:
+  - text: "Suggested ships: Drake, Raven, Maelstrom, Dominix (with sentries)"
+  - text: "Blitz: Warp in, snipe the outpost and warp out"
+  - text: "Space type: Deadspace"
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: Distance to the outpost is about 60km. shooting the outpost draws pocket aggro
+      - text: Distance of the ships are 20-75 km from the warp in point
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Caldari Navy Delta Support I Frigate
+          - count: "1"
+            class: Frigate
+            names:
+              - Caldari Navy Delta Support II Frigate
+            ewar:
+              - kind: web
+          - count: "3"
+            class: Frigate
+            names:
+              - Caldari Navy Detective
+          - count: "3"
+            class: Frigate
+            names:
+              - Caldari Navy Griffin
+          - count: "5"
+            class: Frigate
+            names:
+              - Caldari Navy Officer
+          - count: "2"
+            class: Cruiser
+            names:
+              - Caldari Navy Blackbird
+          - count: "1"
+            class: Cruiser
+            names:
+              - Caldari Navy Moa

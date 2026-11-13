@@ -1,0 +1,148 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: passing-the-buck
+kind: mission
+name: Passing the Buck
+level: null
+enemyFaction: Caldari State
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Passing the Buck
+    url: https://wiki.eveuniversity.org/Passing_the_Buck
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231802"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Retrieve 1x Holoreel – Torture Log I15B (0.5 m3)
+restrictions:
+  - text: "Ship size limit: T3 destroyers and below"
+ewar:
+  - kind: ecm
+notes:
+  - text: Your agent Irichi has added few extra organs to Kipo “Foxfire” Tekiras body making him a walking bomb. Your job is to deliver him to the enemy so that their station can be blown up and you get access to the deadspace complex.
+  - text: "Blitz: Drop Kipo “Foxfire” Tekiras to the structure in first room. Kill triggers in second room, blow up the storage. Grab mission item and return to agent."
+pockets:
+  - name: Room 1
+    notes:
+      - text: The initial guards are friendly unless fired upon. After dropping of Kipo “Foxfire” Tekira at the Cilis Leglise's Headquarters structure the acceleration gate to the next stage will appear.
+      - text: Moments after the agent message, Cilis Leglise's Headquarters structure will explode, the initial spawn will disappear, and the hostile reinforcement will spawn. The gate to next room is not locked so you can take it to the next room without killing anything.
+    waves:
+      - id: passive-initial-ships
+        trigger:
+          on: warpIn
+          text: Passive initial ships
+        spawns:
+          - count: "10"
+            class: Friendly Frigate
+            names:
+              - Gallente
+              - Minmatar Frigate Vessel
+          - count: "3"
+            class: Friendly Cruiser
+            names:
+              - Caldari
+              - Gallente
+              - Minmatar Cruiser Vessel
+          - count: "8"
+            class: Battleship
+            names:
+              - Guristas Battleship Vessel
+            note: Appears on overview as hostile, but does not attack.
+      - id: hostile-reinforcement
+        trigger:
+          on: other
+          text: Hostile Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - State Shukuro Shinai
+              - State Shukuro Shhuriken
+          - count: "5"
+            class: Cruiser
+            names:
+              - State Bushi
+              - State Dogo
+  - name: Room 2
+    notes:
+      - text: Destroying the Taibu State Yari/Daito frigate triggers spawning of reinforcements 1.
+      - text: Destroying the State Shukuro Buke cruiser triggers spawning of reinforcements 2.
+      - text: Destroying the State Kerai battlecruiser makes the Caldari Storage Warehouse structure appear in which you will find the torture log holoreel.
+      - text: Minor standing loss to the Caldari State involved by destroying ships in this room.
+      - text: "Agent hand-in conversatiom: Cilis must have told you that I was crazy. That might be true; who am I to say? You can judge for yourself, but remember what you have experienced here. I have mastered my transformation; I am now perfect. Can't you tell? Don't you understand? This bickering among us, between Cilis and Kori and me, must come to an end. If they want to achieve my level of humanity, then this bickering must end, the feuds must stop, and they must trust in their fellow pirate. That is what I hoped to achieve with Lt. Kipo: He was the impetus for change. He accepted his mind, rejected his body, and willfully sacrificed himself for the betterment of the Guristas, and humanity. The holoreel was a reminder of my life before this incarnation, when social interactions, my body, my loved ones were important to me. A memento mori of a forsaken existence. Thank you; it was the final piece to true understanding. I doubt that my efforts were successful today. Cilis and Kori will most likely maintain their blood feud, their bitter struggle for supremacy in this meaningless void. I will not relent, however: As long as they continue down that path, I will be there to usher them into a new beginning, the perfect world, and the true way. This will never end until our bodies wither and our minds burn with truth. Thank you for your services, capsuleer. I know how you demigods value material possessions, so please accept this gift. You have been immeasurably helpful in assisting the Guristas. I hope we may cross paths again in the future. If you ever want to achieve enlightenment, please come find me again."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - State Shukuro Shinai
+              - State Shukuro Shuriken
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Taibu State Shuriken
+            ewar:
+              - kind: ecm
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Taibu State Yari
+              - Taibu State Daito
+            triggers: Triggers reinforcements 1
+      - id: reinforcements-1
+        trigger:
+          on: other
+          text: Reinforcements 1
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - State Shukuro Shinai
+              - State Shukuro Shuriken
+          - count: "3"
+            class: Destroyer
+            names:
+              - State Shukuro Kamikazi
+              - State Shukuro Choji
+          - count: "1"
+            class: Cruiser
+            names:
+              - State Shukuro Buke
+            triggers: Triggers reinforcements 2
+      - id: reinforcements-2
+        trigger:
+          on: other
+          text: Reinforcements 2
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - State Shukuro Shinai
+              - State Shukuro Shuriken
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Taibu State Shuriken
+            ewar:
+              - kind: ecm
+          - count: "2"
+            class: Destroyer
+            names:
+              - State Shukuro Choji
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - State Ronin
+              - State Kerai
+            triggers: Destroying this reveals the Caldari Storage Warehouse structure that contains the mission objective

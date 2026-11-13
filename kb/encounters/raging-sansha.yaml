@@ -1,0 +1,159 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: raging-sansha
+kind: mission
+name: Raging Sansha
+level: null
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Raging Sansha
+    url: https://wiki.eveuniversity.org/Raging_Sansha
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "232570"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy enemy ships
+ewar:
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite frigates"
+  - text: Deadspace.
+  - text: thumb
+  - text: "Tips: Initial aggro can be as low as a single frigate."
+  - text: "Tips: To minimize incoming damage during this mission, prioritize battleships (except trigger), then battlecruisers , and leave cruisers for last."
+  - text: "Tips: Attacking Sansha Commander (usually) triggers wave 1. Wave 1 does not need to be triggered so if you can tank the commander you can ignore him."
+  - text: "Tips: Clearing waves 2 and 3 before attacking the Commander did not trigger wave 1 (19 May 2026). The wave 1 trigger may be chance based."
+  - text: "Tips: Mission is completed when the cruisers and the frigates in wave 4 are destroyed, ignore the battleships."
+  - text: "Tips: Mission can be accepted and completed remotely."
+npcs:
+  Sansha Commander:
+    sdeTypes:
+      - Centus Tyrant
+    class: Battleship
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Savage
+              - Centii Loyal Manslayer
+              - Centii Loyal Slavehunter
+            ewar:
+              - kind: trackingDisruption
+          - count: "3"
+            class: Cruiser
+            names:
+              - Centum Beast
+              - Centum Juggernaut
+            ewar:
+              - kind: trackingDisruption
+            triggers: Last ship destroyed triggers wave 2
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Mutilator
+              - Centum Loyal Fiend
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Centatis Daemon
+              - Centatis Wraith
+              - Centatis Phantasm
+          - count: "5"
+            class: Battleship
+            names:
+              - Centus Dread Lord
+              - Centus Dark Lord
+              - Centus Overlord
+          - count: "1"
+            class: Battleship
+            names:
+              - Sansha Commander
+            triggers: When attacked, triggers Wave 1 then warps out
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Centatis Specter
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Minion
+              - Centii Loyal Servant
+              - Centii Loyal Butcher
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            triggers: Triggers Wave 3 when destroyed
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Execrator
+              - Centum Loyal Slaughterer
+            ewar:
+              - kind: trackingDisruption
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Cruiser
+            names:
+              - Centum Torturer
+            triggers: Triggers Wave 4 when destroyed
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Execrator
+      - id: wave-4
+        trigger:
+          on: other
+          text: Wave 4
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Manslayer
+              - Centii Loyal Enslaver
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Torturer
+              - Centum Loyal Slaughterer
+            ewar:
+              - kind: trackingDisruption
+            note: type list incomplete on the source page
+          - count: 1-2
+            class: Battleship
+            names:
+              - Centus Beast
+              - Centus Plague Lord
+            ewar:
+              - kind: trackingDisruption

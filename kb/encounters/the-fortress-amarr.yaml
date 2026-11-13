@@ -1,0 +1,132 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-fortress-amarr
+kind: mission
+name: The Fortress
+level: 5
+enemyFaction: Amarr Empire
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Fortress (Amarr)
+    url: https://wiki.eveuniversity.org/The_Fortress_(Amarr)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "198290"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: neut
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: All Frigates"
+  - text: "Suggested ships: (1) Maelstrom w/ Passive Tank and (1) Maelstrom w/ Shield Transporters"
+  - text: "Space type: Normal Space. No Gate"
+pockets:
+  - name: Warp-in
+    notes:
+      - text: Ships 45-55km from warp-in unless you select to warp to a different distance. All ships aggro at warp-in.
+      - text: "Tips: Use a Passive Tank and save time by not having to destroy Energy Neutralizer Sentries."
+      - text: "Tips: Maximum damage dealing of initial groups are 1,635hp/s (EM 60%, Therm 40%)."
+      - text: "Tips: Mission flagged complete when Maintenance Array is destroyed, whether all ships are destroyed or not."
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Structure
+            names:
+              - Starbase Capital Ship Maintenance Array
+            triggers: Damage level triggers reinforcements 1 to 3
+      - id: initial-forces
+        trigger:
+          on: warpIn
+          text: Initial forces
+        spawns:
+          - count: "8"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Imran
+              - Divine Imperial Sixtus
+            ewar:
+              - kind: web
+              - kind: warpScramble
+            note: Orbits at 4km
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Imperial Templar Champion
+              - Imperial Templar Justicar
+            note: Orbits at 10-22km
+          - count: "6"
+            class: Battleship
+            names:
+              - Imperial Templar Dominator
+              - Imperial Templar Ultara
+            note: orbits at 17-49km
+          - count: "8"
+            class: Sentry
+            names:
+              - Amarr Energy Neutralizer Sentry III
+            ewar:
+              - kind: neut
+          - count: "4"
+            class: Sentry
+            names:
+              - Amarr Cruise Missile Battery
+          - count: "4"
+            class: Sentry
+            names:
+              - Tower Sentry Amarr III
+      - id: capital-ship-maintenance-array-spawns
+        trigger:
+          on: other
+          text: Capital Ship Maintenance Array Spawns
+          confidence: inferred
+        spawns:
+          - count: "10"
+            class: Fighter
+            names:
+              - Capital Ship Maintenance Array Guards
+            group: Maintenance Array reduced to 40% Shields
+            note: Renamed Imperial Fighter, orbit at 3km
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Imran
+              - Divine Imperial Sixtus
+            group: Maintenance Array reduced to 50% Armor
+            ewar:
+              - kind: web
+              - kind: warpScramble
+            note: Orbits at 4km
+          - count: "6"
+            class: Elite Cruiser
+            names:
+              - Divine Imperial Ambrose
+              - Divine Imperial Basil
+            group: Maintenance Array reduced to 50% Armor
+            ewar:
+              - kind: neut
+            note: Orbits at 7-19km
+          - count: "8"
+            class: Battleship
+            names:
+              - Imperial Templar Martyr
+            group: Maintenance Array reduced to 50% Armor
+            note: Orbits at 49km
+          - count: "4"
+            class: Sentry
+            names:
+              - Tower Sentry Amarr III
+            group: Maintenance Array reduced to 50% Armor
+          - count: "10"
+            class: Fighter
+            names:
+              - Capital Ship Maintenance Array Guards
+            group: Maintenance Array reduced to 50% Hull
+            note: Renamed Imperial Fighter, orbit at 3km

@@ -1,0 +1,141 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: save-the-slaves
+kind: escalation
+name: Save The Slaves
+dedRating: null
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Save The Slaves
+    url: https://wiki.eveuniversity.org/Save_The_Slaves
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "176133"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Escalation: You land at an acceleration gate."
+  - text: "Escalation: Again you land at another acceleration gate. Take it if no escalation triggers from the Dark Blood commander."
+  - text: "Escalation: Ungated pocket."
+  - text: "Escalation: Escalation trigger: It looks as the Blood had some idea they were about to be raided and were trying to evacuate in time. Luckily you managed to get track on the ships that got away and have exact co-ordinates to their location."
+lootNotes:
+  - text: Getting all four escalations gives the possibility of an Ashimmu BPC or Corpum A-Type module drops in the final escalation site.
+pockets:
+  - name: First Pocket
+    notes:
+      - text: The first pocket is optional. Killing the Faction Cruiser has the possibility of triggering the next mission on the escalation. If not, take the gate. Simple warp-in may trigger escalation.
+      - text: "Escalation dead-end: This seems to have been a distribution and holding center for slaves, run by a medical division of the Blood Raider Covenant. All of the slaves held there seem to have lost their lives in the attack."
+      - text: "Escalation trigger: This seems to have been a distribution and holding center for slaves run by a medical division of the Blood Raider Covenant. No slaves survived the attack, but one of them did manage to send you a few different coordinates to similar locations before perishing."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Corpii Reaver
+              - Corpii Engraver
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Elder Corpii Collector
+              - Elder Corpii Seeker
+            ewar:
+              - kind: trackingDisruption
+          - count: 3-4
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Arch Templar
+              - Elder Corpum Revenant
+            ewar:
+              - kind: neut
+              - kind: trackingDisruption
+  - name: First Pocket
+    notes:
+      - text: No enemies present, only the abandoned ruins of an Amarr station. Escalation may trigger upon warp-in.
+      - text: "Escalation trigger: This station seems to have been recently deserted, but you can't find any indication as to why. You feel that the trail is quickly growing cold, except for some sketchy description of a place from the slave in the previous encounter."
+  - name: First Room (Gateless Entry)
+    notes:
+      - text: Kill all rats to activate the acceleration gate.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Corpii Reaver
+              - Corpii Engraver
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Elder Corpii Follower
+              - Elder Corpii Herald
+              - Elder Corpii Worshipper
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "4"
+            class: Cruiser
+            names:
+              - Corpum Arch Priest
+              - Corpum Arch Sage
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Corpatis Seer
+              - Corpatis Bishop
+  - name: Second Room (Gated)
+    notes:
+      - text: "Escalation Completion Message: From the look of their faces, the slaves don't mind what happens to them after this. Frail and drawn, they are just happy to get away from this place and not ending their days as blood-cows, satisfying the Blood Covenants twisted needs."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Corpii Reaver
+              - Corpii Engraver
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Elder Corpii Follower
+              - Elder Corpii Herald
+              - Elder Corpii Worshipper
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Corpum Arch Priest
+              - Corpum Arch Sage
+          - count: 4-5
+            class: Battlecruiser
+            names:
+              - Corpatis Seer
+              - Corpatis Bishop
+          - count: 3-4
+            class: Battleship
+            names:
+              - Corpus Pope
+              - Corpus Patriarch
+          - count: 0-1
+            class: Commander Cruiser
+            names:
+              - Dark Corpum Believer
+            triggers: Escalation completion trigger
+            drop: may contain Ashimmu BPC, Corpum A-type modules, Dark Blood faction modules or an implant
+sde:
+  dungeonIds:
+    - 1432

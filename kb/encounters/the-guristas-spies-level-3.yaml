@@ -1,0 +1,51 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-guristas-spies-level-3
+kind: mission
+name: The Guristas Spies
+level: 3
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Guristas Spies (Level 3)
+    url: https://wiki.eveuniversity.org/The_Guristas_Spies_(Level_3)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "192011"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Blitz: Kill group 1."
+  - text: Group 2 may aggro drones that have attacked Group 1.
+  - text: No structures drop loot.
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: group-1-30km-from-warp-in
+        trigger:
+          on: other
+          text: Group 1, 30km from warp-in
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Guristas Spy
+            note: Pithatis Executor
+      - id: group-2-60km-from-warp-in
+        trigger:
+          on: other
+          text: Group 2, 60km from warp-in
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Pithior Anarchist
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Pithatis Assaulter
+            note: Pithatis Enforcer

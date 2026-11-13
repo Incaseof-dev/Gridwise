@@ -1,0 +1,48 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: stop-the-thief-level-3
+kind: mission
+name: Stop the Thief
+level: 3
+enemyFaction: Mercenaries
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Stop the Thief (Level 3)
+    url: https://wiki.eveuniversity.org/Stop_the_Thief_(Level_3)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "197207"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal: []
+  resist:
+    - thermal
+    - em
+    - kinetic
+objectives:
+  - text: Kill The Thief and return the Reports (0.1 m3) to agent station
+notes:
+  - text: "Suggested ships: Battlecruiser"
+  - text: "Blitz: Kill The Thief. Reports show up in cargo. Dock and finish mission."
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: "Note: structures drop no loot"
+    waves:
+      - id: initial-group-20-30km-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group, 20-30km (auto-aggro)
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - The Thief
+            drop: Reports (0.1 m3)
+          - count: "5"
+            class: Cruiser
+            names:
+              - Mercenary Commander

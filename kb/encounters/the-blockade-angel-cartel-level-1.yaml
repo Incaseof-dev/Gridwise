@@ -1,0 +1,157 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-blockade-angel-cartel-level-1
+kind: mission
+name: The Blockade
+level: 1
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Blockade (Angel Cartel) (Level 1)
+    url: https://wiki.eveuniversity.org/The_Blockade_(Angel_Cartel)_(Level_1)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231035"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Eliminate the leader of the pirates blockading the stargate.
+ewar:
+  - kind: web
+  - kind: targetPaint
+notes:
+  - text: "Suggested ships: Any fast Frigate or Destroyer"
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: Every spawn Auto-Aggroes as soon as it arrives.
+      - text: Reinforcements spawn at about 80-100km from warp-in point in several groups, so it's recommended to use a MWD or AB.
+      - text: Every reinforcement gives the following
+      - text: "When eliminating the pirate leader: The mission objective has been achieved. The leader of the pirates is no more. Return to your agent for your reward."
+    waves:
+      - id: initial-spawn-on-warp-in
+        trigger:
+          on: warpIn
+          text: Initial Spawn on Warp-In
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Gistii Hijacker
+              - Gistii Rogue
+          - count: "1"
+            class: Frigate
+            names:
+              - Gistii Ambusher
+              - Gistii Raider
+            triggers: Triggers Reinforcement Wave 1
+          - count: "1"
+            class: Sentry
+            names:
+              - Starbase Stasis Tower
+            ewar:
+              - kind: web
+      - id: reinforcement-wave-1
+        trigger:
+          on: other
+          text: Reinforcement Wave 1
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Gisti Hijacker
+              - Gisti Rogue
+            group: Group A
+          - count: "2"
+            class: Frigate
+            names:
+              - Gisti Hijacker
+              - Gisti Rogue
+            group: Group B
+          - count: "4"
+            class: Frigate
+            names:
+              - Gistii Hijacker
+              - Gistii Rogue
+            group: Group C
+          - count: "1"
+            class: Frigate
+            names:
+              - Gistii Outlaw
+              - Gistii Thug
+            group: Group C
+            triggers: Triggers Reinforcement Wave 2
+      - id: reinforcement-wave-2
+        trigger:
+          on: other
+          text: Reinforcement Wave 2
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Gisti Hijacker
+              - Gisti Rogue
+            group: Group A
+          - count: "4"
+            class: Frigate
+            names:
+              - Gistii Hijacker
+              - Gistii Rogue
+            group: Group B
+          - count: "1"
+            class: Frigate
+            names:
+              - Gistii Nomad
+              - Gistii Ruffian
+            group: Group B
+            ewar:
+              - kind: targetPaint
+            triggers: Triggers Reinforcement Wave 3
+      - id: reinforcement-wave-3
+        trigger:
+          on: other
+          text: Reinforcement Wave 3
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Gistii Hijacker
+              - Gistii Rogue
+            group: Group A
+          - count: "3"
+            class: Frigate
+            names:
+              - Gistii Hijacker
+              - Gistii Rogue
+            group: Group B
+          - count: "1"
+            class: Frigate
+            names:
+              - Gistii Ruffian
+            group: Group B
+            ewar:
+              - kind: targetPaint
+            triggers: Triggers Reinforcement Wave 4
+      - id: reinforcement-wave-4
+        trigger:
+          on: other
+          text: Reinforcement Wave 4
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Gistii Ruffian
+              - Gistii Nomad
+            ewar:
+              - kind: targetPaint
+          - count: "1"
+            class: Frigate
+            names:
+              - Gistii Raider
+            triggers: Mission Target

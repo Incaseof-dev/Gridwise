@@ -1,0 +1,46 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: a-force-to-be-reckoned-with-serpentis
+kind: mission
+name: A Force to be Reckoned with
+level: 3
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – A Force to be Reckoned with (Serpentis)
+    url: https://wiki.eveuniversity.org/A_Force_to_be_Reckoned_with_(Serpentis)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "222698"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy all enemy ships
+ewar:
+  - kind: web
+pockets:
+  - name: Warp-in
+    notes:
+      - text: All ships aggro on warp-in.
+    waves:
+      - id: initial-hostiles-50-60km
+        trigger:
+          on: warpIn
+          text: Initial Hostiles (50-60km)
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Guardian Veteran
+            ewar:
+              - kind: web
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Jarkon Puman
+          - count: "1"
+            class: Sentry
+            names:
+              - Serpentis Heavy Missile Battery

@@ -1,0 +1,396 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: sansha-surveillance-squad
+kind: escalation
+name: Sansha Surveillance Squad
+dedRating: null
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Sansha Surveillance Squad
+    url: https://wiki.eveuniversity.org/Sansha_Surveillance_Squad
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "229999"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Escalation: It seemed for a while you would manage to get all of the Sansha ships, but evidently one of them has slipped away. Luckily your scanners seem to have gathered enough information to give you its approximate destination."
+pockets:
+  - name: First Location
+    notes:
+      - text: If the True Sansha ship does not spawn, take the acceleration gate.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 3-4
+            class: Cruiser
+            names:
+              - Centum Mutilator
+              - Centum Torturer
+          - count: "1"
+            class: Commander Cruiser
+            names:
+              - True Sansha's Juggernaut
+            ewar:
+              - kind: trackingDisruption
+            triggers: Escalation trigger
+            drop: Faction ammo/tags and possible True Sansha faction modules
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centatis Daemon
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Newly Constructed Acceleration Gate
+            note: Not locked
+  - name: First Pocket
+    notes:
+      - text: There are two large groups of rats at initial warp-in 50 km away. The larger right group will warp off after ~30 seconds. Destroy the Sansha Security Station to trigger escalation.
+      - text: "Escalation trigger: The station databanks contain information on the local True Power security network and among it; a location of yet another station similar to this one. That is your best clue as to where the ships that fled as you entered have gone."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Centii Loyal Savage
+              - Centii Loyal Slavehunter
+            ewar:
+              - kind: trackingDisruption
+          - count: "2"
+            class: Cruiser
+            names:
+              - Centum Execrator
+              - Centum Slaughterer
+            ewar:
+              - kind: trackingDisruption
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Fiend
+              - Centum Loyal Hellhound
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Centatis Phantasm
+              - Centatis Specter
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Sansha Security Outpost
+            triggers: Destroying triggers escalation
+  - name: Second Location
+    notes:
+      - text: Once again, take the acceleration gate if commander cruiser does not spawn.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Fiend
+              - Centum Loyal Hellhound
+          - count: "1"
+            class: Commander Cruiser
+            names:
+              - True Sansha's Execrator
+              - True Sansha's Slaughterer
+            ewar:
+              - kind: trackingDisruption
+            triggers: Escalation trigger
+            drop: Possible True Sansha faction modules, implants, faction ammo/tags
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Centatis Phantasm
+              - Centatis Specter
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Newly Constructed Acceleration Gate
+            note: Not locked
+  - name: First Pocket
+    notes:
+      - text: Two groups of rats are initially present 50 km away. One will warp away when you warp in.
+      - text: "Escalation trigger: To your dismay, the main computers of this station took a direct hit during your assault and any information that might have been there is gone up in smoke. However, your instruments ran through the data from the fleeing ships and have come up with this location as a suggestion to where they might have warped."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Sansha Security Outpost
+            triggers: Alternate escalation trigger
+          - count: 4-5
+            class: Elite Frigate
+            names:
+              - Centii Loyal Savage
+              - Centii Loyal Slavehunter
+            ewar:
+              - kind: trackingDisruption
+          - count: "3"
+            class: Cruiser
+            names:
+              - Centum Execrator
+              - Centum Slaughterer
+            ewar:
+              - kind: trackingDisruption
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Fiend
+              - Centum Loyal Hellhound
+          - count: 2-3
+            class: Battlecruiser
+            names:
+              - Centatis Phantasm
+              - Centatis Specter
+  - name: Third Location
+    notes:
+      - text: Similar number of rats. Warp disrupting rats should be killed first so you can initiate a safe warp-out if the need arises.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 1-2
+            class: Elite Frigate
+            names:
+              - Centii Loyal Minion
+              - Centii Loyal Servant
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "1"
+            class: Destroyer
+            names:
+              - Centior Abomination
+          - count: 3-4
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Hellhound
+              - Centum Loyal Torturer
+          - count: "1"
+            class: Commander Cruiser
+            names:
+              - True Sansha's Execrator
+              - True Sansha's Slaughterer
+            ewar:
+              - kind: trackingDisruption
+            triggers: Escalation trigger
+            drop: Possible True Sansha faction modules, implants, faction ammo/tags
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centatis Daemon
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Newly Constructed Acceleration Gate
+            note: Not locked
+  - name: First Pocket
+    notes:
+      - text: Simple warp-in may trigger escalation. There are no notable structures in this room.
+      - text: "Escalation trigger: It looks like the most interesting of these True Power ships got away during the fight. Luckily for you though, one of its communication devices seems to be malfunctioning and is for no apparent reason sending out a constant stream of sleezy elevator muzak. Your instruments have no problems tracing where it is coming from. This wailing extremely irritating. Aggrivating too. The muzak of doom."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 3-4
+            class: Destroyer
+            names:
+              - Centior Abomination
+              - Centior Horror
+          - count: "2"
+            class: Cruiser
+            names:
+              - Centum Ravager
+              - Centum Ravisher
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Centatis Phantasm
+              - Centatis Specter
+  - name: Fourth Location
+    notes:
+      - text: Ungated pocket. You land on a colorful mixture of ruins, structures, and rocks. No rats initially present.
+      - text: The Jeroon structure itself triggers a smartbomb wave when initially attacked which reaches out to 30 km. The structure itself is fairly easy to destroy with only 16k HP.
+      - text: The Sansha's Berserkers/Demons should be destroyed first, they deal high damage compared to normal rats and have more tank, though not as much as normal elite frigates. Kazah Durn hits hard also, out to 100 km.
+      - text: "Expedition end: For a while there, you almost wished you had brought more friends with you and you are relieved you managed to blow the station before more could scramble against you. You are also relieved you managed to kill off that blasted gurgle sound. Permanently."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Jeroon
+            triggers: Triggers reinforcements; destroy to trigger overseer wave
+            note: Aggression on Jeroon structure triggers 6 smartbomb waves every 30 seconds
+      - id: wave-1-triggered-by-approaching-jeroon
+        trigger:
+          on: other
+          text: Wave 1 (triggered by approaching Jeroon)
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Destroyer
+            names:
+              - Centior Abomination
+              - Centior Monster
+          - count: "7"
+            class: Cruiser
+            names:
+              - Centum Fiend
+              - Centum Hellhound
+      - id: wave-2-triggered-by-jeroon-aggression
+        trigger:
+          on: other
+          text: Wave 2 (triggered by Jeroon aggression)
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Sentry
+            names:
+              - Sansha Heavy Missile Battery
+      - id: wave-3-jeroon-50-armor
+        trigger:
+          on: other
+          text: Wave 3 (Jeroon 50% armor)
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Centii Loyal Butcher
+              - Centii Loyal Manslayer
+          - count: "5"
+            class: Destroyer
+            names:
+              - Centior Abomination
+              - Centior Devourer
+          - count: "4"
+            class: Cruiser
+            names:
+              - Centum Fiend
+              - Centum Mutilator
+              - Centum Torturer
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Execrator
+              - Centum Loyal Slaughterer
+            ewar:
+              - kind: trackingDisruption
+          - count: "10"
+            class: Battlecruiser
+            names:
+              - Centatis Devil
+              - Centatis Behemoth
+              - Centatis Daemon
+              - Centatis Wraith
+            note: type list incomplete on the source page
+      - id: wave-4-jeroon-structure-damage
+        trigger:
+          on: other
+          text: Wave 4 (Jeroon structure damage)
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Centii Loyal Minion
+              - Centii Loyal Servant
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Destroyer
+            names:
+              - Centior Horror
+              - Centior Monster
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Execrator
+              - Centum Loyal Slaughterer
+            ewar:
+              - kind: trackingDisruption
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centatis Daemon
+      - id: overseer-wave-jeroon-destruction
+        trigger:
+          on: other
+          text: Overseer wave (Jeroon destruction)
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Elite Frigate
+            names:
+              - Sansha's Berserker
+              - Sansha's Demon
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "1"
+            class: Storyline Mission Cruiser
+            names:
+              - Kazah Durn
+            ewar:
+              - kind: trackingDisruption
+            triggers: Trigger for expedition end
+            drop: Centum C-Type modules and a possible Phantasm BPC
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Centatis Specter
+              - Centatis Wraith
+sde:
+  dungeonIds:
+    - 1754

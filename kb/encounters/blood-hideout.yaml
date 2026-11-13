@@ -1,0 +1,160 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: blood-hideout
+kind: complex
+name: Blood Hideout
+dedRating: null
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Blood Hideout
+    url: https://wiki.eveuniversity.org/Blood_Hideout
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "200785"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Destroyer"
+notes:
+  - text: This is a gated complex.
+  - text: "Escalation: After destruction of the Blood Raider Chapel, you may receive the escalation Frentex."
+loot:
+  - item: Dark Blood Copper Tag
+    from: Dark Blood Seeker
+    note: est. 10k ISK (wiki) · 100% drop rate
+  - item: (Dark) Blood Ammo
+    from: Dark Blood Seeker
+    note: est. 6k - 58M ISK (wiki) · 100% drop rate
+  - item: Dark Blood module
+    from: Dark Blood Seeker
+    note: est. 10k - 130M ISK (wiki) · rare
+  - item: Mid-grade Talisman Implant
+    from: Dark Blood Seeker
+    note: est. 6M - 50M ISK (wiki) · rare
+lootNotes:
+  - text: 25.000 ISK
+pockets:
+  - name: First Pocket
+    waves:
+      - id: wave-1
+        trigger:
+          on: warpIn
+          text: Wave 1
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Corpii Collector
+          - count: "2"
+            class: Frigate
+            names:
+              - Corpii Follower
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Corpii Worshiper
+  - name: Second Pocket
+    notes:
+      - text: ----
+    waves:
+      - id: wave-1
+        trigger:
+          on: warpIn
+          text: Wave 1
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Corpii Seeker
+          - count: "2"
+            class: Destroyer
+            names:
+              - Corpior Devoter
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corpior Templar
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Corpii Diviner
+      - id: chapel-aggression-wave-1
+        trigger:
+          on: other
+          text: Chapel Aggression Wave 1
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Corpii Diviner
+      - id: chapel-aggression-wave-2
+        trigger:
+          on: other
+          text: Chapel Aggression Wave 2
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Corpii Templar
+          - count: "3"
+            class: Frigate
+            names:
+              - Corpii Raider
+      - id: alternate-chapel-aggression-waves-1-3
+        trigger:
+          on: other
+          text: Alternate chapel aggression waves 1-3
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Corpii Collector
+              - Corpii Follower
+      - id: possible-wave-4
+        trigger:
+          on: other
+          text: Possible wave 4
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Corpii Raider
+              - Corpii Diviner
+          - count: "1"
+            class: Commander Frigate
+            names:
+              - Dark Blood Collector
+              - Dark Blood Seeker
+            drop: Faction loot
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Blood Raider Chapel
+            triggers: Attacking triggers Chapel Aggression Waves
+sde:
+  dungeonIds:
+    - 1224

@@ -1,0 +1,414 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: domination-surveillance-squad
+kind: escalation
+name: Domination Surveillance Squad
+dedRating: null
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Domination Surveillance Squad
+    url: https://wiki.eveuniversity.org/Domination_Surveillance_Squad
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "216423"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "The first three locations are usually in low security space and the last in null security space, but this can vary. For locations #1-3, take the Newly Constructed Acceleration Gate into the first pocket if no escalation is given from destroying the commander or if the commander ship does not spawn. Gistum Breaker/Defeater cruisers rarely web."
+  - text: "Escalation start: It seemed for a while you would manage to get all of the Angels, but evidently one ship from the Domination Angels has slipped away. Luckily your scanners seem to have gathered enough information to give you its approximate destination."
+loot:
+  - item: +Overseer and other valuable loot
+  - item: Domination modules
+    note: est. Varies (wiki) · From Domination cruisers
+  - item: Gistum C-Type Cruiser modules
+    note: est. 5-250M ISK (wiki) · From Nikmar Eitan
+  - item: Cynabal blueprint
+    note: From Nikmar Eitan
+lootNotes:
+  - text: The Domination commanders drop faction ammo and tags, and may also contain Domination cruiser modules. Nikmar Eitan may drop Gistum C-Type cruiser modules or a rare Cynabal BPC.
+pockets:
+  - name: First Location
+    notes:
+      - text: Kill Domination cruiser, loot wreck, possibly get escalation. Otherwise take the Newly Constructed Acceleration Gate.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Destroyer
+            names:
+              - Gistior Seizer
+              - Gistior Trasher
+          - count: 0-1
+            class: Commander Cruiser
+            names:
+              - Domination Predator
+              - Domination Centurion
+            triggers: Escalation trigger
+            drop: Faction ammo/tags; Possible Domination faction modules or implants
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+              - Gistatis Tribuni
+      - id: structure
+        trigger:
+          on: warpIn
+          text: Structure
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Newly Constructed Acceleration Gate
+            note: Not locked
+  - name: First Pocket
+    notes:
+      - text: There are two groups of NPCs present at warp-in. One will warp off. Destroy the Angel Security Station to get escalation.
+      - text: "Escalation trigger: The station databanks contain information on the local Domination Angel security network and among it; a location of yet another station similar to this one. That is your best clue as to where the ships that fled as you entered have gone."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Arch Gistii Nomad
+              - Arch Gistii Ruffian
+            ewar:
+              - kind: targetPaint
+          - count: "3"
+            class: Cruiser
+            names:
+              - Gistum Breaker
+              - Gistum Defeater
+            ewar:
+              - kind: web
+          - count: 2-3
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Centurion
+              - Arch Gistum Liquidator
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Gistatis Legionnaire
+              - Gistatis Primus
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Angel Security Station
+            triggers: Destroying may trigger escalation
+  - name: Second Location
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 3-4
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Centurion
+              - Arch Gistum Phalanx
+          - count: 0-1
+            class: Commander Cruiser
+            names:
+              - Domination Centurion
+              - Domination Phalanx
+            triggers: Escalation trigger
+            drop: Faction ammo/tags; Possible Domination faction modules or implants
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Gistatis Legionnaire
+              - Gistatis Primus
+      - id: structure
+        trigger:
+          on: warpIn
+          text: Structure
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Newly Constructed Acceleration Gate
+            note: Not locked
+  - name: First Pocket
+    notes:
+      - text: Like the first location, you land 60 km away from an Angel Security Station structure. Destroying this structure may trigger escalation.
+      - text: Rats do not aggro until you approach or attack. There are two groups, one of which will warp away after a few seconds.
+      - text: "Escalation dead-end: To your dismay, the main computers of this station took a direct hit during your assault and any information that might have been there is gone up in smoke."
+      - text: "Escalation trigger: To your dismay, the main computers of this station took a direct hit during your assault and any information that might have been there is gone up in smoke.However, your instruments ran through the data from the fleeing ships and have come up with this location as a suggestion to where they might have warped."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Nomad
+              - Arch Gistii Ruffian
+            ewar:
+              - kind: targetPaint
+          - count: "2"
+            class: Cruiser
+            names:
+              - Gistum Breaker
+              - Gistum Defeater
+            ewar:
+              - kind: web
+          - count: 2-3
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Centurion
+              - Arch Gistum Phalanx
+              - Arch Gistum Marauder
+          - count: 2-3
+            class: Battlecruiser
+            names:
+              - Gistatis Legionnaire
+              - Gistatis Primus
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Angel Security Station
+            triggers: Alternate escalation trigger
+  - name: Third Location
+    notes:
+      - text: Take acceleration gate if Domination cruiser does not spawn or trigger escalation.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Ambusher
+              - Arch Gistii Raider
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Centurion
+              - Arch Gistum Phalanx
+          - count: 0-1
+            class: Commander Cruiser
+            names:
+              - Domination Liquidator
+              - Domination Marauder
+            triggers: Escalation trigger
+            drop: Faction ammo/tags. Possible Domination modules or a rare implant
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+              - Gistatis Legionnaire
+      - id: structure
+        trigger:
+          on: warpIn
+          text: Structure
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Newly Constructed Acceleration Gate
+            note: Not locked
+  - name: First Pocket
+    notes:
+      - text: Simple warp-in can trigger escalation. Unlike the first two locations, you have auto-aggro the moment you land in the pocket.
+      - text: "Escalation trigger: It looks like the most interesting of these Domination ships got away during the fight. Luckily for you though, one of its communication devices seems to be malfunctioning and is for no apparent reason sending out a constant stream of gurgling sounds. Your instruments have no problems tracing where it is coming from. It is an extremely irritating sound. Aggravating too. The gurgling of doom."
+    waves:
+      - id: initial-spawn
+        trigger:
+          on: warpIn
+          text: Initial spawn
+        spawns:
+          - count: "6"
+            class: Destroyer
+            names:
+              - Gistior Defacer
+              - Gistior Haunter
+          - count: "3"
+            class: Cruiser
+            names:
+              - Gistum Liquidator
+              - Gistum Phalanx
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Gistatis Praefectus
+              - Gistatis Tribuni
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Gistii Ambusher
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Ambusher
+              - Arch Gistii Raider
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Liquidator
+              - Arch Gistum Marauder
+  - name: Fourth Location
+    notes:
+      - text: Ungated pocket, with debris, rocks, and an Elysian structure. No rats are initially present at warp-in.
+      - text: Attacking the Elysian structure also triggers multiple smartbomb waves.
+      - text: Note that warping off for too long may 'reset' the smartbomb trigger, causing another set of waves when your return.
+      - text: "Smartbomb trigger: The pirate station has activated a smartbomb, damaging all hostile ships within its range!"
+      - text: Nikmar Eitan has a strong passive shield tank compared to the other NPCs, and has a 2.5 million ISK bounty on him.
+      - text: "Expedition end: For a while there, you almost wished you had brought more friends with you and you are relieved you managed to blow the station before more could scramble against you. You are also relieved you managed to kill off that blasted gurgle sound. Permanently."
+    waves:
+      - id: structure
+        trigger:
+          on: warpIn
+          text: Structure
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Elysian
+            triggers: Triggers reinforcements
+            note: Attacking triggers smartbomb waves
+      - id: timed-wave-about-1-minute
+        trigger:
+          on: other
+          text: Timed wave (about 1 minute)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Gistior Seizer
+              - Gistior Trasher
+          - count: "7"
+            class: Cruiser
+            names:
+              - Gistum Centurion
+              - Gistum Phalanx
+      - id: reinforcements-elysian-attacked
+        trigger:
+          on: other
+          text: Reinforcements (Elysian attacked)
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Sentry
+            names:
+              - Angel Heavy Missile Battery
+      - id: reinforcements-elysian-50-armor
+        trigger:
+          on: other
+          text: Reinforcements (Elysian 50% armor)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Impaler
+              - Arch Gistii Raider
+          - count: "6"
+            class: Destroyer
+            names:
+              - Gistior Seizer
+              - Gistior Trasher
+          - count: "3"
+            class: Cruiser
+            names:
+              - Gistum Centurion
+              - Gistum Phalanx
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Breaker
+              - Arch Gistum Defeater
+          - count: 9-10
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+              - Gistatis Tribunus
+      - id: reinforcements-elysian-structure-damage
+        trigger:
+          on: other
+          text: Reinforcements (Elysian structure damage)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Hijacker
+              - Arch Gistii Rogue
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Destroyer
+            names:
+              - Gistior Seizer
+              - Gistior Trasher
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Crusher
+              - Arch Gistum Smasher
+            ewar:
+              - kind: targetPaint
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Gistatis Legionnaire
+              - Gistatis Primus
+      - id: overseer-wave-elysian-destroyed
+        trigger:
+          on: other
+          text: Overseer wave (Elysian destroyed)
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Elite Frigate
+            names:
+              - Angel Viper
+              - Angel Webifier
+            ewar:
+              - kind: web
+          - count: "1"
+            class: Storyline Mission Cruiser
+            names:
+              - Nikmar Eitan
+            ewar:
+              - kind: targetPaint
+            triggers: Destroying ends expedition
+            drop: Gistum C-Type cruiser modules, possible Domination faction modules or a rare Cynabal BPC
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Gistatis Legionnaire
+              - Gistatis Primus

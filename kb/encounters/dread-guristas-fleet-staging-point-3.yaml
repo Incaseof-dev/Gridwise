@@ -1,0 +1,89 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: dread-guristas-fleet-staging-point-3
+kind: escalation
+name: Dread Guristas Fleet Staging Point 3
+dedRating: null
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Dread Guristas Fleet Staging Point 3
+    url: https://wiki.eveuniversity.org/Dread_Guristas_Fleet_Staging_Point_3
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "209282"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: This site is the hardest of the three Fleet Staging Point parts, as heavy webbing, neuting and high incoming damage from spawns makes it fairly difficult to solo. Preferably use a well-tanked T3 Cruiser or fleet of battleships to handle the site, but it may also be blitzed with a well-fit Ishtar, killing only the frigates and the structure.
+  - text: If using a T3 Cruiser, make sure to keep moving as fast as possible to try and avoid as much damage as possible.
+  - text: The second reinforcement wave contains 3x Guristas Energy Neutralizer Sentry II so watch your cap.
+  - text: The Guristas Fleet Outpost (structure that contains your loot) has a strong -80% web that reaches out to 50 km. It fires Citadel Kinetic torpedoes that can instantly destroy an unprepared ship. High resists to Kinetic damage are strongly recommended.
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: At around 75% Shield
+      - text: At around 50% Shield
+      - text: Once hitting Hull
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Destructor
+              - Dire Pithi Demolisher
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Abolisher
+              - Dire Pithum Eraser
+          - count: "5"
+            class: Battleship
+            names:
+              - Pith Usurper
+              - Pith Massacrer
+          - count: "1"
+            class: Sentry
+            names:
+              - Guristas Fleet Outpost
+            ewar:
+              - kind: web
+            triggers: Triggers reinforcements at different damage intervals
+            drop: 22nd Tier Overseer's Personal Effects, Pith A-Type or Dread Guristas faction modules, possibly a Rattlesnake BPC
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "?"
+            class: Sentry
+            names:
+              - Guristas Cruise Missile Batteries
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Sentry
+            names:
+              - Guristas Energy Neutralizing Sentry II
+            ewar:
+              - kind: neut
+      - id: wave-4
+        trigger:
+          on: other
+          text: Wave 4
+          confidence: inferred
+        spawns: []
+sde:
+  dungeonIds:
+    - 2577

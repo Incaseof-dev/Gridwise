@@ -1,0 +1,277 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: angel-hidden-hub
+kind: anomaly
+name: Angel Hidden Hub
+dedRating: null
+anomalyClass: 8
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Angel Hidden Hub
+    url: https://wiki.eveuniversity.org/Angel_Hidden_Hub
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "222389"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Rating: Class 8 Level 2"
+  - text: Single ungated normal space pocket. Warping to beacon for close range would require a very good tank to handle the swarm’s incoming damage.
+  - text: "Escalation: Angel Domination Fleet Staging Point: Systems have intercepted and decrypted an encoded DED transmission suggesting the presence of another Angel Cartel fleet staging area nearby. The location has been uploaded to the Expedition panel in your NeoCom's Journal."
+  - text: "Escalation: This site can escalate to Angel Domination Fleet Staging Point"
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-defending-fleet
+        trigger:
+          on: warpIn
+          text: Initial Defending Fleet
+        spawns:
+          - count: "7"
+            class: Frigate
+            names:
+              - Gistii Ambusher
+              - Gistii Hunter
+              - Gistii Impaler
+              - Gistii Raider
+          - count: "4"
+            class: Destroyer
+            names:
+              - Gistior Seizer
+              - Gistior Trasher
+          - count: "8"
+            class: Cruiser
+            names:
+              - Gistum Breaker
+              - Gistum Centurion
+              - Gistum Marauder
+              - Gistum Phalanx
+          - count: "7"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+              - Gistatis Tribunus
+          - count: "3"
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Seraphim
+          - count: "1"
+            class: Sentry
+            names:
+              - Angel Cruise Missile Battery
+      - id: 1st-reinforcement-spawn
+        trigger:
+          on: other
+          text: 1st Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Gistii Hunter
+              - Gistii Impaler
+              - Gistii Raider
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Ambusher
+              - Arch Gistii Raider
+          - count: "3"
+            class: Cruiser
+            names:
+              - Gistum Centurion
+              - Gistum Phalanx
+            triggers: Last ship killed of Cruiser class
+      - id: 2nd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 2nd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Gistii Hunter
+              - Gistii Impaler
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Nomad
+              - Arch Gistii Ruffian
+            ewar:
+              - kind: targetPaint
+          - count: "3"
+            class: Destroyer
+            names:
+              - Gistior Seizer
+              - Gistior Trasher
+          - count: "2"
+            class: Battleship
+            names:
+              - Gist Nephilim
+              - Gist Saint
+            ewar:
+              - kind: targetPaint
+            triggers: Last ship killed of Cruiser class
+      - id: 3rd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 3rd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Gistii Hunter
+              - Gistii Raider
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Ruffian
+          - count: "1"
+            class: Cruiser
+            names:
+              - Gistum Phalanx
+          - count: "3"
+            class: Battleship
+            names:
+              - Gist Saint
+              - Gist Warlord
+            ewar:
+              - kind: targetPaint
+            triggers: Last ship killed of Cruiser class
+      - id: 4th-reinforcement-spawn
+        trigger:
+          on: other
+          text: 4th Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Gistii Ambusher
+              - Gistii Hunter
+              - Gistii Impaler
+              - Gistii Raider
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Nomad
+              - Arch Gistii Ruffian
+            ewar:
+              - kind: targetPaint
+          - count: "1"
+            class: Cruiser
+            names:
+              - Gistum Phalanx
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Centurion
+              - Arch Gistum Phalanx
+          - count: "3"
+            class: Battleship
+            names:
+              - Gist Malakim
+              - Gist Nephilim
+              - Gist Warlord
+            ewar:
+              - kind: targetPaint
+            triggers: Last ship killed of Cruiser class
+      - id: 5th-reinforcement-spawn
+        trigger:
+          on: other
+          text: 5th Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Gistii Ambusher
+              - Gistii Raider
+          - count: "2"
+            class: Cruiser
+            names:
+              - Gistum Centurion
+          - count: "3"
+            class: Battleship
+            names:
+              - Gist Malakim
+            triggers: Last ship killed of Cruiser class
+      - id: 6th-reinforcement-spawn
+        trigger:
+          on: other
+          text: 6th Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Gistii Impaler
+              - Gistii Raider
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Ambusher
+              - Arch Gistii Raider
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Crusher
+              - Arch Gistum Defeater
+              - Arch Gistum Smasher
+            ewar:
+              - kind: targetPaint
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+          - count: "3"
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Throne
+            triggers: Last ship killed of Cruiser class
+      - id: 7th-reinforcement-spawn
+        trigger:
+          on: other
+          text: 7th Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Gistii Raider
+          - count: "2"
+            class: Cruiser
+            names:
+              - Gistum Liquidator
+              - Gistum Marauder
+            triggers: Last ship killed of Cruiser class
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+              - Gistatis Tribunus
+      - id: 8th-reinforcement-spawn
+        trigger:
+          on: other
+          text: 8th Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Gistii Hunter
+              - Gistii Impaler
+          - count: "2"
+            class: Cruiser
+            names:
+              - Gistum Phalanx
+sde:
+  dungeonIds:
+    - 3470

@@ -1,0 +1,219 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: angel-base
+kind: escalation
+name: Angel Base
+dedRating: null
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Angel Base
+    url: https://wiki.eveuniversity.org/Angel_Base
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "232319"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Escalation: Destroying the Drug Lab or the command spawn for a small chance to escalate to Toxic Waste Scandal!"
+  - text: "Escalation: Toxic Waste Scandal: As your instruments power down from combat mode, you notice a scanner report on one of your panels indicating a strange reading few systems away. Comparing the location with external logs you learn that this is the site of an old mining outpost that was abandoned a few years back."
+pockets:
+  - name: Warp-In
+    notes:
+      - text: No Hostiles at warpin. Activate the Acceleration Gate
+  - name: First room
+    notes:
+      - text: Clear all the NPC's to access the gate.
+    waves:
+      - id: gate-62km-from-warp-in
+        trigger:
+          on: other
+          text: Gate (62km from warp-in)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            triggers: 10km proximity triggers gate reinforcement spawn
+            note: Clear all rats to access the gate
+      - id: front-line-squad-67-70km
+        trigger:
+          on: other
+          text: Front Line Squad (67- 70km)
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Gistatis Tribuni
+              - Gistatis Praefectus
+            triggers: May trigger delayed spawn
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Breaker
+            group: Time Delayed Spawn once Front Squad is dispatched
+            ewar:
+              - kind: targetPaint
+            note: type list incomplete on the source page
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+            group: Time Delayed Spawn once Front Squad is dispatched
+            note: type list incomplete on the source page
+      - id: end-of-the-line-squad-189-190km
+        trigger:
+          on: other
+          text: End of the Line Squad (189- 190km)
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+              - Gistatis Tribunus
+            triggers: May trigger proximity spawn
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Ruffian
+              - Arch Gistii Nomad
+            group: Time Delayed or Proximity Spawn
+          - count: "3"
+            class: Battleship
+            names:
+              - Gist Malakim
+              - Gist Throne
+            group: Time Delayed or Proximity Spawn
+      - id: gate-proximity-spawn
+        trigger:
+          on: other
+          text: Gate Proximity Spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Breaker
+              - Arch Gistum Crusher
+              - Arch Gistum Smasher
+            ewar:
+              - kind: targetPaint
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Gistatis Primus
+  - name: Second pocket
+    notes:
+      - text: Go straight for the Drug Lab, destroy it and the command ship if it spawns.
+    waves:
+      - id: structures-173km-from-warp-in
+        trigger:
+          on: other
+          text: Structures (173km from warp-in)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Drug Lab
+            triggers: On attack trigger Battleship and/or Commander spawn - Escalation trigger on destruction
+      - id: front-line-squad-2-6km
+        trigger:
+          on: other
+          text: Front Line Squad (2- 6km)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Thug
+            triggers: Attack may trigger spawn
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Hijcaker
+              - Arch Gistii Rogue
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            triggers: Attack may trigger spawn
+          - count: "2"
+            class: Battleship
+            names:
+              - Gist Nephilim
+              - Gist Saint
+            ewar:
+              - kind: targetPaint
+          - count: "4"
+            class: Cruiser
+            names:
+              - Gistum Breaker
+              - Gistum Defeater
+            group: Time Delayed or Triggered Spawn (8- 9km)
+      - id: end-of-the-line-squad-74-81km
+        trigger:
+          on: other
+          text: End of the Line Squad (74- 81km)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Gistii Hunter
+              - Gistii Impaler
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Hunter
+              - Arch Gistii Impaler
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Outlaw
+              - Arch Gistii Thug
+            group: Time Delayed or Triggered Spawn (8- 9km)
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Rogue
+              - Arch Gistii Hijacker
+            group: Time Delayed or Triggered Spawn (8- 9km)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Gistatis Praefectus
+              - Gistatis Tribuni
+            group: Time Delayed or Triggered Spawn (8- 9km)
+      - id: drug-lab-aggression-spawn
+        trigger:
+          on: other
+          text: Drug Lab aggression spawn
+          confidence: inferred
+        spawns:
+          - count: 0-2
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Seraphim
+      - id: after-killing-aggression-spawn
+        trigger:
+          on: other
+          text: After Killing Aggression spawn
+          confidence: inferred
+        spawns:
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - Domination Warlord
+            drop: Possible Domination modules and or T2 Halo Implants
+sde:
+  dungeonIds:
+    - 1459

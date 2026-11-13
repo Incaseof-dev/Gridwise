@@ -1,0 +1,105 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: sansha-burrow
+kind: anomaly
+name: Sansha Burrow
+dedRating: null
+anomalyClass: 2
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Sansha Burrow
+    url: https://wiki.eveuniversity.org/Sansha_Burrow
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225098"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Sansha Burrow is an unrated combat site belonging to the Sansha's Nation pirate faction. It can be found via exploration as a cosmic anomaly within systems owned by the Amarr Empire and Ammatar Mandate. As an ungated complex, the limitations as to which ships can complete this site are tied to the security rating of the system where the anomaly spawns (T2 Battleships for high-security systems, and up to Titans in low-security and null-security systems). Completing this complex may award the player with valuable True Sansha faction modules and ammunition.
+  - text: This combat site consists of a single ungated pocket of space containing a variety of Frigate-sized enemy ships.
+  - text: Single ungated pocket with multiple waves of rats. Killing the last ship of each wave triggers the next.
+  - text: "Escalation: This site does not appear to escalate."
+loot:
+  - item: True Sansha Copper Tag
+    from: True Sansha's Plague
+    note: est. 10k ISK (wiki) · 100% drop rate
+  - item: (True) Sansha Ammo
+    from: True Sansha's Plague
+    note: est. 6k - 58M ISK (wiki) · 100% drop rate
+  - item: True Sansha module
+    from: True Sansha's Plague
+    note: est. 10k - 190M ISK (wiki) · rare
+  - item: Mid-grade Nirvana Implant BPC
+    from: True Sansha's Plague
+    note: est. 15M - 50M ISK (wiki) · rare
+lootNotes:
+  - text: 60.000 ISK
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 4-6
+            class: Frigate
+            names:
+              - Centii Servant
+              - Centii Minion
+      - id: reinforcement-wave-1
+        trigger:
+          on: other
+          text: Reinforcement Wave 1
+          confidence: inferred
+        spawns:
+          - count: 2-4
+            class: Frigate
+            names:
+              - Centii Ravener
+              - Centii Scavenger
+      - id: reinforcement-wave-2
+        trigger:
+          on: other
+          text: Reinforcement Wave 2
+          confidence: inferred
+        spawns:
+          - count: 1-4
+            class: Frigate
+            names:
+              - Centii Minion
+              - Centii Servant
+      - id: reinforcement-wave-3
+        trigger:
+          on: other
+          text: Reinforcement Wave 3
+          confidence: inferred
+        spawns:
+          - count: 2-4
+            class: Frigate
+            names:
+              - Centii Servant
+              - Centii Minion
+      - id: reinforcement-wave-4
+        trigger:
+          on: other
+          text: Reinforcement Wave 4
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Frigate
+            names:
+              - Centii Enslaver
+          - count: 0-1
+            class: Commander Frigate
+            names:
+              - True Sansha's Plague
+            ewar:
+              - kind: trackingDisruption
+            drop: Drops faction ammo and tags. May drop faction modules.
+sde:
+  dungeonIds:
+    - 2220

@@ -1,0 +1,71 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: covering-your-tracks-level-3
+kind: mission
+name: Covering your Tracks
+level: 3
+enemyFaction: Mercenaries
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Covering your Tracks (Level 3)
+    url: https://wiki.eveuniversity.org/Covering_your_Tracks_(Level_3)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "218604"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the bounty hunter and his cohorts near the casino, retrieve the special delivery(0.1) from the wreckage of their ships, then report back to your agent.
+ewar:
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Mercenary Wingman"
+  - text: "Suggested ships: Battlecruiser"
+  - text: "CAREFUL: Kuran does Large Explosive Damage."
+  - text: Kuran "Scarface" Lonan has a small chance to drop an implant worth approximately 20 mil ISK.
+  - text: Ytari Niaga has a small chance to drop Dread Guristas Co-Processor / Dread Guristas Heavy Assault Missile Launcher
+  - text: May (fleet) warp to desired distance.
+  - text: The last rat killed will drop a container with 1 unit of Special Delivery that is required to complete the mission.
+pockets:
+  - name: Warp-in
+    waves:
+      - id: structure
+        trigger:
+          on: warpIn
+          text: Structure
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Casino
+            drop: 20 units of 2 random commodities
+      - id: initial-group-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group (auto-aggro)
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Mercenary Wingman
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Mercenary Elite Fighter
+          - count: "1"
+            class: Cruiser
+            names:
+              - Mercenary Lieutenant
+          - count: "1"
+            class: Cruiser
+            names:
+              - Ytari Niaga
+              - Zerak Cheryn
+              - Kuran "Scarface" Lonan
+            drop: May drop faction module or implant

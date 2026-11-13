@@ -1,0 +1,199 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: slave-breeding-plants
+kind: escalation
+name: Slave Breeding Plants
+dedRating: null
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Slave Breeding Plants
+    url: https://wiki.eveuniversity.org/Slave_Breeding_Plants
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "158986"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Escalation start: Among the intelligence you get from the ruins of this outpost is a schedule for slave transports, listing several times and locations where they are supposed to be. Most of the information is outdated, but your instruments run through the list and find a reachable location."
+  - text: "Escalation: Warp in before acceleration gate (Newly Constructed Acceleration gate)"
+  - text: "Escalation: Warp in before acceleration gate (Newly Constructed Acceleration gate)"
+  - text: "Escalation: Warp in before acceleration gate (Newly Constructed Acceleration gate)"
+loot:
+  - item: Centii A-Type frigate modules
+    from: True Centii Revelator
+  - item: True Sansha faction modules
+    from: True Sansha commanders
+    note: Can also drop from overseer frigate
+  - item: Succubus BPC
+    from: True Centii Revelator
+lootNotes:
+  - text: Typical loot from Sansha commander frigates includes dog tags, True Sansha faction ammo and possibly True Sansha faction modules. True Centii Revelator in final room drops possible Centii A-Type frigate modules and rarely a Succubus BPC.
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: If no commander spawns, warping to the second room can trigger the next escalation.
+      - text: "Escalation message: Nothing but an old deserted bunker, owned by True Power and probably used as a slave holding place. After a short search, you find a short list of co-ordinates leading to similar facilities nearby."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Centii Butcher
+              - Centii Enslaver
+              - Centii Manslayer
+              - Centii Plague
+          - count: "4"
+            class: Destroyer
+            names:
+              - Centior Abomination
+              - Centior Devourer
+          - count: 0-1
+            class: Commander Frigate
+            names:
+              - True Sansha
+            triggers: escalation trigger
+            drop: Faction modules
+  - name: Second Room
+    notes:
+      - text: Structures on site
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Sansha Bunker
+  - name: Pocket 3
+    notes:
+      - text: "Escalation message: Again a True Power slave hold and this time it was inhabited. You have a second look at the list of locations you found and pick out the nearest one."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Centii Enslaver
+              - Centii Manslayer
+              - Centii Plague
+          - count: "4"
+            class: Destroyer
+            names:
+              - Centior Abomination
+              - Centior Devourer
+          - count: 0-1
+            class: Commander Frigate
+            names:
+              - True Sansha's Enslaver
+            triggers: escalation trigger
+            drop: Faction modules
+  - name: Second Room
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Centii Savage
+              - Centii Slavehunter
+  - name: Pocket 5
+    notes:
+      - text: "Escalation message: Again a slave hold run by the Sansha True Power corporation, much like the last one and now nothing but a smoldering ruin. On the navigation panel, you punch in all of the remaining locations from the list you found and a new flight plan pops up."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Plague
+          - count: 4-6
+            class: Destroyer
+            names:
+              - Centior Horror
+              - Centior Monster
+          - count: 0-1
+            class: Commander Frigate
+            names:
+              - True Sansha's Enslaver
+            triggers: escalation trigger
+            drop: Faction modules
+  - name: Fourth Location
+    notes:
+      - text: Acceleration gate at warp-in.
+  - name: First Pocket
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Centii Enslaver
+              - Centii Manslayer
+          - count: "3"
+            class: Cruiser
+            names:
+              - Centum Ravager
+              - Centum Ravisher
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "2"
+            class: Structure
+            names:
+              - Sansha Bunker
+  - name: Second Pocket
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Centii Savage
+              - Centii Slavehunter
+            ewar:
+              - kind: trackingDisruption
+          - count: "1"
+            class: Overseer Frigate
+            names:
+              - True Centii Revelator
+            triggers: Destroying ends expedition
+            drop: Possible Centii A-Type modules and possibly a Succubus BPC; can also contain True Sansha faction modules
+          - count: "3"
+            class: Destroyer
+            names:
+              - Centior Cannibal
+              - Centior Misshape
+          - count: "3"
+            class: Cruiser
+            names:
+              - Centum Ravager
+              - Centum Ravisher
+sde:
+  dungeonIds:
+    - 1424

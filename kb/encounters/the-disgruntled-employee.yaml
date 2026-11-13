@@ -1,0 +1,49 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-disgruntled-employee
+kind: mission
+name: The Disgruntled Employee
+level: 1
+enemyFaction: Rogue Drones & The Ex-Employee
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Disgruntled Employee
+    url: https://wiki.eveuniversity.org/The_Disgruntled_Employee
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "209817"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Eliminate the disgruntled ex-employee
+notes:
+  - text: "Suggested ships: Imicus, Kestrel"
+  - text: Single pocket with gate.
+  - text: "Blitz: Kill the ex-employee, ignore the rest."
+  - text: "On activating the acceleration gate: The disgruntled smut-king's hideout is supposedly located within this former asteroid belt which has been almost completely mined to oblivion. A suspicious looking hollow asteroid and a few barren rocks are all that remain of this once densely packed belt."
+pockets:
+  - name: Single pocket
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 0-2
+            class: Drone
+            names:
+              - Belphegor
+              - Mammon Apis
+            group: Group 1 (15-20km, auto aggro, 2 ships)
+          - count: 0-2
+            class: Frigate
+            names:
+              - Infester Alvi
+            group: Group 1 (15-20km, auto aggro, 2 ships)
+          - count: "1"
+            class: Frigate
+            names:
+              - The Ex-Employee
+            group: Group 2 (30-40km, no auto aggro)

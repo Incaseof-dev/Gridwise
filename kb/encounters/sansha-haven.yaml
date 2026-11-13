@@ -1,0 +1,361 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: sansha-haven
+kind: anomaly
+name: Sansha Haven
+dedRating: null
+anomalyClass: 9
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Sansha Haven
+    url: https://wiki.eveuniversity.org/Sansha_Haven
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "197990"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Sansha Haven is an unrated combat site belonging to the Sansha's Nation pirate faction. It can be found via exploration as a cosmic anomaly within null-security systems occupied by the Sansha's Nation. As an ungated complex, the limitations as to which ships can complete this site are tied to the security rating of the system where the anomaly spawns (up to Titans in null-security systems). Completing this complex may award the player with valuable True Sansha faction modules and ammunition. This combat site consists of a single ungated pocket of space containing a variety of Frigate to Battleship-sized enemy ships.
+pockets:
+  - name: Pirate Gate spawn
+    waves:
+      - id: initial-spawn
+        trigger:
+          on: warpIn
+          text: Initial spawn
+        spawns:
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centatis Daemon
+              - Centatis Specter
+          - count: "3"
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Dread Lord
+            triggers: Triggers next wave
+      - id: 1st-reinforcement-spawn
+        trigger:
+          on: other
+          text: 1st Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Centii Loyal Manslayer
+              - Centii Loyal Enslaver
+              - Centii Loyal Butcher
+              - Centii Loyal Plague
+            ewar:
+              - kind: targetPaint
+              - kind: warpDisruption
+          - count: 3-4
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Dread Lord
+            triggers: Triggers next wave
+      - id: 2nd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 2nd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Centii Loyal Scavenger
+              - Centii Loyal Ravener
+              - Centii Loyal Servant
+              - Centii Loyal Minion
+            ewar:
+              - kind: web
+          - count: 3-4
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Dread Lord
+            triggers: Triggers next wave
+      - id: 3rd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 3rd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Centii Loyal Slavehunter
+              - Centii Loyal Savage
+            ewar:
+              - kind: trackingDisruption
+          - count: 3-4
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Dread Lord
+            triggers: Triggers next wave
+      - id: 4th-reinforcement-spawn
+        trigger:
+          on: other
+          text: 4th Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Juggernaught
+              - Centum Loyal Slaughterer
+              - Centum Loyal Excrator
+            ewar:
+              - kind: trackingDisruption
+          - count: 3-4
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Dread Lord
+            triggers: Triggers next wave
+      - id: 5th-reinforcement-spawn
+        trigger:
+          on: other
+          text: 5th Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 6-8
+            class: Battlecruiser
+            names:
+              - Centatis Devil
+              - Centatis Phantasm
+              - Centatis Daemon
+              - Centatis Behemoth
+          - count: 6-8
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Dread Lord
+          - count: 0-1
+            class: Battleship
+            names:
+              - True Sansha’s Tyrant
+              - Dread Lord
+            drop: Can drop faction modules
+          - count: 0-1
+            class: Dreadnought
+            names:
+              - Sansha's Nation Dreadnought
+            ewar:
+              - kind: web
+            drop: Can drop faction modules
+          - count: 0-1
+            class: Supercarrier
+            names:
+              - True Sansha's Nation Supercarrier
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            drop: Can drop faction modules
+    onWarpIn: I have detected a stargate nearby. Its design indicates that it belongs to someone of ill repute, such as smugglers or pirates.
+  - name: Chem Factory spawn
+    notes:
+      - text: "Bounty: ~18.2m ISK"
+      - text: "Loot/Salvage: ~14.9m ISK"
+    waves:
+      - id: initial-spawn
+        trigger:
+          on: warpIn
+          text: Initial spawn
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Sansha Cruise Missile Battery
+          - count: 3-4
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Fiend
+              - Centum Loyal Hellhound
+              - Centum Loyal Mutilator
+              - Centum Loyal Torturer
+            triggers: Triggers next wave
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centatis Daemon
+              - Centatis Devil
+              - Centatis Specter
+              - Centatis Wraith
+          - count: 3-4
+            class: Battleship
+            names:
+              - Centus Dread Lord
+              - Centus Tyrant
+          - count: 3-4
+            class: Battleship
+            names:
+              - Centus Dark Lord
+              - Centus Overlord
+            triggers: Triggers next wave
+      - id: 1st-reinforcement-spawn
+        trigger:
+          on: other
+          text: 1st Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Centii Loyal Butcher
+              - Centii Loyal Enslaver
+              - Centii Loyal Manslayer
+              - Centii Loyal Plague
+          - count: 2-3
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Fiend
+              - Centum Loyal Hellhound
+              - Centum Loyal Mutilator
+              - Centum Loyal Torturer
+            triggers: Triggers next wave
+          - count: 2-3
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+            triggers: Triggers next wave
+          - count: 3-4
+            class: Battleship
+            names:
+              - Centus Dark Lord
+              - Centus Overlord
+      - id: 2nd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 2nd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Centii Loyal Ravener
+              - Centii Loyal Scavenger
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centatis Daemon
+              - Centatis Devil
+              - Centatis Mutilator
+              - Centatis Phantasm
+              - Centatis Specter
+            triggers: Triggers next wave
+          - count: 3-4
+            class: Battleship
+            names:
+              - Centus Dark Lord
+              - Centus Overlord
+            triggers: Triggers next wave
+      - id: 3rd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 3rd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Elite Frigate
+            names:
+              - Centii Loyal Minion
+              - Centii Loyal Ravener
+              - Centii Loyal Scavenger
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 4-6
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centatis Daemon
+              - Centatis Devil
+              - Centatis Phantasm
+              - Centatis Specter
+              - Centatis Wraith
+            triggers: Triggers next wave
+          - count: 3-4
+            class: Battleship
+            names:
+              - Centus Dread Lord
+              - Centus Tyrant
+            triggers: Triggers next wave
+          - count: "1"
+            class: Battleship
+            names:
+              - True Sansha’s Plague Lord
+            drop: Can drop faction modules
+      - id: 4th-reinforcement-spawn
+        trigger:
+          on: other
+          text: 4th Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Centii Loyal Minion
+              - Centii Loyal Ravener
+              - Centii Loyal Scavenger
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            triggers: Triggers next wave
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centatis Daemon
+              - Centatis Devil
+              - Centatis Phantasm
+              - Centatis Specter
+              - Centatis Wraith
+          - count: 3-4
+            class: Battleship
+            names:
+              - Centus Dread Lord
+              - Centus Tyrant
+          - count: 3-4
+            class: Battleship
+            names:
+              - Centus Dark Lord
+              - Centus Overlord
+            triggers: Triggers next wave
+      - id: 5th-reinforcement-spawn
+        trigger:
+          on: other
+          text: 5th Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Centii Loyal Minion
+              - Centii Loyal Ravener
+              - Centii Loyal Scavenger
+              - Centii Loyal Servant
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 3-4
+            class: Battleship
+            names:
+              - Centus Dark Lord
+              - Centus Overlord
+sde:
+  dungeonIds:
+    - 2290

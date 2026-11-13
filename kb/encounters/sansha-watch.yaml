@@ -1,0 +1,276 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: sansha-watch
+kind: complex
+name: Sansha Watch
+dedRating: null
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Sansha Watch
+    url: https://wiki.eveuniversity.org/Sansha_Watch
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223259"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Battlecruisers"
+notes:
+  - text: An Unrated Complex that can be scanned down with scanner probes. It is commonly found in highsec systems occupied by the Sansha's Nation pirate faction.
+  - text: The site consists of a volume of space with an acceleration gate and contains various structures and their defending pirates. Using the gate allows access to other areas within the site. When attacked, the defenders may send multiple waves of reinforcements. Each group's appearance is triggered by the destruction of members of the previous group. The names and amount of ships listed may vary slightly, but will always be of Cruiser class or smaller. There are two variations of the site.
+  - text: This site's acceleration gate allows only Battlecruiser class ships or lower and their Tech 2 equivalents to enter the site. Flying too close (4 km) to the second gate will trigger a large spawn. Shoot the Sansha Mind Control Tower to get the Centum Militant Supervisor to spawn. He's got the good stuff.
+  - text: The first pocket can be skipped if you have a Sansha Silver Tag in your cargo hold. This will be consumed when the acceleration gate is activated.
+  - text: "Escalation: Destroying the True Sansha's faction spawn or the Centum Militant Overseer may trigger an expedition Nation on the Rise, with this message:"
+  - text: "Escalation: Nation on the Rise: A couple of the ships you destroyed bear different marks than the rest and after closer inspection you find that their navigation logs point to a place nearby as their home base."
+loot:
+  - item: + Commander and other valuable loot
+  - item: Mid-grade Nirvana Alpha BPC
+    note: est. 17m (wiki) · Unknown drop rate
+npcs:
+  Supervisor's Minion:
+    sdeTypes:
+      - Centum Ravager
+      - Centum Ravisher
+    class: Cruiser
+pockets:
+  - name: First Room
+    notes:
+      - text: Sentries are split into two groups to the left and right, relative to the next acceleration gate. They are out of range of the warp-in point and can be ignored without any damage if one simply burns straight to the next gate.
+      - text: "Reinforcement wave message:: The Patroller calls on reinforcements from a nearby pocket as he is attacked!"
+      - text: "Gate proximity wave message:: Someone has entered the vicinity of the acceleration gate, and has awakened the Slave Commander! Prepare for a fight, unless you have the means to bypass the gate's security system."
+      - text: "Message from Slave Commander:: Centus Slave Commander: Fool, you've overstepped your welcome here. Minions, defend your master!"
+      - text: The reinforcement wave is timed and will spawn even if the left group of frigates is not attacked.
+      - text: Structures on site
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 2-4
+            class: Frigate
+            names:
+              - Centii Facility Patroller
+            ewar:
+              - kind: trackingDisruption
+            triggers: Attacking front group triggers reinforcement wave, attacking back group triggers gate proximity wave
+            note: Renamed Centii Plague/Enslaver
+          - count: "12"
+            class: Sentry
+            names:
+              - Centus Point Defense Battery
+          - count: 3-4
+            class: Cruiser
+            names:
+              - Centum Beast
+              - Centum Juggernaut
+            ewar:
+              - kind: trackingDisruption
+      - id: reinforcement-wave-triggered-by-attacking-facility-patroller-left-group-or-after-30-seconds
+        trigger:
+          on: other
+          text: Reinforcement Wave (Triggered by attacking Facility Patroller left group, or after ~30 seconds)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Centii Enslaver
+              - Centii Manslayer
+          - count: "1"
+            class: Cruiser
+            names:
+              - Centum Beast
+              - Centum Juggernaut
+            ewar:
+              - kind: trackingDisruption
+      - id: gate-proximity-wave-triggered-by-attacking-facility-patroller-right-group-or-approaching-the-gate
+        trigger:
+          on: other
+          text: Gate Proximity Wave (Triggered by attacking Facility Patroller right group or approaching the gate)
+          confidence: inferred
+        spawns:
+          - count: 4-5
+            class: Frigate
+            names:
+              - Centii Plague
+              - Centii Enslaver
+          - count: "4"
+            class: Cruiser
+            names:
+              - Centum Beast
+            ewar:
+              - kind: trackingDisruption
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Centus Slave Commander
+            ewar:
+              - kind: trackingDisruption
+            triggers: unlocks gate
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            triggers: Approach to trigger proximity wave
+            note: Unlocks after Slave commander is dead
+          - count: "19"
+            class: Structure
+            names:
+              - Wall
+          - count: "12"
+            class: Structure
+            names:
+              - Storage Facility
+          - count: "12"
+            class: Structure
+            names:
+              - Landing Pad
+          - count: "5"
+            class: Structure
+            names:
+              - Junction
+          - count: "5"
+            class: Structure
+            names:
+              - Stationary Mammoth
+          - count: "4"
+            class: Structure
+            names:
+              - Frozen Corpse
+          - count: "2"
+            class: Structure
+            names:
+              - Ruins
+          - count: "2"
+            class: Structure
+            names:
+              - Ship Maintanance Facility
+          - count: "1"
+            class: Structure
+            names:
+              - Habitation Module
+    onWarpIn: Previous explorers have commented that one of the gates requires a passkey. Alternatively, it can be bypassed by convincing the commander to unlock it. The overseer guards the Mind Control Tower vigorously.
+  - name: Second Room
+    notes:
+      - text: Most of the spawn is split into several groups about 30-60 km away. 2 destroyers and a cruiser sit at 0 on the warp-in point. All ships autoaggro within a few seconds.
+      - text: The True Sansha frigate is separate from the rest of the ships, about 100 km away. He will approach you with microwarpdrive.
+      - text: "Overseer triggered:: Someone has attacked the Mind Control Tower. The Overseer along with his cohorts have undocked to defend it!"
+      - text: Structures on site
+    waves:
+      - id: initial-defenders-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial defenders(auto-aggro)
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Centii Butcher
+            note: type list incomplete on the source page
+          - count: "10"
+            class: Destroyer
+            names:
+              - Centior Devourer
+            note: type list incomplete on the source page
+          - count: 13-17
+            class: Cruiser
+            names:
+              - Centum Beast
+            ewar:
+              - kind: trackingDisruption
+            note: type list incomplete on the source page
+          - count: "4"
+            class: Sentry
+            names:
+              - Centus Light Missile Battery
+      - id: timed-spawn
+        trigger:
+          on: other
+          text: Timed spawn
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Destroyer
+            names:
+              - Centior Horror
+          - count: "9"
+            class: Cruiser
+            names:
+              - Centum Beast
+              - Centum Juggernaut...
+            ewar:
+              - kind: trackingDisruption
+      - id: overseer-wave-triggered-by-attacking-the-mind-control-tower
+        trigger:
+          on: other
+          text: Overseer wave (triggered by attacking the Mind Control Tower)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Cruiser
+            names:
+              - Supervisor's Minion
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Centum Militant Supervisor
+            triggers: Escalation trigger, may trigger commander wave
+      - id: 90-100-km-away-towards-the-top-left
+        trigger:
+          on: other
+          text: 90-100 km away, towards the top left
+          confidence: inferred
+        spawns:
+          - count: 0-1
+            class: Commander Frigate
+            names:
+              - True Sansha Plague
+            triggers: escalation trigger
+            drop: faction modules
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "10"
+            class: Structure
+            names:
+              - Centus Bunker
+            drop: may contain loot
+          - count: "6"
+            class: Structure
+            names:
+              - Shield Generator
+          - count: "6"
+            class: Structure
+            names:
+              - Auxiliary Power Array
+          - count: "5"
+            class: Structure
+            names:
+              - Reactor Array
+          - count: "3"
+            class: Structure
+            names:
+              - Storage Facility
+          - count: "1"
+            class: Structure
+            names:
+              - Sansha Minion Quarters
+          - count: "1"
+            class: Structure
+            names:
+              - Sansha Mind Control Tower
+            triggers: attacking triggers overseer wave
+sde:
+  dungeonIds:
+    - 1216

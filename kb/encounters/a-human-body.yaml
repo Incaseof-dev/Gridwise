@@ -1,0 +1,107 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: a-human-body
+kind: mission
+name: A Human Body
+level: null
+enemyFaction: Amarr Empire
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – A Human Body
+    url: https://wiki.eveuniversity.org/A_Human_Body
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "230441"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Retrieve Priomodial Biomass
+ewar:
+  - kind: trackingDisruption
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite frigates"
+  - text: No standing loss
+  - text: "Deniability: Do not worry about your identity being decoded by the Amarr authorities. While you are acting in my employ, I will be masking your ID from their registered capsuleer database. I cannot protect you if you violate the law in other activities, but in any sites I specify you may engage Amarr without fear of retribution."
+  - text: Single gated pocket.
+pockets:
+  - name: Warp-in
+    notes:
+      - text: The business associate here is waiting for the biomass from you. But you don't have it yet so go to the next room.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Container
+            names:
+              - Business Associate
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+  - name: 1st pocket
+    notes:
+      - text: Damage the Advanced Amarr Research Lab till it drops the Primordial Biomass. Don't forget to loot it.
+      - text: The acceleration gate in the pocket takes you back to the warp-in area. Drop the Primordial Biomass in the Business Associate. The acceleration gate is NOT locked.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Advanced Amarr Research Lab
+            triggers: Damage to get the item and to trigger the defenders.
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate back to warp-in
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Imperial Sixtus
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Imperial Paladin
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Nabin
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Imperial Sixtus
+          - count: "2"
+            class: Cruiser
+            names:
+              - Imperial Templar Mathura

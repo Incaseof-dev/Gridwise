@@ -1,0 +1,37 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-sansha-spies-level-1
+kind: mission
+name: The Sansha Spies
+level: 1
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Sansha Spies (Level 1)
+    url: https://wiki.eveuniversity.org/The_Sansha_Spies_(Level_1)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "217659"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Suggested ships: Frigate"
+  - text: Acceleration gate.
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: initial-group-50km
+        trigger:
+          on: warpIn
+          text: Initial Group, 50km
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Centii Servant
+          - count: "2"
+            class: Frigate
+            names:
+              - Sansha Spy

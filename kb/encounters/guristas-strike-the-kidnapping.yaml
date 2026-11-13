@@ -1,0 +1,124 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: guristas-strike-the-kidnapping
+kind: mission
+name: Guristas Strike - The Kidnapping
+level: 3
+enemyFaction: Mercenaries
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Guristas Strike - The Kidnapping
+    url: https://wiki.eveuniversity.org/Guristas_Strike_-_The_Kidnapping
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231060"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Capture the pirate(5x Prisoners, 75) your agent wants to interrogate. But first you must confront Drazin Jaruk who holds the key to your target.
+notes:
+  - text: "Dammage to resist: two with all types"
+  - text: Guristas Strike - The Kidnapping is the third mission of the mission chain Guristas Strike. Unlike most storyline missions this mission gives no faction standing, but it does give agent standing. The faction standing is awarded for the final mission in the chain.
+  - text: "The Odamian Renegades: The Odamian Renegades named themselves after the system where their organization was founded, in the Gallente controlled Placid region. The founders themselves were mostly made up of adventurers traveling from the Gallente capital system, Luminaire, searching for fame and fortune in the frontier. There they came into contact with Dakeur Hullan, a charismatic pirate veteran who had been working for the Serpentis organization until an unfortunate incident saw him outlawed from their territory, with a sizeable bounty on his head. Despite his misfortunes, Dakeur still had numerous contacts throughout the criminal world, both inside Serpentis and Gallente controlled space. With Dakeurs experience within the underworld of the Gallente Federation and his co-founders surprising piloting skills, the Odamian Renegades quickly garnered a reputation as a powerful and infamous drug smuggling syndicate within the Gallente territories."
+  - text: Deadspace with gates
+  - text: "Popup: Mission Info: This asteroid field has just recently been settled, by a group of pirate freelancers. A hastily erected mobile habitat floats idly in the midst of the giant rocks, while groups of mercenary ships lazily orbit various asteroids in defensive positions. One of the ships clearly has the markings of your target, Drazin Jaruk, who seems to be the leader of this bunch. You also notice another acceleration gate nearby which you guess, judging from it’s fairly clean exterior, has been only recently installed. Where it leads to is anyone’s guess."
+npcs:
+  Acceleration gate:
+    sdeTypes:
+      - Locked
+    class: Acceleration Gate
+pockets:
+  - name: 1st pocket
+    notes:
+      - text: "Structures: Drazin's Habitat - Drazin's keycard (multiple, one needed to unlock room 2), drugs, goods. Structure is 46km away from entry."
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Hangar Array
+            names:
+              - Drazin's Habitat
+            drop: 3x Drazin's keycard (One required to unlock the acceleration gate to pocket 2.
+          - count: "?"
+            class: Acceleration Gate
+            names:
+              - Acceleration gate
+            note: requires Drazin's keycard to unlock. Can be found in Drazin's Habitat.
+      - id: wave
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Mercenary Fighters
+            group: Group 1 (25-30 km)
+          - count: "3"
+            class: Cruiser
+            names:
+              - Mercenary Corporals
+            group: Group 1 (25-30 km)
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Mercenary Elite Fighters
+            group: Group 2 (45 km)
+          - count: "2"
+            class: Cruiser
+            names:
+              - Mercenary Commanders
+            group: Group 2 (45 km)
+          - count: "2"
+            class: Frigate
+            names:
+              - Mercenary Wingman
+            group: Group 3 (45 km)
+            ewar:
+              - kind: web
+          - count: "1"
+            class: Cruiser
+            names:
+              - Mercenary Lieutentant
+            group: Group 3 (45 km)
+          - count: "1"
+            class: Cruiser
+            names:
+              - Drazin Jaruk
+            group: Group 3 (45 km)
+            ewar:
+              - kind: web
+  - name: 2nd pocket
+    notes:
+      - text: "Transmission from Kuran: I take it that imbecile Drazin led you to us. Too bad you won't be leaving this area with your ship intact."
+      - text: Single group at 45 km. The prisoners are dropped in a container by Kuran 'Scarface' Lonan/Korrani Salemo. Storage Facility drops various general commodities.
+      - text: "Previous: Guristas Strike - The Interrogation Next Guristas Strike - Possible Leads"
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Mercenary Wingman
+            ewar:
+              - kind: web
+          - count: "1"
+            class: Cruiser
+            names:
+              - Mercenary Lieutenant
+          - count: "1"
+            class: Cruiser
+            names:
+              - Kuran 'Scarface' Lonan
+              - Korrani Salemo
+            triggers: Mission objective
+            drop: May drop a +3 hardwiring implant

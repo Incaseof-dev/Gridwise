@@ -1,0 +1,216 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: angel-owned-station
+kind: escalation
+name: Angel Owned Station
+dedRating: null
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Angel Owned Station
+    url: https://wiki.eveuniversity.org/Angel_Owned_Station
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "158059"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Angel Owned Station is a low/null-sec expedition that can be found by completing Minor Angel Annex unrated complexes, triggered by destroying the commander battlecruiser.
+  - text: This site's difficulty is on par with a DED 6/10, and multiple battlecruisers with logi support are recommended to complete it.
+  - text: Upon initial warp in you land 10 - 15 KM from the rats.
+lootNotes:
+  - text: Completing all four parts of the escalation may yield Gistum A-type modules and/or a Cynabal BPC.
+pockets:
+  - name: Initial wave
+    notes:
+      - text: Destroying the Stasis Webbing Tower triggers the next wave.
+      - text: "Escalation dead-end: Either the Overseer was trying to trick you and this was the best he could come up with, or you killed him before he could reveal the juicy parts of his offer. Whatever the reason, the takings from this limited expedition are yours for the taking."
+      - text: "Escalation trigger: Among the wreckage and debris you find a few combat drones. A scan of their control units reveals they have been used not long ago, and at a location nearby."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "11"
+            class: Sentry
+            names:
+              - Starbase Cruise Missile Battery
+          - count: "1"
+            class: Sentry
+            names:
+              - Starbase Stasis Tower
+            ewar:
+              - kind: web
+            triggers: Triggers reinforcements
+          - count: "2"
+            class: Cruiser
+            names:
+              - Mercenary Watcher
+          - count: 0-1
+            class: Commander Battlecruiser
+            names:
+              - Domination Praefectus
+              - Domination Tribuni
+            triggers: Escalation trigger
+            drop: may contain Domination faction modules or an implant
+      - id: reinforcements
+        trigger:
+          on: other
+          text: Reinforcements
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Outlaw
+              - Arch Gistii Thug
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Centurion
+              - Arch Gistum Phalanx
+          - count: "7"
+            class: Battleship
+            names:
+              - Gist Nephilim
+              - Gist Saint
+            ewar:
+              - kind: targetPaint
+  - name: Part 2
+    notes:
+      - text: You land at an acceleration gate. Only take it if there is no commander or no escalation is triggered.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Liquidator
+              - Arch Gistum Marauder
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+              - Gistatis Tribunus
+          - count: 0-1
+            class: Commander Battlecruiser
+            names:
+              - Domination Praefectus
+            triggers: Escalation trigger
+            drop: may contain Domination facyion modules or an implant
+  - name: First Pocket
+    notes:
+      - text: Ships have special names but are just renamed deadspace rats. Attacking any ship triggers reinforcements.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Tower
+            names:
+              - Starbase Control Tower
+            triggers: Attacking triggers a reinforcement wave
+      - id: angel-drone-groups
+        trigger:
+          on: other
+          text: Angel/drone groups
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Sentry
+            names:
+              - Starbase Tower Sentry
+          - count: "3"
+            class: Sentry
+            names:
+              - Starbase Stasis Tower
+            ewar:
+              - kind: web
+          - count: "6"
+            class: Frigate
+            names:
+              - Starbase Drone Defender
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Starbase Drone Defender
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "4"
+            class: Cruiser
+            names:
+              - Starbase Drone Protector
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Starbase Drone Protector
+          - count: "3"
+            class: Battleship
+            names:
+              - Starbase Drone Guardian
+      - id: reinforcement-wave
+        trigger:
+          on: other
+          text: Reinforcement wave
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Starbase Drone Protector
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Starbase Drone Protector
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "6"
+            class: Battleship
+            names:
+              - Starbase Drone Guardian
+      - id: reinforcement-wave-triggered-by-attacking-the-starbase-control-tower
+        trigger:
+          on: other
+          text: Reinforcement wave (triggered by attacking the Starbase Control Tower)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Hijacker
+              - Arch Gistii Rogue
+              - Arch Gistii Thug
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Liquidator
+              - Arch Gistum Marauder
+          - count: "7"
+            class: Battleship
+            names:
+              - Gist Nephilim
+              - Gist Saint
+            ewar:
+              - kind: targetPaint
+  - name: Part 4
+    notes:
+      - text: This part is usually in a null-sec system.
+sde:
+  dungeonIds:
+    - 1784

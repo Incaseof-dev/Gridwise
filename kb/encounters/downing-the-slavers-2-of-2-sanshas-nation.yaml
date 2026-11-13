@@ -1,0 +1,112 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: downing-the-slavers-2-of-2-sanshas-nation
+kind: mission
+name: Downing The Slavers (2 of 2)
+level: 4
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Downing The Slavers (2 of 2) (Sansha's Nation)
+    url: https://wiki.eveuniversity.org/Downing_The_Slavers_(2_of_2)_(Sansha's_Nation)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "224133"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy Sansha ships
+ewar:
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite Frigates"
+  - text: "Blitz: Clear the initial group to unlock the acceleration gate. Kill the two Sansha Slaver Elite Cruisers, done."
+  - text: A gated deadspace pocket.The incoming DPS is fairly heavy. Make sure your ship has a proper tank or fit a Micro Jump Drive to snipe.
+  - text: "Tips: Take out the Missile Towers and Battlecruisers first, to reduce incoming DPS."
+  - text: "Tips: For speed tank, primary targets are the webifier Frigates and Towers. Eliminate them as quickly as possible using your drones."
+  - text: "Tips: Heavy Missile Batteries can aggro multiple ships simultaneously."
+lootNotes:
+  - text: "Loot: ~2.42 Mil ISK"
+  - text: "Salvage: ~2.87 Mil ISK"
+  - text: "Bounties: ~3.46 Mil ISK"
+  - text: "Previous mission: The Rogue Slave Trader (Sansha's Nation) (1 of 2)"
+pockets:
+  - name: Warp-in
+    notes:
+      - text: Auto aggro from the group guarding the acceleration gate.
+      - text: Eliminate all ships to unlock the gate.
+      - text: Spawn at 15-25km away, they orbit at 15km
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Fiend
+              - Centum Loyal Hellhound
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Centatis Phantasm
+              - Centatis Specter
+          - count: "2"
+            class: Battleship
+            names:
+              - Centus Lord
+              - Centus Slave
+  - name: Single pocket
+    notes:
+      - text: Heavy incoming DPS and two stasis towers. If you want to move take out the webifying towers ASAP. The mission is completed once the elite cruisers are dead.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Sansha's Demon
+              - Sansha's Berserker
+            ewar:
+              - kind: web
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Sansha Slaver
+            triggers: Mission targets
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Centatis Specter
+              - Centatis Wraith
+          - count: "1"
+            class: Battleship
+            names:
+              - Centus Slave
+              - Centus Plague
+              - Centus Savage Lord
+          - count: "2"
+            class: Sentry
+            names:
+              - Sansha Stasis Tower
+            ewar:
+              - kind: web
+          - count: "2"
+            class: Sentry
+            names:
+              - Sansha Sentry Gun
+          - count: "4"
+            class: Sentry
+            names:
+              - Sansha Heavy Missile Battery
+          - count: "2"
+            class: Sentry
+            names:
+              - Sansha Cruise Missile Battery

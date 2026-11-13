@@ -1,0 +1,153 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: smash-the-supplier
+kind: mission
+name: Smash The Supplier
+level: 4
+enemyFaction: Amarr Empire
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Smash The Supplier
+    url: https://wiki.eveuniversity.org/Smash_The_Supplier
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191937"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the Control Tower.
+ewar:
+  - kind: web
+  - kind: warpScramble
+  - kind: neut
+  - kind: trackingDisruption
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite frigates"
+  - text: "Suggested ships: Paladin, Ishtar, Dominix, Nighthawk"
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: No aggro upon warp-in. One big group at around 60 km distance (perfect for sniping).
+      - text: Ships begin to spawn after accepting the mission, so be quick to the encounter otherwise you may be faced with overwhelming fire.
+      - text: "No information regarding individual spawns at the moment, following a full list of ships that spawn:"
+      - text: "Recommended generic setup for blitz: sniper (>100 km) with an afterburner"
+      - text: "WARNING: Destroying the Control Tower without killing any ships still incurs a 2.4% standing penalty. Decline this mission if you care about your Amarr standings."
+      - text: Blow up the Enemy Control Tower, and the mission is complete (Shipyards explode by themselves once Control Tower is killed). The Control Tower has zero resists, so hit it with your highest damage ammo.
+      - text: "- Use a ship capable of speed-tanking if you can't survive sustained fire from the whole pocket."
+      - text: "- The Control Tower has approximately 150,000hp. Fit for a good tank if you're going for the blitz."
+      - text: Dropped tags
+      - text: Imperial Navy Captain Insignia I x6
+      - text: Imperial Navy Colonel Insignia I x5
+      - text: Imperial Navy General Insignia I x14
+      - text: Imperial Navy General Insignia II x10
+      - text: Imperial Navy Major Insignia I x5
+      - text: Imperial Navy Midshipman Insignia II x4
+      - text: Imperial Navy Midshipman Insignia III x5
+      - text: Imperial Navy Sergeant Insignia III x6
+      - text: Imperial Navy Sergeant Major Insignia I x6
+      - text: "Total value according to evepraisal.com as of 12/07/2021: Approximately 73 M ISK."
+      - text: 0.02% loss per standing tick as well as the 2.4% loss for the Control Tower's destruction
+    waves:
+      - id: total-spawns-in-site
+        trigger:
+          on: other
+          text: Total spawns in site
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Imperial Sixtus
+          - count: "3"
+            class: Frigate
+            names:
+              - Imperial Bahir
+              - Imperial Templar Forian
+            ewar:
+              - kind: trackingDisruption
+          - count: "4"
+            class: Frigate
+            names:
+              - Divine Imperial Bahir
+              - Divine Imperial Napat
+            ewar:
+              - kind: web
+              - kind: trackingDisruption
+              - kind: warpScramble
+          - count: "4"
+            class: Frigate
+            names:
+              - Divine Imperial Valok
+              - Divine Imperial Paladin
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "6"
+            class: Cruiser
+            names:
+              - Imperial Muzakir
+          - count: "4"
+            class: Cruiser
+            names:
+              - Imperial Tamir
+            ewar:
+              - kind: neut
+          - count: "3"
+            class: Cruiser
+            names:
+              - Imperial Agatho
+            ewar:
+              - kind: trackingDisruption
+          - count: "7"
+            class: Cruiser
+            names:
+              - Imperial Templar Mathura
+              - Imperial Templar Donus
+              - Imperial Templar Agatho
+            ewar:
+              - kind: trackingDisruption
+          - count: "8"
+            class: Battleship
+            names:
+              - Imperial Bataivah
+              - Imperial Tanakh
+          - count: "4"
+            class: Battleship
+            names:
+              - Imperial Ultara
+          - count: "2"
+            class: Battleship
+            names:
+              - Imperial Dominator
+              - Imperial Martyr
+            ewar:
+              - kind: neut
+          - count: "4"
+            class: Battleship
+            names:
+              - Imperial Templar Dominator
+              - Imperial Templar Martyr
+          - count: "2"
+            class: Battleship
+            names:
+              - Imperial Templar Judgement
+          - count: "3"
+            class: Industrial
+            names:
+              - Imperial Industrial
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "3"
+            class: Structure
+            names:
+              - Shipyard
+          - count: "1"
+            class: Structure
+            names:
+              - Shipyard

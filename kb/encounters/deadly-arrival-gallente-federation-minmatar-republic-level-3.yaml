@@ -1,0 +1,73 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: deadly-arrival-gallente-federation-minmatar-republic-level-3
+kind: mission
+name: Deadly Arrival
+level: 3
+enemyFaction: Gallente Federation & Minmatar Republic
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Deadly Arrival (Gallente Federation & Minmatar Republic) (Level 3)
+    url: https://wiki.eveuniversity.org/Deadly_Arrival_(Gallente_Federation_%26_Minmatar_Republic)_(Level_3)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "222401"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: web
+notes:
+  - text: "Suggested ships: Battlecruiser, Shuttle (blitz)"
+  - text: "Blitz: Fly to within 10km of the Ruined Structure, wait for mission completion, then warp out. No engagement necessary."
+lootNotes:
+  - text: "Bounty: ~370k ISK (2024/09/07)"
+  - text: "Loot: ~470k ISK (2024/09/07)"
+  - text: "Salvage: ~500k ISK (2024/09/07)"
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: initial-group-50km-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group, 50km (auto-aggro)
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Federation Insidiator
+              - Federation Praktor Balra
+            triggers: Reinforcements 1 and 2
+          - count: "10"
+            class: Sentry
+            names:
+              - Gallente Sentry Tower
+          - count: "2"
+            class: Sentry
+            names:
+              - Gallente Stasis Tower
+            ewar:
+              - kind: web
+      - id: reinforcement-1
+        trigger:
+          on: other
+          text: Reinforcement 1
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Destroyer
+            names:
+              - Republic Faxi
+              - Republic Austri
+      - id: reinforcement-2
+        trigger:
+          on: other
+          text: Reinforcement 2
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Destroyer
+            names:
+              - Republic Bormin
+              - Republic Tribal Faxi

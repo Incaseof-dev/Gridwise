@@ -1,0 +1,234 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: massive-attack-serpentis
+kind: mission
+name: Massive Attack
+level: 4
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Massive Attack (Serpentis)
+    url: https://wiki.eveuniversity.org/Massive_Attack_(Serpentis)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231407"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Kill all attacking forces
+ewar:
+  - kind: sensorDamp
+  - kind: web
+  - kind: warpScramble
+notes:
+  - text: "Web/warp disruption: Elite Frigates (Web, Scram)"
+  - text: "Suggested ships: Battleship, Marauder"
+  - text: "Videos: Ishtar, Nightmare, Machariel, Dominix, Raven (T2 fit)"
+lootNotes:
+  - text: Bounties ± 6.7 Mil ISK
+  - text: Loot & Salvage ± 6.1 Mil ISK (2022-3-15 jita)
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-group-10-30km
+        trigger:
+          on: warpIn
+          text: Initial Group, 10-30km
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corelior Cannoneer
+              - Corelior Sentinel
+          - count: "2"
+            class: Cruiser
+            names:
+              - Corelum Chief Watchman
+              - Corelum Chief Patroller
+            ewar:
+              - kind: sensorDamp
+  - name: Pocket 1
+    notes:
+      - text: Attacking Group 1 will aggro Group 2.
+    waves:
+      - id: group-1-37-47km-auto-aggro
+        trigger:
+          on: other
+          text: Group 1, 37-47km (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Corelatis Squad Leader
+              - Corelatis Platoon Leader
+          - count: "2"
+            class: Battleship
+            names:
+              - Core Rear Admiral
+              - Core Flotilla Admiral
+            ewar:
+              - kind: sensorDamp
+      - id: group-2-53-56km
+        trigger:
+          on: other
+          text: Group 2, 53-56km
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Initiate
+              - Coreli Guardian Scout
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "2"
+            class: Destroyer
+            names:
+              - Corelior Cannoneer
+              - Corelior Sentinel
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corelum Chief Guard
+              - Corelum Chief Safeguard
+            ewar:
+              - kind: sensorDamp
+  - name: Pocket 2
+    notes:
+      - text: Group 2 has a proximity aggro of 80km.
+    waves:
+      - id: group-1-53-57km
+        trigger:
+          on: other
+          text: Group 1, 53-57km
+          confidence: inferred
+        spawns:
+          - count: 4-6
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Spy
+              - Coreli Guardian Agent
+              - Coreli Guardian Defender
+              - Coreli Guardian Protector
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corelum Chief Guard
+              - Corelum Chief Safeguard
+            ewar:
+              - kind: sensorDamp
+      - id: group-2-118-147km
+        trigger:
+          on: other
+          text: Group 2, 118-147km
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Corelior Artillery
+              - Corelior Cannoneer
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corelatis Squad Leader
+              - Corelatis Platoon Leader
+          - count: "2"
+            class: Battleship
+            names:
+              - Core Rear Admiral
+              - Core Flotilla Admiral
+            ewar:
+              - kind: sensorDamp
+  - name: Pocket 3
+    notes:
+      - text: Attacking the Left Group aggros the Middle Group.
+      - text: Both the Left and Middle groups give proximity aggro at 75km.
+      - text: "Blitz: Kill the left group, next to the asteroid colony (MJD is perfect)"
+    waves:
+      - id: right-group-27-31km-auto-aggro
+        trigger:
+          on: other
+          text: Right Group, 27-31km (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Scout
+              - Coreli Guardian Initiate
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corelum Chief Safeguard
+              - Corelum Chief Guard
+            ewar:
+              - kind: sensorDamp
+      - id: middle-group-93-104km
+        trigger:
+          on: other
+          text: Middle Group, 93-104km
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Scout
+              - Coreli Guardian Initiate
+              - Coreli Guardian Spy
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corelum Chief Safeguard
+              - Corelum Chief Guard
+            ewar:
+              - kind: sensorDamp
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corelatis Squad Leader
+              - Corelatis Platoon Leader
+      - id: left-group-90-109km
+        trigger:
+          on: other
+          text: Left Group, 90-109km
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Scout
+              - Coreli Guardian Initiate
+              - Coreli Guardian Spy
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "2"
+            class: Destroyer
+            names:
+              - Corelior Cannoneer
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corelatis Squad Leader
+              - Corelatis Platoon Leader
+          - count: "2"
+            class: Battleship
+            names:
+              - Core Rear Admiral
+              - Core Flotilla Admiral
+            ewar:
+              - kind: sensorDamp

@@ -1,0 +1,123 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: serpentis-port
+kind: anomaly
+name: Serpentis Port
+dedRating: null
+anomalyClass: 7
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Serpentis Port
+    url: https://wiki.eveuniversity.org/Serpentis_Port
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "205560"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: The site is an open pocket that can be warped to at any range.
+  - text: Two battlecruisers can run this site without too much difficulty.
+  - text: Each new wave spawns when the previous one is destroyed. All enemy waves spawn around the cluster of structures. Waves can vary significantly in composition. Waves 2 and 3 can spawn simultaneously.
+  - text: There are multiple variations of this site with different spawns.
+  - text: ----
+  - text: "Escalation: Can escalate to Serpentis Paramilitary Complex."
+lootNotes:
+  - text: You can get about 10-15 million ISK in bounties and a few million ISK in loot.
+pockets:
+  - name: Variant 2
+    notes:
+      - text: There is a small chance of a Shadow Serpentis faction spawn.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 3-4
+            class: Destroyer
+            names:
+              - Corelior Artillery
+              - Corelior Cannoneer
+              - Corelior Infantry
+              - Corelior Soldier
+          - count: 3-4
+            class: Cruiser
+            names:
+              - Corelum Chief Infantry
+              - Corelum Chief Sentinel
+          - count: "2"
+            class: Sentry
+            names:
+              - Tower Sentry Serpentis II
+          - count: "2"
+            class: Sentry
+            names:
+              - Serpentis Heavy Missile Battery
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corelior Cannoneer
+              - Corelior Soldier
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corelatis Captain Sentry
+              - Corelatis High Captain
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Corelum Chief Protector
+              - Corelum Chief Infantry
+              - Corelum Chief Defender
+          - count: 2-3
+            class: Battleship
+            names:
+              - Core Admiral
+              - Core High Admiral
+      - id: wave-4
+        trigger:
+          on: other
+          text: Wave 4
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Corelatis Captain
+              - Corelatis Wing Leader
+              - Corelatis Platoon Leader
+          - count: 3-4
+            class: Battleship
+            names:
+              - Core Grand
+              - Core Lord Admiral
+      - id: commander-spawn-rare
+        trigger:
+          on: other
+          text: Commander spawn (rare)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Shadow Serpentis Baron
+              - Shadow Serpentis Commodore
+            drop: Faction loot
+sde:
+  dungeonIds:
+    - 2129

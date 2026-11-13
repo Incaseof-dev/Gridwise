@@ -1,0 +1,88 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: deadly-arrival-caldari-amarr-level-3
+kind: mission
+name: Deadly Arrival
+level: 3
+enemyFaction: Caldari State & Amarr Empire
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Deadly Arrival (Caldari & Amarr) (Level 3)
+    url: https://wiki.eveuniversity.org/Deadly_Arrival_(Caldari_%26_Amarr)_(Level_3)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "205300"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Investigate the ruins (fly to it), then report back to your agent.
+ewar:
+  - kind: web
+notes:
+  - text: "Suggested ships: Battlecruiser"
+  - text: "Blitz: Fly to within 10km of the Ruined Structure, wait for mission completion, then warp out. No engagement necessary."
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: Once you are within close proximity of the structure, the initial reinforcements spawn. At this point you can return to your agent.
+      - text: "Agent hand-in: I'm sorry that you got ambushed, . You have my regrets. I'll have someone take care of any ships or sentries that you left behind."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "?"
+            class: Structure
+            names:
+              - Ruined Structure
+            triggers: Triggers initial spawn when approached to ~10km.
+      - id: initial-spawn-40-50km-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Spawn, 40-50km (auto-aggro)
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - State Katana
+              - State Wakizashi
+            triggers: First destroyed triggers reinforcement 1, second reinforcement 2
+          - count: "5"
+            class: Sentry
+            names:
+              - Caldari Tower Sentry I
+          - count: "5"
+            class: Sentry
+            names:
+              - Caldari Point Defense Battery
+          - count: "2"
+            class: Sentry
+            names:
+              - Caldari Stasis Tower
+            ewar:
+              - kind: web
+      - id: reinforcement-1
+        trigger:
+          on: other
+          text: Reinforcement 1
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Destroyer
+            names:
+              - Imperial Deacon
+              - Imperial Exarp
+      - id: reinforcement-2
+        trigger:
+          on: other
+          text: Reinforcement 2
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Destroyer
+            names:
+              - Imperial Caius
+              - Imperial Crusader

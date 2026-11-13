@@ -1,0 +1,110 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-damsel-in-distress-level-4
+kind: mission
+name: The Damsel in Distress
+level: 4
+enemyFaction: Mercenaries
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Damsel in Distress (Level 4)
+    url: https://wiki.eveuniversity.org/The_Damsel_in_Distress_(Level_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "221149"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Rescue the Damsel
+ewar:
+  - kind: web
+notes:
+  - text: Destruction of the garden results in an 3,000 Explosive damage Explosive damage in a 30-40 Km radius. This kills drones.
+  - text: Single ungated pocket. You can warp in at preferred distance.
+  - text: Reinforcements arrive when you attack Kruul (unless the Casino is destroyed first) and when the pleasure garden takes armor and hull damage.
+  - text: "Important note: The Damsel will appear in the cargo hold of the ship that got the last hit of the Pleasure Garden. This should be noted if you are running this mission in fleets."
+  - text: "Note to important note: Endrulf Anbet Skor reported on 7 January 2023 that the Damsel did not appear in the cargo hold so this is most likely no longer true."
+  - text: "Note to note to important note: as of 2024-06-23, the Damsel *does* show up in the cargo hold. This may be inconsistent, pay particular attention when blitzing this mission."
+  - text: "Notable loot: Kruul drops just some DNA. Zor drops Zbikoki's Hacker Card that allows you to skip the first room in Worlds Collide missions. Zor also drops an implant that is usually cheap but can be valuable if you are lucky. The gardens drop commodities such as tourists and tobacco."
+  - text: "Tip: Don't let your drones shoot Kruul as that will trigger the Battleship reinforcements. Also, recall your drones before your last hit to the Pleasure Garden, it explosion can kill your light or salvage drones (from someone who lost 10 salvage drones because he forgot about this)"
+  - text: "Blitz: Destroy Kruul's Pleasure Garden (the one further away from warpin) and return to agent. The Damsel will appear in your cargo hold. The incoming DPS is very high if all waves are triggered."
+lootNotes:
+  - text: "Loot: ≈ 7-8M ISK (100% Jita Buy, 2020-12-06) - small chance at a unique drop from 'Zor' worth around 100M."
+  - text: "Salvage: ≈ 489k ISK (100% Jita Buy, 2020-12-06)"
+  - text: "Bounties: ≈ 5.0 Million ISK (2020-12-06)"
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Kruul's Henchman
+          - count: "4"
+            class: Cruiser
+            names:
+              - Pleasure Hub Guardian
+          - count: "3"
+            class: Battleship
+            names:
+              - Pleasure Hub Sentinel
+          - count: "1"
+            class: Cruiser
+            names:
+              - Kruul
+            triggers: Triggers reinforcements when attacked.
+      - id: kruuls-reinforcements-destroying-casino-first-prevents-this-spawn
+        trigger:
+          on: other
+          text: Kruul's reinforcements (destroying Casino first prevents this spawn)
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Battleship
+            names:
+              - Pleasure Hub Sentinel
+      - id: kruuls-pleasure-gardens-reinforcements-75-armor-left
+        trigger:
+          on: other
+          text: Kruul's Pleasure Gardens reinforcements (75% armor left)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Drone
+            names:
+              - Spider Drone I
+            ewar:
+              - kind: web
+          - count: "4"
+            class: Cruiser
+            names:
+              - Pleasure Hub Guardian
+          - count: "4"
+            class: Battleship
+            names:
+              - Pleasure Hub Sentinel
+      - id: kruuls-pleasure-gardens-reinforcements-40-hull-left
+        trigger:
+          on: other
+          text: Kruul's Pleasure Gardens reinforcements (40% hull left)
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Seven Death Dealer
+          - count: "3"
+            class: Cruiser
+            names:
+              - Seven Assassin
+          - count: "1"
+            class: Battleship
+            names:
+              - Zor
+            drop: Drops Zor's Custom Navigation Link

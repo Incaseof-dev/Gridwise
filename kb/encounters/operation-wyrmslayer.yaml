@@ -1,0 +1,90 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: operation-wyrmslayer
+kind: mission
+name: Operation Wyrmslayer
+level: 5
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Operation Wyrmslayer
+    url: https://wiki.eveuniversity.org/Operation_Wyrmslayer
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191821"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: web
+notes:
+  - text: "Web/warp disruption: Stasis towers web"
+  - text: "Suggested ships: Dominix/Ishtar with Logistics support (Dominix), speed tanking Ishtar with dual MAR"
+  - text: "- This mission is easy to solo and the lack of Neut towers makes it active tank friendly."
+  - text: "- The Shadow Serpentis BS can drop Snake implants and several Shadow Serpentis modules."
+  - text: "- Bounties from the rats are approximately 20 mil."
+  - text: "- The Stronghold takes very long to destroy and does not drop good loot."
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: Direct warp into ungated deadspace pocket. Full room aggro on first shot.
+      - text: There are 2 Ship groups and 2 Tower groups. In an attempt at simplicity, the total numbers of hostiles are combined. (I.e., there are only 12 ships per Ship group and 5 towers per Tower group.)
+      - text: Destroying the non-elite (not Guardian) frigates of that spawn causes a random Shadow Serpentis Battleship to appear which must be killed to complete the mission.
+      - text: After the frigate spawn, there will be another tower spawn.
+      - text: "Blitz: Shoot the initial frigs and the Maulus frigs that spawn in order to spawn the Shadow Serpentis BS. Kill this BS to trigger completion."
+    waves:
+      - id: ship-group
+        trigger:
+          on: other
+          text: Ship Group
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Coreli Guardian Protector
+          - count: "4"
+            class: Cruiser
+            names:
+              - Corelum Chief Infantry
+          - count: "8"
+            class: Battlecruiser
+            names:
+              - Corelatis Wing Leader
+          - count: "8"
+            class: Battleship
+            names:
+              - Core Grand Admiral
+      - id: tower-group
+        trigger:
+          on: other
+          text: Tower Group
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Tower
+            names:
+              - Serpentis Stasis Tower
+            ewar:
+              - kind: web
+          - count: "8"
+            class: Tower
+            names:
+              - Serpentis Heavy Missile Battery
+      - id: additional-tower-spawn
+        trigger:
+          on: other
+          text: Additional Tower Spawn
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Tower
+            names:
+              - Serpentis Stasis Tower
+            ewar:
+              - kind: web
+          - count: "8"
+            class: Tower
+            names:
+              - Serpentis Heavy Missile Battery

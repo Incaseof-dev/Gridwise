@@ -1,0 +1,161 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: pirate-intrusion-guristas-pirates
+kind: mission
+name: Pirate Intrusion
+level: 2
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Pirate Intrusion (Guristas Pirates)
+    url: https://wiki.eveuniversity.org/Pirate_Intrusion_(Guristas_Pirates)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191836"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: ecm
+notes:
+  - text: "Suggested ships: Cruiser"
+pockets:
+  - name: 1st Pocket
+    waves:
+      - id: 1st-group-25km-auto-aggro
+        trigger:
+          on: other
+          text: 1st Group, 25km (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Pithi Despoiler
+              - Pithi Saboteur
+            ewar:
+              - kind: ecm
+      - id: 2nd-group-30km
+        trigger:
+          on: other
+          text: 2nd Group, 30km
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Pithi Demolisher
+              - Pithi Destructor
+          - count: "1"
+            class: Destroyer
+            names:
+              - Pithior Destructor
+              - Pithior Anarchist
+      - id: 3rd-group-40km
+        trigger:
+          on: other
+          text: 3rd Group, 40km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Pithi Wrecker
+              - Pithi Demolisher
+      - id: 4th-group
+        trigger:
+          on: other
+          text: 4th Group
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Pithi Saboteur
+            ewar:
+              - kind: ecm
+          - count: "1"
+            class: Destroyer
+            names:
+              - Pithior Renegade
+          - count: "1"
+            class: Cruiser
+            names:
+              - Pithum Killer
+              - Pithum Ascriber
+              - Pithum Silencer
+            ewar:
+              - kind: ecm
+            note: Pithum Killer Target Jams
+  - name: 2nd Pocket
+    notes:
+      - text: "Note: Structures Drop No loot"
+    waves:
+      - id: 1st-group-25km
+        trigger:
+          on: other
+          text: 1st Group, 25km
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Pithi Plunderer
+              - Pithi Demolisher
+          - count: "1"
+            class: Cruiser
+            names:
+              - Pithum Ascriber
+              - Pithum Silencer
+      - id: 2nd-group
+        trigger:
+          on: other
+          text: 2nd Group
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Pithi Infiltrator
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Pithi Demolisher
+              - Pithi Wrecker
+              - Pithi Plunderer
+      - id: 3rd-group
+        trigger:
+          on: other
+          text: 3rd Group
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Destroyer
+            names:
+              - Pithior Renegade
+          - count: "1"
+            class: Cruiser
+            names:
+              - Pithum Annihilator
+              - Pithum Nullifier
+              - Pithum Mortifier
+              - Pithum Inferno
+            ewar:
+              - kind: ecm
+      - id: 4th-group
+        trigger:
+          on: other
+          text: 4th Group
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Pithi Wrecker
+      - id: mining
+        trigger:
+          on: other
+          text: Mining
+          confidence: inferred
+        spawns: []

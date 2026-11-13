@@ -1,0 +1,114 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: old-meanie-cultivation-center
+kind: complex
+name: Old Meanie - Cultivation Center
+dedRating: 1
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Old Meanie - Cultivation Center
+    url: https://wiki.eveuniversity.org/Old_Meanie_-_Cultivation_Center
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "175909"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Frigate"
+notes:
+  - text: Old Meanie - Cultivation Center is a DED 1/10 rated combat site. It can be found by scanning cosmic signatures in high security space.
+loot:
+  - item: 1st Tier Overseer's Personal Effects
+    from: Biodome Gardens
+    note: est. 10K ISK (wiki) · 100% drop rate
+  - item: 2nd Tier Overseer's Effects
+    from: Stuffed Container
+    note: est. 16.9k ISK (wiki) · 100% drop rate
+  - item: Corpii C-Type modules
+    from: Stuffed Container
+    note: Up to 3x
+  - item: + Exploration logs
+  - item: 2014 Dec
+    note: est. 17,9M ISK (wiki) · From container in second pocket
+  - item: 2018 Mar
+    note: est. 38,8M ISK (wiki) · From container in second pocket
+  - item: 2021 Mar
+    note: est. 50,6M ISK (wiki) · From container in second pocket
+  - item: 2021 May
+    note: est. 11M ISK (wiki) · From container in second pocket
+  - item: 2021 Oct
+    note: est. 42M ISK (wiki) · From container in second pocket
+pockets:
+  - name: First Pocket
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "15"
+            class: Frigate
+            names:
+              - Corpii Follower
+          - count: "1"
+            class: Sentry
+            names:
+              - Deadly-looking Sentry Gun
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Container
+            names:
+              - Drifting Cask
+            drop: drops
+          - count: "1"
+            class: Container
+            names:
+              - A "Lonely Heart"
+            drop: Metal scraps
+          - count: "1"
+            class: Structure
+            names:
+              - Biodome Gardens
+            drop: 1st Tier Overseer's Personal Effects, meta modules
+    onWarpIn: '"Old Meanie" is a mining relic. Previously it was a small mining outpost, but was raided so frequently by Serpentis pirates that it was abandoned. Today it contains some experimental biodomes, and further inside the complex Amarrians are creating a spiritual center. DED Threat Assessment: Training (1 of 10)'
+  - name: Second Pocket
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "21"
+            class: Frigate
+            names:
+              - Corpii Follower
+          - count: "1"
+            class: Frigate
+            names:
+              - Corpii Worshipper
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Red Container
+            names:
+              - Stuffed Container
+            drop: Always contains one 2nd Tier Overseer's Effects and 0-3 Corpii C-Type modules
+          - count: "1"
+            class: Structure
+            names:
+              - Amarr Cathedral
+    onWarpIn: Amarr contracted biodomes are being built in the ruins and debris from an old mining outpost. The biodomes are vulnerable, but construction is going well. It is handled by questionable contractors, and in dealing with them, caution is advised.
+sde:
+  dungeonIds:
+    - 179

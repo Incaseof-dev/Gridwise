@@ -1,0 +1,198 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: shadow-serpentis-fleet-staging-point-2-and-part-3
+kind: escalation
+name: Shadow Serpentis Fleet Staging Point 2
+dedRating: null
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Shadow Serpentis Fleet Staging Point 2 and part 3
+    url: https://wiki.eveuniversity.org/Shadow_Serpentis_Fleet_Staging_Point_2_and_part_3
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "203189"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Ungated"
+notes:
+  - text: "Escalation: Video"
+  - text: "Escalation: Access: Gateless, Open Access"
+  - text: "Escalation: This site can be hard or easy, depending on how you approach it. It is very easy to accidentally trigger all 3 reinforcement waves. They are triggered at 70% station shield, at 30% shield and at 50% armor."
+  - text: "Escalation: You should first clear out any NPCs. Then do minimal damage to get the stations shield to 70%, clear out that wave and repeat for the next wave and the last wave. Consider de-grouping launchers or/and only using some of the drones. If you do it in groups, coordinate with the others. Station tanks ~1,000 dps. Avoid using Sentry drones as they may auto aggress the structure"
+  - text: "Escalation: Trigger testimonial:: My experience was quite different. During the initial wave, my drones accidentally shot the control tower. This immediately spawned waves 1 and 2, first volley spawned wave 1 and second volley spawned wave 2 before I recalled. For reference this was in a 0.3 system. Not certain of web max range, but it could not reach 75km. The neut towers, however, did reach that far."
+loot:
+  - item: +Overview
+  - item: Part 1
+    note: est. 8th Tier OPE, chance for faction cruiser module (wiki)
+  - item: Par 2
+    note: est. 22nd Tier OPE, chance for Vindicator BPC, Core A-type Deadspace module (wiki)
+pockets:
+  - name: First Pocket
+    notes:
+      - text: "Access: Gateless, Open Access"
+      - text: This site is rather easy. Mind the wave trigger and destroy the Energy Neutralizers fast and you should have no problems.
+      - text: There are no warp disrupters on any of the NPCs, so you can come and leave as you see fit.
+      - text: Remember that since the site is gateless, you can make bookmarks you can warp to.
+      - text: "Escalation message:: The last Serpentis Battleship sends out a distress signal before it goes down. Luckily your com systems have managed to decrypt the message and follow it to it's final destination."
+      - text: "Note: December 29th 2018 - Sentry wave never spawned"
+      - text: "Note: February 9th, 2020 - Sentry wave does in fact spawn, about 4-5 minutes after warp-in. They neutralize 61 GJ per cycle each."
+      - text: "Note: May 2020/2022 - The sentries never spawned."
+      - text: "Note: May 5th, 2023 - Sentry wave did spawn, Neutralizing 75 GJ per cycle each."
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: Locked until all NPCs are destroyed
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Corelior Cannoneer
+              - Corelior Sentinel
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corelum Captain
+              - Captain Sentry
+          - count: "4"
+            class: Battleship
+            names:
+              - Core Grand Admiral
+              - Core Lord Admiral
+            triggers: Triggers Wave 3
+      - id: wave-2-4-5-min-or-not
+        trigger:
+          on: other
+          text: Wave 2 (4-5 min - or not)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Sentry
+            names:
+              - Serpentis Cruise Missile Battery
+          - count: "2"
+            class: Sentry
+            names:
+              - Serpentis Energy Neutralizer Sentry II
+            ewar:
+              - kind: neut
+      - id: wave-3-spawn-close-to-gate
+        trigger:
+          on: other
+          text: Wave 3 (Spawn close to gate)
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Protector
+            triggers: Triggers Wave 4
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corelior Cannoneer
+              - Corelior Sentinel
+          - count: "4"
+            class: Battleship
+            names:
+              - Core Grand Admiral
+              - Core Lord Admiral
+      - id: wave-4-spawn-30km-behind-the-gate
+        trigger:
+          on: other
+          text: Wave 4 (Spawn 30km behind the gate)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corelior Cannoneer
+              - Corelior Sentinel
+          - count: "2"
+            class: Cruiser
+            names:
+              - Corelatis Captain
+              - Corelatis Captain Sentry
+          - count: "1"
+            class: Overseer Cruiser
+            names:
+              - Serpentis Refinery Headmaster
+            triggers: Escalation trigger
+            drop: 8th Tier OPE and a chance of faction cruiser modules
+          - count: "2"
+            class: Battleship
+            names:
+              - Core High Admiral
+  - name: Second Pocket
+    notes:
+      - text: This pocket offers no loot nor gives the escalation, only additional bounties and wrecks for salvage.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corelatis Captain
+              - Corelatis Captain Sentry
+          - count: "8"
+            class: Battleship
+            names:
+              - Core Grand Admiral
+              - Core Lord Admiral
+            triggers: Triggers Wave 2
+          - count: "1"
+            class: Sentry
+            names:
+              - Serpentis Stasis Webification Tower
+            ewar:
+              - kind: web
+          - count: "2"
+            class: Sentry
+            names:
+              - Serpentis Point Defense Batteries
+          - count: "9"
+            class: Sentry
+            names:
+              - Serpentis Cruise Missile Battery
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Protector
+          - count: "9"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Guard
+            ewar:
+              - kind: sensorDamp
+            note: type list incomplete on the source page
+          - count: "5"
+            class: Battleship
+            names:
+              - Core Grand Admiral
+              - Core Lord Admiral
+sde:
+  dungeonIds:
+    - 2579

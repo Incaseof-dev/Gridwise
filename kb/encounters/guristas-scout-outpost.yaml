@@ -1,0 +1,223 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: guristas-scout-outpost
+kind: complex
+name: Guristas Scout Outpost
+dedRating: 4
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Guristas Scout Outpost
+    url: https://wiki.eveuniversity.org/Guristas_Scout_Outpost
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231931"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: T2 Battlecruiser"
+notes:
+  - text: Guristas Scout Outpost is a DED rated complex which can be found in High-sec or Low-sec through exploration.
+  - text: Can be obtained through an escalation of Guristas Hideaway and Guristas Refuge.
+  - text: Tier 3 cruisers cannot enter the site.
+loot:
+  - item: 7th Tier Overseer's Personal Effects
+    from: Guristas Scout Officer
+    note: est. 600k ISK (wiki) · 100% drop rate
+  - item: 8th Tier Overseer's Personal Effects
+    from: Radiating Telescope
+    note: est. 1.2M ISK (wiki) · 100% drop rate
+  - item: Dread Guristas module
+    from: Guristas Scout Officer
+    note: very rare
+  - item: Pithum C-Type module
+    from: Radiating Telescope
+    note: est. 100k - 400M ISK (wiki) · Up to 4x
+  - item: Gila BPC
+    from: Radiating Telescope
+    note: Rare
+  - item: Pithum C-Type Multispectrum Shield Hardener
+    note: est. About 400M ISK (wiki) · Most valuable loot · possible deadspace modules
+  - item: Pithum C-Type Medium Shield Booster
+    note: est. About 70M ISK (wiki) · Less valuable loot · possible deadspace modules
+  - item: Pithum C-Type Medium Remote Shield Booster
+    note: est. About 21M ISK (wiki) · possible deadspace modules
+  - item: Pithum C-Type EM Shield Amplifier
+    note: est. About 12M ISK (wiki) · possible deadspace modules
+  - item: Pithum C-Type Kinetic Shield Amplifier
+    note: est. Valueless (wiki) · possible deadspace modules
+  - item: Pithum C-Type Explosive Shield Amplifier
+    note: est. Valueless (wiki) · possible deadspace modules
+  - item: Pithum C-Type Thermal Shield Amplifier
+    note: est. Valueless (wiki) · possible deadspace modules
+pockets:
+  - name: First pocket
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "16"
+            class: Frigate
+            names:
+              - Pithi Infiltrator
+              - Pithi Invader
+              - Pithi Plunderer
+              - Pithi Wrecker
+          - count: "5"
+            class: Frigate
+            names:
+              - Pithi Despoiler
+              - Pithi Saboteur
+            ewar:
+              - kind: ecm
+          - count: "7"
+            class: Cruiser
+            names:
+              - Pithum Inferno
+              - Pithum Mortifier
+          - count: "1"
+            class: Overseer Cruiser
+            names:
+              - Guristas Scout Officer
+            drop: Wreck contains 7th Tier Overseer's Personal Effects and may contain Dread Guristas Cruiser Modules and may produce Tech 2 salvage.
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Container
+            names:
+              - Supply Canister
+            drop: T1 ammo, drones, metal scraps
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Security Acceleration Gate
+            note: Locked until all ships are destroyed. 40 km from warp-in
+          - count: "1"
+            class: Structure
+            names:
+              - Nebulaic Data Harvester
+          - count: "1"
+            class: Structure
+            names:
+              - Landing Pad
+          - count: "4"
+            class: Structure
+            names:
+              - Lookout Tower
+          - count: "1"
+            class: Structure
+            names:
+              - Scanner Post
+          - count: "2"
+            class: Structure
+            names:
+              - Scout Post
+          - count: "5"
+            class: Structure
+            names:
+              - Scout Relay Pylon
+          - count: "20"
+            class: Structure
+            names:
+              - Wall
+    onWarpIn: "This small deadspace complex was built by the militant Guristas pirates. It serves as a scout outpost and a minor rendezvous point for reconnaissance teams. DED Threat Assessment: Risky (4 of 10)"
+  - name: Second pocket
+    notes:
+      - text: Do not underestimate the incoming damage; a T1 battlecruiser will implode under the DPS within a minute or two, although a buffer-fit Drake can clear it without dropping below 80% shields.
+      - text: Recommended to increase Kinetic resistance with two Kinetic Shield Hardeners and to also equip 10MN Afterburner for cruiser and battlecruiser fits.
+      - text: If you want to lower the damage output, it is highly recommended to destroy the cruisers, as they make up most of the incoming damage.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "8"
+            class: Frigate
+            names:
+              - Pithi Destructor
+              - Pithi Plunderer
+              - Pithi Wrecker
+          - count: "5"
+            class: Frigate
+            names:
+              - Pithi Despoiler
+              - Pithi Saboteur
+            ewar:
+              - kind: ecm
+          - count: "1"
+            class: Cruiser
+            names:
+              - Pithum Ascriber
+              - Pithum Silencer
+          - count: "3"
+            class: Cruiser
+            names:
+              - Pithum Annihilator
+              - Pithum Killer
+              - Pithum Nullifier
+            ewar:
+              - kind: ecm
+          - count: 5-6
+            class: Cruiser
+            names:
+              - Pithum Inferno
+              - Pithum Mortifier
+          - count: "1"
+            class: Cruiser
+            names:
+              - Guristas Reconnaissance Officer
+            drop: Cruise missiles
+            note: Renamed Pithum Abolisher/Eraser
+          - count: "1"
+            class: Sentry
+            names:
+              - Sentry Guns
+            note: Renamed Guristas Sentry Gun
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "2"
+            class: Container
+            names:
+              - Supply Crate
+            drop: T1 ammo, drones, metal scraps
+          - count: "1"
+            class: Hangar Array
+            names:
+              - Radiating Telescope
+            drop: Contains 8th Tier Overseer's Personal Effects and may contain Pithum C-Type Modules, Gila BPC, or Dread Guristas Modules.
+            note: Immune to all EWAR
+          - count: "1"
+            class: Structure
+            names:
+              - Nebular Data Harvester
+          - count: "2"
+            class: Structure
+            names:
+              - Bunker
+          - count: "1"
+            class: Structure
+            names:
+              - Cargo Rig
+          - count: "2"
+            class: Structure
+            names:
+              - Scout Post
+          - count: "2"
+            class: Structure
+            names:
+              - Scout Relay Pylon
+    onWarpIn: The scout base perimeter is defended by light spacecraft acting as security for the sensitive recon equipment deeper inside the complex. The security acceleration gate is known to be actively blocked by the security team, allowing no intruders entry while they remain at work.
+sde:
+  dungeonIds:
+    - 2249

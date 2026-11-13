@@ -1,0 +1,52 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: of-quiet-nights-long-past
+kind: mission
+name: Of Quiet Nights Long Past
+level: null
+enemyFaction: Various
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Of Quiet Nights Long Past
+    url: https://wiki.eveuniversity.org/Of_Quiet_Nights_Long_Past
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "228287"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal:
+    - em
+    - thermal
+    - kinetic
+    - explosive
+  resist:
+    - em
+    - thermal
+    - kinetic
+    - explosive
+objectives:
+  - text: Find the monastery. Clear the area of any pirates. Retrieve any documents you find.
+notes:
+  - text: "The Reclaiming: The Reclaiming is a major part of the Amarr religion, and of the Empire itself. They believe that all people in the universe were once part of the same empire, and the Amarr Empire is the direct heir to that legacy. Through Empress Catiz Tash-Murkon the Amarr are given a divine mandate to reunify the peoples of the universe through any means necessary. Historically, this has lead to numerous wars of conquest in which the Amarr decimate and then absorb civilizations. Each war is itself referred to as a Reclaiming to emphasize their divine mandate."
+  - text: Objective
+  - text: Fly to the monastery at the designated location in Lisudeh, destroy all the pirates, and acquire 1x Strange Coded Document (0.1 m³) - return it to the Lisudeh IV - Moon 4 - Theology Council Tribunal station.
+  - text: Notes
+  - text: Warp to the encounter. In about 35-50km distance you will be paired up against 8x Scavengers of various factions. Kill them all. The 1x Strange Coded Document can be found in a Cargo Container that drops from the last destroyed ship. Mission complete. Return to base pilot!
+  - text: "On turn in, Doctor Canius says: \"Good job cleaning those guys out. I wouldn't worry about the ramifications of slaughtering some godless scavengers. The first rule of any good reclaiming is it's about souls, not bodies. You just happen to have a lot of the latter left over. Now, let's have a look at that document you found.\""
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: "Next Mission: Revelations"
+    waves:
+      - id: defenders
+        trigger:
+          on: warpIn
+          text: Defenders
+        spawns:
+          - count: "8"
+            class: Frigate
+            names:
+              - Scavenger

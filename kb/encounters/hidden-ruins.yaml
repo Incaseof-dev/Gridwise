@@ -1,0 +1,318 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: hidden-ruins
+kind: complex
+name: Hidden Ruins
+dedRating: null
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Hidden Ruins
+    url: https://wiki.eveuniversity.org/Hidden_Ruins
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "203652"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: The following info is unconfirmed. It is modified from a similar site in a different region.
+  - text: Hidden Ruins is a very rare Relic site involving combat as well as hacking, found by scanning in Nullsec. It is found in the Cloud Ring region, and is probably found in the Syndicate and Outer Ring regions. Rats from several factions are present here. Up to T2 Battleships can enter the site. Damage in the site can easily become excessive if care is not taken in managing triggers.
+  - text: The warpin contains a few rats.
+  - text: The acceleration gate is locked until the defenders are dead.
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Battleship
+            names:
+              - )
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Gate to Terrace
+            note: Locked until defenders are dead
+    onWarpIn: "Pirate Grave Robber: The ancient ruins in here are taken buddy. Leave now and maybe we'll let you go in one piece."
+  - name: First Pocket (Terrace)
+    notes:
+      - text: "Database information: DED deep space scouts briefly explored this strange site and left behind a rather cryptic note. As far as you can tell some ancient ruins lie within, but who built them or what treasures might lie buried there are anyone's guess."
+      - text: This room contains rats from the Serpentis pirate faction.
+      - text: "Serpentis Head Looter destroyed: More pirates have appeared!"
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "1"
+            class: Sentry
+            names:
+              - Serpentis Stasis Tower
+            ewar:
+              - kind: web
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns: []
+      - id: wave
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Gate to Portal
+            note: Approx. 30 km away
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Gate to Hall
+            note: Approx. 60 km away
+  - name: Second Pocket (Portal)
+    notes:
+      - text: This is an optional room, as the Gate to Hall leads deeper towards the central deadspace pocket.
+      - text: "Upon attacking the Core Relay Commander: As the Relay Commander is attacked, he calls for backup! More hostile ships are incoming!"
+      - text: "Upon attacking the Core Relay Commander: As the Relay Commander is attacked, he calls for backup! More hostile ships are incoming!"
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "1"
+            class: Battleship
+            names:
+              - Core Relay Commander
+            triggers: Triggers wave 2 when attacked
+          - count: "2"
+            class: Sentry
+            names:
+              - Serpentis Stasis Tower
+            ewar:
+              - kind: web
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Battleship
+            names:
+              - Core Relay Commander
+            triggers: Attacking triggers wave 3
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns: []
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Gate to Hall
+            note: Locked
+    onWarpIn: As you come out of acceleration you notice the resemblance of a spatial rift in the distance.
+  - name: Third Pocket (Hall)
+    notes:
+      - text: "Database information: A large force of drones has taken up residence in this area. They obviously benefit greatly from salvaging the remnants of the former inhabitants, which still litters this patch of space. A drone presence this large could not be formed without an abundance of raw materials."
+      - text: Rogue drones are present in this room. Floating Debris containers require a Relic Analyzer to access.
+      - text: "Upon destroying one of the missile batteries: Drones have been deployed from the Drone Bunkers in response to the attack on the sentry guns!"
+      - text: "When smartbomb wave is triggered: Someone has triggered an ancient land mine! All ships inside the blast radius take damage."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "8"
+            class: Sentry
+            names:
+              - Drone Cruise Missile Battery
+            triggers: Attacking any one triggers battery wave
+          - count: "8"
+            class: Elite Frigate
+            names:
+              - Strain Barracuda
+              - Strain Devilfish
+              - Strain Silverfish Alvi
+          - count: "10"
+            class: Battleship
+            names:
+              - Alvus Creator
+              - Patriarch Alvus
+      - id: battery-wave
+        trigger:
+          on: other
+          text: Battery wave
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Strain Render
+              - Strain Decimator Alvi
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Siege
+              - Exterminator Alvatis
+          - count: "4"
+            class: Battleship
+            names:
+              - Alvus Queen
+              - Matriarch Alvus
+      - id: containers-and-structures
+        trigger:
+          on: warpIn
+          text: Containers and structures
+        spawns:
+          - count: "6"
+            class: Hackable
+            names:
+              - Floating Debris
+            triggers: Successfully hacking all containers triggers a smartbomb wave
+            drop: Possible salvage materials
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Gate to Sanctum
+            note: Locked until all ships are destroyed
+  - name: Fourth Pocket (Sanctum)
+    notes:
+      - text: "Database information: The source of the drone infestation seems to lie in this deadspace pocket, located inside a fiery nebula. The extreme and hostile environment, accompanied by a very heavy drone presence, seems to have kept most of the looters away, as two fully intact ancient ruins would indicate."
+      - text: The Hive Mother does not have very strong tank but triggers several waves of defenders that can possibly overwhelm an unprepared explorer. The smartbomb wave from the Ancient Ruins is strong enough to instantly destroy any frigate not prepared for it.
+      - text: "Reinforcements: The Drone Hive Mother has deployed Drone Cruise Missile Batteries along with more drone ships!"
+      - text: "Reinforcements: Drones have emerged from the nearby bunkers to defend the Hive Mother!"
+      - text: "Reinforcements: Drones have emerged from the nearby bunkers to defend the Hive Mother!"
+      - text: "Reinforcements: Drones have emerged from the nearby bunkers to defend the Hive Mother!"
+      - text: "Smartbomb wave triggered: Someone has gone too close to one of the ruins and triggered an ancient hidden explosive. Energy and material spurts in all directions, and all ships caught in the blast radius take damage!"
+    waves:
+      - id: defending-fleet
+        trigger:
+          on: other
+          text: Defending fleet
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Sentry
+            names:
+              - Damaged Sentinel Chimera Strain Mother
+            triggers: Triggers subsequent waves at armor damage, hull damage, 50% and 25% hull
+            drop: 20th Tier Overseer's Personal Effects, drone alloys and a possible T2 Mindlink implant
+          - count: "13"
+            class: Elite Cruiser
+            names:
+              - Strain Atomizer
+              - Strain Nuker
+              - Strain Bomber Alvum
+          - count: "15"
+            class: Battleship
+            names:
+              - Alvus Creator
+              - Patriarch Alvus
+          - count: "6"
+            class: Sentry
+            names:
+              - Tower Sentry Drone III
+      - id: reinforcements-hive-mother-armor-damage
+        trigger:
+          on: other
+          text: Reinforcements(Hive Mother armor damage)
+          confidence: inferred
+        spawns:
+          - count: "10"
+            class: Battleship
+            names:
+              - Alvus Queen
+              - Matriarch Alvus
+          - count: "4"
+            class: Sentry
+            names:
+              - Drone Cruise Missile Battery
+      - id: reinforcements-hull-damage
+        trigger:
+          on: other
+          text: Reinforcements(hull damage)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Strain Bomber
+              - Strain Disintegrator Alvum
+          - count: "3"
+            class: Battleship
+            names:
+              - Alvus Queen
+              - Matriarch Alvus
+      - id: reinforcements-50-hull
+        trigger:
+          on: other
+          text: Reinforcements(50% hull)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Dismantler
+              - Marauder Alvior
+          - count: "3"
+            class: Battleship
+            names:
+              - Alvus Queen
+              - Matriarch Alvus
+      - id: reinforcements-25-hull
+        trigger:
+          on: other
+          text: Reinforcements(25% hull)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Siege
+              - Crippler Alvatis
+          - count: "3"
+            class: Battleship
+            names:
+              - Alvus Ruler
+              - Supreme Alvus Parasite
+      - id: containers-and-structures
+        trigger:
+          on: warpIn
+          text: Containers and structures
+        spawns:
+          - count: "2"
+            class: Hackable
+            names:
+              - Ancient Ruins
+            triggers: Triggers smartbomb wave when approached
+            drop: Possible salvage; T1 Gas Harvester
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Gate to Portal

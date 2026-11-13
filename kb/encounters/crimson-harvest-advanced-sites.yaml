@@ -1,0 +1,22 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: crimson-harvest-advanced-sites
+kind: anomaly
+name: Advanced sites
+dedRating: null
+enemyFaction: null
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Crimson Harvest (2026), section "Advanced sites"
+    url: https://wiki.eveuniversity.org/Crimson_Harvest_(2026)#Advanced_sites
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "232560"
+defaults:
+  confidence: verified
+  source: uni
+aliases:
+  - "Crimson Harvest: Advanced sites"
+notes:
+  - text: Part of the Crimson Harvest (2026) event. Event sites change from year to year.

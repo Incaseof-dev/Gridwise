@@ -1,0 +1,47 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-angel-cartel-spies-level-3
+kind: mission
+name: The Angel Cartel Spies
+level: 3
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Angel Cartel Spies (Level 3)
+    url: https://wiki.eveuniversity.org/The_Angel_Cartel_Spies_(Level_3)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "205126"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the Cartel spies at the bookmarked location.
+ewar:
+  - kind: targetPaint
+notes:
+  - text: "Suggested ships: Drake"
+  - text: The Angel Cartel Spies is a mission involving combat against the Angel Cartel.
+pockets:
+  - name: Warp-in
+    notes:
+      - text: Auto-aggro on warp-in. Destroy all hostile NPCs to complete the mission.
+    waves:
+      - id: initial-25-35km
+        trigger:
+          on: warpIn
+          text: Initial (25-35km)
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Gistior Defacer
+              - Gistior Shatterer
+          - count: "4"
+            class: Cruiser
+            names:
+              - Gistum Smasher
+              - Gistum Crusher
+            ewar:
+              - kind: targetPaint

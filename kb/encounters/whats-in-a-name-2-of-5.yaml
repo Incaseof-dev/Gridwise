@@ -1,0 +1,44 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: whats-in-a-name-2-of-5
+kind: mission
+name: What's In a Name (2 of 5)
+level: 1
+enemyFaction: null
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – What's In a Name (2 of 5)
+    url: https://wiki.eveuniversity.org/What's_In_a_Name_(2_of_5)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223241"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the Gallente Broadcast Tower
+notes:
+  - text: "Suggested ships: Destroyer"
+  - text: Mission contains no enemy ships.
+  - text: "Video: Corax"
+  - text: "Next: What's In a Name (3 of 5)"
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: No rats on warp-in.
+      - text: The Broadcast Tower is tough, so shoot the Fuel Depot.
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Broadcast Tower
+          - count: "1"
+            class: Structure
+            names:
+              - Fuel Depot

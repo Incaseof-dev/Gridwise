@@ -1,0 +1,53 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: striking-down-two-flies-with-one-swing-blood-raiders-mercenaries
+kind: mission
+name: Striking Down Two Flies With One Swing
+level: 1
+enemyFaction: Blood Raider Covenant & Mercenaries
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Striking Down Two Flies With One Swing (Blood Raiders & Mercenaries)
+    url: https://wiki.eveuniversity.org/Striking_Down_Two_Flies_With_One_Swing_(Blood_Raiders_%26_Mercenaries)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "214346"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Space Type: Normal"
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: "Standings loss: Blood Raider Covenant: -0.4 (Repair Station)"
+      - text: Veldspar / Scordite
+    waves:
+      - id: wave-1-appears-in-when-firing-on-outpost
+        trigger:
+          on: other
+          text: Wave 1, appears in when firing on outpost
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Corpii Follower
+              - Corpii Worshipper
+          - count: "4"
+            class: Sentry
+            names:
+              - Point Defense Batteries
+            drop: Ammo
+      - id: wave-2-after-killing-outpost
+        trigger:
+          on: other
+          text: Wave 2, after killing outpost
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Mercenary Rookie
+              - Mercenary Fighter

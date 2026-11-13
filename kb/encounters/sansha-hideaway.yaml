@@ -1,0 +1,162 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: sansha-hideaway
+kind: anomaly
+name: Sansha Hideaway
+dedRating: null
+anomalyClass: 1
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Sansha Hideaway
+    url: https://wiki.eveuniversity.org/Sansha_Hideaway
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225123"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Rating: Class 1 Level 1"
+  - text: Sansha Hideaway is an unrated combat site belonging to the Sansha's Nation pirate faction. It can be found via exploration as a cosmic anomaly within systems owned by the Amarr Empire and Ammatar Mandate. As an ungated complex, the limitations as to which ships can complete this site are tied to the security rating of the system where the anomaly spawns (T2 Battleships for high-security systems, and up to Titans in low-security and null-security systems). Completing this complex may award the player with valuable True Sansha faction modules and ammunition.
+  - text: "This combat site consists of a single ungated pocket of space containing a variety of Frigate-sized enemy ships. Destroying all hostile ships may escalate into the DED rated Sansha's Command Relay Outpost complex. Three variations of this combat anomaly exist: Sansha Hidden Hideaway, Sansha Forsaken Hideaway and Sansha Forlorn Hideaway."
+  - text: Simple structure defended by Sansha pirates. Finishing each wave spawns the next one.
+  - text: Enemies spawn orbiting the scanner post about 30km away from warp-in.
+  - text: All spawns come from the lookout tower located 15km from warp-in.
+  - text: "Escalation: This anomaly can escalate to the 3/10 Sansha DED site Sansha's Command Relay Outpost."
+loot:
+  - item: True Sansha Copper Tag
+    from: True Sansha's Plague
+    note: est. 10k ISK (wiki) · 100% drop rate
+  - item: (True) Sansha Ammo
+    from: True Sansha's Plague
+    note: est. 6k - 58M ISK (wiki) · 100% drop rate
+  - item: True Sansha module
+    from: True Sansha's Plague
+    note: est. 10k - 190M ISK (wiki) · rare
+  - item: Mid-grade Nirvana Implant BPC
+    from: True Sansha's Plague
+    note: est. 15M - 50M ISK (wiki) · rare
+lootNotes:
+  - text: 35.000 ISK
+pockets:
+  - name: Scanner post
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 1-2
+            class: Frigate
+            names:
+              - Centii Servant
+              - Centii Minion
+      - id: first-spawn
+        trigger:
+          on: other
+          text: First Spawn
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Frigate
+            names:
+              - Centii Ravener
+              - Centii Scavanger
+      - id: second-spawn
+        trigger:
+          on: other
+          text: Second Spawn
+          confidence: inferred
+        spawns:
+          - count: 1-3
+            class: Frigate
+            names:
+              - Centii Minion
+              - Centii Servant
+      - id: third-spawn
+        trigger:
+          on: other
+          text: Third Spawn
+          confidence: inferred
+        spawns:
+          - count: 1-3
+            class: Frigate
+            names:
+              - Centii Ravener
+              - Centii Scavenger
+      - id: bonus-spawn
+        trigger:
+          on: other
+          text: Bonus Spawn
+          confidence: inferred
+        spawns:
+          - count: 0-1
+            class: Commander Frigate
+            names:
+              - True Sansha's Plague
+            ewar:
+              - kind: trackingDisruption
+            drop: Drops faction ammo and tags. May drop faction modules.
+  - name: Sansha bunker
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 1-2
+            class: Frigate
+            names:
+              - Centii Servant
+              - Centii Minion
+      - id: first-spawn
+        trigger:
+          on: other
+          text: First Spawn
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Frigate
+            names:
+              - Centii Ravener
+              - Centii Scavanger
+      - id: second-spawn
+        trigger:
+          on: other
+          text: Second Spawn
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Centii Minion
+              - Centii Servant
+      - id: third-spawn
+        trigger:
+          on: other
+          text: Third Spawn
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Frigate
+            names:
+              - Centii Enslaver
+              - Centii Plague
+      - id: bonus-spawn
+        trigger:
+          on: other
+          text: Bonus Spawn
+          confidence: inferred
+        spawns:
+          - count: 0-1
+            class: Commander Frigate
+            names:
+              - True Sansha's Plague
+            ewar:
+              - kind: trackingDisruption
+            drop: Drops faction ammo and tags. May drop faction modules.
+sde:
+  dungeonIds:
+    - 2135

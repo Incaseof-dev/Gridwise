@@ -1,0 +1,41 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: portal-to-war-5-of-5
+kind: mission
+name: Portal to War (5 of 5)
+level: 3
+enemyFaction: Caldari State
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Portal to War (5 of 5)
+    url: https://wiki.eveuniversity.org/Portal_to_War_(5_of_5)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223294"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the Caldari stargate
+notes:
+  - text: "Suggested ships: HAC, Battlecruiser"
+  - text: "Blitz: Destroy the stargate."
+  - text: Structures do not drop loot.
+pockets:
+  - name: Warp-in
+    waves:
+      - id: initial-group-35-42km-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group, 35-42km (auto-aggro)
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Caldari Navy Officer
+          - count: "1"
+            class: Structure
+            names:
+              - Stargate
+            note: Mission objective

@@ -1,0 +1,63 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: encounter-at-station-464
+kind: mission
+name: Encounter at Station 464
+level: 1
+enemyFaction: Caldari State
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Encounter at Station 464
+    url: https://wiki.eveuniversity.org/Encounter_at_Station_464
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "230530"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal:
+    - kinetic
+    - thermal
+  resist: []
+objectives:
+  - text: Go to Relay Station 464, hack into the relay station and bring the Data Chip within to your agent.
+restrictions:
+  - text: "Ship size limit: Only allows: Assault Frigate, Corvette, Destroyer, Electronic Attack Ship, Expedition Frigate, Frigate, Industrial, Logistics Frigate, Shuttle"
+notes:
+  - text: "The Situation between the Caldari and the Gallente: Open conflict now exists between the Gallente and Caldari empires. Both empires are fighting for the systems between them, often sending forces into the other's territory to probe for weakness, to secure forward bases and to exploit resources. Forward bases built by one empire in the space of another are usually represented as private business concerns to avoid any conflict with Concord."
+  - text: Hack the relay station. Pick up the Data Chip and warp out.
+pockets:
+  - name: Warp-in
+    notes:
+      - text: "Walkthrough: Outfit a Data Analyzer to your ship (you are given one when you accept the mission)."
+      - text: "Walkthrough: Use the Data Analyzer on Relay Station 464 to obtain the Data Chip."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - State Bo-Hi
+          - count: 0-1
+            class: Frigate
+            names:
+              - State Showato
+      - id: reinforcement
+        trigger:
+          on: other
+          text: Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - State Nagasa
+          - count: "1"
+            class: Frigate
+            names:
+              - State Shhinai

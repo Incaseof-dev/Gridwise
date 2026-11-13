@@ -1,0 +1,304 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: blood-surveillance-squad
+kind: escalation
+name: Blood Surveillance Squad
+dedRating: null
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Blood Surveillance Squad
+    url: https://wiki.eveuniversity.org/Blood_Surveillance_Squad
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "157511"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Blood surveillance squad can be gained as an escalation from Provisional Blood Outpost.
+pockets:
+  - name: Warp-in
+    waves:
+      - id: initial-derenders
+        trigger:
+          on: warpIn
+          text: Initial derenders
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Engraver
+            note: type list incomplete on the source page
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corpatis Fanatic
+              - Corpatis Shade
+          - count: 0-1
+            class: Commander Cruiser
+            names:
+              - Dark Blood Sage
+            triggers: escalation trigger
+            drop: faction modules
+  - name: First Room
+    notes:
+      - text: ----
+      - text: "Escalation message:: The station databanks contain information on the local Blood Covenant security network and among it; a location of yet another station similar to this one. That is your best clue as to where the ships that fled as you entered have gone."
+    waves:
+      - id: room-1-derenders
+        trigger:
+          on: other
+          text: Room 1 derenders
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Cruiser
+            names:
+              - Dire Pithum Murderer
+              - Dire Pithum Annihilator
+              - Dire Pithum Killer
+          - count: "2"
+            class: Cruiser
+            names:
+              - Elder Corpum Dark Priest
+              - Elder Corpum Shadow Sage
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Pithatis Revolter
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Corpatis Seer
+  - name: Warp-in
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corpatis Seer
+              - Corpatis Bishop
+          - count: 3-4
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Arch Sage
+            note: type list incomplete on the source page
+          - count: 0-1
+            class: Commander Cruiser
+            names:
+              - Dark Blood Sage
+            triggers: escalation trigger
+            drop: faction modules
+  - name: First Room
+    notes:
+      - text: ----
+      - text: "Escalation message:: To your dismay, the main computers of this station took a direct hit during your assault and any information that might have been there is gone up in smoke. However, your instruments ran through the data from the fleeing ships and have come up with this location as a suggestion to where they might have warped."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Corpii Reaver
+              - Corpii Engraver
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Engraver
+            note: type list incomplete on the source page
+          - count: "7"
+            class: Destroyer
+            names:
+              - Corpior Templar
+            note: type list incomplete on the source page
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Corpatis Seer
+              - Corpatis Bishop
+            note: type list incomplete on the source page
+          - count: "14"
+            class: Cruiser
+            names:
+              - Corpum Arch Reaver
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Arch
+              - Elder Corpum Shadow Sage
+  - name: Warpin
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Worshiper
+            ewar:
+              - kind: web
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Arch Priest
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corpatis Exorcist
+            note: type list incomplete on the source page
+          - count: 0-1
+            class: Commander Cruiser
+            names:
+              - Dark Blood Arch Sage
+            triggers: escalation trigger
+            drop: faction modules
+  - name: First Room
+    notes:
+      - text: ----
+      - text: Hodura Amaba warps off few seconds after your arrival.
+      - text: "Escalation message:: It looks like the most interesting of these Blood ships got away during the fight. Luckily for you though, one of its communication devices seems to be malfunctioning and is for no apparent reason sending out a constant stream of thumping sounds. Your instruments have no problems tracing where it is coming from. It is an extremely irritating sound. Aggrivating too. The thumping of doom."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Corpior Visionary
+              - Corpior Converter
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Corpatis Bishop
+              - Corpatis Seer
+          - count: "1"
+            class: Cruiser
+            names:
+              - Hodura Amaba
+  - name: Fourth Location
+    notes:
+      - text: Single pocket.
+      - text: The Moka will use smartbombs to destroy drones and to damage ships.
+      - text: As you deal damage to Moka more reinforcements will arrive. These include neuting, webs, points and tracking diruptors.
+      - text: Motoh himself has a very powerful MWD, making it possible to separate him from the group. Just overheat your guns to destroy Moka (the building) and warp out. Warp back in at 100 and let Motoh MWD himself out of his escort and take him out at medium range. Bookmark the wreck and come back in 5-10 minutes.
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Moka
+            triggers: triggers reinforcements
+          - count: "2"
+            class: Structure
+            names:
+              - Blood Sacrifical Arena
+            triggers: triggers reinforcements
+      - id: blood-sacrifical-arena-aggression-wave-triggered-by-shooting-at-one-of-the-sacrificial-arenas
+        trigger:
+          on: other
+          text: Blood Sacrifical Arena Aggression Wave (triggered by shooting at one of the sacrificial arenas)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Corpum Devoter
+              - Corpum Converter
+          - count: "6"
+            class: Cruiser
+            names:
+              - Corpum Dark Priest
+            note: type list incomplete on the source page
+      - id: moka-aggression-wave-1-triggered-by-shooting-at-the-moka
+        trigger:
+          on: other
+          text: "Moka Aggression Wave #1 (triggered by shooting at the Moka)"
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Sentry
+            names:
+              - Blood Heavy Missile Battery
+      - id: moka-aggression-wave-2
+        trigger:
+          on: other
+          text: "Moka Aggression Wave #2"
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Reaver
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: type list incomplete on the source page
+          - count: "10"
+            class: Destroyer
+            names:
+              - Corpior Friar
+            note: type list incomplete on the source page
+          - count: "4"
+            class: Cruiser
+            names:
+              - Corpum Arch Priest
+            note: type list incomplete on the source page
+          - count: "6"
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Priest
+            ewar:
+              - kind: neut
+              - kind: trackingDisruption
+            note: type list incomplete on the source page
+          - count: "13"
+            class: Battlecruiser
+            names:
+              - Corpatis Phantom
+            note: type list incomplete on the source page
+      - id: moka-destruction-wave-final-wave
+        trigger:
+          on: other
+          text: Moka Destruction Wave (final wave)
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Blood Wraith
+          - count: "4"
+            class: Cruiser
+            names:
+              - Corpum Arch Priest
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Commander Cruiser
+            names:
+              - Motoh Olin
+            triggers: Escalation end
+            drop: DED modules
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Corpatis Fanatic
+sde:
+  dungeonIds:
+    - 1709

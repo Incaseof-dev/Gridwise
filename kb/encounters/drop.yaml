@@ -1,0 +1,218 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: drop
+kind: escalation
+name: Drop
+dedRating: null
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Drop
+    url: https://wiki.eveuniversity.org/Drop
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "183971"
+defaults:
+  confidence: verified
+  source: uni
+pockets:
+  - name: Warp-in
+    notes:
+      - text: You land at an acceleration gate.
+      - text: Killing True Sansha's Minion can trigger a further escalation. If it is not there, just activate the acceleration gate.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Centii Butcher
+              - Centii Manslayer
+              - Centii Enslaver
+          - count: 0-1
+            class: Commander Frigate
+            names:
+              - True Sansha's Minion
+            triggers: Destroying may trigger escalation
+            drop: may contain True Sansha faction modules or an implant
+          - count: 3-4
+            class: Destroyer
+            names:
+              - Centior Cannibal
+              - Centior Misshape
+  - name: First Pocket
+    notes:
+      - text: No enemy ships except for named ship Gamat Hakoot and two frigate escorts which immediately warp off. The escalation might trigger when they warp off.
+      - text: '"It seems like the weird sound once in a while coming from your left dashboard is not from the navigation computer after all, at least it seems to have calculated the whereabouts of these Sansha frigates pretty accurately. Not accurately enough though, as they warp out as soon as you enter space. Luckily your instruments manage to come up with a best approximation for their next destination."'
+    waves:
+      - id: group-immediately-warps-away
+        trigger:
+          on: other
+          text: Group (immediately warps away)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Centii Ravener
+              - Centii Scavenger
+          - count: "1"
+            class: Overseer Frigate
+            names:
+              - Gamat Hakoot
+  - name: Second Location
+    notes:
+      - text: '"Again you warp in too far and the Sansha ships slip away into space. Luckily they leave a predictable path."'
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Centii Butcher
+          - count: "1"
+            class: Frigate
+            names:
+              - Centii Manslayer
+          - count: "3"
+            class: Destroyer
+            names:
+              - Centior Monster
+          - count: "1"
+            class: Destroyer
+            names:
+              - Centior Horror
+          - count: 0-1
+            class: Commander Frigate
+            names:
+              - True Sansha's Scavenger
+            triggers: Destroying may trigger escalation
+            drop: may contain True Sansha faction modules or an implant
+      - id: group-immediately-warps-away
+        trigger:
+          on: other
+          text: Group (immediately warps away)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Centii Ravener
+              - Centii Scavenger
+          - count: "1"
+            class: Overseer Frigate
+            names:
+              - Gamat Hakoot
+  - name: Third Location
+    notes:
+      - text: '"While fighting the two ships you managed to catch up with, the third one got away. Your instruments give no clue as to where it was headed, but just before it vanished, you picked up a distress signal from it, containing this location... "'
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Centior Devourer
+          - count: "2"
+            class: Destroyer
+            names:
+              - Centior Abomination
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Plague
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Manslayer
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Enslaver
+          - count: 0-1
+            class: Commander Frigate
+            names:
+              - True Sansha's Ravener
+            triggers: Destroying may trigger escalation
+            drop: may contain True Sansha faction modules or an implant
+      - id: group-immediately-warps-away
+        trigger:
+          on: other
+          text: Group (immediately warps away)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Centii Ravener
+              - Centii Scavenger
+          - count: "1"
+            class: Overseer Frigate
+            names:
+              - Gamat Hakoot
+  - name: Fourth Location
+    notes:
+      - text: Initial Spawn
+      - text: Second Spawn
+      - text: Third Spawn
+      - text: '"Obviously the distress signal made it through to the intended recipients, this was quite a reception. In any case, there are a bit less drug runners in space after this encounter..."'
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "5"
+            class: Destroyer
+            names:
+              - Centior Abomination
+          - count: "1"
+            class: Destroyer
+            names:
+              - Centior Monster
+          - count: "3"
+            class: Frigate
+            names:
+              - Centii Butcher
+          - count: "1"
+            class: Frigate
+            names:
+              - Centii Manslayer
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Centii Savage
+          - count: "1"
+            class: Frigate
+            names:
+              - Centii Slavehunter
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Overseer Frigate
+            names:
+              - Gamat Hakoot
+            drop: may contain True Sansha faction modules, implant, centii C-type modules, Succubus BPC
+sde:
+  dungeonIds:
+    - 1574

@@ -1,0 +1,104 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-cost-of-preservation
+kind: mission
+name: The Cost of Preservation
+level: 4
+enemyFaction: Mercenaries
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Cost of Preservation
+    url: https://wiki.eveuniversity.org/The_Cost_of_Preservation
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231260"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Retrieve 1x Hauteker Memoirs (0.1 m3)
+ewar:
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite frigates"
+  - text: "Suggested ships: Battleship"
+  - text: 5M ISK collateral; 4M ISK in bounties + ~10M in loot
+  - text: "Rising Tensions: For many citizens of the Minmatar Republic, the friendship with the Gallente Federation has been a costly one. Some view the recent abandonment of the parliamentary system as the most potent symbol yet that the Federation's influence hasn't always been to their benefit. Indeed, there are some Matari who view the return to a Tribal Republic as the last necessary step out from under the shadow of foreign empires. Whatever the claims may be, few deny that the relationship still has some fundamental challenges to overcome."
+  - text: thumb|right|192px
+  - text: Ungated semi-deadspace pocket one jump away in Illinfrik. All warps will land you at the same point, but you can warp around freely.
+  - text: "Blitz: Kill Ailon Boufin then warp to a bookmark. Warp to the Cargo Container, pick up the passkey then warp to a bookmark. Warp to the Archives, insert the passkey and pick up Hauteker Memoirs from the Archives."
+  - text: "Tips: When you arrive only Ailon Boufin and the Archives are present"
+  - text: "Tips: Ailon Boufin's lowest resistance is 72% Kinetic Shield and Armor"
+  - text: "Tips: Reinforcements arrive when Ailon Boufin takes shield damage and then again when they take armor damage"
+  - text: "Tips: Both waves spawn ~50 km away from the Archives."
+  - text: "Tips: All reinforcement waves will actively repair ~500 HP every 10 seconds or so."
+  - text: "Tips: Killing Ailon Boufin immediately appears to stop the remote repair effects."
+  - text: "Tips: If you are unsure if you can kill Ailon Boufin with Remote Repairers present, kill the reinforcements wave by wave first. Consider fitting for maximizing damage application or having at least 500 DPS pure volley damage to quickly break through the remote reps."
+  - text: "Tips: If you overestimate yourself, you'll spawn all ships at once and make the Mission a nightmare"
+  - text: "Tips: Create a Bookmark and warp to it to avoid taking significant damage"
+  - text: "Tips: Place Ailon Boufin's passkey into the Archives to spawn the Hauteker Memoirs"
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: "Arsten Takalo's last words: Well... that was interesting, eh? I doubt Boufin was carrying the Memoirs himself, but I bet he had the passkey to his archives at all times. Look amongst his wreck for anything like that and see if you can use it to access his archives."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Ailon Boufin
+            triggers: Triggers reinforcements
+            drop: Archives Passkey
+      - id: ailon-boufin-takes-shield-damage
+        trigger:
+          on: other
+          text: Ailon Boufin takes shield damage
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Elite Frigate
+            names:
+              - Mercenary Wingman
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "6"
+            class: Elite Cruiser
+            names:
+              - Mercenary Corporal
+              - Mercenary Lieutenant
+          - count: "5"
+            class: Battleship
+            names:
+              - Mercenary Overlord
+      - id: ailon-boufin-takes-armor-damage
+        trigger:
+          on: other
+          text: Ailon Boufin takes armor damage
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Elite Cruiser
+            names:
+              - Mercenary Commander
+          - count: "6"
+            class: Battleship
+            names:
+              - Mercenary Overlord
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Container
+            names:
+              - Archives
+            drop: Insert passkey and pick up Hauteker Memoirs
+    onWarpIn: Leave now, egger. I know why you've come, and I know who has sent you. If you think you can just march in and take things that took me years to find, you're sorely mistaken. I won't give you the courtesy of another warning.

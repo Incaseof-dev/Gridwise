@@ -1,0 +1,149 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: guristas-forsaken-rally-point
+kind: anomaly
+name: Guristas Forsaken Rally Point
+dedRating: null
+anomalyClass: 6
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Guristas Forsaken Rally Point
+    url: https://wiki.eveuniversity.org/Guristas_Forsaken_Rally_Point
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "227850"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Guristas Forsaken Rally Point is a Class 6 Level 3 combat anomaly that can be found in low and null sec space.
+  - text: The site is an open deadspace pocket that can be warped to at any range.
+  - text: "Escalation: This site can escalate to Pith's Penal Complex."
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: wave-1
+        trigger:
+          on: warpIn
+          text: Wave 1
+        spawns:
+          - count: 1-2
+            class: Cruiser
+            names:
+              - Dire Pithum Eraser
+          - count: 1-2
+            class: Battleship
+            names:
+              - Pith Eliminator
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Dire Pithi Destructor
+          - count: "1"
+            class: Battleship
+            names:
+              - Pith Destroyer
+          - count: 1-2
+            class: Battleship
+            names:
+              - Pith Conquistador
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Battleship
+            names:
+              - Pith Conquistador
+              - Pith Destroyer
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Pithum Eraser
+              - Pithum Inferno
+              - Pithum Abolisher
+      - id: wave-4
+        trigger:
+          on: other
+          text: Wave 4
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Dire Pithi Infiltrator
+              - Dire Pithi Arrogator
+          - count: 2-3
+            class: Battleship
+            names:
+              - Pith Usurper
+              - Pith Massacrer
+      - id: wave-5
+        trigger:
+          on: other
+          text: Wave 5
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Pithatis Assaulter
+              - Pithatis Death Dealer
+              - Pithatis Executor
+              - Pithatis Assassin
+          - count: 3-4
+            class: Battleship
+            names:
+              - Pith Massacrer
+              - Pith Usurper
+      - id: wave-6
+        trigger:
+          on: other
+          text: Wave 6
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Cruiser
+            names:
+              - Dire Pithum Inferno
+              - Dire Pithum Mortifier
+              - Dire Pithum Eraser
+          - count: 3-4
+            class: Battleship
+            names:
+              - Pith Massacrer
+              - Pith Usurper
+      - id: wave-7
+        trigger:
+          on: other
+          text: Wave 7
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Battleship
+            names:
+              - Conquistador
+              - Destroyer
+      - id: wave-8
+        trigger:
+          on: other
+          text: Wave 8
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Battleship
+            names:
+              - Dread Guristas Nulifier (rare)
+sde:
+  dungeonIds:
+    - 3443

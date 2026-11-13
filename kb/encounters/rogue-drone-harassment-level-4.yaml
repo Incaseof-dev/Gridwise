@@ -1,0 +1,169 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: rogue-drone-harassment-level-4
+kind: mission
+name: Rogue Drone Harassment
+level: 4
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Rogue Drone Harassment (Level 4)
+    url: https://wiki.eveuniversity.org/Rogue_Drone_Harassment_(Level_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "227965"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy Rogue Drones
+ewar:
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite frigates"
+  - text: Deadspace complex with two gated rooms. No hostiles at initial gate.
+  - text: This mission contains large number of spawns from the Mother Drone. Stop shooting the Mother Drone and take out each spawn, this avoids getting swarmed and possibly overwhelmed by their combined DPS.
+  - text: If your ship is well tanked, you may opt to finish the Mother Drone first and take out the swarm as it approaches.
+  - text: The highest DPS in this Pocket comes from the Mother Drone.
+  - text: "Blitz: Kill everything."
+lootNotes:
+  - text: "Bounties: ± 3.5 Mil ISK"
+  - text: "Loot: ± 1.25 Mil ISK"
+  - text: "Salvage: ± 1.13 Mil ISK"
+pockets:
+  - name: 1st pocket
+    notes:
+      - text: "Upon warp in, you will find a single hostile, the Kayzum Mother Drone, which will call in reinforcements upon reaching a certain level of damage:"
+      - text: 80% Armor triggers the 1st Spawn.
+      - text: 50% Armor triggers the 2nd Spawn.
+      - text: 30% Armor triggers the 3rd Spawn.
+      - text: Hull Damage triggers the 4th Spawn.
+      - text: The reinforcements spawn 6 ships in 20-60 km range at the Veldspar asteroids. The battlecruisers spawn closest to the Asteroid Mining Post, cruisers next closest, frigates farthest from the station which will be closest to the warp-in. Reinforcement Spawns will aggro your Drones. Acceleration gate to the next pocket is at 7km and is locked until all ships are destroyed.
+      - text: Kayzum Mother Drone has reversed weaknesses compared to all other rogue drones (Weakest Explosive 50%, Strongest EM 80%).
+    waves:
+      - id: initial-defender
+        trigger:
+          on: warpIn
+          text: Initial Defender
+        spawns:
+          - count: "1"
+            class: Battleship
+            names:
+              - Kayzum Mother Drone
+            triggers: Triggers multiple spawns
+            drop: Elite Drone AI
+            note: Renamed Elite Drone Parasite
+      - id: spawns
+        trigger:
+          on: other
+          text: Spawns
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Frigate
+            names:
+              - Hunter
+              - Silverfish Alvi
+            group: 80% armor
+          - count: 0-1
+            class: Elite Frigate
+            names:
+              - Strain Render Alvi
+            group: 80% armor
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Wrecker Alvum
+              - Bomber Alvum
+            group: 80% armor
+          - count: 1-2
+            class: Battlecruiser
+            names:
+              - Defeater Alvatis
+            group: 80% armor
+          - count: 0-2
+            class: Frigate
+            names:
+              - Silverfish Alvi
+            group: 50% armor
+          - count: 0-2
+            class: Elite Frigate
+            names:
+              - Strain Render Alvi
+            group: 50% armor
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "4"
+            class: Cruiser
+            names:
+              - Bomber
+              - Destructor Alvum
+            group: 50% armor
+          - count: "2"
+            class: Frigate
+            names:
+              - Devilfish
+              - Silverfish Alvi
+            group: 30% armor
+          - count: "2"
+            class: Cruiser
+            names:
+              - Annihilator Alvum
+            group: 30% armor
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Crippler Alvatis
+            group: 30% armor
+          - count: 1-2
+            class: Frigate
+            names:
+              - Hunter
+              - Raider Alvi
+            group: Hull damage
+          - count: 0-1
+            class: Elite Frigate
+            names:
+              - Strain Render Alvi
+            group: Hull damage
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Cruiser
+            names:
+              - Devastator Alvum
+            group: Hull damage
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Striker Alvatis
+            group: Hull damage
+  - name: 2nd Pocket
+    notes:
+      - text: Single Group (20km). Auto Aggro.
+    waves:
+      - id: initial-defender
+        trigger:
+          on: warpIn
+          text: Initial Defender
+        spawns:
+          - count: 0-2
+            class: Cruiser
+            names:
+              - Bomber Alvum
+          - count: 0-1
+            class: Battlecruiser
+            names:
+              - Defeater Alvatis
+          - count: "3"
+            class: Battleship
+            names:
+              - Alvus Controller
+              - Swarm Preserver Alvus

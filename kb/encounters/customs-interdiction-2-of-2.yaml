@@ -1,0 +1,49 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: customs-interdiction-2-of-2
+kind: mission
+name: Customs Interdiction (2 of 2)
+level: 2
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Customs Interdiction (2 of 2)
+    url: https://wiki.eveuniversity.org/Customs_Interdiction_(2_of_2)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223196"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Suggested ships: Cruiser"
+  - text: "Blitz: Destroy Transport ship, loot Freed workers(1.0m3), warp out."
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: No aggro on warp-in.
+      - text: "Note: Structures drop no loot"
+    waves:
+      - id: group-1-7-5km
+        trigger:
+          on: other
+          text: Group 1, 7.5km
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Industrial
+            names:
+              - Blood Raider Transport
+            triggers: Spawns Reinforcement After Attacking
+            drop: Freed Workers(1.0m3)
+      - id: reinforcement-35km-after-hitting-the-transport-ship
+        trigger:
+          on: other
+          text: Reinforcement, 35km after Hitting The Transport Ship
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Blood Raider Frigate

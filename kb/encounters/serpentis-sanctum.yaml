@@ -1,0 +1,312 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: serpentis-sanctum
+kind: anomaly
+name: Serpentis Sanctum
+dedRating: null
+anomalyClass: 10
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Serpentis Sanctum
+    url: https://wiki.eveuniversity.org/Serpentis_Sanctum
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225177"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Serpentis Sanctum comes in two types.
+  - text: Type 1 consists of one ungated pocket. In the pocket, you will find 5 large structures called Magnetic Double-capped Bubble and the initial NPCs between them.
+  - text: If you have a mobil tractor unit, start orbiting it. If not, you can orbit one of the structures in the pocket.
+  - text: Start by killing the smallest size ships, and save the next wave trigger NPC for last.
+  - text: Information on this site is not very accurate.
+  - text: Type 2 consists of one ungated pocket. In the pocket, you will a very large station (Pirate Complex), rock formations and scattered rocks. Initial Defenders spawn a few seconds after arriving into the site.
+  - text: "Escalation: Can escalate to a Serpentis Fleet Shipyard."
+lootNotes:
+  - text: ~35.000.000 ISK bounty
+  - text: ~19.000.000 ISK in salvage
+  - text: Possibility for rare drop
+pockets:
+  - name: Type 1
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: 0-4
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Guard
+              - Coreli Guardian Protector
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 0-4
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Patroller
+            ewar:
+              - kind: sensorDamp
+          - count: "3"
+            class: Battleship
+            names:
+              - Core Grand Admiral
+          - count: 3-7
+            class: Battleship
+            names:
+              - Core Lord Admiral
+            triggers: Last battleship triggers next wave
+      - id: reinforcement-wave-1
+        trigger:
+          on: other
+          text: "Reinforcement Wave #1"
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Corelatis Wing
+              - Corelatis Platoon Leader
+              - Corelatis Captain Sentry
+              - Corelatis High Captain
+          - count: 1-2
+            class: Battleship
+            names:
+              - Core Grand Admiral
+          - count: 1-2
+            class: Battleship
+            names:
+              - Core Lord Admiral
+            triggers: Last battleship triggers next wave
+      - id: reinforcement-wave-2
+        trigger:
+          on: other
+          text: "Reinforcement Wave #2"
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Patroller
+            ewar:
+              - kind: sensorDamp
+          - count: 1-2
+            class: Battleship
+            names:
+              - Core Grand Admiral
+          - count: 1-2
+            class: Battleship
+            names:
+              - Core Lord Admiral
+            triggers: Last Lord Admiral triggers next wave
+      - id: reinforcement-wave-3
+        trigger:
+          on: other
+          text: "Reinforcement Wave #3"
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Scout
+              - Coreli Guardian Agent
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 1-2
+            class: Battleship
+            names:
+              - Core Grand Admiral
+          - count: 1-2
+            class: Battleship
+            names:
+              - Core Lord Admiral
+      - id: reinforcement-wave-4
+        trigger:
+          on: other
+          text: "Reinforcement Wave #4"
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Scout
+              - Coreli Guardian Agent
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Corelatis High Captain
+              - Corelatis Captain Sentry
+          - count: 5-6
+            class: Battleship
+            names:
+              - Core Grand Admiral
+              - Core High Admiral
+          - count: "2"
+            class: Battleship
+            names:
+              - Core Lord Admiral
+          - count: 0-1
+            class: Battleship
+            names:
+              - Shadow Serpentis
+            drop: May drop deadspace & faction modules
+          - count: 0-1
+            class: Dreadnought
+            names:
+              - Serpentis Dreadnought
+            ewar:
+              - kind: web
+              - kind: neut
+              - kind: warpScramble
+  - name: Type 2
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: 3?
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Guard
+              - Coreli Guardian Protector
+          - count: 3?
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Guard
+              - Corelum Guardian Chief Protector
+            ewar:
+              - kind: sensorDamp
+          - count: "7"
+            class: Battleship
+            names:
+              - Core Lord
+              - Core Grand Admiral
+      - id: reinforcement-wave-1
+        trigger:
+          on: other
+          text: "Reinforcement Wave #1"
+          confidence: inferred
+        spawns:
+          - count: 3?
+            class: Battlecruiser
+            names:
+              - Corelatis Squad
+              - Corelatis Wing Leader
+          - count: 4?
+            class: Battleship
+            names:
+              - Core Lord
+              - Core Grand Admiral
+      - id: reinforcement-wave-2
+        trigger:
+          on: other
+          text: "Reinforcement Wave #2"
+          confidence: inferred
+        spawns:
+          - count: 3?
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Scout
+              - Coreli Guardian Initiate
+            ewar:
+              - kind: warpDisruption
+          - count: 4?
+            class: Battlecruiser
+            names:
+              - Corelatis Captain
+              - Corelatis Platoon Leader
+              - Corelatis Squad Leader
+          - count: 3?
+            class: Battleship
+            names:
+              - Core Lord
+              - Core Grand Admiral
+      - id: reinforcement-wave-3
+        trigger:
+          on: other
+          text: "Reinforcement Wave #3"
+          confidence: inferred
+        spawns:
+          - count: 3?
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Defender
+              - Corelum Guardian Chief Protector
+          - count: 5?
+            class: Battleship
+            names:
+              - Core Lord
+              - Core High Admiral
+          - count: 2?
+            class: Battleship
+            names:
+              - Core Grand Admiral
+      - id: reinforcement-wave-4
+        trigger:
+          on: other
+          text: "Reinforcement Wave #4"
+          confidence: inferred
+        spawns:
+          - count: 2?
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Scout
+              - Coreli Guardian Initiate
+          - count: 3?
+            class: Destroyer
+            names:
+              - Corelior Cannoneer
+              - Corelior Sentinel
+          - count: 2?
+            class: Battlecruiser
+            names:
+              - Corelatis Captain Sentry
+              - Corelatis High Captain
+          - count: 3?
+            class: Battleship
+            names:
+              - Core Grand
+              - Core Lord Admiral
+      - id: wave-5
+        trigger:
+          on: other
+          text: "Wave #5"
+          confidence: inferred
+        spawns:
+          - count: 2?
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Protector
+              - Coreli Guardian Safeguard
+          - count: 3?
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Sentinel
+              - Corelum Guardian Chief Infantry
+          - count: 4?
+            class: Battlecruiser
+            names:
+              - Corelatis High Captain
+              - Corelatis Wing Leader
+              - Corelatis Captain Sentry
+          - count: 4?
+            class: Battleship
+            names:
+              - Core Grand
+              - Core Lord Admiral
+          - count: 0-1
+            class: Dreadnought
+            names:
+              - Serpentis Dreadnought
+sde:
+  dungeonIds:
+    - 2330

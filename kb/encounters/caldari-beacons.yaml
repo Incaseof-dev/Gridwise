@@ -1,0 +1,145 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: caldari-beacons
+kind: mission
+name: Caldari Beacons
+level: 5
+enemyFaction: Caldari State
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Caldari Beacons
+    url: https://wiki.eveuniversity.org/Caldari_Beacons
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191600"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy all enemy ships
+ewar:
+  - kind: neut
+  - kind: ecm
+notes:
+  - text: Each neut tower hits for 40gj/s for a combined 80gj/s. With the heavy jamming either a marauder or a drone boat is ideal.
+  - text: Even though the mission says the objective is to destroy the Subspace Beacons, it is flagged completed upon clearing Pocket 2 even if the beacons and their spawns are not triggered or killed.
+  - text: No hostiles at initial gate.
+pockets:
+  - name: 1st Pocket
+    notes:
+      - text: Ships are arrayed between 50km and 90km away and deal a combined 2,280dps (53%kin/47%therm).
+    waves:
+      - id: group-1-50-90km
+        trigger:
+          on: other
+          text: Group 1 (50-90km)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Taibu State Tachi
+            ewar:
+              - kind: ecm
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Taibu State Shugo
+            ewar:
+              - kind: ecm
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - State Shukuro Seki
+          - count: "7"
+            class: Battleship
+            names:
+              - State Shukuro Nagashin
+              - State Shukuro Turushima
+            ewar:
+              - kind: ecm
+              - kind: neut
+            note: Turushima is the only variant with EWAR
+          - count: "2"
+            class: Sentry
+            names:
+              - Caldari Energy Neutralizer Sentry III
+            ewar:
+              - kind: neut
+  - name: 2nd Pocket
+    notes:
+      - text: Ships are arrayed between 30km and 75km away and deal a combined 2,480dps (48%kin/52%therm). An additional group is spawn for each Subspace Beacon destroyed. State Shukuro Nagashin's deal heavier then average thermal damage.
+    waves:
+      - id: group-1-30-75km
+        trigger:
+          on: other
+          text: Group 1 (30-75km)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Taibu State Wakizashi
+          - count: "5"
+            class: Elite Cruiser
+            names:
+              - Taibu State Bajo
+              - Taibu State Samurai
+          - count: "8"
+            class: Battleship
+            names:
+              - State Shukuro Nagashin
+          - count: "2"
+            class: Sentry
+            names:
+              - Caldari Energy Neutralizer Sentry III
+            ewar:
+              - kind: neut
+          - count: "4"
+            class: Sentry
+            names:
+              - Caldari Cruiser Missile Battery
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "3"
+            class: Structure
+            names:
+              - Subspace Beacon
+            triggers: Wave 1-3
+      - id: wave-1-on-destroying-right-subspace-beacon
+        trigger:
+          on: other
+          text: Wave 1 (On destroying right Subspace Beacon)
+          confidence: inferred
+        spawns:
+          - count: "8"
+            class: Battleship
+            names:
+              - State Shukuro Shogun
+      - id: wave-1-on-destroying-middle-subspace-beacon
+        trigger:
+          on: other
+          text: Wave 1 (On destroying middle Subspace Beacon)
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Battleship
+            names:
+              - State Shukuro Turushima
+            ewar:
+              - kind: ecm
+              - kind: neut
+      - id: wave-1-on-destroying-left-subspace-beacon
+        trigger:
+          on: other
+          text: Wave 1 (On destroying left Subspace Beacon)
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Battleship
+            names:
+              - State Shukuro Nagashin

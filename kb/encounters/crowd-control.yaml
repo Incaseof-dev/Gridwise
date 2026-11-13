@@ -1,0 +1,118 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: crowd-control
+kind: mission
+name: Crowd Control
+level: 4
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Crowd Control
+    url: https://wiki.eveuniversity.org/Crowd_Control
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "205172"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Kill the Commander
+ewar:
+  - kind: neut
+  - kind: sensorDamp
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite Federation Lochos"
+  - text: "Blitz: Kill the Commander and the mission will be complete."
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: 3x Federation Navy Command Sergeant Major Insignia I
+      - text: 18x Federation Navy Fleet Captain Insignia I
+      - text: 14x Federation Navy Fleet Colonol Insignia I
+      - text: 2x Federation Navy Fleet Colonol Insignia II
+      - text: 26x Federation Navy Fleet Major Insignia I
+      - text: 6x Federation Navy Midshipman Insignia III
+      - text: 1x Federation Navy Sergeant Insignia I
+      - text: 5x Federation Navy Sergeant Insignia II
+      - text: 1x Federation Navy Sergeant Insignia III
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Federation Praktor Belos
+            group: Group 1 (25-50 km)
+          - count: "3"
+            class: Destroyer
+            names:
+              - Federation Matara
+              - Federation Arcus
+            group: Group 1 (25-50 km)
+          - count: "3"
+            class: Battleship
+            names:
+              - Federation Covinus
+              - Federation Helepolis
+            group: Group 1 (25-50 km)
+          - count: "1"
+            class: Battleship
+            names:
+              - Gallente Commander
+            group: Group 1 (25-50 km)
+            triggers: Mission Objective - Kill to complete
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Elite Federation Lochos
+            group: Group 2 (200+ km)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "12"
+            class: Cruiser
+            names:
+              - Federation Praktor Centurion
+            group: Group 2 (200+ km)
+            ewar:
+              - kind: sensorDamp
+            note: type list incomplete on the source page
+          - count: "10"
+            class: Battlecruiser
+            names:
+              - Federation Praktor Arx
+              - Federation Praktor Bearcus
+              - Pezos, Praeco
+            group: Group 2 (200+ km)
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Federation Praktor Erenus
+            group: Group 2 (200+ km)
+            ewar:
+              - kind: neut
+            note: Fast with MWD
+          - count: "10"
+            class: Battleship
+            names:
+              - Federation Covinus
+              - Federation Helepolis
+            group: Group 2 (200+ km)
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Federation Praktor Arx
+            group: Group 3 (200+ km)
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Battleship
+            names:
+              - Federation Covinus
+              - Federation Helepolis
+            group: Group 3 (200+ km)

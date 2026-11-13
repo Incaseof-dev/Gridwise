@@ -1,0 +1,114 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: patient-zero
+kind: mission
+name: Patient Zero
+level: 4
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Patient Zero
+    url: https://wiki.eveuniversity.org/Patient_Zero
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "205186"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroye Patient Zero
+notes:
+  - text: "Constant AoE damage: 1000 EM damage every 10 seconds. Hits any player AND their drones"
+  - text: Single ungated pocket. Auto-aggro on initial group and spawns. Watch out for continuous AoE damage to player ships and drones while in the pocket. Drone ships such as Dominix can not be used at all in this mission.
+  - text: Mission is complete when wave 3 and "Patient Zero" structure are destroyed. Mission is completed also when Patient Zero is destroyed and waves 2 and 3 have not yet been spawned - just leave some ships from spawn 1 alive.
+  - text: "Triggers: Attacking Patient Zero triggers wave 1."
+  - text: "Triggers: One of the Domination Alvus battleships of wave 1 will trigger wave 2 when destroyed."
+  - text: "Triggers: Destroying wave 2 will trigger wave 3 (Note: 2018/8/6 - wave 3 didn't arrive at all)."
+  - text: "Triggers: Destroying Patient Zero (and wave 3 if it has been triggered) completes the mission."
+  - text: "Tip: Destruction of Patient ends the AoE damage, enabling e.g. salvaging with an alt in a fragile ship or deploying drones to destroy frigate NPCs."
+  - text: "Blitz: Destroy Patient Zero without triggering wave 2 or 3."
+  - text: 'Note: "Patient Zero" structure has very strong resistances and Shield Tank + Armor Tank + Structure Tank (rare occasion) - very hard to destroy ! On 14-Nov-YC124 in Jatate 0.6 system Wave1 arrived after Initial defenders were destroyed (no harm to structure "Patient Zero") and consisted of Frigates + Cruisers + 4x Spearhead Alvus BS + 2x Domination Alvus BS (not as shown in table below).'
+  - text: "Suggested Sequence: While doing no harm to structure \"Patient Zero\", destroy all Initial Defenders. Then on Wave 1 destroy all ships except Domination Alvus BS (they'll trigger next wave). Then while tanking incoming damage from Domination Alvus BS (all that left) destroy structure \"Patient Zero\". After that use your drones to finish remaining ships (in this case, no Wave 2 and Wave 3 will arrive)."
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Infected Frigate
+          - count: "3"
+            class: Cruiser
+            names:
+              - Infected Cruiser
+          - count: "3"
+            class: Battleship
+            names:
+              - Infected Battleship
+          - count: "1"
+            class: Structure
+            names:
+              - Patient Zero
+            triggers: Triggers wave 1 when damaged. Destroy to complete the mission.
+            note: Constant AOE damage
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Devilfish
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Cruiser
+            names:
+              - Nuker
+              - Bomber Alvum
+          - count: 1-2
+            class: Battleship
+            names:
+              - Spearhead Alvus
+          - count: "3"
+            class: Battleship
+            names:
+              - Domination Alvus
+            triggers: One of the Dominations will trigger wave 2 when destroyed.
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Disintegrator Alvum
+          - count: "3"
+            class: Battleship
+            names:
+              - Spearhead Alvus
+              - Domination Alvus
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Enforcer
+              - Striker Alvatis
+          - count: "3"
+            class: Battleship
+            names:
+              - Spearhead Alvus
+              - Domination Alvus

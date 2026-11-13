@@ -1,0 +1,156 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: blood-hidden-hideaway
+kind: anomaly
+name: Blood Hidden Hideaway
+dedRating: null
+anomalyClass: 1
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Blood Hidden Hideaway
+    url: https://wiki.eveuniversity.org/Blood_Hidden_Hideaway
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225105"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Rating: Class 1 Level 2"
+  - text: Blood Hidden Hideaway is an unrated combat site belonging to the Blood Raiders pirate faction. It can be found via exploration as a cosmic anomaly within systems owned by the Amarr Empire and Ammatar Mandate. As an ungated complex, the limitations as to which ships can complete this site are tied to the security rating of the system where the anomaly spawns (T2 Battleships for high-security systems, and up to Titans in low-security and null-security systems).
+  - text: "This combat site consists of a single ungated pocket of space containing a variety of Frigate-, Destroyer- and Cruiser-sized enemy ships. Three variations of this combat anomaly exist: Blood Hideaway, Blood Forsaken Hideaway and Blood Forlorn Hideaway."
+  - text: text-top|300px|thumb|Blood Raiders Hidden Hideaway
+  - text: Single ungated area in space. Can be warped to at any range.
+lootNotes:
+  - text: 500.000 ISK
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Corpii Collector
+              - Corpii Deviner
+              - Corpii Herald
+              - Corpii Follower
+              - Corpii Seeker
+              - Corpii Upholder
+              - Corpii Worshiper
+          - count: "2"
+            class: Cruiser
+            names:
+              - Corpum Engraver
+              - Corpum Exorcist
+              - Corpum Reaver
+              - Corpum Revenant
+              - Corpum Sage
+          - count: "1"
+            class: Sentry
+            names:
+              - Tower Sentry Blood I
+            triggers: Triggers additional waves
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Corpii Collector
+              - Corpii Deviner
+              - Corpii Herald
+              - Corpii Follower
+              - Corpii Seeker
+              - Corpii Upholder
+              - Corpii Worshiper
+          - count: "2"
+            class: Cruiser
+            names:
+              - Corpum Engraver
+              - Corpum Exorcist
+              - Corpum Reaver
+              - Corpum Revenant
+              - Corpum Sage
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Corpior Cleric
+              - Corpior Converter
+              - Corpior Friar
+              - Corpior Visionary
+      - id: wave-4
+        trigger:
+          on: other
+          text: Wave 4
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corpum Engraver
+              - Corpum Exorcist
+              - Corpum Reaver
+              - Corpum Revenant
+              - Corpum Sage
+      - id: wave-5
+        trigger:
+          on: other
+          text: Wave 5
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Corpii Collector
+              - Corpii Deviner
+              - Corpii Herald
+              - Corpii Follower
+              - Corpii Seeker
+              - Corpii Upholder
+              - Corpii Worshiper
+          - count: "2"
+            class: Destroyer
+            names:
+              - Corpior Defacer
+              - Corpior Defiler
+              - Corpior Seizer
+              - Corpior Trasher
+      - id: wave-6
+        trigger:
+          on: other
+          text: Wave 6
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Corpii Collector
+              - Corpii Deviner
+              - Corpii Herald
+              - Corpii Follower
+              - Corpii Seeker
+              - Corpii Upholder
+              - Corpii Worshiper
+          - count: "2"
+            class: Cruiser
+            names:
+              - Corpum Engraver
+              - Corpum Exorcist
+              - Corpum Reaver
+              - Corpum Revenant
+              - Corpum Sage

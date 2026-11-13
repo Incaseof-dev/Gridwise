@@ -1,0 +1,192 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: gurista-fortress
+kind: complex
+name: Gurista Fortress
+dedRating: null
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Gurista Fortress
+    url: https://wiki.eveuniversity.org/Gurista_Fortress
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "227271"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: TBC"
+notes:
+  - text: Warping to the site lands you at 0 on an acceleration gate.
+  - text: "Escalation: This site can escalate to Hired Gun."
+pockets:
+  - name: First Pocket
+    notes:
+      - text: The acceleration gate to the second room is approximately 30 km away. It unlocks when all enemies are destroyed.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Demolisher
+              - Dire Pithi Destructor
+              - Dire Pithi Plunderer
+            group: 30 km off
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Pithatis Enforcer
+              - Pithatis Executor
+            group: 30 km off
+          - count: "4"
+            class: Cruiser
+            names:
+              - Pithum Inferno
+              - Pithum Eraser
+              - Pithum Abolisher
+            group: 40 km off
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Eraser
+              - Dire Pithum Abolisher
+            group: 40 km off
+          - count: "3"
+            class: Battleship
+            names:
+              - Pith Destroyer
+              - Pith Conquistador
+            group: 40 km off
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Demolisher
+              - Dire Pithi Plunderer
+            group: 40 km off
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Eraser
+              - Dire Pithum Abolisher
+            group: 40 km off
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Pithatis Assassin
+              - Pithatis Assaulter
+            group: 70 km off
+          - count: "4"
+            class: Battleship
+            names:
+              - Pith Destroyer
+              - Pith Conquistador
+            group: 70 km off
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: Unlocks when all ships are destroyed
+          - count: "2"
+            class: Structure
+            names:
+              - Guristas Bunker
+            note: It is believed that destroying all bunker will increase the chance of triggering escalation. TBC.
+          - count: "1"
+            class: Structure
+            names:
+              - Guristas Factory
+          - count: "2"
+            class: Structure
+            names:
+              - Guristas Colony
+          - count: "1"
+            class: Structure
+            names:
+              - Asteroid Prime Colony
+  - name: Second Pocket
+    notes:
+      - text: The Dread Guristas Dismantler may not spawn in until you reach ~10 km of the Guristas Bunker.
+      - text: "It is unverified, but if you do not trigger an escalation after killing all NPCs you may destroy the bunker which is separate from the other three. Then destroy the middle one among the remaining three bunkers and destroy the last two bunkers. You will still have the chance of triggering escalation after doing these steps. *RigelKent, 2025-10-12: just got the escalation from following the aforementioned sequence: after killed all rats, then, I killed the bunker separated and following that, I killed the bunker in the middle; can't confirm if it's enough always or the order is random."
+    waves:
+      - id: wave-1
+        trigger:
+          on: warpIn
+          text: Wave 1
+        spawns:
+          - count: "3"
+            class: Sentry
+            names:
+              - Guristas Cruise Missile Batteries
+          - count: "3"
+            class: Sentry
+            names:
+              - Guristas Stasis Tower
+            ewar:
+              - kind: web
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Arrogator
+          - count: "4"
+            class: Destroyer
+            names:
+              - Pithior Guerilla
+              - Pithior Terrorist
+          - count: "1"
+            class: Cruiser
+            names:
+              - Pithum Eraser
+            note: It is believed that leaving this NPC at the last one to kill will increase the chance of triggering escalation and commander spawn.
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Mortifier
+              - Dire Pithum Eraser
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Pithatis Death Dealer
+              - Pithatis Revolter
+          - count: "4"
+            class: Battleship
+            names:
+              - Pith Destroyer
+              - Pith Conquistador
+      - id: wave-2-possible-rare-spawn
+        trigger:
+          on: other
+          text: "Wave 2: Possible Rare Spawn"
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Dread Guristas Dismantler
+            drop: Possible Faction charges, modules or/and tags. 6m bounty.
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Guristas Bunker
+          - count: "3"
+            class: Structure
+            names:
+              - Guristas Bunker
+sde:
+  dungeonIds:
+    - 1257

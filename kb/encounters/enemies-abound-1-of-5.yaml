@@ -1,0 +1,101 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: enemies-abound-1-of-5
+kind: mission
+name: Enemies Abound (1 of 5)
+level: 4
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Enemies Abound (1 of 5)
+    url: https://wiki.eveuniversity.org/Enemies_Abound_(1_of_5)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223427"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Take the residents of the illegal settlement by force and bring them to the authorities.
+ewar:
+  - kind: sensorDamp
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite Frigates (Web, Warp disrupt)"
+  - text: Site has to be cleared before mission-can can be looted.
+lootNotes:
+  - text: 3x Federation Navy Fleet Colonel Insignia I
+  - text: 8x Federation Navy Fleet Colonel Insignia II
+  - text: 8x Federation Navy Fleet Major Insignia I
+  - text: 1x Federation Navy Sergeant Insignia II
+  - text: 5x Federation Navy Sergeant Insignia III
+  - text: "Next: Enemies Abound (2 of 5)"
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: group-1-20km-auto-aggro
+        trigger:
+          on: other
+          text: Group 1, 20km, auto-aggro
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Navy Gamma I Support Frigate
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Battleship
+            names:
+              - Navy Dominix
+              - Navy Megathron
+      - id: group-2-40km
+        trigger:
+          on: other
+          text: Group 2, 40km
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Elite Frigate
+            names:
+              - Elite Federation Manic
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "4"
+            class: Cruiser
+            names:
+              - Federation Navy Thorax
+          - count: "5"
+            class: Battleship
+            names:
+              - Federation Navy Orion
+              - Federation Navis Longa
+              - Federation Praktor Navis Praetoria
+            ewar:
+              - kind: sensorDamp
+      - id: group-3-50km
+        trigger:
+          on: other
+          text: Group 3, 50km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Navy Gamma I Support Frigate
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Cruiser
+            names:
+              - Federation Navy Thorax
+          - count: "2"
+            class: Battleship
+            names:
+              - Federation Navy Megathron

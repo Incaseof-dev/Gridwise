@@ -1,0 +1,132 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-blockade-ded-level-1
+kind: mission
+name: The Blockade
+level: 1
+enemyFaction: CONCORD
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Blockade (DED) (Level 1)
+    url: https://wiki.eveuniversity.org/The_Blockade_(DED)_(Level_1)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191983"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Kill their high-ranking officers
+ewar:
+  - kind: web
+notes:
+  - text: "Web/warp disruption: Starbase Stasis Tower (Web)"
+  - text: "Suggested ships: Frigate, Destroyer"
+  - text: A lot of Veldspar asteroids around
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: All waves (except last) spawn at the range ~ 100 km and aggro on spawn.
+    waves:
+      - id: initial-group-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group, Auto-aggro
+        spawns:
+          - count: "1"
+            class: Sentry
+            names:
+              - Caldari Stasis Tower
+            ewar:
+              - kind: web
+          - count: "8"
+            class: Frigate
+            names:
+              - DED Soldier 3rd Class
+          - count: "1"
+            class: Frigate
+            names:
+              - DED Soldier 1st Class
+            triggers: Spawns Wave 1
+      - id: wave-1-3-groups
+        trigger:
+          on: other
+          text: Wave 1 (3 groups)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - DED Soldier 3rd Class
+            group: Group 1
+          - count: "2"
+            class: Frigate
+            names:
+              - DED Soldier 2nd Class
+            group: Group 2
+          - count: "4"
+            class: Frigate
+            names:
+              - DED Soldier 3rd Class
+            group: Group 3
+          - count: "1"
+            class: Frigate
+            names:
+              - DED Soldier 2nd Class
+            group: Group 3
+            triggers: Spawns Wave 2
+      - id: wave-2-2-groups
+        trigger:
+          on: other
+          text: Wave 2 (2 groups)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - DED Soldier 1st Class
+            group: Group 1
+          - count: "5"
+            class: Frigate
+            names:
+              - DED Soldier 2nd Class
+            group: Group 2
+            triggers: Spawns Wave 3
+      - id: wave-3-2-groups
+        trigger:
+          on: other
+          text: Wave 3 (2 groups)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - DED Soldier 1st Class
+            group: Group 1
+          - count: "8"
+            class: Frigate
+            names:
+              - DED Soldier 1st Class
+            group: Group 2
+          - count: "1"
+            class: Frigate
+            names:
+              - DED Soldier 2nd Class
+            group: Group 2
+            triggers: Spawns Wave 4
+      - id: wave-4-1-group
+        trigger:
+          on: other
+          text: Wave 4 (1 group)
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - DED Soldier 2nd Class
+          - count: "1"
+            class: Frigate
+            names:
+              - DED Soldier 1st Class
+            triggers: Completes Objectives

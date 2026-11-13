@@ -1,0 +1,121 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: sansha-military-outpost
+kind: complex
+name: Sansha Military Outpost
+dedRating: 1
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Sansha Military Outpost
+    url: https://wiki.eveuniversity.org/Sansha_Military_Outpost
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "213383"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Frigates"
+notes:
+  - text: Sansha Military Outpost is a DED rated 1/10 complex found via exploration.
+  - text: Only T2 frigates and below may enter.
+loot:
+  - item: 1st Tier Overseers Effects
+    from: Outpost Security Officer (room 2)
+    note: est. 11k Isk (wiki) · 100% drop rate
+  - item: 3rd Tier Overseers Effects
+    from: Sansha Outpost Admin Building
+    note: est. 40k Isk (wiki) · 100% drop rate
+  - item: True Sansha Frigate Modules
+    from: Sansha Outpost Admin Building or Outpost Security Officer
+  - item: Centii C-type Modules
+    from: Sansha Outpost Admin Building or Outpost Security Officer
+    note: Up to 3x
+  - item: Succubus BPC
+    from: Sansha Outpost Admin Building
+pockets:
+  - name: Room 1
+    notes:
+      - text: "When entering the first room:: This pocket within the deadspace complex contains the entrance acceleration gate, along with an array of mindcontrol units, used to broadcast commands to Centus Sansha troops within the solarsystem."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Centii Minion
+    onWarpIn: "This deadspace complex is occupied by the Centus soldiers of Sansha's Nation. The area serves as a military outpost, allowing their troops to rearm their weapon systems, repair personal cyberimplants and process surveillance data. The complex also stores the cryo-chambers for hundreds of Sansha reserves. DED Threat Assessment: Training (1 of 10)"
+  - name: Room 2
+    notes:
+      - text: "Upon Entering the second room:: This sector of the complex serves as a defense perimeter for the outpost headquarters housed beyond the acceleration gate. The area has been reported to be well defended with numerous light fighter frigates. The security officer on duty is responsible for passing out securitycards necessary to be cleared through the gate towards the recuperation camp."
+      - text: The acceleration gate to next pocket is locked and requires a key to activate. The key is found in the wreck of the Outpost Security Officer wreck. The key is consumed on use.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "11"
+            class: Frigate
+            names:
+              - Centii Minion
+              - Centii Servant
+              - Centii Scavenger
+              - Centii Initiate
+              - Centii Ravener
+          - count: "1"
+            class: Overseer Frigate
+            names:
+              - Outpost Security Officer
+            drop: Contains1st Tier overseers effects and the Sansha Outpost Security Card to the third room.. May contain True Sansha or Centii C-type Modules.
+  - name: Room 3
+    notes:
+      - text: There are three structures named "Sansha Outpost Administration Building". Only the "Deadspace Overseer's Structure" will drop the good loot.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "19"
+            class: Frigate
+            names:
+              - Centii Scavenger
+              - Centii Ravener
+              - Centii Servant
+              - Centii Minion
+          - count: "1"
+            class: Frigate
+            names:
+              - Sansha Outpost Commander
+            note: Renamed Centii Enslaver/Manslayer
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Hangar Array
+            names:
+              - Sansha Outpost Administration Building
+            drop: May Contain True Sansha or Centii C-type Frigate modules and Rarely a Succubus BPC. Also Contains 3rd Tier Overseers Effects.
+          - count: "2"
+            class: Structure
+            names:
+              - Sansha Outpost Administration Building
+            drop: Nothing
+          - count: "2"
+            class: Container
+            names:
+              - Sansha Scout Supply Container
+            drop: T1 ammo, drones, metal scraps
+    onWarpIn: The innermost pocket of the complex is the central command post for this military outpost. High energy readings have been reported from this sector, believed to be caused by an artificial magnetic field managed by magnetic stabilizer units. The reason for this magnetic field remains unknown, as the area's function seems to be to store cryo-troopers and slumber chambers for inactive reserves.
+sde:
+  dungeonIds:
+    - 111

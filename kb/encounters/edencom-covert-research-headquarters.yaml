@@ -1,0 +1,250 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: edencom-covert-research-headquarters
+kind: escalation
+name: EDENCOM Covert Research Headquarters
+dedRating: null
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – EDENCOM Covert Research Headquarters
+    url: https://wiki.eveuniversity.org/EDENCOM_Covert_Research_Headquarters
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "218509"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: EDENCOM Covert Research Headquarters is a limited time Expedition that can escalate from Upwell Covert Research Facilities.
+  - text: Rogue drones are the same type as in the Upwell Covert Research Facilities. The fifth and final spawn contains Triglavian rats.
+  - text: The rats will sometimes warp in at 500 km then warp at 0 on you a few seconds later. Their behavior is very atypical compared to the normal rats in New Eden.
+  - text: Ungated pocket. There are around 5-8 ships in each wave. Subsequent waves spawn several seconds after previous wave is destroyed.
+  - text: The site will become a warpable beacon when it is warped to so anyone can come into the site.
+  - text: "Escalation: Destroying the overseer structure can escalate the site further to Signal Source."
+  - text: 'Escalation: Escalation trigger: The explosion of the infested fluid router causes an encrypted signal burst directed at a specific set of coordinates in a nearby star system. Check the "Escalations" section within the "Exploration" tab of the Agency for details of that location.'
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: "Warning: The Voivode Jarognik Leshak has a strong armor tank and high structure hitpoints as well as EXTREME neuting."
+      - text: The Decloaked Infested Fluid Router Relay spawns when the Voivode Jarognik Leshak is destroyed. It is approx. 50 km away.
+    waves:
+      - id: wave-1
+        trigger:
+          on: warpIn
+          text: Wave 1
+        spawns:
+          - count: 0-2
+            class: Frigate
+            names:
+              - Type-A
+              - B
+              - C
+              - D Anomalous Alvi
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: 0-2
+            class: Destroyer
+            names:
+              - Type-A
+              - B
+              - C
+              - D Anomalous Alvior
+            ewar:
+              - kind: neut
+              - kind: warpDisruption
+          - count: 0-2
+            class: Cruiser
+            names:
+              - Type-A
+              - B
+              - C
+              - D Anomalous Alvum
+            ewar:
+              - kind: trackingDisruption
+              - kind: warpDisruption
+          - count: 0-2
+            class: Battlecruiser
+            names:
+              - Type-A
+              - B
+              - C
+              - D Anomalous Alvatis
+            ewar:
+              - kind: warpDisruption
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: 0-2
+            class: Frigate
+            names:
+              - Type-A
+              - B
+              - C
+              - D Anomalous Alvi
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: 0-2
+            class: Destroyer
+            names:
+              - Type-A
+              - B
+              - C
+              - D Anomalous Alvior
+            ewar:
+              - kind: neut
+              - kind: warpDisruption
+          - count: 0-2
+            class: Cruiser
+            names:
+              - Type-A
+              - B
+              - C
+              - D Anomalous Alvum
+            ewar:
+              - kind: trackingDisruption
+              - kind: warpDisruption
+          - count: 0-2
+            class: Battlecruiser
+            names:
+              - Type-A
+              - B
+              - C
+              - D Anomalous Alvatis
+            ewar:
+              - kind: warpDisruption
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: 0-2
+            class: Frigate
+            names:
+              - Type-A
+              - B
+              - C
+              - D Anomalous Alvi
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: 0-2
+            class: Destroyer
+            names:
+              - Type-A
+              - B
+              - C
+              - D Anomalous Alvior
+            ewar:
+              - kind: neut
+              - kind: warpDisruption
+          - count: 0-2
+            class: Cruiser
+            names:
+              - Type-A
+              - B
+              - C
+              - D Anomalous Alvum
+            ewar:
+              - kind: trackingDisruption
+              - kind: warpDisruption
+          - count: 0-2
+            class: Battlecruiser
+            names:
+              - Type-A
+              - B
+              - C
+              - D Anomalous Alvatis
+            ewar:
+              - kind: warpDisruption
+      - id: wave-4
+        trigger:
+          on: other
+          text: Wave 4
+          confidence: inferred
+        spawns:
+          - count: 0-2
+            class: Frigate
+            names:
+              - Type-A
+              - B
+              - C
+              - D Anomalous Alvi
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: 0-2
+            class: Destroyer
+            names:
+              - Type-A
+              - B
+              - C
+              - D Anomalous Alvior
+            ewar:
+              - kind: neut
+              - kind: warpDisruption
+          - count: 0-2
+            class: Cruiser
+            names:
+              - Type-A
+              - B
+              - C
+              - D Anomalous Alvum
+            ewar:
+              - kind: trackingDisruption
+              - kind: warpDisruption
+          - count: 0-2
+            class: Battlecruiser
+            names:
+              - Type-A
+              - B
+              - C
+              - D Anomalous Alvatis
+            ewar:
+              - kind: warpDisruption
+      - id: final-spawn
+        trigger:
+          on: other
+          text: Final spawn
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Voivode Jarognik Damavik
+          - count: "1"
+            class: Cruiser
+            names:
+              - Voivode Jarognik Rodiva
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Voivode Jarognik Leshak
+            ewar:
+              - kind: neut
+              - kind: warpScramble
+            triggers: Destruction decloakes Decloaked Infested Fluid Router Relay
+            drop: EDENCOM ammo/ship BPCs, limited time boosters, abyssal filaments, survey databases, meta modules
+            note: VERY heavy neuting
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Hangar Array
+            names:
+              - Decloaked Infested Fluid Router Relay
+            triggers: Destroying may trigger escalation
+            drop: EDENCOM ammo/ship BPCs, limited time boosters, abyssal filaments, survey databases, meta modules
+            note: Spawns when the Voivode Jarognik Leshak is destroyed
+sde:
+  dungeonIds:
+    - 8815

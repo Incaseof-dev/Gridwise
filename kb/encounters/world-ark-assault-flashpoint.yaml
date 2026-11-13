@@ -1,0 +1,28 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: world-ark-assault-flashpoint
+kind: anomaly
+name: World Ark Assault Flashpoint
+dedRating: null
+enemyFaction: Triglavian Collective
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – World Ark Assault Flashpoint
+    url: https://wiki.eveuniversity.org/World_Ark_Assault_Flashpoint
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "227125"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: World Ark Assault Flashpoint is a Triglavian Collective combat anomaly that can be found in Pochven. It was originally created during Invasion Chapter 1, and re-implemented in Chapter 3, which is the form it remains in.
+  - text: The World Ark Assault is an extremely long and difficult site, and little formal research is available on it due to its extremely limited availability during Chapter 3. Only four confirmed runs of it were completed during Chapter 3, and each run took roughly 45 minutes. As the site only exists in Pochven, fleets preparing to attempt it must account for the Dazh Liminality Locus effects (reduced target lock count but increased remote repair strength).
+  - text: The site is hidden behind an Acceleration Gate. Once a ship has attempted to warp to the site, a system-wide-visible Beacon will spawn at the acceleration gate. The site consists of a large ring containing numerous Triglavian structures, centered around a single, invulnerable and untargetable, Xordazh World Ark.
+  - text: Every ship which enters the site will sustain roughly 2000 damage from the 'Pozhlost Denial Zone' upon landing on grid with the Ark. This is enough damage to destroy small, untanked frigates, and thus discourage loot theft, however it will not significantly damage larger ships.
+  - text: The actual combat consists of roughly 10 waves of Triglavian ships. Most ships will be Hospodar-grade, with numerous Zorya-grade in each wave. Each wave consists of 20-50 ships of assorted sizes. It is unknown whether waves are trigger-based or time-based. These waves can include Pylon-Dropping Kikimoras.
+  - text: In addition to the normal waves, the World Ark will deploy Entropic Disintegrator Werposts and Field Effect Subpylons. Up to 2 Werposts can be on the field at a time, and when destroyed will respawn after several minutes. A Field Effect Subpylon will spawn roughly every five minutes. There are five Subpylon variants, one of which will spawn at random. Subpylons have 130,000 HP, 0% resists, and apply a significant electronic warfare effect to capsuleer ships near them.
+sde:
+  dungeonIds:
+    - 8844

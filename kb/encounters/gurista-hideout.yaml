@@ -1,0 +1,197 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: gurista-hideout
+kind: complex
+name: Gurista Hideout
+dedRating: null
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Gurista Hideout
+    url: https://wiki.eveuniversity.org/Gurista_Hideout
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "214807"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Battleship"
+notes:
+  - text: The site consists of two deadspace pockets with acceleration gates, various structures and their defending pirates. Using the gate allows access to other areas within the site. The names and amount of ships listed may vary slightly.
+  - text: "Escalation: After destruction of the Dread Guristas Imputor/Arrogator or Experimental Weapon Tower, you may receive the escalation Sooth Sayer."
+  - text: 'Escalation: Destroying Dread Guristas.: "While fighting the last defenders of this hideout, you noticed three of their ships warp out and disappear from radar. Your navigational computer has had a few minutes now to mull over the data they left and has come up with a probable destination in case you want to chase them."'
+  - text: "Escalation: Destroying Experimental Weapon Tower: Gurista commander destroyed. Determining probable origin point...found. Updating your journal with the location."
+  - text: "Escalation: Possible escalation failure: The trail seems to run cold at this point."
+pockets:
+  - name: Room 1
+    waves:
+      - id: wave-1
+        trigger:
+          on: warpIn
+          text: Wave 1
+        spawns:
+          - count: 1-2
+            class: Frigate
+            names:
+              - Pithi Imputor
+              - Pithi Arrogator
+          - count: "1"
+            class: Frigate
+            names:
+              - Pithi Despoiler
+            ewar:
+              - kind: ecm
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Frigate
+            names:
+              - Pithi Demolisher
+              - Pithi Destructor
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: Locked until all NPC`s are killed
+          - count: "3"
+            class: Structure
+            names:
+              - Guristas Lookout
+          - count: "1"
+            class: Structure
+            names:
+              - Abandoned Ship Yard
+          - count: "1"
+            class: Structure
+            names:
+              - Guristas Research Center
+          - count: "1"
+            class: Structure
+            names:
+              - Guristas Bunker
+  - name: Room 2
+    notes:
+      - text: Delayed Wave 1 arrives after about 10 seconds.
+      - text: Delayed Wave 2 arrives after about 2 minutes.
+      - text: Tower Wave triggered by attacking the Experimental Weapon Tower.
+      - text: Wave 2 arives not always.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 1-2
+            class: Frigate
+            names:
+              - Pithi Wrecker
+              - Pithi Plunderer
+      - id: delayed-wave-1
+        trigger:
+          on: other
+          text: Delayed Wave 1
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Frigate
+            names:
+              - Pithi Wrecker
+              - Pithi Plunderer
+      - id: delayed-wave-2
+        trigger:
+          on: other
+          text: Delayed Wave 2
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Pithi Wrecker
+              - Pithi Plunderer
+            triggers: Wave 1
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Destroyer
+            names:
+              - Pithior Renegade
+          - count: 1-2
+            class: Destroyer
+            names:
+              - Pithior Anarchist
+          - count: 0-1
+            class: Frigate
+            names:
+              - Dread Guristas Imputor
+              - Dread Guristas Arrogator
+            triggers: Trigger for possible Escalation
+            drop: Wreckage may contain Faction Ammo, ? Tag, T2 implant, Worm BPC, or Dread Modules
+      - id: tower-wave
+        trigger:
+          on: other
+          text: Tower Wave
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Guristas Light Missile Battery
+            triggers: Wave 2
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Pithi Saboteur
+              - Pithi Despoiler
+            ewar:
+              - kind: ecm
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Experimental Weapon Tower
+            triggers: Tower Wave and possible Escalation
+          - count: "2"
+            class: Structure
+            names:
+              - Guristas Bunker
+            drop: Ammo
+          - count: "1"
+            class: Structure
+            names:
+              - Guristas Lookout
+          - count: "2"
+            class: Structure
+            names:
+              - Guristas Battery
+          - count: "1"
+            class: Structure
+            names:
+              - Abandoned Ship Yard
+sde:
+  dungeonIds:
+    - 1222

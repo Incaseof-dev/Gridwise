@@ -1,0 +1,59 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: eliminate-a-pirate-nuisance-sanshas-nation
+kind: mission
+name: Eliminate a Pirate Nuisance
+level: 1
+enemyFaction: Sansha's Nation & Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Eliminate a Pirate Nuisance (Sansha's Nation)
+    url: https://wiki.eveuniversity.org/Eliminate_a_Pirate_Nuisance_(Sansha's_Nation)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "218038"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Eliminate the pirates causing the nuisance
+notes:
+  - text: "Suggested ships: Frigate"
+  - text: Single pocket with gate
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 1-2
+            class: Drone
+            names:
+              - Belphegor
+              - Mammon Apis
+            group: Drone group, 25km
+          - count: "1"
+            class: Frigate
+            names:
+              - Infester Alvi
+            group: Drone group, 25km
+          - count: "2"
+            class: Frigate
+            names:
+              - Centii Savage
+              - Centii Servant
+              - Centii Slavehunter
+            group: Sansha group, 50km
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Low-Tech Solar Harvester
+            drop: possible drops include commodities, T1 ammo and drones

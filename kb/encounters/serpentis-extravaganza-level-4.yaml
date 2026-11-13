@@ -1,0 +1,292 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: serpentis-extravaganza-level-4
+kind: mission
+name: Serpentis Extravaganza
+level: 4
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Serpentis Extravaganza (Level 4)
+    url: https://wiki.eveuniversity.org/Serpentis_Extravaganza_(Level_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "217112"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: web
+  - kind: sensorDamp
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Guardian Veteran (Web, Warp disrupt)"
+  - text: "Suggested ships: Battleship"
+  - text: MJD recommended for last room
+  - text: "Blitz: 1st and 2nd Pocket: Eliminate all ships to unlock the warp gates."
+  - text: "Blitz: 3rd Pocket: Kill or ignore the 1st Group. Eliminate the 3 Spider Drones and Krayek Sarpanti."
+  - text: "Video: Machariel, Sniper Maelstrom"
+lootNotes:
+  - text: "Bounties: ± 9.8 Mil ISK"
+  - text: "Loot: ± 6.53 Mil ISK"
+  - text: "Salvage: ± 8.89 Mil ISK"
+pockets:
+  - name: 1st Pocket
+    notes:
+      - text: The gate to next pocket will be locked until you have eliminated all hostile ships.
+      - text: All groups can be attacked independently
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Guardian Veteran
+            group: Group 1 (20 km)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            triggers: Triggers Reinforcements spawn
+          - count: "5"
+            class: Cruiser
+            names:
+              - Corelum Chief Guard
+              - Corelum Chief Safeguard
+            group: Reinforcements spawn triggered by attacking above
+            ewar:
+              - kind: sensorDamp
+          - count: "4"
+            class: Destroyer
+            names:
+              - Corelior Soldier
+              - Corelior Trooper
+            group: Group 2 (25 km, Old Station ruins)
+          - count: "2"
+            class: Cruiser
+            names:
+              - Corelum Chief Sentinel
+              - Corelum Chief Infantry
+            group: Group 2 (25 km, Old Station ruins)
+            triggers: Triggers Reinforcements spawn
+          - count: "1"
+            class: Battleship
+            names:
+              - Core Port Admiral
+              - Core Commodore
+            group: Group 2 (25 km, Old Station ruins)
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Guardian Veteran
+            group: Reinforcements spawn triggered by attacking above Cruisers
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Corelatis Platoon Leader
+            group: Group 3 (35 km, Serpentis Storage Facility)
+          - count: "3"
+            class: Battleship
+            names:
+              - Core Baron
+              - Core Commodore
+            group: Group 3 (35 km, Serpentis Storage Facility)
+          - count: "2"
+            class: Industrial
+            names:
+              - Serpentis Personnel Transport
+            group: Group 4 (40 km, Serpentis prison)
+            drop: NPC Passengers
+          - count: "4"
+            class: Battleship
+            names:
+              - Core Baron
+              - Core Commodore
+            group: Group 4 (40 km, Serpentis prison)
+          - count: "?"
+            class: Structure
+            names:
+              - Serpentis Storage Facility
+            group: Lootable Structures
+            drop: NPC Trade Goods
+          - count: "?"
+            class: Structure
+            names:
+              - Serpentis Prison
+            group: Lootable Structures
+            drop: NPC Passengers
+  - name: 2nd Pocket
+    notes:
+      - text: No auto-aggro on warp-in, reinforcements do not auto-aggro
+      - text: The 2nd Group can be attacked independently without drawing pocket aggro.
+      - text: Attacking the 1st Group will aggro the 3rd Group and vice-versa.
+      - text: The warp gate will be locked until you have eliminated all hostile ships.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Corelatis Wing Leader
+              - Corelatis Squad Leader
+            group: Group 1 (20 km, Asteroid Mining Post)
+            triggers: tiggers reinforcements spawn
+          - count: "3"
+            class: Battleship
+            names:
+              - Core Commodore
+              - Core Port Admiral
+            group: Reinforcements spawn, 22km - Radio Telescope)
+          - count: "3"
+            class: Battleship
+            names:
+              - Core Baron
+              - Core Commodore
+            group: Group 2 (30 km, Barren Asteroid)
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Guardian Veteran
+            group: Group 3 (35-50 km, Hollow Asteroid)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Destroyer
+            names:
+              - Corelior Infantry
+              - Corelior Soldier
+            group: Group 3 (35-50 km, Hollow Asteroid)
+            triggers: tiggers reinforcements spawn
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corelum Chief Spy
+              - Corelum Chief Scout
+            group: Group 3 (35-50 km, Hollow Asteroid)
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corelatis Platoon Leader
+              - Corelatis Squad Leader
+            group: Group 3 (35-50 km, Hollow Asteroid)
+          - count: "1"
+            class: Battleship
+            names:
+              - Core Port
+              - Core Rear Admiral
+            group: Group 3 (35-50 km, Hollow Asteroid)
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Guardian Veteran
+            group: Reinforcements spawn, 28km - Barren Asteroid)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+  - name: 3rd Pocket
+    notes:
+      - text: Auto aggro from Group 1.
+      - text: Attacking the 2nd Group will aggro the 4th Group (Krayak Sarpanti) and vice versa.
+      - text: Serpentis Stronghold structure has over 200,000 HP, does not have to be destroyed and drops nothing of value.
+      - text: "Incoming Transmission: Finally, you have reached the final rendezvous point. I can see from your ship's scanners that their general, Krayek Sarpanti, is located in the area. This is good news indeed. Strike him down now and their attack will surely be called off. Not only that, but Krayek's death will be a serious blow to the Serpentis organization. Return to me immediately after he has been eliminated."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Destroyer
+            names:
+              - Corelior Infantry
+              - Corelior Sentinel
+            group: Group 1 (0 km)
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corelatis Squad Leader
+              - Corelatis Platoon Leader
+            group: Group 1 (0 km)
+          - count: "1"
+            class: Battleship
+            names:
+              - Core Flotilla
+              - Core Rear Admiral
+            group: Group 1 (0 km)
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corelatis Squad
+              - Corelatis Platoon Leader
+            group: Group 2 (30 km, Serpentis Storage Facility)
+          - count: "2"
+            class: Battleship
+            names:
+              - Core Admiral
+              - Core Vice Admiral
+            group: Group 2 (30 km, Serpentis Storage Facility)
+            ewar:
+              - kind: sensorDamp
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corelum Chief Defender
+              - Corelum Chief Protector
+            group: Group 3 (35 km, Strange Rock Formation)
+          - count: "3"
+            class: Battleship
+            names:
+              - Core Rear
+            group: Group 3 (35 km, Strange Rock Formation)
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Battleship
+            names:
+              - Krayek Sarpanti
+            group: Group 4 (50 km, Serpentis Stronghold)
+            ewar:
+              - kind: sensorDamp
+            triggers: Calls for reinforcements
+          - count: "2"
+            class: Sentry
+            names:
+              - Serpentis Heavy Missile Battery
+            group: Group 4 (50 km, Serpentis Stronghold)
+            drop: 20x Heavy Missiles
+          - count: "3"
+            class: Drone
+            names:
+              - Spider Drone I (auto-aggro)
+            group: Krayek's reinforcements
+            ewar:
+              - kind: web
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Guardian Veteran
+            group: Krayek's reinforcements
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corelatis Squad
+              - Corelatis Platoon Leader
+            group: Krayek's reinforcements
+          - count: "?"
+            class: Structure
+            names:
+              - Serpentis Storage Facility
+            group: Lootable Structures
+            drop: 30x NPC Trade Goods and 50x Metal Scraps

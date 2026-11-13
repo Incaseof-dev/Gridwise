@@ -1,0 +1,70 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-hidden-stash-guristas-pirates-level-2
+kind: mission
+name: The Hidden Stash
+level: 2
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Hidden Stash (Guristas Pirates) (Level 2)
+    url: https://wiki.eveuniversity.org/The_Hidden_Stash_(Guristas_Pirates)_(Level_2)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "192021"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the Warehouse and return the Sealed Cargo Containers (150.0 m3) to agent
+ewar:
+  - kind: ecm
+notes:
+  - text: "Suggested ships: Cruiser"
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: initial-group-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group (auto-aggro)
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Pithi Despoiler
+              - Pithi Saboteur
+            ewar:
+              - kind: ecm
+          - count: "1"
+            class: Cruiser
+            names:
+              - Pithum Killer
+            ewar:
+              - kind: ecm
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Warehouse
+            drop: metal scraps, trade goods; Sealed Cargo Containers
+          - count: "1"
+            class: Structure
+            names:
+              - Habitation Module
+            drop: trade goods
+          - count: "1"
+            class: Structure
+            names:
+              - Pressure Silo
+            drop: ammo
+          - count: "1"
+            class: Structure
+            names:
+              - Cargo Rig
+            drop: ammo

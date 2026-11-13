@@ -1,0 +1,102 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: crimson-harvest-additional-spawns
+kind: anomaly
+name: Additional spawns
+dedRating: null
+enemyFaction: Rogue Drones & Triglavian Collective & Drifters
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Crimson Harvest (2026), section "Additional spawns"
+    url: https://wiki.eveuniversity.org/Crimson_Harvest_(2026)#Additional_spawns
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "232560"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Part of the Crimson Harvest (2026) event. Event sites change from year to year.
+  - text: In both the Crimson Gauntlet and Tetrimon Base sites after clearing all waves in the first or second pocket, there is a chance that an Abyssal rift will open and spawn a small group of additional ships, being either Rogue Drones, Sleepers, or Triglavians. The spawns always consist of one boss enemy and a small escort of ships from Pochven. The boss drops Mutated Blood Samples and has a chance to drop a Criterion Cipher for the Criterion of Fitness combat sites, the escorts have the same loot tables as their counterparts in Pochven. The NPCs will not leave after site completion and will only despawn once the site complex itself disappears from the overview.
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: Triglavian escorts can be either Raznaborg or normal type (Have not observed Hospodar or Zorya's spawns yet - 9 October 2026). Typically there are usually around 3 escorts plus the boss. No standing loss from killing all ships.
+    waves:
+      - id: drone-spawn
+        trigger:
+          on: other
+          text: Drone spawn
+          confidence: inferred
+        spawns:
+          - count: 7-8
+            class: Drone
+            names:
+              - Vexing
+              - Punishing
+              - Interfering Phase (I-IV) Swarmer
+              - Legionary
+            ewar:
+              - kind: web
+              - kind: targetPaint
+              - kind: trackingDisruption
+            note: Damps as well.
+          - count: "1"
+            class: Battleship
+            names:
+              - Proven Overmind
+            drop: Mutated Blood Samples
+      - id: triglavian-spawn
+        trigger:
+          on: other
+          text: Triglavian spawn
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - (Raznaborg) Damavik
+          - count: 0-1
+            class: Cruiser
+            names:
+              - (Raznaborg) Vedmak
+          - count: 0-1
+            class: Cruiser
+            names:
+              - (Raznaborg) Rodiva
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - (Raznaborg) Drekavac
+          - count: "1"
+            class: Commander Battlecruiser
+            names:
+              - Repelling Drekavac
+            ewar:
+              - kind: neut
+            drop: Mutated Blood Samples, Glorified mutaplasmid BPCs, Triglavian salvage, Abyssal filaments, Criterion Cipher
+            note: Neuts 25 GJ/s
+      - id: sleeper-spawn
+        trigger:
+          on: other
+          text: Sleeper spawn
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - (Faded) Hypnosian Agonizer
+              - (Faded) Hypnosian Watcher
+              - (Faded) Hypnosian Preserver
+            ewar:
+              - kind: web
+              - kind: neut
+              - kind: warpScramble
+          - count: "1"
+            class: Cruiser
+            names:
+              - Hypnosian Upholder
+            drop: Mutated Blood Samples
+aliases:
+  - "Crimson Harvest: Additional spawns"

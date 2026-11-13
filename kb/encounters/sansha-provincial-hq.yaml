@@ -1,0 +1,219 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: sansha-provincial-hq
+kind: complex
+name: Sansha Provincial HQ
+dedRating: null
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Sansha Provincial HQ
+    url: https://wiki.eveuniversity.org/Sansha_Provincial_HQ
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "232379"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Battleships"
+notes:
+  - text: Sansha Provincial HQ is a null security Unrated Complex found by scanning in Sansha infested space.
+  - text: This site is practically impossible to solo, and is often called 'the secret 10/10'. HIGHLY RECOMMEND BRINGING FRIENDS FOR THIS SITE. For running this site, bringing a friend or two is recommended to help tank the DPS in the first pocket or break the Provisional HQ in the second room. T3 Cruisers and T2 Battleships can enter the site. Like with all unrated complexes, you land on an acceleration gate when warping to the complex.
+  - text: "Escalation: Destroying the True Sansha commander battleship or the Sansha Provisional HQ may trigger an escalation to the expedition The Ancient City."
+  - text: "Escalation: Escalation: As the dust settles from the battle, you receive a transmission from someone claiming to be a local vigilante who congratulates you on a job well done. Your computers run a check on his ship ID´s and other info they can gather on him in such a short period of time, but come up with nothing. He is at least not a part of any pirate faction, nor seems he to represent any of the official states in the galaxy. This person continues to welcome you to the area and offers to point you to some other Sansha bases he knows about and have been a menace for the local population. If you want to come and meet him, he will lead the way."
+loot:
+  - item: + Commander and other valuable loot
+  - item: True Sansha faction modules
+    note: est. Varies wildly (wiki) · From True Sansha Dread Lord
+  - item: Nightmare BPC
+    note: est. Unknown (wiki) · From True Sansha Dread Lord
+  - item: Mid/High-Grade implants and faction ammo/tags
+    note: est. Varies (wiki) · From True Sansha Dread Lord
+pockets:
+  - name: First Pocket (The Sansha Minefields)
+    notes:
+      - text: Destroying the Gate Scrambler will activate a smartbomb that deals heavy Explosive damage. The smartbomb damage is much over 10,000 points. Recommend high resists to Explosive damage to tank the explosion.
+      - text: "Gate scrambler destruction: The destruction of the gate scrambler triggers an explosion that affects all hostile ships in the vicinity."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "8"
+            class: Sentry
+            names:
+              - Tower Sentry Sansha III
+          - count: "2"
+            class: Sentry
+            names:
+              - Sansha Stasis Tower
+            ewar:
+              - kind: web
+          - count: 2-3
+            class: Destroyer
+            names:
+              - Centior Abomination
+              - Centior Monster
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Juggernaut
+              - Centum Loyal Slaughterer
+            ewar:
+              - kind: trackingDisruption
+          - count: "5"
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Dread Lord
+      - id: timed-wave-1-on-3-minute-timer
+        trigger:
+          on: timer
+          text: Timed wave 1(on 3 minute timer)
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Ravener
+              - Centii Loyal Scavenger
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Juggernaut
+              - Centum Loyal Slaughterer
+            ewar:
+              - kind: trackingDisruption
+          - count: "7"
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Dread Lord
+      - id: timed-wave-2-on-6-8-minute-timer
+        trigger:
+          on: timer
+          text: Timed wave 2 (on 6-8 minute timer)
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Centior Horror
+              - Centior Monster
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Mutilator
+              - Centum Loyal Torturer
+          - count: "6"
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Dread Lord
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Gate Scrambler
+            triggers: Destroy to unlock acceleration gate
+            note: Destroying causes smartbomb damage
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            triggers: Unlocks when gate scrambler is destroyed
+            note: Locked
+    onWarpIn: Your ship detects distress signals coming from inside this deadspace area. Perhaps the inhabitants are calling for reinforcements.
+  - name: Second Pocket
+    notes:
+      - text: The Provisional HQ has a strong 50+ km web and will target you upon warpin. It fires Citadel Mjolnir torpedoes that deal around 1500-2000 EM damage to an untanked ship. It repairs both shield and armor to the tune of about 1000 DPS. Multiple ships are recommended to take it down.
+      - text: "Smartbomb trigger: The Sansha Provisional HQ Overseer has activated a powerful smartbomb, affecting all hostile ships caught inside the blast radius."
+    waves:
+      - id: initial-spawn
+        trigger:
+          on: warpIn
+          text: Initial spawn
+        spawns:
+          - count: "12"
+            class: Sentry
+            names:
+              - Sansha Cruise Missile Battery
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Ravener
+              - Centii Loyal Scavenger
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Fiend
+              - Centum Loyal Hellhound
+          - count: "5"
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Dread Lord
+          - count: "1"
+            class: Station
+            names:
+              - Sansha Provisional HQ
+            ewar:
+              - kind: web
+            triggers: Triggers reinforcements and smartbomb wave. Destroying may trigger escalation
+      - id: reinforcements-50-armor
+        trigger:
+          on: other
+          text: Reinforcements (50% armor)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Fiend
+              - Centum Loyal Hellhound
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Centatis Devil
+              - Centatis Phantasm
+          - count: "6"
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Dread Lord
+            triggers: Triggers wave 3
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - True Sansha's Dread Lord
+            drop: Wreck contains possible True Sansha faction modules, ammo/tags, Nightmare BPC and produces T2 salvage
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Enslaver
+              - Centii Loyal Butcher
+          - count: "3"
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Dread Lord
+sde:
+  dungeonIds:
+    - 1672

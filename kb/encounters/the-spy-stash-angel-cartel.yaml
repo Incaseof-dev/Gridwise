@@ -1,0 +1,142 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-spy-stash-angel-cartel
+kind: mission
+name: The Spy Stash
+level: 3
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Spy Stash (Angel Cartel)
+    url: https://wiki.eveuniversity.org/The_Spy_Stash_(Angel_Cartel)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223741"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: web
+  - kind: targetPaint
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Arch Gistii Elite Frigates"
+  - text: "Suggested ships: Huginn, Drake, Hurricane"
+  - text: "Blitz: Jump the first two gates, then kill everything except sentries and batteries, and then loot the Officer's quarters."
+  - text: No hostiles at the initial gate
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: Shooting the Light Missile Batteries aggroes all groups
+      - text: Gate not locked @ 30km
+      - text: Structures have no loot
+    waves:
+      - id: group-1-auto-aggro-11km
+        trigger:
+          on: other
+          text: Group 1 (Auto Aggro, 11km)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Gistior Defiler
+      - id: group-2-auto-aggro-60-80km
+        trigger:
+          on: other
+          text: Group 2 (Auto Aggro, 60-80km)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Sentry
+            names:
+              - Angel Light Missile Battery
+      - id: group-3-auto-aggro-40-70km
+        trigger:
+          on: other
+          text: Group 3 (Auto Aggro, 40-70km)
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Destroyer
+            names:
+              - Gistior Defacer
+              - Gistior Haunter
+              - Gistior Shatterer
+          - count: "3"
+            class: Cruiser
+            names:
+              - Gistum Marauder
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Gistatis Praefectus
+              - Gistatis Tribuni
+      - id: group-4-100km
+        trigger:
+          on: other
+          text: Group 4 (100km)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Nomad
+              - Arch Gistii Ruffian
+            ewar:
+              - kind: targetPaint
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Cruiser
+            names:
+              - Gistum Centurion
+              - Gistum Phalanx
+  - name: Pocket 2
+    notes:
+      - text: Attacking Group 1 aggroes Group 2 as well
+      - text: Killing Group 2 completes the mission
+      - text: The Officer's quarters @ 21km, will contain 5 units of Classified Reports required to bring back to agent and 10 units of narcotics (not required)
+      - text: Some have reported that if you do the mission in a battleship, you will encounter a Mach class battleship as the final spawn. However, I have run the mission in a battleship, and not gotten the spawn, so it's probably random.
+    waves:
+      - id: group-1-auto-aggro
+        trigger:
+          on: other
+          text: Group 1 (Auto Aggro)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Angel Sentry Gun
+          - count: "2"
+            class: Sentry
+            names:
+              - Angel Heavy Missile Battery
+      - id: group-2-40km
+        trigger:
+          on: other
+          text: Group 2 (40km)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Gistior Seizer
+          - count: "1"
+            class: Cruiser
+            names:
+              - Gistum Crusher
+              - Gistum Smasher
+            ewar:
+              - kind: targetPaint
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Gistatis Tribuni
+          - count: "1"
+            class: Battleship
+            names:
+              - Gist Nephilim
+            group: May Spawn

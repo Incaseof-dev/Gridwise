@@ -1,0 +1,136 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: lights-out-level-5
+kind: mission
+name: Lights Out
+level: 5
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Lights Out (Level 5)
+    url: https://wiki.eveuniversity.org/Lights_Out_(Level_5)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191783"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Kill the Gallente Lieutenant
+ewar:
+  - kind: neut
+  - kind: sensorDamp
+  - kind: web
+  - kind: warpScramble
+notes:
+  - text: "Web/warp disruption: Elite Federation Libertus/Manica (Web, Scram)"
+  - text: "Suggested ships: Passive Battleship, Command Ship"
+  - text: "Blitz: Destroy Gallente Federation Control Tower and Gallente Lieutenant."
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "2"
+            class: Fighter
+            names:
+              - Federation Fighter
+          - count: "1"
+            class: Tower
+            names:
+              - Gallente Federation Control Tower
+            triggers: triggers Tower Reinforcements
+      - id: timed-reinforcements
+        trigger:
+          on: other
+          text: Timed Reinforcements
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Fighter
+            names:
+              - Federation Fighter
+            group: 5 Minutes after Warp-In
+          - count: "6"
+            class: Fighter
+            names:
+              - Federation Fighter
+            group: 10 Minutes after Warp-In
+          - count: "5"
+            class: Fighter
+            names:
+              - Federation Fighter
+            group: 13 Minutes after Warp-In
+      - id: tower-reinforcements
+        trigger:
+          on: other
+          text: Tower Reinforcements
+          confidence: inferred
+        spawns:
+          - count: "9"
+            class: Elite Frigate
+            names:
+              - Elite Federation Manica
+              - Elite Federation Matara
+              - Elite Federation Libertus
+            group: Shooting the Control Tower
+            ewar:
+              - kind: web
+              - kind: sensorDamp
+              - kind: warpScramble
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Elite Federation Navis
+              - Elite Federation Mentes
+            group: Shooting the Control Tower
+          - count: "10"
+            class: Battlecruiser
+            names:
+              - Federation Praktor Auxilia
+              - Federation Praktor Arx
+              - Federation Praktor Diablic
+            group: Shooting the Control Tower
+          - count: "5"
+            class: Battleship
+            names:
+              - Federation Praktor Phanix
+              - Federation Praktor Hexeris
+              - Federation Praktor Praeses
+            group: Shooting the Control Tower
+          - count: "3"
+            class: Battleship
+            names:
+              - Federation Praktor Dionia
+            group: Shooting the Control Tower
+            ewar:
+              - kind: neut
+              - kind: sensorDamp
+            note: Each ship neuts 20 GJ/s at a range of 30km
+          - count: "1"
+            class: Battleship
+            names:
+              - The Lieutenant
+            group: Shooting the Control Tower
+            triggers: shooting triggers Lieutenant Reinforcement
+            note: Federation Praktor Polemo type
+      - id: lieutenant-reinforcement
+        trigger:
+          on: other
+          text: Lieutenant Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Elite Federation Matara
+            ewar:
+              - kind: sensorDamp
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Elite Federation Arx

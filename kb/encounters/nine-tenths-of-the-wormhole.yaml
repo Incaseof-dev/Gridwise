@@ -1,0 +1,83 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: nine-tenths-of-the-wormhole
+kind: mission
+name: Nine Tenths Of The Wormhole
+level: 4
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Nine Tenths Of The Wormhole
+    url: https://wiki.eveuniversity.org/Nine_Tenths_Of_The_Wormhole
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "194922"
+defaults:
+  confidence: verified
+  source: uni
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: group-1-40km
+        trigger:
+          on: other
+          text: Group 1 @ 40km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Centatis Phantasm
+            triggers: trigger
+          - count: "3"
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Dread Lord
+      - id: group-2-the-wormhole
+        trigger:
+          on: other
+          text: Group 2 @ the wormhole
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Centii Loyal Butcher
+          - count: 2-3
+            class: Battleship
+            names:
+              - Centus Tyrant
+            triggers: trigger
+      - id: group-3-the-wormhole
+        trigger:
+          on: other
+          text: Group 3 @ the wormhole
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Centum Loyal Torturer
+              - Centum Loyal Hellhound
+          - count: "4"
+            class: Battleship
+            names:
+              - Centus Dread Lord
+            triggers: trigger
+      - id: group-4-the-wormhole
+        trigger:
+          on: other
+          text: Group 4 @ the wormhole
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Centatis Phantasm
+              - Centatis Devil
+          - count: 3-4
+            class: Battleship
+            names:
+              - Centus Tyrant

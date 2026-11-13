@@ -1,0 +1,613 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-big-sting-caldari-state
+kind: mission
+name: The Big Sting
+level: 5
+enemyFaction: Caldari State
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Big Sting (Caldari State)
+    url: https://wiki.eveuniversity.org/The_Big_Sting_(Caldari_State)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231110"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: web
+  - kind: neut
+  - kind: ecm
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite frigates"
+  - text: "Suggested ships: Maelstrom w/ passive tank and (1) Maelstrom w/ Shield Transporters"
+pockets:
+  - name: Part 1 of 3
+    notes:
+      - text: Direct warp into Deadspace. No gate.
+      - text: "Blitz: Wait for the Special Forces Squadron, destroy them and get out."
+      - text: "Tips: Special Forces Squadron deals 1301hp/s (Kin: 71%, Therm: 29%)"
+      - text: "Tips: If triggered, initial Ghost Ship spawns will deal an additional 1390 hp/s (Kin: 73%, Therm: 27%)"
+      - text: "Tips: Have the “Types” column available in your overview if you want to separately identify each Special Forces tower type and ship"
+  - name: Warp-In
+    notes:
+      - text: "Note: Only the Special Forces Squadron that appears about 8 minutes after warp-in needs to be destroyed to complete this mission. However, if you approach to under 10km from the Ghost Ship, it will trigger numerous additional spawns that are optional to destroy. Realize that sometimes this accidentally occurs at warp-in. The Warp-In Beacon is 12km from the Ghost Ship, and your exact warp-in spot can be + or – 2.5km from this beacon. If your warp-in does not land you within the 10km proximity, and if you don’t want to trigger these spawns, then be sure to head away from the Ghost Ship after warp-in."
+      - text: "Proximity triggered: When you approach to under 10km from the Ghost Ship, there spawns:"
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Structure
+            names:
+              - Ghost Ship
+            triggers: triggers Ghost Ship spawn when approached to under 10km.
+      - id: special-forces-squadron-35-45km-away-at-8-minutes-after-warp-in
+        trigger:
+          on: other
+          text: Special Forces Squadron (35–45km away at 8 minutes after warp-in
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Taibu State Nagasa
+              - Taibu State Shinai
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Taibu State Daimyo
+              - Taibu State Shugo
+            ewar:
+              - kind: ecm
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Taibu State Bajo
+              - Taibu State Samurai
+          - count: "6"
+            class: Battleship
+            names:
+              - State Shukuro Shogun
+          - count: "4"
+            class: Sentry
+            names:
+              - Tower Sentry Caldari III
+          - count: "2"
+            class: Sentry
+            names:
+              - Caldari Cruise Missile Battery
+          - count: "2"
+            class: Sentry
+            names:
+              - Caldari Energy Neutralizer Sentry III
+            ewar:
+              - kind: neut
+      - id: ghost-ship-spawn
+        trigger:
+          on: other
+          text: Ghost Ship Spawn
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Elite Frigate
+            names:
+              - Taibu State Katana
+              - Taibu State Wakizashi
+              - Taibu State Nagasa
+              - Taibu State Shinai
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            triggers: shooting a frigate triggers Ghost Ship reinforcement A1
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Taibu State Bajo
+              - Taibu State Samurai
+            triggers: shooting a cruiser triggers Ghost Ship reinforcement B1
+      - id: ghost-ship-reinforcement-a1
+        trigger:
+          on: other
+          text: Ghost Ship Reinforcement A1
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Battleship
+            names:
+              - State Shukuro Shogun
+            triggers: Ghost Ship Reinforcement A2
+      - id: ghost-ship-reinforcement-a2
+        trigger:
+          on: other
+          text: Ghost Ship Reinforcement A2
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Taibu State Shirasaya
+              - Taibu State Suriage
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - State Shukuro Bajo
+              - State Shukuro Samurai
+          - count: "4"
+            class: Battleship
+            names:
+              - State Shukuro Bishamon
+              - State Shukuro Shogun
+      - id: ghost-ship-reinforcement-b1
+        trigger:
+          on: other
+          text: Ghost Ship Reinforcement B1
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battleship
+            names:
+              - State Shukuro Shogun
+            triggers: Ghost Ship Reinforcement B2
+      - id: ghost-ship-reinforcement-b2
+        trigger:
+          on: other
+          text: Ghost Ship Reinforcement B2
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Taibu State Bajo
+              - Taibu State Samurai
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - State Shukuro Bajo
+              - State Shukuro Samurai
+          - count: "4"
+            class: Battleship
+            names:
+              - State Shukuro Bishamon
+              - State Shukuro Shogun
+  - name: Part 2 of 3
+    notes:
+      - text: "Space type: Deadspace, no initial gate"
+      - text: Direct warp into Deadspace. No initial gate.
+      - text: "Tips: No Energy Neutralizer Towers means this mission is Active Tank friendly"
+      - text: "Tips: Timed Spawns more often than not seem to aggro secondary teammates and drones"
+      - text: "Tips: Consider auto-targeting missiles and setting drones to “Aggressive” for when you are unable to target because of Jammers"
+      - text: "Tips: Each pocket’s final spawn of Jammers + Scramblers can trap one in prolonged HEAVY damage"
+      - text: "Tips: Warp-in’s max damage dealing of all ships: 2,418 hp/s (Kin: 72%, Therm: 28%)"
+      - text: "Tips: Right hand gate pocket’s max damage dealing of all ships: 2,484 hp/s (Kin: 78%, Therm: 22%)"
+      - text: "Tips: Left hand gate pockets max damage dealing of all ships: 2,369 hp/s (Kin: 73%, Therm: 27%)"
+  - name: Warp-In
+    notes:
+      - text: "Timed spawns of 40 ships (15 Frigates, 3 Destroyers, 10 Cruisers, 12 Battleships) - 2,418 HP/s (Kin: 72%, Therm: 28%)"
+      - text: Groups spawn at 2 minute intervals. Instant Aggro.
+      - text: Positions of timed spawns
+    waves:
+      - id: initial
+        trigger:
+          on: warpIn
+          text: Initial
+        spawns:
+          - count: "5"
+            class: Elite Frigate
+            names:
+              - Taibu State Nagasa
+              - Taibu State Shinai
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: Orbits at 3km
+      - id: reinforcement-1-25km
+        trigger:
+          on: other
+          text: Reinforcement 1 (25km)
+          confidence: inferred
+        spawns:
+          - count: "7"
+            class: Elite Frigate
+            names:
+              - Taibu State Nagasa
+              - Taibu State Shinai
+              - Yari Daito
+              - Taibu State Katana
+              - Taibu State Wakizashi
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: Orbits at 3-17km
+          - count: "7"
+            class: Elite Cruiser
+            names:
+              - Taibu State Oni
+              - Taibu State Kanpaku
+              - Taibu State Bajo
+              - Taibu State Samurai
+            note: Orbits at 25-45km
+      - id: reinforcement-2-49km
+        trigger:
+          on: other
+          text: Reinforcement 2 (49km)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - State Shukuro Kamikazi
+              - State Shukuro Choji
+            note: Orbits at 17km
+          - count: "7"
+            class: Battleship
+            names:
+              - State Shukuro Shogun
+              - State Shukuro Bishamon
+              - State Shukuro Daijo
+            note: Orbits at 33-35km
+      - id: reinforcement-3-55km
+        trigger:
+          on: other
+          text: Reinforcement 3 (55km)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Taibu State Nagasa
+              - Taibu State Shinai
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: orbits at 3km
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Taibu State Daimyo
+              - Taibu State Shugo
+            ewar:
+              - kind: ecm
+            note: Orbits at 18km
+          - count: "5"
+            class: Battleship
+            names:
+              - State Shukuro Shogun
+            note: Orbits at 33km
+  - name: Right hand gate pocket
+    notes:
+      - text: "Timed spawns of 35 ships (6 Frigates, 8 Cruisers, 6 Battlecruisers, 15 Battleships) - 2,484 HP/s (Kin: 78%, Therm: 22%)"
+      - text: Retrieve 3 units of Citizens from the 3 Citizen Quarters at 30km.
+      - text: Position of Timed Spawns
+      - text: After 1 minute
+      - text: After 3 minutes
+      - text: After ~1.5 minutes
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "3"
+            class: Structure
+            names:
+              - Citizen Quarter
+            drop: Citizens
+      - id: spawn-1-instant-aggro
+        trigger:
+          on: other
+          text: Spawn 1 (Instant aggro)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Taibu State Nagasa
+              - Taibu State Shinai
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: Orbits at 3km
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Taibu State Bajo
+              - Taibu State Samurai
+            note: Orbits at 33km
+          - count: "5"
+            class: Battleship
+            names:
+              - State Zen
+              - State Oshiro
+              - State Shukuro Shogun
+              - State Bishamon
+              - State Daijo
+            note: Orbits at 29-35Km
+      - id: spawn-2-15km
+        trigger:
+          on: other
+          text: Spawn 2 (15km)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - State Shukuro Bajo
+              - State Shukuro Samurai
+              - State Kanpaku
+            note: Orbits at 23km
+          - count: "5"
+            class: Battleship
+            names:
+              - State Shukuro Shogun
+            note: Orbits at 33km
+      - id: spawn-3-30km
+        trigger:
+          on: other
+          text: Spawn 3 (30km)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Taibu State Shirasaya
+              - Taibu State Suriage
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: Orbits at 7km
+          - count: "6"
+            class: Elite Cruiser
+            names:
+              - Taibu State Bajo
+              - Taibu State Samurai
+              - Taibu State Daimyo*
+              - Taibu State Shugo*
+            ewar:
+              - kind: ecm
+            note: Orbits at 18-33km, Daimyo and Shugo jam
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - State Shukuro Bajo
+              - State Shukuro Samurai
+            note: Orbits at 23km
+      - id: spawn-4-35km
+        trigger:
+          on: other
+          text: Spawn 4 (35km)
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Battleship
+            names:
+              - State Zen
+              - State Shukuro Daijo
+              - State Shogun
+            note: orbits at 33-35km
+  - name: Left hand gate pocket
+    notes:
+      - text: "Average 2 minute spawns totaling 38 ships (14 Frigates, 11 Cruisers, 13 Battleships) - 2,369 hp/s (Kin: 73%, Therm: 27%)"
+      - text: Position of Timed Spawns
+      - text: 2 minutes after warp-in
+      - text: After 1 minute
+      - text: After 3 minutes
+      - text: After 1 minute
+    waves:
+      - id: spawn1-10km-instant-aggro
+        trigger:
+          on: other
+          text: Spawn1 (10km, Instant aggro)
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Elite Frigate
+            names:
+              - Taibu State Nagasa
+              - Taibu State Shinai
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: Orbits at 3km
+          - count: "7"
+            class: Elite Cruiser
+            names:
+              - Taibu State Bajo
+              - Taibu State Samurai
+              - Taibu State Daimyo*
+              - Taibu State Shugo*
+            ewar:
+              - kind: ecm
+            note: Orbits at 18-33km, Daimyo and Dhugo jam
+      - id: spawn-2-20km
+        trigger:
+          on: other
+          text: Spawn 2 (20km)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Taibu State Nagasa
+              - Taibu State Shinai
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: Orbits at 3km
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Taibu State Daimyo
+              - Taibu State Shugo
+            ewar:
+              - kind: ecm
+            note: Orbits at 18km
+          - count: "5"
+            class: Battleship
+            names:
+              - State Shukuro Bishamon
+              - State Shukuro Shogun
+            note: Orbits at 33-35km
+      - id: spawn-3-15km
+        trigger:
+          on: other
+          text: Spawn 3 (15km)
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Battleship
+            names:
+              - State Shukuro Bishamon
+              - State Shukuro Shogun
+            note: Orbits at 33-35km
+      - id: spawn-4-35km
+        trigger:
+          on: other
+          text: Spawn 4 (35km)
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Elite Frigate
+            names:
+              - Taibu State Katana
+              - Taibu State Wakizashi
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: Orbits at 17km
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Taibu State Bajo
+              - Taibu State Samurai
+            note: Orbits at 33km
+          - count: "2"
+            class: Battleship
+            names:
+              - State Shukuro Shogun
+            note: Orbits at 33km
+  - name: Part 3 of 3
+    notes:
+      - text: "Space type: Normal Space, No Gates"
+      - text: "Tips: Mission occurs in normal space, so you can always warp to distances and to bookmarks farther away from the NPCs."
+      - text: "Tips: Warping to within 100km leaves plenty of distance that spreads out the aggro."
+      - text: "Tips: Carriers NOS has a range of 150km."
+      - text: "Tips: Fighters will immediately attack your drones when they spawn from the Carrier, but this can be used to your advantage"
+      - text: "Tips: Small Drones are invulnerable to the Fighters, as long as they are moving/attacking; and they are a great way to draw-off the Fighter's aggro."
+      - text: "Tips: Have your small drones attacking the carrier when the fighters spawn."
+      - text: "Tips: Mission is flagged complete after both Carriers are destroyed."
+  - name: Warp-In
+    notes:
+      - text: Distances to ships depends on your selected warp distance.
+      - text: After several minutes there spawns
+    waves:
+      - id: initial-carrier-group-a
+        trigger:
+          on: warpIn
+          text: Initial Carrier Group A
+        spawns:
+          - count: "8"
+            class: Fighter
+            names:
+              - State Fighter (Fighter Group A1)
+            note: orbits at 3km
+          - count: "1"
+            class: Carrier
+            names:
+              - State Izanaki
+            ewar:
+              - kind: neut
+            triggers: Damge triggers reinforcements
+      - id: reinforcement-1
+        trigger:
+          on: other
+          text: Reinforcement 1
+          confidence: inferred
+        spawns:
+          - count: "14"
+            class: Elite Frigate
+            names:
+              - Taibu State Nagasa
+              - Taibu State Shinai
+              - Taibu State Katana
+              - Taibu State Wakizashi
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: Orbits of 3-17km
+          - count: "12"
+            class: Battleship
+            names:
+              - State Shukuro Shogun
+              - State Shukuro Bishamon
+            note: Orbits at 33km
+      - id: reinforcements
+        trigger:
+          on: other
+          text: Reinforcements
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Fighter
+            names:
+              - State Fighter (Fighter group A2)
+            group: Carrier spawn B
+          - count: "8"
+            class: Fighter
+            names:
+              - State Fighter (Fighter group B1)
+            group: Carrier spawn B
+          - count: "1"
+            class: Carrier
+            names:
+              - State Izanaki
+            group: Carrier spawn B
+            ewar:
+              - kind: neut
+            triggers: Damge triggers reinforcements
+          - count: "5"
+            class: Fighter
+            names:
+              - State Fighter (Fighter group A3)
+            group: Carrier A shield to 10%
+          - count: "5"
+            class: Fighter
+            names:
+              - State Fighter (Fighter group A4)
+            group: Carrier A armor to 10%
+          - count: "5"
+            class: Fighter
+            names:
+              - State Fighter (Fighter group A5)
+            group: Carrier A hull to 50%
+          - count: "5"
+            class: Fighter
+            names:
+              - State Fighter (Fighter group B2)
+            group: Carrier B shield to 40%
+          - count: "5"
+            class: Fighter
+            names:
+              - State Fighter (Fighter group B3)
+            group: Carrier B armor to 50%
+          - count: "5"
+            class: Fighter
+            names:
+              - State Fighter (Fighter group B4)
+            group: Carrier B armor to 10%
+          - count: "5"
+            class: Fighter
+            names:
+              - State Fighter (Fighter group B5)
+            group: Carrier A hull to 50%

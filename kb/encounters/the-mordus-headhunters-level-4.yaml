@@ -1,0 +1,169 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-mordus-headhunters-level-4
+kind: mission
+name: The Mordus Headhunters
+level: 4
+enemyFaction: Mordu's Legion Command
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Mordus Headhunters (Level 4)
+    url: https://wiki.eveuniversity.org/The_Mordus_Headhunters_(Level_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231829"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy Mordu's Legion ships
+ewar:
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite frigates"
+  - text: Strong enemy battleships; Frigates will apply heavy webbing to your drones and kill them.
+  - text: The Mordus headhunters has some of the hardest combat among L4 missions. Each pocket of this mission involves drone aggro and proximity aggro groups. However, in each stage it's possible to position yourself so that you can happily take out at least the first group without aggro from the others. The battleships deal decent damage and have strong tank.
+  - text: "Blitz: 1st Pocket: Kill all the ships."
+  - text: "Blitz: 2nd Pocket: Kill the group 3 (with the Mordus Mammoth). To avoid getting stage aggro, fly towards the right edge of the group and wait until the group aggro your ship. You can then attack the ships without aggro from the rest of the room."
+  - text: No hostiles at initial gate.
+  - text: Mission reward and mission reward bonus is approximately 2.3M
+  - text: Approximately 10.6 million in bounties. (Updated 06/29/2026 by Verum Peto)
+  - text: Approximately 15 million in loot and salvage. (Updated 06/29/2026 by Verum Peto)
+  - text: Group 1,2, and 4 in the second pocket doesn't have to be killed to complete the mission. You can complete it by just killing group 3.
+pockets:
+  - name: 1st pocket
+    notes:
+      - text: Group 1 autoaggo, groups 2 and 3 proximity aggro ships and drones.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "5"
+            class: Cruiser
+            names:
+              - Mordus Leopard
+              - Mordus Lion
+            group: Group 1 (12-30 km)
+          - count: "3"
+            class: Battleship
+            names:
+              - Mordus Phanti
+              - Mordus Gigamar
+              - Mordus Sequestor
+            group: Group 1 (12-30 km)
+          - count: "4"
+            class: Frigate
+            names:
+              - Mordus Gladius
+            group: Group 2 (65-90 km, Minmatar Mining Station Ruins)
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Mordus Bounty Hunter
+            group: Group 2 (65-90 km, Minmatar Mining Station Ruins)
+            ewar:
+              - kind: web
+          - count: "5"
+            class: Cruiser
+            names:
+              - Mordus Puma
+              - Mordus Lion
+            group: Group 2 (65-90 km, Minmatar Mining Station Ruins)
+          - count: "6"
+            class: Frigate
+            names:
+              - Mordus Katana
+              - Mordus Gladius
+            group: Group 3 (75-90 km, Minmatar Trade Station Ruins)
+          - count: "4"
+            class: Cruiser
+            names:
+              - Mordus Bobcat
+            group: Group 3 (75-90 km, Minmatar Trade Station Ruins)
+          - count: "2"
+            class: Battleship
+            names:
+              - Mordus Sequestor
+            group: Group 3 (75-90 km, Minmatar Trade Station Ruins)
+  - name: 2nd pocket
+    notes:
+      - text: Group 1 will auto aggro, other groups will proximity aggro.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "8"
+            class: Frigate
+            names:
+              - Mordus Sabre
+              - Mordus Katana
+            group: Group 1 (16-20 km, Veldspar Asteroid)
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Mordus Bounty Hunter
+            group: Group 1 (16-20 km, Veldspar Asteroid)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "5"
+            class: Frigate
+            names:
+              - Mordus Gladius
+            group: Group 2 (30-70 km, left Gallente station ruin)
+          - count: "12"
+            class: Cruiser
+            names:
+              - Mordus Bobcat
+            group: Group 2 (30-70 km, left Gallente station ruin)
+            note: type list incomplete on the source page
+          - count: "5"
+            class: Battleship
+            names:
+              - Mordus Sequestor
+              - Mordus Phanti
+              - Mordus Gigamar
+            group: Group 2 (30-70 km, left Gallente station ruin)
+          - count: "4"
+            class: Frigate
+            names:
+              - Mordus Katana
+            group: Group 3 (80 km, right Gallente station ruin )
+          - count: "5"
+            class: Cruiser
+            names:
+              - Mordus Leopard
+              - Mordus Lion
+            group: Group 3 (80 km, right Gallente station ruin )
+          - count: "3"
+            class: Battleship
+            names:
+              - Mordus Sequestor
+              - Mordus Mammoth
+            group: Group 3 (80 km, right Gallente station ruin )
+          - count: "5"
+            class: Frigate
+            names:
+              - Mordus Katana
+              - Mordus Bounty Hunter
+            group: Group 4 (100 km, center Gallente station ruin)
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Mordus Bounty Hunter
+            group: Group 4 (100 km, center Gallente station ruin)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "8"
+            class: Cruiser
+            names:
+              - Mordus Cheetah
+              - Mordus Puma
+            group: Group 4 (100 km, center Gallente station ruin)

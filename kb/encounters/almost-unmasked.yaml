@@ -1,0 +1,24 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: almost-unmasked
+kind: mission
+name: Almost Unmasked
+level: 4
+enemyFaction: null
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Almost Unmasked
+    url: https://wiki.eveuniversity.org/Almost_Unmasked
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "206314"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Report to Arikio Kuretsu
+notes:
+  - text: "Paranoia: Hyasyoda is one of the oldest of the Caldari megacorporations, having been formed shortly after first contact with Gallente when the Caldari were still in their Industrial Age. Throughout State history, Hyasyoda executives have always been conservative and cautious. As a result the corporation has informally claimed as theirs the age old Caldari saying, “only the paranoid survive.”"
+  - text: Accept the Mission remotely.
+  - text: Report to Arikio Kuretsu thirty two jumps away in Wuos V - Moon 1 - Hyasyoda Corporation Mining Outpost.

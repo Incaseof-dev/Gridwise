@@ -1,0 +1,62 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: seek-and-destroy-blood-raiders-level-3
+kind: mission
+name: Seek and Destroy
+level: 3
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Seek and Destroy (Blood Raiders) (Level 3)
+    url: https://wiki.eveuniversity.org/Seek_and_Destroy_(Blood_Raiders)_(Level_3)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "211495"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy all enemy ships
+ewar:
+  - kind: web
+notes:
+  - text: "Blitz: Kill Group 2"
+  - text: No hostiles at initial gate.
+pockets:
+  - name: 1st Pocket
+    waves:
+      - id: initial-hostiles
+        trigger:
+          on: warpIn
+          text: Initial Hostiles
+        spawns:
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Blood Disciple
+            group: Group 1 (30-40km)
+            ewar:
+              - kind: web
+          - count: "4"
+            class: Destroyer
+            names:
+              - Corpior Devoter
+              - Corpior Templar
+            group: Group 1 (30-40km)
+          - count: "1"
+            class: Cruiser
+            names:
+              - Corpum Dark Priest
+            group: Group 1 (30-40km)
+          - count: "3"
+            class: Frigate
+            names:
+              - Corpii Engraver
+              - Corpii Reaver
+            group: Group 2 (40-50km)
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Corpatis Fanatic
+            group: Group 2 (40-50km)

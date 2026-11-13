@@ -1,0 +1,155 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: shipyard-theft-guristas-pirates
+kind: mission
+name: Shipyard Theft
+level: 4
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Shipyard Theft (Guristas Pirates)
+    url: https://wiki.eveuniversity.org/Shipyard_Theft_(Guristas_Pirates)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223924"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: ecm
+  - kind: web
+notes:
+  - text: "Web/warp disruption: Elite frigates (Guristas Kyoukan/Webifier)"
+  - text: "Suggested ships: Battleship, Command Ship, HAC. (vs ECM - prefer drone based or fit ECCM)"
+  - text: "Space type: Deadspace"
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: You may get auto aggroed by Group A upon warp-in, but in some other circumstances, there will be no aggro as you warp-in.
+      - text: Attacking Group A will aggro Group B.
+      - text: Groups C and D can be aggroed individually.
+      - text: Attacking Group E will aggro the entire pocket.
+      - text: Drones can be deployed normally and do not cause pocket aggro.
+      - text: thumb|Tactical view of Pocket 1
+      - text: "Tip: If Group A does not auto aggro at warp-in, eliminate Group B first and then Group A."
+      - text: "Tip: Recommended order of elimination: Group B, Group A, Group C, Group D and finally Group E."
+    waves:
+      - id: forces-on-grid-see-tactical-view-of-pocket-1
+        trigger:
+          on: other
+          text: Forces on grid (see Tactical view of Pocket 1)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Pithatis Enforcer
+              - Pithatis Executor
+            group: Group A (20-25km)(Auto-aggro)
+          - count: 0-1
+            class: Battleship
+            names:
+              - Pith Destroyer
+              - Pith Massacrer
+            group: Group A (20-25km)(Auto-aggro)
+          - count: 0-1
+            class: Battleship
+            names:
+              - Pith Exterminator
+            group: Group A (20-25km)(Auto-aggro)
+            ewar:
+              - kind: ecm
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Guristas Webifier
+              - Guristas Kyoukan
+            group: Group B (20-25km)
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Pithatis Assassin
+              - Pithatis Assaulter
+            group: Group B (20-25km)
+          - count: "1"
+            class: Battleship
+            names:
+              - Pith Usurper
+              - Pith Massacrer
+            group: Group B (20-25km)
+          - count: "10"
+            class: Battlecruiser
+            names:
+              - Pithatis Enforcer
+              - Pithatis Executor
+              - Pithatis Assaulter
+            group: Group C (27-37km)
+          - count: "4"
+            class: Destroyer
+            names:
+              - Pithior Guerilla
+              - Pithior Renegade
+            group: Group D At gate (37-45km)
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Pithatis Enforcer
+              - Pithatis Assaulter
+              - Pithatis Executor
+            group: Group D At gate (37-45km)
+          - count: "2"
+            class: Battleship
+            names:
+              - Pith Destroyer
+            group: Group D At gate (37-45km)
+          - count: "4"
+            class: Battleship
+            names:
+              - Pith Eradicator
+              - Pith Obliterator
+            group: Group E (57-63km)
+  - name: Pocket 2
+    notes:
+      - text: Auto aggro from all upon warp-in.
+      - text: Last ship killed will drop the storage containers needed to complete the mission. Make sure you loot it.
+    waves:
+      - id: single-group-24-32km
+        trigger:
+          on: other
+          text: Single group (24-32km)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Pithior Guerilla
+          - count: "5"
+            class: Cruiser
+            names:
+              - Pithium Eraser
+              - Pithium Abolisher
+          - count: 0-3
+            class: Battleship
+            names:
+              - Pith Extinquisher
+          - count: 0-3
+            class: Battleship
+            names:
+              - Pith Eliminator
+            ewar:
+              - kind: ecm
+          - count: "1"
+            class: Structure
+            names:
+              - Storage Silo
+            drop: 50x High Tech Data Chips, Caldari CU/AZ/BY-1 Nexus Chip (~35mil ISK total)
+          - count: "4"
+            class: Structure
+            names:
+              - Habitation Module
+            drop: Trade Goods
+            note: only 1 drops anything

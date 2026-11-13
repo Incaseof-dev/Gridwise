@@ -1,0 +1,34 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: humble-beginnings
+kind: mission
+name: Humble Beginnings
+level: 3
+enemyFaction: Smugglers
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Humble Beginnings
+    url: https://wiki.eveuniversity.org/Humble_Beginnings
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191738"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: This is actually a level 1 mission that points towards to the The Blood-Stained Stars. Read the pop ups and the item in can that drops.
+  - text: Single gated pocket.
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: wave-34
+        trigger:
+          on: other
+          text: "Wave #34"
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Hapless Smuggler

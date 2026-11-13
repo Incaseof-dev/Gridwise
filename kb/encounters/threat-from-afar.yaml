@@ -1,0 +1,41 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: threat-from-afar
+kind: mission
+name: Threat From Afar
+level: 1
+enemyFaction: Minmatar Republic
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Threat From Afar
+    url: https://wiki.eveuniversity.org/Threat_From_Afar
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "229610"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the Minmatar Point Defense Battery guarding the TFF communications device along with the Freedom Fighter.
+notes:
+  - text: "Suggested ships: Frigate"
+  - text: Single ungated pocket
+pockets:
+  - name: Warp-in
+    notes:
+      - text: "Agent message after completing the mission:: Not bad. You've just saved a few of our disease-ridden slaves from being released from captivity, we are proud of you!"
+    waves:
+      - id: initial-group-35km
+        trigger:
+          on: warpIn
+          text: Initial Group, 35km
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Minmatar Freedom Fighter
+          - count: "1"
+            class: Sentry
+            names:
+              - Minmatar Point Defense Battery

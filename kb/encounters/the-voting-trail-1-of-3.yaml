@@ -1,0 +1,47 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-voting-trail-1-of-3
+kind: mission
+name: The Voting Trail (1 of 3)
+level: 2
+enemyFaction: Caldari State
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Voting Trail (1 of 3)
+    url: https://wiki.eveuniversity.org/The_Voting_Trail_(1_of_3)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223512"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Suggested ships: Destroyer"
+  - text: Ships are Mercenaries, but a Caldari standings loss has been reported. Fuel tank needs to be shot to destroy the Broadcast Tower.
+  - text: "Blitz: Destroy the Fuel Depot."
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: "Next: The Voting Trail (2 of 3)"
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - State Katana
+              - State Nagasa
+              - State Shinai
+          - count: "1"
+            class: Structure
+            names:
+              - Broadcast Tower
+          - count: "1"
+            class: Structure
+            names:
+              - Fuel Depot
+            note: Mission objective

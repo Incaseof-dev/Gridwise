@@ -1,0 +1,136 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: fuel-gauge
+kind: mission
+name: Fuel Gauge
+level: 3
+enemyFaction: Caldari State
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Fuel Gauge
+    url: https://wiki.eveuniversity.org/Fuel_Gauge
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "232565"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Take out at least one of the fuel depots, thereby destroying the surrounding ships.
+restrictions:
+  - text: "Ship size limit: T1 Destroyer, Frigate"
+ewar:
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite frigates"
+  - text: 2.4% Caldari State Faction Standing loss
+  - text: Accept the Mission remotely.
+  - text: Gated deadspace pocket up to four jumps away.
+  - text: "Blitz: destroy ships at warp in and take the Acceleration Gate. Destroy Fuel Depot Alpha and warp out."
+  - text: "Tips: You do not have to destroy the Caldari Stasis Towers to activate the Acceleration Gate"
+  - text: "Tips: You will lose 2.4% Caldari State Faction Standing if you destroy a Caldari Stasis Tower"
+  - text: "Tips: Don't stay and fight; destroy any Fuel Depot and warp out - only one needs to be destroyed to complete the mission"
+  - text: "Tips: Watch out for Elite Frigates as they Warp Scramble"
+  - text: "Tips: Frigates and Destroyers are not harmed by the Fuel Depot explosion"
+  - text: "Tips: Each battleship will drop a Caldari Navy Vice Admiral Insignia I; bookmark the site and return after turning in the Mission. Total tag loot amounts to ~60M ISK."
+pockets:
+  - name: Warp-in
+    notes:
+      - text: Towers have very short proximity aggro of 15 km. You can take the gate after killing the NPCs without ever getting webbed by the towers with good manual piloting.
+    waves:
+      - id: group-1
+        trigger:
+          on: warpIn
+          text: Group 1
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Fueling Depot Guard
+          - count: "2"
+            class: Destroyer
+            names:
+              - Fueling Depot Guard
+          - count: "1"
+            class: Sentry
+            names:
+              - Caldari Stasis Tower
+            ewar:
+              - kind: web
+            note: They need not be destroyed
+      - id: group-2
+        trigger:
+          on: other
+          text: Group 2
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Fueling Depot Guard
+          - count: "1"
+            class: Sentry
+            names:
+              - Caldari Stasis Tower
+            ewar:
+              - kind: web
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+            note: Locked until all the ships are destroyed
+  - name: Room 1
+    notes:
+      - text: NPCs are separated in three groups, each surrounding a fuel depot.
+      - text: The frigate and destroyer groups are slightly separate from the battleships. The individual battleship groups will aggress you once you start shooting at the fuel depot they're next to. As long as you're moving with any sort of transversal, they shouldn't be much of a threat. The small ships will not aggress you if you don't approach or attack them.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "7"
+            class: Frigate
+            names:
+              - Fueling Depot Guard
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "7"
+            class: Destroyer
+            names:
+              - Fueling Depot Guard
+          - count: "18"
+            class: Battleship
+            names:
+              - State Tenkyu
+              - State Utaisho
+              - State Yojimbo
+              - State Zen
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Structure
+            names:
+              - Fuel Depot Alpha
+            note: It blows up nearby Battleships
+          - count: "?"
+            class: Structure
+            names:
+              - Fuel Depot Beta
+            note: It blows up nearby Battleships
+          - count: "?"
+            class: Structure
+            names:
+              - Fuel Depot Gamma
+            note: It blows up nearby Battleships

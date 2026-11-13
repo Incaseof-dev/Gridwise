@@ -1,0 +1,95 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-spy-stash-guristas-pirates
+kind: mission
+name: The Spy Stash
+level: 3
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Spy Stash (Guristas Pirates)
+    url: https://wiki.eveuniversity.org/The_Spy_Stash_(Guristas_Pirates)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "218641"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Suggested ships: Battlecruiser, Battleship"
+  - text: No hostiles at initial gate
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: Acceleration Gate to next pocket is 40km away.
+      - text: You don't have to kill anything to get through the 1st room.
+      - text: "Warning: There have been sightings of a random Pith Eradicator/Obliterator (Battleship) spawn in this stage. (Confirmed by 2 people)"
+      - text: Officer's Quarters contained the mission objective loot and 10x (drug).
+      - text: "Bounty: ~1.1Mil ISK (2024/09/07)"
+      - text: "Loot: ~300k ISK (2024/09/07)"
+      - text: Kill the ships, ignore the turrets.
+    waves:
+      - id: pocket-1
+        trigger:
+          on: other
+          text: Pocket 1
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Pithatis Assassin
+              - Pithatis Death Dealer
+          - count: "2"
+            class: Cruiser
+            names:
+              - Pithum Inferno
+              - Pithum Mortifier
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Wrecker
+              - Dire Pithi Plunderer
+          - count: "3"
+            class: Destroyer
+            names:
+              - Pithior Terrorist
+              - Pithior Guerilla
+          - count: "3"
+            class: Sentry
+            names:
+              - Guristas Light Missile Battery
+      - id: pocket-2-storage-facility
+        trigger:
+          on: other
+          text: Pocket 2 (Storage Facility)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Pithatis Assassin
+          - count: "1"
+            class: Cruiser
+            names:
+              - Pithum Murderer
+          - count: "2"
+            class: Sentry
+            names:
+              - Guristas Heavy Missile Battery
+          - count: "2"
+            class: Destroyer
+            names:
+              - Pithior Terrorist
+              - Pithior Guerilla
+          - count: "2"
+            class: Sentry
+            names:
+              - Tower Sentry Guristas II
+          - count: "1"
+            class: Battleship
+            names:
+              - Pith Eradicator
+              - Pith Obliterator
+            group: may happen

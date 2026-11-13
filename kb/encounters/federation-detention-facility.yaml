@@ -1,0 +1,127 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: federation-detention-facility
+kind: complex
+name: Federation Detention Facility
+dedRating: null
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Federation Detention Facility
+    url: https://wiki.eveuniversity.org/Federation_Detention_Facility
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231663"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Federation Detention Facility is an unrated combat site belonging to the Gallente Federation faction. It can be found via exploration by scanning signatures in high security systems in Black Rise within the Aokinen constellation. The site is level II scanning difficulty.
+  - text: This site appears to be the target for the Caldari epic arc mission The Breakout, and will only spawn when the respective mission has been accepted. One site will spawn in every system in the constellation and will respawn after completion.
+pockets:
+  - name: Warp-in
+    notes:
+      - text: "Acceleration Gate is 90 km from warp-in. Usually the pocket will be empty, but sometimes the following NPCs will spawn:"
+      - text: The NPCs will aggro based on proximity and some of the frigates will web and point. Cruisers will use a significant amount of damping. The acceleration gate is not locked so a cloaky ship or well-tanked fast frigate can skip the pocket.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Federation Praktor Harpago
+              - Federation Praktor Belos
+            group: Group 1
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Elite Federation Manica
+              - Elite Federation Lixa
+              - Elite Federation Libertus
+            group: Group 1
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Destroyer
+            names:
+              - Federation Praktor Phalarica
+              - Federation Praktor Machina
+            group: Group 1
+          - count: "6"
+            class: Elite Frigate
+            names:
+              - Elite Federation Phalarica
+              - Elite Federation Machina
+              - Elite Federation Matara
+            group: Group 2
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Elite Federation Arx
+              - Elite Federation Auxilia
+            group: Group 2
+            ewar:
+              - kind: sensorDamp
+          - count: "7"
+            class: Battleship
+            names:
+              - Federation Covinus
+              - Federation Praktor Polemo
+              - Federation Magister
+              - Federation Hexeris
+            group: Group 3, Acceleration Gate
+      - id: acceleration-gate-90-km-away
+        trigger:
+          on: other
+          text: Acceleration Gate (90 km away)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+    onWarpIn: This facility was once the home to a fledgling Caldari mining company that arrived to Black Rise with the hope of striking it rich on all of the untapped resources littering the newly-discovered systems. As with many others who cut corners on security, the company learned the hard way that Black Rise was not as safe an investment as other more established areas of State space. Soon enough their shareholders came to the same conclusion and a buyer for the company was sought. Noticing both the hard times the company had fallen upon, and the uniquely advantageous location of its headquarters, Federation Navy strategists began to formulate a plan reminiscent of the Serpent's Coil takeover. Elite raiding parties, spearheaded by some of the Federation's most capable Black Ops wings, moved in large amounts of personnel and supplies, quickly commandeering the area and fortifying it against attacks. This facility, and many others like it, would serve as a deep foothold within Caldari space, where they could offer logistics to friendly pilots, and project forces even deeper into the heart of the State.
+  - name: First Pocket
+    notes:
+      - text: The non-Warden frigates may not spawn. The Warden frigates are very weak (<100 HP) and can't stand a lot of damage.
+      - text: The Federation Detention Facility containers must be hacked with a Data Analyzer to retrieve the "Caldari Prisoners of War" item required to complete The Breakout. The containers are Easy difficulty (70 HP green System Core). After the first container is successfully hacked, an invisible 60-second timer starts, after which the containers will all explode and the site despawns. The containers are grouped relatively close together in a straight line, so if you have a fast ship and good hacking skills, you can hack multiple containers and pick up multiple mission items.
+    waves:
+      - id: group-1
+        trigger:
+          on: warpIn
+          text: Group 1
+        spawns:
+          - count: "8"
+            class: Frigate
+            names:
+              - Gallente Warden
+            note: Federation Clavis/Hastile
+          - count: 0-3
+            class: Elite Frigate
+            names:
+              - Elite Federation Lochos
+            note: type list incomplete on the source page
+          - count: 0-2
+            class: Destroyer
+            names:
+              - Federation Arcus
+            note: type list incomplete on the source page
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "8"
+            class: Hackable
+            names:
+              - Federation Detention Facility
+            drop: each contains 1x Caldari Prisoner Of War (Mission Objective)
+            note: Easy difficulty

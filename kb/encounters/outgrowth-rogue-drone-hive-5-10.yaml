@@ -1,0 +1,499 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: outgrowth-rogue-drone-hive-5-10
+kind: complex
+name: Outgrowth Rogue Drone Hive
+dedRating: 5
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Outgrowth Rogue Drone Hive (5/10)
+    url: https://wiki.eveuniversity.org/Outgrowth_Rogue_Drone_Hive_(5/10)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "228846"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Battleships"
+notes:
+  - text: Outgrowth Rogue Drone Hive is a DED 5/10 rated combat site that is found in low and null security space.
+  - text: Note that the DED 10/10 Rogue Drone site found in null is also called Outgrowth Rogue Drone Hive. See Outgrowth Rogue Drone Hive (10/10) for details on that.
+loot:
+  - item: 9th Tier Overseer's Effects
+    from: Deserted Starbase Storage Facility (1st pocket)
+    note: est. 2.10M ISK (wiki) · 100% drop rate
+  - item: 10th Tier Overseer's Effects
+    from: Drone Commandeered Battleship
+    note: est. 3.36M ISK (wiki) · 100% drop rate
+  - item: 11th Tier Overseer's Effects
+    from: Industrial Derelict
+    note: est. 6.30M ISK (wiki) · 100% drop rate
+  - item: 13th Tier Overseer's Effects
+    from: Swarm Defence Battery
+    note: est. 13.2M ISK (wiki) · 100% drop rate
+  - item: 12th Tier Overseer's Effects
+    from: Swarm Parasite Worker
+    note: est. 9.90M ISK (wiki) · 100% drop rate
+  - item: 12th Tier Overseer's Effects
+    from: Swarm Parasite Worker
+    note: est. 9.90M ISK (wiki) · 100% drop rate
+  - item: 14th Tier Overseer's Effects
+    from: Supreme Hive Defender
+    note: est. 17.2M ISK (wiki) · 100% drop rate
+  - item: 15th Tier Overseer's Effects
+    from: Lesser Strain Mother
+    note: est. 21.8M ISK (wiki) · 100% drop rate
+  - item: + Exploration logs
+  - item: Aug 2016; April 2018
+    note: est. 65.1M ISK (wiki) · 721 m³ (661m³ alloys)
+lootNotes:
+  - text: Like with all DED rated Rogue Drone sites the loot is not very good. You will get Overseer's Personal Effects, mineral alloys and some salvage but no deadspace modules or rogue drone parts.
+npcs:
+  Hive Defender:
+    sdeTypes:
+      - Alvus Controller
+      - Swarm Preserver Alvus
+    class: Battleship
+pockets:
+  - name: First Pocket
+    notes:
+      - text: ----
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Decimator
+              - Raider
+              - Silverfish
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Strain Splinter
+              - Strain Render Alvi
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Cruiser
+            names:
+              - Violator Alvum
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Ancient Acceleration Gate
+          - count: "1"
+            class: Hangar Array
+            names:
+              - Deserted Starbase Storage Facility
+            drop: 9th Overseer's Personal Effects and Mineral Alloys
+    onWarpIn: "This deadspace complex once held a great naval installation, but after a strain of rogue drones attacked and seized the complex, little remains from any human inhabitation. The sector has now been taken over for an outgrowth hive of the strain, though it is not developed enough to count as a true mother hive. DED Threat Assessment: Dangerous (5 of 10)"
+  - name: Second Pocket
+    notes:
+      - text: ----
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "8"
+            class: Sentry
+            names:
+              - Rogue Drone Sentry Gun
+          - count: "2"
+            class: Frigate
+            names:
+              - Raider
+              - Sunder Alvi
+          - count: "3"
+            class: Frigate
+            names:
+              - Strain Infester Alvi
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "12"
+            class: Cruiser
+            names:
+              - Devastator
+              - Violator
+              - Viral Alvum
+          - count: "1"
+            class: Overseer Battleship
+            names:
+              - Drone Commandeered Battleship
+            drop: 10th Tier Overseer's Personal Effects and Mineral Alloys
+            note: 78% Omni Resist
+          - count: "3"
+            class: Sentry
+            names:
+              - Drone Point Defense Battery
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Ancient Acceleration Gate
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Surging Acceleration Gate
+            note: Requires Plasma Physics IV
+          - count: "3"
+            class: Container
+            names:
+              - Rogue Drone Mineral Storage
+            drop: Minerals and Mineral Alloys
+          - count: "3"
+            class: Container
+            names:
+              - Abandoned Container
+            drop: Ammo
+    onWarpIn: This outer section of the complex shows stark signs of the rogue drone infestation. The few human station structures that used to occupy this pocket have been reduced to debris, save for a single storage facility. Odd drone-built constructions dominate the scene, serving as maintenance platforms for the resident automated machinery. Scouts have reported the acceleration gate being actively scrambled by the local defense force, requiring total elimination of drones before it is possible to continue deeper into the complex.
+  - name: Third Pocket
+    notes:
+      - text: ----
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Hunter
+              - Silverfish Alvi
+          - count: 4-6
+            class: Cruiser
+            names:
+              - Bomber
+              - Crippler
+              - Disintegrator
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Crippler
+              - Defeater
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Sentry
+            names:
+              - Rogue Light Missile Battery
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+          - count: "1"
+            class: Container
+            names:
+              - Industrial Derelict
+            drop: 11th Tier Overseer's Personal Effects and Mineral Alloys
+    onWarpIn: This pocket appears to serve as the main defense gauntlet into the complex. The primary acceleration gate is locked by an encrypted passcode, normally stored by one of the resident master drones. Another gate lies at the pocket's border, this one with a serious plasma leak that renders it all but useless for anyone not knowledgeable in the field of plasma physics. It has been speculated that this other gate may provide a shortcut to another pocket deep inside the sprawling complex.
+  - name: Third Pocket
+    notes:
+      - text: ----
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 4-8
+            class: Frigate
+            names:
+              - Hunter
+              - Silverfish Alvi
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Strain Render Alvi
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "1"
+            class: Overseer Battleship
+            names:
+              - Swarm Parasite Worker
+            drop: 12th Tier Overseer's Personal Effects and Drone Alloys
+            note: 78% Omni Resist
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+            note: Leads to the Sixth Room
+          - count: "10"
+            class: Container
+            names:
+              - Drone Collected Flotsam
+            drop: T1 ammo, possible meta modules
+    onWarpIn: "This section used to be a small navy base specializing in plasma weapon research. The station's torn superstructure still floats around the swarming new inhabitants, emitting hazardous plasma leaks. The pocket's acceleration gate is frequently scrambled by the local drone force. Appendix: Old reports from the time the complex is thought to have been overtaken by the rogue drone strain say that at the time an infamous band of pirates were seen docking at the station, loading a secret cargo into their industrial ships. Some have speculated that the pirates summoned the drones here, intending to wipe out the complex after they had stolen all of its valuable equipment. Whether that's truly the case remains uncertain, but what is certain is that a few derelict industrial ships remain within the pocket, cluttered with the frozen bodies of known criminals."
+  - name: Fourth Pocket
+    notes:
+      - text: ----
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Silverfish Alvi
+          - count: "1"
+            class: Frigate
+            names:
+              - Strain Decimator Alvi
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "8"
+            class: Cruiser
+            names:
+              - Viral Infector Alvum
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Striker Alvatis
+          - count: "3"
+            class: Battleship
+            names:
+              - Alvus Controller
+          - count: "2"
+            class: Battleship
+            names:
+              - Swarm Preserver Alvus
+          - count: "1"
+            class: Overseer Battleship
+            names:
+              - Swarm Parasite Worker
+            drop: 12th Tier Overseer's Personal Effects and Mineral Alloys
+            note: 78% Omni Resist
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+          - count: "3"
+            class: Container
+            names:
+              - Abandoned Container
+            drop: T1 Ammo and Drones
+          - count: "3"
+            class: Container
+            names:
+              - Rogue Drone Container
+            drop: 800x Pyerite and 800x Isogen
+          - count: "1"
+            class: Container
+            names:
+              - Old Supply Stockpile
+            drop: T1 Ammo
+          - count: "2"
+            class: Container
+            names:
+              - Cache Container
+            drop: T1 Ammo and Drones
+    onWarpIn: No data is available concerning this pocket of the complex. Sensors have detected massive radiation emanating from this part of space.
+  - name: Fifth Pocket
+    notes:
+      - text: ----
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Sentry
+            names:
+              - Swarm Defense Battery
+            drop: 13th Tier Overseer's Personal Effects
+          - count: "4"
+            class: Frigate
+            names:
+              - Raider
+              - Hunter
+              - Silverfish Alvi
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Strain Render Alvi
+            ewar:
+              - kind: warpDisruption
+          - count: "2"
+            class: Cruiser
+            names:
+              - Disintegrator
+              - Viral Infector Alvum
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Crippler
+              - Enforcer Alvatis
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+          - count: "9"
+            class: Container
+            names:
+              - Rogue Drone Navigation Node
+    onWarpIn: According to DED reconnaissance officer Jen Maynor, this pocket functions as a storage area for captured equipment and construction minerals for the drone hive.
+  - name: Sixth Pocket
+    notes:
+      - text: ----
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "7"
+            class: Frigate
+            names:
+              - Sunder
+              - Raider
+              - Hunter Alvi
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Strain Infester
+              - Strain Render Alvi
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 5-6
+            class: Battlecruiser
+            names:
+              - Crippler Alvatis
+          - count: "2"
+            class: Battleship
+            names:
+              - Alvus Controller
+          - count: "1"
+            class: Overseer Battleship
+            names:
+              - Supreme Hive Defender
+            drop: 14th Tier Overseer's Personal Effects and Mineral Alloys
+            note: 78% Omni Resist
+          - count: "4"
+            class: Sentry
+            names:
+              - Drone Point Defense Battery
+          - count: "4"
+            class: Sentry
+            names:
+              - Drone Heavy Missile Battery
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+    onWarpIn: This area has been reported to be heavily defended by a large force of rogue drones. Although many of the automated machines are light and do not carry much heavy weaponry, DED advises pilots to be on high alert. It appears to be a pre-departure rendezvous point for excursion swarms and raiding forces. The acceleration gate is actively scrambled by the resident forces, denying anyone entrance while there's at least a single drone left with an open scrambling frequency.
+  - name: Seventh Pocket
+    notes:
+      - text: ----
+      - text: The Lesser Strain Mother has very strong active shield repairers. 545 DPS takes nearly 10 minutes to kill it. Reps 120 shield/second, 500k Hull health with 0% hull resists. Recommend doing EM damage because of such high shield reps. Also note that it has very long range webs that reach to 50 km.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 2-5
+            class: Frigate
+            names:
+              - Raider
+              - Hunter Alvi
+          - count: 1-2
+            class: Elite Frigate
+            names:
+              - Strain Splinter Alvi
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "5"
+            class: Cruiser
+            names:
+              - Bomber Alvum
+          - count: "7"
+            class: Battlecruiser
+            names:
+              - Defeater
+              - Crippler Alvatis
+          - count: "6"
+            class: Battleship
+            names:
+              - Hive Defender
+          - count: "1"
+            class: Sentry
+            names:
+              - Drone Point Defense Battery
+          - count: "3"
+            class: Sentry
+            names:
+              - Drone Cruise Missile Battery
+          - count: "1"
+            class: Sentry
+            names:
+              - Lesser Strain Mother
+            ewar:
+              - kind: web
+            drop: 15th Tier Overseer's Personal Effects and Salvage
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "5"
+            class: Container
+            names:
+              - Salvaged Equipment Container
+            drop: T1 ammo and meta modules
+    onWarpIn: This pocket contains the final acceleration gate leading into the mother hive itself. Reports speak of multiple sentry guns and cruise missile batteries installed in this heavily guarded security pocket.
+sde:
+  dungeonIds:
+    - 2247

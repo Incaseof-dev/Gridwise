@@ -1,0 +1,298 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: angel-cartel-naval-shipyard
+kind: escalation
+name: Angel Cartel Naval Shipyard
+dedRating: null
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Angel Cartel Naval Shipyard
+    url: https://wiki.eveuniversity.org/Angel_Cartel_Naval_Shipyard
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "232576"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: No hostiles at warpin.
+loot:
+  - item: 21st Tier Overseer's Personal Effects
+    from: Docked & Loaded Mammoth
+    note: est. 80M ISK (wiki) · 100% drop rate
+  - item: 23rd Tier Overseer's Effects
+    from: Antimatter Channeler
+    note: est. 133M ISK (wiki) · 100% drop rate
+  - item: Gist X-Type module
+    from: Antimatter Channeler
+  - item: machariel BPC
+    from: Antimatter Channeler
+  - item: Domination module
+    from: Antimatter Channeler
+  - item: Domination module
+    from: Purple Particle Research Patrol
+  - item: Domination module
+    from: General Hixous Puxley
+  - item: Domination module
+    from: Supply Headman
+  - item: Domination module
+    from: Megathron Under Frantic Repair
+pockets:
+  - name: 1st pocket
+    notes:
+      - text: On earned escalations only, the first gate is unlocked, allowing ships to bypass the first room completely via immediately aligning to the gate, activating micro jump drive, and taking the gate. This only applies to earned escalations, not sites that are scanned down.
+    waves:
+      - id: defending-fleet
+        trigger:
+          on: other
+          text: Defending Fleet
+          confidence: inferred
+        spawns:
+          - count: "10"
+            class: Destroyer
+            names:
+              - Gistior Defacer
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+            note: type list incomplete on the source page
+          - count: 16- 17
+            class: Battleship
+            names:
+              - Gist Cherubim
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Purple Particle Research Patrol
+            drop: Possible Domination modules and T2 salvage
+          - count: 3- 4
+            class: Sentry
+            names:
+              - Angel Stasis Tower
+            ewar:
+              - kind: web
+          - count: 5- 6
+            class: Sentry
+            names:
+              - Angel Cruise Missile Battery
+    onWarpIn: "The Angel Cartel has established a firm presence in this Deadspace Complex. They use it as a naval construction base but reports claim that they perform some testing of shield Compact inside. These rumors remain largely unconfirmed. The area is extremely dangerous and the inner pockets are off limits to everyone but the key players in the Angel Cartel. DED Threat Assessment: Critical (10 of 10)."
+  - name: 2nd pocket
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: 40km
+          - count: 1 (or more)
+            class: Structure
+            names:
+              - Bunker
+            drop: Random charges
+      - id: defending-fleet
+        trigger:
+          on: other
+          text: Defending Fleet
+          confidence: inferred
+        spawns:
+          - count: 10- 12
+            class: Destroyer
+            names:
+              - Gistior Defacer
+            note: type list incomplete on the source page
+          - count: "12"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+            note: type list incomplete on the source page
+          - count: "5"
+            class: Battleship
+            names:
+              - Gist Cherubim
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - General Hixous Puxley
+            drop: Possible Domination modules and T2 salvage
+          - count: "8"
+            class: Sentry
+            names:
+              - Tower Sentry Angel III
+    onWarpIn: This pocket serves as a scanning and identification post for the gatekeepers, habitation for the workers in the complex and a place of commerce for businessmen who mainly deal in technology, energy or mineral resources
+  - name: 3rd pocket
+    notes:
+      - text: Docked and Loaded Mammoth structure has 60,000 shield HP with 1700 DPS reps. Without a high DPS marauder or a few friends its better to skip its drop.
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: 55km
+          - count: 1 (or more)
+            class: Structure
+            names:
+              - Cargo Rig
+            drop: Random charges
+          - count: "1"
+            class: Structure
+            names:
+              - Docked & Loaded Mammoth
+            drop: 21st Tier Overseer's Personal Effects
+          - count: 1 (or more)
+            class: Structure
+            names:
+              - Small Armory
+            drop: Random charges
+      - id: defending-fleet
+        trigger:
+          on: other
+          text: Defending Fleet
+          confidence: inferred
+        spawns:
+          - count: "18"
+            class: Destroyer
+            names:
+              - Gistior Defacer
+            note: type list incomplete on the source page
+          - count: 6- 7
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+            note: type list incomplete on the source page
+          - count: "6"
+            class: Battleship
+            names:
+              - Gist Cherubim
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Supply Headman
+            drop: Possible Domination modules and T2 salvage
+          - count: "6"
+            class: Sentry
+            names:
+              - Angel Stasis Tower
+            ewar:
+              - kind: web
+          - count: 5- 6
+            class: Sentry
+            names:
+              - Tower Sentry Angel III
+          - count: "6"
+            class: Sentry
+            names:
+              - Angel Cruise Missile Battery
+    onWarpIn: Previous reports have indicated this first deadspace pocket is nowhere near as dangerous to enter as the rest of them. It serves as a scanning and identification post for the gatekeepers, habitation for the workers in the complex and a place of commerce for businessmen who mainly deal in technology, energy or mineral resources.
+  - name: 4th pocket
+    notes:
+      - text: Megathron Under Frantic Repair can rarely drop faction modules but has over 2000 DPS shield reps and 89500 HP.
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: 50km
+          - count: "1"
+            class: Structure
+            names:
+              - Megathron Under Frantic Repair
+            drop: Possible Domination or meta modules
+          - count: "1"
+            class: Structure
+            names:
+              - Habitation Module
+            drop: Commodities
+      - id: defending-fleet
+        trigger:
+          on: other
+          text: Defending Fleet
+          confidence: inferred
+        spawns:
+          - count: "10"
+            class: Destroyer
+            names:
+              - Gistior Defacer
+            note: type list incomplete on the source page
+          - count: "10"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+            note: type list incomplete on the source page
+          - count: "8"
+            class: Battleship
+            names:
+              - Gist Cherubim
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Sentry
+            names:
+              - Angel Stasis Tower
+            ewar:
+              - kind: web
+          - count: 2- 3
+            class: Sentry
+            names:
+              - Angel Cruise Missile Battery
+    onWarpIn: Earlier reports have indicated huge arrays of armor fittings guarded by automatic sentries and patrolling pilots. This deadspace pocket is equipped and staffed to service an entire fleet of ships in record time, whether it be armoring, hull modifications or other types of structural upgrades. The service is expensive, but extremely fast and reliable.
+  - name: 5th pocket
+    notes:
+      - text: Stasis Towers have limited engagement range and can be destroyed safely from around 50 km. Overseer’s turrets reach out to 100 km but are subject to the same tracking limits as regular battleships so speed tanking will be helpful to avoid its extreme alpha strike. Its tank is also nothing special, 500 DPS Explosive is enough to crack its shield reps.
+    waves:
+      - id: defending-fleet
+        trigger:
+          on: other
+          text: Defending Fleet
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Destroyer
+            names:
+              - Gistior Defacer
+            note: type list incomplete on the source page
+          - count: "16"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+            note: type list incomplete on the source page
+          - count: "9"
+            class: Battleship
+            names:
+              - Gist Cherubim
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Overseer Battleship
+            names:
+              - The Antimatter Channeler
+            drop: 23rd Tier Overseer's Personal Effects, possible Domination or Gist X-Type modules, T2 salvage and Machariel BPC (rare)
+            note: "This ship can deal extreme damage (EM:2500 EXP:5000 KIN:2500 TERM: 2500) every 60sec at ranges over 100 KM with pinpoint tracking). Has strong shield tank"
+          - count: "4"
+            class: Sentry
+            names:
+              - Angel Stasis Tower
+            ewar:
+              - kind: web
+    onWarpIn: This surprisingly small drydock dispatches ships with great efficiency. Incredibly talented and exacting, the Angel ship builders charge exorbitant prices and thus most of their customers come from the wealthier end of the pilot spectrum.
+sde:
+  dungeonIds:
+    - 2256

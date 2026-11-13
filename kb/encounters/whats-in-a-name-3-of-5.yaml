@@ -1,0 +1,43 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: whats-in-a-name-3-of-5
+kind: mission
+name: What's In a Name (3 of 5)
+level: 1
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – What's In a Name (3 of 5)
+    url: https://wiki.eveuniversity.org/What's_In_a_Name_(3_of_5)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223223"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Approach the battleship, but do not shoot it!
+notes:
+  - text: "Suggested ships: Destroyer"
+  - text: Mission contains no enemy ships.
+  - text: "Video: Corax"
+  - text: "Next: What's In a Name (4 of 5)"
+pockets:
+  - name: Warp-In
+    notes:
+      - text: Nothing in here but an acceleration gate.
+  - name: Pocket 1
+    notes:
+      - text: Approach the Battleship, but ***do not shoot it!***
+      - text: Mission complete when you are within 3km.
+    waves:
+      - id: initial-group-18km
+        trigger:
+          on: warpIn
+          text: Initial Group, 18km
+        spawns:
+          - count: "1"
+            class: Friendly Battleship
+            names:
+              - Gallente Battleship

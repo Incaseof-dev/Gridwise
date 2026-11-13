@@ -1,0 +1,75 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-rogue-slave-trader-1-of-2-blood-raiders
+kind: mission
+name: The Rogue Slave Trader (1 of 2)
+level: 3
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Rogue Slave Trader (1 of 2) (Blood Raiders)
+    url: https://wiki.eveuniversity.org/The_Rogue_Slave_Trader_(1_of_2)_(Blood_Raiders)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "221408"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Find the slave pen and rescue the slaves (20x Prisoner 150).
+ewar:
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elder Corpii Follower & Elder Corpii Worshipper"
+  - text: "Suggested ships: Caracal, Drake, Ferox, Harbinger, Domi, Gila"
+  - text: "Blitz: Destroy Slave Pen, loot Prisoners, warp out."
+  - text: "The agent when accepting the mission: Oh and one other thing, once you arrive at the slave pen they might send for reinforcements. So keep your guard up, and dispatch the guard ships as fast as you can to avoid fighting them all at once. Good luck."
+lootNotes:
+  - text: "Salvage: ~180k ISK"
+  - text: "Bounty: ~190k ISK"
+  - text: "Next mission: Downing The Slavers (2 of 2) (Blood Raiders)"
+pockets:
+  - name: Warp-in
+    notes:
+      - text: "The agent when handing in the mission: Nice work! The families of the prisoners will be delighted to hear the good news. By the way, I have another mission prepared for you already…"
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Slave Pen
+            drop: 20x Prisoners
+      - id: initial-5-10km
+        trigger:
+          on: warpIn
+          text: Initial (5-10km)
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Follower
+              - Elder Corpii Worshipper
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Cruiser
+            names:
+              - Corpum Dark Priest
+              - Corpum Shadow Sage
+      - id: reinforcement-timed-spawn-appears-8-minutes-after-initial-warp-in-to-site
+        trigger:
+          on: warpIn
+          text: Reinforcement (Timed spawn - appears 8 minutes after initial warp-in to site.)
+        spawns:
+          - count: 0-1
+            class: Battlecruiser
+            names:
+              - Blood Raider Slaver
+            note: Renamed Corpatis Phantom

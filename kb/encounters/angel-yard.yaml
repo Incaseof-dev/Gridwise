@@ -1,0 +1,203 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: angel-yard
+kind: anomaly
+name: Angel Yard
+dedRating: null
+anomalyClass: 5
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Angel Yard
+    url: https://wiki.eveuniversity.org/Angel_Yard
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "229628"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Escalation: This site may escalate to an Angel's Red Light District, a 5/10 rated DED complex. The trigger for this escalation is unknown."
+lootNotes:
+  - text: "Bounty: about 970,000 to 1,800,000 ISK"
+  - text: "Loot/salvage: uncertain"
+pockets:
+  - name: Variation 1 (Shipyard)
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Angel Heavy Missile Battery
+          - count: 3-4
+            class: Cruiser
+            names:
+              - Gistum Liquidator
+              - Gistum Marauder
+            triggers: "Triggers Wave #2"
+      - id: wave-2
+        trigger:
+          on: other
+          text: "Wave #2"
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Cruiser
+            names:
+              - Gistum Crusher
+              - Gistum Smasher
+            ewar:
+              - kind: targetPaint
+      - id: wave-3
+        trigger:
+          on: other
+          text: "Wave #3"
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Gistii Hunter
+              - Gistii Impaler
+            note: type list incomplete on the source page
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Gistum Liquidator
+              - Gistum Marauder
+      - id: wave-4
+        trigger:
+          on: other
+          text: "Wave #4"
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Destroyer
+            names:
+              - Gistior Defacer
+              - Gistior Defiler
+          - count: 3-4
+            class: Cruiser
+            names:
+              - Gistum Crusher
+              - Gistum Smasher
+            ewar:
+              - kind: targetPaint
+      - id: sentry-wave-2
+        trigger:
+          on: other
+          text: "Sentry Wave #2"
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Destroyer
+            names:
+              - Gistior Defacer
+              - Gistior Defiler
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Gistum Liquidator
+              - Gistum Marauder
+  - name: Variation 2 (Silo)
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Gistior Defacer
+              - Gistior Defiler
+          - count: 3-4
+            class: Cruiser
+            names:
+              - Gistum Centurion
+              - Gistum Phalanx
+      - id: wave-2
+        trigger:
+          on: other
+          text: "Wave #2"
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Angel Heavy Missile Battery
+            triggers: Attacking triggers Sentry Wave
+          - count: 3-4
+            class: Cruiser
+            names:
+              - Gistum Centurion
+            triggers: "Triggers Wave #3"
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Gistatus Legatus
+              - Gistatus Tribunus
+      - id: sentry-wave
+        trigger:
+          on: other
+          text: Sentry Wave
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Angel Heavy Missile Battery
+      - id: wave-3
+        trigger:
+          on: other
+          text: "Wave #3"
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Arch Gistii Raider
+              - Arch Gistii Impaler
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Gistum Crusher
+              - Gistum Smasher
+            ewar:
+              - kind: targetPaint
+      - id: wave-4
+        trigger:
+          on: other
+          text: "Wave #4"
+          confidence: inferred
+        spawns:
+          - count: 1-3
+            class: Cruiser
+            names:
+              - Gistum Crusher
+              - Gistum Smasher
+            ewar:
+              - kind: targetPaint
+      - id: wave-5
+        trigger:
+          on: other
+          text: "Wave #5"
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Cruiser
+            names:
+              - Gistum Liquidator
+              - Gistum Marauder
+          - count: "1"
+            class: Battleship
+            names:
+              - Gist General
+sde:
+  dungeonIds:
+    - 2231

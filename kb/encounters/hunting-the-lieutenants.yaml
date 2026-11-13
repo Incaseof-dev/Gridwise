@@ -1,0 +1,45 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: hunting-the-lieutenants
+kind: mission
+name: Hunting the Lieutenants
+level: null
+enemyFaction: Mercenaries
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Hunting the Lieutenants
+    url: https://wiki.eveuniversity.org/Hunting_the_Lieutenants
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231330"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Clear the facility of hostiles and capture any of the lieutenants present.
+notes:
+  - text: Objective
+  - text: Clear the facility of hostiles and capture any of the lieutenants present. The mission objective location is located within the Lustrevik system.
+  - text: Notes
+  - text: "Warp to the encounter location. You will be about 30km away from seven Mercenary Rookie ships. They all will soon target lock you. They were no challenge for a frigate ship (e.g. Rifter). After you kill them all a popup will display a message from the lieutenant and Tarak Errand will say:"
+  - text: "\"We were scanning the radio chatter of those guys you took out. They were trying to evacuate someone from that Habitation Module. It's vulnerable now without them guarding it, so you can fire a few rounds off into the building. That should flush him out.\""
+  - text: "After you have shot the Habitation Module (you do not have to destroy it completely) the next popup from the lieutenant will display:"
+  - text: '"Alright, alright! Stop shooting, I’ll come with you!"'
+  - text: The mission is completed. You do not need to loot anything just safely warp back to the agent's home base.
+  - text: '"Good work, . I had a feeling we’d find at least one of them there. We’ll take him out back and encourage him to talk."'
+  - text: Kill all Frigates. Then shoot the Habitation Module.
+pockets:
+  - name: tl/dr
+    notes:
+      - text: "Next Mission: Valuable Cargo"
+    waves:
+      - id: initial
+        trigger:
+          on: warpIn
+          text: Initial
+        spawns:
+          - count: "7"
+            class: Frigate
+            names:
+              - Mercenary Rookie

@@ -1,0 +1,86 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: recon-2-of-3-level-4
+kind: mission
+name: Recon (2 of 3)
+level: 4
+enemyFaction: Mercenaries
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Recon (2 of 3) (Level 4)
+    url: https://wiki.eveuniversity.org/Recon_(2_of_3)_(Level_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223367"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Scout the area
+ewar:
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Mercenary Wingman"
+  - text: "Suggested ships: Fast frigate (blitz), normal level 4 mission ship (full clear)"
+  - text: "Parts: 1 of 3 (Serpentis), 1 of 3 (Blood Raiders), 1 of 3 (Guristas Pirates), 1 of 3 (Sansha's Nation), 1 of 3 (Angel Cartel), 2 of 3, 3 of 3"
+  - text: "Blitz: Fly to the gate in a small fast ship or micro jump a battleship or a battlecruiser to trigger the ambushes, align and warp out as soon as the mission completes. The Mercenary Wingman frigates will spawn on top of the warp gate. You may get webbed/ pointed if you're not fast enough in warping out."
+  - text: No Hostiles at initial gate. Single gated pocket.
+  - text: The locked acceleration gate (mission objective) is 72km away from the warp-in point.
+  - text: The Mining Corporation Headquarters station is about 10km away.
+  - text: The 1st ambush spawn is triggered when the Mining Corporation Headquarters station is attacked OR when your ship is within 10km from locked acceleration gate.
+  - text: The 2nd ambush spawn is triggered when your ship is within 10km from locked acceleration gate.
+  - text: The Mining Corporation Headquarters has very high HP (306,550) and drops mainly T1 modules and some Faction ammo.
+  - text: "Tips: To manage aggro, trigger the first ambush by attacking the Mining Corporation Headquarters station."
+  - text: "Tips: The mission is flagged completed once you have triggered both spawns, by either approaching to within 10km of the acceleration gate or destroying the station."
+  - text: "Tips: All Mercenary ships and sentries have shield weak on EM and armor weak on Explosive damage (uneven resistance profile)."
+lootNotes:
+  - text: Bounties in missions may generally vary due to varying spawns. Here are example payouts for a full clear. Blitzing gives no bounties at all.
+  - text: 1,375,000 ISK
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: 1st-ambush
+        trigger:
+          on: other
+          text: 1st ambush
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Elite Frigate
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Cruiser
+            names:
+              - Mercenary Commander
+          - count: "2"
+            class: Battleship
+            names:
+              - Mercenary Overlord
+          - count: "1"
+            class: Sentry
+            names:
+              - Mercenary Cruise Missile Battery
+          - count: "2"
+            class: Sentry
+            names:
+              - Mercenary Sentry Gun
+      - id: 2nd-ambush
+        trigger:
+          on: other
+          text: 2nd ambush
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Battleship
+            names:
+              - Mercenary Overlord
+          - count: "1"
+            class: Sentry
+            names:
+              - Mercenary Cruise Missile Battery

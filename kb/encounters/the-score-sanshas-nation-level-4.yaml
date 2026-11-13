@@ -1,0 +1,182 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-score-sanshas-nation-level-4
+kind: mission
+name: The Score
+level: 4
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Score (Sansha's Nation) (Level 4)
+    url: https://wiki.eveuniversity.org/The_Score_(Sansha's_Nation)_(Level_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223390"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: trackingDisruption
+notes:
+  - text: "Suggested ships: Battleship, Command Ship, HAC, Strategic Cruiser"
+  - text: "Blitz: Clear the 1st room"
+  - text: "Blitz: Clear the 2nd room"
+  - text: "Blitz: Kill the battleship in the final room (the Centus Plague Lord if present, otherwise the farther battleship)."
+  - text: "Note: This is a time consuming mission as your ship will need to travel a total >100km to reach the respective warp gates. Fitting an afterburner is highly recommended."
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: No aggro at warp-in.
+      - text: Group 1 can be independently attacked without drawing aggro.
+      - text: Drones can be safely deployed as per normal.
+      - text: Distance to warp gate = 58km
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Destroyer
+            names:
+              - Centior Abomination
+            group: "Group 1: Cloven Grey Asteroid (30km)"
+          - count: "2"
+            class: Cruiser
+            names:
+              - Centum Fiend
+              - Centum Hellhound
+            group: "Group 1: Cloven Grey Asteroid (30km)"
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Centatis Daemon
+              - Centatis Devil
+            group: "Group 1: Cloven Grey Asteroid (30km)"
+          - count: "7"
+            class: Frigate
+            names:
+              - Centii Butcher
+              - Centii Manslayer
+            group: "Group 2: Acceleration Gate & Hollow Asteroid (52-84km)"
+          - count: "2"
+            class: Destroyer
+            names:
+              - Centior Abomination
+              - Centior Monster
+            group: "Group 2: Acceleration Gate & Hollow Asteroid (52-84km)"
+          - count: "2"
+            class: Cruiser
+            names:
+              - Centum Fiend
+              - Centum Hellhound
+            group: "Group 2: Acceleration Gate & Hollow Asteroid (52-84km)"
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Centatis Daemon
+              - Centatis Devil
+            group: "Group 2: Acceleration Gate & Hollow Asteroid (52-84km)"
+          - count: "1"
+            class: Battleship
+            names:
+              - Centus Plague
+              - Centus Savage Lord
+            group: "Group 2: Acceleration Gate & Hollow Asteroid (52-84km)"
+  - name: Pocket 2
+    notes:
+      - text: No aggro at warp-in.
+      - text: Attacking Group 3 will aggro the entire pocket. Attacking Group 1 or Group 2 can aggro Group 3.
+      - text: Distance to warp gate = 54km
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Centior Cannibal
+              - Centior Devourer
+            group: "Group 1: Sharded Rock (50km)"
+          - count: "4"
+            class: Cruiser
+            names:
+              - Centum Fiend
+              - Centum Hellhound
+            group: "Group 1: Sharded Rock (50km)"
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Centatis Specter
+            group: "Group 1: Sharded Rock (50km)"
+          - count: "4"
+            class: Cruiser
+            names:
+              - Centum Multilator
+              - Centum Torturer
+            group: "Group 2: Veldspar (65km)"
+          - count: "1"
+            class: Battleship
+            names:
+              - Centus Mutant
+              - Centus Savage
+              - Centus Slave Lord
+            group: "Group 2: Veldspar (65km)"
+          - count: "3"
+            class: Battleship
+            names:
+              - Centus Mutant
+              - Centus Slave Lord
+            group: "Group 3: Acceleration Gate (56-65km)"
+  - name: Pocket 3
+    notes:
+      - text: Group 1 may or may not aggro at warp-in.
+      - text: Group 1 & 2 can be independently attacked without drawing aggro.
+      - text: Attacking Group 3 will aggro group 1 but not 2.
+      - text: "Tip: Mission is flagged completed once you have eliminated the Centus Plague Lord or the closest battleship in Group 3 when there is no Centus Plague Lord present."
+      - text: 5,425,000.00
+      - text: ± 3.7 Mil ISK
+      - text: ± 4.5 Mil ISK
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Centii Butcher
+              - Centii Manslayer
+            group: "Group 1: Asteroid Station - Dark and Spiky (55-60km)"
+          - count: "1"
+            class: Destroyer
+            names:
+              - Centior Abomination
+              - Centior Monster
+            group: "Group 1: Asteroid Station - Dark and Spiky (55-60km)"
+          - count: "3"
+            class: Cruiser
+            names:
+              - Centum Fiend
+              - Centum Hellhound
+            group: "Group 2: Asteroid Colony - High & Medium Size (58-64km)"
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centatis Daemon
+            group: "Group 2: Asteroid Colony - High & Medium Size (58-64km)"
+          - count: "2"
+            class: Battleship
+            names:
+              - Centus Mutant
+              - Centus Plague
+              - Centus Savage Lord
+            group: "Group 3: Asteroid Mining Post (71km)"
+            ewar:
+              - kind: trackingDisruption
+            triggers: Destruction is part of the mission objective

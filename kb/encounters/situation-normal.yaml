@@ -1,0 +1,60 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: situation-normal
+kind: mission
+name: Situation Normal
+level: 3
+enemyFaction: Minmatar Republic
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Situation Normal
+    url: https://wiki.eveuniversity.org/Situation_Normal
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231719"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Disrupt Boundless Creations communications network
+notes:
+  - text: 0.03% Minmatar Republic Faction Standing loss
+  - text: Gated deadspace pocket up to five jumps away. Kill the Boundless Creations Engineers, pick up the Boundless Creations Security Codes from the Cargo Container and place them into the Communications Array.
+  - text: Complete the Mission remotely.
+  - text: "Tips: The Boundless Creation Engineers will be flying an Independent Minmatar cruiser (Stabber and Bellicose hulls recorded on 2 separate runs), which has relatively high Effective Health. Its turrets can be speed-tanked at close range while its missiles have poor application to fast moving frigates orbiting close to it."
+pockets:
+  - name: Warp-in
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+  - name: Room 1
+    waves:
+      - id: group-1-85-km
+        trigger:
+          on: other
+          text: Group 1 (85 km)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Cruiser
+            names:
+              - Boundless Creations Engineers
+            drop: Boundless Creations Security Codes
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Container
+            names:
+              - Communications Array
+            triggers: Place the Security Codes inside to complete the mission

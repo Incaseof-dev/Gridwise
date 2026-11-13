@@ -1,0 +1,163 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: sanshas-rally-point
+kind: anomaly
+name: Sansha's Rally Point
+dedRating: null
+anomalyClass: 6
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Sansha's Rally Point
+    url: https://wiki.eveuniversity.org/Sansha's_Rally_Point
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225150"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Ungated pocket with multiple waves of rats. All rats are directly at the warp in.
+  - text: "Escalation: This site can escalate to Sansha War Supply Complex."
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: inital-group
+        trigger:
+          on: other
+          text: Inital Group
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Centii Butcher
+              - Centii Plague
+              - Centii Enslaver
+          - count: "3"
+            class: Destroyer
+            names:
+              - Centior Monster
+              - Centior Misshape
+              - Centior Horror
+          - count: "2"
+            class: Sentry
+            names:
+              - Tower Sentry Tower I
+          - count: "2"
+            class: Sentry
+            names:
+              - Sansha Heavy Missile Battery
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Centii Manslayer
+              - Centii Plague
+              - Centii Enslaver
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Centum Fiend
+              - Centum Hellhound
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Scavenger
+              - Centii Loyal Servant
+              - Centii Loyal Minion
+          - count: "2"
+            class: Cruiser
+            names:
+              - Centum Fiend
+              - Centum Hellhound
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Centii Manslayer
+              - Centii Plague
+              - Centii Enslaver
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centatis Daemon
+      - id: wave-4
+        trigger:
+          on: other
+          text: Wave 4
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Elite Frigate
+            names:
+              - Centii Loyal Butcher
+          - count: 1-2
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+      - id: wave-5
+        trigger:
+          on: other
+          text: Wave 5
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centatis Daemon
+      - id: wave-6
+        trigger:
+          on: other
+          text: Wave 6
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Fiend
+              - Centum Loyal Hellhound
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centatis Daemon
+      - id: wave-7
+        trigger:
+          on: other
+          text: Wave 7
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Battleship
+            names:
+              - Centus Plague Lord
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Centatis Wraith
+              - Centatis Behemoth
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - True Sansha Battlecruiser
+            group: Possible Rare Spawn

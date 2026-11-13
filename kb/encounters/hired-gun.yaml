@@ -1,0 +1,184 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: hired-gun
+kind: escalation
+name: Hired Gun
+dedRating: null
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Hired Gun
+    url: https://wiki.eveuniversity.org/Hired_Gun
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "205411"
+defaults:
+  confidence: verified
+  source: uni
+pockets:
+  - name: Hired Gun Part 1
+    notes:
+      - text: You will warp in to Area 1 close enough to deactivate any cloaks. Bookmarking the position will allow you to warp in at any range you choose.
+      - text: "Blitz: Kill the Dread Guristas Battleship if it spawns. Otherwise ignore all ships and activate the acceleration gate. This strategy is applicable to all four parts of the escalation."
+      - text: Inside is nothing, but you will get either an escalation or DEAD END.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Cruiser
+            names:
+              - Pithum ??
+          - count: "5"
+            class: Battleship
+            names:
+              - Pith ??
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - Dread Guristas Battleship
+  - name: Hired Gun Part 2
+    notes:
+      - text: Warping to this stage places you in a cloud around 20-30km from the nearest enemy ships. Bookmarking the location will allow you to warp to any distance you choose.
+      - text: There is a chance the escalation will end after this site.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Pithi ??
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Dire Pithi ??
+          - count: "4"
+            class: Cruiser
+            names:
+              - Pithum ??
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum ??
+          - count: "3"
+            class: Battleship
+            names:
+              - Pith??
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - Dread Guristas Battleship
+  - name: Hired Gun Part 3
+    notes:
+      - text: Warping to this area will place you in the middle of all of the hostiles and right next to the accleration gate, close enough to deactivate any cloak. Bookmarking will allow you to warp to any distance you choose.
+  - name: Area 1
+    notes:
+      - text: Activate the acceleration gate.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Pith ??
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Dire Pithum ??
+          - count: "3"
+            class: Battleship
+            names:
+              - Pith ??
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - Dread Guristas Battleship
+  - name: Area 2
+    notes:
+      - text: The escalation will either end here, or continue.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Pithi ??
+          - count: "1"
+            class: Cruiser
+            names:
+              - Pithum ??
+          - count: "5"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum ??
+          - count: "2"
+            class: Battleship
+            names:
+              - Pith ??
+  - name: Hired Gun Part 4
+    notes:
+      - text: Unlike the previous escalation sections, this one begins with a clear acceleration gate.
+  - name: 1st Room
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - pithi ??
+          - count: "6"
+            class: Cruiser
+            names:
+              - Pithum ??
+          - count: "3"
+            class: Battleship
+            names:
+              - Pith ??
+  - name: 2nd Room
+    notes:
+      - text: "Blitz: (if you can take full room aggro) just kill the Pith Protagonist."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Pithi ??
+          - count: "11"
+            class: Cruiser
+            names:
+              - Pithum ??
+          - count: "7"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum ??
+          - count: "4"
+            class: Battleship
+            names:
+              - Pith ??
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Dread Pith Protagonist
+            note: End boss
+sde:
+  dungeonIds:
+    - 1436

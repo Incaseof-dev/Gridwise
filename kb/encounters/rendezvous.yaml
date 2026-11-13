@@ -1,0 +1,116 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: rendezvous
+kind: mission
+name: Rendezvous
+level: null
+enemyFaction: Pator 6 (Minmatar/Gallente), The Syndicate
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Rendezvous
+    url: https://wiki.eveuniversity.org/Rendezvous
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "216955"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal:
+    - explosive
+    - kinetic
+    - thermal
+  resist:
+    - thermal
+    - kinetic
+    - explosive
+objectives:
+  - text: Retrive 1x "Ralie Ardanne's Belongings" (1.0 m3)
+restrictions:
+  - text: "Ship size limit: T2 Battlecruisers and below"
+ewar:
+  - kind: neut
+  - kind: targetPaint
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite Frigates"
+  - text: May also be in the same highsec system as Mission 9.
+  - text: "Blitz: Destroy all cruisers at the warp-in, destroy the structure in Room 1, and loot the can."
+pockets:
+  - name: Warp-in
+    notes:
+      - text: The acceleration gate at warpin is locked. Destroy all NPCs to unlock the gate. No Faction Standing loss for destroying these ships. At the deadspace entry point there are four heavy missile batteries and four Pator 6 cruisers. They can deal significant damage, along with neuting and some target painting, but no points. You don’t need to destroy the missile batteries (these (used to?) give a 3.0% standing loss with the Syndicate faction).
+    waves:
+      - id: defenders
+        trigger:
+          on: warpIn
+          text: Defenders
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Pator 6 Ambusher
+          - count: "1"
+            class: Cruiser
+            names:
+              - Pator 6 Veteran Ambusher
+            ewar:
+              - kind: neut
+              - kind: targetPaint
+          - count: "4"
+            class: Sentry
+            names:
+              - Pator 9 (nice) Heavy Missile Battery
+  - name: Room 1
+    notes:
+      - text: "There are a lot of ships here: 10 cruisers and 11 frigates, a mix of Pator 6 and Syndicate. Fortunately, they are easy to kite in a frigate if you have an afterburner and do good damage from 10km or more. The frigates seem to rarely-if-ever tackle."
+      - text: After most ships (possibly just group 1) are destroyed, the agent gives instructions to destroy the Pator 6 HQ structure (no faction standings loss). Destroying Pator 6 HQ flags the mission completed. Retrieve 1x "Ralie Ardanne's Belongings" (1.0 m3) from the can and return to the agent.
+    waves:
+      - id: defenders
+        trigger:
+          on: warpIn
+          text: Defenders
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Pator 6 Frigate
+            group: Group 1 (36 km)
+          - count: "5"
+            class: Cruiser
+            names:
+              - Pator 6 Cruiser
+            group: Group 1 (36 km)
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Pator 6 Elite Frigate
+            group: Group 2 (44 km)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Cruiser
+            names:
+              - Pator 6 Common Cruiser
+            group: Group 2 (44 km)
+          - count: "3"
+            class: Frigate
+            names:
+              - Syndicate Frigate
+            group: Group 3 (48 km)
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Syndicate Elite Frigate
+            group: Group 3 (48 km)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Cruiser
+            names:
+              - Syndicate Cruiser
+            group: Group 3 (48 km)

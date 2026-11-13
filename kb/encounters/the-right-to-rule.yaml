@@ -1,0 +1,336 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-right-to-rule
+kind: mission
+name: The Right to Rule
+level: null
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Right to Rule
+    url: https://wiki.eveuniversity.org/The_Right_to_Rule
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231023"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy Harkan's Behemoth Battleship
+ewar:
+  - kind: web
+  - kind: neut
+  - kind: trackingDisruption
+notes:
+  - text: This is the final mission of the Amarr epic arc. This will be a long mission so load your ship with plenty of ammo.
+  - text: Four rooms with several spawns. It is recommended that you are in a fleet (even if alone) and tag the waves to avoid triggering too many waves at once.
+  - text: The mission is NOT in deadspace. You can bookmark the rooms, warp out and then warp back in.
+  - text: "Blitz: Clear rooms 1-3."
+  - text: "Blitz: Kill Harkan's Behemoth in room 4."
+pockets:
+  - name: Warpin
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Hellhound
+              - Centum Loyal Fiend
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Centatis Devil
+              - Centatis Wraith
+  - name: Room 1
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 1-2
+            class: Elite Frigate
+            names:
+              - Centii Loyal Servant
+              - Centii Loyal Minion
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Cruiser
+            names:
+              - Centum Slaughterer
+              - Centum Execrator
+            ewar:
+              - kind: trackingDisruption
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Hellhound
+              - Centum Loyal Fiend
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centatis Wraith
+          - count: 2-3
+            class: Battleship
+            names:
+              - Centus Plague
+              - Centus Beast Lord
+            ewar:
+              - kind: trackingDisruption
+  - name: Room 2
+    notes:
+      - text: "Notes: The Acceleration Gate is 3km away."
+      - text: "Notes: No aggro from Initial Group B at warp-in, however it will aggro if you get too close, and they must also be cleared to unlock the gate."
+      - text: "Notes: Drones cannot be safely deployed without drawing aggro, but the aggro won't switch to you when you recall them."
+      - text: "Notes: Wave 1 seems to be time triggered to spawn 30-60 seconds after warp-in."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Torturer
+            group: Group A (30 km)
+            note: type list incomplete on the source page
+          - count: 2-3
+            class: Battleship
+            names:
+              - Centus Mutant
+              - Centus Savage Lord
+            group: Group A (30 km)
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Centatis Devil
+              - Centatis Daemon
+            group: Group B (10-20 km)
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Enslaver
+            note: type list incomplete on the source page
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Slaughterer
+              - Centum Loyal Execrator
+            ewar:
+              - kind: trackingDisruption
+  - name: Room 3
+    notes:
+      - text: "Warning: Enemy ships will breed like rabbits if you do not manage your triggers in this pocket."
+      - text: "Warning: The key trigger is the single Battleship in the Initial Group. Pay careful attention when you attack it."
+      - text: "Warning: 1st chain group 1 is triggered when the Initial Battleship receives any damage."
+      - text: "Warning: 2nd chain group 1 is triggered when the Initial Battleship is damaged to about 10% shield."
+      - text: "Warning: 3rd chain group 1 is triggered when the Initial Battleship is damaged to about 10% armor."
+      - text: "Warning: 4th chain group 1 is triggered when the Initial Battleship is destroyed."
+      - text: Each chain group 1 will spawn one chain group 2 when attacked. Additionally the Centus Tyrant will fully repair when new group is spawned. (Update Feb 17, 2020 - Tyrant instantly fully recovers all health after each of the first two new chain groups spawns, then after chain group 3, it recovers all armor and half shields which recover slowly over the next few minutes. Recommend following tips below unless you can tank all chains at once).
+      - text: "Tips: STOP your attack on the Centus Tyrant Battleship after a chain group has spawned."
+      - text: "Tips: Eliminate all ships in that chain group before attacking Centus Tyrant Battleship again."
+      - text: "Tips: Rinse and repeat."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 1-2
+            class: Destroyer
+            names:
+              - Centior Monster
+          - count: "1"
+            class: Battleship
+            names:
+              - Centus Tyrant
+            triggers: triggers Chain group 1 (x4)
+      - id: chain-group-1-x4
+        trigger:
+          on: other
+          text: Chain group 1 (x4)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Enslaver
+              - Centii Loyal Butcher
+            triggers: Triggers chain group 2
+          - count: 2-3
+            class: Battleship
+            names:
+              - Centus Overlord
+              - Centus Dark Lord
+            triggers: Triggers chain group 2
+      - id: chain-group-2-x4
+        trigger:
+          on: other
+          text: Chain group 2 (x4)
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Hellhound
+              - Centum Loyal Torturer
+          - count: 1-2
+            class: Battlecruiser
+            names:
+              - Centus Daemon
+              - Centus Behemoth
+  - name: Room 4
+    notes:
+      - text: "Warning: You will face a total of 17 spawn waves. Be very careful in attacking spawn triggers."
+      - text: "Warning: Suggest getting plenty of range from landing beacon in order to manage spawn waves."
+      - text: "Warning: Wave 1 is triggered by attacking Harkan's Behemoth, Wave 2 at armor damage and Wave 3 when Harkan's Behemoth is destroyed."
+      - text: "Warning: Repeating Chain Group is triggered when any of the other ships in the Initial Group is damaged."
+      - text: The Repeating Chain Group will repeat itself 4.5 times before it runs out. It will feel like groundhog day.
+      - text: The key to identifying the start of a new chain is the appearance of Group 1 Battlecruisers.
+      - text: Group 2 is triggered by destroying one of the Battlecruisers in Group 1.
+      - text: Group 3 is triggered by destroying the last Elite Frigate in Group 2.
+      - text: Attacking any ship in Group 3 triggers a new chain i.e. it resets back to Group 1.
+      - text: "Tips: Harkan's Behemoth Battleship will approach you with MWD at 900m/s making it easy to separate him from the rest of the spawn."
+      - text: "Tips: Destroying Harkan's Behemoth Battleship flags the mission objective as completed."
+      - text: "Tips: Marauders seem to be able to prevent additional waves from spawning by triggering the next wave within a few seconds. This may or may not work on Room 3."
+      - text: "Blitz: Get Harkan's Behemoth Battleship to aggro and lead him away from the spawn area, concentrate attack only on him and ignore the other ships."
+      - text: Attacking any ship in "Harkan destroyed wave" or the initial spawn will trigger chain Group 1. The chain groups will spawn four times if triggered.
+      - text: "Rewards: 1x Imperial Navy Modified 'Noble' Implant = Slot 10 (+3% to Armor HP's and +3% to repair amount)"
+      - text: "Rewards: Amarr Empire Faction Standing increase = +10% Base (+12.5% with Social 5)"
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Hellhound
+              - Centum Loyal Fiend
+            triggers: Attacking triggers repeating chain group 1
+          - count: "2"
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Dread Lord
+            triggers: Attacking triggers repeating chain group 1
+          - count: "1"
+            class: Elite Battleship
+            names:
+              - Harkan's Behemoth
+            ewar:
+              - kind: neut
+              - kind: trackingDisruption
+            triggers: Triggers waves 1-3, Mission objective
+            note: 20 GJ/s neut, 30 km range
+      - id: harkan-shield-damage-wave
+        trigger:
+          on: other
+          text: Harkan shield damage wave
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Destroyer
+            names:
+              - Centior Cannibal
+          - count: 1-2
+            class: Cruiser
+            names:
+              - Centum Execrator
+            ewar:
+              - kind: trackingDisruption
+      - id: harkan-armor-damage-wave
+        trigger:
+          on: other
+          text: Harkan armor damage wave
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Destroyer
+            names:
+              - Centior Abomination
+          - count: 1-2
+            class: Cruiser
+            names:
+              - Centum Slaughterer
+            ewar:
+              - kind: trackingDisruption
+      - id: harkan-destroyed-wave
+        trigger:
+          on: other
+          text: Harkan destroyed wave
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Destroyer
+            names:
+              - Centior Abomination
+          - count: 1-2
+            class: Cruiser
+            names:
+              - Centum Execrator
+            ewar:
+              - kind: trackingDisruption
+      - id: repeating-chain-group
+        trigger:
+          on: other
+          text: Repeating chain group
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Centus Daemon
+              - Centus Behemoth
+            group: Group 1 (x4)
+            triggers: First ship destroyed triggers group 2
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Scavenger
+              - Centii Loyal Ravener
+            group: Group 2 (x4)
+            ewar:
+              - kind: web
+            triggers: Last ship destroyed triggers group 3
+          - count: 0-2
+            class: Elite Frigate
+            names:
+              - Centii Loyal Scavenger
+              - Centii Loyal Ravener
+            group: Group 3 (x4)
+            ewar:
+              - kind: trackingDisruption
+            triggers: Triggers group 1
+          - count: 1-2
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Mutilator
+              - Centum Loyal Torturer
+            group: Group 3 (x4)
+            ewar:
+              - kind: trackingDisruption
+            triggers: Triggers group 1
+          - count: 1-2
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Dread Lord
+            group: Group 3 (x4)
+            triggers: Triggers group 1

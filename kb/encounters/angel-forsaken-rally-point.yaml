@@ -1,0 +1,144 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: angel-forsaken-rally-point
+kind: anomaly
+name: Angel Forsaken Rally Point
+dedRating: null
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Angel Forsaken Rally Point
+    url: https://wiki.eveuniversity.org/Angel_Forsaken_Rally_Point
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "227264"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Single ungated normal space pocket. Warping to beacon for close range would require a very good tank to handle the Hostiles' incoming damage. You can warp to the site at range instead.
+  - text: "Escalation: This site can escalate to Cartel Prisoner Retention or Angel Capital Staging"
+  - text: "Escalation: Cartel Prisoner Retention: Your scanner has picked up a transmission originating from a nearby system. It would be wise to investigate this mysterious signal further."
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-defenders-5-12km
+        trigger:
+          on: warpIn
+          text: Initial Defenders (5- 12km)
+        spawns:
+          - count: 1-2
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Centurion
+              - Arch Gistum Marauder
+          - count: 1-2
+            class: Battleship
+            names:
+              - Gist Nephilim
+              - Gist Saint
+            ewar:
+              - kind: targetPaint
+      - id: 1st-reinforcement-spawn
+        trigger:
+          on: other
+          text: 1st Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Arch Gistii Hunter
+              - Arch Gistii Raider
+              - Arch Gistii Impaler
+          - count: 2-3
+            class: Battleship
+            names:
+              - Gist Nephilim
+              - Gist Saint
+            ewar:
+              - kind: targetPaint
+      - id: 2nd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 2nd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Gistum Centurion
+              - Gistum Liquidator
+              - Gistum Marauder
+          - count: 2-3
+            class: Battleship
+            names:
+              - Gist Malakim
+              - Gist Throne
+      - id: 3rd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 3rd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Arch Gistii Hijacker
+              - Arch Gistii Rogue
+            ewar:
+              - kind: warpDisruption
+          - count: "3"
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Seraphim
+      - id: 4th-reinforcement-spawn
+        trigger:
+          on: other
+          text: 4th Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Gistatis Legionnaire
+              - Gistatis Tribunus
+              - Gistatis Praefectus
+          - count: 3-4
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Seraphim
+      - id: 5th-reinforcement-spawn
+        trigger:
+          on: other
+          text: 5th Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Centurion
+              - Arch Gistum Marauder
+              - Arch Gistum Phalanx
+          - count: "3"
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Seraphim
+      - id: 6th-reinforcement-spawn
+        trigger:
+          on: other
+          text: 6th Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Battleship
+            names:
+              - Gist Malakim
+              - Gist Throne
+sde:
+  dungeonIds:
+    - 3441

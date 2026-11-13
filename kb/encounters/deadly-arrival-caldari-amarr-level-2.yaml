@@ -1,0 +1,91 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: deadly-arrival-caldari-amarr-level-2
+kind: mission
+name: Deadly Arrival
+level: 2
+enemyFaction: Caldari State & Amarr Empire
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Deadly Arrival (Caldari & Amarr) (Level 2)
+    url: https://wiki.eveuniversity.org/Deadly_Arrival_(Caldari_%26_Amarr)_(Level_2)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "226738"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Investigate the ruins, then return to your agent
+ewar:
+  - kind: web
+notes:
+  - text: "Suggested ships: Cruiser"
+  - text: "Blitz: Approach wreck within 15km. Wait for notice that mission is complete. No engagement needed."
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - State Katana
+            triggers: Reinforcement 1
+          - count: "4"
+            class: Sentry
+            names:
+              - Caldari Sentry Tower
+          - count: "2"
+            class: Sentry
+            names:
+              - Caldari Stasis Tower
+            ewar:
+              - kind: web
+      - id: reinforcement-1
+        trigger:
+          on: other
+          text: Reinforcement 1
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Destroyer
+            names:
+              - Imperial Deacon
+              - Imperial Exarp
+      - id: reinforcement-2
+        trigger:
+          on: other
+          text: Reinforcement 2
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - State Wakizashi
+            triggers: Reinforcement 3
+          - count: "4"
+            class: Sentry
+            names:
+              - Caldari Sentry Tower
+          - count: "2"
+            class: Sentry
+            names:
+              - Caldari Stasis Tower
+            ewar:
+              - kind: web
+      - id: reinforcement-3
+        trigger:
+          on: other
+          text: Reinforcement 3
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Destroyer
+            names:
+              - Imperial Caius
+              - Imperial Crusader

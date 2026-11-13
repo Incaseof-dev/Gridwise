@@ -1,0 +1,227 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: guristas-yard
+kind: anomaly
+name: Guristas Yard
+dedRating: null
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Guristas Yard
+    url: https://wiki.eveuniversity.org/Guristas_Yard
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225143"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: The site is an open deadspace pocket; a player can warp to it at any preferred distance. The next wave is triggered when the last rat from the previous wave is destroyed.
+  - text: "Escalation: This site may escalate to Guristas Hallucinogen Supply Waypoint. Escalation triggers are not confirmed."
+  - text: "Escalation: Escalation trigger: Your scanner has picked up a transmission originating from a nearby system. It would be wise to investigate this mysterious signal further."
+pockets:
+  - name: Dark Shipyard type
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Guristas Heavy Missile Battery
+          - count: "2"
+            class: Cruiser
+            names:
+              - Pithum Ascriber
+              - Pithum Silencer
+            triggers: Triggers next wave when destroyed
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Cruiser
+            names:
+              - Pithum Inferno
+              - Pithum Mortifier
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Pithi Destructor
+              - Pithi Wrecker
+          - count: "3"
+            class: Cruiser
+            names:
+              - Pithum Killer
+              - Pithum Murderer
+            ewar:
+              - kind: ecm
+      - id: wave-4
+        trigger:
+          on: other
+          text: Wave 4
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Destroyer
+            names:
+              - Pithior Guerilla
+              - Pithior Renegade
+              - Pithior Supremacist
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Pithum Inferno
+              - Pithum Mortifier
+      - id: wave-5
+        trigger:
+          on: other
+          text: Wave 5
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Pithior Anarchist
+              - Pithior Guerilla
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Pithum Killer
+              - Pithum Murderer
+              - Pithum Silencer
+            ewar:
+              - kind: ecm
+      - id: rare-commander-wave
+        trigger:
+          on: other
+          text: Rare commander wave
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Commander Cruiser
+            names:
+              - Dread Guristas Ascriber
+              - Dread Guristas Silencer
+            drop: Possible Dread Guristas faction items or implants
+  - name: Silo type
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 1-2
+            class: Destroyer
+            names:
+              - Pithior Guerilla
+              - Pithior Terrorist
+          - count: 1-4
+            class: Cruiser
+            names:
+              - Pithum Inferno
+              - Pithum Mortifier
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Sentry
+            names:
+              - Guristas Heavy Missile Battery
+            triggers: Triggers battery wave
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Pithum Murderer
+            ewar:
+              - kind: ecm
+            triggers: Triggers wave 3
+      - id: battery-wave
+        trigger:
+          on: other
+          text: Battery wave
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Sentry
+            names:
+              - Guristas Heavy Missile Battery
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Destructor
+              - Dire Pithi Wrecker
+            ewar:
+              - kind: ecm
+          - count: "2"
+            class: Cruiser
+            names:
+              - Pithum Ascriber
+              - Pithum Silencer
+      - id: wave-4
+        trigger:
+          on: other
+          text: Wave 4
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Cruiser
+            names:
+              - Pithum Abolisher
+              - Pithum Eraser
+      - id: wave-5
+        trigger:
+          on: other
+          text: Wave 5
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Arrogator
+              - Dire Pithi Imputor
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Cruiser
+            names:
+              - Pithum Nullifier
+              - Pithum Annihilator
+            ewar:
+              - kind: ecm
+      - id: rare-commander-wave
+        trigger:
+          on: other
+          text: Rare commander wave
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Commander Cruiser
+            names:
+              - Dread Guristas Ascriber
+              - Dread Guristas Silencer
+            drop: Possible Dread Guristas faction items or implants
+sde:
+  dungeonIds:
+    - 2274

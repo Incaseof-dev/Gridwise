@@ -1,0 +1,190 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: hierarchy
+kind: complex
+name: Hierarchy
+dedRating: null
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Hierarchy
+    url: https://wiki.eveuniversity.org/Hierarchy
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "173922"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: The site is behind an acceleration gate. Warping to the site lands you at 0 on the gate. All rats must be cleared to activate the acceleration gate to the second room.
+  - text: "Escalation: Can escalate to Trouble in Paradise, a four part expedition."
+  - text: "Escalation: Escalation message:: At the beginning of this fight, your instruments picked up a distress call from a drone squadron not too far away, supposedly meant for the hive you just destroyed. The messenger was calling in combat assistance, including identification marks, information on what he was fighting and the location. The weird thing is that this is obviously a drone messaging and claiming he is being attacked by some other drones..."
+pockets:
+  - name: First Room
+    waves:
+      - id: group-1
+        trigger:
+          on: warpIn
+          text: Group 1
+        spawns:
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Disintegrator Alvum
+          - count: 2-3
+            class: Battlecruiser
+            names:
+              - Enforcer Alvatis
+      - id: gate-spawn-after-approaching-acceleration-gate
+        trigger:
+          on: other
+          text: Gate spawn after approaching acceleration gate
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Strain Atomizer Alvum
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Siege Alvatis
+      - id: spawn
+        trigger:
+          on: other
+          text: Spawn
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Sunder
+              - Raider Alvi
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Strain Infester Alvi
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+  - name: Second Room
+    notes:
+      - text: The entire site has no warp disruptors or scrams so most rats can be ignored if you can tank them.
+      - text: Upon landing approach the Warning Sign near the Hierarchy structure. Getting close will trigger the first spawn.
+      - text: Each new wave is triggered by simply damaging a single rat so you can quickly spawn the battleship wave.
+      - text: Kill all the battleships, spawning the Sentient, kill it, bookmark the wreck and warp off. After the site has despawned grab your loot and possibly salvage the wreck (average 9-11m in Salvage).
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "12"
+            class: Frigate
+            names:
+              - Barracuda
+              - Render
+              - Splinter Alvi
+          - count: "5"
+            class: Cruiser
+            names:
+              - Devastator Alvum
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Strain Disintegrator Alvum
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Siege Alvatis
+          - count: "4"
+            class: Sentry
+            names:
+              - Drone Missile Bay
+      - id: spawn-1-spawns-after-approaching-hierarchy-structure
+        trigger:
+          on: warpIn
+          text: Spawn 1 spawns after approaching "Hierarchy" structure
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Strain Raider Alvi
+            triggers: Attacking triggers spawn 2
+          - count: 3-4
+            class: Destroyer
+            names:
+              - Marauder Alvior
+            triggers: Attacking triggers spawn 2
+      - id: spawn-2-contains-either-frigates-or-cruiser
+        trigger:
+          on: other
+          text: Spawn 2 (Contains either frigates or cruiser)
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Strain Bomber Alvi
+            triggers: Attacking triggers spawn 3
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Strain Disintegrator Alvum
+            triggers: Attacking triggers spawn 3
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Exterminator Alvatis
+            triggers: Attacking triggers spawn 3
+      - id: spawn-3
+        trigger:
+          on: other
+          text: Spawn 3
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Destroyer
+            names:
+              - Predator
+              - Marauder Alvior
+            triggers: Attacking triggers spawn 4
+          - count: 3-4
+            class: Battleship
+            names:
+              - Matriarch Alvus
+              - Alvus Queen
+            triggers: Attacking triggers spawn 4
+      - id: spawn-4
+        trigger:
+          on: other
+          text: Spawn 4
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Battleship
+            names:
+              - Supreme Alvus Parasite
+              - Alvus Ruler
+            triggers: Escalation trigger
+      - id: spawn-5-after-all-battleships-have-been-destroyed
+        trigger:
+          on: other
+          text: Spawn 5 after all battleships have been destroyed
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battleship
+            names:
+              - Alvus Controller
+              - Swarm Preserver Alvus
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Sentient Alvus Creator
+            triggers: Escalation trigger?
+            drop: drone components
+sde:
+  dungeonIds:
+    - 1269

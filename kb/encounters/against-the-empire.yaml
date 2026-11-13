@@ -1,0 +1,48 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: against-the-empire
+kind: mission
+name: Against The Empire
+level: 3
+enemyFaction: Amarr Empire
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Against The Empire
+    url: https://wiki.eveuniversity.org/Against_The_Empire
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "204708"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Retrieve crew members from the wrecks.
+notes:
+  - text: Single pocket containing 2 wrecks. Hostile NPCs will begin spawning once a pilot approaches the wrecks within 10km, and new enemy targets will spawn as existing targets are destroyed. Enemy NPCs will auto-aggro on spawn.
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: 20-40-km
+        trigger:
+          on: other
+          text: 20-40 km
+          confidence: inferred
+        spawns:
+          - count: "15"
+            class: Destroyer
+            names:
+              - Imperial Caius
+              - Imperial Deacon
+            note: type list incomplete on the source page
+          - count: "8"
+            class: Cruiser
+            names:
+              - Imperial Agatho
+              - Imperial Donus
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Imperial Avenger
+              - Imperial Justicar

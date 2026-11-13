@@ -1,0 +1,187 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: postmodern-primitives
+kind: mission
+name: Postmodern Primitives
+level: 4
+enemyFaction: Amarr Empire
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Postmodern Primitives
+    url: https://wiki.eveuniversity.org/Postmodern_Primitives
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223351"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Find the tainted tattoo chemical being developed in . The exact location of the chemical is unknown. Be prepared to destroy any number of large structures.
+ewar:
+  - kind: web
+  - kind: warpScramble
+notes:
+  - text: "Voluval: The Minmatar coming-of-age ceremony, known as the Voluval, involves an injection of a hallucinatory chemical which puts the youth in a trance. As the visions wear off, the individual finds him or herself marked with a tattoo of an unpredictable pattern on an unpredictable portion of body. The chemical used to induce trance and create the mark is so well guarded, even some Minmatar wonder if there is not more to the process than their elders admit."
+  - text: "Space type: Gated Deadspace (That allows MWD to work as of 05/March/2010)"
+pockets:
+  - name: Pocket 1 (Defense)
+    notes:
+      - text: Clear as you warp in, approaching the Amarr control tower.
+      - text: As you kill one neut battery, there will spawn the half of reinforcements; if you kill the second neut battery, the others will spawn.
+      - text: Killing the Amarr Energy neutralizer battery results in 2.4% standing lose.
+      - text: Killing the Amarr control tower results in 2.4% standing loss and it is NOT required.
+      - text: Two Gates, If you want to finish fast go mining then production/living,
+      - text: if you want to kill all go worship then mining.
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Acceleration Gate
+            names:
+              - To Worship
+          - count: "?"
+            class: Acceleration Gate
+            names:
+              - To Mining
+      - id: initial-forces
+        trigger:
+          on: warpIn
+          text: Initial forces
+        spawns:
+          - count: "8"
+            class: Sentry
+            names:
+              - Amarr Battery
+          - count: "2"
+            class: Sentry
+            names:
+              - Amarr Energy neutralizer battery
+            ewar:
+              - kind: neut
+            triggers: One reinforcement for each battery
+            note: EWAR based on name.
+          - count: "2"
+            class: Sentry
+            names:
+              - Amarr Stasis Tower
+            ewar:
+              - kind: web
+      - id: reinforcement-a
+        trigger:
+          on: other
+          text: Reinforcement A
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Divine Imperial Basil
+          - count: "1"
+            class: Battleship
+            names:
+              - Imperial Templar Martyr
+      - id: reinforcement-b
+        trigger:
+          on: other
+          text: Reinforcement B
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Divine Imperial Basil
+          - count: "2"
+            class: Elite Cruiser?
+            names:
+              - Divine Imperial Bahir
+            ewar:
+              - kind: web
+              - kind: warpScramble
+            note: EVE survival import mention (Web/Scramble)
+          - count: "1"
+            class: Battleship
+            names:
+              - Imperial Templar Martyr
+  - name: Worship Pocket
+    notes:
+      - text: Killing the Amarr Battery results 2.4% standing lose
+    waves:
+      - id: initial-forces
+        trigger:
+          on: warpIn
+          text: Initial forces
+        spawns:
+          - count: "7"
+            class: Cruiser
+            names:
+              - Amarr Cruiser
+          - count: "4"
+            class: Elite Cruiser?
+            names:
+              - Divine Imperial Valok
+            ewar:
+              - kind: web
+              - kind: warpScramble
+            note: EVE survival import mention (Web/Scramble)
+          - count: "4"
+            class: Battleship
+            names:
+              - Imperial Templar Dominator
+              - Imperial Templar Martye
+          - count: "6"
+            class: Sentry
+            names:
+              - Amarr Battery
+          - count: "1"
+            class: Sentry
+            names:
+              - Stasis Tower
+            ewar:
+              - kind: web
+            note: EWAR based on name.
+      - id: reinforcement-lock-and-approaching-the-amarr-building
+        trigger:
+          on: other
+          text: Reinforcement (Lock and approaching the Amarr building)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Battleship
+            names:
+              - Imperial Templar Dominator
+  - name: Production/Living Pocket
+    notes:
+      - text: Kill the Amarr Tactical Support will drop the mission loot and mission will be done.**
+      - text: Killing the Starbase Major Assembly results 2.4% standing lose and it will drop you nothing value.
+    waves:
+      - id: wave-1
+        trigger:
+          on: warpIn
+          text: Wave 1
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Amarr Frigate
+          - count: "2"
+            class: Cruiser
+            names:
+              - Amarr Cruiser
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Amarr frigate
+          - count: "4"
+            class: Battleship
+            names:
+              - Imperial Templat Dominator

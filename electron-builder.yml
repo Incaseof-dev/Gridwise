@@ -1,0 +1,76 @@
+# Packaging (npm run dist). Linux first: AppImage.
+appId: dev.incaseof.gridwise
+productName: Gridwise
+executableName: gridwise
+copyright: Copyright © 2026 Martin Kummer
+directories:
+  output: dist
+  buildResources: resources
+files:
+  - out/**
+  - kb/encounters/**
+  - kb/sources.json
+  - kb/manifest.json
+  - kb/sitemap.json
+  - kb/abyss.json
+  - kb/LICENSE
+  - messages/**
+  - resources/icon.png
+  - resources/icon@2x.png
+  - resources/icon-512.png
+  - THIRD_PARTY_NOTICES.md
+  - LICENSE
+  - package.json
+  - '!**/*.map'
+# The SDE index is data, not code: kept outside the asar so the app can open it with SQLite.
+extraResources:
+  - from: data
+    to: data
+    filter:
+      - sde.sqlite
+linux:
+  target:
+    - AppImage
+  category: Game
+  icon: resources/icon-512.png
+  synopsis: Passive PvE combat assistant overlay for EVE Online
+  description: >-
+    Reads the EVE Online game logs and shows encounter briefs, threat warnings and combat statistics in a
+    transparent overlay. Passive: it never touches the game client.
+  # The overlay must run as an XWayland client on Wayland sessions (desktop entry); the app also relaunches
+  # itself with this flag when started without it.
+  syncDesktopName: true
+  executableArgs:
+    - --ozone-platform=x11
+appImage:
+  # No version in the name: the app updates this file in place (electron-updater), so a desktop shortcut to it
+  # keeps working.
+  artifactName: Gridwise-x86_64.AppImage
+win:
+  target:
+    # The NSIS installer needs Wine when built on Linux (use a Windows machine or CI for it); the zip does not.
+    - target: nsis
+      arch:
+        - x64
+    - target: zip
+      arch:
+        - x64
+  icon: resources/icon.ico
+  artifactName: Gridwise-${version}-win-${arch}.${ext}
+  # Editing the .exe resources (icon, version info) needs Wine when building on Linux; skipped until a Windows/Wine
+  # build machine is used. The installer itself is built natively.
+  signAndEditExecutable: false
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  artifactName: Gridwise-Setup-${version}.${ext}
+  installerIcon: resources/icon.ico
+  uninstallerIcon: resources/icon.ico
+  installerHeaderIcon: resources/icon.ico
+# App updates (src/main/appUpdate.ts): the release workflow uploads the files with latest.yml / latest-linux.yml to a
+# GitHub release, the app reads them from there.
+publish:
+  provider: github
+  owner: Incaseof-dev
+  repo: Gridwise
+  releaseType: release

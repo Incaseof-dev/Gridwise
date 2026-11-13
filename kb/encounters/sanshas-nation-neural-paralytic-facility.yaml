@@ -1,0 +1,184 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: sanshas-nation-neural-paralytic-facility
+kind: complex
+name: Sansha's Nation Neural Paralytic Facility
+dedRating: 5
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Sansha's Nation Neural Paralytic Facility
+    url: https://wiki.eveuniversity.org/Sansha's_Nation_Neural_Paralytic_Facility
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231536"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Battleships"
+notes:
+  - text: Sansha's Nation Neural Paralytic Facility is a DED 5/10 combat site that can be scanned down in low or null-sec systems in Sansha rat territory. It can also be found as an escalation from Sansha Den anomalies.
+  - text: The site's initial acceleration gate permits up to battleships T1/T2/Faction
+loot:
+  - item: 18th Tier Overseer's Effects
+    from: Slave Ation09 Commander Cruiser
+    note: est. 43.2M ISK (wiki) · 100% drop rate
+  - item: Centum B-type modules
+    from: Slave Ation09 Commander Cruiser
+    note: Up to 3x
+  - item: Phantasm BPC
+    from: Slave Ation09 Commander Cruiser
+pockets:
+  - name: Room 1
+    notes:
+      - text: Full room aggro immediately after warp-in. You need to clear the entire pocket (minus the one sentry) to unlock the acceleration gate, which is ~45 km away.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Sentry
+            names:
+              - Tower Sentry Sansha II
+          - count: "20"
+            class: Frigate
+            names:
+              - Centii Butcher
+              - Centii Manslayer
+            ewar:
+              - kind: trackingDisruption
+          - count: "5"
+            class: Cruiser
+            names:
+              - Centum Beast
+              - Centum Hellhound
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Centatis Phantasm
+          - count: "3"
+            class: Battleship
+            names:
+              - Centus Savage
+              - Centus Beast
+              - Centus Plague Lord
+            ewar:
+              - kind: trackingDisruption
+    onWarpIn: "...Sansha's Nation continues its raids against poorly defended civilian areas. Mining colonies, merchant waypoints, and research outposts are favorite targets. Once the structures are overrun by Sansha slaves and drones, surviving locals are turned into test subjects. Many of these areas are used to develop new neural paralytic agents used in abductions. A common thread in numerous reports is the presence of a Sansha known as Ation09.... DED Threat Assessment: 5 of 10"
+  - name: Room 2
+    notes:
+      - text: The majority of the incoming DPS in this pocket comes from the battlecruisers and battleships, destroying them significantly reduces incoming damage, which can exceed 700 DPS.
+      - text: Alternatively, you can keep the battleships at around 60-70 km and the battlecruisers at more than 40 km, the DPS is significantly reduced. Long-range weapons are recommended for this method. Smaller ships can simply destroy the cruiser and battlecruiser spawns, as the battleships' tracking is poor enough for a cruiser to speed-tank relatively easily.
+      - text: Unlike other DED sites of this rating, the gate in this pocket is unlocked from the beginning. If your ship is fast and can field a strong tank of upwards of ~700 DPS EM/Thermal, you can simply cross the 40 km distance to the gate and skip the pocket entirely.
+      - text: "Note: rats info here is not exact. Only some battleships use EWAR."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "8"
+            class: Sentry
+            names:
+              - Sansha Sentry Gun
+          - count: "6"
+            class: Frigate
+            names:
+              - Centii Butcher
+              - Centii Manslayer
+            ewar:
+              - kind: trackingDisruption
+          - count: "3"
+            class: Destroyer
+            names:
+              - Centior Cannibal
+              - Centior Misshape
+          - count: "5"
+            class: Cruiser
+            names:
+              - Centum Mutilator
+              - Centum Hellhound
+          - count: "11"
+            class: Battlecruiser
+            names:
+              - Centatis Specter
+            note: type list incomplete on the source page
+          - count: "8"
+            class: Battleship
+            names:
+              - Centus Plague
+              - Centus Savage Lord
+              - Centus Beast Lord
+              - Centus Overlord
+            ewar:
+              - kind: trackingDisruption
+    onWarpIn: The Sansha have completely covered this abandoned mining outpost with sentry guns. They're quite serious about defending whatever is in the next area.
+  - name: Room 3
+    notes:
+      - text: "Transmission from Slave Ation09:: When you wake up in your next clone, remember it was the Master's will that you died here today."
+      - text: This pocket is the single most dangerous in the site. The triple stasis tower spawn will web you down to a standstill and make you an easy target for even the battleships to hit, even in fast moving cruisers. Additionally the weapons range of most of the battleships is very large and the smaller ships will close in quickly. Killing the stasis towers should be your highest priority, unless you can field at least 500 DPS/tank with over 80% EM/Thermal resists, in which then you can opt to immediately snipe the overseer. Once the towers die the rest of the fleet is significantly easier to speed-tank.
+      - text: Slave Ation09 is located around 40-45 km from the warp-in.
+      - text: "Note: rats info here is not exact. Only some battleships use EWAR."
+      - text: "After Ations death:: Ation09 is dead again. Might as well gather his goodies before he has a chance to resurrect."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Sentry
+            names:
+              - Sansha Stasis Tower
+            ewar:
+              - kind: web
+          - count: "1"
+            class: Sentry
+            names:
+              - Sansha Cruise Missile Battery
+          - count: "2"
+            class: Sentry
+            names:
+              - Sansha Light Missile Battery
+          - count: "1"
+            class: Sentry
+            names:
+              - Sansha Heavy Missile Battery
+          - count: "9"
+            class: Sentry
+            names:
+              - Tower Sentry Sansha II
+          - count: "11"
+            class: Frigate
+            names:
+              - Centii Butcher
+              - Centii Manslayer
+          - count: "1"
+            class: Destroyer
+            names:
+              - Centior Monster
+          - count: "10"
+            class: Cruiser
+            names:
+              - Centum Beast
+              - Centum Hellhound
+          - count: "6"
+            class: Battleship
+            names:
+              - Centus Savage
+              - Centus Dread Lord
+            ewar:
+              - kind: trackingDisruption
+          - count: "1"
+            class: Overseer Cruiser
+            names:
+              - Slave Ation09
+            drop: may drop 1-run Phantasm BPC, Centum B-type modules and always drops 18th Tier Overseers
+            note: Has strong armor tank
+sde:
+  dungeonIds:
+    - 5261

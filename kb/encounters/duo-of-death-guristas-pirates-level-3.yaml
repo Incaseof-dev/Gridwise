@@ -1,0 +1,41 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: duo-of-death-guristas-pirates-level-3
+kind: mission
+name: Duo of Death
+level: 3
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Duo of Death (Guristas Pirates) (Level 3)
+    url: https://wiki.eveuniversity.org/Duo_of_Death_(Guristas_Pirates)_(Level_3)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191661"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Suggested ships: Battlecruiser"
+  - text: "Blitz: Kill the two battlecruisers, pick up the objective and warp out."
+  - text: Power Generator and Guristas Bunkers drop loot.
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: initial-group-55km-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group, 55km (auto-aggro)
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Tower Sentry Guristas II
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Pithatis Death Dealer
+              - Pithatis Death Usurper
+              - Pithatis Revolter
+            note: Last one drops mission objective

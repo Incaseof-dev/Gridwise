@@ -1,0 +1,159 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: sansha-on-the-horizon
+kind: mission
+name: Sansha on the Horizon
+level: 5
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Sansha on the Horizon
+    url: https://wiki.eveuniversity.org/Sansha_on_the_Horizon
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "198328"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: web
+  - kind: neut
+  - kind: trackingDisruption
+notes:
+  - text: "Suggested ships: (1) Maelstrom w/ Passive Tank and (1) Maelstrom w/ Shield Transporters"
+  - text: "Space type: Deadspace, no gate"
+pockets:
+  - name: Warp-in
+    notes:
+      - text: Towers and frigates spawn on two sides, 40km from the warp-in point
+      - text: Ships and Outpost at warp-in
+      - text: "As Frigates are destroyed there spawns 1-5:"
+      - text: Sansha Outpost and Sentry Guns
+      - text: "Tips: Mission is flagged complete when all ships and the Sansha Outpost are destroyed"
+      - text: "Tips: Maximum damage of initial ships (in first 10 minutes) is 1381 hp/s (EM 60%, Therm 40%)"
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "24"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Butcher
+              - Centii Loyal Manslayer
+            triggers: Triggers 1-5
+            note: Orbits of 8-16km
+          - count: "2"
+            class: Sentry
+            names:
+              - Sansha Energy Neutralizer Sentry III
+            ewar:
+              - kind: neut
+          - count: "4"
+            class: Sentry
+            names:
+              - Sansha Stasis Tower
+            ewar:
+              - kind: web
+          - count: "8"
+            class: Sentry
+            names:
+              - Tower Sentry Sansha III
+      - id: spawn-1
+        trigger:
+          on: other
+          text: Spawn 1
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Cruiser
+            names:
+              - Centum Loyal Mutilator
+            note: orbits at 14km
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Centatis Daemon
+            note: Orbits at 10km
+      - id: spwan-2
+        trigger:
+          on: other
+          text: Spwan 2
+          confidence: inferred
+        spawns:
+          - count: "8"
+            class: Sentry
+            names:
+              - Sansha Sentry Guns
+            group: spawn 2 at a time
+      - id: spawn-3
+        trigger:
+          on: other
+          text: Spawn 3
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Hellhound
+            note: Orbits at 32km
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Centatis Daemon
+            note: Orbits at 10km
+      - id: spawn-4
+        trigger:
+          on: other
+          text: Spawn 4
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Slaughterer
+            ewar:
+              - kind: trackingDisruption
+            note: Orbits at 7km
+          - count: "1"
+            class: Battleship
+            names:
+              - Centus Tyrant
+            note: Orbits at 49km
+      - id: spawn-5
+        trigger:
+          on: other
+          text: Spawn 5
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Execrator
+            ewar:
+              - kind: trackingDisruption
+            note: Orbits at 19km
+          - count: "1"
+            class: Battleship
+            names:
+              - Centus Dread Lord
+      - id: sansha-outpost-spawn
+        trigger:
+          on: other
+          text: Sansha Outpost Spawn
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+            group: Outpost (15,000 HP) shields reduced to 50%
+            note: Orbits at 22km
+          - count: "4"
+            class: Battleship
+            names:
+              - Centus Dread Lord
+            group: Outpost (15,000 HP) shields reduced to 50%
+            note: Orbits at 17km

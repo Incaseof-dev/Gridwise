@@ -1,0 +1,108 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: church-of-the-obsidian
+kind: mission
+name: Church Of The Obsidian
+level: 4
+enemyFaction: Ammatar Mandate
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Church Of The Obsidian
+    url: https://wiki.eveuniversity.org/Church_Of_The_Obsidian
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231280"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Retrieve 1x Blood Obsidian Orb (0.1 m3)
+restrictions:
+  - text: "Ship size limit: Battleship"
+ewar:
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite frigates"
+  - text: "Suggested ships: Fast ship or Strategic Cruiser, Battlecruiser or Battleship with Micro Jump Drive and Relic Analyzer"
+  - text: Requires Archeology III; a Relic Analyzer is given to you by the Agent; Amarr Empire Standing loss (despite being Ammatar ships)
+  - text: thumb|192px
+  - text: Two deadspace pockets up to three jumps away from Tanoo.
+  - text: "Blitz: kill all Frigates, lure them away or rush through the Ancient Acceleration Gate. Rush for the Chapel of the Obsidian, hack it, loot the Blood Obsidian Orb and warp out."
+  - text: "Alternative Blitz: lure ships 150 km away in the second room, turn around and approach enemy at a 45-degree angle; at the enemy fleet midpoint turn towards the Chapel of the Obsidian, hack it, loot the Blood Obsidian Orb and warp out."
+  - text: "Tips: You cannot warp inside either room"
+  - text: "Tips: Destroy Warp Scrambling Frigates if you cannot avoid them. They are positioned around the gate and do not aggro on warp-in, but they will still tackle you before you get to the gate unless you're cloaked"
+  - text: "Tips: The frigates in the first room will instantly move back to the acceleration gate if you warp out, so you can only avoid them solo with a Micro Jump Drive or fast ship."
+  - text: "Tips: Armor tanked Battlecruisers such as Prophecies, Myrmidons and Hurricanes can ignore the incoming DPS and go straight for the Chapel of the Obsidian"
+pockets:
+  - name: Warp-in
+    notes:
+      - text: Ships appear when you are 15 km away from the Ancient Acceleration Gate.
+      - text: thumb|320px
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "7"
+            class: Elite Frigate
+            names:
+              - Ammatar Navy Delta I
+              - Ammatar Navy Gamma II Support Frigate
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Battleship
+            names:
+              - Ammatar Navy Armageddon
+              - Ammatar Navy Apocalypse
+      - id: structures-20-km
+        trigger:
+          on: other
+          text: Structures (20 km)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Ancient Acceleration Gate
+            note: Unlocked
+    onWarpIn: We know what you are here for. You are not allowed on the church grounds. Leave now or face the consequences.
+  - name: Room 1
+    notes:
+      - text: Apocalypse Battleships use short range weapons and try to approach you within 6 km. Armageddons will orbit at 22 km. They all have relatively poor tank for their size and are weakest to Kinetic/Thermal damage.
+    waves:
+      - id: 30-49-km
+        trigger:
+          on: other
+          text: 30-49 km
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Ammatar Navy Soldier
+          - count: "5"
+            class: Cruiser
+            names:
+              - Ammatar Navy Maller
+          - count: "10"
+            class: Battleship
+            names:
+              - Ammatar Navy Armageddon
+              - Ammatar Navy Apocalypse
+      - id: structures-30-km
+        trigger:
+          on: other
+          text: Structures (30 km)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Hackable
+            names:
+              - Chapel of the Obsidian
+            drop: Blood Obsidian Orb
+            note: Easy difficulty

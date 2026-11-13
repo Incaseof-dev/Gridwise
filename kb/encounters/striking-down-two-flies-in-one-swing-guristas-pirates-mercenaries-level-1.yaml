@@ -1,0 +1,69 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: striking-down-two-flies-in-one-swing-guristas-pirates-mercenaries-level-1
+kind: mission
+name: Striking Down Two Flies In One Swing
+level: 1
+enemyFaction: Guristas Pirates & Mercenaries
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Striking Down Two Flies In One Swing (Guristas Pirates & Mercenaries) (Level 1)
+    url: https://wiki.eveuniversity.org/Striking_Down_Two_Flies_In_One_Swing_(Guristas_Pirates_%26_Mercenaries)_(Level_1)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "193400"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy Repair Station
+notes:
+  - text: Normal space
+  - text: "Agent message after accepting mission:: Oh and be on the lookout for the mercenary gang that owns the repair outpost, I doubt they will look kindly upon you attacking their precious structure."
+  - text: 21 x Scordite and 40 x Veldspar asteroids.
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: Despite what the mission description says, the repair station belongs to Guristas Pirates so expect a hefty decrease on your standings with them after you destroy it.
+      - text: "Blitz: Destroy Repair Station, then report to your mission agent."
+      - text: "Agent message after completing the mission:: Excellent, that repair station should no longer be of any use to our enemies."
+    waves:
+      - id: station-is-38km-away-attack-it-to-proceed
+        trigger:
+          on: other
+          text: Station is 38km away, attack it to proceed
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Repair Station
+            triggers: On hit spawns Wave 1, on destruction spawns Wave 2 and completes mission objectives
+            note: Repairs nearby ships
+      - id: wave-1-35-50-km-spawns-on-attacking-repair-station
+        trigger:
+          on: other
+          text: Wave 1, 35-50 km, spawns on attacking Repair Station
+          confidence: inferred
+        spawns:
+          - count: 4-8
+            class: Frigate
+            names:
+              - Pithi Imputor
+              - Pithi Arrogator
+          - count: "4"
+            class: Sentry
+            names:
+              - Point Defence Battery
+      - id: wave-2-40-km-spawns-on-repair-station-destruction
+        trigger:
+          on: other
+          text: Wave 2, 40 km, spawns on Repair Station destruction
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Mercenary Rookies
+              - Mercenary Fighters

@@ -1,0 +1,27 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: crimson-harvest-tetrimon-garrison
+kind: escalation
+name: Tetrimon Garrison
+dedRating: null
+enemyFaction: null
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Crimson Harvest (2026), section "Tetrimon Garrison"
+    url: https://wiki.eveuniversity.org/Crimson_Harvest_(2026)#Tetrimon_Garrison
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "232560"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Part of the Crimson Harvest (2026) event. Event sites change from year to year.
+  - text: Level 5 Order of Tetrimon site.
+  - text: "Tetrimon Garrison: As the transmission relay explodes, you detect a faint encrypted signal on a tight beam. Following the signal should lead you to a Tetrimon Garrison"
+aliases:
+  - "Crimson Harvest: Tetrimon Garrison"
+sde:
+  dungeonIds:
+    - 13406

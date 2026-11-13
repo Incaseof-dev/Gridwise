@@ -1,0 +1,66 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: illegal-activity-level-3-1-of-3
+kind: mission
+name: Illegal Activity (1 of 3)
+level: 3
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Illegal Activity (Level 3) (1 of 3)
+    url: https://wiki.eveuniversity.org/Illegal_Activity_(Level_3)_(1_of_3)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "218652"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Investigate the asteroid field and destroy any hostiles you meet there. Wait for a few minutes if no enemies have shown up when you get there.
+ewar:
+  - kind: web
+notes:
+  - text: "Blitz: Kill everything in 2nd wave. Loot the mission objective from the last killed ship (1x Gallente Light Marines). Warp out. You don't need to take care of miners."
+  - text: Takes a couple of minutes for the ships to warp in.
+lootNotes:
+  - text: "Loot: ~250k ISK"
+  - text: "Salvage: ~250k ISK"
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: wave-1-wont-fire
+        trigger:
+          on: other
+          text: Wave 1 Won't Fire
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Federation Navy Miner
+            drop: Gallente Mining Laser
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Federation Navy Officer
+            drop: Federation Navy Command Sergeant Major Insignia I
+          - count: "3"
+            class: Frigate
+            names:
+              - Federation Navy Delta II Support Frigate
+            ewar:
+              - kind: web
+            drop: Federation Navy Sergeant Insignia II
+      - id: mining
+        trigger:
+          on: other
+          text: Mining
+          confidence: inferred
+        spawns: []

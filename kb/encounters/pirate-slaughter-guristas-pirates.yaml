@@ -1,0 +1,259 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: pirate-slaughter-guristas-pirates
+kind: mission
+name: Pirate Slaughter, Level 4
+level: 4
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Pirate Slaughter (Guristas Pirates)
+    url: https://wiki.eveuniversity.org/Pirate_Slaughter_(Guristas_Pirates)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "232592"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: ecm
+  - kind: web
+  - kind: warpScramble
+notes:
+  - text: "Web/warp disruption: Elite Frigates (Web/Scram)"
+  - text: "Suggested ships: Battleship, Battlecruiser, HAC"
+  - text: "Blitz: Destroy all ships in pockets 1 and 2, and destroy only the initial frigates (to clear tackle, optional) and the initial spawn's battleships in pocket 3 for completion."
+lootNotes:
+  - text: "Loot: 3.89M ISK (2025-04-23) by Verum Peto"
+  - text: "Salvage: 3.94M ISK (2025-04-23) by Verum Peto"
+  - text: "Bounty: 17.25M ISK (2025-04-23) by Verum Peto"
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-defenders-30km
+        trigger:
+          on: warpIn
+          text: Initial defenders (30km)
+        spawns:
+          - count: 3-4
+            class: Destroyer
+            names:
+              - Pithior Anarchist
+              - Pithior Renegade
+          - count: 3-4
+            class: Battleship
+            names:
+              - Pith Eradicator
+              - Pith Obliterator
+          - count: "1"
+            class: Battleship
+            names:
+              - Pith Communication's Officer
+            triggers: Spawns group 2 when attacked
+            note: Renamed Pith Extinguisher
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Arrogator
+            ewar:
+              - kind: warpDisruption
+          - count: "3"
+            class: Battleship
+            names:
+              - Pith Dismantler
+          - count: "1"
+            class: Battleship
+            names:
+              - Pith Communication's Officer
+            ewar:
+              - kind: ecm
+            triggers: Spawns group 3 when attacked
+            note: Renamed Pith Extinguisher/Eliminator. Can sometimes jam
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Demolisher
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Pithatis Enforcer
+          - count: "2"
+            class: Battleship
+            names:
+              - Pith Extinguisher
+              - Pith Dismantler
+          - count: "1"
+            class: Battleship
+            names:
+              - Pith Communication's Officer
+            ewar:
+              - kind: ecm
+            note: Eliminator type will jam
+  - name: Pocket 2
+    notes:
+      - text: As in pocket 1, the spawn trigger is always the one battleship that spawns near the gate separately from the rest of the group.
+    waves:
+      - id: initial-defenders-20-60km
+        trigger:
+          on: warpIn
+          text: Initial defenders (20-60km)
+        spawns:
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Pithatis Enforcer
+          - count: "3"
+            class: Battleship
+            names:
+              - Pith Eradicator
+              - Pith Destroyer
+            triggers: Closest to gate spawns group 2 when killed
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battleship
+            names:
+              - Pith Extinguisher
+              - Pith Dismantler
+              - Pith Obliterator
+            triggers: Closest to gate spawns group 3 when killed
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Mortifier
+              - Dire Pithum Inferno
+          - count: "3"
+            class: Battleship
+            names:
+              - Pith Obliterator
+              - Pith Conquistador
+  - name: Pocket 3
+    notes:
+      - text: Attacking any cruiser or frigate will draw aggro from the entire pocket. Attacking the battleships will only aggress their group.
+      - text: One of the battleships will always spawn slightly apart and to the left of the rest of the spawn; it will always be the trigger ship for the next wave.
+      - text: Mission is marked complete upon destroying the last non-trigger battleship in the initial spawn.
+    waves:
+      - id: on-warpin
+        trigger:
+          on: warpIn
+          text: On warpin
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Destructor
+              - Dire Pithi Wrecker
+            group: Group 1
+          - count: "3"
+            class: Battleship
+            names:
+              - Pith Conquistador
+              - Pith Obliterator
+              - Pith Eradicator
+            group: Group 1
+            triggers: Closest spawns reinforcement 1 when killed
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Plunderer
+              - Dire Pithi Wrecker
+            group: Group 2
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Abolisher
+              - Dire Pithum Eraser
+              - Dire Pithum Nullifier
+            group: Group 2
+            ewar:
+              - kind: ecm
+      - id: reinforcement-1
+        trigger:
+          on: other
+          text: Reinforcement 1
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Destroyer
+            names:
+              - Pithior Renegade
+            group: Group 3
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Annihilator
+              - Dire Pithum Nullifier
+            group: Group 3
+            ewar:
+              - kind: ecm
+          - count: "1"
+            class: Battleship
+            names:
+              - Pith Extinguisher
+            group: Group 4
+            triggers: Spawns reinforcement 2 when killed
+      - id: reinforcement-2
+        trigger:
+          on: other
+          text: Reinforcement 2
+          confidence: inferred
+        spawns:
+          - count: 2-4
+            class: Elite Frigate
+            names:
+              - Dire Pithi Infiltrator
+              - Dire Pithi Invader
+            group: Group 5
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Abolisher
+              - Dire Pithum Eraser
+            group: Group 5
+          - count: "1"
+            class: Battleship
+            names:
+              - Pith Conquistador
+            group: Group 6
+            triggers: May spawn reinforcement 3 when killed
+      - id: reinforcement-3-may-not-always-spawn
+        trigger:
+          on: other
+          text: Reinforcement 3 (may not always spawn)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Infiltrator
+              - Dire Pithi Invader
+            group: Group 7
+            ewar:
+              - kind: web
+              - kind: warpDisruption

@@ -1,0 +1,50 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: retrieving-red
+kind: mission
+name: Retrieving Red
+level: null
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Retrieving Red
+    url: https://wiki.eveuniversity.org/Retrieving_Red
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "228249"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the pirates, find Red and bring him back to Tevis Jak.
+notes:
+  - text: Destroy all ships present. Red's body magically appears in your cargo once all the ships are destroyed.
+  - text: "Taking it back to Tevis Jak gives you this message: \"Dead, is he? Figures. I'll keep the investigation open, but unless something changes, there's little CONCORD can do.\""
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: "Next Mission: Alerting Alitura"
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Corpii Follower
+              - Corpii Worshipper
+            triggers: Reinforcements
+      - id: reinforcements
+        trigger:
+          on: other
+          text: Reinforcements
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Frigate
+            names:
+              - Corpii Raider
+              - Corpii Diviner

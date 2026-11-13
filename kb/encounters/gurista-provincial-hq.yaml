@@ -1,0 +1,102 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: gurista-provincial-hq
+kind: complex
+name: Guristas provincial HQ
+dedRating: null
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Gurista Provincial HQ
+    url: https://wiki.eveuniversity.org/Gurista_Provincial_HQ
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "217500"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Guristas provincial HQ -
+  - text: Can be found in Guristas Nullsec
+  - text: "Escalation: The site can escalate to No Quarter."
+  - text: "Escalation: Escalation message:: TBA"
+pockets:
+  - name: Room 1
+    notes:
+      - text: Mix of 15 or so Battleships/battlecruisers in first pocket
+      - text: 2 stasis web towers 31km off. Both web immediately.
+      - text: Got Chased out before I could finish the site. Will update later when I can. - Kaboose 909
+      - text: Killed control tower which unlocked the gate
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Structure
+            names:
+              - Control Tower
+            triggers: Destruction unlocks gate
+          - count: "?"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+            note: Locked until Control Tower destroyed
+      - id: defenders
+        trigger:
+          on: warpIn
+          text: Defenders
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Stasis Web Tower
+            ewar:
+              - kind: web
+            note: 31km off. Web immediatly
+  - name: Room 2
+    notes:
+      - text: WARNING! Second room contains 4 siege railguns (80km away) that can hit for 300-400 against a tengu with 62% thermal, 92% kinetic resists! They volley at the same time.
+      - text: 2023.9.17 update
+      - text: Siege railguns have a damage type of 10% EM, 10% Explosive, 30% Thermal, 50% Kinetic.
+      - text: A Proteus with a resistance of 87% Thermal, 95% Kinetic, 50% EM, 10% Explosive, would take 200~350 damage from one hit.
+      - text: 4 siege railguns DO fire at the same time, rate of fire around 15 seconds a shot.
+      - text: attacking the station will cause a Kinetic smartbomb activation, causing around 6000 Kinetic damage. The smartbomb does not repeat.
+      - text: When the station is brought down to 20% structure, it would spawn a wave of 20 battleships plus more scram web frigates and a dread guristas conquistador with a 10m isk bounty. It is recommended to use afterburner to avoid damage from battleship torpedos.
+      - text: If you kill the station and warp out but do not kill the faction spawn, the whole site including the faction commander will despawn.
+      - text: I recommended killing the scram / web frigates immediately and taking down a couple of the siege rail guns before attacking the station. The DPS from the railguns plus the second wave can quickly overwhelm even a blingy ship.
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Structure
+            names:
+              - Structure
+            triggers: 20% structure triggers Station wave
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "4"
+            class: Sentry
+            names:
+              - Guristas Station Sentry
+      - id: station-wave
+        trigger:
+          on: other
+          text: Station Wave
+          confidence: inferred
+        spawns:
+          - count: "?"
+            class: Commander Battleship
+            names:
+              - Dread Guristas Conquistador
+sde:
+  dungeonIds:
+    - 1661

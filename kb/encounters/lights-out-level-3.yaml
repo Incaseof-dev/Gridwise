@@ -1,0 +1,111 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: lights-out-level-3
+kind: mission
+name: Lights Out
+level: 3
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Lights Out (Level 3)
+    url: https://wiki.eveuniversity.org/Lights_Out_(Level_3)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191782"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Kill the Gallente Lieutenant
+ewar:
+  - kind: sensorDamp
+notes:
+  - text: "Suggested ships: Battlecruiser, Battleship"
+  - text: "Blitz: Kill the Gallente Lieutenant, then warp-out."
+  - text: Destroying the Starbase Control Tower is difficult, but results in the entire outpost exploding.
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: No rats on warp-in. Agent will tell you to attack the outpost, which will spawn a group.
+      - text: Additional groups are time-based spawns, ranging from 30 seconds after previous to several minutes.
+      - text: Group 5 will spawn after destruction of groups 1-4.
+    waves:
+      - id: group-1-20km-auto-aggro
+        trigger:
+          on: other
+          text: Group 1, 20km (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Cruiser
+            names:
+              - Gallente Lieutenant
+            triggers: Group 2
+      - id: group-2
+        trigger:
+          on: other
+          text: Group 2
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Federation Praktor Belos
+              - Federation Praktor Harpago
+          - count: "1"
+            class: Cruiser
+            names:
+              - Federation Praktor Hippeus
+            ewar:
+              - kind: sensorDamp
+            triggers: Group 3
+      - id: group-3
+        trigger:
+          on: other
+          text: Group 3
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Federation Praktor Belos
+          - count: "1"
+            class: Cruiser
+            names:
+              - Federation Praktor Hippeus
+            ewar:
+              - kind: sensorDamp
+            triggers: Group 4
+      - id: group-4
+        trigger:
+          on: other
+          text: Group 4
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Federation Praktor Belos
+              - Federation Praktor Harpago
+          - count: "1"
+            class: Cruiser
+            names:
+              - Federation Praktor Hippeus
+            ewar:
+              - kind: sensorDamp
+            triggers: Group 5
+      - id: group-5
+        trigger:
+          on: other
+          text: Group 5
+          confidence: inferred
+        spawns:
+          - count: "7"
+            class: Cruiser
+            names:
+              - Federation Hastatus
+              - Federation Nauclarius
+              - Federation Misthios
+            ewar:
+              - kind: sensorDamp

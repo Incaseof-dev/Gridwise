@@ -1,0 +1,103 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: sansha-forlorn-hideaway
+kind: anomaly
+name: Sansha Forlorn Hideaway
+dedRating: null
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Sansha Forlorn Hideaway
+    url: https://wiki.eveuniversity.org/Sansha_Forlorn_Hideaway
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225111"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Sansha Forlorn Hideaway is an unrated combat site belonging to the Sansha's Nation pirate faction. It can be found via exploration as a cosmic anomaly within systems owned by the Amarr Empire and Ammatar Mandate. As an ungated complex, the limitations as to which ships can complete this site are tied to the security rating of the system where the anomaly spawns (T2 Battleships for high-security systems, and up to Titans in low-security and null-security systems). Completing this complex may award the player with valuable True Sansha faction modules and ammunition.
+  - text: "This combat site consists of a single ungated pocket of space containing a variety of Frigate-, Destroyer- and Cruiser-sized enemy ships. Three variations of this combat anomaly exist: Sansha Hideaway, Sansha Hidden Hideaway and Sansha Forsaken Hideaway."
+  - text: "Escalation: This site does not appear to escalate."
+loot:
+  - item: True Sansha Copper Tag
+    from: True Sansha's Ship
+    note: est. 10k ISK (wiki) · 100% drop rate
+  - item: (True) Sansha Ammo
+    from: True Sansha's Ship
+    note: est. 6k - 58M ISK (wiki) · 100% drop rate
+  - item: True Sansha module
+    from: True Sansha's Ship
+    note: est. 10k - 190M ISK (wiki) · rare
+  - item: Mid-grade Nirvana Implant BPC
+    from: True Sansha's Ship
+    note: est. 15M - 50M ISK (wiki) · rare
+lootNotes:
+  - text: 500.000 ISK
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Centii Slavehunter
+              - Centii Savage
+            triggers: "Triggers Wave #2"
+      - id: wave-2
+        trigger:
+          on: other
+          text: "Wave #2"
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Centii Slavehunter
+              - Centii Savage
+          - count: "1"
+            class: Cruiser
+            names:
+              - Centum Ravager
+            triggers: "Triggers Wave #3"
+      - id: wave-3
+        trigger:
+          on: other
+          text: "Wave #3"
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Centior Mishape
+          - count: "3"
+            class: Cruiser
+            names:
+              - Centum Ravager
+              - Centum Ravisher
+            triggers: "Triggers Wave #4"
+      - id: wave-4
+        trigger:
+          on: other
+          text: "Wave #4"
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Cruiser
+            names:
+              - Centum Ravager
+              - Centum Ravisher
+          - count: 0-1
+            class: Commander Frigate
+            names:
+              - True Sansha's Ravener
+            drop: Possible to contain faction ammo, tags, modules
+            note: Rare spawn
+sde:
+  dungeonIds:
+    - 3418

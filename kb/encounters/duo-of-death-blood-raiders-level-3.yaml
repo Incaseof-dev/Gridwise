@@ -1,0 +1,48 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: duo-of-death-blood-raiders-level-3
+kind: mission
+name: Duo of Death
+level: 3
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Duo of Death (Blood Raiders) (Level 3)
+    url: https://wiki.eveuniversity.org/Duo_of_Death_(Blood_Raiders)_(Level_3)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191659"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy all enemy ships
+notes:
+  - text: No hostiles at initial gate.
+pockets:
+  - name: 1st Pocket
+    notes:
+      - text: Final kill will spawn a cargo container with the mission objective. Do not forget!
+      - text: "Mining: 1,405,000 units of Veldspar"
+    waves:
+      - id: initial-hostiles-20km
+        trigger:
+          on: warpIn
+          text: Initial Hostiles (20km)
+        spawns:
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Corpatis Exorcist
+              - Corpatis Phantom
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Bunker
+            drop: Chance to drop various ammo

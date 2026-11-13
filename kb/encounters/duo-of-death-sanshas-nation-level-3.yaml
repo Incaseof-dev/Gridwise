@@ -1,0 +1,49 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: duo-of-death-sanshas-nation-level-3
+kind: mission
+name: Duo of Death
+level: 3
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Duo of Death (Sansha's Nation) (Level 3)
+    url: https://wiki.eveuniversity.org/Duo_of_Death_(Sansha's_Nation)_(Level_3)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191663"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: web
+notes:
+  - text: "Web/warp disruption: Spider Drone I (Web)"
+  - text: "Suggested ships: Battlecruiser"
+  - text: "Blitz: Kill the two battlecruisers, pick up the objective and warp out."
+  - text: Sansha Bunker may drop cap boosters and/or ammo.
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: initial-group-18km-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group, 18km (auto-aggro)
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Tower Sentry Sansha I
+          - count: "2"
+            class: Drone
+            names:
+              - Spider Drone I
+            ewar:
+              - kind: web
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Centatis Daemon
+              - Centatis Behemoth
+            note: Last one drops mission objective

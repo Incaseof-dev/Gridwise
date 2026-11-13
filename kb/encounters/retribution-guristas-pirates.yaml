@@ -1,0 +1,90 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: retribution-guristas-pirates
+kind: mission
+name: Retribution
+level: 3
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Retribution (Guristas Pirates)
+    url: https://wiki.eveuniversity.org/Retribution_(Guristas_Pirates)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "218717"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: ecm
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Gruistas Kyoukan/Webifier (Web, Warp Disrupt)"
+  - text: "Suggested ships: Battlecruiser"
+  - text: "Blitz: Destroy outpost (70k from warp-in)."
+  - text: Large Collidable Structures are very tricky to select without being on overview.
+  - text: The small armory drops ammo.
+lootNotes:
+  - text: "Bounty: ~792k ISK"
+  - text: "Loot: ~900k ISK"
+  - text: "Salvage: ~376k ISK"
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: No aggro upon warp-in.
+    waves:
+      - id: group-1-25-30km-closest-rock-formation
+        trigger:
+          on: other
+          text: Group 1, 25-30km - Closest Rock Formation
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Cruiser
+            names:
+              - Pithum Killer
+              - Pithum Murderer
+            ewar:
+              - kind: ecm
+      - id: group-2-35-40km-slave-worker-facility
+        trigger:
+          on: other
+          text: Group 2, 35-40km - Slave Worker Facility
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Cruiser
+            names:
+              - Pithum Ascriber
+              - Pithum Silencer
+      - id: group-3-35-40km-spaceshuttle-wreck
+        trigger:
+          on: other
+          text: Group 3, 35-40km - Spaceshuttle Wreck
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Pithum Inferno
+              - Pithum Mortifier
+      - id: group-4-65-75km-furthest-rock-formation
+        trigger:
+          on: other
+          text: Group 4, 65-75km - Furthest Rock Formation
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Guristas Kyoukan
+              - Guristas Webifier
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Pithatis Enforcer

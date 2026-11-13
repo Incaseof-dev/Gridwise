@@ -1,0 +1,48 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: avenge-a-fallen-comrade-ded-level-1
+kind: mission
+name: Avenge a Fallen Comrade
+level: 1
+enemyFaction: DED
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Avenge a Fallen Comrade (DED) (Level 1)
+    url: https://wiki.eveuniversity.org/Avenge_a_Fallen_Comrade_(DED)_(Level_1)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191580"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal:
+    - em
+    - thermal
+    - kinetic
+    - explosive
+  resist:
+    - em
+    - thermal
+    - kinetic
+    - explosive
+objectives:
+  - text: Destroy all enemy ships
+notes:
+  - text: No hostiles at initial gate.
+pockets:
+  - name: 1st Pocket
+    notes:
+      - text: No aggro on warp-in.
+    waves:
+      - id: initial-hostiles
+        trigger:
+          on: warpIn
+          text: Initial Hostiles
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - DED Soldier 3rd Class
+            group: Group 1

@@ -1,0 +1,118 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: assistance
+kind: mission
+name: Assistance
+level: 4
+enemyFaction: Mercenaries
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Assistance
+    url: https://wiki.eveuniversity.org/Assistance
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231259"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy hostile ships
+ewar:
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Mercenary Wingman"
+  - text: 4M in Bounties
+  - text: Ungated semi-deadspace pocket zero jumps away in the same System.
+  - text: "Blitz: destroy all Mercenary Overlords, then destroy the single newly spawned Mercenary Overlord."
+  - text: "Tips: Approach Audalle Roire with a throwaway ship to spawn the enemies, then warp at 100 km with your combat ship."
+  - text: "Tips: Group 1 spawns about 5 seconds after the trigger (a message pops up to let you know), giving you some time to warp out; you can circle around the trigger to align with a celestial first"
+  - text: "Tips: The rest of the hostile spawn appears in rapid succession and will be right on top of you."
+  - text: "Tips: Mercenary Overlords deal 70% Thermal damage over 30 km range and approach at 300 m/s, with limited damage projection past 25 km. Because of the fast spawn rate, there will be 12 of them attacking you at once. You should either be fit to face-tank nearly 2000 DPS of (mostly) Kinetic and Thermal damage or quickly kill the Mercenary Wingmen outside of their webbing range and speed-tank."
+  - text: "Tips: Mercenary Wingmen only have a 1% chance of having a warp disruptor, but better safe than sorry"
+  - text: "Tips: You do not need to destroy any ship except for the Mercenary Overlords"
+pockets:
+  - name: Warp-in
+    notes:
+      - text: "Impetus Regional Offices: The offices for Impetus' Sinq Laison Regional division are housed in Stetille, the only system in the entire region where Impetus has financed the construction of development studios. The proximity to other nations' borders has made the Sinq Laison offices an ideal place for foreign investors and shareholders to touch base with the region's own holoreel bureaucracy."
+      - text: "Incoming Transmission: Welcome, pilot. Eron told me to expect you, but not to expect other company. I'm guessing those Minmatar ships in warp to us both aren't with you?"
+      - text: "Agent Conversation when Mission is completed: Alright, I've just spoken with Mr. Roire. He wasn't too pleased that those Matari followed you back to the offices. Good thing you cleaned them up; otherwise he'd have been less inclined to help. I've been forwarded all of the relevant files you'll need to continue your investigation. When you're ready, just return to me, and we can begin."
+    waves:
+      - id: friendly-35-km
+        trigger:
+          on: other
+          text: Friendly (35 km)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Friendly Cruiser
+            names:
+              - Audalle Roire
+            triggers: Approaching within about 20km spawns enemies
+      - id: arriving-hostiles-10-km-from-trigger
+        trigger:
+          on: other
+          text: Arriving hostiles (10 km from trigger)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Mercenary Elite Fighter
+            group: Group 1
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Mercenary Wingman
+            group: Group 1
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "6"
+            class: Cruiser
+            names:
+              - Pator 6
+            group: Group 1
+          - count: "3"
+            class: Battleship
+            names:
+              - Mercenary Overlord
+            group: Group 2
+          - count: "3"
+            class: Battleship
+            names:
+              - Mercenary Overlord
+            group: Group 3
+          - count: "3"
+            class: Battleship
+            names:
+              - Mercenary Overlord
+            group: Group 4
+          - count: "3"
+            class: Battleship
+            names:
+              - Mercenary Overlord
+            group: Group 5
+            triggers: Last battleship destroyed spawns Wave 2
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Battleship
+            names:
+              - Mercenary Overlord
+            triggers: Destroy to complete the Mission; spawns Wave 3
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Battleship
+            names:
+              - Mercenary Overlord

@@ -1,0 +1,52 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: alluring-emanations-level-1
+kind: mission
+name: Alluring Emanations
+level: 1
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Alluring Emanations (Level 1)
+    url: https://wiki.eveuniversity.org/Alluring_Emanations_(Level_1)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "230457"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Investigate the asteroid belt. Retreat if you encounter overwhelming force.
+notes:
+  - text: Alluring Emanations is a mission involving combat against Rogue Drones. There are multiple level variants.
+  - text: After killing the first Rogue Drone, a huge number of reinforcements show up. Killing them is not required to complete the mission. Doing so anyway, such as for the 25 non-capsuleer kills daily, is quite manageable due to their low small hitpoints pool and their arriving in smaller clumps that can be picked off well before they become a problem simply from strength in numbers.
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: "Agent after completion: I've never heard of them setting ambushes before. That is disturbing news."
+      - text: "Bounties: ~254,000 ISK"
+      - text: "Salvage: ~1,250,000-1,500,000 ISK, (at 80 % salvage access difficulty, ~50 % wrecks successfully salvaged, value estimation of April 2025, Rens, Amarr)"
+    waves:
+      - id: initial-50km-no-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial 50km, no auto aggro
+        spawns:
+          - count: "1"
+            class: Drone
+            names:
+              - Rogue Drone [Moth
+              - Termite Apis]
+            triggers: Triggers reinforcements when attacked
+      - id: reinforcements-4-groups
+        trigger:
+          on: other
+          text: Reinforcements (4 Groups)
+          confidence: inferred
+        spawns:
+          - count: "43"
+            class: Drone
+            names:
+              - Rogue Drone
+            group: Reinforcements (70km, auto aggro)

@@ -1,0 +1,73 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: convoy-attack-amarr
+kind: mission
+name: Convoy Attack
+level: 5
+enemyFaction: Amarr Empire
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Convoy Attack (Amarr)
+    url: https://wiki.eveuniversity.org/Convoy_Attack_(Amarr)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191620"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy all enemy ships
+ewar:
+  - kind: neut
+  - kind: trackingDisruption
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Divine Imperial Napat"
+  - text: No hostiles at initial gate. Freighters orbit at 70km, deal no damage, and have 142k hp. It is possible to throw off full-room aggro by leaving the room, returning and selectively aggressing certain groups that have approached quickly and separated from the others. Diviners and Dominators can be aggressed separately this way.
+pockets:
+  - name: 1st Pocket
+    notes:
+      - text: All ships aggro on initial warp-in. Imperial Templar Diviners neut for a total of 80gj/s.
+    waves:
+      - id: initial-hostiles
+        trigger:
+          on: warpIn
+          text: Initial Hostiles
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Napat
+            ewar:
+              - kind: trackingDisruption
+              - kind: warpDisruption
+          - count: "4"
+            class: Battleship
+            names:
+              - Imperial Templar Diviner
+            ewar:
+              - kind: neut
+              - kind: trackingDisruption
+          - count: "3"
+            class: Battleship
+            names:
+              - Imperial Templar Dominator
+          - count: "5"
+            class: Battleship
+            names:
+              - Imperial Templar Martyr
+          - count: "2"
+            class: Battleship
+            names:
+              - Imperial Templar Torah
+          - count: "3"
+            class: Battleship
+            names:
+              - Imperial Templar Judgment
+          - count: "4"
+            class: Freighter
+            names:
+              - Imperial Freighters
+            drop: Various trade goods

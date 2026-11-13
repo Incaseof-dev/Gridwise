@@ -1,0 +1,109 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: pirate-radio
+kind: mission
+name: Pirate Radio
+level: 3
+enemyFaction: Minmatar Republic
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Pirate Radio
+    url: https://wiki.eveuniversity.org/Pirate_Radio
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "229685"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal: []
+  resist:
+    - em
+    - explosive
+objectives:
+  - text: Destroy FTL Transmitter
+restrictions:
+  - text: "Ship size limit: T2 Battlecruisers or smaller"
+notes:
+  - text: "Suggested ships: HAC, Battlecruiser"
+  - text: "The Brothers of Freedom: Formerly an extremist labor movement in the State, the Brothers of Freedom led a widespread revolt against corporate security forces on a number of Caldari planets a number of years ago -- some time before Tibus Heth's vastly more successful revolt of a similar nature -- after 65,000 protesters were killed by Caldari paramilitary forces while trying to force their way onto a CEP station in the New Caldari system. After months of dogged pursuit by Caldari authorities, the riots were put down and most of the leaders were killed or arrested. Some of the leadership, including the ringleader Melarius Torvil, did manage to escape the final Caldari Navy operation that crushed the Brothers' movement. Torvil and a small group of associates fled to the Minmatar Republic and applied for asylum from Caldari persecution, which was granted by then-President Midular's Gallente-friendly government. Today, though they have been largely eliminated as a major force in the State, the Brothers of Freedom continue to spread anti-corporate propaganda and speak out against the CEP's government in the Gallente Federation and the Minmatar Nation, as well as outlying State settlements and facilities."
+  - text: Destroy all hostile ships (incl. the industrial) in the initial spawn and the FTL Transmitter to complete the mission.
+  - text: The reinforcement spawns are on an unknown timer. A Gnosis can clear the mission before they spawn.
+  - text: Total standing loss for destroying the ships in the initial spawn + Radio Telescope is 0.305 (unadjusted). -0.003 Minmatar faction standing for destroying the reinforcement spawns.
+  - text: By 2026 the damage dealt by the initial group of enemies is, atypically for Minmatar, primarily EM.
+  - text: Structures do not drop loot.
+  - text: Scordite asteroids are present.
+lootNotes:
+  - text: "This mission drops a tag for each ship killed in the reinforcement spawns, corresponding to its class and firepower. The following were obtained from a full sweep:"
+  - text: Republic Fleet Captain Insignia I x2
+  - text: Republic Fleet Commander Insignia I x2
+  - text: Republic Fleet High Captain Insignia I x15
+  - text: Republic Fleet Private Insignia II x4
+  - text: In addition, various other loot is dropped in the form of meta modules and assorted Minmatar ammo. Salvage is also decent. Total loot value comes up to about 29,300,000 ISK. Most of this value, 27 million of it, comes from the tags, with salvage of 1.3 million, and 1 million of modules.
+  - text: https://evepraisal.com/a/11pide
+  - text: (no salvage)
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: initial-group-10-25km
+        trigger:
+          on: warpIn
+          text: Initial Group, 10-25km
+        spawns:
+          - count: 5-6
+            class: Cruiser
+            names:
+              - Freedom Patriot
+            note: Very strong, uses Turrets that deal exp and EM dmg, and uses heavy EM missiles.
+          - count: "1"
+            class: Structure
+            names:
+              - FTL Transmitter
+          - count: "1"
+            class: Sentry
+            names:
+              - Minmatar Heavy Missile Battery
+          - count: "1"
+            class: Industrial
+            names:
+              - Republic Courier
+            drop: Passengers
+      - id: 2nd-reinforcement-spawns-at-minmatar-starbase-control-tower
+        trigger:
+          on: other
+          text: 2nd Reinforcement, spawns at Minmatar Starbase Control Tower
+          confidence: inferred
+        spawns:
+          - count: 4-5
+            class: Destroyer
+            names:
+              - Republic Tribal Faxi
+              - Republic Tribal Austri
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Chief Republic Rodul
+              - Chief Republic Manadis
+          - count: 4-5
+            class: Battlecruiser
+            names:
+              - Republic Tribal Norn
+              - Republic Tribal Venis
+            triggers: Last BC destroyed triggers 3rd Reinforcement
+      - id: 3rd-reinforcement-spawns-at-a-scordite-asteroid
+        trigger:
+          on: other
+          text: 3rd Reinforcement, spawns at a Scordite asteroid
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Cruiser
+            names:
+              - Republic Tribal Manadis
+              - Republic Tribal Jarpur
+          - count: "2"
+            class: Battleship
+            names:
+              - Republic Jarl
+              - Republic Pytara

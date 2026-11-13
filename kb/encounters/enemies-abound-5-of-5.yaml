@@ -1,0 +1,145 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: enemies-abound-5-of-5
+kind: mission
+name: Enemies Abound (5 of 5)
+level: 4
+enemyFaction: Minmatar Republic
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Enemies Abound (5 of 5)
+    url: https://wiki.eveuniversity.org/Enemies_Abound_(5_of_5)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223389"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the smuggler gate as soon as possible
+ewar:
+  - kind: web
+notes:
+  - text: "Web/warp disruption: Republic Fleet D-1 Support Frigate (Web)"
+  - text: "Blitz: Destroy the Stargate."
+lootNotes:
+  - text: 4x Republic Fleet Captain Insignia I
+  - text: 3x Republic Fleet Commander Insignia I
+  - text: 5x Republic Fleet Commander Insignia II
+  - text: 3x Republic Fleet High Captain Insignia I
+  - text: 4x Republic Fleet Private Insignia III
+  - text: 3x Republic Fleet Private Insignia V
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: Groups warp-in at 4-minute intervals.
+    waves:
+      - id: group-1-30-40km
+        trigger:
+          on: other
+          text: Group 1, 30-40km
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Heavy Missile Battery
+          - count: "8"
+            class: Cruiser
+            names:
+              - Republic Fleet Stabber
+              - Republic Fleet Rupture
+          - count: "2"
+            class: Battleship
+            names:
+              - Republic Fleet Tempest
+              - Republic Fleet Typhoon
+      - id: group-2-50-55km
+        trigger:
+          on: other
+          text: Group 2, 50-55km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Republic Fleet Officer
+          - count: "1"
+            class: Battleship
+            names:
+              - Republic Fleet Darkana
+      - id: group-3-55-60km
+        trigger:
+          on: other
+          text: Group 3, 55-60km
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Republic Fleet D-1 Support Frigate
+            ewar:
+              - kind: web
+          - count: "3"
+            class: Battleship
+            names:
+              - Republic Fleet Tempest
+              - Republic Fleet Typhoon
+      - id: group-4-90-95km
+        trigger:
+          on: other
+          text: Group 4, 90-95km
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Cruiser
+            names:
+              - Republic Fleet Rupture
+          - count: "4"
+            class: Battleship
+            names:
+              - Republic Fleet Typhoon
+              - Republic Fleet Darkana
+      - id: group-5-60km
+        trigger:
+          on: other
+          text: Group 5, 60km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Freedom Patriot
+          - count: "3"
+            class: Battleship
+            names:
+              - Freedom Liberty
+      - id: group-6-35km
+        trigger:
+          on: other
+          text: Group 6, 35km
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Republic Fleet D-1 Support Frigate
+            ewar:
+              - kind: web
+          - count: "3"
+            class: Battleship
+            names:
+              - Republic Fleet Darkana
+      - id: wave
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Smuggler Stargate
+            drop: standard commodities
+            note: Mission objective

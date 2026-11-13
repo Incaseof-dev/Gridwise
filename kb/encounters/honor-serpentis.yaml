@@ -1,0 +1,211 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: honor-serpentis
+kind: mission
+name: Honor
+level: 5
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Honor (Serpentis)
+    url: https://wiki.eveuniversity.org/Honor_(Serpentis)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "194621"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: neut
+  - kind: sensorDamp
+  - kind: web
+  - kind: warpScramble
+notes:
+  - text: "Web/warp disruption: Coreli Guardian Agent/Scout/Spy/Initiate (Web, Scram), Serpentis Stasis Tower (Web)"
+  - text: "Suggested ships: Passive Battleship + Logistics"
+  - text: "Blitz: Destroy Recruitment Station in Pocket 2."
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-group-25-60km-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group, 25-60km (auto-aggro)
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Serpentis Energy Neutralizer Sentry III
+            ewar:
+              - kind: neut
+          - count: "1"
+            class: Sentry
+            names:
+              - Serpentis Stasis Tower
+            ewar:
+              - kind: web
+          - count: "4"
+            class: Sentry
+            names:
+              - Serpentis Cruise Missile Battery
+          - count: "1"
+            class: Sentry
+            names:
+              - Tower Sentry Serpentis III
+          - count: "2"
+            class: Cruiser
+            names:
+              - Corelum Guardian Chief Defender
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Corelatis Captain
+            triggers: Triggers Reinforcement A
+          - count: "12"
+            class: Battleship
+            names:
+              - Core Flotilla Admiral
+              - Core Grand Admiral
+              - Core Lord Admiral
+            ewar:
+              - kind: sensorDamp
+            triggers: Triggers Reinforcement B
+      - id: reinforcement-a
+        trigger:
+          on: other
+          text: Reinforcement A
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Coreli Guardian Spy
+              - Coreli Guardian Initiate
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "2"
+            class: Destroyer
+            names:
+              - Corelior Artillery
+              - Corelior Cannoneer
+      - id: reinforcement-b
+        trigger:
+          on: other
+          text: Reinforcement B
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Agent
+              - Coreli Guardian Scout
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Guard
+              - Corelum Guardian Chief Safeguard
+            ewar:
+              - kind: sensorDamp
+  - name: Pocket 2
+    waves:
+      - id: initial-group-25-75km-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group, 25-75km (auto-aggro)
+        spawns:
+          - count: "5"
+            class: Sentry
+            names:
+              - Serpentis Energy Neutralizer Sentry II
+            ewar:
+              - kind: neut
+          - count: "8"
+            class: Sentry
+            names:
+              - Serpentis Cruise Missile Battery
+          - count: "4"
+            class: Sentry
+            names:
+              - Serpentis Heavy Missile Battery
+          - count: "6"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Defender
+              - Coreli Guardian Patroller
+            ewar:
+              - kind: sensorDamp
+              - kind: web
+              - kind: warpScramble
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Safeguard
+            ewar:
+              - kind: sensorDamp
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corelatis High Captain
+            triggers: Triggers Reinforcement A
+          - count: "12"
+            class: Battleship
+            names:
+              - Core Grand Admiral
+              - Core Lord Admiral
+              - Core Vice Admiral
+            ewar:
+              - kind: sensorDamp
+            triggers: Triggers Reinforcement B
+      - id: reinforcement-a-70km
+        trigger:
+          on: other
+          text: Reinforcement A, 70km
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Coreli Guardian Spy
+              - Coreli Guardian Initiate
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corelatis High Captain
+              - Corelatis Captain Sentry
+      - id: reinforcement-b-70km
+        trigger:
+          on: other
+          text: Reinforcement B, 70km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Coreli Guardian Safeguard
+              - Coreli Guardian Protector
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corelum Guardian Chief Infantry
+          - count: "6"
+            class: Battleship
+            names:
+              - Core Grand Admiral
+              - Core Lord Admiral
+      - id: structure
+        trigger:
+          on: warpIn
+          text: Structure
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Recruitment Station

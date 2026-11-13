@@ -1,0 +1,73 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: covering-your-tracks-level-4
+kind: mission
+name: Covering your Tracks
+level: 4
+enemyFaction: Mercenaries
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Covering your Tracks (Level 4)
+    url: https://wiki.eveuniversity.org/Covering_your_Tracks_(Level_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "218411"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: web
+  - kind: warpScramble
+notes:
+  - text: "Web/warp disruption: Mercenary Wingman (Web, Scram), Tauron (Web, Scram)"
+  - text: "Suggested ships: Battleship"
+  - text: See notes section for weaknesses on Ratah Niaga/Tauron/Taisu Magdesh
+  - text: Ratah Niaga is weakest to ki on shield and ex on armor.
+  - text: Tauron is weakest to em/th on shield and armor.
+  - text: Taisu Magdesh weakest to em on shield and ex on armor.
+  - text: A faction booster shield worth more than 40 million ISK "may" drop from the BS.
+  - text: The Abandoned Stargate drops metal scraps.
+lootNotes:
+  - text: "Loot & Salvage: ~4M (chance of faction loot on top)"
+  - text: "Bounties: ~1.3M"
+  - text: While fairly low value in bounties and loot, this mission is quick to complete and rewards 0.9 faction standings.
+pockets:
+  - name: Warp-in
+    notes:
+      - text: Single, ungated pocket - you can warp in at preferred distance.
+    waves:
+      - id: initial-group-20km-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group, 20km (auto-aggro)
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Caldari 425mm Railgun Sentry
+          - count: "3"
+            class: Frigate
+            names:
+              - Mercenary Wingman
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "3"
+            class: Cruiser
+            names:
+              - Mercenary Commander
+          - count: "2"
+            class: Battleship
+            names:
+              - Mercenary Overlord
+          - count: "1"
+            class: Battleship
+            names:
+              - Ratah Niaga
+              - Tauron
+              - Taisu Magdesh
+            ewar:
+              - kind: web
+              - kind: warpScramble
+            drop: May drop faction loot

@@ -1,0 +1,134 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: serpentis-forsaken-hub
+kind: anomaly
+name: Serpentis Forsaken Hub
+dedRating: null
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Serpentis Forsaken Hub
+    url: https://wiki.eveuniversity.org/Serpentis_Forsaken_Hub
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225141"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: The site consists of one ungated pocket. There are three Broken Orange Crystal Asteroids near the warp-in. New wave spawns once ships from previous spawn are dead.
+  - text: "Escalation: This anomaly can escalate into the Shadow Serpentis Fleet Staging Point."
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corelatis Platoon Leader
+              - Corelatis High Captain
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Sentinel
+              - Corelum Guardian Chief Protector
+              - Corelum Guardian Chief Infantry
+          - count: 4-7
+            class: Battleship
+            names:
+              - Core Lord Admiral
+              - Core Grand Admiral
+      - id: wave-2
+        trigger:
+          on: other
+          text: "Wave #2"
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Initiate
+              - Coreli Guardian Scout
+              - Coreli Guardian Agent
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "4"
+            class: Battleship
+            names:
+              - Core Lord Admiral
+              - Core Grand Admiral
+      - id: wave-3
+        trigger:
+          on: other
+          text: "Wave #3"
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Defender
+              - Corelum Guardian Chief Protector
+              - Corelum Guardian Chief Infantry
+          - count: "3"
+            class: Battleship
+            names:
+              - Core Grand Admiral
+      - id: wave-4
+        trigger:
+          on: other
+          text: "Wave #4"
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corelatis Platoon Leader
+              - Corelatis Wing Leader
+              - Corelatis Captain Sentry
+          - count: "4"
+            class: Battleship
+            names:
+              - Core Lord Admiral
+      - id: wave-5
+        trigger:
+          on: other
+          text: "Wave #5"
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Defender
+              - Corelum Guardian Chief Sentinel
+              - Corelum Guardian Chief Infantry
+          - count: "3"
+            class: Battleship
+            names:
+              - Core Lord Admiral
+              - Core Grand Admiral
+      - id: wave-6
+        trigger:
+          on: other
+          text: "Wave #6"
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Guard
+              - Coreli Guardian Defender
+              - Coreli Guardian Protector
+          - count: "4"
+            class: Battleship
+            names:
+              - Core Lord Admiral
+              - Core Grand Admiral
+sde:
+  dungeonIds:
+    - 3467

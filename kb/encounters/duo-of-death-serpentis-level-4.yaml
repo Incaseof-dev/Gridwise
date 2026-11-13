@@ -1,0 +1,48 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: duo-of-death-serpentis-level-4
+kind: mission
+name: Duo of Death
+level: 4
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Duo of Death (Serpentis) (Level 4)
+    url: https://wiki.eveuniversity.org/Duo_of_Death_(Serpentis)_(Level_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191666"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Retrieve 1x Special Delivery (0.1 m3)
+ewar:
+  - kind: web
+notes:
+  - text: Single gated pocket. No Hostiles at the initial gate.
+  - text: The pocket has two battleships, some sentries and spider drones. The drones have very long range and are fast, you can't practically avoid being webbed. Battleships lock and attack at 25km. The last Battleship killed drops the objective item.
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: first-spawn-15-63km
+        trigger:
+          on: other
+          text: First Spawn (15-63km)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Drone
+            names:
+              - Spider Drone II
+            ewar:
+              - kind: web
+          - count: "2"
+            class: Battleship
+            names:
+              - Core Lord Admiral
+          - count: "3"
+            class: Sentry
+            names:
+              - Tower Sentry Serpentis III

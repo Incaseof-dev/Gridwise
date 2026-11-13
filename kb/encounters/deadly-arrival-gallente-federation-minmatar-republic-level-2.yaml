@@ -1,0 +1,92 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: deadly-arrival-gallente-federation-minmatar-republic-level-2
+kind: mission
+name: Deadly Arrival
+level: 2
+enemyFaction: Gallente Federation & Minmatar Republic
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Deadly Arrival (Gallente Federation & Minmatar Republic) (Level 2)
+    url: https://wiki.eveuniversity.org/Deadly_Arrival_(Gallente_Federation_%26_Minmatar_Republic)_(Level_2)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "227875"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Investigate the ruins (Fly to it), then return to your agent
+ewar:
+  - kind: web
+notes:
+  - text: "Suggested ships: Cruiser"
+  - text: "Blitz: Approach wreck within 15km. Wait for notice that mission is complete. No engagement needed. No standing loss on blitz."
+  - text: Reinforcements are Minmatar. Plan your tank accordingly.
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Federation Insidiator
+            triggers: Reinforcement A
+          - count: "4"
+            class: Sentry
+            names:
+              - Gallente Sentry Tower
+          - count: "1"
+            class: Sentry
+            names:
+              - Gallente Stasis Tower
+            ewar:
+              - kind: web
+      - id: sentry-reinforcement
+        trigger:
+          on: other
+          text: Sentry Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Federation Insidiator
+            triggers: Reinforcement B
+          - count: "2"
+            class: Sentry
+            names:
+              - Gallente Sentry Tower
+          - count: "1"
+            class: Sentry
+            names:
+              - Gallente Stasis Tower
+            ewar:
+              - kind: web
+      - id: reinforcement-a
+        trigger:
+          on: other
+          text: Reinforcement A
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Destroyer
+            names:
+              - Republic Austri
+              - Republic Faxti
+      - id: reinforcement-b
+        trigger:
+          on: other
+          text: Reinforcement B
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Destroyer
+            names:
+              - Republic Bormin
+              - Republic Tribal Faxi

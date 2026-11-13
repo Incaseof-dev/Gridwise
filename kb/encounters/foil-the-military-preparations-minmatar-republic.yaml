@@ -1,0 +1,78 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: foil-the-military-preparations-minmatar-republic
+kind: mission
+name: Foil The Military Preparations
+level: 3
+enemyFaction: Minmatar Republic
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Foil The Military Preparations (Minmatar Republic)
+    url: https://wiki.eveuniversity.org/Foil_The_Military_Preparations_(Minmatar_Republic)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191701"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal: []
+  resist:
+    - explosive
+    - kinetic
+    - thermal
+    - em
+ewar:
+  - kind: targetPaint
+notes:
+  - text: "Suggested ships: Marauder, T3C, Battleship"
+  - text: "Blitz: Wait for the Construction Freight ships to spawn, kill them ignoring the rest of the spawn and warp out."
+  - text: Structures may drop trade goods
+  - text: Shooting the ships "Construction Freight" makes you lose standings with the Minmatar Republic including derived standings.
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: Reinforcement is a timed spawn, about 3 minutes.
+    waves:
+      - id: group-1-50km-auto-aggro
+        trigger:
+          on: other
+          text: Group 1, 50km (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Cruiser
+            names:
+              - Republic Tribal Jarpur
+              - Republic Tribal Manadis
+          - count: "1"
+            class: Battleship
+            names:
+              - Republic Tribal Jarl
+      - id: reinforcement-auto-aggro
+        trigger:
+          on: other
+          text: Reinforcement (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Chief Republic Hrakt
+              - Chief Republic Takan
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Republic Norn
+          - count: "3"
+            class: Battleship
+            names:
+              - Republic Sigur
+              - Republic Pytara
+            ewar:
+              - kind: targetPaint
+          - count: "5"
+            class: Barge
+            names:
+              - Construction Freight

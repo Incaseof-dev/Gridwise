@@ -1,0 +1,80 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: recovery
+kind: mission
+name: Recovery
+level: null
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Recovery
+    url: https://wiki.eveuniversity.org/Recovery
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "228285"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Recover an artifact from the dig site using an archeology module like the one provided.
+ewar:
+  - kind: warpDisruption
+notes:
+  - text: Relic analyzing
+  - text: Objective
+  - text: Acquire 1x Mysterious Statuette (1 m³), and drop it off at Doctor Canius' station at Lisudeh IV - Moon 4 - Theology Council Tribunal.
+  - text: You will be given the relic analyzer so you don't need to bring your own.
+  - text: Notes
+  - text: Fit the Civilian Analyzer before departing. Fly to the designated site in Lisudeh and recover the artifact from the dig site using the analyzer module. You will have to fend off several Blood Raider rats in the dig site. After you destroy them all, you will need to target lock the Ancient Tomb Dig Site and activate the Civilian Analyzer.
+  - text: Once the hack is complete you can open its cargo and loot 1x Mysterious Statuette. That completes the mission. Return to Doctor Canius.
+  - text: This may be your first attempt at the Hacking minigame. The wiki link will explain everything you need to know about this feature within EVE. The design of this particular hack seems to be awkward - if you hit more than one firewall (there's two in total) then you're unlikely to be able to hack the System Core as well (which you need to hack in order to get the required item for the mission). The good news is that you can repeat the hack attempt as often as you need until you succeed. It also serves as a gentle introduction to hacking, which can be a profitable part of EVE.
+  - text: You can hack the relic can before you kill the guards, but you cannot open it until they are killed. Can also use any Relic Analyzer, does not have to be the provided Civilian.
+  - text: Note that if you directly approach the relic can from warp-in, you will likely bounce off of a rock formation.
+  - text: "Update 6/10/2020: Frigate for me was a Corpii Seeker or Collector, both with tracking disrupt. In three runs, had: 3 cruisers, 1 frigate; 2 destroyers, 1 cruiser, 2 frigates; 2 cruisers, 2 destroyers, 1 frigate. In all three, the frigates did not spawn until after one initial ship was destroyed. All frigates had tracking disrupt."
+  - text: "On turn in, Doctor Canius says: \"Blood Raiders? You're lucky you lived. They're psychotic and bloodthirsty, literally. Their sect believes purity can only be reached by consuming blood, and clone blood are purest of all. I'm afraid that makes you Capsuleers their favorite snack. But you're alive, and you've got the artifact, so we're good.\""
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: "Next Mission: Of Quiet Nights Long Past"
+    waves:
+      - id: 26km
+        trigger:
+          on: other
+          text: (~26km)
+          confidence: inferred
+        spawns:
+          - count: "?"
+            class: Hackable
+            names:
+              - Ancient Tomb Dig Site
+            drop: Mysterious Statuette
+      - id: initial-defenders-20-30km
+        trigger:
+          on: warpIn
+          text: Initial Defenders (~20-30km)
+        spawns:
+          - count: "1"
+            class: Destroyer
+            names:
+              - Corpior Visionary
+              - Corpior Converter
+              - Corpior Devoter
+              - Corpior Cleric
+          - count: 1-2
+            class: Cruiser
+            names:
+              - Corpum Arch Reaver
+              - Corpum Arch Engraver
+      - id: reinforcements-trigered-by-damaging-the-initial-defenders
+        trigger:
+          on: warpIn
+          text: Reinforcements (Trigered by damaging the initial defenders)
+        spawns:
+          - count: 1-2
+            class: Frigate
+            names:
+              - Corpii Seeker
+              - Corpii Collector
+            ewar:
+              - kind: trackingDisruption

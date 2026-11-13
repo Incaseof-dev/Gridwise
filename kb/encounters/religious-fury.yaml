@@ -1,0 +1,196 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: religious-fury
+kind: escalation
+name: Religious Fury
+dedRating: null
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Religious Fury
+    url: https://wiki.eveuniversity.org/Religious_Fury
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "156844"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: The expedition consists of two parts.
+  - text: "Escalation start: As you blow up the Blood raider chapel, a strong electromagnetic pulse erupts, threatening to knock out your instruments, but after a few milliseconds of quantum level queasiness, they reel back and start going around their business as usual. A short while later, one of your scanning modules reports readings of a similar electromagnetic anomaly in a system not so far away."
+  - text: The Blood High Priest repairs other enemy ships until it is destroyed. Advise destroying it first if you want to take out the other rats.
+loot:
+  - item: Corpus C-Type Battleship module
+    from: Dark Templar Uthius
+  - item: Dark Blood battleship modules
+    from: Dark Blood battleship
+    note: May also drop from the Blood High Priest
+  - item: Bhaalgorn BPC
+    from: Dark Templar Uthius
+    note: Rare drop
+lootNotes:
+  - text: Typical loot from the Dark Blood battleship and the Blood High Priest includes dog tags and faction ammunition. Dark Templar Uthius can drop Corpus C-Type modules and in rare cases a Bhaalgorn BPC.
+npcs:
+  Uthius's Disciple:
+    sdeTypes:
+      - Corpus Harbinger
+      - Corpus Monsignor
+      - Corpus Oracle
+    class: Battleship
+pockets:
+  - name: First Location
+    notes:
+      - text: Ungated pocket. You land among four Blood Raider Chapels. Shoot them to trigger escalation if none is gotten from the Dark Blood commander.
+      - text: "Escalation dead-end: The cathedral erupts in a ball of flames, quickly subdued by the lack of oxygen. Then there is a second explosion, an enormously powerful nuclear thunder, accompanied by a huge electromagnetic pulse. Then a few milliseconds later, your instruments manage to pick up another pulse, much fainter, distant. You have no idea where it came from and the pulse seems to have confused your computer long enough that it has no record of the event."
+      - text: "Escalation trigger: The cathedral erupts in a ball of flames, quickly subdued by the lack of oxygen. Then there is a second explosion, an enormously powerful nuclear thunder, accompanied by a huge electromagnetic pulse. Despite this local electric storm, your instruments manage to pick up another pulse a few milliseconds later, in another system not far away. How this distant pulse got here in such a short time is a mystery, but there it is, no doubt about it."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Elder Corpii Collector
+              - Elder Corpii Seeker
+            ewar:
+              - kind: trackingDisruption
+          - count: 2-3
+            class: Battlecruiser
+            names:
+              - Corpatis Bishop
+              - Corpatis Seer
+              - Corpatis Shade
+              - Corpatis Exorcist
+              - Corpatis Phantom
+          - count: 5-7
+            class: Battleship
+            names:
+              - Corpus Apostle
+              - Corpus Oracle
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - Dark Blood Apostle
+            triggers: Destroying may trigger escalation
+            drop: Faction ammo/tags; can drop Dark Blood faction modules or implants
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "4"
+            class: Structure
+            names:
+              - Blood Raider Chapel
+            triggers: Alternate escalation trigger
+  - name: Second Location
+    notes:
+      - text: "There are two possible scenarios for this second part: one which is fairly easy, and a harder one with the overseer spawn."
+  - name: Easier scenario
+    notes:
+      - text: There is no overseer spawn for this scenario; you will only get Dark Blood faction ammo and dog tags, as well as a chance for a Dark Blood faction module.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 4-6
+            class: Elite Frigate
+            names:
+              - Elder Corpii Herald
+              - Elder Corpii Upholder
+              - Elder Corpii Seeker
+            ewar:
+              - kind: web
+              - kind: trackingDisruption
+              - kind: warpDisruption
+            note: Elder Corpii Heralds/Upholders web/point, Elder Corpii Collectors/Seekers tracking disrupt; type list incomplete on the source page
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Corpum Arch Priest
+              - Corpum Arch Sage
+          - count: 3-4
+            class: Battleship
+            names:
+              - Corpus Archbishop
+              - Corpus Harbinger
+            ewar:
+              - kind: neut
+            note: Fairly rare spawn
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Blood High Priest
+            ewar:
+              - kind: neut
+            triggers: Trigger for expedition end
+            drop: Possible Dark Blood faction modules or a possible implant; wreck may produce Tech 2 salvage
+  - name: Harder scenario
+    notes:
+      - text: Dark Templar Uthius hits for about 760 EM and Thermal damage at a long range, although his tank isn't anything special. He orbits you at 38 km.
+      - text: "Expedition end: Somehow the two cathedrals destruction must have been connected, just as when you destroyed the first one, it blew up the fourth cathedral by the huge arkonor stone back there. Nothing hints to why ones destruction marks doom for the other, you only hope it has nothing to do with divine intervention. If that were the case there would be a God out there somewhere to whom you owed a good many cathedrals ..."
+    waves:
+      - id: initial-spawn
+        trigger:
+          on: warpIn
+          text: Initial spawn
+        spawns:
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Dark Priest
+              - Elder Corpum Shadow Sage
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corpatis Exorcist
+              - Corpatis Phantom
+          - count: "7"
+            class: Battleship
+            names:
+              - Corpus Archbishop
+              - Corpus Harbinger
+            ewar:
+              - kind: neut
+            note: Rare spawn
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Blood High Priest
+            ewar:
+              - kind: neut
+            triggers: Attacking triggers overseer spawn
+            drop: Possible Dark Blood faction modules or a possible implant; wreck may produce Tech 2 salvage
+      - id: overseer-spawn
+        trigger:
+          on: other
+          text: Overseer spawn
+          confidence: inferred
+        spawns:
+          - count: "8"
+            class: Elite Frigate
+            names:
+              - Blood Disciple
+              - Blood Wraith
+            ewar:
+              - kind: web
+          - count: "3"
+            class: Battleship
+            names:
+              - Uthius's Disciple
+            ewar:
+              - kind: neut
+          - count: "1"
+            class: Overseer Battleship
+            names:
+              - Dark Templar Uthius
+            triggers: Destroying ends expedition
+            drop: Possible Corpus C-Type modules and a rare Bhaalgorn BPC; wreck may produce Tech 2 salvage
+sde:
+  dungeonIds:
+    - 1782

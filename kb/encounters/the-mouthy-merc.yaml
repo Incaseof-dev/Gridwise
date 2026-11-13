@@ -1,0 +1,139 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-mouthy-merc
+kind: mission
+name: The Mouthy Merc
+level: 4
+enemyFaction: Minmatar Republic & Mercenary
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Mouthy Merc
+    url: https://wiki.eveuniversity.org/The_Mouthy_Merc
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223437"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal: []
+  resist:
+    - explosive
+    - kinetic
+    - thermal
+    - em
+objectives:
+  - text: Find and kill the mercenary.
+notes:
+  - text: "Blitz: Clear the battleships in the first room, loot the key, and take the acceleration gate. In the second room, clear again battleships until The Mercenary spawns, after you kill him the mission is marked finished."
+  - text: "Notes: The initial warp in is about 25 km from the acceleration gate to the first pocket. So best fit a propulsion module. The acceleration gate in the first pocket requires a gate key which you obtain in that pocket."
+lootNotes:
+  - text: 7x Republic Fleet Captain I
+  - text: 26x Republic Fleet Commander II
+  - text: 15x Republic Fleet High Captain I
+  - text: 6x Republic Fleet Midshipman II
+  - text: 1x Republic Fleet Midshipman III
+npcs:
+  "'The Mercenary'":
+    sdeTypes:
+      - Mordus Mammoth
+    class: Battleship
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Republic Takan
+              - Republic Baldur
+            group: Initial Spawn (38-45 km)
+          - count: "3"
+            class: Battleship
+            names:
+              - Republic Tribal Ymir
+              - Republic Tribal Sigur
+            group: Initial Spawn (38-45 km)
+            triggers: last triggers the next wave
+          - count: "5"
+            class: Container
+            names:
+              - Amarr Battleship Wreckage
+            group: Initial Spawn (38-45 km)
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Republic Venis
+              - Republic Norn
+            group: Second wave (42-47 km)
+          - count: "4"
+            class: Battleship
+            names:
+              - Republic Tribal Ymir
+              - Republic Tribal Sigur
+            group: Second wave (42-47 km)
+            triggers: last triggers the container to spawn
+          - count: "1"
+            class: Container
+            names:
+              - Amarr Battleship Wreckage
+            group: Container spawn (35 km)
+            drop: Acceleration Gate Authentication Matrix
+            note: the type is Amarrian Battleship Wreck instead of Amarr Battleship Wreck
+  - name: Pocket 2
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Republic Takan
+              - Republic Baldur
+            group: Initial Spawn (37-43 km)
+          - count: "3"
+            class: Battleship
+            names:
+              - Republic Tribal Jarl
+              - Republic Tribal Jotun
+            group: Initial Spawn (37-43 km)
+            triggers: triggers next wave
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Republic Tribal Venis
+              - Republic Tribal Norn
+            group: Second wave (19-23 km)
+          - count: "3"
+            class: Battleship
+            names:
+              - Republic Tribal Jarl
+              - Republic Tribal Jotun
+            group: Second wave (19-23 km)
+            triggers: triggers next wave
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Republic Tribal Norn
+              - Republic Tribal Nutia
+            group: "Third wave (28-33 km):"
+          - count: "3"
+            class: Battleship
+            names:
+              - Republic Tribal Jotun
+              - Republic Tribal Sigur
+            group: "Third wave (28-33 km):"
+            triggers: triggers next wave on aggression
+          - count: "1"
+            class: Battleship
+            names:
+              - "'The Mercenary'"
+            group: "Fourth wave (13 km):"
+            triggers: mission is finished when destroyed

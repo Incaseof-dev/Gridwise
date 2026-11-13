@@ -1,0 +1,141 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: blood-farm
+kind: mission
+name: Blood Farm
+level: 4
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Blood Farm
+    url: https://wiki.eveuniversity.org/Blood_Farm
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "196018"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy all enemy ships and Blood Farm
+ewar:
+  - kind: trackingDisruption
+pockets:
+  - name: Warp-in
+    waves:
+      - id: initial-hostiles
+        trigger:
+          on: warpIn
+          text: Initial Hostiles
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Collector
+              - Elder Corpii Seeker
+            group: Group 1
+            ewar:
+              - kind: trackingDisruption
+          - count: "3"
+            class: Battleship
+            names:
+              - Corpus Cardinal
+              - Corpus Monsignor
+            group: Group 1
+  - name: 1st Pocket
+    notes:
+      - text: Auto aggro on warp-in.
+    waves:
+      - id: initial-hostiles
+        trigger:
+          on: warpIn
+          text: Initial Hostiles
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Corpii Diviner
+              - Corpii Reaver
+            group: Group 1
+          - count: "3"
+            class: Battleship
+            names:
+              - Corpus Cardinal
+              - Corpus Monsignor
+            group: Group 1
+      - id: wave-1-on-last-kill-in-group-1
+        trigger:
+          on: other
+          text: Wave 1 (On last kill in Group 1)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Corpum Arch Priest
+              - Corpum Arch Sage
+          - count: "3"
+            class: Battleship
+            names:
+              - Corpus Cardinal
+              - Corpus Monsignor
+  - name: 2nd Pocket
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Blood Farm
+            triggers: All reinforcement waves
+            drop: random T1 modules
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Corpii Diviner
+              - Corpii Raider
+          - count: "3"
+            class: Battleship
+            names:
+              - Corpus Cardinal
+              - Corpus Monsignor
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Corpatis Seer
+          - count: "2"
+            class: Battleship
+            names:
+              - Corpus Cardinal
+              - Corpus Monsignor
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corpatis Bishop
+              - Corpatis Seer
+          - count: "3"
+            class: Battleship
+            names:
+              - Corpus Cardinal
+              - Corpus Monsignor

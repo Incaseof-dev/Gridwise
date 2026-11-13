@@ -1,0 +1,227 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: serpentis-phi-outpost
+kind: complex
+name: Serpentis Phi-Outpost
+dedRating: 4
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Serpentis Phi-Outpost
+    url: https://wiki.eveuniversity.org/Serpentis_Phi-Outpost
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "229449"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Battlecruisers"
+loot:
+  - item: 7th Tier Overseer's Effects
+    from: Electronically Sealed Container
+    note: est. 600k ISK (wiki) · 100% drop rate
+  - item: 8th Tier Overseer's Effects
+    from: Overseer Battleship
+    note: est. 1.2 or 2,1M ISK (wiki) · 100% drop rate
+  - item: Corelum C-Type modules
+    from: Overseer Battleship
+    note: Up to 3x
+  - item: + Exploration logs
+  - item: Dec 2014
+    note: est. 81,4M ISK (wiki) · From Overseer Battleship
+  - item: Corelum C-Type Medium Armor Repairer
+  - item: June 2016
+    note: est. 2.4M ISK (wiki)
+  - item: Corelum C-Type Medium Armor Repairer
+  - item: Shadow Serpentis Energized Adaptive Nano Membrane
+  - item: Other Loot
+  - item: Salvage
+  - item: June 2016
+    note: est. 102M ISK (wiki)
+  - item: Serpentis Brass Tag
+  - item: August 2016
+    note: est. 111M ISK (wiki) · From Overseer Battleship
+  - item: Corelum C-Type Medium Remote Armor Repairer
+  - item: Shadow Serpentis Explosive Plating
+  - item: February 2017
+    note: est. 69M ISK (wiki) · From Overseer Battleship
+  - item: March 2017
+    note: est. 99M ISK (wiki) · From Overseer Battleship
+  - item: Corelum C-Type Energized Explosive Membrane
+  - item: Corelum C-Type Energized Thermal Membrane
+  - item: April 2017
+    note: est. 15M ISK (wiki) · From Overseer Battleship
+  - item: Corelum C-Type Medium Remote Armor Repairer
+  - item: July 2017
+    note: est. 21M ISK (wiki) · From Overseer Battleship
+  - item: Corelum C-Type 10MN Afterburner
+  - item: January 2019
+    note: est. 2.88M ISK (wiki) · From Overseer Battleship
+  - item: Corelum C-Type Medium Remote Armor Repairer
+  - item: December 2019
+    note: est. 135M ISK (wiki) · From Overseer Battleship
+  - item: November 2020
+    note: est. 127.9M ISK (wiki) · From Overseer Battleship
+  - item: November 2020
+    note: est. 8.0M ISK (wiki)
+  - item: Salvage
+  - item: February 2021
+    note: est. 12 M ISK (wiki)
+  - item: Apr 2021
+    note: est. 5.4M ISK (wiki)
+  - item: Corelum C-Type 50MN Microwarpdrive
+    note: est. From Overseer Battleship (wiki)
+  - item: Corelum C-Type 10MN Afterburner
+  - item: Apr 2021
+    note: est. 5.6M ISK (wiki)
+  - item: Corelum C-Type Kinetic Energized Membrane
+    note: est. From Overseer Battleship (wiki)
+  - item: Apr 2021
+    note: est. 5M ISK (wiki)
+  - item: Corelum C-Type Medium Armor Repairer
+    note: est. From Overseer Battleship (wiki)
+  - item: May 2021
+    note: est. 8.5M ISK (wiki)
+  - item: No Faction/Deadspace Loot
+    note: est. From Overseer Battleship (wiki)
+  - item: August 2021
+    note: est. 98.3M ISK (wiki) · From Overseer Battleship
+  - item: Corelum C-Type Medium Remote Armor Repairer
+  - item: Corelum C-Type Explosive Energized Membrane
+  - item: October 2021
+    note: est. 60M ISK (wiki) · From Overseer Battleship
+  - item: Sept 2023
+    note: est. 148M ISK (wiki) · From Overseer Battleship
+  - item: Corelum C-Type Kinetic Energized Membrane
+  - item: T2 Salvage
+  - item: Salvage & Normal Loot
+  - item: Apr 2024
+    note: est. 148M ISK (wiki) · From Overseer Battleship
+  - item: Sep 2024
+    note: est. 400K ISK (wiki) · From Overseer Battleship
+  - item: Oct 2024
+    note: est. 90M ISK (wiki) · From Overseer Battleship
+lootNotes:
+  - text: "Bounty: ± 4.5M ISK"
+pockets:
+  - name: First Pocket
+    notes:
+      - text: thumb|First Pocket
+      - text: The electronically sealed container is unlocked after certain ships have been destroyed. The acceleration gate requires the stolen passkey to get through. The key is found in the sealed container, which is located inside a Hollow Asteroid that will require a bit of manual piloting to maneuver through to reach the container.
+      - text: The above statement is not expressly true. When competing for this site I have seen my competitor take the gate to the second pocket without accessing the sealed cask. Either the key is reusable or the only requirement to jump is all enemies in the pocket being destroyed.
+      - text: (29 January 2026) Stolen Passkey was not consumed on use after clearing entire pocket and taking gate. It may ?? be possible to skip part of this pocket by killing the ships guarding the Electronically Sealed Container (unconfirmed).
+      - text: "Note: The site has been known to despawn all NPCs except for the Phi-Operation Protector."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "11"
+            class: Frigate
+            names:
+              - Coreli Guard
+              - Coreli Defender
+              - Coreli Safeguard
+            note: type list incomplete on the source page
+          - count: "6"
+            class: Frigate
+            names:
+              - Coreli Patroller
+              - Coreli Watchman
+            ewar:
+              - kind: sensorDamp
+          - count: 0-5
+            class: Cruiser
+            names:
+              - Corelum Chief Defender
+              - Corelum Chief Protector
+          - count: 0-5
+            class: Cruiser
+            names:
+              - Corelum Chief Guard
+              - Corelum Chief Patroller
+            ewar:
+              - kind: sensorDamp
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corelatis Wing Leader
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: Requires stolen passkey. Key is consumed on use.
+          - count: "1"
+            class: Red Container
+            names:
+              - Electronically Sealed Container
+            drop: Stolen passkey, 7th Tier Overseer's Personal Effect and sometimes a faction module
+            note: Locked
+    onWarpIn: "The Serpentis-Phi alliance control this mining outpost. Business is limited but the owners of the outpost are nevertheless well-off. DED Threat Assessment: Risky (4 of 10)"
+  - name: Second Pocket
+    notes:
+      - text: ----
+      - text: thumb|Second Pocket
+      - text: "Information: Database Information:: The asteroid colonies that have been built here are for show only. This deadspace pocket contains labs and bunkers for booster production and advanced experimental neural implants."
+      - text: The Phi-Operation Protector battleship has a microwarpdrive, and will use it to close in on targets. On paper, its MWD can bring it up to 1000m/s, however in practice it usually will not exceed 850m/s. Its weapons are ineffective beyond around 30km, so if it can be outrun it should not be a major threat. Significantly, this battleship's armor has very high Kinetic resistance (80%) and it will actively repair itself. Its lowest resistance is Thermal (50%), which should be the damage used to kill it.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "1"
+            class: Overseer Battleship
+            names:
+              - Phi-Operation Protector
+            drop: Drops 9th or 8th Tier Overseer's Personal Effects and possibly Corelum C-Type modules
+            note: Immune to all EWAR modules, including Target Painters
+      - id: spawns-in-a-few-seconds
+        trigger:
+          on: other
+          text: Spawns in a few seconds
+          confidence: inferred
+        spawns:
+          - count: "12"
+            class: Frigate
+            names:
+              - Coreli Guard
+              - Coreli Defender
+              - Coreli Safeguard
+            note: type list incomplete on the source page
+          - count: "6"
+            class: Frigate
+            names:
+              - Coreli Patroller
+              - Coreli Watchman
+            ewar:
+              - kind: sensorDamp
+          - count: "7"
+            class: Cruiser
+            names:
+              - Corelum Chief Defender
+              - Corelum Chief Protector
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Corelum Chief Guard
+              - Corelum Chief Patroller
+            ewar:
+              - kind: sensorDamp
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corelatis Platoon Leader
+              - Corelatis Wing Leader
+    onWarpIn: Important - The mission into the Outpost was not a success. Our agent crashed somewhere along with his cargo. Recommend a salvage mission ASAP! The timer on the message shows this to be a very recent entry in the database, only a few hours old or so.
+sde:
+  dungeonIds:
+    - 2253

@@ -1,0 +1,93 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: guristas-burrow
+kind: anomaly
+name: Guristas Burrow
+dedRating: null
+anomalyClass: 2
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Guristas Burrow
+    url: https://wiki.eveuniversity.org/Guristas_Burrow
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "219344"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Single ungated normal space pocket. Killing the last hostile ship triggers a reinforcement spawn.
+  - text: "Escalation: This site does not appear to escalate."
+lootNotes:
+  - text: Needs information
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-defending-fleet
+        trigger:
+          on: warpIn
+          text: Initial Defending Fleet
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Pithii Arrogator
+              - Pithii Imputor
+      - id: 1st-reinforcement-spawn
+        trigger:
+          on: other
+          text: 1st Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Pithii Infiltrator
+      - id: 2nd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 2nd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Pithii Arrogator
+              - Pithii Imputor
+      - id: 3rd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 3rd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Pithii Arrogator
+              - Pithii Imputor
+      - id: 4th-reinforcement-spawn
+        trigger:
+          on: other
+          text: 4th Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Pithii Wrecker
+      - id: bonus-spawn
+        trigger:
+          on: other
+          text: Bonus Spawn
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Commander Frigate
+            names:
+              - Dread Guristas Arrogator
+            drop: Can drop Dread Guristas tags and ammo, may drop faction modules
+sde:
+  dungeonIds:
+    - 2217

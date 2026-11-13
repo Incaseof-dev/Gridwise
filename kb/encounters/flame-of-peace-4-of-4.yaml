@@ -1,0 +1,116 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: flame-of-peace-4-of-4
+kind: mission
+name: Flame of Peace (4 of 4)
+level: 1
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Flame of Peace (4 of 4)
+    url: https://wiki.eveuniversity.org/Flame_of_Peace_(4_of_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223428"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: web
+notes:
+  - text: "Web/warp disruption: Blood Stasis Tower (Web)"
+  - text: "Suggested ships: Destroyer"
+  - text: "Video: Inquisitor"
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: No agrro on warp-in.
+    waves:
+      - id: initial-group-20-35km
+        trigger:
+          on: warpIn
+          text: Initial Group, 20-35km
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Corpii Follower
+              - Corpii Worshipper
+          - count: "1"
+            class: Destroyer
+            names:
+              - Corpior Converter
+  - name: Pocket 2
+    notes:
+      - text: Group 1 will aggro when Opux Luxury Yacht warps out, approximately 10 seconds after you warp-in.
+    waves:
+      - id: group-1-20km
+        trigger:
+          on: other
+          text: Group 1, 20km
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Coprii Diviner
+              - Coprii Visionary
+      - id: group-2-40km
+        trigger:
+          on: other
+          text: Group 2, 40km
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Corpii Herald
+  - name: Pocket 3
+    notes:
+      - text: Full aggro on warp-in.
+    waves:
+      - id: group-1-10-15km
+        trigger:
+          on: other
+          text: Group 1, 10-15km
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Sentry
+            names:
+              - Blood Stasis Tower
+            ewar:
+              - kind: web
+          - count: "4"
+            class: Frigate
+            names:
+              - Coprii Diviner
+              - Coprii Visionary
+            triggers: Spawns Reinforcement A
+          - count: "1"
+            class: Cruiser
+            names:
+              - Opux Luxury Yacht
+            triggers: Spawns Reinforcement B
+      - id: reinforcement-a
+        trigger:
+          on: other
+          text: Reinforcement A
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Corpii Upholder
+      - id: reinforcement-b
+        trigger:
+          on: other
+          text: Reinforcement B
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Corpii Herald
+              - Corpii Upholder

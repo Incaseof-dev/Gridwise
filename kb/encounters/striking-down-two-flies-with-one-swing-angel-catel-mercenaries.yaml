@@ -1,0 +1,79 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: striking-down-two-flies-with-one-swing-angel-catel-mercenaries
+kind: mission
+name: Striking Down Two Flies With One Swing
+level: 3
+enemyFaction: Angel Cartel & Mercenaries
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Striking Down Two Flies With One Swing (Angel Catel & Mercenaries)
+    url: https://wiki.eveuniversity.org/Striking_Down_Two_Flies_With_One_Swing_(Angel_Catel_%26_Mercenaries)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "199269"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: web
+  - kind: targetPaint
+notes:
+  - text: "Space Type: Normal"
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: "Blitz: Destroy the Repair Station and warp away."
+      - text: No Enemies on Warp-in.
+      - text: "Note: The Repair Outpost will help enemies heavily, repairing them."
+      - text: "Note: If you warp out of the mission, and the warp-in again, you'll land at 2km from the Repair Outpost."
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Structure
+            names:
+              - Repair Outpost
+            triggers: Spawn 1 when damaged, Spawn 2 when destroyed
+      - id: spawn-1-60km-spawns-when-outpost-is-harmed
+        trigger:
+          on: other
+          text: Spawn 1 (60km Spawns when outpost is harmed)
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Gistior
+          - count: "5"
+            class: Cruiser
+            names:
+              - Gistium
+          - count: "3"
+            class: Sentry
+            names:
+              - Heavy Missile Launcher Battery
+          - count: "1"
+            class: Sentry
+            names:
+              - Stasis Tower
+            ewar:
+              - kind: web
+      - id: spawn-2-spawns-when-outpost-is-destroyed
+        trigger:
+          on: other
+          text: Spawn 2 (Spawns when outpost is destroyed)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Mercenary Frigate
+          - count: "4"
+            class: Cruiser
+            names:
+              - Mercenary Cruiser

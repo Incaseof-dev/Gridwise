@@ -1,0 +1,27 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: guristas-port
+kind: anomaly
+name: Guristas Port
+dedRating: null
+anomalyClass: 7
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Guristas Port
+    url: https://wiki.eveuniversity.org/Guristas_Port
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225170"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: There are two variants of this site, one with an Asteroid Slave Mine and another with an Asteroid Factory.
+  - text: "Escalation: This site may escalate to Gurista Military Operations Complex"
+lootNotes:
+  - text: "Bounty: ~6 M isk"
+sde:
+  dungeonIds:
+    - 2128

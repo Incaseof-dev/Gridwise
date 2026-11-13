@@ -1,0 +1,210 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: independence
+kind: complex
+name: Independence
+dedRating: null
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Independence
+    url: https://wiki.eveuniversity.org/Independence
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "217302"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Frigates up to Battleships"
+notes:
+  - text: The site is behind an acceleration gate. Warping to the site lands you at 0 on the gate.
+  - text: "Escalation: This site can escalate to The Drone Roulette with the message:"
+  - text: "Escalation: Escalation message:: Among the debris from this formidable hive, you find a blown out hangar containing a few burnt out space ships of various types, probably the possessions of some unfortunate adventurers that came here before you and didn't live to tell the story. As your scanners routinely run through this material, they come across some report with information on a few sister hives to this one. The explorer seems to have found that each of these so called 'independence hives' are surrounded with outposts that serve both as an early warning system against intruders on the drones territory and also as a resource gathering facility. It seems that if the hive is attacked, the drones from the outpost warp instantly back to defend it. One interesting bit of information the unfortunate explorer has noted is that the drones frequently move the hive itself between these outposts, so hunting these things is like playing Russian roulette, you never know if you are fortunate enough to hit an outpost and thereby reduce the inevitable resistance at the main hive or if you are warping straight into the lair of the drones. The report continues to list four locations, the nearest one being..."
+pockets:
+  - name: First room
+    notes:
+      - text: Acceleration gate is 50 km from warp-in. Gate is not locked. Burn towards the gate while destroying the scrammer frigates.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 8-10
+            class: Frigate
+            names:
+              - Harvester Drone
+              - Devilfish Alvi
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Strain Decimator Alvi
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 11-13
+            class: Cruiser
+            names:
+              - Annihilator Alvum
+          - count: "4"
+            class: Sentry
+            names:
+              - Drone Light Missile Battery
+      - id: reinforcement-wave
+        trigger:
+          on: other
+          text: Reinforcement Wave
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Ripper
+              - Shatter Alvior
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Siege Alvatis
+      - id: gate-wave
+        trigger:
+          on: other
+          text: Gate Wave
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Strain Barracuda Alvi
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Exterminator Alvatis
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            triggers: Approaching the Acceleration Gate triggers the Gate Wave
+            note: locked
+  - name: Second room
+    notes:
+      - text: "BLITZ: burn towards the 3 closest battleships, destroy them, shoot just once one of the two battleships that spawn after the initial 3, Sentient will spawn."
+      - text: The initial defenders are arranged in three groups around the warp in (by ship size) and can be aggressed separately.
+      - text: Attacking any Battleships from Spawn 1 triggers Spawn 2.
+      - text: Attacking any ship from Spawn 3 triggers Spawn 4.
+      - text: Destroying all NPCs in this site will pay about 22 million ISK in bounties.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 10-11
+            class: Frigate
+            names:
+              - Swarmer Drone
+          - count: 3-5
+            class: Cruiser
+            names:
+              - Bomber Alvum
+          - count: 2-3
+            class: Battlecruiser
+            names:
+              - Defeater Alvatis
+          - count: "3"
+            class: Battleship
+            names:
+              - Alvus Controller
+              - Swarm Preserver Alvus
+            triggers: last one triggers spawn 1
+      - id: spawn-1
+        trigger:
+          on: other
+          text: Spawn 1
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Elite Cruiser
+            names:
+              - Strain Nuker
+              - Desintegrator Alvum
+          - count: "3"
+            class: Battleship
+            names:
+              - Matriach Alvus
+            triggers: Attacking any of these triggers Spawn 2
+      - id: spawn-2
+        trigger:
+          on: other
+          text: Spawn 2
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Strain Barracuda
+              - Strain Devilfish Alvi
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 2-3
+            class: Battleship
+            names:
+              - Alvus Ruler 7 Supreme Alvus Parasite
+            triggers: Last BS triggers Spawn 3
+          - count: "1"
+            class: Elite Battleship
+            names:
+              - Sentient Alvus Controller
+            triggers: escalation trigger
+            drop: Drops drone components. May drop sentient modules and/or a Rogue Drone chip.
+      - id: spawn-3
+        trigger:
+          on: other
+          text: Spawn 3
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Strain Infester
+              - Strain Decimator
+              - Strain Splinter
+              - Strain Render Alvi
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            triggers: Attacking any of these ships triggers Spawn 4
+          - count: 3-4
+            class: Battleship
+            names:
+              - Alvus Ruler
+              - Supreme Alvus Parasite
+            triggers: Attacking any of these ships triggers Spawn 4
+      - id: spawn-4
+        trigger:
+          on: other
+          text: Spawn 4
+          confidence: inferred
+        spawns:
+          - count: 2-4
+            class: Elite Frigate
+            names:
+              - Strain Sunder
+              - Strain Raider Alvi
+          - count: 3-4
+            class: Destroyer
+            names:
+              - Marauder Alvior
+sde:
+  dungeonIds:
+    - 1267

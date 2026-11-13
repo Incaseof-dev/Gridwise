@@ -1,0 +1,177 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: smash-the-gallente-stockyard
+kind: mission
+name: Smash The Gallente Stockyard
+level: 5
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Smash The Gallente Stockyard
+    url: https://wiki.eveuniversity.org/Smash_The_Gallente_Stockyard
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "199248"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: sensorDamp
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Manica, Libertus"
+  - text: "Suggested ships: Passive Tanking Ships (Nighthawk, Drake, Onyx etc.) (Active ships with Logistics)"
+  - text: "Space type: Deadspace (MWD does not work) with single entry gate"
+pockets:
+  - name: Warp-In
+    notes:
+      - text: Acceleration gate 18km away
+  - name: Pocket 1
+    notes:
+      - text: "Tips: Spawn 1 has a maximum of 814 dps (39% kinetic, 61% thermal)"
+      - text: "Tips: Spawn 2 has a maximum of 515 dps (37% kinetic, 63% thermal)"
+    waves:
+      - id: spawn-1
+        trigger:
+          on: other
+          text: Spawn 1
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Elite Federation Manica
+              - Elite Federation Libertus
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Elite Federation Quadrieris
+              - Elite Federation Mentes
+          - count: "5"
+            class: Battleship
+            names:
+              - Federation Praktor Praeses
+              - Federation Praktor Phanix
+              - Federation Praktor Hexeris
+      - id: spawn-2
+        trigger:
+          on: other
+          text: Spawn 2
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Elite Frigate
+            names:
+              - Elite Federation Manica
+              - Elite Federation Libertus
+              - Elite Federation Matara
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Elite Federation Arx
+            ewar:
+              - kind: sensorDamp
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Elite Federation Mentes
+              - Elite Federation Quadrieris
+  - name: Pocket 2
+    notes:
+      - text: "Tips: Spawn 1 has a maximum of 1393 dps (33% kinetic, 67% thermal)"
+      - text: "Tips: Spawn 2 has a maximum of 1623 dps (38% kinetic, 62% thermal)"
+      - text: "Tips: It is recommend that you use Logistics support to help keep your passive tank alive"
+    waves:
+      - id: structutes
+        trigger:
+          on: other
+          text: Structutes
+          confidence: inferred
+        spawns:
+          - count: "?"
+            class: Structure
+            names:
+              - Raider Outpost
+            note: Objective
+      - id: spawn-1
+        trigger:
+          on: other
+          text: Spawn 1
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Battleship
+            names:
+              - Federation Praktor
+              - Federation Hyperion
+              - Federation Hexeris
+          - count: "3"
+            class: Battleship
+            names:
+              - Federation Praktor Navis Praetoria
+            ewar:
+              - kind: sensorDamp
+          - count: "10"
+            class: Sentry
+            names:
+              - Gallente Cruise Missile Battery
+          - count: "3"
+            class: Sentry
+            names:
+              - Gallente Stasis Tower
+            ewar:
+              - kind: web
+          - count: "2"
+            class: Sentry
+            names:
+              - Gallente Energy Neutralizer III
+            ewar:
+              - kind: neut
+            triggers: after 2 minutes 2x more on destruction of initial 2
+          - count: "2"
+            class: Sentry
+            names:
+              - Gallente Energy Neutralizer III
+            group: On destruction of Energy Neutralizers
+            ewar:
+              - kind: neut
+      - id: spawn-2
+        trigger:
+          on: other
+          text: Spawn 2
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Elite Frigate
+            names:
+              - Elite Federation Manica
+              - Elite Federation Libertus
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "5"
+            class: Elite Cruiser
+            names:
+              - Elite Federation Quadrieris
+              - Elite Federation Mentes
+              - Elite Federation Navis
+          - count: "10"
+            class: Battleship
+            names:
+              - Federation Praktor Hyperion
+              - Federation Praktor Hexeris
+              - Federation Praktor Praeses
+          - count: "4"
+            class: Sentry
+            names:
+              - Gallente Energy Neutralizer III
+            ewar:
+              - kind: neut

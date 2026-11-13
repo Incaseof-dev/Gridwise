@@ -1,0 +1,187 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-score-minmatar-republic-level-4
+kind: mission
+name: The Score
+level: 4
+enemyFaction: Minmatar Republic
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Score (Minmatar Republic) (Level 4)
+    url: https://wiki.eveuniversity.org/The_Score_(Minmatar_Republic)_(Level_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "224953"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Suggested ships: Ishtar"
+  - text: "Blitz: Pocket 1 and 2 can not be blitzed. Pocket 3 kill only the Battleships."
+lootNotes:
+  - text: "Insignias: 18.5m ISK"
+  - text: "Normal loot: ~300k ISK"
+  - text: "Salvage: ~1m ISK"
+  - text: "Insignias: 29.7m ISK"
+  - text: "Normal loot: ~100k ISK"
+  - text: "Salvage: ~400k ISK"
+  - text: "Insignias: 32.8m ISK"
+  - text: "Normal loot: ~600k ISK"
+  - text: "Salvage: ~1.4m ISK"
+  - text: "Insignias: 81m ISK"
+  - text: "Normal loot: ~1m ISK"
+  - text: "Salvage: ~2.8m ISK"
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: The gate is 60km away.
+    waves:
+      - id: single-group-50km
+        trigger:
+          on: other
+          text: Single Group (50km)
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Republic Kvarm
+          - count: "2"
+            class: Frigate
+            names:
+              - Republic Tribal Gleeda
+          - count: "1"
+            class: Frigate
+            names:
+              - Unknown
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Chief Republic Iflin
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Chief Republic Isak
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Chief Republic Kvarm
+          - count: "1"
+            class: Destroyer
+            names:
+              - Republic Faxi
+          - count: "1"
+            class: Destroyer
+            names:
+              - Republic Austri
+          - count: "6"
+            class: Cruiser
+            names:
+              - Republic Tribal Ormur
+          - count: "2"
+            class: Cruiser
+            names:
+              - Republic Tribal Rodul
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Republic Norn
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Republic Venis
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Republic Tribal Venis
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Unknown
+          - count: "1"
+            class: Battleship
+            names:
+              - Republic Sigur
+          - count: "2"
+            class: Battleship
+            names:
+              - Unknown
+  - name: Pocket 2
+    notes:
+      - text: Gate and NPCs are 40km away from warp-in.
+    waves:
+      - id: single-group-40km
+        trigger:
+          on: other
+          text: Single Group (40km)
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Cruiser
+            names:
+              - Republic Tribal Rodul
+          - count: "3"
+            class: Cruiser
+            names:
+              - Republic Tribal Ormur
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Republic Norn
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Republic Venis
+          - count: "2"
+            class: Battleship
+            names:
+              - Republic Jotun
+          - count: "2"
+            class: Battleship
+            names:
+              - Republic Jarl
+  - name: Pocket 3
+    waves:
+      - id: single-group
+        trigger:
+          on: other
+          text: Single Group
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Republic Tribal Gleeda
+          - count: "3"
+            class: Frigate
+            names:
+              - Republic Kvarm
+          - count: "4"
+            class: Cruiser
+            names:
+              - Republic Tribal Ormur
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Chief Republic Klaki
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Chief Republic Orsin
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Republic Nutia
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Republic Tribal Venis
+          - count: "3"
+            class: Battleship
+            names:
+              - Republic Jarl
+          - count: "1"
+            class: Battleship
+            names:
+              - Republic Jotun

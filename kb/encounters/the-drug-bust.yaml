@@ -1,0 +1,85 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-drug-bust
+kind: mission
+name: The Drug Bust
+level: 2
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Drug Bust
+    url: https://wiki.eveuniversity.org/The_Drug_Bust
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "218385"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Break up the drug deal and capture prisoners for questioning.
+restrictions:
+  - text: "Ship size limit: Cruiser or smaller"
+ewar:
+  - kind: sensorDamp
+notes:
+  - text: "Suggested ships: Destroyer, Cruiser"
+  - text: "Blitz: Kill Federation Industrial, loot prisoners, then warp out."
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: initial-hostiles
+        trigger:
+          on: warpIn
+          text: Initial Hostiles
+        spawns:
+          - count: 1-5
+            class: Frigate
+            names:
+              - Coreli Defender
+              - Coreli Initiate
+              - Coreli Protector
+            group: Group 1, 20km auto-aggro
+            triggers: Triggers Reinforcement 1
+          - count: 1-5
+            class: Destroyer
+            names:
+              - Corelior Soldier
+              - Corelior Trooper
+            group: Group 1, 20km auto-aggro
+          - count: "1"
+            class: Cruiser
+            names:
+              - Corelum Chief Watchman
+              - Corelum Chief Patroller
+            group: Group 1, 20km auto-aggro
+            ewar:
+              - kind: sensorDamp
+          - count: "1"
+            class: Industrial
+            names:
+              - Federation Industrial
+            group: Group 2, 35km
+            note: No standing loss, mission objective
+      - id: reinforcement-1-45km
+        trigger:
+          on: other
+          text: Reinforcement 1, 45km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Coreli Spy
+              - Coreli Agent
+            triggers: Spawns Reinforcement 2
+      - id: reinforcement-2-20km
+        trigger:
+          on: other
+          text: Reinforcement 2, 20km
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Coreli Initiate

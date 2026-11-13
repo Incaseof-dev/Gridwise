@@ -1,0 +1,368 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: angel-haven
+kind: anomaly
+name: Angel Haven
+dedRating: null
+anomalyClass: 9
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Angel Haven
+    url: https://wiki.eveuniversity.org/Angel_Haven
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "228883"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Ungated normal space pocket. There are 2 variants of this anomaly, commonly referred to as "gas" or "rock" haven by players. The rock haven variant is readily identified by the warp-in popup received. Each also feature different structures within the site.
+  - text: "Note: In Case of a Dreadnought spawn, note that if the only Ship left is the Dreadnought you must not leave the Site or the Dreadnought will despawn!"
+  - text: "Escalation: This site can escalate to Angel Cartel Naval Shipyard or alternatively escalate to Angel Capital Staging, Angel Shielded Starbase and Angel Occupied Mine."
+lootNotes:
+  - text: Bounty of the site is around 30 Million ISK (2020).
+npcs:
+  Chemical Factory:
+    sdeTypes:
+      - Fortified Angel Bunker
+    class: Structure
+  Pirate Gate:
+    sdeTypes:
+      - Fortified Smuggler's Gate
+    class: Structure
+pockets:
+  - name: Gas Haven Variant (Chemical Factory)
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Chemical Factory
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "5"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Marauder
+              - Arch Gistum Phalanx
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Gistatis Legionnaire
+              - Gistatis Primus
+          - count: 2-4
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Seraphim
+          - count: 2-4
+            class: Battleship
+            names:
+              - Gist Malakim
+              - Gist Throne
+            triggers: Last of this class
+          - count: "2"
+            class: Sentry
+            names:
+              - Factory Guard Sentry
+      - id: 1st-reinforcement-spawn
+        trigger:
+          on: other
+          text: 1st Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Arch Gistii Hunter
+              - Arch Gistii Impaler
+              - Arch Gistii Raider
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Liquidator
+              - Arch Gistum Phalanx
+          - count: 2-3
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+              - Gistatis Tribunus
+            triggers: Last of this class
+          - count: 3-4
+            class: Battleship
+            names:
+              - Gist Malakim
+              - Gist Throne
+      - id: 2nd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 2nd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Outlaw
+              - Arch Gistii Thug
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: Ewar unconfirmed
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Gistatis Praefectus
+              - Gistatis Tribuni
+          - count: "4"
+            class: Battleship
+            names:
+              - Gist Malakim
+              - Gist Throne
+      - id: 3rd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 3rd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Nomad
+            ewar:
+              - kind: web
+              - kind: targetPaint
+              - kind: warpDisruption
+            note: Point and Web unconfirmed
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Gistatis Legionnaire
+            note: type list incomplete on the source page
+          - count: "6"
+            class: Battleship
+            names:
+              - Gist Malakim
+              - Gist Seraphim
+              - Gist Throne
+      - id: 4th-reinforcement-spawn
+        trigger:
+          on: other
+          text: 4th Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Arch Gistii Nomad
+            ewar:
+              - kind: targetPaint
+            note: Ewar unconfirmed
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Gistatis Legionnaire
+              - Gistatis Praefectus
+              - Gistatis Tribuni
+          - count: 6-8
+            class: Battleship
+            names:
+              - Gist Malakim
+              - Gist Seraphim
+              - Gist Throne
+            triggers: Throne
+      - id: 5th-reinforcement-spawn
+        trigger:
+          on: other
+          text: 5th Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Arch Gistii Hijacker
+              - Arch Gistii Rogue
+              - Arch Gistii Thug
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: Ewar unconfirmed
+          - count: 4-5
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Seraphim
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - Domination Saint
+            drop: Possible Domination Battleship modules, Faction charges
+          - count: 0-1
+            class: Dreadnought
+            names:
+              - Angel Dreadnought
+            ewar:
+              - kind: web
+            drop: Possible Domination Battleship modules, Faction charges
+            note: encounter on Oct 22, 2023, Loot unconfirmed
+  - name: Rock Haven Variant (Pirate Gate)
+    notes:
+      - text: All hostile ships spawn within the Giant Snake-Shaped Asteroid structure making it easy to "speed tank" by orbiting that structure at optimal range.
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Pirate Gate
+          - count: "1"
+            class: Structure
+            names:
+              - Giant Snake-Shaped Asteroid
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+              - Gistatis Tribuni
+              - Gistatis Primus
+          - count: 3-4
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Seraphim
+      - id: 1st-reinforcement-spawn
+        trigger:
+          on: other
+          text: 1st Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Arch Gistii Impaler
+              - Arch Gistii Raider
+              - Arch Gistii Hunter
+          - count: 3-4
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Seraphim
+      - id: 2nd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 2nd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Arch Gistii Hijacker
+              - Arch Gistii Outlaw
+              - Arch Gistii Thug
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: Point and ewar unconfirmed
+          - count: 3-4
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Seraphim
+      - id: 3rd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 3rd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Arch Gistii Nomad
+              - Arch Gistii Ruffian
+            ewar:
+              - kind: targetPaint
+          - count: 3-4
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Seraphim
+      - id: 4th-reinforcement-spawn
+        trigger:
+          on: other
+          text: 4th Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Defeater
+              - Arch Gistum Smasher
+              - Arch Gistum Breaker
+            ewar:
+              - kind: targetPaint
+          - count: 3-4
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Seraphim
+      - id: 5th-reinforcement-spawn
+        trigger:
+          on: other
+          text: 5th Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 7-8
+            class: Battlecruiser
+            names:
+              - Gistatis Legionnaire
+            note: type list incomplete on the source page
+          - count: 7-8
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Seraphim
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - Domination Saint
+              - Domination Warlord
+            group: Possible Rare Spawn
+            drop: Possible Domination Battleship modules, Faction charges
+          - count: 0-1
+            class: Dreadnought
+            names:
+              - Angel Dreadnought
+              - Angel Domination Dreadnought
+            group: Possible Rare Spawn
+            ewar:
+              - kind: neut
+            drop: Possible Domination Battleship modules, Faction charges, + salvage(dom. only)
+            note: encounter on Aug 2024
+          - count: 0-1
+            class: Titan
+            names:
+              - Angel Domination Titan
+            group: Possible Rare Spawn
+            ewar:
+              - kind: neut
+            drop: Possible Domination Battleship modules, Capital Blueprints, Faction charges, + salvage
+    onWarpIn: have detected a stargate nearby. Its design indicates that it belongs to someone of ill repute, such as smugglers or pirates.
+sde:
+  dungeonIds:
+    - 2115

@@ -1,0 +1,90 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-averon-exchange
+kind: mission
+name: The Averon Exchange
+level: 4
+enemyFaction: Mercenaries
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Averon Exchange
+    url: https://wiki.eveuniversity.org/The_Averon_Exchange
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231344"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy hostile ships in the area
+ewar:
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Mercenary Wingmen"
+  - text: 5M in Bounties
+  - text: "Crossing the Line: Averon lies just a few jumps out from the Genesis border, and the intermingling of Gallente and Amarr cultures is evident on the system's station. Curiously, the station is a Caldari facility with a typically Caldari reputation for unscrupulousness. It's a melting pot of dark, cultural undertones, from the Gallente with their unrestrained hedonism, to the Caldari with their lust for ISK, and even Amarr slavers, ever keen to make some quick money selling captives and other tortured souls. Although the cultural might of the Federation has influenced the bordering systems in the Genesis region, the reverse is also true, if lesser known. Catering to the endless hunger for flesh that exists in certain Gallente circles, the Amarr slavers have few qualms or problems smuggling people a little way inside Federation borders. It has been said that some of the Federation's most depraved nightclubs and bars can be found in the systems where cheap slaves are only a few jumps away."
+  - text: Accept the Mission remotely.
+  - text: Ungated semi-deadspace pocket few jumps away in Averon. Destroy all Battleships to complete the Mission.
+  - text: Complete the Mission remotely.
+  - text: "Tips: All groups spawn very near the landing point; fly away from it as soon as possible"
+  - text: "Tips: All groups to be fought spawn very near the landing point; So, warp in, set bookmark, warp somewhere in system, warp to bookmark at desired range."
+pockets:
+  - name: Warp-in
+    notes:
+      - text: "The Averon Exchange: The Averon Exchange has been identified by the DED and Federation Customs as one of the most dangerous and illegal gatherings of criminals in the entire Elalan constellation. The location shifts from week to week as the inhabitants evade DED raids and set up elsewhere in the system. Various residents are wanted on charges of people-smuggling, forced prostitution, and illegal slaveholding. DED Threat Rating: Deadly"
+      - text: "Transmission from Pator 6 Leader: Persistent, aren't you, egger? Listen, we don't care who you work for, we don't care how well funded you are, and we don't care if you come back again and again in a new clone. If you think for even a moment that we're going to lie down and let you take that kid, you're as clueless as the last guy who came here, and about to be as dead."
+      - text: "Agent Conversation after completing the Mission: Good work killing those smugglers, pilot. We need to recover the child as soon as we can, but these scumbags clearly know what they're doing. I'm getting in over my head now; I think I should refer you to my superiors. I'm going to call them quickly. Get back to me in a moment."
+    waves:
+      - id: initial-defenders-2-km
+        trigger:
+          on: warpIn
+          text: Initial defenders (2 km)
+        spawns:
+          - count: 3-5
+            class: Frigate
+            names:
+              - Mercenary Elite Fighter
+          - count: 3-5
+            class: Frigate
+            names:
+              - Mercenary Wingman
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            triggers: Last destroyed triggers reinfocements
+          - count: "3"
+            class: Cruiser
+            names:
+              - Mercenary Commander
+      - id: reinforcement-group-1-10-km
+        trigger:
+          on: other
+          text: Reinforcement group 1 (10 km)
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Cruiser
+            names:
+              - Mercenary Corporal
+            triggers: Last destroyed triggers more reinforcements
+          - count: "4"
+            class: Cruiser
+            names:
+              - Mercenary Lieutenant
+      - id: reinforcement-group-2-20-km
+        trigger:
+          on: other
+          text: Reinforcement group 2 (20 km)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Mercenary Commander
+          - count: "5"
+            class: Battleship
+            names:
+              - Mercenary Overlord
+            triggers: Destroy to complete the Mission

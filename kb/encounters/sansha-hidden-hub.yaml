@@ -1,0 +1,299 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: sansha-hidden-hub
+kind: complex
+name: Sansha Hidden Hub
+dedRating: null
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Sansha Hidden Hub
+    url: https://wiki.eveuniversity.org/Sansha_Hidden_Hub
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "138925"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Escalation: It is unknown at this time if this site can trigger an Escalation."
+lootNotes:
+  - text: "Bounty: unknown"
+  - text: "Loot/salvage: unknown"
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Centii Butcher
+              - Centii Enslaver
+          - count: "5"
+            class: Destroyer
+            names:
+              - Centior Abomination
+              - Centior Monster
+            note: type list incomplete on the source page
+          - count: 5-6
+            class: Cruiser
+            names:
+              - Centum Mutilator
+              - Centum Fiend
+            ewar:
+              - kind: trackingDisruption
+            note: type list incomplete on the source page
+          - count: 6-8
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centatis Daemon
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Battleship
+            names:
+              - Centus Lord
+              - Centus Slave Lord
+            triggers: "Triggers Wave #2"
+      - id: wave-2
+        trigger:
+          on: other
+          text: "Wave #2"
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Centii Enslaver
+              - Centii Plague
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Centii Loyal Enslaver
+              - Centii Loyal Plague
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Centum Fiend
+              - Centum Hellhound
+            triggers: "Triggers Wave #3"
+      - id: wave-3
+        trigger:
+          on: other
+          text: "Wave #3"
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Centii Butcher
+              - Centii Enslaver
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Savage
+              - Centii Loyal Slavehunter
+            ewar:
+              - kind: trackingDisruption
+          - count: "3"
+            class: Destroyer
+            names:
+              - Centior Horror
+              - Centior Monster
+          - count: 2-3
+            class: Battleship
+            names:
+              - Centus Beast Lord
+              - Centus Plague Lord
+            ewar:
+              - kind: trackingDisruption
+            triggers: "Triggers Wave #4"
+      - id: wave-4
+        trigger:
+          on: other
+          text: "Wave #4"
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Centii Enslaver
+              - Centii Plague
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Centii Loyal Savage
+              - Centii Loyal Slavehunter
+            ewar:
+              - kind: trackingDisruption
+          - count: 1-2
+            class: Cruiser
+            names:
+              - Centum Fiend
+              - Centum Hellhound
+          - count: "4"
+            class: Battleship
+            names:
+              - Centus Beast Lord
+              - Centus Plague Lord
+            ewar:
+              - kind: trackingDisruption
+            triggers: "Triggers Wave #5"
+      - id: wave-5
+        trigger:
+          on: other
+          text: "Wave #5"
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Centii Enslaver
+              - Centii Plague
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Centii Loyal Savage
+              - Centii Loyal Slavehunter
+            ewar:
+              - kind: trackingDisruption
+          - count: 1-2
+            class: Cruiser
+            names:
+              - Centum Fiend
+              - Centum Hellhound
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Centum Fiend
+              - Centum Hellhound
+            ewar:
+              - kind: trackingDisruption
+          - count: "4"
+            class: Battleship
+            names:
+              - Centus Beast Lord
+              - Centus Plague Lord
+            ewar:
+              - kind: trackingDisruption
+            triggers: "Triggers Wave #6"
+      - id: wave-6
+        trigger:
+          on: other
+          text: "Wave #6"
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Centii Enslaver
+              - Centii Plague
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Centum Beast
+              - Centum Juggernaut
+            ewar:
+              - kind: trackingDisruption
+          - count: "4"
+            class: Battleship
+            names:
+              - Centus Beast Lord
+              - Centus Overlord
+            ewar:
+              - kind: trackingDisruption
+            triggers: "Triggers Wave #7"
+      - id: wave-7
+        trigger:
+          on: other
+          text: "Wave #7"
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Centii Enslaver
+              - Centii Plague
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Centii Loyal Enslaver
+              - Centii Loyal Plague
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Beast
+              - Centum Loyal Execrator
+            ewar:
+              - kind: trackingDisruption
+          - count: 1-2
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centatis Daemon
+          - count: "4"
+            class: Battleship
+            names:
+              - Centus Dark Lord
+              - Centus Dread Lord
+            ewar:
+              - kind: trackingDisruption
+            triggers: "Triggers Wave #5"
+      - id: wave-8
+        trigger:
+          on: other
+          text: "Wave #8"
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Centii Enslaver
+              - Centii Plague
+          - count: 1-2
+            class: Cruiser
+            names:
+              - Centum Mutilator
+              - Centum Torturer
+            triggers: "Triggers Wave #5"
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centatis Daemon
+      - id: wave-9
+        trigger:
+          on: other
+          text: "Wave #9"
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Centii Butcher
+              - Centii Manslayer
+          - count: 1-2
+            class: Cruiser
+            names:
+              - Centum Fiend
+              - Centum Hellhound
+      - id: faction-spawn
+        trigger:
+          on: other
+          text: Faction Spawn
+          confidence: inferred
+        spawns:
+          - count: 0-1
+            class: Unknown
+            names:
+              - True Sansha Ship
+            drop: Possible to contain faction ammo, tags, modules
+            note: Rare spawn
+sde:
+  dungeonIds:
+    - 3473

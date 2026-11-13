@@ -1,0 +1,64 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: intercept-the-pirate-smugglers-blood-raiders
+kind: mission
+name: Intercept The Pirate Smugglers
+level: 3
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Intercept The Pirate Smugglers (Blood Raiders)
+    url: https://wiki.eveuniversity.org/Intercept_The_Pirate_Smugglers_(Blood_Raiders)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "218661"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Fly to the Space-Port, ambush the convoy when it arrives, and then report back to your agent.
+notes:
+  - text: "Suggested ships: Battlecruiser, Recon, Faction Cruiser, Cruiser, Assault Frigate."
+lootNotes:
+  - text: "Bounty: ~426k ISK"
+  - text: "Loot: ~380k ISK"
+  - text: "Salvage: ~450k ISK"
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: There is a short delay after killing the first wave before the second wave spawns. Just wait for about 30 seconds to three minutes or so and they will appear.
+      - text: "Space-Port Authority: This area is off-limits to outsiders. Please leave immediately or we will be forced to attack."
+    waves:
+      - id: group-1-40km
+        trigger:
+          on: other
+          text: Group 1 (40km)
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Space Port Guardian
+          - count: "2"
+            class: Sentry
+            names:
+              - Sentry Gun
+      - id: group-2
+        trigger:
+          on: other
+          text: Group 2
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Destroyer
+            names:
+              - Convoy Guards
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Convoy Guard Captain
+          - count: "2"
+            class: Industrial
+            names:
+              - Blood Raider Transport Ship

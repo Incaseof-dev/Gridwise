@@ -1,0 +1,139 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-fortress-gallente-federation
+kind: mission
+name: The Fortress
+level: 5
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Fortress (Gallente Federation)
+    url: https://wiki.eveuniversity.org/The_Fortress_(Gallente_Federation)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "198292"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: neut
+  - kind: sensorDamp
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite Federation Manica/Libertus"
+  - text: "Blitz: Ignore initial spawns and triggers. Destroy Starbase Capital Ship Maintenance Array."
+pockets:
+  - name: Warp-In
+    notes:
+      - text: Everything auto-aggros on warp-in.
+      - text: Wave 1 Spawns when the Capital Ship Maintenance Array goes below 25% shield.
+      - text: Wave 2 Spawns when the Array goes below 50% armor.
+      - text: Wave 3 Spawns when the Array goes below 50% hull.
+      - text: Waves 1 and 3 are fighters, and do more DPS than frigates.
+      - text: The other structures drop no loot.
+      - text: "Tip: You can warp in at 100KM by warping to 0, stopping your ship, and then warping to 100KM."
+      - text: "Tip: Expect every frigate to web, scramble, or both."
+      - text: "Tip: Be prepared for frequent sensor dampening to come from the battlecruisers."
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Capital Ship Maintenance Array
+            triggers: Wave 1 when going below 25% shield. Wave 2 when going below 50% armor. Wave 3 when going below 50% hull.
+            drop: Trade goods and metal scraps.
+            note: Mission objective.
+      - id: initial-forces
+        trigger:
+          on: warpIn
+          text: Initial forces
+        spawns:
+          - count: "8"
+            class: Elite Frigate
+            names:
+              - Elite Federation Manica
+              - Elite Federation Libertus
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Federation Praktor Arx
+              - Federation Praktor Auxillia
+            ewar:
+              - kind: sensorDamp
+          - count: "6"
+            class: Battleship
+            names:
+              - Federation Praktor Phanix
+              - Federation Praktor Praeses
+          - count: "4"
+            class: Sentry
+            names:
+              - Tower Sentry Gallent III
+          - count: "4"
+            class: Sentry
+            names:
+              - Gallente Cruise Missile Battery
+          - count: "8"
+            class: Sentry
+            names:
+              - Gallente Energy Neutralizer Sentry III
+            ewar:
+              - kind: neut
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: "10"
+            class: Frigate
+            names:
+              - Capital Ship Maintenance Array Guards
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Elite Federation Manica
+              - Elite Federation Libertus
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Federation Praktor Arx
+              - Federation Praktor Auxillia
+            ewar:
+              - kind: sensorDamp
+          - count: "8"
+            class: Battleship
+            names:
+              - Federation Praktor Hyperion
+          - count: "4"
+            class: Sentry
+            names:
+              - Tower Sentry Gallente III
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: "10"
+            class: Fighters
+            names:
+              - Capital Ship Maintenance Array Guards

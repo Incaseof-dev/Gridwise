@@ -1,0 +1,58 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: studying-the-scene
+kind: mission
+name: Studying the Scene
+level: null
+enemyFaction: Rogue Drones & Duvolle Laboratories
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Studying the Scene
+    url: https://wiki.eveuniversity.org/Studying_the_Scene
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "222588"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Retrieve the Corrupted Drone Components and return them to your agent.
+notes:
+  - text: thumb|128px|Delphine Xarasier
+  - text: "Early Drones: The first drones in the Gallente-Caldari war were little more than mines with proximity detonators and limited movement, but soon they advanced to a level where a single drone rivalled a solo-fighter’s capabilities. The drones reversed the tide of the war and helped create a stalemate between the two empires."
+  - text: Objectives
+  - text: Retrieve the Corrupted Drone Components (1 m³) and return them to Delphine Xarasier.
+  - text: You will warp in at 36 km from the Corrupted Drone container. Head towards that container to loot it. At 45-50 km, 3 x "Broken Duvolle Laboratories Recon Drones" will be orbiting. You can ignore these drones completely - they will not attack. If you attack them anyway, they will pop quickly.
+  - text: Grab the item and return to the agent.
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: "Next Mission: Rendering Assistance"
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "?"
+            class: Container
+            names:
+              - Corrupted Drone
+            drop: 1x Corrupted Drone Components
+      - id: on-grid-3-ships
+        trigger:
+          on: other
+          text: On grid (3 ships)
+          confidence: inferred
+        spawns:
+          - count: 1-3
+            class: Drone
+            names:
+              - Broken Duvolle Laboratories Recon Drones
+            note: Renamed Belphegor/Mammon Apis
+          - count: 0-2
+            class: Frigate
+            names:
+              - Broken Duvolle Laboratories Recon Drones
+            note: Renamed Infester Alvi

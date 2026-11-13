@@ -1,0 +1,146 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: pre-emptive-opportunities
+kind: mission
+name: Pre-Emptive Opportunities
+level: null
+enemyFaction: Mercenaries
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Pre-Emptive Opportunities
+    url: https://wiki.eveuniversity.org/Pre-Emptive_Opportunities
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "206320"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the Caldari Logistics Center
+ewar:
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Spider Drones / Elite Frigates"
+  - text: "Paranoia: Hyasyoda is one of the oldest of the Caldari megacorporations, having been formed shortly after first contact with Gallente when the Caldari were still in their Industrial Age. Throughout State history, Hyasyoda executives have always been conservative and cautious. As a result, the corporation has informally claimed as theirs the age-old Caldari saying that “only the paranoid survive.”"
+  - text: "Blitz: Destroy the Caldari Logistics Center (Caldari Station1) and GFTFO, DPS will build up. Destroying the station will cause any rats currently on grid to despawn, but waves which have not been triggered yet will continue to spawn if you stick around. Station has quite a lot of HP, about 250K HP total. 950DPS applied right from the start will do it right before the spider drone wave. This mission can be completed remotely and the next mission accepted remotely."
+  - text: Ungated normal space.
+  - text: "The station drops 1x CPF.HYA LogInt Facility POI-26: Data Cache that you can keep as a souvenir."
+  - text: "Warning: Prioritize targets and eliminate EWAR threats asap. Reinforcement Waves are time based (3-5min) with no trigger. The final wave is very strong, might consider getting help from friends."
+  - text: "Note: The Mercenary Wingmen may web and point. The Spider Drones are very quick. After warping to the location you will receive the following objective - Destroy The Logistics Center. No additional waves spawn when shooting the Logistics Center. However, it does have a lot of armor and structure points. If you destroy the Logistics Center, and stay in the deadspace pocket, additional waves (up to the final wave) may continue to spawn."
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Mercenary Fighter
+          - count: "5"
+            class: Cruiser
+            names:
+              - Mercenary Lieutenant
+          - count: "2"
+            class: Battleship
+            names:
+              - Mercenary Overlord
+      - id: wave-1-after-3-5-minutes
+        trigger:
+          on: other
+          text: Wave 1 (after 3-5 minutes)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Mercenary Elite Fighter
+          - count: "2"
+            class: Cruiser
+            names:
+              - Mercenary Lieutenant
+          - count: "2"
+            class: Battleship
+            names:
+              - Mercenary Overlord
+      - id: wave-2-after-3-5-minutes
+        trigger:
+          on: other
+          text: Wave 2 (after 3-5 minutes)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Drone
+            names:
+              - Spider Drone I
+            ewar:
+              - kind: web
+          - count: "2"
+            class: Battleship
+            names:
+              - Mercenary Overlord
+      - id: wave-3-after-3-5-minutes
+        trigger:
+          on: other
+          text: Wave 3 (after 3-5 minutes)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Mercenary Wingman
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "6"
+            class: Elite Frigate
+            names:
+              - Mercenary Elite Fighter
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+      - id: wave-4-after-3-5-minutes
+        trigger:
+          on: other
+          text: Wave 4 (after 3-5 minutes)
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Cruiser
+            names:
+              - Mercenary Corporal
+      - id: wave-5-after-3-5-minutes
+        trigger:
+          on: other
+          text: Wave 5 (after 3-5 minutes)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Drone
+            names:
+              - Spider Drone I
+            ewar:
+              - kind: web
+          - count: "4"
+            class: Frigate
+            names:
+              - Mercenary Wingman
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "6"
+            class: Cruiser
+            names:
+              - Mercenary Corporal
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Mercenary Commander
+          - count: "6"
+            class: Battleship
+            names:
+              - Mercenary Overlord

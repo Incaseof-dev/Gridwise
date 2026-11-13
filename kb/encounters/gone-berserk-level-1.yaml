@@ -1,0 +1,88 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: gone-berserk-level-1
+kind: mission
+name: Gone Berserk
+level: 1
+enemyFaction: Equilibrium of Mankind
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Gone Berserk (Level 1)
+    url: https://wiki.eveuniversity.org/Gone_Berserk_(Level_1)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "208341"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Take care of the terrorist fanatics and then report back to your agent.
+notes:
+  - text: "Suggested ships: Frigate"
+  - text: "Blitz: Destroy the EoM Imp from the right group, as seen from the warp-in point. Destroy its reinforcements. Get out."
+  - text: Deadspace single pocket with gate.
+pockets:
+  - name: Single pocket
+    notes:
+      - text: Each initial Fiend will trigger reinforcement 1, and killing the wave will trigger reinforcement 2.
+      - text: Best to kill all Imps first, then one Fiend, then complete its waves before killing another of the initial Fiends.
+    waves:
+      - id: initial-forces
+        trigger:
+          on: warpIn
+          text: Initial forces
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - EoM Imp
+            group: Group 1 (Left, 30 km, auto aggro)
+          - count: "1"
+            class: Frigate
+            names:
+              - EoM Fiend
+            group: Group 1 (Left, 30 km, auto aggro)
+            triggers: Triggers reinforcement 1 when destroyed
+          - count: "2"
+            class: Frigate
+            names:
+              - EoM Imp
+            group: Group 2 (Middle, 20 km, auto aggro)
+          - count: "1"
+            class: Frigate
+            names:
+              - EoM Fiend
+            group: Group 2 (Middle, 20 km, auto aggro)
+            triggers: Triggers reinforcement 1 when destroyed
+          - count: "2"
+            class: Frigate
+            names:
+              - EoM Imp
+            group: Group 3 (Right, 50 km)
+          - count: "1"
+            class: Frigate
+            names:
+              - EoM Fiend
+            group: Group 3 (Right, 50 km)
+            triggers: Triggers reinforcement 1 when destroyed
+      - id: reinforcement-1-once-for-each-initial-group-eom-fiend
+        trigger:
+          on: warpIn
+          text: Reinforcement 1, once for each initial group EoM Fiend
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - EoM Fiend
+            triggers: Triggers reinforcement 2 when destroyed
+      - id: reinforcement-2-once-for-each-reinforcement-1
+        trigger:
+          on: other
+          text: Reinforcement 2, once for each reinforcement 1
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - EoM Incubus

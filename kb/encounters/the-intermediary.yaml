@@ -1,0 +1,26 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-intermediary
+kind: mission
+name: The Intermediary
+level: 4
+enemyFaction: null
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Intermediary
+    url: https://wiki.eveuniversity.org/The_Intermediary
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "206302"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Report to Katsen Isha
+notes:
+  - text: Agent gives 1x Dossier – Author Unknown (0.1 m3)
+  - text: "Nugoeihuvi Corporation: The Caldari State's answer to the cultural powerhouses of the Federation, Nugoeihuvi Corporation (more commonly known as simply “NOH”) is one of the leading entertainment providers of the cluster. Nugoeihuvi Corporation is rumored to have dealings with criminals and others of questionable moral character, although their working relationship with the real-estate giant Sukuuvestaa Corporation, for instance, has helped the company maintain at least the appearance of discretion at most times. Every day, all sorts of NOH goods flow freely to consumers across State space, frequently with little or no questions asked."
+  - text: thumb|left|128px|Katsen Isha
+  - text: Aursa Kunivuri is located at the Nugoeihuvi Information Center Beacon in Josameto.
+  - text: Report to Gian Katsen Isha at Poinen IV - Moon 13 - Nugoeihuvi Corporation Development Studio in Poinen System one jump away.

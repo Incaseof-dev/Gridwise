@@ -1,0 +1,80 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: halt-the-invasion-amarr
+kind: mission
+name: Halt the Invasion
+level: 4
+enemyFaction: Amarr Empire
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Halt the Invasion (Amarr)
+    url: https://wiki.eveuniversity.org/Halt_the_Invasion_(Amarr)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "216589"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Tracking disruption (Imperial Templar Forian), neuting (Imperial Dominator/Martyr)
+pockets:
+  - name: Single pocket
+    notes:
+      - text: The stargate has a lot of hit points
+      - text: Aggro from both groups on warp in.
+      - text: Reinforcements will arrive when the stargate is down to structure. Aggro on arrival.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Imperial Templar Forian
+            group: Group 1 (30 km)
+            ewar:
+              - kind: trackingDisruption
+          - count: "2"
+            class: Frigate
+            names:
+              - Imperial Templar Paladin
+            group: Group 1 (30 km)
+          - count: "5"
+            class: Cruiser
+            names:
+              - Imperial Templar Donus
+              - Imperial Templar Tamir
+            group: Group 1 (30 km)
+          - count: "3"
+            class: Cruiser
+            names:
+              - Imperial Justicar
+            group: Group 2 (70 km)
+          - count: "3"
+            class: Battleship
+            names:
+              - Imperial Templar Dominator
+              - Imperial Ultara
+              - Imperial Tanakh
+            group: Group 2 (70 km)
+          - count: "3"
+            class: Battleship
+            names:
+              - Imperial Dominator
+              - Imperial Martyr
+            group: Group 2 (70 km)
+            ewar:
+              - kind: neut
+      - id: reinforcements
+        trigger:
+          on: other
+          text: Reinforcements
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Elite Cruiser
+            names:
+              - Divine Imperials

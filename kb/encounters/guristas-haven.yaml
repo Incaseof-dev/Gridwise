@@ -1,0 +1,345 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: guristas-haven
+kind: anomaly
+name: Guristas Haven
+dedRating: null
+anomalyClass: 9
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Guristas Haven
+    url: https://wiki.eveuniversity.org/Guristas_Haven
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225160"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: The site is an open Deadspace pocket, one may warp to preferred distance. Killing the last hostile ship triggers a reinforcement spawn.
+  - text: The site is an open Deadspace pocket, one may warp to preferred distance. Killing the last hostile ship triggers a reinforcement spawn.
+  - text: "Escalation: This anomaly can escalate to The Maze DED 10/10"
+lootNotes:
+  - text: Clearing the site rewards ~30 M isk in bounties.
+npcs:
+  Pirate Gate:
+    sdeTypes:
+      - Fortified Smuggler's Gate
+    class: Structure
+  Chemical Factory:
+    sdeTypes:
+      - Fortified Guristas Bunker
+    class: Structure
+pockets:
+  - name: Walkthrough (rock)
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Pirate Gate
+          - count: "1"
+            class: Structure
+            names:
+              - Giant Snake-Shaped Asteroid
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: 3- 9
+            class: Battlecruiser
+            names:
+              - Pithatis Enforcer
+              - Pithatis Death Dealer
+            ewar:
+              - kind: ecm
+          - count: 2- 4
+            class: Battleship
+            names:
+              - Pith Usurper
+              - Pith Massacrer
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: 2- 4
+            class: Elite Frigate
+            names:
+              - Dire Pithi Destructor
+              - Dire Pithi Wrecker
+          - count: 2- 4
+            class: Battleship
+            names:
+              - Pith Usurper
+              - Pith Massacrer
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: 3- 9
+            class: Elite Frigate
+            names:
+              - Dire Pithi Infiltrator
+              - Dire Pithi Imputor
+            ewar:
+              - kind: warpDisruption
+          - count: 2- 4
+            class: Battleship
+            names:
+              - Pith Usurper
+              - Pith Massacrer
+      - id: wave-4
+        trigger:
+          on: other
+          text: Wave 4
+          confidence: inferred
+        spawns:
+          - count: 3- 9
+            class: Elite Frigate
+            names:
+              - Dire Pithi Plunderer
+              - Dire Pithi Wrecker
+          - count: 2- 6
+            class: Battleship
+            names:
+              - Pith Usurper
+              - Pith Massacrer
+      - id: wave-5
+        trigger:
+          on: other
+          text: Wave 5
+          confidence: inferred
+        spawns:
+          - count: 4- 7
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Annihilator
+              - Dire Pithum Killer
+            ewar:
+              - kind: ecm
+          - count: 2- 6
+            class: Battleship
+            names:
+              - Pith Usurper
+              - Pith Massacrer
+      - id: wave-6
+        trigger:
+          on: other
+          text: Wave 6
+          confidence: inferred
+        spawns:
+          - count: 6- 8
+            class: Battlecruiser
+            names:
+              - Pithatis Assassin
+              - Pithatis Enforcer
+              - Pithatis Executor
+              - Pithatis Revolter
+          - count: "7"
+            class: Battleship
+            names:
+              - Pith Usurper
+              - Pith Massacrer
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Dread Guristas Commander
+            group: Possible Rare Spawn
+            ewar:
+              - kind: ecm
+            drop: Possible Faction charges, modules or tags
+          - count: "1"
+            class: Dreadnought
+            names:
+              - Guristas Dreadnought
+            group: Possible Rare Spawn
+            ewar:
+              - kind: neut
+              - kind: web
+              - kind: warpDisruption
+            drop: Possible Battleship modules, TBC
+  - name: Walkthrough (gas)
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Chemical Factory
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: 3- 6
+            class: Cruiser
+            names:
+              - Pithum Abolisher
+            note: type list incomplete on the source page
+          - count: 3- 6
+            class: Battlecruiser
+            names:
+              - Pithatis Assassin
+            note: type list incomplete on the source page
+          - count: 4- 8
+            class: Battleship
+            names:
+              - Pith Conquistador
+              - Pith Destroyer
+              - Pith Massacrer
+              - Pith Usurper
+            triggers: Last Pith Conquistador triggers next wave
+          - count: "2"
+            class: Sentry
+            names:
+              - Factory Defense
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: 3- 6
+            class: Elite Frigate
+            names:
+              - Dire Pithii Arrogator
+            note: type list incomplete on the source page
+          - count: 2- 4
+            class: Cruiser
+            names:
+              - Pithum Abolisher
+            note: type list incomplete on the source page
+          - count: 2- 4
+            class: Battlecruiser
+            names:
+              - Pithatis Assassin
+            triggers: Last one triggers next wave
+            note: type list incomplete on the source page
+          - count: 2- 6
+            class: Battleship
+            names:
+              - Pith Conquistador
+            note: type list incomplete on the source page
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: 2- 4
+            class: Elite Frigate
+            names:
+              - Dire Pithii Arrogator
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: type list incomplete on the source page
+          - count: 2- 4
+            class: Battlecruiser
+            names:
+              - Pithatis Assassin
+            note: type list incomplete on the source page
+          - count: 2- 6
+            class: Battleship
+            names:
+              - Pith Conquistador
+            note: type list incomplete on the source page
+      - id: wave-4
+        trigger:
+          on: other
+          text: Wave 4
+          confidence: inferred
+        spawns:
+          - count: 1- 4
+            class: Elite Frigate
+            names:
+              - Dire Pithii Arrogator
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: type list incomplete on the source page
+          - count: 3- 6
+            class: Battlecruiser
+            names:
+              - Pithatis Assassin
+            note: type list incomplete on the source page
+          - count: 2- 6
+            class: Battleship
+            names:
+              - Pith Conquistador
+            note: type list incomplete on the source page
+      - id: wave-5
+        trigger:
+          on: other
+          text: Wave 5
+          confidence: inferred
+        spawns:
+          - count: 2- 6
+            class: Elite Frigate
+            names:
+              - Dire Pithii Arrogator
+            ewar:
+              - kind: ecm
+            note: type list incomplete on the source page
+          - count: 2- 4
+            class: Battlecruiser
+            names:
+              - Pithatis Assassin
+            note: type list incomplete on the source page
+          - count: 4- 8
+            class: Battleship
+            names:
+              - Pith Conquistador
+            triggers: Last one triggers next wave
+            note: type list incomplete on the source page
+      - id: wave-6
+        trigger:
+          on: other
+          text: Wave 6
+          confidence: inferred
+        spawns:
+          - count: 2-4
+            class: Elite Frigate
+            names:
+              - Dire Pithii Arrogator
+            ewar:
+              - kind: warpDisruption
+            note: type list incomplete on the source page
+          - count: 2-4
+            class: Battleship
+            names:
+              - Pith Conquistador
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Dread Guristas Commander
+            group: Possible Rare Spawn
+            drop: Possible Faction charges, modules or tags
+          - count: "1"
+            class: Dreadnought
+            names:
+              - Guristas Dreadnought
+            group: Possible Rare Spawn
+            ewar:
+              - kind: neut
+              - kind: web
+              - kind: warpDisruption
+            drop: Possible Battleship modules, TBC
+sde:
+  dungeonIds:
+    - 2283

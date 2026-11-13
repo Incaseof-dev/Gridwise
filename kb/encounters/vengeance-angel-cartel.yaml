@@ -1,0 +1,248 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: vengeance-angel-cartel
+kind: mission
+name: Vengeance
+level: 4
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Vengeance (Angel Cartel)
+    url: https://wiki.eveuniversity.org/Vengeance_(Angel_Cartel)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "229200"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal:
+    - explosive
+    - kinetic
+  resist:
+    - explosive
+    - kinetic
+    - em
+objectives:
+  - text: Assassinate the Angel leader, Hoborak Moon, and his entourage
+ewar:
+  - kind: targetPaint
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Angel Webifier/Viper (Web, Warp Disrupt)"
+  - text: "Suggested ships: Battleship, Marauder, T3C"
+  - text: Drones may get aggro
+  - text: "Videos: Solo Tengu, Machariel (with fit)"
+  - text: The BS/C are tanked well, and moon is the hardest to take down.
+  - text: This mission is somewhat easy, but it may take 30 minutes for the perfect ship. But consider it an hour and half to 2 hours.
+  - text: With an 1100 DPS Tengu, I was able to complete the mission in ~25 minutes
+  - text: You may get 20mil in bounties
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: The rats are in four groups, of which the closest sometimes aggros, but sometimes you land far enough that you can aggro one at a time. The furthest group is the hardest to tank both in this room and the whole mission.
+    waves:
+      - id: group-1-10-25km-auto-aggro
+        trigger:
+          on: other
+          text: Group 1, 10-25km (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Gistatis Primus
+              - Gistatis Tribuni
+          - count: "2"
+            class: Battleship
+            names:
+              - Gist General
+      - id: group-2-10km
+        trigger:
+          on: other
+          text: Group 2, 10km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battleship
+            names:
+              - Gist War General
+      - id: group-3-20km
+        trigger:
+          on: other
+          text: Group 3, 20km
+          confidence: inferred
+        spawns:
+          - count: "7"
+            class: Cruiser
+            names:
+              - Gistum Marauder
+              - Gistum Liquidator
+      - id: group-4-20-30km
+        trigger:
+          on: other
+          text: Group 4, 20-30km
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Angel Webifier
+              - Angel Viper
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Destroyer
+            names:
+              - Gistior Haunter
+          - count: "9"
+            class: Cruiser
+            names:
+              - Gistum Centurion
+              - Gistum Phalanx
+          - count: "2"
+            class: Battleship
+            names:
+              - Gist War General
+              - Gist War Nephilin
+  - name: Pocket 2
+    notes:
+      - text: There are four groups total and each aggro separately.
+    waves:
+      - id: group-1-5km-auto-aggro
+        trigger:
+          on: other
+          text: Group 1, 5km (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Gistatis Legionnaire
+              - Gistatis Primus
+      - id: group-2-25km
+        trigger:
+          on: other
+          text: Group 2, 25km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Gistum Marauder
+              - Gistum Liquidator
+          - count: "3"
+            class: Battleship
+            names:
+              - Gist Saint
+              - Gist Warlord
+            ewar:
+              - kind: targetPaint
+      - id: group-3-30km
+        trigger:
+          on: other
+          text: Group 3, 30km
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Cruiser
+            names:
+              - Gistum Centurion
+              - Gistum Phalanx
+          - count: "1"
+            class: Battleship
+            names:
+              - Gist Throne
+      - id: group-4-35km
+        trigger:
+          on: other
+          text: Group 4, 35km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Gistior Defacer
+          - count: "6"
+            class: Cruiser
+            names:
+              - Gistum Centurion
+              - Gistum Phalanx
+          - count: "1"
+            class: Battleship
+            names:
+              - Gist Nephilim
+            ewar:
+              - kind: targetPaint
+  - name: Pocket 3
+    notes:
+      - text: Hoborak Moon does a nasty amount of EM damage with Mjolnir Torpedoes. The Webifiers/Vipers should be a high priority target if you rely on speed tanking, since the webbing will allow Hoborak to apply his main damage to you much more easily. His resist profile is also modestly stronger than most Angel ships of his size (Weakest Explosive, 50%, Strongest EM 80%), and he repairs shield faster. 400+ sustained DPS in Explosive damage should be enough to crack his tank at a reasonable pace.
+      - text: Sentries have limited aggro range and do not need to be destroyed to complete the mission.
+      - text: Mission is complete once all ships are dead. Battlestation in the final room drops worthless loot, mostly ammo.
+    waves:
+      - id: group-1-2km-auto-aggro
+        trigger:
+          on: other
+          text: Group 1, 2km (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Destroyer
+            names:
+              - Gistior Seizer
+          - count: "2"
+            class: Cruiser
+            names:
+              - Gistum Marauder
+          - count: "1"
+            class: Battleship
+            names:
+              - Gist Commander
+      - id: group-2-50km
+        trigger:
+          on: other
+          text: Group 2, 50km
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Angel Webifier
+              - Angel Viper
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Gistatis Praefectus
+              - Gistatis Tribunus
+          - count: "1"
+            class: Battleship
+            names:
+              - Gist Warlord
+              - Gist Saint
+            ewar:
+              - kind: targetPaint
+          - count: "1"
+            class: Battleship
+            names:
+              - Hoborak Moon
+            drop: May drop faction loot
+      - id: group-3-60km
+        trigger:
+          on: other
+          text: Group 3, 60km
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Tower Sentry Angel III
+          - count: "2"
+            class: Sentry
+            names:
+              - Angel Heavy Missile Battery

@@ -1,0 +1,90 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: miscommunication
+kind: mission
+name: Miscommunication
+level: 3
+enemyFaction: Caldari State
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Miscommunication
+    url: https://wiki.eveuniversity.org/Miscommunication
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "229509"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Hack the Venal Regional Comms Tower structure
+restrictions:
+  - text: "Ship size limit: T1 Destroyer, Frigate"
+notes:
+  - text: Requires Hacking III; a Data Analyzer given by Agent
+  - text: Gated semi-deadspace pocket up to nine jumps away.
+  - text: "Blitz: hack the Venal Regional Comms Tower and warp out."
+  - text: Complete the Mission remotely.
+  - text: "Tips: Remember to equip the Data Analyzer before undocking"
+  - text: "Tips: Holoreel GRS-81A is a lore item"
+  - text: "Tips: Venal Regional Comms Tower is a Easy difficulty hack (70 HP green core). Since you will most likely not be using a hacking bonused ship if you do not have prior experience with the epic arc, take your time on the hack."
+  - text: "Tips: Three frigates sit on the warp-in in room 1 and auto-aggro on landing. The rest of the fleet is spaced out much further away and aggros relatively slowly as long as you don't shoot at them."
+pockets:
+  - name: Warp-in
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+  - name: Room 1
+    notes:
+      - text: Reinforcements arrive after successful hacking.
+    waves:
+      - id: initial-defenders-30-50-km
+        trigger:
+          on: warpIn
+          text: Initial defenders (30-50 km)
+        spawns:
+          - count: "10"
+            class: Frigate
+            names:
+              - Caldari Navy Patrol Frigate
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Caldari Navy Special Operations Patrol
+          - count: "2"
+            class: Destroyer
+            names:
+              - Caldari Navy Patrol Destroyer
+      - id: reinforcements
+        trigger:
+          on: other
+          text: Reinforcements
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Caldari Navy Patrol Frigate
+          - count: "2"
+            class: Destroyer
+            names:
+              - Caldari Navy Patrol Destroyer
+      - id: structures-12-km
+        trigger:
+          on: other
+          text: Structures (12 km)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Hackable
+            names:
+              - Venal Regional Comms Tower
+            drop: Holoreel GRS-81A
+            note: Easy difficulty

@@ -1,0 +1,41 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: gallente-detective-spotted
+kind: mission
+name: Gallente Detective Spotted
+level: 3
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Gallente Detective Spotted
+    url: https://wiki.eveuniversity.org/Gallente_Detective_Spotted
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191713"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Suggested ships: Cruiser"
+  - text: Acceleration gate, no hostiles on warp in
+pockets:
+  - name: Room 1
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Federation Navy Gamma I Support Frigate
+          - count: "1"
+            class: Cruiser
+            names:
+              - Federation Navy Detective
+          - count: "2"
+            class: Sentry
+            names:
+              - Tower Sentry Gallente II

@@ -1,0 +1,7 @@
+out/
+dist/
+node_modules/
+kb/encounters/
+kb/sitemap.json
+kb/abyss.json
+docs/screenshots/uploaded.json

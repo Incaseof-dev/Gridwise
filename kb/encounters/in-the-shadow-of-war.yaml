@@ -1,0 +1,464 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: in-the-shadow-of-war
+kind: mission
+name: In The Shadow Of War
+level: 1
+enemyFaction: Caldari State
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – In The Shadow Of War
+    url: https://wiki.eveuniversity.org/In_The_Shadow_Of_War
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223269"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal:
+    - thermal
+    - kinetic
+  resist:
+    - thermal
+    - kinetic
+objectives:
+  - text: Rescue the stranded pilot and return him to your agent's station.
+restrictions:
+  - text: "Ship size limit: Only allows: Corvette, Frigate, Destroyer, Cruiser"
+notes:
+  - text: In the Shadow of War is a 5 part mission chain. It consists of 4 Encounter and 1 Courier mission.
+  - text: Ships warp in on twenty-second intervals to the box near the gate, and give immediate aggro
+pockets:
+  - name: Part 1 of 5
+    notes:
+      - text: Damaged Escape Pod with the stranded pilot is in the second pocket.
+  - name: Pocket 2
+    waves:
+      - id: 15km-auto-aggro
+        trigger:
+          on: other
+          text: 15km, auto aggro
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - State Nagasa
+              - State Shinai
+  - name: First Pocket
+    waves:
+      - id: initial-forces-20km
+        trigger:
+          on: warpIn
+          text: Initial forces, 20km
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - State Nagasa
+              - State Shinai
+      - id: reinforcenent-1-auto-aggro
+        trigger:
+          on: other
+          text: Reinforcenent 1, auto aggro
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - State Shinai
+      - id: reinforcement-2-auto-aggro
+        trigger:
+          on: other
+          text: Reinforcement 2, auto aggro
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - State Katana
+      - id: reinforcements-3-auto-aggro
+        trigger:
+          on: other
+          text: Reinforcements 3, auto aggro
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - State Shukuro Shinai
+      - id: reinforcement-4-auto-aggro
+        trigger:
+          on: other
+          text: Reinforcement 4, auto aggro
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Destroyer
+            names:
+              - State Kai Gunto
+  - name: Second Pocket
+    waves:
+      - id: structure
+        trigger:
+          on: warpIn
+          text: Structure
+        spawns:
+          - count: "?"
+            class: Container
+            names:
+              - Damaged Escape Pod
+            drop: Stranded Pilot
+      - id: initial-forces
+        trigger:
+          on: warpIn
+          text: Initial Forces
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - State Wakizashi
+              - State Katana
+            group: Group A (40-50km, no auto aggro)
+          - count: "3"
+            class: Cruiser
+            names:
+              - State Bushi
+              - State Dogo
+            group: Group B (80-90km, aggro when you approach escape pod)
+            triggers: Last cruiser triggers reinforcement
+      - id: reinforcement-aggro-on-warp-in
+        trigger:
+          on: warpIn
+          text: Reinforcement, aggro on warp in
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - State Nagasa
+              - State Shinai
+  - name: Part 2 of 5
+    notes:
+      - text: Single pocket with no gate. No pirates on warp in, first wave spawns when container is looted.
+      - text: Take the datachip out of the cargo container, kill all the pirates and go back to your agent to complete the mission.
+      - text: Trigger reinforcement 2 is either timed or distance to reinforcement 1.
+    waves:
+      - id: structure
+        trigger:
+          on: warpIn
+          text: Structure
+        spawns:
+          - count: "?"
+            class: Container
+            names:
+              - Cargo Container
+            triggers: Reinforcement 1
+            drop: Encoded Data Chip
+      - id: reinforcement-1-auto-aggro
+        trigger:
+          on: other
+          text: Reinforcement 1, auto aggro
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - State Shinai
+              - State Wakizashi
+      - id: reinforcement-2
+        trigger:
+          on: other
+          text: Reinforcement 2
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Cruiser
+            names:
+              - State Bushi
+              - State Dogo
+      - id: reinforcement-3-auto-aggro
+        trigger:
+          on: other
+          text: Reinforcement 3, auto aggro
+          confidence: inferred
+        spawns:
+          - count: 7-8
+            class: Frigate
+            names:
+              - State Bo-Hi
+              - State Showato
+  - name: Part 4 of 5
+    notes:
+      - text: Ancient Ruins with the communication logs is in the pocket.
+  - name: Pocket 8
+    waves:
+      - id: initial-forces-19km-in-the-box
+        trigger:
+          on: warpIn
+          text: Initial Forces, 19km, In the box
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - State Bo-Hi
+              - State Showato
+      - id: reinforcements
+        trigger:
+          on: other
+          text: Reinforcements
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - State Nagasa
+              - State Shinai
+            group: Wave 1
+          - count: "1"
+            class: Cruiser
+            names:
+              - State Dogo
+            group: Wave 2
+          - count: "1"
+            class: Frigate
+            names:
+              - State Wakizashi
+            group: Wave 3
+          - count: "2"
+            class: Frigate
+            names:
+              - State Nagasa
+              - State Shinai
+            group: Wave 4
+          - count: "1"
+            class: Frigate
+            names:
+              - State Shinai
+            group: Wave 5
+          - count: "1"
+            class: Cruiser
+            names:
+              - State Bushi
+            group: Wave 6
+          - count: "3"
+            class: Frigate
+            names:
+              - State Bo-Hi
+              - State Showato
+            group: Wave 7
+          - count: "2"
+            class: Frigate
+            names:
+              - State Wakizashi
+              - State Katana
+            group: Wave 8
+          - count: "2"
+            class: Frigate
+            names:
+              - State Wakizashi
+              - State Katana
+            group: Wave 9
+  - name: Pocket
+    waves:
+      - id: structure
+        trigger:
+          on: warpIn
+          text: Structure
+        spawns:
+          - count: "?"
+            class: Container
+            names:
+              - Ancient Starbase Ruins
+            triggers: Looting the logs triggers the reinforcemnt
+            drop: Communications Log
+      - id: initial-forces-25km
+        trigger:
+          on: warpIn
+          text: Initial Forces, 25km
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - State Bo-Hi
+              - State Showato
+      - id: reinforcements
+        trigger:
+          on: other
+          text: Reinforcements
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - State Bushi
+  - name: Part 5 of 5
+    notes:
+      - text: Remember that you need to destroy the communications towers in the final pocket. Doing that will spawn the final wave. Destroying the Communications Tower will lead to a Standing Loss of 0.24 with Caldari State.
+  - name: Pocket 11
+    waves:
+      - id: 10-20km-auto-aggro
+        trigger:
+          on: other
+          text: 10 - 20km, auto aggro
+          confidence: inferred
+        spawns:
+          - count: "8"
+            class: Frigate
+            names:
+              - State Bo-Hi
+              - State Showato
+  - name: First Pocket
+    waves:
+      - id: initial-defenders-20-30km-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial defenders (20-30km, auto aggro)
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - State Nagasa
+              - State Shinai
+          - count: "2"
+            class: Cruiser
+            names:
+              - State Bushi
+              - State Dogo
+      - id: reinforcement-1-auto-aggro
+        trigger:
+          on: other
+          text: Reinforcement 1, auto aggro)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Cruiser
+            names:
+              - State Dogo
+      - id: reinforcement-2-auto-aggro
+        trigger:
+          on: other
+          text: Reinforcement 2, auto aggro)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Cruiser
+            names:
+              - State Bushi
+              - State Dogo
+  - name: Second Pocket
+    waves:
+      - id: initial-forces
+        trigger:
+          on: warpIn
+          text: Initial Forces
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - State Shukuro Shinai
+              - State Shukuro Shuriken
+            group: Group A (20-30km, auto aggro)
+            triggers: Destruction triggers Reinforcements
+          - count: "2"
+            class: Destroyer
+            names:
+              - State Kai Gunto
+              - State Yumi
+            group: Group B (40-50km, auto aggro)
+          - count: "3"
+            class: Cruiser
+            names:
+              - State Bushi
+            group: Group B (40-50km, auto aggro)
+      - id: first-reinforements
+        trigger:
+          on: other
+          text: First reinforements
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Cruiser
+            names:
+              - State Bushi
+              - State Dogo
+  - name: Third Pocket
+    waves:
+      - id: structure
+        trigger:
+          on: warpIn
+          text: Structure
+        spawns:
+          - count: "2"
+            class: Structure
+            names:
+              - Communications Tower
+            triggers: First destroyed triggers Tower Reinforcements
+      - id: initial-forces
+        trigger:
+          on: warpIn
+          text: Initial Forces
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - State Bo-Hi
+              - State Showato
+            group: Group A (20-30km, auto aggro
+          - count: "2"
+            class: Frigate
+            names:
+              - State Shukuro Shinai
+              - State Shukuro Shuriken
+            group: Group A (20-30km, auto aggro
+            triggers: Last sip triggers Reinforcements A
+          - count: "2"
+            class: Frigate
+            names:
+              - State Shinai
+            group: Group B, auto aggro
+          - count: "2"
+            class: Destroyer
+            names:
+              - State Kai Gunto
+              - State Yumi
+            group: Group B, auto aggro
+            triggers: Last ship triggers Reinforcement B
+      - id: reinforcements-a-auto-aggro
+        trigger:
+          on: other
+          text: Reinforcements A, auto aggro)
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - State Bo-Hi
+              - State Showato
+      - id: reinforcements-b-auto-aggro
+        trigger:
+          on: other
+          text: Reinforcements B, auto aggro)
+          confidence: inferred
+        spawns:
+          - count: "7"
+            class: Frigate
+            names:
+              - State Bo-Hi
+              - State Showato
+      - id: tower-reinforcements-auto-aggro
+        trigger:
+          on: other
+          text: Tower reinforcements, auto aggro
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - State Wakizashi
+              - State Katana
+          - count: "1"
+            class: Cruiser
+            names:
+              - State Communications Officer [State Bushi]

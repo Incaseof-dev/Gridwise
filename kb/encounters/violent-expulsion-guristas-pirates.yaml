@@ -1,0 +1,51 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: violent-expulsion-guristas-pirates
+kind: mission
+name: Violent Expulsion
+level: 1
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Violent Expulsion (Guristas Pirates)
+    url: https://wiki.eveuniversity.org/Violent_Expulsion_(Guristas_Pirates)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "192103"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Suggested ships: Destroyer"
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: initial-group-30km-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group, 30km (auto-aggro)
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Pithi Arrogator
+            triggers: Reinforcement
+          - count: "1"
+            class: Frigate
+            names:
+              - Pithi Infiltrator
+            note: Spawns 60 seconds after Pithi Arrogators
+      - id: reinforcement
+        trigger:
+          on: other
+          text: Reinforcement
+          confidence: inferred
+        spawns:
+          - count: 4-5
+            class: Frigate
+            names:
+              - Pithi Invader
+              - Pithi Imputor
+              - Pithi Infiltrator
+              - Pithi Arrogator

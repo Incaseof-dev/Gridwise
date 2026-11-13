@@ -1,0 +1,369 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: true-power-shipyards
+kind: escalation
+name: True Power Shipyards
+dedRating: null
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – True Power Shipyards
+    url: https://wiki.eveuniversity.org/True_Power_Shipyards
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "228464"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Escalation start: You are about to wrap up this little raid when all of a sudden you have an incoming transmission popping on one of your panels from someone asking where in flaming hell his ship components are. He continues to claim that he had ordered all sorts of stuff ages ago and nothing is getting delivered. This is all sent in Sansha code and comparison with the station logs from the place you just destroyed identify the person on the other end as a foreman from a local branch of the True Power corporation. When he hears some hesitation on your end, this guy gets all patronizing on you, raving back and forth about too many newbs being recruited to the production units, how your single digit IQ must be a shining light for every slug in the universe to follow and fabulates a bit about how he envisions the state your toilet training is in. He then shouts some instructions about how you are to get off your butt right this moment and haul it to a certain place, picking up his order for 300 10MN afterburners. He orders you to buzz him on this same frequency when you are there and that he will then give you further instructions."
+  - text: A large fleet spawns 15 minutes after destroying the Sansha Yard.
+  - text: A large fleet spawns 20 minutes after you warped into the site.
+  - text: "Warning: Your ship can be freely attacked by others - NO CONCORD INTERVENTION - in Low Security Systems (0.1 to 0.4) and Null Security Systems (0.0). Always check Star Map statistics (Active ships, Ship kills, Pod kills, etc) of Low Security and Null Security systems first before entering. Fitting a Cloaking Device module on your ship and making more than one Safe spot will provide more safety."
+  - text: The Sansha's Battletower has a lot of HP (50.000 HP Shield + 150.000 HP Armor), make sure to clear the site first or be able to tank the site for 5-10 minutes.
+  - text: Put the Sansha Battletower to structure to spawn the Foreman.
+  - text: "On completion: It may be all Sanshas knew where this station was, but the condition it is in now, they probably just want to forget it ever existed."
+  - text: The Sites have no gates, so there are no ship restrictions
+  - text: You can warp freely inside the site
+  - text: make a bookmark on warp-in to bounce
+  - text: Site 1 and 2 have no spawn at warp in
+  - text: Site 3 has high incoming DPS at warp in, but you can get out of range fairly easy
+  - text: You can warp in cloaked at Site 4 and bounce back to stay out of range (45km) of the towers
+  - text: Site 1-3 can be done in good tanked Tactical Destroyers
+  - text: Site 3 has faction loot only in the reinforcement spawn. The faction cruiser can be sniped as there is no initial aggro at 50km away after the group spawn.
+  - text: Site 4 can be done in an Stratios
+loot:
+  - item: (True) Sanshas Ammo
+    from: True Sansha's Juggernaut
+    note: est. 10k - 50M (wiki)
+  - item: True Sansha modules
+    from: True Sansha's Juggernaut
+    note: est. 10k - 140M (wiki) · rare
+  - item: True Sansha Brass Tag
+    from: True Sansha's Juggernaut
+    note: est. 60k (wiki)
+  - item: Mid-grade Nirvana Omega Blueprint
+    from: True Sansha's Slaughterer
+    note: est. 250M (wiki) · rare
+  - item: (True) Sanshas Ammo
+    from: True Sansha's Slaughterer
+    note: est. 10k - 50M (wiki)
+  - item: True Sansha modules
+    from: True Sansha's Slaughterer
+    note: est. 10k - 140M (wiki) · rare
+  - item: True Sansha Brass Tag
+    from: True Sansha's Slaughterer
+    note: est. 60k (wiki)
+  - item: (True) Sanshas Ammo
+    from: True Sansha's Slaughterer
+    note: est. 10k - 50M (wiki)
+  - item: True Sansha modules
+    from: True Sansha's Slaughterer
+    note: est. 10k - 140M (wiki) · rare
+  - item: Phantasm BPC
+    from: True Sansha's Slaughterer
+    note: est. 70M (wiki) · rare
+  - item: True Sansha Brass Tag
+    from: True Sansha's Slaughterer
+    note: est. 60k (wiki)
+  - item: Centii A-Type Modules
+    from: Sansha Foreman
+    note: est. 10k - 110M (wiki) · up to 3x
+  - item: Succubus BPC
+    from: Sansha Foreman
+    note: est. 50M (wiki) · rare
+pockets:
+  - name: Expedition Site One (High Security System)
+    notes:
+      - text: "Escalation Message: You didn't find 300 afterburners to fill the True Power order, but you guess that if you don't tell the guy, no one will. Not sure what this \"buzz\" was supposed to sound like, you hurl a loud beep! And some crackles on the prescribed frequency and a second later the True Power foreman descends on you again with curses and insults perfected by generations of pirate foremen. After a while his monologue draws to an end and he tells you to go and pick up 280 units of missile control modules at another location."
+      - text: "Escalation Ends Message: You didn't find 300 afterburners to fill the True Power order, but you guess that if you don't tell the guy, no one will. Not sure what this \"buzz\" was supposed to sound like, you hurl a loud beep! And some crackles on the prescribed frequency. No response. You run through your computer sound files for anything resembling a buzz, but still nothing. Either he has forgotten about you, or he has found out that you are not who he originally thought you were and you start getting a bad feeling about this place, if the latter is true, it will probably fill with some very mean looking Sanshas very soon and then there was this distress call... It might be a good idea to sneak away while it is still possible."
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Sansha Deadspace Outpost
+            triggers: spawns reinforcements/may trigger escalation
+      - id: reinforcements-after-attacking-the-deadspace-outpost
+        trigger:
+          on: other
+          text: Reinforcements after attacking the Deadspace Outpost
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Savage
+              - Centii Loyal Slavehound
+            ewar:
+              - kind: trackingDisruption
+          - count: "3"
+            class: Destroyer
+            names:
+              - Centior Horror
+              - Centior Monster
+          - count: "1"
+            class: Overseer Cruiser
+            names:
+              - True Sansha's Juggernaut
+            triggers: escalation trigger
+            drop: faction modules
+      - id: reinforcements-after-deadspace-outpost-taking-armor-damage
+        trigger:
+          on: other
+          text: Reinforcements after Deadspace Outpost taking armor damage
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Fiend
+              - Centum Loyal Hellhound
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Centatis Phantasm
+              - Centatis Specter
+      - id: reinforcements-after-deadspace-outpost-taking-structure-damage
+        trigger:
+          on: other
+          text: Reinforcements after Deadspace Outpost taking structure damage
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Execrator
+              - Centum Loyal Slaughterer
+            ewar:
+              - kind: trackingDisruption
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Centatis Daemon
+              - Centatis Behemoth
+  - name: Expedition Site Two (High Security System)
+    notes:
+      - text: Structures
+      - text: "Escalation Message:: Again you beep! the channel and instantly the foreman responds with a location and a list of different types of armor plates you are supposed to pick up. The abrupt message and something in the foreman's voice lets you wonder if he has found out that you are not who he thought you were... there seems to be only one way to find out."
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Sansha Yard
+            triggers: spawns reinforcements/may trigger escalation
+      - id: reinforcements-after-sansha-yard-taking-armor-damage-or-on-timer
+        trigger:
+          on: timer
+          text: Reinforcements after Sansha Yard taking armor damage, or on timer
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Mayslayer
+              - Centii Loyal Plague
+            ewar:
+              - kind: trackingDisruption
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Fiend
+              - Centum Loyal Hellhound
+            ewar:
+              - kind: trackingDisruption
+          - count: "1"
+            class: Overseer Cruiser
+            names:
+              - True Sansha's Slaughterer
+            triggers: escalation trigger
+            drop: faction modules
+  - name: Pocket 3
+    waves:
+      - id: reinforcements-15-minutes-after-sansha-yard-is-destroyed
+        trigger:
+          on: other
+          text: Reinforcements 15 minutes after Sansha Yard is destroyed
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Centii Butcher
+            note: type list incomplete on the source page
+          - count: "6"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Butcher
+            ewar:
+              - kind: trackingDisruption
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Destroyer
+            names:
+              - Centior Misshape
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Fiend
+            ewar:
+              - kind: trackingDisruption
+            note: type list incomplete on the source page
+          - count: "13"
+            class: Battlecruiser
+            names:
+              - Centatis Daemon
+              - Centatis Behemoth
+            note: type list incomplete on the source page
+  - name: Expedition Site Three (High Security System)
+    notes:
+      - text: "Escalation Message:: This time you have not had the time to message the foreman before he is on the channel and tells you with urgency in his voice, to head to the assembly plant immediately. There seem to be a lot of hostile activity in the area and he does not want to lose the modules you have gathered already to some common criminals. For the first time since you heard from this guy he does not open with a barrage of insults and you venture to ask where this assembly plant is. He hesitates for a second and then gives you a location."
+    waves:
+      - id: on-warp-in-5km-away
+        trigger:
+          on: warpIn
+          text: On Warp In 5km away
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Mayslayer
+              - Centii Loyal Plague
+            ewar:
+              - kind: trackingDisruption
+          - count: "5"
+            class: Destroyer
+            names:
+              - Centii Loyal Mayslayer
+              - Centii Loyal Plague
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Fiend
+              - Centum Loyal Hellhound
+            ewar:
+              - kind: trackingDisruption
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Centatis Daemon
+              - Centatis Behemoth
+            note: type list incomplete on the source page
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "2"
+            class: Structure
+            names:
+              - True Power Factory
+            triggers: trigger escalation
+  - name: Pocket 5
+    waves:
+      - id: reinforcements-20-minutes-after-you-warped-into-the-site
+        trigger:
+          on: other
+          text: Reinforcements 20 minutes after you warped into the site
+          confidence: inferred
+        spawns:
+          - count: "8"
+            class: Frigate
+            names:
+              - Centii Butcher
+            note: type list incomplete on the source page
+          - count: "6"
+            class: Destroyer
+            names:
+              - Centior Misshape
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Fiend
+            ewar:
+              - kind: trackingDisruption
+            note: type list incomplete on the source page
+          - count: "16"
+            class: Battlecruiser
+            names:
+              - Centatis Daemon
+              - Centatis Behemoth
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Overseer Cruiser
+            names:
+              - True Sansha's Slaughterer
+            drop: faction modules
+  - name: Expedition Site Four (Low Security System and sometimes High Sec)
+    notes:
+      - text: Sentries have proximity aggro of <55 km.
+      - text: The Foreman spawns at 0 on the battletower when it reaches structure.
+    waves:
+      - id: on-warp-in
+        trigger:
+          on: warpIn
+          text: On Warp In
+        spawns:
+          - count: "10"
+            class: Sentry
+            names:
+              - Sansha Stasis Tower
+            ewar:
+              - kind: web
+            triggers: Reinforcements Wave 1
+          - count: "10"
+            class: Sentry
+            names:
+              - Sansha Heavy Missile Battery
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Sansha's Battletower
+            triggers: trigger Foreman spawn when tower gets structure damage
+            drop: T1 modules and ammo
+      - id: reinforcements-wave-1
+        trigger:
+          on: other
+          text: Reinforcements Wave 1
+          confidence: inferred
+        spawns:
+          - count: "8"
+            class: Frigate
+            names:
+              - Centii Butcher
+            note: type list incomplete on the source page
+          - count: "6"
+            class: Destroyer
+            names:
+              - Centior Misshape
+            note: type list incomplete on the source page
+      - id: reinforcements-foreman-spawn
+        trigger:
+          on: other
+          text: Reinforcements Foreman spawn
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Overseer Battleship
+            names:
+              - Sansha Shipyard Foreman
+            drop: faction modules
+sde:
+  dungeonIds:
+    - 1716

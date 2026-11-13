@@ -1,0 +1,327 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: worlds-collide-angel-cartel-sanshas-nation-level-4
+kind: mission
+name: Worlds Collide
+level: 4
+enemyFaction: Angel Cartel & Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Worlds Collide (Angel Cartel & Sansha's Nation) (Level 4)
+    url: https://wiki.eveuniversity.org/Worlds_Collide_(Angel_Cartel_%26_Sansha's_Nation)_(Level_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223272"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Rescue the stranded crew members from the damaged ship in the third room of this deadspace complex.
+ewar:
+  - kind: targetPaint
+  - kind: web
+notes:
+  - text: "Web/warp disruption: All Elite Frigate types. Spy frigates only webs."
+  - text: "Suggested ships: Sleipnir, Raven, CNR, Drake"
+  - text: "Note: Heavy drone aggro in Angel & Sansha Pocket 2. Setting drones to passive in order to avoid accidental aggro is recommended."
+  - text: This is not a drone friendly mission. However, one thing I notice since the AI update is a "glitch". If you do not shoot anyone, and you release more than one drone shooting at one target. Once they start shooting at one of your drones you can scoop that drone back into the bay. The foes should not shoot at your other drones. This "glitch" maybe fixed down the road.
+  - text: This is a time consuming mission if you do both the Angel & Sansha sides.
+  - text: "Blitz: Pocket 1: Unlock the Angel Base gate either using a Zbikoki's Hacker Card (or killing the Gist War General). The card will be consumed upon activation."
+  - text: "Blitz: Pocket 2: (Angel Base): All ships in Pocket 2 have to be destroyed to unlock the gate."
+  - text: "Blitz: Pocket 3: (Research Outpost): Destroy Group 1, grab the hostages from the heron, fly back to your agent. No need to destroy entire groups. - confirmed in July 16, 2014."
+  - text: "Blitz: The Zbikoki's Hacker Card can be found in Zor's wreck in The Right Hand of Zazzmatazz or The Damsel In Distress Level 4 mission."
+npcs:
+  Angel Viper:
+    sdeTypes:
+      - named Angel Spy
+    class: Frigate
+pockets:
+  - name: Pocket 1 (War Zone)
+    notes:
+      - text: The two gates are locked until you kill the trigger ship from each faction. The trigger ships are ALWAYS a Gist War General and Centus Savage Lord from the respective groups.
+      - text: NO aggro from the initial groups until you attack them. Each group can be aggroed independently.
+      - text: Drones can be safely deployed to attack any group with aggroing the entire pocket.
+      - text: thumb|upright= 2
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Impaler
+              - Arch Gistii Hunter
+            group: "Angel Group:"
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Smasher
+              - Arch Gistum Crusher
+            group: "Angel Group:"
+            ewar:
+              - kind: targetPaint
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Gistatis Primus
+              - Gistatis Tribuni
+            group: "Angel Group:"
+          - count: "3"
+            class: Battleship
+            names:
+              - Gist War General
+              - Gist War General
+              - Gist Commander
+            group: "Angel Group:"
+            triggers: Gate Unlock Trigger
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Ravener
+              - Centii Loyal Scavanger
+            group: "Sansha Group:"
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Centatis Specter
+              - Centatis Wraith
+            group: "Sansha Group:"
+          - count: "4"
+            class: Battleship
+            names:
+              - Centus Savage Lord
+              - Centus Overlord
+              - Centus Beast Lord
+              - Centus Dark Lord
+            group: "Sansha Group:"
+            triggers: Gate Unlock Trigger (Centus Savage Lord)
+  - name: Pocket 2 (Angel Base)
+    notes:
+      - text: On warp-in, Group 1 will auto aggro. The Angel Spy frigates do not scramble but they do web. DO watch for Thugs and Outlaws scrams. All ships in this pocket have to be destroyed to unlock the gate.
+      - text: "Tip: Once Group 1 has been eliminated, it is fairly safe to deploy your drones for the remaining groups. Keep a close watch on your drones’ target to ensure that they do not stray and mistakenly attack a neutral group."
+      - text: "Tip: Recommended order for elimination: Group 1, Group 2, Group 3 and finally Group 4."
+      - text: "Tip: An Angel Overseer battleship will have a random chance to spawn in this pocket. The chance to spawn seems to be based on triggering the Angel Base warp gate in Pocket 1 and then completing the warp into this pocket."
+      - text: "Warning: DO NOT deploy your drones to attack Group 1. (I'm going to say this is optional. I didn't move and I had my drones attack group 1 with no problem. However, everyone in the room did target my drones and not me. T1 hobgoblin)"
+      - text: "Warning: Any attack on the Angel Spy frigates by fleet members will aggro the entire pocket. It is safe however, for them to kill the sentry guns in Group 1."
+      - text: "Warning: The FIRST ship that had warped into the pocket may kill the Angel Spy frigates without repercussions, as long as you stick to turret weapons/missiles."
+      - text: "Warning: NO aggro from the other groups until you attack them. Each group can be aggroed independently."
+      - text: thumb|upright= 2
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Angel Viper
+            group: Group 1 (2-3km, Auto-aggro)
+            ewar:
+              - kind: web
+          - count: "3"
+            class: Sentry
+            names:
+              - Angel Sentry Guns
+            group: Group 1 (2-3km, Auto-aggro)
+            ewar:
+              - kind: targetPaint
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Gistatis Praefectus
+              - Gistatis Tribuni
+            group: Group 2
+          - count: "2"
+            class: Battleship
+            names:
+              - Gist Saint
+              - Gist Warlord
+            group: Group 2
+          - count: "5"
+            class: Destroyer
+            names:
+              - Gistior Seizer
+              - Gistior Thrasher
+            group: Group 3 (20-30km)
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Phalanx
+              - Arch Gistum Centurion
+            group: Group 3 (20-30km)
+          - count: "6"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Thug
+              - Arch Gistii Outlaw
+            group: Group 4 (20-30 km)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "4"
+            class: Battleship
+            names:
+              - Gist General
+              - Gist Commander
+            group: Group 4 (20-30 km)
+          - count: "1"
+            class: Battleship
+            names:
+              - Angel Overseer
+            group: Random spawn
+  - name: Pocket 2 (Sansha Base)
+    notes:
+      - text: On warp-in, Group 1 will auto aggro. The Sansha Spy frigates do not scramble but they do web.
+      - text: "Tip: Once Group 1 has been eliminated, it is fairly safe to deploy your drones for the remaining groups. Keep a close watch on your drones’ target to ensure that they do not stray and mistakenly attack a neutral group."
+      - text: "Tip: Recommended order for elimination: Group 1, Group 2 and finally Group 3."
+      - text: "Tip: A Sansha's Overseer battleship will have a random chance to spawn in this pocket. The chance to spawn seems to be based on triggering the Sansha Base warp gate in Pocket 1 and then completing the warp into this pocket."
+      - text: "Warning: DO NOT deploy your drones to attack Group 1."
+      - text: "Warning: Any attack on the Sansha Spy frigates by fleet members will aggro the entire pocket. It is safe however, for them to kill the battleships in Group 1."
+      - text: "Warning: The FIRST ship that had warped into the pocket may kill the Sansha Spy frigates without repercussions, as long as you stick to turret weapons/missiles."
+      - text: "Warning: NO aggro from the other groups until you attack them. Each group can be aggroed independently."
+      - text: Sansha Base At Warp-In
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Sansha Spy
+            group: Group 1 (Auto-aggro)
+            ewar:
+              - kind: web
+          - count: "3"
+            class: Battleship
+            names:
+              - Centus Dread
+              - Centus Savage
+              - Centus Dark
+              - Centus Beast Lord
+            group: Group 1 (Auto-aggro)
+          - count: "5"
+            class: Destroyer
+            names:
+              - Centior Monster
+              - Centior Abomination
+            group: Group 2
+          - count: "4"
+            class: Battleship
+            names:
+              - Centus Dark Lord
+              - Centus Beast Lord
+              - Centus Overlord
+            group: Group 2
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Scavanger
+              - Centii Loyal Ravener
+            group: Group 3
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "5"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Hellhound
+              - Centum Loyal Fiend
+            group: Group 3
+          - count: "3"
+            class: Battleship
+            names:
+              - Centus Savage
+              - Centus Plague
+              - Centus Mutant
+              - Centus Slave Lord
+            group: Group 3
+          - count: "1"
+            class: Battleship
+            names:
+              - Sansha’s Overseer
+            group: Random Spawn (Auto-aggro)
+  - name: Pocket 3 (Research Outpost)
+    notes:
+      - text: You will warp-in randomly around 5km from the Heron. In addition to the immediate aggro from Group 1, there is a small chance that one or more other groups will aggro due to proximity triggers.
+      - text: If this happens, start moving away from the remaining neutral groups and check if the webbing/scrambling Elite Frigates have you locked. Kill them first if they have you locked.
+      - text: If you are fleeted with friends, have them focus fire on Group 1 or any groups that have been aggroed by mistake.
+      - text: The FIRST ship needs to act as an Fleet Commander and assign the appropriate targets. A common mistake is to have everyone shoot random or their closest target, which leads to the whole pocket being aggroed.
+      - text: "Sometimes fleet members that enter later will land differently and aggro groups that were unaggroed. If this includes the elite frigates and they scramble the new arrival, it can mean a quick death. All fleet members should have at least enough tank to survive until the scramblers are cleared. Having the lead ship tank the entire pocket is extremely difficult, as it can put down 1300-1500 DPS, in a wide variety of configurations. Here are some (extreme) examples:"
+      - text: 50% Exp, 31% Therm, 16% Kin, 2% EM
+      - text: 63% Exp, 15% EM, 15% Kin, 6% Therm
+      - text: 58% Exp, 23% Kin, 12% EM, 7% Therm
+      - text: "Tip: Warping-in from either Angel or Sansha Base does not change the ship combination for this pocket. It will always be Angel ships."
+      - text: Research Outpost At Warp-In
+      - text: 25.63M ISK (2025-04-22) by Verum Peto
+      - text: 10.6M ISK (2025-04-22) by Verum Peto
+      - text: 17.5M ISK (2025-04-22) by Verum Peto
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Phalanx
+              - Arch Gistum Centurion
+            group: Group 1
+          - count: "2"
+            class: Battleship
+            names:
+              - Gist War General
+              - Gist Warlord
+            group: Group 1
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Gistatis Legionnaire
+              - Gistatis Primus
+            group: Group 2
+          - count: "1"
+            class: Battleship
+            names:
+              - Gist Warlord
+              - Gist Malakim
+            group: Group 2
+          - count: "5"
+            class: Destroyer
+            names:
+              - Gistior Thrasher
+              - Gistior Seizer
+            group: Group 3
+          - count: "3"
+            class: Battleship
+            names:
+              - Gist Saint
+              - Gist Warlord
+              - Gist Malakim
+            group: Group 3
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Hijacker
+              - Arch Gistii Rogue
+            group: Group 4
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "1"
+            class: Battleship
+            names:
+              - Gist Nephilim
+              - Gist Cherubim
+            group: Group 4

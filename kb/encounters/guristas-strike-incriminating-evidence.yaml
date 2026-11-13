@@ -1,0 +1,50 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: guristas-strike-incriminating-evidence
+kind: mission
+name: Guristas Strike - Incriminating Evidence
+level: 3
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Guristas Strike - Incriminating Evidence
+    url: https://wiki.eveuniversity.org/Guristas_Strike_-_Incriminating_Evidence
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223430"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Eliminate the Odamian ships guarding their base and then report back to your agent.
+notes:
+  - text: "Suggested ships: Fast cruisers, able to outrun a 400m/s Brutix."
+  - text: Guristas Strike - Incriminating Evidence is part 5 of the mission chain Guristas Strike. Unlike most storyline missions this mission gives no faction standing, but it does give agent standing. The faction standing is awarded for the final mission in the chain.
+  - text: Deadspace with gates.
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: "Transmission from Odamian Master: How did you find us?! ... We know nothing about this kidnapping you speak of, but you certainly wont be leaving this place alive, you CONCORD-loving rat ..."
+      - text: Sometimes the Storage Facility drops general cargo, the rest drops nothing.
+      - text: "Previous: Guristas Strike - Possible Leads Next: Guristas Strike - The Flu Outbreak"
+    waves:
+      - id: at-the-warp-in-point-delayed-auto-aggro
+        trigger:
+          on: other
+          text: At the warp-in point, delayed auto aggro
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Odamian Privateers
+          - count: "3"
+            class: Cruiser
+            names:
+              - Odamian Veterans
+          - count: "1"
+            class: Cruiser
+            names:
+              - Odamian Master
+            drop: Might drop +3 implant

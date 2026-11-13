@@ -1,0 +1,237 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-blockade-blood-raiders-level-4
+kind: mission
+name: The Blockade
+level: 4
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Blockade (Blood Raiders) (Level 4)
+    url: https://wiki.eveuniversity.org/The_Blockade_(Blood_Raiders)_(Level_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "218108"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Eliminate the leader of the pirates blockading the stargate
+ewar:
+  - kind: web
+  - kind: neut
+  - kind: trackingDisruption
+  - kind: warpScramble
+notes:
+  - text: "Web/warp disruption: Elder Corpii Follower/Worshipper/Herald (Scram)"
+  - text: "Blitz: Kill all the trigger Battleships. You will need to snipe as the waves spawned will put out an incredible amount of DPS. Kill the final Corpus Pope Battleship."
+lootNotes:
+  - text: The Starbase Ship Maintenance Array drops random commodities.
+  - text: Approximately 20.16 million in bounties (if all rats are killed)
+  - text: Approximately 8.4 million in salvage (100% Jita sell value, 2021/09/28, Evepraisal).
+  - text: Approximately 10.2 million in loot (100% Jita sell value, 2021/09/28, Evepraisal).
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: All groups aggro on spawn.
+      - text: May (Fleet) warp to preferred distance.
+      - text: "Warning: The marked Cruisers may neut your capacitor heavily, best to kill them first."
+    waves:
+      - id: initial-group-26-28km
+        trigger:
+          on: warpIn
+          text: Initial Group, 26-28km
+        spawns:
+          - count: 3-4
+            class: Destroyer
+            names:
+              - Corpior Friar
+              - Corpior Devoter
+          - count: 4-5
+            class: Battleship
+            names:
+              - Corpus Apostle
+              - Corpus Oracle
+              - Corpus Monsignor
+              - Corpus Harbinger
+            ewar:
+              - kind: neut
+            triggers: Spawns Reinforcement 1
+            note: Corpus Harbinger neuts
+          - count: "1"
+            class: Sentry
+            names:
+              - Starbase Stasis Tower
+            ewar:
+              - kind: web
+      - id: reinforcement-1-3-groups
+        trigger:
+          on: other
+          text: Reinforcement 1 (3 groups)
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Elder Corpii Diviner
+              - Elder Corpii Raider
+              - Elder Corpii Reaver
+            group: Front, 45-47km
+          - count: 2-3
+            class: Battlecruiser
+            names:
+              - Corpatis Shade
+              - Corpatis Fanatic
+            group: Front, 45-47km
+          - count: 2-3
+            class: Destroyer
+            names:
+              - Corpior Friar
+              - Corpior Visionary
+              - Corpior Devoter
+            group: Bottom, 75-78km
+          - count: 2-3
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Dark Priest
+              - Elder Corpum Shadow Sage
+            group: Bottom, 75-78km
+          - count: 3-4
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Priest
+              - Elder Corpum Sage
+              - Elder Corpum Arch Templar
+            group: Rear, 80-83km
+            ewar:
+              - kind: trackingDisruption
+              - kind: neut
+            note: Arch Templar tracking disrupts
+          - count: 4-5
+            class: Battleship
+            names:
+              - Corpus Apostle
+              - Corpus Oracle
+              - Corpus Harbinger
+              - Corpus Monsignor
+            group: Rear, 80-83km
+            ewar:
+              - kind: neut
+            triggers: Spawns Reinforcement 2
+            note: Corpus Harbinger neuts
+      - id: reinforcement-2-2-groups
+        trigger:
+          on: other
+          text: Reinforcement 2 (2 Groups)
+          confidence: inferred
+        spawns:
+          - count: 1-3
+            class: Destroyer
+            names:
+              - Corpior Friar
+              - Corpior Visionary
+              - Corpior Devoter
+            group: Front, 52-54km
+          - count: 1-2
+            class: Battleship
+            names:
+              - Corpus Apostle
+              - Corpus Oracle
+            group: Front, 52-54km
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Elder Corpii Seeker
+              - Elder Corpii Collector
+            group: Rear, 85-90km
+            ewar:
+              - kind: trackingDisruption
+          - count: 4-5
+            class: Battleship
+            names:
+              - Corpus Cardinal
+              - Corpus Harbinger
+              - Corpus Monsignor
+            group: Rear, 85-90km
+            ewar:
+              - kind: neut
+            triggers: Spawns Reinforcement 3
+            note: Corpus Harbinger neuts
+      - id: reinforcement-3-2-groups
+        trigger:
+          on: other
+          text: Reinforcement 3 (2 Groups)
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Destroyer
+            names:
+              - Corpior Bishop
+              - Corpior Shade
+              - Corpior Seer
+              - Corpior Fanatic
+            group: Bottom, 85-89km
+          - count: 3-4
+            class: Battleship
+            names:
+              - Corpus Cardinal
+              - Corpus Monsignor
+            group: Bottom, 85-89km
+          - count: 2-3
+            class: Destroyer
+            names:
+              - Corpior Friar
+              - Corpior Visionary
+              - Corpior Cleric
+              - Corpior Converter
+            group: Rear, 68-70km
+          - count: 2-3
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Revenant
+              - Elder Corpum Arch Templar
+            group: Rear, 68-70km
+            ewar:
+              - kind: trackingDisruption
+              - kind: neut
+            note: Arch Templar tracking disrupts
+          - count: "1"
+            class: Battleship
+            names:
+              - Corpus Harbinger
+            group: Rear, 68-70km
+            ewar:
+              - kind: neut
+            triggers: Spawns Reinforcement 4
+      - id: reinforcement-4-50-53km
+        trigger:
+          on: other
+          text: Reinforcement 4, 50-53km
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Elder Corpii Follower
+              - Elder Corpii Worshipper
+              - Elder Corpii Herald
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: 3-4
+            class: Battleship
+            names:
+              - Corpus Cardinal
+              - Corpus Monsignor
+          - count: "1"
+            class: Battleship
+            names:
+              - Corpus Pope
+            note: Mission objective
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - Dark Blood Battleship
+            drop: May drop faction modules
+            note: Very rare spawn

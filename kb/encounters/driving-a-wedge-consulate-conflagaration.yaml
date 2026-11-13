@@ -1,0 +1,51 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: driving-a-wedge-consulate-conflagaration
+kind: mission
+name: Driving a Wedge - Consulate Conflagaration
+level: 3
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Driving a Wedge - Consulate Conflagaration
+    url: https://wiki.eveuniversity.org/Driving_a_Wedge_-_Consulate_Conflagaration
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "193177"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the Gallente Flagship (BattleShip)
+notes:
+  - text: "Suggested ships: BattleCruiser"
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: single-pocket-50km
+        trigger:
+          on: other
+          text: Single Pocket,50km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Elite Federation Insidiator
+            ewar:
+              - kind: sensorDamp
+          - count: "5"
+            class: Destroyer
+            names:
+              - Federation Arcus
+              - Federation Pelekus
+          - count: "4"
+            class: Cruiser
+            names:
+              - Federation Praktor Legonarius
+              - Federation Praktor Centurion
+          - count: "1"
+            class: Battleship
+            names:
+              - Federation Praktor Magister

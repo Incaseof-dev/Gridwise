@@ -1,0 +1,72 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-damsel-in-distress-level-3
+kind: mission
+name: The Damsel in Distress
+level: 3
+enemyFaction: Mercenaries
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Damsel in Distress (Level 3)
+    url: https://wiki.eveuniversity.org/The_Damsel_in_Distress_(Level_3)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "204450"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal: []
+  resist:
+    - kinetic
+    - thermal
+objectives:
+  - text: "Acquire these goods: 1x The Damsel (0.1m³)"
+notes:
+  - text: "Suggested ships: Any battlecruiser, assault frigate or HAC, fast cruiser for blitzing"
+  - text: Structure deals Area of Effect damage when blown up
+  - text: "Blitz: Destroy the pleasure hub, loot the canister and rescue the damsel, and head home."
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: "Reinforcements: You notice Kruul sending out distress signals, as he was attacked."
+      - text: If you blow up the Pleasure Hub before you kill Kruul or if you kill him in one hit, he won't be able to call in reinforcements.
+      - text: The damage can get intense you may consider warping in at 50km to snipe.
+    waves:
+      - id: mass-aggro-on-warp-in
+        trigger:
+          on: warpIn
+          text: Mass aggro on warp in
+        spawns:
+          - count: "8"
+            class: Frigate
+            names:
+              - Kruul's Henchman
+            group: Group 1 (1-25km)
+          - count: "4"
+            class: Cruiser
+            names:
+              - Pleasure Hub Guardian
+            group: Group 1 (1-25km)
+          - count: "1"
+            class: Cruiser
+            names:
+              - Kruul
+            group: Group 1 (1-25km)
+          - count: "1"
+            class: Structure
+            names:
+              - Kruul's Pleasure Hub
+            group: Group 1 (1-25km)
+            drop: The Damsel
+          - count: "4"
+            class: Frigate
+            names:
+              - Pleasure Hub Patroller
+            group: Reinforcements - Spawn after you attack Kruul
+          - count: "5"
+            class: Cruiser
+            names:
+              - Pleasure Hub Guardian
+            group: Reinforcements - Spawn after you attack Kruul

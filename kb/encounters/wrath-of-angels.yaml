@@ -1,0 +1,77 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: wrath-of-angels
+kind: mission
+name: Wrath of Angels
+level: 3
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Wrath of Angels
+    url: https://wiki.eveuniversity.org/Wrath_of_Angels
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231723"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Kill Yukiro Demense
+ewar:
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Yukiro Demense"
+  - text: 0.01% Guristas Pirates Standing Loss; 1M ISK Yukiro Demense Bounty
+  - text: Accept the Mission remotely.
+  - text: Gated deadspace pocket up to seven jumps away.
+  - text: "Blitz: take the gate and kill Yukiro Demense."
+  - text: "Tips: You do not need to kill the Cruise Missile Batteries. They lose aggro past 50-60 km so if you pull Yukiro Demense far enough they will be no threat."
+  - text: "Tips: Yukiro Demense minimum resistance is 64% Kinetic Shields and Armour"
+  - text: "Tips: Wait until Yukiro Demense is at least 40 km away from the Remote-Repair Facility Structure before attacking to avoid it repairing him; Yukiro Demense will approach you at 300 m/s"
+  - text: "Tips: Destroying the Remote-Repair Facility Structure destroys the Cruise Missile Batteries but incurs an additional 3.0% Guristas Pirates Standing Loss"
+pockets:
+  - name: Warp-in
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+  - name: Room 1
+    notes:
+      - text: "Logistics Facility Detected: As your warp drive hurls you towards the last known location of Yukiro Demense, you notice a large repair station on your scanner. Clearly, he's prepared himself for you this time."
+      - text: "Yukiro Demense taunt: I've been waiting for you, my little Cartel pet. Time to die."
+    waves:
+      - id: group-1-70-km
+        trigger:
+          on: other
+          text: Group 1 (70 km)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Yukiro Demense
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Sentry
+            names:
+              - Cruise Missile Battery
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Remote-Repair Facility
+            note: Repairs nearby ships

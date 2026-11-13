@@ -1,0 +1,137 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: pirate-intrusion-serpentis
+kind: mission
+name: Pirate Intrusion
+level: 2
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Pirate Intrusion (Serpentis)
+    url: https://wiki.eveuniversity.org/Pirate_Intrusion_(Serpentis)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231074"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Our surveillance cameras just spotted a few groups of hostile ships enter our system. Head out and bring me their heads on a plate, spare no one.
+ewar:
+  - kind: sensorDamp
+notes:
+  - text: "Suggested ships: Cruiser"
+  - text: "Blitz: Destroy everything in 1st Pocket, then Cruisers and Destroyers in 2nd Pocket."
+  - text: There is an acceleration gate upon warp-in. There are no NPCs at the gate.
+pockets:
+  - name: 1st Pocket
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Corelior Infantry
+              - Corelior Sentinel
+            group: 1st Group, 25km (auto-aggro)
+          - count: "2"
+            class: Frigate
+            names:
+              - Coreli Watchman
+            group: 2nd Group, 30km
+            ewar:
+              - kind: sensorDamp
+          - count: "2"
+            class: Frigate
+            names:
+              - Coreli Watchman
+              - Coreli Patroller
+            group: 3rd Group, 35km
+            ewar:
+              - kind: sensorDamp
+          - count: "1"
+            class: Destroyer
+            names:
+              - Corelior Infantry
+            group: 3rd Group, 35km
+          - count: "2"
+            class: Frigate
+            names:
+              - Coreli Agent
+              - Coreli Spy
+            group: 4th Group, 35km
+          - count: "1"
+            class: Destroyer
+            names:
+              - Corelior Soldier
+              - Corelior Trooper
+            group: 4th Group, 35km
+          - count: "1"
+            class: Cruiser
+            names:
+              - Corelum Chief Watchman
+            group: 4th Group, 35km
+            ewar:
+              - kind: sensorDamp
+          - count: "3"
+            class: Frigate
+            names:
+              - Coreli Defender
+              - Coreli Guard
+              - Coreli Protector
+              - Coreli Safeguard
+            group: 5th Group, 35km
+  - name: 2nd Pocket
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corelior Soldier
+              - Corelior Trooper
+            group: 1st Group, 25km
+          - count: "1"
+            class: Cruiser
+            names:
+              - Corelum Chief Scout
+              - Corelum Chief Spy
+            group: 1st Group, 25km
+          - count: "3"
+            class: Frigate
+            names:
+              - Coreli Defender
+              - Coreli Protector
+            group: 2nd Group, 40km
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Guard
+            group: 2nd Group, 40km
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corelior Infantry
+              - Corelior Soldier
+            group: 3rd Group, 70km
+          - count: "1"
+            class: Cruiser
+            names:
+              - Corelum Chief Patroller
+              - Corelum Chief Watchman
+            group: 3rd Group, 70km
+            ewar:
+              - kind: sensorDamp
+          - count: "5"
+            class: Frigate
+            names:
+              - Coreli Agent
+              - Coreli Spy
+            group: 4th Group, 75km

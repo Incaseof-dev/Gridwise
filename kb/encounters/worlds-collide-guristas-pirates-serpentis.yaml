@@ -1,0 +1,264 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: worlds-collide-guristas-pirates-serpentis
+kind: mission
+name: Worlds Collide
+level: 4
+enemyFaction: Guristas Pirates & Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Worlds Collide (Guristas Pirates & Serpentis)
+    url: https://wiki.eveuniversity.org/Worlds_Collide_(Guristas_Pirates_%26_Serpentis)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "192116"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: ecm
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Guardian Veteran, Guristas Spies, Dire Pithi Frigates"
+  - text: "Suggested ships: CNR, Drake, Tengu, Nighthawk"
+  - text: '- Reports of a random BS spawn are now no longer true - the BS which used to spawn chance based before is now renamed to "Supervisor" and always there at start. It has about a 50% chance of physically being in the room in the beginning and another 50% chance of not coming in until a undetermined amount of time.'
+  - text: Bounties, Loot, and Salvage reports below are approximations and may vary.
+  - text: 27,888,626.61 ISK +/-
+  - text: 11,526,000 ISK (02.12.2015)
+  - text: 11,400,000 ISK (05.03.2017)
+  - text: Torp Golem
+  - text: Arty Vargur
+pockets:
+  - name: 1st Pocket (Warzone)
+    notes:
+      - text: You can blitz this by using Zbikoki's Hacker Card. (Obtained from Zor in other missions). It will be consumed upon unlocking the gate.
+    waves:
+      - id: serpentis-group-130-140km
+        trigger:
+          on: other
+          text: Serpentis Group (130-140km)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Guardian Veteran
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corelatis High Captain
+              - Corelatis Captain Sentry
+          - count: "4"
+            class: Battleship
+            names:
+              - Core Grand High Admiral
+              - Core Grand Admiral
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Pithatis Revolter
+              - Pithatis Death Dealer
+            group: Guristas Group(120-30km)
+          - count: "3"
+            class: Battleship
+            names:
+              - Pith Extinguisher
+              - Pith Dismantler
+            group: Guristas Group(120-30km)
+  - name: 2nd Pocket (Serpentis Base)
+    waves:
+      - id: 1st-group
+        trigger:
+          on: other
+          text: 1st Group
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Elite Frigate
+            names:
+              - Serpentis Spy
+              - Guardian Veteran
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corelatis Platoon Leader
+          - count: "3"
+            class: Battleship
+            names:
+              - Core Admiral
+              - Core High Admiral
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Guardian Veteran
+            group: 2nd Group (Under Warp-In)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corelatis Platoon Leader
+            group: 2nd Group (Under Warp-In)
+          - count: "3"
+            class: Battleship
+            names:
+              - Core Admiral
+              - Core High Admiral
+            group: 2nd Group (Under Warp-In)
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Guardian Veteran
+            group: 3rd Group (Behind Station)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corelatis Platoon Leader
+            group: 3rd Group (Behind Station)
+          - count: "3"
+            class: Battleship
+            names:
+              - Core Admiral
+              - Core High Admiral
+            group: 3rd Group (Behind Station)
+          - count: "1"
+            class: Battleship
+            names:
+              - Serpentis Overseer
+            group: 4th Group (Behind Station, Under Group 3)
+            drop: may drop faction loot
+  - name: 2nd Pocket (Guristas Base)
+    waves:
+      - id: 1st-group
+        trigger:
+          on: other
+          text: 1st Group
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Guristas Spy
+            ewar:
+              - kind: web
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Abolisher
+              - Dire Pithum Eraser
+          - count: "3"
+            class: Battleship
+            names:
+              - Pith Obliterator
+              - Pith Dismantler
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Infiltrator
+            group: 2nd Group
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Abolisher
+              - Dire Pithum Eraser
+            group: 2nd Group
+          - count: "3"
+            class: Battleship
+            names:
+              - Pith Dismantler
+              - Pith Extinguisher
+            group: 2nd Group
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Infiltrator
+            group: 3rd Group
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Abolisher
+              - Dire Pithum Eraser
+            group: 3rd Group
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Guristas Kyoukan
+            group: 4th Group (Random Spawn)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "1"
+            class: Battleship
+            names:
+              - Guristas Overseer
+            group: 5th Group (Random Spawn)
+            ewar:
+              - kind: ecm
+  - name: Pocket 3 (The Research Outpost)
+    notes:
+      - text: Killing Group 1 will unlock the Heron cargohold.
+    waves:
+      - id: 1st-group
+        trigger:
+          on: other
+          text: 1st Group
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Pithatis Death Dealer
+              - Pithatis Revolter
+          - count: "3"
+            class: Battleship
+            names:
+              - Pith Extinguisher
+              - Pith Dismantler
+          - count: "3"
+            class: Battleship
+            names:
+              - Pith Extinguisher
+              - Pith Eliminator
+            group: 2nd Group
+            ewar:
+              - kind: ecm
+          - count: "3"
+            class: Cruiser
+            names:
+              - Pithum Murderer
+              - Pithum Ascriber
+              - Pithum Silencer
+              - Pithum Killer
+            group: 3rd Group
+            ewar:
+              - kind: ecm
+          - count: "3"
+            class: Battleship
+            names:
+              - Pith Obliterator
+              - Pith Dismantler
+            group: 3rd Group
+      - id: asteroids
+        trigger:
+          on: other
+          text: Asteroids
+          confidence: inferred
+        spawns: []

@@ -1,0 +1,50 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: violent-expulsion-serpentis
+kind: mission
+name: Violent Expulsion
+level: 1
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Violent Expulsion (Serpentis)
+    url: https://wiki.eveuniversity.org/Violent_Expulsion_(Serpentis)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "192104"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Suggested ships: Destroyer"
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: initial-group-25km-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group, 25km (auto-aggro)
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Coreli Initiate
+            triggers: Each enemy triggers one enemy frigate from the reinforcement
+          - count: "1"
+            class: Frigate
+            names:
+              - Coreli Servant
+              - Coreli Agent
+      - id: reinforcement
+        trigger:
+          on: other
+          text: Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Coreli Scout
+              - Coreli Agent
+              - Coreli Initiate

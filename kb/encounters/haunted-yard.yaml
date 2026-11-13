@@ -1,0 +1,140 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: haunted-yard
+kind: complex
+name: Haunted Yard
+dedRating: null
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Haunted Yard
+    url: https://wiki.eveuniversity.org/Haunted_Yard
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "229986"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Cruiser T1/Faction"
+notes:
+  - text: Haunted Yard is an unrated combat site belonging to the Rogue Drones faction. It can be found via exploration by scanning anomalies in high security and low security systems.
+  - text: This site can escalate to Pulverize the Pioneers
+  - text: The leaking caskets are unlocked so head straight for them. The commander wave spawns near the warp in so boost back there.
+  - text: Frigate, Cruiser, Shuttle, Corvette, Assault Frigate, Destroyer, Interdictor, Covert Ops, Interceptor, Stealth Bomber, Electronic Attack Ship, Expedition Frigate, Tactical Destroyer, Logistics Frigate, Command Destroyer
+  - text: "Escalation: This site can escalate to Pulverize the Pioneers."
+  - text: "Escalation: Expeditions: Pulverize the Pioneers: Throughout this last fight, your radar equipment has been busy chewing on information about incoming and outgoing vessels and it seems it has traced a very large group of ships that left this place few minutes before you arrived. You have no clue why they left, were they fleeing? Or was it a coincidence? Either way, there is only one way to find out."
+loot:
+  - item: + Commander and other valuable loot
+  - item: 4x 1st Tier Overseer's Effects
+    note: est. 11k ISK (wiki) · 100% drop rate
+  - item: 4x Scratched and Dented Keycard
+    note: est. 10k ISK (wiki) · 100% drop rate
+  - item: Rogue Drone 46-X Nexus Chip
+    note: est. 50m ISK (wiki) · 1-5% estimated drop rate from sentient drone. It can be traded for an Astero BPC at a SoE station
+  - item: Drone faction module
+    note: est. varies (wiki) · ??? Drop rate, from sentient drone.
+  - item: Pirate/drone faction module
+    note: est. Varies (wiki) · ??? Drop rate, from Leaking casket .
+  - item: Drone Graviton
+    note: est. ~30M (wiki) · Dropped by Commander Frigate, 15/04/2024
+  - item: Drone Synaptic
+    note: est. ~717 isk (wiki) · Dropped by Commander frigate, 22/11/2025
+  - item: 60x Drone Capillary + 50x Drone Synaptic
+    note: est. ~291k ISK (wiki) · Dropped by Commander Frigate, 20/03/2026
+lootNotes:
+  - text: "Bounties: ± 440K ISK"
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: Structures on site
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Drone Defender
+            ewar:
+              - kind: warpDisruption
+            note: May not always point/web
+          - count: 4-5
+            class: Frigate
+            names:
+              - Render
+              - Sunder
+              - Raider Alvi
+          - count: 1-2
+            class: Elite Frigate
+            names:
+              - Strain Infester Alvi
+            ewar:
+              - kind: web
+      - id: spawn
+        trigger:
+          on: other
+          text: Spawn
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Decimator Alvi
+      - id: spawn-3
+        trigger:
+          on: other
+          text: Spawn
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Sunder
+              - Decimator Alvi
+      - id: spawn-4
+        trigger:
+          on: other
+          text: Spawn
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Splinter Alvi
+      - id: spawn-5
+        trigger:
+          on: other
+          text: Spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Devilfish
+              - Barracuda Alvi
+          - count: 0-1
+            class: Commander Frigate
+            names:
+              - Sentient Sunder
+              - Sentient Decimator Alvi
+            triggers: Escalation trigger
+            drop: May drop Drone components, Rogue Drone 46-X Nexus Chip, Sentient (Faction) modules
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "4"
+            class: Red Container
+            names:
+              - Leaking casket
+            triggers: Approaching may also trigger escalation
+            drop: Each contains 1st tier overseer's effect and one scratched and dented keycard. May contain faction or meta modules
+    onWarpIn: Rogue Drones are fickle creatures, little is known about them and explorers are advised to tread with care when encountering these machines
+sde:
+  dungeonIds:
+    - 1263

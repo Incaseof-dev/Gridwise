@@ -1,0 +1,121 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: sansha-military-operations-complex
+kind: complex
+name: Sansha Military Operations Complex
+dedRating: 7
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Sansha Military Operations Complex
+    url: https://wiki.eveuniversity.org/Sansha_Military_Operations_Complex
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231826"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: T2 Battleship"
+notes:
+  - text: Sansha Military Operations Complex is a DED rated combat site found in null security space or as an escalation from Sansha Port anomalies.
+  - text: --NOTE-- Battleship class Centus Beast Lords, if they spawn, do have tracking disruption capabilities. No other ship based EWAR has been noted (as of Sep. 2020).
+loot:
+  - item: 20th Tier Overseer's Effects
+    from: True Sansha battleship
+    note: est. 61.2M ISK (wiki) · 100% drop rate
+  - item: Centus C-Type Module
+    from: True Sansha battleship
+  - item: Nightmare BPC
+    from: True Sansha battleship
+  - item: Faction Modules
+    from: True Sansha Cruiser
+lootNotes:
+  - text: About 54m in bounties
+pockets:
+  - name: 1st pocket
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "13"
+            class: Destroyer
+            names:
+              - Centior Cannibal
+              - Centior Misshape
+              - Centior Abomination
+            note: type list incomplete on the source page
+          - count: "9"
+            class: Battlecruiser
+            names:
+              - Centatis Specter
+              - Centatis Wraith
+          - count: "8"
+            class: Battleship
+            names:
+              - Centus Beast Lord
+              - Centus Dark Lord
+              - Centus Overlord
+            note: Beast Lord uses Tracking Disruptor
+    onWarpIn: "Despite the resource drain of their recent incursions throughout traveled space, Sansha’s Nation has maintained a military presence in deadspace pockets. One favored Sansha strategy is to hide outposts behind isolated or abandoned Amarr stations. All Sansha communications are then encrypted with an adaptive security key and hidden in pre-recorded Amarr chatter. The complex security is dependent upon the True Sansha Archduke, a vessel containing a physical network of True Slaves that serve as a living security key for their network. Eliminating the Archduke will render all Nation assets inoperable. DED Threat Assessment: 7 of 10"
+  - name: 2nd pocket
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns: []
+  - name: 3rd pocket
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Overseer Cruiser
+            names:
+              - True Sansha Slaughterer
+            drop: Possible Faction Modules, Implant Blueprints
+    onWarpIn: "The next deadspace pocket contains a heavy concentration of outbound communication signals, making it easier to detect the Nation signal in the carrier wave. This Nation code, however, uses an adaptive 1024 kilobit lattice key: It will be quicker, and simpler, to eliminate the Archduke than to try decoding the signal."
+  - name: 4th pocket
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Overseer Battleship
+            names:
+              - True Sansha
+            drop: Possible Faction Modules
+  - name: 5th pocket
+    notes:
+      - text: True Sansha Archduke does not have special tank, but it has a lot of Effective Health (42.5k hull HP). It will close in on you with MWD.
+      - text: "Completion:: The Archduke is eliminated. In approximately 18 seconds, the Nation security key will attempt to cycle and the Nation signal will be rendered into junk data. Now let’s see if the Archduke dropped anything fun in its wreck."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Overseer Battleship
+            names:
+              - True Sansha Archduke
+            ewar:
+              - kind: web
+            drop: 20th Overseer's Personal Effects, Centus C-Type Modules and ship BPCs
+          - count: "1"
+            class: Sentry
+            names:
+              - Stasis tower
+            ewar:
+              - kind: web
+sde:
+  dungeonIds:
+    - 5239

@@ -1,0 +1,49 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: duo-of-death-guristas-pirates-level-4
+kind: mission
+name: Duo of Death
+level: 4
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Duo of Death (Guristas Pirates) (Level 4)
+    url: https://wiki.eveuniversity.org/Duo_of_Death_(Guristas_Pirates)_(Level_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "215960"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: web
+notes:
+  - text: "Web/warp disruption: Spider Drone I (Web)"
+  - text: "Suggested ships: Battlecruiser, Battleship"
+  - text: "Blitz: Kill the two battleships, pick up the objective and warp out."
+  - text: All structures except Power Generator drop random T1 ammo and commodities.
+  - text: "Video: Raven Navy Issue, Gila, 22-08-2021]"
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: initial-group-18km-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group, 18km (auto-aggro)
+        spawns:
+          - count: 2-3
+            class: Sentry
+            names:
+              - Guristas Cruise Missile Battery
+          - count: "2"
+            class: Drone
+            names:
+              - Spider Drone I
+            ewar:
+              - kind: web
+          - count: "2"
+            class: Battleship
+            names:
+              - Pith Usurper
+            note: Last one drops mission objective

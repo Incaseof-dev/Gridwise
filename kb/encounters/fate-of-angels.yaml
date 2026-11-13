@@ -1,0 +1,174 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: fate-of-angels
+kind: mission
+name: Fate of Angels
+level: 5
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Fate of Angels
+    url: https://wiki.eveuniversity.org/Fate_of_Angels
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "221416"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy Angel Battlestation and all ships
+ewar:
+  - kind: neut
+  - kind: targetPaint
+  - kind: web
+  - kind: warpScramble
+notes:
+  - text: "Web/warp disruption: Arch Gistii (Web, Scram), Sentry Stasis Tower (Web)"
+  - text: "Suggested ships: Passive Battleship + Logistics"
+  - text: This mission is the exact same as Wrath of Angels (Level 5), except you need to destroy the Angel Battlestation as well as all the rats.
+  - text: Repair Outpost destruction not required for mission completion
+  - text: Reinforcements spawn when the Angel Battlestation (350,000 HP) is damaged.
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: Reinforcements spawn when the first ship in the back left and back right groups are attacked. Each spawns a Reinforcement Wave.
+    waves:
+      - id: 50-100km-instant-aggro
+        trigger:
+          on: other
+          text: 50-100km, instant aggro
+          confidence: inferred
+        spawns:
+          - count: "15"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Crusher
+              - Arch Gistum Smasher
+              - Arch Gistum Centurion
+              - Arch Gistum Liquidator
+            ewar:
+              - kind: targetPaint
+          - count: "11"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+              - Gistatis Tribunus
+            note: Orbits at 23-28km
+          - count: "4"
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Seraphim
+            note: Orbits at 36-39km
+          - count: "5"
+            class: Sentry
+            names:
+              - Cruise Missile Battery
+          - count: "4"
+            class: Sentry
+            names:
+              - Tower Sentry Angel III
+          - count: "1"
+            class: Sentry
+            names:
+              - Stasis Tower
+            ewar:
+              - kind: web
+          - count: "1"
+            class: Sentry
+            names:
+              - Angel Energy Neutralizer Sentry III
+            ewar:
+              - kind: neut
+            triggers: Trigger
+      - id: reinforcements
+        trigger:
+          on: other
+          text: Reinforcements
+          confidence: inferred
+        spawns:
+          - count: 4-6
+            class: Frigate
+            names:
+              - Gistii Ambusher
+              - Arch Gistii Outlaw
+              - Gistii Thug
+            ewar:
+              - kind: web
+              - kind: warpScramble
+      - id: energy-neutralizer-reinforcement
+        trigger:
+          on: other
+          text: Energy Neutralizer Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Ambusher
+            ewar:
+              - kind: web
+              - kind: warpScramble
+            note: Orbits at 12km
+          - count: "3"
+            class: Cruiser
+            names:
+              - Gistum Centurion
+            note: Orbits at 17km
+      - id: structure-reinforcements
+        trigger:
+          on: other
+          text: Structure Reinforcements
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Impaler
+            group: Angel Battlestation 95% Shield
+            ewar:
+              - kind: web
+              - kind: warpScramble
+            note: Orbits at 12km
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Liquidator
+            group: Angel Battlestation 20% Armor
+            note: Orbits at 22km
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+            group: Angel Battlestation 20% Armor
+            note: Orbits at 23km
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Defeater
+            group: Angel Battlestation 30% Structure
+            note: Orbits at 4km
+          - count: "3"
+            class: Battleship
+            names:
+              - Gist Seraphim
+            group: Angel Battlestation 30% Structure
+            note: Orbits at 36km
+      - id: other-structures
+        trigger:
+          on: warpIn
+          text: Other Structures
+        spawns:
+          - count: "3"
+            class: Structure
+            names:
+              - Repair Outpost
+            triggers: Trigger
+          - count: "2"
+            class: Battleship
+            names:
+              - Gist Domination Saint
+              - Gist Domination Nephilim
+            group: Repair Outpost Reinforcement
+            note: orbits at 31-34km

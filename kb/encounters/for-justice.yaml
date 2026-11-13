@@ -1,0 +1,94 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: for-justice
+kind: mission
+name: For Justice
+level: 1
+enemyFaction: Amarr Empire
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – For Justice
+    url: https://wiki.eveuniversity.org/For_Justice
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "230973"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Kill the Amarrian spy and return with the Amarr sympathizer.
+restrictions:
+  - text: "Ship size limit: Destroyer, Electronic attack ship, Hauler"
+notes:
+  - text: "Suggested ships: Frigate"
+npcs:
+  Amarrian Guard:
+    sdeTypes:
+      - Arachula
+      - Incubus
+      - Moth
+      - Scorpionfly
+    class: Drone
+pockets:
+  - name: Warp-in
+    notes:
+      - text: On warp in the Amarrian Spy is there but immediately uses the acceleration gate. He keeps doing this until the last pocket.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Cruiser
+            names:
+              - Amarrian Spy
+            note: Immediately "leaves" through the acceleration gate.
+  - name: Pocket 1
+    waves:
+      - id: initial-group-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group, auto-aggro
+        spawns:
+          - count: 4-6
+            class: Drone
+            names:
+              - Amarrian Guard
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Cruiser
+            names:
+              - Amarrian Spy
+            note: Immediately "leaves" through the acceleration gate.
+  - name: Pocket 2
+    waves:
+      - id: initial-group-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group, auto-aggro
+        spawns:
+          - count: 4-9
+            class: Drone
+            names:
+              - Amarrian Guard
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Cruiser
+            names:
+              - Amarrian Spy
+            note: Immediately "leaves" through the acceleration gate.
+  - name: Pocket 3
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "1"
+            class: Cruiser
+            names:
+              - Amarrian Spy
+            triggers: Mission complete
+            note: Renamed Imperial Mathura/Muzakir

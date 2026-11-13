@@ -1,0 +1,106 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: across-the-line
+kind: mission
+name: Across the Line
+level: 4
+enemyFaction: Caldari State
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Across the Line
+    url: https://wiki.eveuniversity.org/Across_the_Line
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "232594"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Retrieve Deteis Family (0.1 m3)
+ewar:
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite Frigates"
+  - text: "Suggested ships: Battleship"
+  - text: No Caldari State Faction Standing loss; High damage
+  - text: "From Crielere; a parable told to all aspiring young Caldari: “There once was a great rich merchant,” she began hesitantly, suddenly all too aware that all eyes in the room were on her. But she plunged on regardless, steeling her nerves. “He lived to a grand old age and possessed every wealth a man could dream of. Many looked to him in awe or envy, coveting his treasures and desiring to imitate his great successes. Yet the old man was never happy and on his deathbed, a young clerk working for him asked: ‘You must feel that your life has been one great success story, what with all the wealth you have accumulated.' But the old man replied. ‘My life has been one of misery and sorrow. As a young man I chose wealth over family, discarding the love of my life. When I die all that I will leave behind in the world is money. But money is the same all over, mine is no different from anyone else's. Once my wealth has been scattered, all that I will be is dust and vague memories. My life is a failure young man, don't make the same mistakes I did.'"
+  - text: Ungated semi-deadspace pocket four jumps away in Ishisomo.
+  - text: "Blitz: create Bookmarks, destroy the Nugoeihuvi Caretaker, warp to the Office Facility and grab the Deteis Family."
+  - text: "Tips: You can freely warp inside the pocket."
+  - text: "Tips: You always land at the beacon when you warp from the outside."
+  - text: "Tips: Fire your long range weapon and warp to another location to avoid getting hit."
+  - text: "Tips: Battleships do heavy damage at extended range, consider sniping from at least 100 km away."
+  - text: "Tips: No standing loss for destroying enemy ships, even if their description say they belong to the Caldari State."
+npcs:
+  Nugoeihuvi Elite Frigate:
+    sdeTypes:
+      - Taibu State Shinai
+      - Taibu State Wakizashi
+    class: Elite Frigate
+  Nugoeihuvi Elite Cruiser:
+    sdeTypes:
+      - Taibu State Daimyo
+    class: Elite Cruiser
+  Nugoeihuvi Battleship:
+    sdeTypes:
+      - State Shukuro Shogun
+      - State Shukuro Nagashin
+    class: Elite Battleship
+pockets:
+  - name: Warp-in
+    notes:
+      - text: "Nugoeihuvi Central Storage Facility: This unassuming facility appears to house a number of different storage departments, allowing Nugoeihuvi staff to safely stow away anything from ships to chemical goods. As with most of these compounds, all goods are held in the strictest of confidence. Nugoeihuvi maintains complete discretion through the application of lethal force to anyone foolish enough to venture in to these dens of secrets. Regardless of their intentions, those who have crossed the line inside can never be allowed to live."
+      - text: Defenders spawn when you attack or approach the Nugoeihuvi Caretaker at 130 km. Nagashin Elite Battleships each hit for 300 DPS Kinetic/Thermal at 90 km range. Combined with the large amount of tackling elite frigates and jamming cruisers, the incoming damage can be extremely problematic for ships without long-range sniping capabilities. Consider fitting to face-tank close to 1000 DPS of Kinetic and Thermal damage, or bring a sniping battleship. The individual ships, elite frigates included, all move pretty slow and can be outrun with an afterburner (the one exception being the Nugoeihuvi Caretaker).
+      - text: Nugoeihuvi Caretaker will use MWD to catch up to you, so you can separate it from the rest of the spawn and snipe it, then warp to the Office Facility and grab the mission objective. Note that it will not use MWD at ranges of ~80km and under and it will still hit for about 200 DPS Kinetic/Thermal.
+      - text: "Mission debriefing: You've done it, . You've actually done it. Those people are, without a doubt, Katsen Isha's family. We can guarantee his silence now, an absolutely excellent result. You've brought a potentially disastrous situation to a clean and comfortable end. We are all indebted to you for it, particularly those whose lives will be spared when our rescue teams continue to find them out there, waiting for someone. Your actions give us all hope. I know it hasn't been an easy journey for you; getting mixed up in the machinations of corporate agendas and personal grudges is never pleasant. It's the darker side to our society, and not something anyone ever wants to contend with. The way you handled everything however, it was exemplary. If only more Caldari would work for peace and stability like you did, we would be faring even better as a nation. I'd like to give you something as thanks. I'm sure it's not much to a capsuleer like you, but all the same, we in Hyasyoda would like you to have it. We salvaged it from the research facility that Serpentis overtook – the same one you were misled into raiding. I like to think that it will remind you of everything you accomplished, and that good things can come out of bad situations if you only work at it. Thank you once again, , and fly safe. We won't forget what you've done for us."
+    waves:
+      - id: initial-spawn-160-km
+        trigger:
+          on: warpIn
+          text: Initial Spawn (160 km)
+        spawns:
+          - count: "1"
+            class: Elite Battleship
+            names:
+              - Nugoeihuvi Caretaker
+            triggers: Kill to unlock Office Facility
+          - count: 8-10
+            class: Elite Frigate
+            names:
+              - Nugoeihuvi Elite Frigate
+            group: Defenders (160 km)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Nugoeihuvi Elite Cruiser
+            group: Defenders (160 km)
+            ewar:
+              - kind: ecm
+          - count: "3"
+            class: Battleship
+            names:
+              - Nugoeihuvi Battleship
+            group: Defenders (160 km)
+          - count: "3"
+            class: Elite Battleship
+            names:
+              - Nugoeihuvi Battleship
+            group: Defenders (160 km)
+            note: Has a unique description that can be used to identify it. Always uses a Scorpion hull
+      - id: structures-160-km
+        trigger:
+          on: other
+          text: Structures (160 km)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Container
+            names:
+              - Office Facility
+            drop: Deteis Family
+            note: Locked until Nugoeihuvi Caretaker is destroyed.

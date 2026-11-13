@@ -1,0 +1,176 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: prison-bust
+kind: mission
+name: Prison Bust
+level: 5
+enemyFaction: Amarr Empire
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Prison Bust
+    url: https://wiki.eveuniversity.org/Prison_Bust
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191861"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: neut
+  - kind: trackingDisruption
+notes:
+  - text: "Suggested ships: Passive Battleship + Logistics Battleship"
+  - text: Use a passive tank or plan a capacitor that receives an additional 200 units/s.
+  - text: Maximum damage dealing of initial group, if it gets into range, is 2,423 hp/s (58% EM, 42% Therm)
+  - text: "Next: Informed Attack"
+pockets:
+  - name: 1st Pocket
+    notes:
+      - text: Destroy the 6 forcefields to access to gate to the 2nd pocket.
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "6"
+            class: Tower
+            names:
+              - Powerful EM Forcefield
+            note: 6,000 HP each
+  - name: 2nd Pocket
+    notes:
+      - text: Some ships will trigger reinforcements upon shooting and upon destruction.
+      - text: Reinforcements that are triggered upon shooting will be referred to as Hair-Trigger.
+      - text: Set your drones to passive if you don't want the Hair-Trigger reinforcements, immediately.
+    waves:
+      - id: initial-ship-group-2-80km
+        trigger:
+          on: warpIn
+          text: Initial Ship Group, 2-80km
+        spawns:
+          - count: "5"
+            class: Elite Cruiser
+            names:
+              - Divine Imperial Ambrose
+              - Divine Imperial Basil
+            ewar:
+              - kind: neut
+            triggers: 1A Reinforcement(Hair-Trigger), 2nd Reinforcement
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Imperial Templar Champion
+              - Imperial Templar Justicar
+          - count: "10"
+            class: Battleship
+            names:
+              - Imperial Templar Dominator
+              - Imperial Templar Judgment
+              - Imperial Templar Martyr
+            triggers: 3rd Reinforcement (Hair-Trigger)
+      - id: initial-sentry-group-100-115km
+        trigger:
+          on: warpIn
+          text: Initial Sentry Group, 100-115km
+        spawns:
+          - count: "5"
+            class: Sentry
+            names:
+              - Amarr Cruise Missile Battery
+          - count: "2"
+            class: Sentry
+            names:
+              - Amarr Energy Neutralizer Sentry III
+            ewar:
+              - kind: neut
+      - id: 1a-reinforcement-hair-trigger
+        trigger:
+          on: other
+          text: 1A Reinforcement (Hair-Trigger)
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Cruiser
+            names:
+              - Imperial Templar Donus
+              - Imperial Templar Tamir
+            triggers: 1B Reinforcement
+      - id: 1b-reinforcement
+        trigger:
+          on: other
+          text: 1B Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Imperial Champion
+              - Imperial Templar Justicar
+      - id: 2nd-reinforcement
+        trigger:
+          on: other
+          text: 2nd Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Imperial Templar Seer
+            ewar:
+              - kind: neut
+              - kind: trackingDisruption
+      - id: 3rd-reinforcement
+        trigger:
+          on: other
+          text: 3rd Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Battleship
+            names:
+              - Imperial Templar Dominator
+              - Imperial Templar Ultara
+            triggers: 4A Reinforcement (Hair-Trigger)
+      - id: 4a-reinforcement-hair-trigger
+        trigger:
+          on: other
+          text: 4A Reinforcement (Hair-Trigger)
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Battleship
+            names:
+              - Imperial Templar Martyr
+            triggers: 4B Reinforcement (Hair-Trigger)
+      - id: 4b-reinforcement-hair-trigger
+        trigger:
+          on: other
+          text: 4B Reinforcement (Hair-Trigger)
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Battleship
+            names:
+              - Imperial Templar Diviner
+              - Imperial Templar Judgment
+            ewar:
+              - kind: neut
+              - kind: trackingDisruption
+      - id: amarr-prison-facility
+        trigger:
+          on: other
+          text: Amarr Prison Facility
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Amarr Prison Facility
+            drop: 1x Spy (Mission Objective)
+          - count: "3"
+            class: Battleship
+            names:
+              - Imperial Templar Judgment
+            group: Upon shooting the structure

@@ -1,0 +1,198 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: angel-repurposed-outpost
+kind: complex
+name: Angel Repurposed Outpost
+dedRating: 3
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Angel Repurposed Outpost
+    url: https://wiki.eveuniversity.org/Angel_Repurposed_Outpost
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "216227"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: T2/Faction Cruisers"
+notes:
+  - text: The ships in the 4th and 5th pockets can be aggroed a couple of groups at a time, but in the earlier pockets they all seem to aggro together.
+loot:
+  - item: 7th Tier Overseer's Effects
+    from: Domination Grigori
+    note: est. 600k ISK (wiki) · 100% drop rate
+  - item: Gistii A-Type module
+    from: Domination Grigori
+    note: est. 27M-100M ISK (wiki) · Rare drop; Up to 3x
+  - item: Daredevil BPC
+    from: Domination Grigori
+    note: est. 40M ISK (wiki) · Rare drop
+  - item: Domination module
+    from: Domination Grigori
+    note: est. 10k-100M ISK (wiki) · Rare drop
+lootNotes:
+  - text: "Bounties: 1.500.000 ISK"
+  - text: Other Loot+ Salvage 13.6mil (16-March-2024)
+pockets:
+  - name: Room 1
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Gistii Nomad
+          - count: "1"
+            class: Frigate
+            names:
+              - Gistii Raider
+          - count: "8"
+            class: Frigate
+            names:
+              - Gistii Ruffian
+            ewar:
+              - kind: targetPaint
+    onWarpIn: "To the frustration of the Minmatar Republic, the Angel Cartel still enjoys a great deal of success with piracy throughout Republic space. A contributing factor to the Angel's ubiquity is their ability to repurpose small gang outposts as camps. A Domination Grigori is sent with a small frigate wing to clear out a minor smuggler outpost. Once temporary fortifications are made, the location is further masked with a series of interference broadcasts designed to confound Republic sensors. DED Threat Assessment: 3 of 10."
+  - name: Room 2
+    notes:
+      - text: "Upon entering room 2.: This next pocket is generating multiple interference signals. Once we are further into the complex I can gather more intel."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Gistii Nomad
+          - count: "3"
+            class: Frigate
+            names:
+              - Gistii Outlaw
+          - count: "1"
+            class: Frigate
+            names:
+              - Gistii Raider
+          - count: "7"
+            class: Frigate
+            names:
+              - Gistii Ruffian
+            ewar:
+              - kind: targetPaint
+          - count: "1"
+            class: Frigate
+            names:
+              - Gistii Thug
+  - name: Room 3
+    notes:
+      - text: "Upon entering room 3.: Interference Cleared That's better. My analysis shows there are three more pockets in this complex. The last pocket should contain a Domination Grigori. Eliminating this ship should severely ruin the Cartel's day."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Sentry
+            names:
+              - Angel Point Defense Battery
+          - count: "5"
+            class: Frigate
+            names:
+              - Gistii Nomad
+          - count: "7"
+            class: Frigate
+            names:
+              - Gistii Outlaw
+          - count: "7"
+            class: Frigate
+            names:
+              - Gistii Ruffian
+            ewar:
+              - kind: targetPaint
+          - count: "9"
+            class: Frigate
+            names:
+              - Gistii Thug
+  - name: Room 4
+    notes:
+      - text: The sentry guns do not aggress until you enter within very close proximity.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Sentry
+            names:
+              - Angel Sentry Guns
+          - count: "4"
+            class: Frigate
+            names:
+              - Gistii Ambusher
+          - count: "13"
+            class: Frigate
+            names:
+              - Gistii Nomad
+          - count: "1"
+            class: Frigate
+            names:
+              - Gistii Raider
+          - count: "13"
+            class: Frigate
+            names:
+              - Gistii Ruffian
+            ewar:
+              - kind: targetPaint
+  - name: Room 5
+    notes:
+      - text: "Grigori destroyed: The Domination Grigori and all of its crew have been eliminated. I wonder how many people that actually is? Or was? Oh well. Let's see if it dropped any neat stuff."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Sentry
+            names:
+              - Angel Sentry Guns
+          - count: "9"
+            class: Frigate
+            names:
+              - Gistii Ambusher
+          - count: "10"
+            class: Frigate
+            names:
+              - Gistii Nomad
+          - count: "6"
+            class: Frigate
+            names:
+              - Gistii Raider
+          - count: "9"
+            class: Frigate
+            names:
+              - Gistii Ruffian
+            ewar:
+              - kind: targetPaint
+          - count: "1"
+            class: Cruiser
+            names:
+              - Gistum Liquidator
+              - Gistum Marauder
+          - count: "1"
+            class: Overseer Frigate
+            names:
+              - Domination Grigori
+            drop: Domination or Gistii A-Type modules, and a possible Dramiel BPC
+sde:
+  dungeonIds:
+    - 5278

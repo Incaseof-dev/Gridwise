@@ -1,0 +1,24 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: edencom-staging-area
+kind: anomaly
+name: EDENCOM Staging Area
+dedRating: null
+enemyFaction: Triglavian Collective
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – EDENCOM Staging Area
+    url: https://wiki.eveuniversity.org/EDENCOM_Staging_Area
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "163458"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: EDENCOM Staging Area is a combat anomaly that can be found in EDENCOM Fortress systems.
+  - text: The site consists of single ungated normal space pocket. Triglavian Collective rats spawn in waves at the center of the site.
+sde:
+  dungeonIds:
+    - 8793

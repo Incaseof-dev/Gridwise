@@ -1,0 +1,202 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: true-sansha-fleet-staging-point-2
+kind: escalation
+name: True Sansha Fleet Staging Point 2
+dedRating: null
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – True Sansha Fleet Staging Point 2
+    url: https://wiki.eveuniversity.org/True_Sansha_Fleet_Staging_Point_2
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "167525"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: T2 Battleship"
+notes:
+  - text: The site is NOT deadspace. You can warp around the site, and any potential hunter can warp directly to you with combat probes. The site can be difficult due to the presence of Energy Neutralizer sentries.
+  - text: "Escalation start: Reading Sansha databursts from a nearby system. High likelihood of further Sansha forces. Coordinates uploaded to Expedition panel."
+  - text: "Escalation: Destroying all enemies gives a fairly high chance of escalating the site to True Sansha Fleet Staging Point 3. Unlike normal escalations, the system in which the escalation appears in may be up to 12 jumps away from the current system."
+  - text: "Escalation: Escalation trigger: Analysis of Sansha ship trajectories completed. Location of main base determined. New target uploaded to the Expedition panel in your NeoCom Journal."
+loot:
+  - item: +Commander and other valuable loot
+  - item: True Sansha faction module
+    note: est. 1-100M ISK (wiki) · From True Sansha's Behemoth/Daemon
+  - item: Mid-Grade implants
+    note: est. 10M - 25M ISK (wiki) · From True Sansha's Behemoth/Daemon
+  - item: Phantasm blueprint
+    note: est. Unknown (wiki) · From True Sansha's Behemoth/Daemon
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Centior Abomination
+              - Centior Devourer
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Centatis Devil
+              - Centatis Phantasm
+          - count: "4"
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Dread Lord
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Sansha Energy Neutralizer Sentry II
+            ewar:
+              - kind: neut
+            note: Neuts 20 GJ/s
+          - count: "3"
+            class: Sentry
+            names:
+              - Sansha Cruise Missile Battery
+          - count: "3"
+            class: Destroyer
+            names:
+              - Centior Horror
+              - Centior Monster
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Centatis Devil
+              - Centatis Daemon
+          - count: "1"
+            class: Commander Battlecruiser
+            names:
+              - True Sansha's Behemoth
+              - True Sansha's Daemon
+            drop: Faction ammo/tags. Possible True Sansha modules
+          - count: "2"
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Dread Lord
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Centior Cannibal
+              - Centior Misshape
+          - count: 2-3
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centatis Daemon
+          - count: "3"
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Dread Lord
+      - id: notable-structures
+        trigger:
+          on: warpIn
+          text: Notable structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: Locked until all ships are destroyed
+  - name: First Pocket
+    notes:
+      - text: Cruise missile batteries deal a fair amount of EM damage. Blow them up if you can't tank the incoming DPS.
+    waves:
+      - id: initial-spawn
+        trigger:
+          on: warpIn
+          text: Initial spawn
+        spawns:
+          - count: "3"
+            class: Sentry
+            names:
+              - Sansha Point Defense Battery
+          - count: "6"
+            class: Sentry
+            names:
+              - Sansha Cruise Missile Battery
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Centii Loyal Butcher
+              - Centii Loyal Manslayer
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Centatis Devil
+              - Centatis Daemon
+          - count: "5"
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Dread Lord
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Butcher
+              - Centii Loyal Manslayer
+          - count: "5"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Execrator
+              - Centum Loyal Slaughterer
+            ewar:
+              - kind: trackingDisruption
+          - count: "5"
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Dread Lord
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Centior Horror
+              - Centior Monster
+          - count: 2-3
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centatis Daemon
+          - count: "3"
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Dread Lord
+    onWarpIn: This station has clearly seen better days. However, based on scans, I calculate an 86 percent probability that a functional Sansha outpost exists on the other side of the acceleration gate.

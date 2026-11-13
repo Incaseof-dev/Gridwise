@@ -1,0 +1,189 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-blockade-angel-cartel-level-4
+kind: mission
+name: The Blockade
+level: 4
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Blockade (Angel Cartel) (Level 4)
+    url: https://wiki.eveuniversity.org/The_Blockade_(Angel_Cartel)_(Level_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "230058"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Eliminate the leader of the pirates blockading the stargate
+ewar:
+  - kind: targetPaint
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Stasis tower (Web), Elite Frigates (Web/Warp Disrupt)"
+  - text: Spaceport drops general commodities.
+  - text: Explosion Dampening Array can be destroyed, but drops no loot. 'Wormhole' effect will stay in space.
+  - text: "Video: Raven (T2 fit)"
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: May [Fleet] warp at preferred distance.
+      - text: Best to set drones to passive.
+      - text: Battleship triggers may vary between different instances of the mission and can differ based on pocket composition.
+      - text: Significant amount of target painting in reinforcements 1 and 3 which will balloon your signature radius to over 5x normal size. Strongly advised to kite and snipe target painting elite frigates and cruisers first if you're running a fit that relies on speed tanking, like a Gila or HAC.
+    waves:
+      - id: initial-group-30km-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group (30km) (Auto-Aggro)
+        spawns:
+          - count: "1"
+            class: Sentry
+            names:
+              - Starbase Stasis Tower
+            ewar:
+              - kind: web
+          - count: "4"
+            class: Destroyer
+            names:
+              - Gistior Haunter
+          - count: "4"
+            class: Battleship
+            names:
+              - Gist Throne
+          - count: "1"
+            class: Battleship
+            names:
+              - Gist Warlord
+              - Gist Malakim
+              - Gist Nephilim
+            triggers: Nephilim spawns Reinforcement 1 if present, otherwise the Malakim triggers
+      - id: reinforcement-1-3-groups-45-85km
+        trigger:
+          on: other
+          text: Reinforcement 1, 3 groups (45-85km)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Ruffian
+              - Arch Gistii Nomad
+            ewar:
+              - kind: targetPaint
+          - count: "2"
+            class: Destroyer
+            names:
+              - Gistior Defacer
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Phalanx
+              - Arch Gistum Smasher
+            ewar:
+              - kind: targetPaint
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Gistatis Praefectus
+          - count: "1"
+            class: Battleship
+            names:
+              - Gist Warlord
+          - count: "3"
+            class: Battleship
+            names:
+              - Gist War General
+          - count: "1"
+            class: Battleship
+            names:
+              - Gist Malakim
+              - Gist Nephilim
+            triggers: Spawns Reinforcement 2
+      - id: reinforcement-2-50-90km
+        trigger:
+          on: other
+          text: Reinforcement 2, 50-90km
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Elite Frigate
+            names:
+              - Arch Gistii Ruffian
+            ewar:
+              - kind: targetPaint
+          - count: "1"
+            class: Destroyer
+            names:
+              - Gistior Seizer
+          - count: "2"
+            class: Battleship
+            names:
+              - Gist War General
+              - Gist Throne
+          - count: "2"
+            class: Battleship
+            names:
+              - Gist Malakim
+              - Gist Nephilim
+            triggers: Spawns Reinforcement 3
+      - id: reinforcement-3-75-90km
+        trigger:
+          on: other
+          text: Reinforcement 3, 75-90km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Gistior Shatterer
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Smasher
+            ewar:
+              - kind: targetPaint
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Gistatis Legionnaire
+          - count: "3"
+            class: Battleship
+            names:
+              - Gist Warlord
+          - count: "1"
+            class: Battleship
+            names:
+              - Gist Malakim
+            triggers: Spawns Reinforcement 4
+      - id: reinforcement-4
+        trigger:
+          on: other
+          text: Reinforcement 4
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Rogue
+              - Arch Gistii Thug
+              - Arch Gistii Outlaw
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "5"
+            class: Battleship
+            names:
+              - Gist Throne
+              - Gist Malakim
+              - Gist Seraphim
+            note: Highest bounty (Seraphim) is mission objective
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - Gist Domination Commander
+            drop: may drop faction modules
+            note: Very rare spawn

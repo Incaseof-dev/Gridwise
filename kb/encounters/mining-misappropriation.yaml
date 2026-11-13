@@ -1,0 +1,78 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: mining-misappropriation
+kind: mission
+name: Mining Misappropriation
+level: 4
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Mining Misappropriation
+    url: https://wiki.eveuniversity.org/Mining_Misappropriation
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "197816"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy everything
+notes:
+  - text: "Suggested ships: Long range battleship or MJD"
+  - text: Single ungated pocket. You warp-in directly to beacon. You can´t warp to optimal range and also no bookmarks possible.
+  - text: Your mission is to set an example and destroy everything. No blitzing, everything must be destroyed. Since this miner has a defense fleet a Catalyst isn't the ship to use.
+  - text: In the pocket you will find a single Hulk called Illegal Miner. Destroying it triggers a series of spawns. The hulk has impressive shield tank but it will die.
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: Destroying the hulk spawns three battleship. The ships spawn some distance away but they have short range weapons (20 km orbit).
+      - text: Second wave spawns even further away. These have longer range weapons and will orbit at 50 km.
+      - text: Again far spawn that will approach to 50 km orbit.
+      - text: "Bounty: ~13 Mio ISK"
+      - text: "Salvage: ~3 Mio ISK"
+      - text: "Loot: ~6.5 Mio ISK"
+    waves:
+      - id: initial-ship
+        trigger:
+          on: warpIn
+          text: Initial ship
+        spawns:
+          - count: "1"
+            class: Industrial
+            names:
+              - Hulk
+            triggers: Triggers wave 1
+      - id: wave-1-50-km
+        trigger:
+          on: other
+          text: Wave 1 (50 km)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battleship
+            names:
+              - Suicide Squad
+            triggers: Last one triggers wave 2
+      - id: wave-2-85-km
+        trigger:
+          on: other
+          text: Wave 2 (85 km)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battleship
+            names:
+              - Suicide Squad
+            triggers: Last one triggers wave 3
+      - id: wave-3-80-km
+        trigger:
+          on: other
+          text: Wave 3 (80 km)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battleship
+            names:
+              - Suicide Squad
+            triggers: Last one completes the mission

@@ -1,0 +1,69 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: escaped-spy
+kind: mission
+name: Escaped Spy
+level: 1
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Escaped Spy
+    url: https://wiki.eveuniversity.org/Escaped_Spy
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223968"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Suggested ships: Frigate"
+  - text: 2.4% standing loss to Gallente Federation
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: No aggro on warp-in.
+      - text: Firing on Group 1 will aggro Group 2.
+    waves:
+      - id: group-1-15-20km
+        trigger:
+          on: other
+          text: Group 1, 15-20km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Federation Clavis
+              - Federation Kontos
+      - id: group-2-40-45km
+        trigger:
+          on: other
+          text: Group 2, 40-45km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Federation Clavis
+              - Federation Hastile
+  - name: Pocket 2
+    notes:
+      - text: Full aggro on warp in.
+    waves:
+      - id: initial-group-10km
+        trigger:
+          on: warpIn
+          text: Initial Group, 10km
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Federation Clavis
+              - Federation Hoplon
+          - count: "1"
+            class: Frigate
+            names:
+              - Corporate Spy
+            drop: Prisoner (1 m3)
+            note: Mission objective

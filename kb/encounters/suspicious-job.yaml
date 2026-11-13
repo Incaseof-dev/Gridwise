@@ -1,0 +1,286 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: suspicious-job
+kind: escalation
+name: Suspicious Job
+dedRating: null
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Suspicious Job
+    url: https://wiki.eveuniversity.org/Suspicious_Job
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "221401"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: This escalation consists of four parts.
+loot:
+  - item: + Commander and other valuable loot
+  - item: Serpentis faction modules
+    note: est. varies (wiki) · from all the Shadow Serpentis ships in each part
+  - item: Vindicator BPC (1 run)
+    note: est. 250m (wiki) · From the last Shadow Serpentis NPC
+  - item: + Exploration logs
+  - item: June 2018
+    note: est. 85M ISK (wiki) · Plenty of Faction modules, tags and ammo
+  - item: August 2024
+    note: est. 320M ISK (wiki) · Diamond, Crystal tags, 34M in Bounties (For each in the team of 2)
+pockets:
+  - name: First Part
+    notes:
+      - text: "Warp in. If Shadow Serpentis is there: kill him, possibly get escalation. Else (or If didn't get escalation): Use acceleration gate, possibly get escalation."
+      - text: "Escalation start: As the bits and pieces from the disintegrated station charge into space, carrying the news of heightened entropy in the universe, your instruments receive an unusual message. It's obviously being transmitted from the Serpentis and even though the person on the other end does not introduce himself as such, the special cypher reveals it is indeed theirs. He demands speaking over a secure channel and after you have established one, he continues with sarcastic congratulations on your victory. He then gives you an offer: If you travel to three different locations as he instructs and assassinate the Serpentis leaders operating there, he will reward you handsomely. He then gives you coordinates to a location in a \"take it or leave it\" manner before bidding you farewell and adds that he will contact you after the first target is destroyed."
+  - name: Warp-in
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Corelatis Captain
+              - Corelatis Squad Leader
+              - Corelatis Wing Leader
+          - count: 3-5
+            class: Battleship
+            names:
+              - Core Admiral
+              - Core High Admiral
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - Shadow Serpentis Rear
+              - Shadow Serpentis Vice Admiral
+            ewar:
+              - kind: sensorDamp
+            triggers: Escalation trigger
+            drop: Drops faction ammo, tags and chance of faction modules
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+  - name: First room
+    notes:
+      - text: ----
+      - text: Entering this room can trigger the escalation.
+      - text: "Escalation message:: Your communication instruments finally come alive as the Serpentis contact who hired you starts talking on the private channel. Even though the area was empty, he commends you on a job well done and gives you directions to the next assassination target."
+  - name: Second Location
+    notes:
+      - text: There is only the warpin pocket with no acceleration gate. The Commander Battleship or possibly one of the Elite Cruisers can trigger the 3rd part of this escalation.
+  - name: Warpin
+    notes:
+      - text: "Escalation continue:: This time your employer is right on time with the coordinates to the last location. He sounds somewhat stressed, but before you can reply he is gone."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "8"
+            class: Frigate
+            names:
+              - Coreli Guard
+              - Coreli Safeguard
+              - Coreli Defender
+              - Coreli Protector
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Spy
+              - Coreli Guardian Agent
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Cruiser
+            names:
+              - Corelum Chief Protector
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Infantry
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corelatis High Captain
+              - Corelatis Captain Sentry
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - Shadow Serpentis Flotilla Admiral
+            ewar:
+              - kind: sensorDamp
+            triggers: Trigger for possible escalation
+            drop: Drops pirate tags, faction ammo and faction modules or implant
+  - name: Third Location
+    notes:
+      - text: This part consists of a warp-in pocket and an second pocket behind a acceleration gate. If the Shadow Serpentis NPC is in the first pocket, kill him for the next part, else take the gate.
+  - name: Warpin
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Coreli Guardian Agent
+              - Coreli Guardian Scout
+            ewar:
+              - kind: warpDisruption
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corelum Guardian Chief
+          - count: "3"
+            class: Battleship
+            names:
+              - Core Admiral
+              - Core High Admiral
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - Shadow Serpentis Admiral
+            triggers: Trigger for possible escalation
+            drop: Drops pirate tags, faction ammo and faction modules or implant
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+  - name: Second Room
+    notes:
+      - text: "Escalation continue:: After blowing up the third rival, you have probably come closer than you ever will to hearing how a debauched officer of the Serpentis sounds when he is ecstatically pleased. He gives you one last location and tells you to meet him there. It's payday."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Coreli Guardian Protector
+              - Coreli Guardian Defender
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corelum Guardian Chief
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corelatis High Captain
+              - Corelatis Captain Sentry
+          - count: "3"
+            class: Battleship
+            names:
+              - Core Grand Admiral
+              - Core Lord Admiral
+  - name: Fourth and Last Location
+    notes:
+      - text: This last location consists of 2 pockets, the warp-in pocket and a acceleration gate pocket. The last Shadow Serpentis NPC is in the second pocket.
+  - name: First Room
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "8"
+            class: Frigate
+            names:
+              - Coreli Guard
+              - Coreli Protector
+              - Coreli Guardian Agent
+              - Coreli Guardian Scout
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Destroyer
+            names:
+              - Corelior Trooper
+              - Corelior Sentinel
+          - count: "1"
+            class: Cruiser
+            names:
+              - Corelum Chief Sentinel
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corelatis High Captain
+              - Corelatis Captain Sentry
+          - count: "1"
+            class: Battleship
+            names:
+              - Core Lord Admiral
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: locked until the room is cleared
+  - name: Second Room
+    notes:
+      - text: "Escalation ends:: You have always been a bit ambivalent to having a day job and the employers you knew have more often than been bastards. This one however was ok, if only you could have more like him."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "14"
+            class: Frigate
+            names:
+              - Coreli Guard
+              - Coreli Protector
+              - Coreli Defender
+              - Coreli Guardian Agent
+              - Coreli Guardian Scout
+              - Coreli Guardian Spy
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "7"
+            class: Cruiser
+            names:
+              - Corelum Guardian Chief
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corelatis High Captain
+              - Corelatis Captain Sentry
+          - count: "4"
+            class: Battleship
+            names:
+              - Core Lord Admiral
+              - Core Grand Admiral
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Shadow Grand Admiral
+            triggers: Ends the escalation
+            drop: Vindicator BPC (1 run), Core A-type
+sde:
+  dungeonIds:
+    - 1437

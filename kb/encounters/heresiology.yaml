@@ -1,0 +1,86 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: heresiology
+kind: mission
+name: Heresiology
+level: 4
+enemyFaction: Ammatar Mandate
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Heresiology
+    url: https://wiki.eveuniversity.org/Heresiology
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231281"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Retrieve 1x Engraved Blood Obsidian Tablet (0.1 m3)
+ewar:
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite Frigates"
+  - text: "Suggested ships: Fast ship or Strategic Cruiser, Battlecruiser or Battleship with Micro Jump Drive and Relic Analyzer"
+  - text: Requires Archaeology; requires a Relic Analyzer; Ammatar Faction Standing loss
+  - text: thumb|192px
+  - text: Ungated semi-deadspace pocket within three jumps.
+  - text: "Blitz: kill all Frigates, rush and hack up to six Ammatar Relics."
+  - text: "Alternative Blitz: lure ships 150 km away, warp to the Ammatar Relics, hack up to six of them and warp out."
+  - text: "Notes: You can Bookmark and warp inside the room"
+  - text: "Notes: Keep your standing loss to a minimum by avoiding killing any Ammatar Navy Detectives. Killing other ships will give minor (-0.006) Ammatar Mandate standing loss."
+  - text: "Notes: Hacking an Ammatar Relics can spawn another Ammatar Relics which must also be hacked."
+  - text: "Notes: All Ammatar Relics hacks are Very Easy difficulty."
+  - text: "Notes: A maximum of 6 Ammatar Relics can spawn and the Engraved Blood Obsidian Tablet is always dropped by the final one you need to hack"
+  - text: "Notes: The Relics drop cargo containers when hacked, containing lore items and the objective item"
+  - text: "Notes: Kakoti Rend will briefly appear as a non-hostile NPC when the final relic is hacked"
+  - text: "Notes: Destroy Warp Scrambling Frigates if you cannot avoid them, but unlike the previous mission they are easily lured away from the objective"
+  - text: "Notes: Complete the hacks in one session. If you leave for a while, they'll reset and will need to be hacked again in the order they spawned in, which can be impossible to keep track of if you don't bookmark and number them."
+pockets:
+  - name: Warp-in
+    notes:
+      - text: "Mission Completion Dialogue: I can't believe what you found among those ruins. This is a historian's dream come true. Now that we've got the Blood Obsidian Orb and the Blood Obsidian Tablet, I think we finally solve this mystery. We're very close to uncovering the secrets of the Wildfire Khumaak. By the way: Did you notice anything strange there? I could have sworn I saw an RSS ship flying about those ruins. Weird."
+    waves:
+      - id: 55-70-km
+        trigger:
+          on: other
+          text: 55-70 km
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Ammatar Navy Gamma II
+              - Delta I
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "4"
+            class: Frigate
+            names:
+              - Ammatar Navy Detective
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "5"
+            class: Cruiser
+            names:
+              - Ammatar Navy Maller
+          - count: "4"
+            class: Battleship
+            names:
+              - Ammatar Navy Armageddon
+              - Ammatar Navy Apocalypse
+      - id: structures-50-km
+        trigger:
+          on: other
+          text: Structures (50 km)
+          confidence: inferred
+        spawns:
+          - count: 1-6
+            class: Hackable
+            names:
+              - Ammatar Relics
+            drop: Engraved Blood Obsidian Tablet is in the final Ammatar Relics; Hand of Arzad, The Education of the Starkmanir

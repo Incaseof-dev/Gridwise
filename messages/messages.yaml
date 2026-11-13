@@ -1,0 +1,326 @@
+# Texts of the timed overlay messages (docs/messages.md).
+#
+#   <trigger>:
+#     <phase>:            sustained | ended | event
+#       <level>: [texts]  0 = plain and explanatory, 1 = friendly, 2 = sarcastic with a hint, 3 = pure sarcasm
+#
+# A level without texts uses the next lower one. One text is picked at random per message, without repeats until
+# the list is used up. Placeholders: {npcs} (who), {has} (has/have), {min} (minutes, "3"), {Min} ("Three"),
+# {gj} (GJ neutralized in this stretch, neut only).
+#
+# Your own messages.yaml in the app's data folder (Linux: ~/.local/share/gridwise/) replaces single lists of
+# this one; `npm run kb -- check` validates both.
+
+neut:
+  sustained:
+    0:
+      - >-
+        {npcs} {has} been draining your capacitor for {min} min. Your capacitor runs your active modules (repairer,
+        propulsion, most guns), so kill the neuting NPCs first, or fit a cap booster or more capacitor.
+    1:
+      - '{npcs} {has} been sipping your capacitor for {min} min ({gj} GJ so far). Neuters first, then the rest.'
+      - '{Min} minutes of neuting by {npcs}. A cap booster would make this fight a lot friendlier.'
+      - '{gj} GJ of your capacitor went to {npcs}. Shoot the neuters first and your modules will thank you.'
+    2:
+      - '{Min} minutes, {gj} GJ. {npcs} {has} opened a tab on your capacitor. Close it: kill the neuters first.'
+      - 'Your capacitor and I would both appreciate a change of scenery. (Neuters first, or a cap booster.)'
+      - '{npcs} {has} been neuting you for {min} min. Bold strategy to let them. Neuters first?'
+      - 'Capacitor status: being redistributed to {npcs}. Kill them, or fit a cap booster next time.'
+      - 'Your capacitor is now a community project run by {npcs}. Neuters first, then the fun.'
+      - '{gj} GJ gone. That is a lot of electricity to give away for free. Kill {npcs} first.'
+      - 'Capacitor dropping like Jita prices after a patch note. Neuters first, or a cap booster.'
+      - 'Your modules are running on hope now. Shoot {npcs} before hope runs out too.'
+      - '{npcs} {has} been treating your capacitor like an all-you-can-eat buffet. Close the kitchen: neuters first.'
+      - 'Fun fact: guns without capacitor are just decorative. Neuters first.'
+      - 'If your repairer just stopped, that was {npcs}. Neuters first, panic later.'
+      - '{Min} minutes of neuting. A cap booster is cheaper than a new ship, just saying.'
+      - 'The neuters are not the tank, they are the problem. Kill {npcs} first and the rest gets easy.'
+    3:
+      - '{Min} minutes, {gj} GJ. Are you donating capacitor to charity, capsuleer?'
+      - 'Your capacitor has filed a formal complaint.'
+      - 'Your capacitor and I would both appreciate a change of scenery.'
+      - '{gj} GJ to {npcs}. Very generous. Do they at least send a thank-you note?'
+      - '{Min} minutes of neuting. At this point {npcs} should pay rent.'
+      - 'Your capacitor called. It wants a divorce.'
+      - '{gj} GJ. You could have powered a small station with that.'
+      - 'I have started a support group for your capacitor. It is the only member.'
+      - '{npcs} {has} not even bought you dinner first.'
+      - 'Capacitor level: decorative. Excellent choice.'
+      - 'Your capacitor is now officially an NPC asset.'
+      - 'Somewhere in a hangar, a cap booster is crying because you left it behind.'
+      - 'You are the free charging station of this pocket. Five stars from {npcs}.'
+      - '{Min} minutes. Should I list your capacitor on the market, or has {npcs} already bought it?'
+      - 'Breaking news: local pilot discovers that capacitor is a finite resource.'
+      - 'Your modules have formed a union and refuse to work without power.'
+      - 'Zero to empty in {min} minutes. Impressive, in the wrong way.'
+      - 'Your capacitor is experiencing an unscheduled energy transfer.'
+      - 'Congratulations. You are now a mobile power plant for {npcs}.'
+      - 'Your capacitor has been outsourced. Management says this is more efficient.'
+      - 'At this point, your capacitor has spent more time with {npcs} than with you.'
+  ended:
+    0:
+      - The neuting stopped. Let your capacitor refill before you pull the next wave.
+    1:
+      - Neuting is over. Give your capacitor a moment before the next wave.
+      - No more neuts. Your capacitor can breathe again.
+    2:
+      - 'Well, that seems quieter. Let the capacitor refill before you poke the next wave.'
+      - The neuters are done. Your capacitor would like a short break, please.
+      - 'The neuting stopped. Let your capacitor refill before you wake the next wave, it has earned a nap.'
+      - 'Neuters gone. Your capacitor is back in your custody; let it rest before the next pull.'
+      - 'Power restored. Refill before the next wave, you never know who is in it.'
+    3:
+      - 'Well, that seems quieter. Did you fix it, or did they get bored?'
+      - Glad we had this talk.
+      - The capacitor charity drive has ended. Thank you for your generosity.
+      - 'Your capacitor has been returned to its rightful owner. Mostly.'
+      - 'The free energy giveaway is over. Thank you for shopping with us.'
+      - 'Capacitor recovering. It will need therapy.'
+      - '{npcs} {has} left the buffet. One star, would not recommend.'
+      - 'Peace and quiet. And electricity.'
+
+ecm:
+  sustained:
+    0:
+      - >-
+        {npcs} {has} kept jamming you for {min} min. A jam drops your target locks; drones on aggressive keep fighting.
+        Kill the jammers first, or fit ECCM or a sensor booster.
+    1:
+      - '{npcs} {has} been jamming you for {min} min. Drones on aggressive keep working while you are jammed.'
+      - 'Jammed again by {npcs}. Kill the jammers first, or bring ECCM next time.'
+    2:
+      - '{Min} minutes of jams. {npcs} clearly {has} opinions about your targeting. Jammers first.'
+      - 'Locked, jammed, locked, jammed. Kill {npcs} first, or let your drones do it.'
+      - 'Jammed for {min} min. Drones on aggressive do not care about jams: use them.'
+      - 'Your sensors are on a forced coffee break courtesy of {npcs}. Jammers first, ECCM next time.'
+      - 'Losing your locks again and again? That is {npcs}. Kill the jammers first, or let the drones do it.'
+      - 'ECM: when the NPCs decide what you may shoot. Kill {npcs} first and take the remote back.'
+      - 'Lock, jam, sigh, repeat. ECCM or a sensor booster breaks the cycle. So does killing {npcs}.'
+    3:
+      - Jammed again? Have you tried turning your sensors off and on again?
+      - '{Min} minutes of jams. Your targeting computer is considering a career change.'
+      - 'Your targeting computer is now a very expensive screensaver.'
+      - 'Jammed. Again. {npcs} must really like you.'
+      - 'Have you considered firing in their general direction and hoping?'
+      - 'ECM: the NPC way of saying "not today".'
+      - 'Your sensors have entered do-not-disturb mode.'
+      - 'Fun fact: you cannot miss what you cannot lock. Truly flawless.'
+      - '{Min} minutes of jams. At this point it is a relationship.'
+      - 'Your locks have been jammed so often they are filing for unemployment.'
+      - 'Your targeting computer has requested annual leave.'
+      - 'The enemy has successfully disabled your ability to participate.'
+      - 'Your ship is now operating on faith and approximate coordinates.'
+      - 'Have you considered becoming a drone?'
+  ended:
+    0:
+      - No more jams. Lock your targets again.
+    1:
+      - The jams have stopped. Time to lock things again.
+    2:
+      - 'Sensors back online. Lock up before {npcs} change their mind.'
+      - 'Jams are over. Re-lock fast, and kill any jammer that is left.'
+      - 'Targets are yours again. Lock the jammers first, before they remember you.'
+    3:
+      - 'Look at that, you can see again.'
+      - 'Your sensors are back from their unpaid holiday.'
+      - 'You can lock things again. Try not to waste it.'
+      - 'The fog lifts. Behold: the NPCs that were shooting you the whole time.'
+
+web:
+  sustained:
+    0:
+      - >-
+        {npcs} can web you and {has} been on you for {min} min (webs are not in the game log: check your HUD). A web
+        slows you down, so you cannot keep range or align out quickly. Kill the webbing NPCs first.
+    1:
+      - '{npcs} can web and {has} been on you for {min} min (check your HUD). Webbing frigates first?'
+      - 'If you feel slow, it is probably {npcs}: they can web (not in the log, check your HUD). Kill them first.'
+    2:
+      - 'Sightseeing, bro? {npcs} can web you and {has} been on you for {min} min. Webbers first.'
+      - 'Moving at the speed of continental drift? {npcs} can web (check your HUD). Webbers first.'
+      - '{npcs} can web you. If you are orbiting at walking speed, that is why. Webbers first.'
+      - 'Your afterburner is working, I promise. {npcs} just disagree. Kill the webbers first.'
+      - 'Slow and steady wins nothing here. Webbers first, then speed again.'
+      - 'Speed tank currently set to parked. {npcs} can web you: kill them first.'
+    3:
+      - Sightseeing, bro?
+      - 'Enjoying the view? {npcs} certainly {has} been enjoying yours for {min} min.'
+      - 'Are we fighting or conducting field research?'
+      - 'Are you moving, or is the background just very slow?'
+      - 'Your ship has reached the speed of the Jita undock queue.'
+      - 'Even a freighter is laughing at you right now.'
+      - 'Orbiting? More like standing still with ambition.'
+      - 'Snail mode enabled. {npcs} thank you for your cooperation.'
+      - 'Your velocity is now a rounding error.'
+      - '{Min} minutes at this speed. Have you thought about getting out and pushing?'
+      - 'Your ship is now classified as stationary infrastructure.'
+      - 'Local authorities have approved your application to become a landmark.'
+      - 'Your afterburner would like to clarify that this is not its fault.'
+      - 'You are now moving at the speed of bureaucracy.'
+  ended:
+    0:
+      - The NPCs that can web have stopped attacking you for now.
+    1:
+      - The webbing NPCs have stopped attacking you for now.
+    2:
+      - 'The webbers are quiet. Feel free to move faster than a glacier again.'
+      - 'Webs are off. Get back to your range before they come back.'
+      - 'Free to move again. Use it: back to your range, webbers first if any are left.'
+    3:
+      - 'Free at last. Try not to waste it on sightseeing.'
+      - 'Look at you, moving faster than continental drift again.'
+      - 'Speed restored. Your afterburner says it told you so.'
+
+sensorDamp:
+  sustained:
+    0:
+      - >-
+        {npcs} can damp you and {has} been on you for {min} min. Damps cut your lock range: get closer, or fit a sensor
+        booster.
+    2:
+      - "Can't lock that far? {npcs} can damp you. Get closer, or bring a sensor booster."
+      - 'Lock range shrinking? {npcs} can damp you. Move closer, or fit a sensor booster with a range script.'
+      - 'Targets out of reach? That is the damps. Close in, or let the drones kill {npcs} first.'
+    3:
+      - 'Your lock range is having an identity crisis. {npcs} may have something to do with it.'
+      - 'Your lock range is now measured in metres.'
+      - 'Everything is too far away. Story of your life.'
+      - 'You can see them. You cannot lock them. Very zen.'
+      - 'Your sensors need glasses. {npcs} took the old ones.'
+  ended:
+    0:
+      - The NPCs that can damp have stopped attacking you for now.
+    3:
+      - 'Your sensors can see the far side of the grid again. Do not get used to it.'
+      - 'Lock range restored. Everything is suddenly so close and so hostile.'
+    2:
+      - 'Damps are off and your lock range is back. Lock what you could not reach before.'
+
+trackingDisruption:
+  sustained:
+    0:
+      - >-
+        {npcs} can disrupt tracking and {has} been on you for {min} min. Your turrets hit less and reach less far: kill
+        them first, or let drones handle them.
+    2:
+      - 'Missing a lot? {npcs} can disrupt your turrets. Kill them first, or send the drones.'
+      - 'Turrets whiffing? {npcs} can disrupt tracking. Kill them first, or fight where your guns track better.'
+      - 'Hits turning into misses? Tracking disruption. Kill {npcs} first, or let the drones handle them.'
+    3:
+      - 'Your guns are aiming with great confidence and very little success. {npcs} would like to thank you.'
+      - 'Your turrets are now a light show. Very pretty. Very harmless.'
+      - 'Statistically, one of those shots had to hit. Statistically.'
+      - 'Your guns have discovered pacifism.'
+      - 'Miss, miss, graze, miss. A true artist at work.'
+  ended:
+    0:
+      - The NPCs that can disrupt tracking have stopped attacking you for now.
+    3:
+      - 'Your turrets remembered how aiming works.'
+      - 'Your guns are hitting things again. The NPCs are less amused.'
+    2:
+      - 'Tracking is back to normal. Your guns can hit things again: start with what is left.'
+
+guidanceDisruption:
+  sustained:
+    0:
+      - >-
+        {npcs} can disrupt missiles and {has} been on you for {min} min. Your missiles do less damage and fly shorter:
+        kill them first, or let drones handle them.
+    2:
+      - 'Missiles falling short? {npcs} can disrupt them. Kill them first, or send the drones.'
+      - 'Missiles losing interest halfway? {npcs} can disrupt guidance. Kill them first, or close in.'
+      - 'Less damage per missile? Guidance disruption. Shoot {npcs} first, or send the drones.'
+    3:
+      - 'Your missiles are taking the scenic route. {npcs} may have given them directions.'
+      - 'Fire and forget. Mostly forget.'
+      - 'The missiles left. They did not say where they were going.'
+      - 'Somewhere out there, a missile is still looking for its target.'
+      - 'Your missiles have formed a union and refuse to fly the full distance.'
+      - 'Your missiles have filed a missing persons report. About themselves.'
+      - 'Missile guidance has been replaced with positive thinking.'
+      - 'Your missiles have decided to explore New Eden independently.'
+  ended:
+    0:
+      - The NPCs that can disrupt missiles have stopped attacking you for now.
+    3:
+      - 'Your missiles found the map again.'
+      - 'Your missiles are back from their voyage of self-discovery.'
+    2:
+      - 'Guidance is clean again. Your missiles go where you point them: start with what is left.'
+
+targetPaint:
+  sustained:
+    0:
+      - >-
+        {npcs} can paint you and {has} been on you for {min} min. A painted ship is easier to hit: kill them first, or
+        keep moving to take less damage.
+    2:
+      - '{npcs} can paint you. You are now a very large, very easy target. Painters first?'
+      - 'Taking more damage than usual? {npcs} can paint you. Painters first, or keep moving.'
+      - 'You are lit up like a Jita station on a Saturday. Kill the painters first.'
+    3:
+      - 'Congratulations, you are the biggest thing on grid. {npcs} made sure of it.'
+      - 'You now have the signature radius of a small moon.'
+      - 'Every NPC on grid can see you. Probably from the next system too.'
+      - 'Bigger is not always better, capsuleer.'
+      - 'Painted. Fashionable, but deadly.'
+  ended:
+    0:
+      - The NPCs that can paint you have stopped attacking you for now.
+    3:
+      - 'Your signature is back to its normal, modest size.'
+      - 'The spotlight is off. You may return to being merely a target.'
+    2:
+      - 'The paint is off. You are a smaller target again, so keep moving.'
+
+longFight:
+  event:
+    0:
+      - 'Five minutes in, with several kinds of threat. Check the brief: which wave is this, and do you need all of it?'
+    1:
+      - 'This fight has been going for {min} minutes. Worth a look at the brief: is anything here optional?'
+    2:
+      - 'Five minutes and counting. Check the brief, maybe not every wave needs your personal attention.'
+      - 'This fight is older than some corporations. Check the brief: maybe skip the optional waves.'
+      - '{Min} minutes. If this is a DPS check, the brief may know a faster way.'
+      - 'Still here after {min} minutes. A look at the brief may save you the next ten.'
+    3:
+      - Are we fighting or conducting field research?
+      - 'Five minutes in. Should I put the kettle on?'
+      - 'At this point the NPCs should be paying rent.'
+      - 'Do you want me to order food?'
+      - 'Somewhere, a timer is judging you.'
+      - 'This is not a site anymore. It is a lifestyle.'
+      - 'I have aged. Have you?'
+      - 'The wrecks have started forming opinions.'
+      - 'I have started writing my memoirs. You are still in the same pocket.'
+      - 'This encounter now qualifies as a long-term relationship.'
+      - 'The NPCs have started a homeowners association.'
+      - 'Should I schedule a maintenance window for this fight?'
+
+multiTrigger:
+  event:
+    0:
+      - >-
+        You shot {npcs}: two triggers within a minute, so their waves can land together. Watch your tank, and kill
+        anything that scrams or points first.
+    1:
+      - 'Two triggers in a minute ({npcs}). Their waves may arrive together: keep an eye on your tank.'
+    2:
+      - "I see you've selected the 'everyone at once' strategy. Watch your tank, and scrams first."
+      - 'Two triggers in a minute: both waves may land at once. Tank first, scrams first, regrets later.'
+      - 'Speedrun detected. Two triggers, double waves. Watch the tank, and kill the scrams first.'
+    3:
+      - "I see you've selected the 'everyone at once' strategy. Bold."
+      - 'Two triggers in a minute. Never mind me, carry on.'
+      - 'Two triggers in a minute. Somebody is in a hurry.'
+      - 'Why fight two waves when you can fight them both at once?'
+      - 'Ah yes, the pull-everything school of piloting.'
+      - 'Bold. Possibly brave. Probably expensive.'
+      - 'I will start the insurance paperwork, just in case.'
+      - 'You have successfully converted a controlled encounter into a public event.'
+      - 'Congratulations. You have invited the entire neighborhood.'
+      - 'I see we have abandoned the concept of crowd control.'
+      - 'Your insurance provider has left the chat.'
+      - 'CONCORD has reviewed your tactical decisions and declined to comment.'

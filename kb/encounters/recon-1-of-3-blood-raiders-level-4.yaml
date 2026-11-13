@@ -1,0 +1,159 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: recon-1-of-3-blood-raiders-level-4
+kind: mission
+name: Recon (1 of 3)
+level: 4
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Recon (1 of 3) (Blood Raiders) (Level 4)
+    url: https://wiki.eveuniversity.org/Recon_(1_of_3)_(Blood_Raiders)_(Level_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223376"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: nos
+  - kind: trackingDisruption
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite Frigates (Point)"
+  - text: "Suggested ships: Battleship, Command Ship, Strategic Cruiser, HAC (or fast frigate, shuttle etc for blitz)"
+  - text: "Parts: 1 of 3 (Blood Raiders), 2 of 3, 3 of 3"
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: Blitz
+      - text: You do not need to kill any hostile ships in this pocket. The warp gate is unlocked and sits about 24km from the warp-in point.
+      - text: You can use any fast frigate/cruiser (over 500m/s) to evasively tank Spawn 1 and quickly cover the distance to warp off through the gate.
+      - text: Mission is flagged completed once you have activated the gate and warped into Pocket 2.
+      - text: Auto aggro from Spawn 1 after several seconds. New spawns will appear at an interval between 60-90 secs from the three Shipyard structures, each about 20-30km from the warp-in point.
+      - text: Structures drop no loot.
+      - text: Drones will be aggroed by the later spawns, so retrieve/deploy them as necessary to avoid damage.
+      - text: Once Spawn 1 has been initiated, the Shipyards will keep spawning ships regardless of your location. If you had warped out, there will be a full gang waiting when next you warp-in.
+      - text: The full gang's DPS estimate is 900-1100dps.
+      - text: The loot from the battleships is generally rather good (usually about 2m/each).
+    waves:
+      - id: spawn-1-auto-aggro
+        trigger:
+          on: other
+          text: Spawn 1 (Auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Dark Priest
+              - Elder Corpum Shadow Sage
+            ewar:
+              - kind: neut
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Corpior Phantom
+          - count: "1"
+            class: Battleship
+            names:
+              - Corpus Pope
+              - Corpus Patriarch
+      - id: spawn-2-auto-aggro
+        trigger:
+          on: other
+          text: Spawn 2 (Auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Dark Priest
+              - Elder Corpum Shadow Sage
+            ewar:
+              - kind: neut
+          - count: "2"
+            class: Battleship
+            names:
+              - Corpus Pope
+              - Corpus Monsignor
+              - Corpus Cardinal
+            ewar:
+              - kind: neut
+      - id: spawn-3-auto-aggro
+        trigger:
+          on: other
+          text: Spawn 3 (Auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Sage
+              - Elder Corpum Priest
+            ewar:
+              - kind: neut
+          - count: "2"
+            class: Battleship
+            names:
+              - Corpus Pope
+            ewar:
+              - kind: neut
+      - id: spawn-4-auto-aggro
+        trigger:
+          on: other
+          text: Spawn 4 (Auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battleship
+            names:
+              - Corpus Pope
+              - Corpus Monsignor
+              - Corpus Cardinal
+              - Corpus Patriarch
+            ewar:
+              - kind: neut
+  - name: Pocket 2
+    notes:
+      - text: On entering the pocket, you will receive the mission completed message/journal update. You can just warp off without needing to kill any hostile ships.
+      - text: Auto aggro from Spawn 1 after several seconds. Next spawn will appear in 60-90 secs.
+      - text: "Bounty: 9 M for first pocket"
+      - text: "Bounty: 3 M for second pocket"
+    waves:
+      - id: spawn-1-auto-aggro
+        trigger:
+          on: other
+          text: Spawn 1 (Auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Sage
+            ewar:
+              - kind: neut
+          - count: "2"
+            class: Battleship
+            names:
+              - Corpus Cardinal
+      - id: spawn-2-auto-aggro
+        trigger:
+          on: other
+          text: Spawn 2 (Auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Collector
+            ewar:
+              - kind: trackingDisruption
+              - kind: warpDisruption
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Arch Priest
+            ewar:
+              - kind: neut

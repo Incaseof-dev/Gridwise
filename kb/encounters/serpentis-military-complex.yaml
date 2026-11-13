@@ -1,0 +1,180 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: serpentis-military-complex
+kind: complex
+name: Serpentis Military Complex
+dedRating: null
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Serpentis Military Complex
+    url: https://wiki.eveuniversity.org/Serpentis_Military_Complex
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "207604"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: This combat site can be quite challenging solo without high skills and good modules. It can be done in a good drone boat, like the Gila or Ishtar.
+  - text: In the first room you want to clear out all the NPCs before attacking the Gate Scrambler.
+  - text: The second room can be quite challenging, since the waves arrive pretty fast on a timer. You want to kill of the frigates first because they scram you, so you can warp off if needed.
+lootNotes:
+  - text: Gives around 35.000.000 ISK in bounties.
+  - text: =Escalation=
+  - text: "If you get the escalation from destroying Slick-Silver's Control Tower, you see this message:"
+  - text: Can escalate to Colony Under Fire
+pockets:
+  - name: First Room
+    notes:
+      - text: It is possible to skip this entire room by flying to the gate, destroying the gate scrambler and using the gate to go to the next part. Doing so requires a good tank.
+      - text: Notable structures
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Gate To Slick-Silver's Pleasure Resort
+            note: Unlocked
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 1-3
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Initiate
+              - Coreli Guardian Scout
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 1-3
+            class: Elite Frigate
+            names:
+              - Coreli Guardian
+            ewar:
+              - kind: sensorDamp
+          - count: 2-3
+            class: Battlecruiser
+            names:
+              - Corelatis
+          - count: 6-8
+            class: Battleship
+            names:
+              - Core Admiral
+          - count: "12"
+            class: Sentry
+            names:
+              - Serpentis Tower Sentry
+      - id: gate-scrambler-spawn
+        trigger:
+          on: other
+          text: Gate scrambler spawn
+          confidence: inferred
+        spawns:
+          - count: 0-2
+            class: Elite Frigate
+            names:
+              - Coreli Guardian
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "5"
+            class: Cruiser
+            names:
+              - Corelatis
+          - count: "5"
+            class: Battleship
+            names:
+              - Core Admiral
+  - name: Second Room
+    notes:
+      - text: This room can be very challenging, and unless you are experienced, might want to team up for.
+      - text: Notable structures
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Slick-Silver's Control Tower
+            note: Escalation trigger
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corelum Guardian Chief Guard
+              - Corelum Guardian Chief Safeguard
+            ewar:
+              - kind: sensorDamp
+          - count: "5"
+            class: Battleship
+            names:
+              - Core
+          - count: "1"
+            class: Sentry
+            names:
+              - Slick-Silvers Cruise Missile Battery
+      - id: five-additional-waves-that-together-contain
+        trigger:
+          on: other
+          text: Five additional waves that together contain
+          confidence: inferred
+        spawns:
+          - count: "?"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "?"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian
+          - count: "4"
+            class: Destroyer
+            names:
+              - Corelior
+          - count: "8"
+            class: Cruiser
+            names:
+              - Corelium Guardian
+            ewar:
+              - kind: sensorDamp
+          - count: 2-3
+            class: Battlecruiser
+            names:
+              - Corelatis
+          - count: "20"
+            class: Battleship
+            names:
+              - Core Admiral
+              - Core High Admiral
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - Shadow Serpentis High Admiral
+            triggers: escalation trigger
+            drop: Faction modules
+    onWarpIn: Heuristic analysis of this location indicates that destroying Slick-Silver's Control Tower would greatly improve your odds of uncovering further illicit activity. Slick-Silver is a Pleasure Resort chain owned by the Sarpati family. They usually reside in Serpentis complexes and are normally well defended by pirate ships.
+sde:
+  dungeonIds:
+    - 1664

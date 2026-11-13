@@ -1,0 +1,111 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: minmatar-contracted-bio-farm
+kind: complex
+name: Minmatar Contracted Bio-Farm
+dedRating: 1
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Minmatar Contracted Bio-Farm
+    url: https://wiki.eveuniversity.org/Minmatar_Contracted_Bio-Farm
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "211593"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Frigate"
+notes:
+  - text: Minmatar Contracted Bio-Farm is a DED Rated Complex. It can be found by scanning cosmic signatures in Minmatar high security space.
+  - text: The entry to this site is limited to T2 and Faction frigates and below.
+  - text: Upon warping to the beacon.
+  - text: "40px|link=|alt= DED logo Database Information: Somewhat surprisingly, the Angel Cartel contracted the building of experimental celestial biofarms from the Minmatar Republic. Clouds made of organic dust and water-based asteroids make this experiment possible."
+  - text: This is a two room complex.
+loot:
+  - item: 1st Tier Overseer's Personal Effects
+    from: Thorak's Biodome Garden
+    note: est. 11k ISK (wiki) · 100% drop rate
+  - item: 2nd Tier Overseer's Personal Effects
+    from: Oofus's Repair Shop
+    note: est. 20k ISK (wiki) · 100% drop rate
+  - item: Gistii C-type Modules
+    from: Oofus's Repair Shop
+    note: Up to 3x
+  - item: Domination Frigate Modules
+    from: Oofus's Repair Shop
+  - item: Dramiel BPC
+    from: Oofus's Repair Shop
+lootNotes:
+  - text: "Example loot 2024-01-07 (excluding overseer effects):"
+  - text: Gistii C-Type Small Remote Shield Booster
+  - text: "Salvage: 759k"
+  - text: "Normal Modules/Ammunition: 68k"
+pockets:
+  - name: Room 1
+    notes:
+      - text: Upon activating the acceleration gate to the room.
+      - text: "40px|link=|alt= DED logo Database Information: Ironically, slave trade is rampant in this Minmatar contracted biodome complex. Thorak is a ruthless businessman, turned politician, and his future in a galactic context looks bright."
+      - text: The acceleration gate to the second room is locked and requires Thorak’s Private Key. The key is in Thorak's Biodome Garden.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "20"
+            class: Frigate
+            names:
+              - Gistii Hijacker
+          - count: "1"
+            class: Frigate
+            names:
+              - Gistii Rogue
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Hangar Array
+            names:
+              - Thorak's Biodome Garden
+            drop: Thorak’s Private Key and 1st Tier Overseer's Personal Effects.
+          - count: "?"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+            note: Requires Thorak's Private Key. It is consumed on use.
+  - name: Room 2
+    notes:
+      - text: Upon activating the acceleration gate to the room.
+      - text: "40px|link=|alt= DED logo Database Information: A major blow was dealt to an otherwise successful energy pooling operation when a meteor shower pummeled the control bridge to pieces. Reports indicate that Orfus, the CEO of the the self-titled galactic repair corporation, agreed to fix it for the troubled energy contractor in return for huge stakes in the eventual profits."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "24"
+            class: Frigate
+            names:
+              - Gistii Hijacker
+          - count: "4"
+            class: Frigate
+            names:
+              - Gistii Rogue
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Hangar Array
+            names:
+              - Oofus's Repair Shop
+            drop: 2nd Tier Overseer's Personal Effects and may contain Gistii C-type modules, Angel Cartel faction modules or a Dramiel BPC.
+sde:
+  dungeonIds:
+    - 178

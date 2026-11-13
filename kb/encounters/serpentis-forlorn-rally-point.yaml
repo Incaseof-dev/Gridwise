@@ -1,0 +1,117 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: serpentis-forlorn-rally-point
+kind: anomaly
+name: Serpentis Forlorn Rally Point
+dedRating: null
+anomalyClass: 6
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Serpentis Forlorn Rally Point
+    url: https://wiki.eveuniversity.org/Serpentis_Forlorn_Rally_Point
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225146"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Rats spawn near Asteroid Mining Post.
+  - text: "Escalation: Can escalate to the Serpentis Prison Camp."
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: wave-1
+        trigger:
+          on: warpIn
+          text: Wave 1
+        spawns:
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Corelum Chief Protector
+            triggers: Trigger
+          - count: "6"
+            class: Destroyer
+            names:
+              - Corelior Cannoneer
+              - Corelior ..
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Corelum Chief Sentinel
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Corelatis Platoon Leader
+            triggers: Last battlecruiser triggers next wave.
+          - count: "4"
+            class: Battleship
+            names:
+              - Core Port
+              - Core Rear Admiral
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Corelum Chief Sentinel
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Corelatis Captain Sentry
+            triggers: Last battlecruiser triggers next wave.
+          - count: "2"
+            class: Battleship
+            names:
+              - Core Vice
+              - Core Flotilla Admiral
+      - id: wave-4
+        trigger:
+          on: other
+          text: Wave 4
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Defender
+            triggers: Last cruiser triggers next wave.
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Corelatis Captain Sentry
+          - count: "4"
+            class: Battleship
+            names:
+              - Core Admiral
+      - id: wave-5
+        trigger:
+          on: other
+          text: Wave 5
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Sentinel
+          - count: "4"
+            class: Battleship
+            names:
+              - Core Admiral
+              - Core High Admiral
+sde:
+  dungeonIds:
+    - 3450

@@ -1,0 +1,394 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: festering-ruins
+kind: other
+name: Festering Ruins
+dedRating: null
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Festering Ruins
+    url: https://wiki.eveuniversity.org/Festering_Ruins
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "177306"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: T2 Battleship"
+notes:
+  - text: The site is very rare and hard, and should only be attempted by skilled players. Rogue Drone, Serpentis, Angel Cartel and Guristas rats are present in this site. Omni tanks are highly recommended, especially against Kinetic and Thermal damage.
+  - text: Compared to other combat relic sites, this is noticeably harder due to higher DPS, especially in the fourth and last pocket.
+  - text: You land at an acceleration gate at warp-in. It is locked until the three battleships guarding it are destroyed.
+npcs:
+  Pirate Grave Robber:
+    sdeTypes:
+      - Core Admiral
+      - Core High Admiral
+    class: Battleship
+  Cartel Envoy:
+    sdeTypes:
+      - Gist Cherubim
+      - Gist Seraphim
+    class: Battleship
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Battleship
+            names:
+              - Pirate Grave Robber
+            note: Must be shot down to activate the gate
+  - name: First Pocket (Terrace)
+    notes:
+      - text: Expect high incoming damage in this room; recommend destroying the Stasis Towers first if you cannot tank the damage.
+      - text: The "Gate to Portal" will lead to second pocket while the "Gate to Hall" leads to third pocket. Both are locked until all ships are destroyed.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Guristas Stasis Tower
+            ewar:
+              - kind: web
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Defender
+              - Corelum Guardian Chief Protector
+              - Corelum Guardian Chief Infantry
+              - Corelum Guardian Chief Sentinel
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Corelatis High Captain
+              - Corelatis Captain Sentry
+          - count: "7"
+            class: Battleship
+            names:
+              - Core Admiral
+              - Core High Admiral
+          - count: "1"
+            class: Battleship
+            names:
+              - Serpentis Raid Commander
+            triggers: Triggers wave 2
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Defender
+              - Coreli Guardian Guard
+              - Coreli Guardian Safeguard
+          - count: 2-3
+            class: Battlecruiser
+            names:
+              - Corelatis Squad Leader
+              - Corelatis Wing Leader
+          - count: 10-11
+            class: Battleship
+            names:
+              - Core Port Admiral
+              - Core Rear Admiral
+          - count: "1"
+            class: Battleship
+            names:
+              - Cartel Envoy
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Gate to Portal
+            note: 30 km away
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Gate to Hall
+            note: 60 km away
+    onWarpIn: DED deep space scouts briefly explored this strange site and left behind a rather cryptic note. As far as you can tell some ancient ruins lie within, but who built them or what treasures might lie buried there are anyone's guess.
+  - name: Second Pocket (Portal)
+    notes:
+      - text: This section is optional; only run it for extra bounties/salvage.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 3-4
+            class: Destroyer
+            names:
+              - Corelior Infantry
+              - Corelior Sentinel
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corelatis Captain
+              - Corelatis Platoon Leader
+              - Corelatis Captain Sentry
+              - Corelatis High Captain
+          - count: 10-11
+            class: Battleship
+            names:
+              - Core Flotilla Admiral
+              - Core Vice Admiral
+            ewar:
+              - kind: sensorDamp
+          - count: "1"
+            class: Battleship
+            names:
+              - Core Relay Commander
+            triggers: Triggers reinforcement 1 on attack
+      - id: reinforcement-1
+        trigger:
+          on: other
+          text: Reinforcement 1
+          confidence: inferred
+        spawns:
+          - count: 6-8
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Defender
+              - Corelum Guardian Chief Infantry
+              - Corelum Guardian Chief Sentinel
+          - count: 7-8
+            class: Battleship
+            names:
+              - Core Admiral
+              - Core High Admiral
+          - count: "1"
+            class: Battleship
+            names:
+              - Core Relay Commander
+            triggers: Triggers reinforcement 2 on attack
+      - id: reinforcement-2
+        trigger:
+          on: other
+          text: Reinforcement 2
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Coreli Defender
+              - Coreli Protector
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Spy
+              - Coreli Guardian Agent
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 6-7
+            class: Battleship
+            names:
+              - Core Admiral
+              - Core High Admiral
+          - count: 0-1
+            class: Battleship
+            names:
+              - Shadow Serpentis Portal Guardian
+      - id: wave
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Gate to Hall
+            note: Locked
+    onWarpIn: Charred remains and debris litter the area. A confrontation between the pirate scavengers and rogue drones must have taken place some time in the past, as the empty drone bunkers and ruined pirate ship carcasses would indicate.
+  - name: Third Pocket (Hall)
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "8"
+            class: Sentry
+            names:
+              - Drone Cruise Missile Battery
+            triggers: Triggers reinforcements when attacked
+          - count: 5-10
+            class: Elite Frigate
+            names:
+              - Strain Hunter
+              - Strain Silverfish
+              - Strain Devilfish
+              - Strain Barracuda Alvi
+          - count: "9"
+            class: Battleship
+            names:
+              - Alvus Creator
+              - Patriarch Alvus
+      - id: reinforcements
+        trigger:
+          on: other
+          text: Reinforcements
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Pulse Drone
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            triggers: Attacking triggers smartbomb wave
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Crippler
+              - Enforcer
+              - Siege Alvatis
+          - count: "3"
+            class: Battleship
+            names:
+              - Alvus Queen
+              - Matriarch Alvus
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "6"
+            class: Hackable
+            names:
+              - Floating Debris
+            drop: T1 and Meta gas cloud harvesters and basic/improved attribute implants
+            note: Hacking containers triggers smartbomb wave
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Gate to Sanctum
+            note: Locked until room is cleared
+    onWarpIn: A large force of drones has taken up residence in this area. They obviously benefit greatly from salvaging the remnants of the former inhabitants, which still litters this patch of space. A drone presence this large could not be formed without an abundance of raw materials. There are two Pulse Drones on grid and when they are attacked, they begin sending out waves of energy, gas and materials, hitting anything in its path. All ships anbd drones in the blast radius take damage!
+  - name: Fourth Pocket (Sanctum)
+    notes:
+      - text: "Warning: DPS is considerably higher in this room. Highly recommend a strongly tanked T3 Cruiser or several Battleships. Use caution when destroying the Siege Sentries, as destroying each of them triggers a strong smartbomb wave."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 4-5
+            class: Elite Frigate
+            names:
+              - Strain Splinter
+              - Strain Render
+              - Strain Decimator
+              - Strain Infester Alvi
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 4-5
+            class: Battleship
+            names:
+              - Alvus Ruler
+              - Supreme Alvus Parasite
+              - Alvus Creator
+              - Patriarch Alvus
+          - count: "6"
+            class: Battleship
+            names:
+              - Hive Guardian
+          - count: "3"
+            class: Sentry
+            names:
+              - Tower Drone Sentry
+          - count: "1"
+            class: Sentry
+            names:
+              - Drone Siege Autocannon Sentry
+            triggers: Destroying triggers smartbomb wave
+          - count: "1"
+            class: Sentry
+            names:
+              - Drone Siege Railgun Sentry
+            triggers: Destroying triggers smartbomb wave
+          - count: "1"
+            class: Sentry
+            names:
+              - Drone Siege Beam Laser Sentry
+            triggers: Destroying triggers smartbomb wave
+          - count: "1"
+            class: Sentry
+            names:
+              - Hive Mother
+            drop: 20th Tier Overseer's Personal Effects, T2 Mindlink implant and drone alloys
+            note: Triggers next wave after structural damage
+      - id: hive-mother-wave
+        trigger:
+          on: other
+          text: Hive Mother Wave
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Sentry
+            names:
+              - Drone Cruise Missile Battery
+          - count: "10"
+            class: Battleship
+            names:
+              - Alvus Ruler
+              - Matriarch Alvus
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "2"
+            class: Hackable
+            names:
+              - Ancient Ruins
+            drop: T1 and Meta gas cloud harvesters and basic/improved attribute implants
+            note: Hacking containers triggers smartbomb wave
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Gate to Portal
+            note: "Goes back to Pocket #2"
+      - id: ancient-ruins-wave
+        trigger:
+          on: other
+          text: Ancient Ruins Wave
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Protector
+          - count: "3"
+            class: Battleship
+            names:
+              - Core Grand Admiral
+          - count: "1"
+            class: Battleship
+            names:
+              - Pierre Patron
+    onWarpIn: The source of the drone infestation seems to lie in this deadspace pocket, located inside a fiery nebula. The extreme and hostile environment, accompanied by a very heavy drone presence, seems to have kept most of the looters away, as two fully intact ancient ruins would indicate.

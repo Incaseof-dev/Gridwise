@@ -1,0 +1,241 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: whispers-in-the-dark
+kind: mission
+name: Whispers In The Dark
+level: 2
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Whispers In The Dark
+    url: https://wiki.eveuniversity.org/Whispers_In_The_Dark
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223380"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Suggested ships: Thorax"
+  - text: The missions have a bit of randomness added to them. The examples below just show what you might meet.
+pockets:
+  - name: "Part 1 of 4: First Contact"
+    notes:
+      - text: "Blitz: The mission completes when you kill group 2. The one that is far from you."
+      - text: "Space type: Deadspace"
+      - text: "Completed in: battlecruiser"
+  - name: Single Pocket
+    notes:
+      - text: The Breeding Facility drops 2 types of random trade goods.
+      - text: Veldspar - 19 x 90k asteroids - 1,710,000 units of Veldspar
+    waves:
+      - id: group1-auto-aggro
+        trigger:
+          on: other
+          text: Group1 (Auto aggro)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Centii Servant
+              - Centii Minion
+          - count: "1"
+            class: Destroyer
+            names:
+              - Centior Cannibal
+      - id: group-2
+        trigger:
+          on: other
+          text: Group 2
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Centii Ravener
+              - Centii Scavanger
+          - count: "2"
+            class: Destroyer
+            names:
+              - Centior Misshape
+  - name: "Part 2 of 4: Lay and Pray"
+    notes:
+      - text: 'Blitz: Kill the two construction freighters, and pick up the crate of blocks dropped from the second (not the stack of 10 "Construction Materials").'
+      - text: "Space type: Deadspace"
+      - text: "Completed in: battlecruiser"
+  - name: Single Pocket
+    notes:
+      - text: Some Sansha Bunker may drop ammo types.
+    waves:
+      - id: group-1-30-35km-auto-aggro
+        trigger:
+          on: other
+          text: Group 1 30/35km (Auto aggro)
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Centii Butchers
+              - Centii Manslayer
+            triggers: Spawn 1
+      - id: group-2-65km
+        trigger:
+          on: other
+          text: Group 2 65km
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: "?"
+            names:
+              - Construction Freighter
+            triggers: Spawn 2
+            drop: Last kill will drop 1 unit of "Crates of Construction Blocks" needed to bring back to complete the mission.
+      - id: spawn-1
+        trigger:
+          on: other
+          text: Spawn 1
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Centii Plague
+              - Centii Enslaver
+              - Sansha Enslaver
+            group: Triggered when first group 1 ship is into hull
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Sansha Deamon
+            group: Triggered when first group 1 ship is into hull
+            ewar:
+              - kind: web
+      - id: spawn-2-auto-aggro
+        trigger:
+          on: other
+          text: Spawn 2 (Auto Aggro)
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Centii Slavehunter
+              - Centii Savage
+            group: Triggered when first Construction Freighter is into hull
+            ewar:
+              - kind: trackingDisruption
+  - name: "Part 4 of 4: The Outpost"
+    notes:
+      - text: "Space type: Deadspace"
+      - text: "Completed in: battlecruiser."
+  - name: Pocket 1
+    notes:
+      - text: Must destroy all NPCs to unlock the gate.
+      - text: Attacking group 4 will aggro group 5
+    waves:
+      - id: group-1-20km-auto-aggro
+        trigger:
+          on: other
+          text: Group 1 20km (Auto aggro)
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Centii Plague
+              - Centii Enslaver
+      - id: group-2-50km-right
+        trigger:
+          on: other
+          text: Group 2 50km (Right)
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Centii Plague
+              - Centii Enslaver
+      - id: group-3-55km-left
+        trigger:
+          on: other
+          text: Group 3 55km (Left)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Centii Servant
+              - Centii Minion
+          - count: "1"
+            class: Cruiser
+            names:
+              - Centum Juggernaut
+            ewar:
+              - kind: trackingDisruption
+      - id: group-4-60km-storage-silo
+        trigger:
+          on: other
+          text: Group 4 60km (Storage Silo)
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Centii Butcher
+              - Centii Manslayer
+      - id: group-5-80-90km-ruined-stargate
+        trigger:
+          on: other
+          text: Group 5 80-90km (Ruined Stargate)
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Centii Servant
+              - Centii Minion
+          - count: "2"
+            class: Destroyer
+            names:
+              - Centior Misshape
+  - name: Pocket 2
+    notes:
+      - text: "Blitz: The mission completes when the Worker's Quarters is destroyed."
+      - text: The Worker's Quarters will drop 10 units of 2-4 different freight goods. Also the second (starting from the landing pad) Storage Facility of the central of the 3 plants will drop goods.
+    waves:
+      - id: group-1-auto-aggro
+        trigger:
+          on: other
+          text: "Group 1: (Auto aggro)"
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Centior Cannibal
+              - Centior Devourer
+      - id: group-2
+        trigger:
+          on: other
+          text: Group 2
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Centior Devourer
+              - Centior Abomination
+            group: Aggro when you attack the Worker's Quarter
+      - id: group-3-40km
+        trigger:
+          on: other
+          text: Group 3 40km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Centii Butcher

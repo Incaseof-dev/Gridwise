@@ -1,0 +1,87 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: for-the-honor-of-rouvenor
+kind: mission
+name: For the Honor of Rouvenor
+level: 1
+enemyFaction: Caldari State
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – For the Honor of Rouvenor
+    url: https://wiki.eveuniversity.org/For_the_Honor_of_Rouvenor
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "230507"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Kill the lead terrorist and recover the Armor of Rouvenor.
+restrictions:
+  - text: "Ship size limit: Destroyer, Frigate (Assault, Expedition, Logistics), Corvette, Electronic Attack Ship, Hauler, Shuttle"
+notes:
+  - text: Deadspace pocket with gates.
+  - text: The Caldari Terrorist jumps out on arival until the final pocket.
+pockets:
+  - name: Warp-in
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Cruiser
+            names:
+              - Caldari Terrorist
+            note: Renamed State Bushi
+  - name: First pocket
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 5-6
+            class: Drone
+            names:
+              - Caldari Guard
+            note: Renamed rogue ... Apis
+          - count: "1"
+            class: Cruiser
+            names:
+              - Caldari Terrorist
+            note: Renamed State Bushi
+  - name: Second pocket
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 6-9
+            class: Drone
+            names:
+              - Caldari Guard
+            note: Renamed rogue ... Apis
+          - count: "1"
+            class: Cruiser
+            names:
+              - Caldari Terrorist
+            note: Renamed State Bushi
+  - name: Third pocket
+    notes:
+      - text: Rouvenor's armor automagically appears in your cargo bay on destruction of the Caldari Terrorist.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Cruiser
+            names:
+              - Caldari Terrorist
+            drop: Armor of Rouvenor
+            note: Renamed State Dogo

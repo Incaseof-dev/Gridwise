@@ -1,0 +1,31 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: a-beacon-beckons
+kind: mission
+name: A Beacon Beckons
+level: null
+enemyFaction: null
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – A Beacon Beckons
+    url: https://wiki.eveuniversity.org/A_Beacon_Beckons
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "228275"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Approach the wrecked ships
+notes:
+  - text: thumb|128px|Sister Alitura
+  - text: --The mission can be completed remotely, and the next mission can be accepted remotely.--
+  - text: To start the mission, go to Arnon IX - Moon 3 and dock up at the Sisters of EVE Bureau station. Click on the Agents tab, and start a dialogue with Sister Alitura.
+  - text: This is a very easy mission - there is no danger of attack. You can do this mission in an unarmed shuttle, in fact. Just fly to the center of the wrecks. Check out the dreadnought wrecks - they're interesting to see. You can complete this mission remotely when you achieve the objective.
+  - text: Objective
+  - text: "Approach the wrecked ships. Location: Manarq ()"
+  - text: Notes
+  - text: Finding the Damsel - Sometimes objects and entities found in space are not displayed in the default overview settings. Adding "Large Collidable Objects" in Celestials and "Large Collidable Structures" in Entities to the overview can reveal details such as object names.
+  - text: "Hand-in message: It seems CONCORD was faster to respond, but your backup was definitely appreciated. There were a handful of survivors picked up. They've been taken to various care facilities in the area – wherever vacancies could be found."
+  - text: "Next Mission: Agent Inquiry"

@@ -1,0 +1,27 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: angel-port
+kind: anomaly
+name: Angel Port
+dedRating: null
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Angel Port
+    url: https://wiki.eveuniversity.org/Angel_Port
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225145"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Ungated normal space pocket. There are 2 variants of this anomaly. The incoming damage can be overwhelming if warping to zero range.
+  - text: "Escalation: Angel Military Operations Complex: Your scanner has picked up a transmission originating from a nearby system. It would be wise to investigate this mysterious signal further."
+  - text: "Escalation: This site can escalate to Angel Military Operations Complex."
+lootNotes:
+  - text: Approximately 5-7 million in bounties
+sde:
+  dungeonIds:
+    - 2126

@@ -1,0 +1,188 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: angel-military-complex
+kind: complex
+name: Angel Military Complex
+dedRating: null
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Angel Military Complex
+    url: https://wiki.eveuniversity.org/Angel_Military_Complex
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "208588"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Battleship"
+notes:
+  - text: "Blitz for ranged ship (need lock and weapon range > 65-70 km): Warp to first pocket, kill 4 stasis towers, kill Gist Gate Commander to unlock the gate. Warp through the gate to second pocket. Kill first stasis tower (explode with 3k damage, be careful), recharge tank if needed, kill second stasis tower. Flee out from Angel Control Tower in 30-40 km range, shot it. Kill all tackling frigates, kill Domination boss, take loot, warp out."
+  - text: 2 pockets' initial groups and 1 spawn for a total of 44 ships.
+  - text: "Escalation: This site can escalate to Pioneers Peril."
+  - text: "Escalation: Pioneers Peril: Going through the logs from one of the command ships you blasted, you come across a recent memo containing a draft for a plan where forces from this Military Complex and another similar to this one were to gang up and raid a space trucker station somewhere in the region. Where this space trucker station is, is not included in the logs, but the location of the rally point is there. It is supposed to be by a small asteroid belt, not too far away."
+npcs:
+  Supervisor's Wingman:
+    sdeTypes:
+      - Arch Gistii Hijacker
+      - Arch Gistii Rogue
+      - Arch Gistii Outlaw
+      - Arch Gistii Thug
+    class: Elite Frigate
+  Supervisor's Guardian:
+    sdeTypes:
+      - Arch Gistum Breaker
+      - Arch Gistum Defeater
+    class: Elite Cruiser
+pockets:
+  - name: First room
+    waves:
+      - id: two-defense-groups-of-the-same-composition-one-on-each-flank-this-room-can-be-skipped-by-using-angel-diamond-tag-angel-stasis-tower-is-60km-from-warp-in
+        trigger:
+          on: other
+          text: Two defense groups of the same composition, one on each flank. This room can be skipped by using Angel Diamond Tag. Angel Stasis Tower is 60km from warp in.
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Battleship
+            names:
+              - Gist Cherubim
+          - count: "2"
+            class: Sentry
+            names:
+              - Angel Stasis Tower
+            ewar:
+              - kind: web
+            triggers: Attack or destruction triggers the spawn
+          - count: "5"
+            class: Sentry
+            names:
+              - Tower Sentry Angel I
+          - count: "5"
+            class: Sentry
+            names:
+              - Angel Heavy Missile Battery
+      - id: reinforcement-spawn
+        trigger:
+          on: other
+          text: Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "8"
+            class: Frigate
+            names:
+              - Gistii Ambusher
+              - Gistii Hunter
+              - Gistii Impaler
+              - Gistii Raider
+          - count: "8"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+              - Gistatis Praefectus
+              - Gistatis Tribuni
+              - Gistatis Tribunus
+          - count: "2"
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Commander
+              - Gist Warlord
+              - Gist Seraphim
+              - Gist Malakim
+          - count: "1"
+            class: Cruiser
+            names:
+              - Gist Gate Commander
+            triggers: Unlock the gate
+  - name: Second room
+    notes:
+      - text: Second Wave Angel Stasis Towers dying can cause an explosion that deals a Large amount of damage.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Tower
+            names:
+              - Angel Control Tower
+            triggers: Attacking triggers supervisor wave
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Gistii Ambusher
+              - Gistii Hunter
+              - Gistii Impaler
+              - Gistii Raider
+          - count: "6"
+            class: Destroyer
+            names:
+              - Gistior Defiler
+              - Gistior Seizer
+              - Gistior Trasher
+          - count: "6"
+            class: Cruiser
+            names:
+              - Gistum Liquidator
+              - Gistum Marauder
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+              - Gistatis Praefectus
+              - Gistatis Tribuni
+              - Gistatis Tribunus
+          - count: "2"
+            class: Battleship
+            names:
+              - Gist Commander
+              - Gist Warlord
+              - Gist Seraphim
+              - Gist Malakim
+          - count: "2"
+            class: Sentry
+            names:
+              - Angel Stasis Tower
+            ewar:
+              - kind: web
+            triggers: Attack triggers a 2,000 hp Smartbomb wave
+      - id: supervisor-wave
+        trigger:
+          on: other
+          text: Supervisor wave
+          confidence: inferred
+        spawns:
+          - count: 4-5
+            class: Elite Frigate
+            names:
+              - Supervisor's Wingman
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 2-3
+            class: Elite Cruiser
+            names:
+              - Supervisor's Guardian
+          - count: "1"
+            class: Battleship
+            names:
+              - Gist Stronghold Supervisor
+            triggers: Destroying may trigger escalation
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - Domination Malakim
+            triggers: May trigger escalation
+            drop: may contain Domination faction modules or an implant; wreck may produce Tech 2 salvage
+sde:
+  dungeonIds:
+    - 1637

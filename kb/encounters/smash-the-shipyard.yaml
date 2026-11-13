@@ -1,0 +1,109 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: smash-the-shipyard
+kind: mission
+name: Smash The Shipyard
+level: 4
+enemyFaction: Amarr Empire
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Smash The Shipyard
+    url: https://wiki.eveuniversity.org/Smash_The_Shipyard
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "198717"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: targetPaint
+notes:
+  - text: "Suggested ships: Dominix"
+  - text: "Space type: Deadspace"
+  - text: "Blitz: The mission objective is stated as destroying the 4 Shipyards & the control tower with all rats. Blitz may be possible by destroying structures first (untested)."
+  - text: "Tip: Individual ship-classes can be aggroed separately (i.e. all frigates at once OR all cruisers at once OR all battleships). In that order, individual aggro verified. Not sure if aggroing larger ships first will cause mass-aggro of remaining fleet or attacking structures will cause mass-aggro (needs testing)."
+pockets:
+  - name: Warp-in
+    notes:
+      - text: "NOTE: Ship Count from initial warp-in only. Shipyards may spawn more when fleet is aggressed."
+      - text: Closest Rats to Warp-in at 56km, No aggro.
+      - text: Structures do not drop loot.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Imperial Bahir
+          - count: "3"
+            class: Frigate
+            names:
+              - Imperial Sixtus
+          - count: "3"
+            class: Frigate
+            names:
+              - Imperial Templar Forian
+          - count: "2"
+            class: Frigate
+            names:
+              - Imperial Templar Paladin
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Bahir
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Valok
+          - count: "3"
+            class: Cruiser
+            names:
+              - Imperial Agatho
+          - count: "3"
+            class: Cruiser
+            names:
+              - Imperial Tamir
+          - count: "3"
+            class: Cruiser
+            names:
+              - Imperial Templar Donus
+          - count: "1"
+            class: Cruiser
+            names:
+              - Imperial Templar Mazaki
+          - count: "3"
+            class: Cruiser
+            names:
+              - Imperial Templar Mathura
+          - count: "5"
+            class: Battleship
+            names:
+              - Imperial Bataivah
+          - count: "1"
+            class: Battleship
+            names:
+              - Imperial Dominator
+          - count: "1"
+            class: Battleship
+            names:
+              - Imperial Tanakh
+          - count: "3"
+            class: Battleship
+            names:
+              - Imperial Ultara
+          - count: "1"
+            class: Battleship
+            names:
+              - Imperial Templar Dominator
+          - count: "2"
+            class: Battleship
+            names:
+              - Imperial Templar Martyr
+          - count: "1"
+            class: Battleship
+            names:
+              - Imperial Templar Ultara

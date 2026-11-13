@@ -1,0 +1,217 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-assault-guristas-pirates
+kind: mission
+name: The Assault
+level: 4
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Assault (Guristas Pirates)
+    url: https://wiki.eveuniversity.org/The_Assault_(Guristas_Pirates)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223355"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal:
+    - kinetic
+    - thermal
+  resist:
+    - kinetic
+    - thermal
+objectives:
+  - text: Destroy the Guristas fleet.
+ewar:
+  - kind: web
+  - kind: ecm
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Yes (Dire Pithi Invader)"
+  - text: "Blitz: In the first pocket, ignore all hostile targets and activate the acceleration gate. Clear the second pocket completely."
+  - text: Spawn triggers are the highest bounty battleships in a particular group. The exact battleship is randomly determined, so be sure to identify them correctly via their bounty. The incoming damage is almost entirely kinetic; only the elite cruisers deal noticeable thermal damage.
+lootNotes:
+  - text: "Loot: ≈ 5.14 Mil ISK (2025-04-20) - Occasional higher-value pirate dog tag"
+  - text: "Salvage: ≈ 3.92 Million ISK (2025-04-20)"
+  - text: "Bounties: ≈ 20.2 Million ISK (2025-04-20)"
+pockets:
+  - name: 1st Pocket
+    notes:
+      - text: "Fleet Aggro: The first pilot to enter the pocket will receive auto-aggro from Group 1 only. Any other fleet members who enter afterward will receive auto-aggro from Group 2 upon attacking Group 1. Group 2 and Reinforcements will aggro drones."
+      - text: The acceleration gate to next room is not locked, and can be activated at any time.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Wrecker
+              - Dire Pithi Plunderer
+            group: Group 1 (15-30 km) (auto-aggro)
+          - count: "4"
+            class: Battleship
+            names:
+              - Pith Dismantler
+              - Pith Exterminator
+            group: Group 1 (15-30 km) (auto-aggro)
+            ewar:
+              - kind: ecm
+            triggers: Triggers reinforcements
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Inferno
+              - Dire Pithum Mortifier
+            group: Group 2 (80 km)
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Pithatis Assassin
+              - Pithatis Assaulter
+            group: Group 2 (80 km)
+      - id: reinforcements-120-km
+        trigger:
+          on: other
+          text: Reinforcements (120 km)
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Pithatis Assassin
+            note: type list incomplete on the source page
+          - count: 3-4
+            class: Battleship
+            names:
+              - Pith Conquistador
+            ewar:
+              - kind: ecm
+            note: type list incomplete on the source page
+  - name: 2nd Pocket
+    notes:
+      - text: Attacking Group 2 will aggro Group 3. Reinforcement spawn and elite frigates will aggro drones. Destroying the Starbase Control Tower prevents Reinforcements from spawning, but will also aggro Group 2.
+      - text: "The incoming damage is quite high from Initial Defenders alone. The battleships will orbit at 50 km and attack with Scourge cruise missiles. It is recommended to destroy hostile targets in the following order: Group 1, Group 3, Group 2 (and Reinforcements waves when triggered)."
+      - text: Mission is marked as completed after all ships are dead.
+      - text: The last ship destroyed from Reinforcements Wave 1 triggers Reinforcements Wave 2.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Invader
+              - Dire Pithi Infiltrator
+            group: Group 1 (55 km)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Abolisher
+              - Dire Pithum Eraser
+            group: Group 1 (55 km)
+          - count: "3"
+            class: Battleship
+            names:
+              - Pith Dismantler
+              - Pith Extinguisher
+            group: Group 1 (55 km)
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Annihilator
+            group: Group 2 (80 km)
+            ewar:
+              - kind: ecm
+            note: type list incomplete on the source page
+          - count: "5"
+            class: Battleship
+            names:
+              - Pith Conquistador
+              - Pith Destroyer
+            group: Group 2 (80 km)
+            ewar:
+              - kind: ecm
+            triggers: Attacking Destroyers triggers reinforcement group 1
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Invader
+              - Dire Pithi Infiltrator
+            group: Group 3 (110 km)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Destroyer
+            names:
+              - Pithior Guerilla
+              - Pithior Renegade
+            group: Group 3 (110 km)
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Pithatis Assaulter
+              - Pithatis Enforcer
+            group: Group 3 (110 km)
+          - count: "2"
+            class: Battleship
+            names:
+              - Pith Exterminator
+            group: Group 3 (110 km)
+            ewar:
+              - kind: ecm
+            note: type list incomplete on the source page
+      - id: reinforcements
+        trigger:
+          on: other
+          text: Reinforcements
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Cruiser
+            names:
+              - Pithum Eraser
+            group: Wave 1 (40km)
+            note: type list incomplete on the source page
+          - count: "4"
+            class: Battleship
+            names:
+              - Pith Eliminator
+            group: Wave 1 (40km)
+            ewar:
+              - kind: ecm
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Cruiser
+            names:
+              - Pithum Eraser
+              - Pithum Inferno
+              - Pithum Mortifier
+            group: Wave 2 (40 km)
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Starbase Control Tower
+            triggers: Attacking will aggro Group 2
+            note: Destroying will prevent Reinforcements spawn
+          - count: "1"
+            class: Structure
+            names:
+              - Habitation Module
+            drop: 10x Two low-value trade goods

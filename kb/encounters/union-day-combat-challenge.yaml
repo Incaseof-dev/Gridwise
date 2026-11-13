@@ -1,0 +1,205 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: union-day-combat-challenge
+kind: anomaly
+name: Union Day Combat Challenge
+dedRating: null
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Union Day Combat Challenge
+    url: https://wiki.eveuniversity.org/Union_Day_Combat_Challenge
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "194646"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: T1 Destroyers (including Kikimora and Sunesis)"
+notes:
+  - text: "Rating: N/A"
+  - text: The Union Day Combat Challenge is a limited-time combat site that spawns during the Caldari Union Day (2022). It contains 4 rooms with different faction enemies, being the Rogue Drones, Guristas Pirates, Triglavian Collective, and the Gallente Federation.
+  - text: "Notes: You will NOT get any faction standing losses from killing any opponents in this site."
+  - text: "Notes: You will receive a considerable amount of neut pressure while doing this site, especially on the third room."
+  - text: "Notes: Atleast for the first room, all enemies have no resists. Subseqent rats in the following rooms have similar natural resist holes to their usual variants."
+pockets:
+  - name: First Pocket
+    notes:
+      - text: Warp-in consists of an acceleration gate that permits access to T1 Destroyers (includes Kikimora and Sunesis), alongside T1 / T2 / Faction Frigates.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 0-8
+            class: Destroyer
+            names:
+              - Rogue Drone Dismantler Sim
+            ewar:
+              - kind: neut
+            note: Orbits @ 7km
+          - count: 0-8
+            class: Destroyer
+            names:
+              - Rogue Drone Ripper Sim
+            ewar:
+              - kind: targetPaint
+            note: Orbits @ 15km
+          - count: 0-10
+            class: Frigate
+            names:
+              - Rogue Drone Scavenger Sim
+            ewar:
+              - kind: web
+            note: Orbits @ 2km
+          - count: "1"
+            class: Structure
+            names:
+              - Deactivated Acceleration Gate
+            group: Acceleration Gate (17km from warp-in)
+            note: Activates after all enemies are destroyed
+  - name: Second Pocket
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 0-3
+            class: Destroyer
+            names:
+              - Guristas Renegade Sim
+            ewar:
+              - kind: neut
+            note: Orbits @ 5km
+          - count: 0-3
+            class: Destroyer
+            names:
+              - Guristas Terrorist Sim
+            note: Orbits @ 5km
+          - count: 0-4
+            class: Frigate
+            names:
+              - Guristas Wrecker Sim
+            ewar:
+              - kind: neut
+              - kind: web
+            note: Orbits @ 4km. Primary due to neuts and webs, alongside dealing high damage
+          - count: 0-3
+            class: Frigate
+            names:
+              - Guristas Plunderer Sim
+            ewar:
+              - kind: targetPaint
+          - count: 0-3
+            class: Frigate
+            names:
+              - Guristas Imputor Sim
+            ewar:
+              - kind: warpScramble
+          - count: "1"
+            class: Structure
+            names:
+              - Deactivated Acceleration Gate
+            group: Acceleration Gate (30km from warp-in)
+            note: Activates after all enemies are destroyed
+  - name: Third Pocket
+    notes:
+      - text: Notably high enemy DPS in this room, recommended to kill all enemies quickly.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 0-3
+            class: Destroyer
+            names:
+              - Liminal Kikimora Sim
+            note: Orbits @ 6km
+          - count: 0-5
+            class: Frigate
+            names:
+              - Liminal Damavik Sim
+            note: Orbits @ 4km
+          - count: 0-5
+            class: Frigate
+            names:
+              - Starving Damavik Sim
+            ewar:
+              - kind: neut
+            note: Orbits @ 4km
+          - count: 0-5
+            class: Frigate
+            names:
+              - Tangling Damavik Sim
+            ewar:
+              - kind: web
+            note: Orbits @ 4km
+          - count: 0-5
+            class: Frigate
+            names:
+              - Anchoring Damavik Sim
+            ewar:
+              - kind: warpScramble
+            note: Orbits @ 4km
+          - count: "1"
+            class: Structure
+            names:
+              - Deactivated Acceleration Gate
+            group: Acceleration Gate (15km from warp-in)
+            note: Activates after all enemies are destroyed
+  - name: Fourth Pocket
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 0-5
+            class: Destroyer
+            names:
+              - Federation Catalyst Sim
+            ewar:
+              - kind: warpDisruption
+            note: Orbits @ 3km
+          - count: 0-6
+            class: Frigate
+            names:
+              - Federation Maulus Sim
+            ewar:
+              - kind: neut
+              - kind: sensorDamp
+            note: Orbits @ 15km.
+          - count: 0-6
+            class: Frigate
+            names:
+              - Federation Comet Sim
+            ewar:
+              - kind: neut
+              - kind: web
+            note: Orbits @ 5km
+          - count: 0-6
+            class: Frigate
+            names:
+              - Federation Atron Sim
+            ewar:
+              - kind: web
+            note: Orbits @ 2km
+          - count: "1"
+            class: Cruiser
+            names:
+              - Federation Commander Sim
+            group: Boss
+            ewar:
+              - kind: neut
+              - kind: web
+              - kind: warpDisruption
+            drop: 160-210 Union Day Reward Tokens, whilst possibly dropping T1 meta modules, metal scraps, 100x T1 Hybrid Charge M ammunition, 'Union Day' Cerebral Accelerators or Boosters, including Agency boosters, 'Union of Eight Paths' fireworks, Caldari Navy SKINs, and 'State Protector' apparel.
+            note: Arrives on 12km from warp-in when there are is 1-0 rats left on grid, or when you are too slow. Orbits @ 8km
+sde:
+  dungeonIds:
+    - 9686

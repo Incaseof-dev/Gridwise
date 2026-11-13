@@ -1,0 +1,88 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: blood-burrow
+kind: anomaly
+name: Blood Burrow
+dedRating: null
+enemyFaction: Blood
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Blood Burrow
+    url: https://wiki.eveuniversity.org/Blood_Burrow
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225142"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: This combat site consists of a single ungated pocket of normal space containing a variety of Frigate-sized enemy ships.
+  - text: "Escalation: Needs information"
+lootNotes:
+  - text: "Bounties: 76,000"
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-defending-fleet
+        trigger:
+          on: warpIn
+          text: Initial Defending Fleet
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Corpii Follower
+              - Corpii Worshiper
+      - id: 1st-reinforcement-spawn
+        trigger:
+          on: other
+          text: 1st Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Corpii Herald
+              - Corpii Upholder
+      - id: 2nd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 2nd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Corpii Follower
+              - Corpii Worshiper
+      - id: 3rd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 3rd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Frigate
+            names:
+              - Corpii Deviner
+      - id: 4th-reinforcement-spawn
+        trigger:
+          on: other
+          text: 4th Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "8"
+            class: Frigate
+            names:
+              - Corpii Collector
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Commander Frigate
+            names:
+              - Dark Blood Initiate
+            group: Rare Spawn
+            drop: Possible Faction charges, modules or tags
+sde:
+  dungeonIds:
+    - 2219

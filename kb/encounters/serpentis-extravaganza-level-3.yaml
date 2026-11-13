@@ -1,0 +1,291 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: serpentis-extravaganza-level-3
+kind: mission
+name: Serpentis Extravaganza
+level: 3
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Serpentis Extravaganza (Level 3)
+    url: https://wiki.eveuniversity.org/Serpentis_Extravaganza_(Level_3)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "226721"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: sensorDamp
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Guardian Veterans"
+  - text: Light dampening
+  - text: No hostiles at initial gate.
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: No warp-in aggro, no groups triggering other groups, only minor dampening.
+      - text: 3 Light Missile Batteriy (aggroes you if distance to them 40km or less)
+      - text: 714px|border|alt=Positions of NPC groups in pocket
+      - text: Serpentis Bunker sometimes drops loot.
+      - text: Sentry Towers may drop ammo.
+    waves:
+      - id: group-1
+        trigger:
+          on: warpIn
+          text: Group 1
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corelum Chief Protector
+              - Corelum Chief Defender
+      - id: group-2-near-hollow-asteriod-45km
+        trigger:
+          on: other
+          text: Group 2 (near hollow asteriod, 45km)
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Destroyer
+            names:
+              - Corelior Infantry
+              - Corelior Soldier
+      - id: group-3-near-station-ruins-50km
+        trigger:
+          on: other
+          text: Group 3 (near station ruins, 50km)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Guardian Veteran
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "1"
+            class: Cruiser
+            names:
+              - Corelum Chief Patroller
+              - Corelum Chief Watchman
+            ewar:
+              - kind: sensorDamp
+      - id: group-4-near-under-construction-55km
+        trigger:
+          on: other
+          text: Group 4 (near "under construction", 55km)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Guardian Veteran
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Corelatis Captain
+              - Corelatis Platoon Leader
+            triggers: Attacking triggers cruiser reinforcements
+      - id: cruiser-reinforcement
+        trigger:
+          on: other
+          text: Cruiser reinforcement
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Cruiser
+            names:
+              - Corelum Chief Scout
+              - Corelum Chief Spy
+      - id: group-5-near-the-missile-batteries-80km
+        trigger:
+          on: other
+          text: Group 5 (near the missile batteries, 80km)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Sentry
+            names:
+              - Serpentis Light Missile Battery
+          - count: "1"
+            class: Cruiser
+            names:
+              - Corelum Chief Scout
+            triggers: Destruction spawns battery reinforcements
+      - id: battery-reinforcements
+        trigger:
+          on: other
+          text: Battery reinforcements
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Cruiser
+            names:
+              - Corelum Chief Protector
+              - Corelum Chief Defender
+      - id: group-6-near-coral-rock-60km
+        trigger:
+          on: other
+          text: Group 6 (near coral rock, 60km)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Corelatis Squad Leader
+              - Corelatis Wing Leader
+            triggers: Attacking spawns frigate reinforcements
+      - id: frigate-reinforcements
+        trigger:
+          on: other
+          text: Frigate Reinforcements
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Coreli Guard
+              - Coreli Safeguard
+      - id: group-7-near-barren-asteroid-70km
+        trigger:
+          on: other
+          text: Group 7 (near barren asteroid, 70km)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Corelatis Squad Leader
+            triggers: Destroy to trigger cruiser reinforcement 2
+      - id: cruiser-reinforcements-2
+        trigger:
+          on: other
+          text: Cruiser Reinforcements 2
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Cruiser
+            names:
+              - Corelum Chief Infantry
+              - Corelum Chief Sentinel
+  - name: Pocket 2
+    notes:
+      - text: Sentry Towers may drop ammo.
+    waves:
+      - id: aggro-from
+        trigger:
+          on: other
+          text: Aggro from)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Cruiser
+            names:
+              - Corelum Chief Guard
+              - Corelum Chief Safeguard
+            ewar:
+              - kind: sensorDamp
+          - count: "5"
+            class: Sentry
+            names:
+              - Tower Sentry Serpentis II (7-22km)
+  - name: Pocket 3
+    notes:
+      - text: Warp-in aggro from group 1, no triggers, no range aggro or only extremely small range (<10km)
+      - text: "Blitz: Kill Franz Krealo to trigger mission completion."
+      - text: Approx 1,9M to 7,0M in Loot & Salvage, 2,636,697 In Bounty
+    waves:
+      - id: automatic-aggro-0km
+        trigger:
+          on: other
+          text: Automatic Aggro, 0km
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Guardian Veteran
+            ewar:
+              - kind: web
+          - count: "2"
+            class: Frigate
+            names:
+              - Coreli Guard
+              - Coreli Safeguard
+      - id: group-2-left-55km-solar-harvester
+        trigger:
+          on: other
+          text: Group 2 (left, 55km Solar Harvester)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corelum Chief Infantry
+              - Corelum Chief Sentinel
+      - id: group-3-right-50km-rock-formation
+        trigger:
+          on: other
+          text: Group 3 (right, 50km, Rock Formation)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Corelior Trooper
+              - Corelior Soldier
+          - count: "2"
+            class: Cruiser
+            names:
+              - Corelum Chief Defender
+              - Corelum Chief Protector
+      - id: group-4-center-front-40km-serpentis-bunker-brothel-pressure-silo
+        trigger:
+          on: other
+          text: "Group 4: (center front, 40km, Serpentis Bunker, Brothel, Pressure Silo)"
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Corelior Infantry
+              - Corelior Sentinel
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corelum Chief Infantry
+              - Corelum Chief Sentinel
+      - id: group-5-center-back-60km-particle-accelerator
+        trigger:
+          on: other
+          text: "Group 5: (center back, 60km, Particle Accelerator)"
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Guardian Veteran
+            ewar:
+              - kind: web
+          - count: "1"
+            class: Cruiser
+            names:
+              - Corelum Chief Protector
+      - id: group-6-bounced-out-of-the-force-field-110-130km-serpentis-shipyard
+        trigger:
+          on: other
+          text: "Group 6: (bounced out of the force field, 110-130km, Serpentis Shipyard)"
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Franz Krealo
+    onWarpIn: Finally, you have reached the final rendevouz point. I can see from your ship's scanners that their general, Franz Krealo, is located in the area. This is good news indeed. Strike him down now and their attack will surely be called off. Not only that, but Franz's death will be a serious blow to the Serpentis organization. Return to me immediately after he has been eliminated.

@@ -1,0 +1,138 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: angel-lookout
+kind: complex
+name: Angel Lookout
+dedRating: null
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Angel Lookout
+    url: https://wiki.eveuniversity.org/Angel_Lookout
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225137"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Battleship"
+lootNotes:
+  - text: Commander Frigate wreck may contain Arch Angel Ammo, Domination Modules, and/or Tags. Bounties have been reported as ~400,000 ISK
+  - text: Information included in this wiki was taken from actual EVE University player experience and extensive web research.
+  - text: (Wiki updated 11 May 2018)
+npcs:
+  Angel Control Center:
+    sdeTypes:
+      - SEE WARNING
+    class: Structure
+pockets:
+  - name: First Pocket
+    notes:
+      - text: 400px
+      - text: Screenshot of First Pocket
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Sentry
+            names:
+              - Angel Light Missile Battery
+            group: Initial Defenders
+          - count: "2"
+            class: Frigate
+            names:
+              - Gistii Ambusher
+              - Gistii Hunter
+            group: Initial Defenders
+          - count: "5"
+            class: Frigate
+            names:
+              - Gistii Outlaw
+              - Gistii Thug
+            group: Initial Defenders
+          - count: "6"
+            class: Destroyer
+            names:
+              - Gistior Defacer
+              - Gistior Shatterer
+            group: Initial Defenders
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+            group: POCKET STRUCTURES
+            triggers: Destruction of Initial Defenders
+  - name: Second Pocket
+    notes:
+      - text: 400px
+      - text: Screenshot of Second Pocket
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Destroyer
+            names:
+              - Gistior Defacer
+              - Gistior Defiler
+              - Gistior Haunter)
+            group: Group 1 (Camping Warp-In Landing)
+          - count: "5"
+            class: Frigate
+            names:
+              - Gistii Outlaw
+              - Gistii Thug
+            group: "Group 2 (Range: 55-65 km)"
+          - count: "4"
+            class: Frigate
+            names:
+              - Gistii Hunter
+              - Gistii Impaler
+            group: "Group 2 (Range: 55-65 km)"
+          - count: "4"
+            class: Destroyer
+            names:
+              - Gistior Defacer
+              - Gistior Shatterer
+            group: "Group 2 (Range: 55-65 km)"
+          - count: "5"
+            class: Frigate
+            names:
+              - Gistii Nomad
+              - Gistii Ruffian
+            group: "Group 3 (Range: 80 km)"
+            ewar:
+              - kind: targetPaint
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Nomadf Ruffian
+            group: "Group 3 (Range: 80 km)"
+            ewar:
+              - kind: targetPaint
+            triggers: Triggers possible Commander Wave
+          - count: 0-1
+            class: Commander Frigate
+            names:
+              - Domination Ruffian
+            group: Commander Wave
+            ewar:
+              - kind: targetPaint
+            triggers: Possible escalation trigger
+            drop: Arch Angel Ammo/Domination Modules
+          - count: "1"
+            class: Structure
+            names:
+              - Angel Control Center
+            group: Pocket Structures
+            triggers: Possible escalation trigger
+sde:
+  dungeonIds:
+    - 1235

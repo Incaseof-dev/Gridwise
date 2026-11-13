@@ -1,0 +1,63 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: marked-for-death
+kind: mission
+name: Marked for Death
+level: null
+enemyFaction: Mercenaries
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Marked for Death
+    url: https://wiki.eveuniversity.org/Marked_for_Death
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "221997"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Assassinate Izia Tabar
+notes:
+  - text: Objective
+  - text: Assassinate Izia Tabar located within the Hek system.
+  - text: Notes
+  - text: Warp into the encounter. Be cautious. At first, you will see a pack of five Mercenary Rookie ships at about a 20 km distance. Destroying them will trigger a second wave of five Mercenary Rookie ships. After eliminating all 10 ships, the named ship Izia Tabar will spawn. He is your mission target and is notably fast and heavily armored. Engaging him directly is recommended.
+  - text: Optional Objective:* The in-game prompt may suggest destroying the Amarr Tactical Outpost located near Izia Tabar's position. However, this action is not necessary to complete the mission. Engaging the outpost is unconfirmed to provide any benefits and may (unconfirmed) lead to a standings hit with the Amarr Empire. To avoid potential negative consequences, it is advisable to focus solely on eliminating Izia Tabar and his escorts.
+  - text: 'On mission completion, Keita Eslin will comment: "You have done exceptionally well, . Our teams will head over to Tabar’s compound now and comb the area for further evidence. Get back to me when you are ready for one last assignment. It is about time the Minmatar repaid you for all you’ve done, and I have some information about how we can make that happen."'
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: "Next Mission: Thwarting the Succession"
+    waves:
+      - id: initial-20-km
+        trigger:
+          on: warpIn
+          text: Initial (20 km)
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Mercenary Rookie
+            triggers: last ship triggers reinforcement 1
+      - id: reinforcement-1-20-km
+        trigger:
+          on: other
+          text: Reinforcement 1 (20 km)
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Mercenary Rookie
+            triggers: Last ship triggers reinforcement 2
+      - id: reinforcement-2
+        trigger:
+          on: other
+          text: Reinforcement 2
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Izia Tabar

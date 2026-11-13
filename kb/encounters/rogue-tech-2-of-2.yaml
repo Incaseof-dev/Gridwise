@@ -1,0 +1,49 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: rogue-tech-2-of-2
+kind: mission
+name: Rogue Tech (2 of 2)
+level: 2
+enemyFaction: Caldari State
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Rogue Tech (2 of 2)
+    url: https://wiki.eveuniversity.org/Rogue_Tech_(2_of_2)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223296"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Kill the Caldari Contact.
+notes:
+  - text: "Suggested ships: Frigate, Destroyer"
+  - text: "Blitz: Destroy the Caldari Contact and get out."
+pockets:
+  - name: Warp-in
+    notes:
+      - text: "Previous mission: Rogue Tech (1 of 2)"
+    waves:
+      - id: initial-group-15km
+        trigger:
+          on: warpIn
+          text: Initial Group, 15km
+        spawns:
+          - count: "1"
+            class: Destroyer
+            names:
+              - Caldari Contact
+            note: Renamed State Shukuro Choji/Kamikazi
+      - id: upon-attacking-caldari-contact
+        trigger:
+          on: other
+          text: Upon attacking Caldari Contact
+          confidence: inferred
+        spawns:
+          - count: 5-7
+            class: Frigate
+            names:
+              - Caldari Defender
+            note: Renamed State Bo-Hi/Nagasa/Showato/...

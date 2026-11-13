@@ -1,0 +1,52 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: duo-of-death-sanshas-nation-level-4
+kind: mission
+name: Duo of Death
+level: 4
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Duo of Death (Sansha's Nation) (Level 4)
+    url: https://wiki.eveuniversity.org/Duo_of_Death_(Sansha's_Nation)_(Level_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "229683"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: web
+notes:
+  - text: "Suggested ships: Battleship, T3C"
+  - text: Tractor and/or prop mod may be useful to obtain mission objective
+  - text: "Blitz: Kill the two battleships, pick up the objective and warp out."
+  - text: All structures except Power Generator drop random T1 ammo and commodities.
+lootNotes:
+  - text: 280,000 ISK for Sentry Guns
+  - text: 2,600,000 ISK for Both Battleships
+  - text: = 2,880,000 ISK Total
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: initial-group-50-75km-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group, 50-75km (auto-aggro)
+        spawns:
+          - count: "2"
+            class: Drone
+            names:
+              - Spider Drone I
+            ewar:
+              - kind: web
+          - count: "2"
+            class: Battleship
+            names:
+              - Centus Tyrant
+            note: Last one drops mission objective
+          - count: "4"
+            class: Sentry
+            names:
+              - Tower Sentry Sansha III

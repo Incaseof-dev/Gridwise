@@ -1,0 +1,133 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: matriarch
+kind: mission
+name: Matriarch
+level: 4
+enemyFaction: Angel Cartel & Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Matriarch
+    url: https://wiki.eveuniversity.org/Matriarch
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "213058"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal:
+    - explosive
+    - kinetic
+    - thermal
+  resist:
+    - em
+    - thermal
+    - kinetic
+    - explosive
+objectives:
+  - text: Retrieve Salvaged Electronics
+notes:
+  - text: "Suggested ships: Battleship"
+  - text: For this storyline you are asked to retrieve a mission objective (Salvaged Electronics, 20 m³) which is inside a cloaked cache.
+  - text: After destroying the whole group present, a new spawn will appear.
+  - text: In total there are one initial group (Angels) and three waves (Sanshas) equals four groups.
+  - text: All groups will autoaggro after some seconds.
+  - text: "Note: All NPC may aggro your drones, need to be verified."
+  - text: "Blitz: Not possible as all the ships have to be killed in order for the cloaked cache to be revealed."
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: After destroying all ships, the sansha's waves start. This is indicated by a message about a cynosural field opening.
+      - text: The cynosural field opens about 25 km from the initial warp in point.
+      - text: After destroying all ships, the next group spawns.
+      - text: After destroying all ships, the final group appears.
+      - text: "After having killed all ships you receive the following message: The automated base defenses register that combat has ceased, uncloaking a nearby cache of valuables."
+      - text: You'll find a now revealed Bunker labelled "Cloaked Cache" which contains scrap metal and the mission's objective (Salvaged Electronics).
+      - text: Destroyed Bunkers may drop T1 module(s) and scrap metals.
+      - text: The Watchtowers didn't drop anything.
+      - text: The two battlestations have a lot of hitpoints.
+      - text: Battlestations dropped no loot.
+      - text: "Bounty: ≈8M"
+      - text: "Loot: ≈2-3M"
+      - text: "Salvage: ≈3-4M"
+    waves:
+      - id: initial-spawn
+        trigger:
+          on: warpIn
+          text: "Initial Spawn:"
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Gistii Raider
+          - count: "3"
+            class: Cruiser
+            names:
+              - Gistum Marauder
+          - count: "6"
+            class: Battleship
+            names:
+              - Gist Warlord
+          - count: "3"
+            class: Battleship
+            names:
+              - Gist Saint
+          - count: "4"
+            class: Sentry
+            names:
+              - Angel Heavy Missile Battery
+      - id: wave-1-auto-aggro
+        trigger:
+          on: other
+          text: Wave 1 (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Centi Enslaver
+          - count: "2"
+            class: Battleship
+            names:
+              - Centus Mutant Lord
+      - id: wave-2-auto-aggro
+        trigger:
+          on: other
+          text: Wave 2 (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Cruiser
+            names:
+              - Centum Hellhound
+          - count: "2"
+            class: Battleship
+            names:
+              - Centus Savage Lord
+      - id: wave-3-auto-aggro
+        trigger:
+          on: other
+          text: Wave 3 (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Centatis Wraith
+          - count: 2-3
+            class: Battleship
+            names:
+              - Centus Savage Lord
+      - id: decloaked-cache-after-all-enemies-have-been-killed
+        trigger:
+          on: other
+          text: Decloaked cache after all enemies have been killed
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Cloaked Cache
+            drop: Salvaged Electronics

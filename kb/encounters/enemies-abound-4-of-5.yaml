@@ -1,0 +1,150 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: enemies-abound-4-of-5
+kind: mission
+name: Enemies Abound (4 of 5)
+level: 4
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Enemies Abound (4 of 5)
+    url: https://wiki.eveuniversity.org/Enemies_Abound_(4_of_5)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223321"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the Roden Shipyard Factory Station
+ewar:
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Navy Delta II Support Frigate (Web, Warp disrupt), Roden Shipyard Interceptor (Web)"
+  - text: Gallente Navy Officer deals em damage
+lootNotes:
+  - text: 7x Federation Navy Command Sergeant Major Insignia I
+  - text: 3x Federation Navy Fleet Colonel Insignia I
+  - text: 17x Federation Navy Fleet Colonel Insignia II
+  - text: 10x Federation Navy Sergeant Insignia II
+  - text: 2x Federation Navy Sergeant Insignia III
+  - text: "Next: Enemies Abound (5 of 5)"
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-group-30km-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group, 30km, auto-aggro
+        spawns:
+          - count: "5"
+            class: Elite Frigate
+            names:
+              - Navy Delta II Support Frigate
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Frigate
+            names:
+              - Federation Navy Officer
+          - count: "2"
+            class: Battleship
+            names:
+              - Federation Navy Orion
+  - name: Pocket 2
+    waves:
+      - id: group-1-10km-auto-aggro
+        trigger:
+          on: other
+          text: Group 1, 10km, auto-aggro
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Battleship
+            names:
+              - Federation Navy Megathron
+      - id: group-2-35km
+        trigger:
+          on: other
+          text: Group 2, 35km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battleship
+            names:
+              - Federation Navy Megathron
+              - Federation Navy Dominix
+      - id: group-3-35km
+        trigger:
+          on: other
+          text: Group 3, 35km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battleship
+            names:
+              - Federation Navy Megathron
+              - Federation Navy Dominix
+  - name: Pocket 3
+    waves:
+      - id: group-1-5-15km-auto-aggro
+        trigger:
+          on: other
+          text: Group 1, 5-15km, auto-aggro
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Roden Shipyard Interceptor
+            ewar:
+              - kind: web
+          - count: "1"
+            class: Battleship
+            names:
+              - Roden Shipyard Orion
+      - id: group-2-45-60km
+        trigger:
+          on: other
+          text: Group 2, 45-60km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Sentry
+            names:
+              - Gallente Sentry Gun III
+          - count: "4"
+            class: Frigate
+            names:
+              - Roden Shipyard Patrol Officer
+            note: Fires heavy EM missiles
+      - id: group-3
+        trigger:
+          on: other
+          text: Group 3
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Elite Frigate
+            names:
+              - Roden Shipyard Interceptor
+            ewar:
+              - kind: web
+          - count: "3"
+            class: Battleship
+            names:
+              - Roden Shipyard Megathron
+      - id: wave
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Roden Shipyard Factory Station
+            note: Mission objective

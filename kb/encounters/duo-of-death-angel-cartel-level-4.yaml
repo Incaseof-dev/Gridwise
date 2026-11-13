@@ -1,0 +1,59 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: duo-of-death-angel-cartel-level-4
+kind: mission
+name: Duo of Death
+level: 4
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Duo of Death (Angel Cartel) (Level 4)
+    url: https://wiki.eveuniversity.org/Duo_of_Death_(Angel_Cartel)_(Level_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "209368"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: web
+notes:
+  - text: "Web/warp disruption: Spider Drone I (Web)"
+  - text: "Suggested ships: Battleship, Marauder"
+  - text: "Blitz: Kill the two battleships, pick up the objective and warp out."
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: Note - No asteroids as of October 28, 2023.
+      - text: 500k ISK
+      - text: 500k ISK
+      - text: 3M ISK
+    waves:
+      - id: ship-group
+        trigger:
+          on: other
+          text: Ship Group
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Drone
+            names:
+              - Spider Drone I
+            ewar:
+              - kind: web
+          - count: "2"
+            class: Battleship
+            names:
+              - Gist Seraphim
+            note: Last one drops mission objective
+      - id: tower-group-40-60km
+        trigger:
+          on: other
+          text: Tower Group, 40-60km
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Sentry
+            names:
+              - Angel Heavy Missile Battery

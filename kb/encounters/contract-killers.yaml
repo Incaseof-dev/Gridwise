@@ -1,0 +1,224 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: contract-killers
+kind: escalation
+name: Contract Killers
+dedRating: null
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Contract Killers
+    url: https://wiki.eveuniversity.org/Contract_Killers
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231265"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: It consists of 2 parts.
+lootNotes:
+  - text: Quertah may drop Core C-types, and possibly a Vigilant BPC. Salvage from wreck is Tech 1.
+  - text: Quertah can also drop a 1-run Vindicator BPC.
+pockets:
+  - name: Contract Killers - Part 1
+    notes:
+      - text: The room is ungated, meaning you can warp around in it, and people can warp directly to you.
+      - text: "You should get the escalation upon landing. If so, you will see message below pop up:"
+      - text: 'Escalation message:: During the fight, you picked up a transmission from one of the station houses: someone is ordering someone else not to warp in. The message is answered a couple of times with this "someone else" demanding a reason for the change of plans until he is told in no uncertain terms to shut up and stay off the air. By that time your instruments have managed to pinpoint where the transmission is coming from.'
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - Shadow Serpentis Rear Admiral
+            group: Group 1 (1 km)
+            drop: Faction modules, ammo and tags
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Patroller
+              - Coreli Guardian Watchman
+            group: Group 2 (120 km)
+            ewar:
+              - kind: sensorDamp
+          - count: 2-4
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Defender
+              - Corelum Guardian Chief Sentinel
+            group: Group 2 (120 km)
+          - count: 3-5
+            class: Battlecruiser
+            names:
+              - Corelatis Captain Sentry
+              - Corelatis High Captain
+            group: Group 2 (120 km)
+          - count: "4"
+            class: Sentry
+            names:
+              - Serpentis Cruise Missile Battery
+            group: Group 3 (165 km)
+      - id: wave-1-spawns-after-1-minute
+        trigger:
+          on: other
+          text: Wave 1 - Spawns after 1 minute
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Patroller
+              - Coreli Guardian Watchman
+            ewar:
+              - kind: sensorDamp
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Defender
+              - Corelum Guardian Chief Sentinel
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corelatis Captain Sentry
+              - Corelatis High Captain
+      - id: wave-2-spawns-after-2-minute
+        trigger:
+          on: other
+          text: Wave 2 - Spawns after 2 minute
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Initiate
+              - Coreli Guardian Spy
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Defender
+              - Corelum Guardian Chief Protecto
+      - id: wave-3-spawns-after-25-minutes-or-destruction-of-previous-spawns
+        trigger:
+          on: other
+          text: Wave 3 - Spawns after 25 minutes or destruction of previous spawns
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Battleship
+            names:
+              - Avon Cobergneyde
+      - id: wave-4-spawns-after-destroying-avon-cobergneyde
+        trigger:
+          on: other
+          text: Wave 4 - Spawns after destroying Avon Cobergneyde
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corelatis Captain
+              - Corelatis Platoon Leader
+              - Corelatis Wing Leader
+          - count: "3"
+            class: Battleship
+            names:
+              - Core Baron
+              - Core Commodore
+  - name: Contract Killers - Part 2
+    notes:
+      - text: The room is ungated, meaning you can warp around in it, and people can warp directly to you.
+      - text: Take care of the NPCs but ignore the factory, as although it may look like an overseer structure it doesn't actually drop any deadspace items other than random contraband. The factory reps shield and armor so you will need around 1500dps just to break the tank. It fires Citadel torpedos which are relatively weak and can be tanked easily. The factory webs you up to 50km out.
+      - text: The next stage is to shoot the structure named "Serpentis Drug Lab". To clarify, this is not the structure that shoots you or repairs itself. This will trigger another wave of ships about 160-180k from the beacon.
+      - text: One battleship is named "Quertah Bleu", and is the overseer for the site. He moves very quickly and hits for a fair amount of damage and has exceptional tracking and damage application against fast moving targets. His tank, however, is nothing special. He is extremely fast and can be kited away from the rest of the wave easily, allowing you to kill and loot him.
+      - text: "Note: (The player who receives aggro from the Serpentis Drug Factory can keep it at range of at least 60km. In this instance the Drug Factory will still rep its shields but will cease to repair its armor and will be much easier to take down. All other players assisting can keep the Drug Factory at preferred range as long as the player who receives aggro from the factory keeps it at 60km. Factory does not switch targets.)"
+      - text: "Escalation Ends:: Someone once described a Mindflood trip like if you managed to blow your brains out shooting both barrels of a double-barreled shotgun at the same time. With this place gone, a lot of junkies in the region will have to resort to the latter, if they want a fix."
+    waves:
+      - id: initial-defenders-100km-off-warp-in
+        trigger:
+          on: warpIn
+          text: Initial Defenders - 100km Off Warp-in
+        spawns:
+          - count: 3-4
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Defender
+              - Corelum Guardian Chief Sentinel
+            ewar:
+              - kind: sensorDamp
+          - count: "3"
+            class: Battleship
+            names:
+              - Core Baron
+              - Core Commodore
+            ewar:
+              - kind: sensorDamp
+          - count: "4"
+            class: Sentry
+            names:
+              - Serpentis Cruise Missile Battery
+          - count: "1"
+            class: Sentry
+            names:
+              - Serpentis Drug Factory
+            ewar:
+              - kind: web
+            note: webs up to 50. Armor don't repairs when you are 60+. Drops nothing
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - Shadow Serpentis Rear Admiral
+            drop: Faction modules. Some sources says implants, deadspace and BPCs
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Serpentis Drug Lab
+            triggers: Triggers Defense Spawn on attack.)
+      - id: quertah-bleu-spawn-when-drug-lab-receives-damage
+        trigger:
+          on: other
+          text: Quertah Bleu Spawn - When drug lab receives damage
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Elite Frigate
+            names:
+              - Quertah's Sidekick
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corelatis Captain Sentry
+              - Corelatis High Captain
+          - count: "4"
+            class: Battleship
+            names:
+              - Core Vice
+              - Core Flotilla Admiral
+            ewar:
+              - kind: sensorDamp
+          - count: 0-1
+            class: Overseer Battleship
+            names:
+              - Quertah Bleu
+            ewar:
+              - kind: sensorDamp
+            drop: Possible Core C-Type modules and a possible Vigilant/Vindicator BPC
+sde:
+  dungeonIds:
+    - 1898

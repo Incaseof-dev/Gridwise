@@ -1,0 +1,91 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: an-economy-under-threat
+kind: mission
+name: An Economy Under Threat
+level: null
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – An Economy Under Threat
+    url: https://wiki.eveuniversity.org/An_Economy_Under_Threat
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231128"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Deliver the farming supplies (150) to the storage warehouse.
+notes:
+  - text: No combat required.
+  - text: "The Caldari Mindset: Despite the existence of several popular political ideologies, financial concerns are the primary driving force among the Caldari people. Although the Federation often tries to paint the Caldari as soulless capitalists, most Caldari view any economic concerns as an extension of their pragmatic mindset, not as an inherent love for money."
+  - text: Objective
+  - text: Deliver 1 x Farming Supplies (150 m³) to the storage warehouse in Hatakani.
+  - text: Notes
+  - text: --You can complete this mission and accept the next one remotely.--
+  - text: This is a simple transport mission. Check your cargo hold - the farming supplies require 150 cubic meters as warned by Agent Asaka. You'll warp to an acceleration gate. After activating the gate, you'll arrive in a deadspace area - the Storage Warehouse container will be 16km away.
+  - text: "You'll get a message from Asaka: The Caldari forces look far better prepared this time around. “Anti-support” Frigates and Cruisers flank their larger allies, standing ready and able to deal with any smaller hostiles that come their way. If these drones try to escape, the faster and more agile ones won’t slip past the amassed fleet so easily now."
+  - text: "The rogue drones won't bother you if you don't bother them. Simply travel to the warehouse and drop your cargo into it. Your mission objectives will then be fulfilled. You can complete the mission remotely - you'll then receive this message from Agent Asaka: Yes, I just received word from the colony. They should be able to stick to their production schedule, which is great news. Thank you, pilot, you’ve done the Caldari people a great service today. If you need any further help with your drone investigation, just say the word."
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: "Next Mission: Every Drone Inside"
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Container
+            names:
+              - Storage warehouse
+            note: Delivery target
+      - id: initial
+        trigger:
+          on: warpIn
+          text: Initial
+        spawns:
+          - count: "11"
+            class: Friendly Frigate
+            names:
+              - Caldari navy Frigate
+            group: Friendlies (30-75km)
+          - count: "4"
+            class: Friendly Cruiser
+            names:
+              - Caldari Navy Cruiser
+            group: Friendlies (30-75km)
+          - count: "6"
+            class: Friendly Battleship
+            names:
+              - Caldari Navy Battleship
+            group: Friendlies (30-75km)
+          - count: 4-7
+            class: Drone
+            names:
+              - Belphegor
+              - Mammon Apis
+            group: Hostiles (9 ships, 100-120km)
+          - count: 2-5
+            class: Frigate
+            names:
+              - Infester Alvi
+            group: Hostiles (9 ships, 100-120km)
+      - id: reinforcements
+        trigger:
+          on: other
+          text: Reinforcements
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Drone
+            names:
+              - Belphegor
+              - Mammon Apis
+          - count: "1"
+            class: Frigate
+            names:
+              - Infester Alvi

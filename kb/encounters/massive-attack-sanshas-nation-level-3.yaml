@@ -1,0 +1,101 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: massive-attack-sanshas-nation-level-3
+kind: mission
+name: Massive Attack
+level: 3
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Massive Attack (Sansha's Nation) (Level 3)
+    url: https://wiki.eveuniversity.org/Massive_Attack_(Sansha's_Nation)_(Level_3)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223217"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: web
+notes:
+  - text: 4 pockets + a bonus pocket. Requires a Sansha's silver tag for the bonus.
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns: []
+  - name: Pocket 2
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Light Missile Battery
+          - count: "2"
+            class: Sentry
+            names:
+              - Heavy Missile Battery
+          - count: "2"
+            class: Sentry
+            names:
+              - Light Sentry
+          - count: "2"
+            class: Sentry
+            names:
+              - Stasis Tower
+            ewar:
+              - kind: web
+  - name: Pocket 3
+    notes:
+      - text: Asteroid belt with one or more Omber asteroids
+    waves:
+      - id: group-1-auto-aggro
+        trigger:
+          on: other
+          text: Group 1 (Auto aggro)
+          confidence: inferred
+        spawns: []
+      - id: group-2
+        trigger:
+          on: other
+          text: Group 2
+          confidence: inferred
+        spawns: []
+      - id: group-3
+        trigger:
+          on: other
+          text: Group 3
+          confidence: inferred
+        spawns: []
+      - id: group-4
+        trigger:
+          on: other
+          text: Group 4
+          confidence: inferred
+        spawns: []
+  - name: Pocket 4
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns: []
+  - name: Pocket 5
+    notes:
+      - text: Bonus Pocket (Needs a Sansha silver tag)
+      - text: The stash might drop a +3 implant.
+      - text: Utopia gardens dropped drugs.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns: []

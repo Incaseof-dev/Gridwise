@@ -1,0 +1,179 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: location-location-amarr-1-of-5
+kind: mission
+name: Location Location (1 of 5)
+level: 5
+enemyFaction: Amarr Empire
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Location Location (Amarr) (1 of 5)
+    url: https://wiki.eveuniversity.org/Location_Location_(Amarr)_(1_of_5)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223412"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: neut
+  - kind: trackingDisruption
+  - kind: web
+  - kind: warpScramble
+notes:
+  - text: "Web/warp disruption: Elite Frigates (Web, Scram)"
+  - text: "Suggested ships: Passive Battleship + Logistics"
+  - text: Use a passive tank or plan a capacitor that receives an additional 120 units/s
+  - text: Maximum damage of initial group is 1814 hp/s (58% EM, 42% Therm)
+  - text: Mission flagged complete when all Battery 2 (Left) spawns are destroyed
+  - text: Orbit distances
+  - text: "Frigates: 4km"
+  - text: "Cruisers: 7-19km"
+  - text: "Battlecruisers: 9-22km"
+  - text: "Battleships: 17-49km"
+  - text: "Next: The Hard Way"
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: Contact's ship is present 15km away. 20 seconds later, you're notified in local that it's a trap.
+      - text: The Contact's ship vanishes and an Amarrian fleet uncloaks.
+      - text: "Warning: Do not shoot Missile Batteries first, unless you can tank over 4000 hp/s!"
+      - text: View of batteries from warp-in.
+    waves:
+      - id: enemy-group-25-40km
+        trigger:
+          on: other
+          text: Enemy Group, 25-40km
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Sentry
+            names:
+              - Amarr Cruise Missile Battery
+            triggers: Battery Reinforcement
+            note: Each battery is a trigger
+          - count: "1"
+            class: Sentry
+            names:
+              - Amarr Stasis Tower
+            ewar:
+              - kind: web
+          - count: "3"
+            class: Sentry
+            names:
+              - Amarr Energy Neutralizer Sentry III
+            ewar:
+              - kind: neut
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Bahir
+            ewar:
+              - kind: trackingDisruption
+              - kind: web
+              - kind: warpScramble
+            triggers: 1st Reinforcement
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Divine Imperial Ambrose
+              - Divine Imperial Basil
+            ewar:
+              - kind: neut
+          - count: "12"
+            class: Battleship
+            names:
+              - Imperial Templar Dominator
+              - Imperial Templar Torah
+              - Imperial Templar Martyr
+            triggers: Dominator triggers 2nd Reinforcement, Martyr triggers 3rd Reinforcement
+      - id: 1st-reinforcement
+        trigger:
+          on: other
+          text: 1st Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Imran
+            ewar:
+              - kind: web
+              - kind: warpScramble
+      - id: 2nd-reinforcement
+        trigger:
+          on: other
+          text: 2nd Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Battleship
+            names:
+              - Imperial Templar Dominator
+              - Imperial Templar Martyr
+      - id: 3rd-reinforcement
+        trigger:
+          on: other
+          text: 3rd Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battleship
+            names:
+              - Imperial Templar Martyr
+      - id: battery-reinforcement
+        trigger:
+          on: other
+          text: Battery Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Imran
+            group: Battery 1 (Top)
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "3"
+            class: Battleship
+            names:
+              - Imperial Templar Judgment
+            group: Battery 2 (Left)
+            triggers: Battery 2A
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Imperial Templar Phalanx
+            group: Battery 2A
+            triggers: Battery 2B
+          - count: "3"
+            class: Battleship
+            names:
+              - Imperial Templar Diviner
+            group: Battery 2B
+            ewar:
+              - kind: neut
+              - kind: trackingDisruption
+            note: Mission objective
+          - count: "3"
+            class: Battleship
+            names:
+              - Imperial Templar Diviner
+            group: Battery 3 (Middle)
+            ewar:
+              - kind: neut
+              - kind: trackingDisruption
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Imperial Champion
+              - Imperial Templar Justicar
+            group: Battery 4 (Right)
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Imperial Equalizer
+              - Imperial Avenger
+            group: Battery 5 (Bottom)

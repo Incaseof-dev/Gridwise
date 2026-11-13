@@ -1,0 +1,66 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: freeing-the-informant
+kind: mission
+name: Freeing the Informant
+level: 2
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Freeing the Informant
+    url: https://wiki.eveuniversity.org/Freeing_the_Informant
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231097"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the Serpentis ships; bring the informant(1) back to your agent.
+ewar:
+  - kind: sensorDamp
+notes:
+  - text: "Suggested ships: Cruiser"
+  - text: "Blitz: Kill The Informant, item appears in cargo, warp out."
+pockets:
+  - name: Warp-in
+    notes:
+      - text: "Note: The asteroids are rigged with smartbombs. (This claim is disputed; see Talk page.)"
+    waves:
+      - id: initial-group-15km-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group, 15km (auto-aggro)
+        spawns:
+          - count: "1"
+            class: Cruiser
+            names:
+              - The Informant
+            ewar:
+              - kind: sensorDamp
+            triggers: Reinforcement
+            note: Renamed Corelum Chief Guard/Safeguard
+      - id: reinforcement-auto-aggro
+        trigger:
+          on: other
+          text: Reinforcement (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Coreli Safeguard
+              - Coreli Defender
+              - Coreli Protector
+          - count: 2-3
+            class: Destroyer
+            names:
+              - Corelior Trooper
+              - Corelior Soldier
+      - id: asteroids
+        trigger:
+          on: other
+          text: Asteroids
+          confidence: inferred
+        spawns: []

@@ -1,0 +1,158 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-blockade-serpentis-level-2
+kind: mission
+name: The Blockade
+level: 2
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Blockade (Serpentis) (Level 2)
+    url: https://wiki.eveuniversity.org/The_Blockade_(Serpentis)_(Level_2)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "230467"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Kill their high-ranking officers
+ewar:
+  - kind: ecm
+  - kind: web
+notes:
+  - text: "Web/warp disruption: Starbase Stasis Tower (Web)"
+  - text: "Suggested ships: Cruiser (Heavy tank for close combat)"
+  - text: "Blitz: Kill the Stasis Tower, all trigger ships, then Corelum Chief Infantry."
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: All groups aggro on spawn.
+    waves:
+      - id: initial-group-20km
+        trigger:
+          on: warpIn
+          text: Initial Group, 20km
+        spawns:
+          - count: "1"
+            class: Tower
+            names:
+              - Starbase Stasis Tower
+            ewar:
+              - kind: web
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corelior Defender
+              - Corelior Protector
+          - count: "5"
+            class: Destroyer
+            names:
+              - Corelior Trooper
+              - Corelior Soldier
+            triggers: Spawns Reinforcement 1
+      - id: reinforcement-1-50-60km
+        trigger:
+          on: other
+          text: Reinforcement 1, 50-60km
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Corelli Watchman
+              - Corelli Patroller
+              - Corelli Safeguard
+              - Corelli Protector
+          - count: "6"
+            class: Destroyer
+            names:
+              - Corelior Soldier
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corelum Chief Scout
+              - Corelum Chief Spy
+            triggers: Spawns Reinforcement 2
+      - id: reinforcement-2-60-90km
+        trigger:
+          on: other
+          text: Reinforcement 2, 60-90km
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Patroller
+            ewar:
+              - kind: ecm
+          - count: 6-7
+            class: Destroyer
+            names:
+              - Corelior Infantry
+              - Corelior Sentinel
+              - Corelior Soldier
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corelum Chief Scout
+              - Corelum Chief Spy
+            triggers: Spawns Reinforcement 3
+      - id: reinforcement-3-70-90km
+        trigger:
+          on: other
+          text: Reinforcement 3, 70-90km
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Coreli Defender
+              - Coreli Safeguard
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian
+              - Coreli Guard
+          - count: 2-3
+            class: Destroyer
+            names:
+              - Corelior Trooper
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corelum Chief Scout
+              - Corelum Chief Spy
+            triggers: Spawns Reinforcement 4
+      - id: reinforcement-4
+        trigger:
+          on: other
+          text: Reinforcement 4
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Coreli Guard
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corelior Artillery
+          - count: "1"
+            class: Cruiser
+            names:
+              - Corelum Chief Infantry
+              - Corelum Chief Sentinel
+            note: Mission objective
+      - id: wave
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Starbase Ship Maintenance Array
+            drop: trade goods

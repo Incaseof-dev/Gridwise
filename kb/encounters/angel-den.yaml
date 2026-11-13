@@ -1,0 +1,123 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: angel-den
+kind: anomaly
+name: Angel Den
+dedRating: null
+anomalyClass: 4
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Angel Den
+    url: https://wiki.eveuniversity.org/Angel_Den
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225134"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Single open normal space pocket.
+  - text: "Escalation: This site can escalate to Angel's Red Light District."
+lootNotes:
+  - text: Needs information
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: There are initially 2 x Sentry Angel Heavy Missile Battery. Another 2 will spawn in their place when they are destroyed. These deal 100% Explosive and have low resist to EM & Thermal
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Gistii Ambusher
+              - Gistii Hunter
+              - Gistii Impaler
+              - Gistii Raider
+          - count: "2"
+            class: Destroyer
+            names:
+              - Gistior Trasher
+              - Gistior Seizor
+          - count: "2"
+            class: Sentry
+            names:
+              - Angel Heavy Missile Battery
+      - id: 1st-reinforcement-spawn
+        trigger:
+          on: other
+          text: 1st Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Gistior Defacer
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Cruiser
+            names:
+              - Gistum Centurion
+            note: type list incomplete on the source page
+      - id: 2nd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 2nd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Gistii Ambusher
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Cruiser
+            names:
+              - Gistum Centurion
+            note: type list incomplete on the source page
+      - id: 3rd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 3rd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Gistior Defacer
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Cruiser
+            names:
+              - Gistum Centurion
+            note: type list incomplete on the source page
+      - id: 4th-reinforcement-spawn
+        trigger:
+          on: other
+          text: 4th Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Destroyer
+            names:
+              - Gistior Defacer
+            note: type list incomplete on the source page
+          - count: "5"
+            class: Cruiser
+            names:
+              - Gistum Centurion
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Commander Cruiser
+            names:
+              - Domination Commander
+            group: Possible Rare Spawn
+            drop: Possible Domination modules
+sde:
+  dungeonIds:
+    - 2200

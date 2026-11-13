@@ -1,0 +1,118 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-right-hand-of-zazzmatazz
+kind: mission
+name: The Right Hand of Zazzmatazz
+level: 4
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Right Hand of Zazzmatazz
+    url: https://wiki.eveuniversity.org/The_Right_Hand_of_Zazzmatazz
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "224776"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Kill Zor and destroy his outpost
+ewar:
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite frigates"
+  - text: "Blitz: Kill Zor, destroy the Outpost Headquarters and warp out."
+  - text: Single ungated pocket. You can [Fleet] warp at preferred range.
+  - text: Mission is flagged completed after you have destroyed the Outpost Headquarters and Zor.
+  - text: "Tips: Incoming DPS will get intense at close range, make sure your ship is tanked properly or fitted with MJD to jump to sniper range if needed."
+  - text: "Tips: Zor drops Zbikoki's Hacker Card, which is used to blitz the Worlds Collide missions."
+  - text: "Tips: Zor occasionally drops Zor's Custom Navigation Hyper-Link - a 53 mil implant. But usually he just drops Zor's Custom Navigation Link, an almost worthless implant."
+  - text: "Tips: Zor deals long range damage, so some tank is needed even on sniper fitted ships."
+  - text: "Different approaches that works well: Kill Zor first to reduce the incoming DPS. If he is out of range, kill the closest Cruisers and hit Zor once he is in optimal."
+  - text: "Different approaches that works well: Start with the Frigates from group 2, then the Cruisers before they get into their optimal range (15km) and finally the two Battleships."
+  - text: "Different approaches that works well: Take out several Cruisers to quickly manage aggro, shoot the Battleships and then the rest of the Cruisers and the Frigates."
+loot:
+  - item: "+ Loot and Salvage:"
+  - item: 2020-12-14
+    note: 100% Jita Buy
+  - item: 2022-03
+    note: Zor's Custom Navigation Hyper-Link 98M ISK
+  - item: 2022-03
+  - item: 2024-07
+  - item: 2025-07
+  - item: 2025-07
+    note: Zor's Custom Navigation Hyper-Link 84M ISK
+lootNotes:
+  - text: "bounties: 1.5M ISK"
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Hangar Array
+            names:
+              - Outpost Headquarters
+            triggers: Mission target
+            drop: 5 Metal Scraps
+          - count: "?"
+            class: Structure
+            names:
+              - Black Market Facility
+            drop: 10 Narcotics
+      - id: wave
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Seven Lookout
+            ewar:
+              - kind: web
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Seven Deathguard
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Cruiser
+            names:
+              - Seven Bodyguard
+            drop: Zazzmatazz's Bodyguard Insignia
+          - count: "2"
+            class: Cruiser
+            names:
+              - Shmidt
+            ewar:
+              - kind: web
+          - count: "1"
+            class: Cruiser
+            names:
+              - Olufami
+              - Schmidt
+              - Elena Gazky
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Seven Assassin
+          - count: "1"
+            class: Battleship
+            names:
+              - Seven Macleari
+          - count: "1"
+            class: Battleship
+            names:
+              - Zor
+            triggers: Mission target
+            drop: Drops DNA, implant and a keycard
+    onWarpIn: This is the location of one of Jakerion Pahydan's outposts. Jakerion is an infamous outlaw who controls a loose-knit criminal organization which split itself from the Serpentis a few years ago. 'The Seven' it is called, named after the small group of comrades within the Serpentis who founded the organization. Jakerion's popular nickname, Zazzmatazz, is known by most Gallente Federation citizens from the hit movie 'Into The Deep', which portrays a few Gallente heroes who brave the 'Seven's' stronghold and rescue a damsel in distress.

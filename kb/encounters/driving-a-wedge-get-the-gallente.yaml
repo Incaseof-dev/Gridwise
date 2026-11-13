@@ -1,0 +1,91 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: driving-a-wedge-get-the-gallente
+kind: mission
+name: Driving a Wedge - Get the Gallente
+level: 3
+enemyFaction: Gallente Federation & Minmatar Republic
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Driving a Wedge - Get the Gallente
+    url: https://wiki.eveuniversity.org/Driving_a_Wedge_-_Get_the_Gallente
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "222153"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Kill the Gallente Diplomat
+notes:
+  - text: This mission chain has branches. Declining this mission to kill the Gallente ambassador will result in the opposite side offering their mission to kill the Minmatar diplomat (confirmed). It may be possible to get the missions in the opposite order too (unconfirmed).
+  - text: "Blitz: It's only necessary to kill the Gallentean Diplomat in the middle"
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Federation Kopis
+              - Federation Praktor Belos
+            group: Gallente Group
+          - count: 2-4
+            class: Destroyer
+            names:
+              - Federation Arcus
+              - Federation Pelekus
+            group: Gallente Group
+          - count: 4-6
+            class: Cruiser
+            names:
+              - Federation Praktor Opitoon
+              - Federation Praktor Ouragos
+            group: Gallente Group
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Federation Calo
+              - Federation Praktor Bearcus
+            group: Gallente Group
+          - count: 1-3
+            class: Frigate
+            names:
+              - Republic Kvarm
+              - Republic Tribal Gleeda
+            group: Minmatar Group
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Chief Republic Gleeda
+              - Chief Republic Kvarm
+            group: Minmatar Group
+          - count: 2-4
+            class: Destroyer
+            names:
+              - Republic Tribal Faxi
+              - Republic Tribal Austri
+            group: Minmatar Group
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Republic Tribal Norn
+              - Republic Tribal Venis
+            group: Minmatar Group
+          - count: "1"
+            class: Industrial
+            names:
+              - Gallente Diplomat
+            group: Diplomats
+            note: Will trigger to kill the Minmatar
+          - count: "1"
+            class: Industrial
+            names:
+              - Minmatar Diplomat
+            group: Diplomats
+            note: Will Trigger To kill the Gallente, WILL fail if you do this

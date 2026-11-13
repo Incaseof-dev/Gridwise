@@ -1,0 +1,216 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: data-destruction
+kind: mission
+name: Data Destruction
+level: 3
+enemyFaction: Minmatar Republic
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Data Destruction
+    url: https://wiki.eveuniversity.org/Data_Destruction
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231722"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the Boundless Creations Data Center Structure
+pockets:
+  - name: Room 1
+    notes:
+      - text: Boundless Creations Data Center needs to be destroyed in order to fulfill mission objectives.
+      - text: All enemies in this room need to be destroyed in order to unlock gate to the next room, even when tooltip after destroying Boundless Creation Data Center says otherwise.
+    waves:
+      - id: wave-1
+        trigger:
+          on: warpIn
+          text: Wave 1
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Boundless Creations Data Center
+            triggers: Mission objective, Wave 3 when damaged
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+          - count: "2"
+            class: Destroyer
+            names:
+              - Republic Tribal Austri
+          - count: "2"
+            class: Destroyer
+            names:
+              - Republic Tribal Bormin
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Republic Tribal Baldur
+          - count: "1"
+            class: Frigate
+            names:
+              - Republic Tribal Takan
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Republic Bormin
+          - count: "1"
+            class: Destroyer
+            names:
+              - Republic Tribal Faxi
+          - count: "1"
+            class: Cruiser
+            names:
+              - Republic Manadi
+  - name: Room 2
+    notes:
+      - text: Waves 2 and 3 spawn after killing all ships in the previous wave. Wave 4 will spawn when damaging the Data Center (or after ~5 minutes).
+      - text: Boundless Creations Data Center needs to be destroyed in order to fulfill mission objectives.
+      - text: All enemies in this room need to be destroyed in order to unlock gate to the next room, even when tooltip after destroying Boundless Creation Data Center says otherwise.
+    waves:
+      - id: wave-1
+        trigger:
+          on: warpIn
+          text: Wave 1
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Boundless Creations Data Center
+            triggers: Mission objective, Wave 4 when damaged
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+          - count: "4"
+            class: Destroyer
+            names:
+              - Republic Tribal Austri
+          - count: "2"
+            class: Destroyer
+            names:
+              - Republic Tribal Bormin
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Republic Kvarm
+          - count: "2"
+            class: Frigate
+            names:
+              - Republic Tribal Gleeda
+            ewar:
+              - kind: targetPaint
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Republic Tribal Austri
+          - count: "2"
+            class: Destroyer
+            names:
+              - Republic Tribal Faxi
+      - id: wave-4
+        trigger:
+          on: other
+          text: Wave 4
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Cruiser
+            names:
+              - Republic Rodul
+            ewar:
+              - kind: targetPaint
+          - count: "1"
+            class: Cruiser
+            names:
+              - Republic Manadi
+  - name: Room 3
+    notes:
+      - text: Waste no time and destroy the Boundless Creations Data Center as soon as you land in the pocket, provided you can tank wave 1. Waves 2, 3 and 4 will spawn all at once after roughly 60 seconds and the incoming damage will be quite high.
+      - text: Boundless Creations Data Center needs to be destroyed in order to fulfill mission objectives. No ships need to be destroyed, your mission is complete after destroying Boundless Creations Data Center in the third room.
+      - text: No Minmatar Republic standing incurs by destroying ships in any of the 3 rooms. But there is a total -0.24 Minmatar Republic standing loss involved by destroying Data Centers in all 3 rooms.
+    waves:
+      - id: wave-1
+        trigger:
+          on: warpIn
+          text: Wave 1
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Boundless Creations Data Center
+            triggers: Mission objective, Wave 3 when damaged
+          - count: "4"
+            class: Destroyer
+            names:
+              - Republic Tribal Austri
+          - count: "2"
+            class: Destroyer
+            names:
+              - Republic Tribal Bormin
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Republic Takan
+          - count: "4"
+            class: Frigate
+            names:
+              - Republic Baldur
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Republic Austri
+          - count: "5"
+            class: Destroyer
+            names:
+              - Republic Faxi
+      - id: wave-4
+        trigger:
+          on: other
+          text: Wave 4
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Republic Jarpur

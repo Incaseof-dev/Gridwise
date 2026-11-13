@@ -1,0 +1,83 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: furrier-fiasco
+kind: mission
+name: Furrier Fiasco
+level: 1
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Furrier Fiasco
+    url: https://wiki.eveuniversity.org/Furrier_Fiasco
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191712"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the infested laboratory.
+notes:
+  - text: "Suggested ships: Frigate"
+  - text: Single gated(locked) pocket with defenders at the gate.
+  - text: "Walkthrough: When you warp in there are no pirates but a whole lot of debris and an acceleration gate."
+  - text: "Walkthrough: Attempting to activate the acceleration gate prompts a message to say that it is locked and you must destroy all nearby enemies."
+  - text: "Walkthrough: Approaching the gate at approximately 5 km the first wave of Environmental Terrorists (Serpentis ships) then spawn."
+  - text: "Walkthrough: Killing all the Environmental Terrorists unlocks the acceleration gate so you can then pass through."
+  - text: "Walkthrough: On arrival in the second pocket, there are no enemies but three hollow asteroids, one of which contains the Infested Laboratory which you need to destroy."
+  - text: "Walkthrough: Attacking the Infested Laboratory spawns the first wave of Environmental Terrorists."
+  - text: "Walkthrough: Kill all the Environmental Terrorists and destroy the Infested Laboratory to complete the mission."
+  - text: "Blitz: Kill the Environmental Terrorists in the first pocket to unlock the gate."
+  - text: "Blitz: Destroy the Infested Laboratory in the second pocket and warp away."
+  - text: "Standing: No empire standing lost."
+  - text: "Notes: The Infested Laboratory is inside the Hollow Asteroid. Kill all of the Environmental Terrorists before attempting to navigate to retrieve the drop, because you do not want to be fighting them while bouncing around inside the asteroid."
+  - text: "When 1st wave arrives: Incoming enemy ships."
+pockets:
+  - name: First pocket
+    waves:
+      - id: first-pocket
+        trigger:
+          on: other
+          text: First pocket
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Environmental Terrorist
+            group: First wave (15km, auto aggro)
+            triggers: Last ship destroyed (sometimes) triggers the second wave
+            note: "Flavor name, actual ship type: Coreli Spy/Agent"
+          - count: "2"
+            class: Frigate
+            names:
+              - Environmental Terrorist
+            group: Second wave (15km, auto aggro (Not always)
+            note: "Flavor name, actual ship type: Coreli Spy/Agent"
+    onWarpIn: Something bad happened here.
+  - name: Second pocket
+    notes:
+      - text: "Agent message after completing the mission:: Nice work. I was afraid overzealous animal rights people might get word of this."
+      - text: "Mineable Asteroids: None."
+      - text: "Structures: The Infested Laboratory drops some Trade Goods and Scrap Metal (It drops 10 x Water which is a reagent for boosters production)"
+    waves:
+      - id: second-pocket
+        trigger:
+          on: other
+          text: Second pocket
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Environmental Terrorist
+            group: First wave (10-15km, auto aggro)
+            triggers: Last ship destroyed triggers the second wave
+            note: "Flavor name, actual ship type: Coreli Initiate/Scout"
+          - count: "5"
+            class: Frigate
+            names:
+              - Environmental Terrorist
+            group: Second wave (5-10km, auto aggro)
+            note: "Flavor name, actual ship type: Coreli Initiate/Scout"

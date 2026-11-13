@@ -1,0 +1,171 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: hidden-enemy-base-minmatar-republic
+kind: mission
+name: Hidden Enemy Base
+level: 5
+enemyFaction: Minmatar Republic
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Hidden Enemy Base (Minmatar Republic)
+    url: https://wiki.eveuniversity.org/Hidden_Enemy_Base_(Minmatar_Republic)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223419"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal:
+    - explosive
+  resist: []
+ewar:
+  - kind: web
+  - kind: neut
+  - kind: warpScramble
+notes:
+  - text: "Web/warp disruption: T2 Frigates have a chance to web and/or scramble."
+  - text: "Suggested ships: Passive shield tanked ships (eg: Drake, Nighthawk, etc)"
+  - text: "Space type: Deadspace with gates"
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: Upon warp-in you will find three gates stacked vertically. The top gate goes to pocket 2, the middle gate goes to pocket 4 and the lower gate goes to pocket 3. You need to destroy the Remote Cloaking Array in pockets 2 and 3 before you go to pocket 4.
+  - name: Pocket 2
+    notes:
+      - text: Everything aggros on warp-in.
+      - text: Make sure to destroy the Remote Cloaking Array while you're here. This pocket contains an acceleration gate back to the first pocket.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "9"
+            class: Elite Frigate
+            names:
+              - Chief Republic Kvarm
+              - Chief Republic Gleeda
+            ewar:
+              - kind: warpDisruption
+          - count: "5"
+            class: Elite Cruiser
+            names:
+              - Chief Republic Klaki
+              - Chief Republic Orsin
+              - Chief Republic Pafi
+              - Chief Republic Tenar
+          - count: "8"
+            class: Sentry
+            names:
+              - Minmatar Stasis Tower
+            ewar:
+              - kind: web
+  - name: Pocket 3
+    notes:
+      - text: Again, everything aggros on warp-in.
+      - text: Make sure to destroy the Remote Cloaking Array while you're here. This pocket also contains an acceleration gate back to the first pocket.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "9"
+            class: Elite Frigate
+            names:
+              - Chief Republic Magni
+              - Chief Republic Ivan
+              - Chief Republic Isak
+              - Chief Republic Iflin
+          - count: "2"
+            class: Battleship
+            names:
+              - Republic Jotun
+              - Republic Jarl
+          - count: "9"
+            class: Sentry
+            names:
+              - Minmatar Energy Neutralizer Tower
+            ewar:
+              - kind: neut
+  - name: Pocket 4
+    notes:
+      - text: Everything aggros on warp-in.
+      - text: This pocket contains an acceleration gate back to the first pocket. If you destroyed the Remote Cloaking Arrays in pockets 2 and 3, then there will be another acceleration gate that will take you to pocket 5.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Republic Norn
+              - Republic Nutia
+          - count: "6"
+            class: Battleship
+            names:
+              - Republic Ymir
+  - name: Pocket 5
+    notes:
+      - text: Everything aggros on warp-in.
+      - text: This pocket contains an acceleration gate back to the first pocket as well as an acceleration gate to pocket 6.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "10"
+            class: Elite Cruiser
+            names:
+              - Chief Republic Jarpur
+              - Chief Republic Orka
+          - count: "5"
+            class: Sentry
+            names:
+              - Minmatar Heavy Missile Battery
+  - name: Pocket 6
+    notes:
+      - text: Everything aggros on warp-in. This pocket contains the Minmatar Station which you must destroy to complete the mission.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Chief Republic Ivan
+              - Chief Republic Gleeda
+            ewar:
+              - kind: warpDisruption
+          - count: "7"
+            class: Elite Cruiser
+            names:
+              - Chief Republic Orsin
+              - Chief Republic Nutia
+              - Chief Republic Norn
+          - count: "10"
+            class: Battleship
+            names:
+              - Republic Ymir
+              - Republic Sigur
+          - count: "4"
+            class: Sentry
+            names:
+              - Minmatar Energy Neutralizer Towers
+            ewar:
+              - kind: neut
+          - count: "4"
+            class: Sentry
+            names:
+              - Minmatar Tower Sentry
+          - count: "4"
+            class: Sentry
+            names:
+              - Minmatar Heavy Missiles Battery

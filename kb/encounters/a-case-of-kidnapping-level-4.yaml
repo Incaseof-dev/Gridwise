@@ -1,0 +1,186 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: a-case-of-kidnapping-level-4
+kind: mission
+name: A Case of Kidnapping
+level: 4
+enemyFaction: Equilibrium of Mankind & Mercenaries
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – A Case of Kidnapping (Level 4)
+    url: https://wiki.eveuniversity.org/A_Case_of_Kidnapping_(Level_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223409"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Retrieve VIPs from Equilibrium of Mankind
+ewar:
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Mercenary Wingman"
+  - text: All acceleration gates are locked until the pocket is clear of any hostile ships.
+pockets:
+  - name: Warp-in
+    notes:
+      - text: "Incoming Transmission: Fool, you're too late. We got what we came for."
+      - text: Auto aggro at warp-in.
+    waves:
+      - id: initialhostiles
+        trigger:
+          on: warpIn
+          text: InitialHostiles
+        spawns:
+          - count: "3"
+            class: Battleship
+            names:
+              - EoM Hydra
+              - EoM Ogre
+  - name: 1st Pocket
+    notes:
+      - text: No initial aggro and each group can be aggressed separately.
+    waves:
+      - id: initial-hostiles
+        trigger:
+          on: warpIn
+          text: Initial Hostiles
+        spawns:
+          - count: "4"
+            class: Battleship
+            names:
+              - EoM Hydra
+            group: Group 1 (16-18km)
+          - count: "4"
+            class: Cruiser
+            names:
+              - EoM Black Priest
+            group: Group 2 (22-26km)
+          - count: "2"
+            class: Battleship
+            names:
+              - EoM Ogre
+            group: Group 2 (22-26km)
+          - count: "4"
+            class: Frigate
+            names:
+              - EoM Saboteur
+            group: Group 3 (28-32km)
+            ewar:
+              - kind: web
+          - count: "2"
+            class: Battleship
+            names:
+              - EoM Ogre
+            group: Group 3 (28-32km)
+          - count: "6"
+            class: Frigate
+            names:
+              - EoM Succubus
+            group: Group 4 (38-42km)
+          - count: "5"
+            class: Cruiser
+            names:
+              - EoM Crusader
+            group: Group 4 (38-42km)
+  - name: 2nd Pocket
+    notes:
+      - text: No initial aggro and each group can be aggressed separately.
+    waves:
+      - id: initial-hostiles
+        trigger:
+          on: warpIn
+          text: Initial Hostiles
+        spawns:
+          - count: "3"
+            class: Battleship
+            names:
+              - EoM Death Lord
+              - EoM Hydra
+              - EoM Ogre
+            group: Group 1 (27-32km)
+          - count: "6"
+            class: Cruiser
+            names:
+              - EoM Prophet
+            group: Group 2 (33-44km)
+          - count: "2"
+            class: Battleship
+            names:
+              - EoM Hydra
+            group: Group 2 (33-44km)
+            triggers: Wave 1
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battleship
+            names:
+              - EoM Ogre
+  - name: 3rd Pocket
+    notes:
+      - text: "Merc Fighter: Sorry, but we can't allow you to get any farther. Nothing personal ..."
+      - text: Group 1 auto-aggros.
+    waves:
+      - id: initial-hostiles
+        trigger:
+          on: warpIn
+          text: Initial Hostiles
+        spawns:
+          - count: "4"
+            class: Battleship
+            names:
+              - Mercenary Overlord
+            group: Group 1 (20-24km)
+          - count: "4"
+            class: Cruiser
+            names:
+              - Mercenary Commander
+            group: Group 2 (20-24km)
+          - count: "2"
+            class: Battleship
+            names:
+              - Mercenary Overlord
+            group: Group 2 (20-24km)
+          - count: "4"
+            class: Frigate
+            names:
+              - Mercenary Wingman
+            group: Group 3 (20-24km)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+  - name: 4th Pocket
+    notes:
+      - text: "EoM Behemoth: You managed to get past my guards along with my brethren. Intriguing. Perhaps we kidnapped the wrong specimens ..."
+      - text: Auto-aggro on warp-in. Do not forget to loot the VIPs!
+    waves:
+      - id: initial-hostiles
+        trigger:
+          on: warpIn
+          text: Initial Hostiles
+        spawns:
+          - count: "1"
+            class: Battleship
+            names:
+              - EoM Behemoth
+            group: Group 1 (54km)
+            drop: Mission objective
+          - count: "4"
+            class: Sentry
+            names:
+              - EoM Sentry
+            group: Group 2 (10-24km)
+            note: Renamed Tower Sentry Drone II
+          - count: "2"
+            class: Sentry
+            names:
+              - EoM Sentry
+            group: Group 2 (10-24km)
+            note: Renamed Tower Sentry Drone III

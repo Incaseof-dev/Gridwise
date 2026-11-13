@@ -1,0 +1,65 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-gallente-archaeologist-the-unsuspecting-traveler-1-of-9
+kind: mission
+name: The Gallente Archaeologist - The Unsuspecting Traveler (1 of 9)
+level: 4
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Gallente Archaeologist - The Unsuspecting Traveler (1 of 9)
+    url: https://wiki.eveuniversity.org/The_Gallente_Archaeologist_-_The_Unsuspecting_Traveler_(1_of_9)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223435"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal:
+    - thermal
+    - kinetic
+  resist: []
+objectives:
+  - text: Acquire 25 VIPs (75 m³)
+ewar:
+  - kind: web
+notes:
+  - text: This mission is a part of the mission chain The Gallente Archaeologist
+lootNotes:
+  - text: "The ships drop meta modules and following dog tags:"
+  - text: 8 Federation Navy Command Sergeant Major Insignia I
+  - text: 1 Federation Navy Fleet Colonel Insignia I
+  - text: 1 Federation Navy Fleet Colonel Insignia II
+  - text: 4 Federation Navy Sergeant Insignia III
+pockets:
+  - name: One pocket
+    notes:
+      - text: The last ship destroyed drops the mission items.
+    waves:
+      - id: at-90-km
+        trigger:
+          on: other
+          text: At 90 km
+          confidence: inferred
+        spawns:
+          - count: "8"
+            class: Frigate
+            names:
+              - Federation Navy Officer
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Federation Navy Gamma I Support Frigate
+            ewar:
+              - kind: web
+          - count: "2"
+            class: Battleship
+            names:
+              - Federation Navy Dominix
+              - Federation Navy Megathron
+          - count: "1"
+            class: Industrial
+            names:
+              - Gallente Transport Ship

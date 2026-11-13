@@ -1,0 +1,49 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: rogue-tech-1-of-2
+kind: mission
+name: Rogue Tech (1 of 2)
+level: 2
+enemyFaction: Caldari State
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Rogue Tech (1 of 2)
+    url: https://wiki.eveuniversity.org/Rogue_Tech_(1_of_2)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223309"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Acquire 1x Encrypted Ship Log (1)
+notes:
+  - text: "Suggested ships: Frigate, Destroyer"
+  - text: "Blitz: Destroy Traitorous Technician, the log will automagically show up in your cargo, and get out."
+pockets:
+  - name: Warp-in
+    notes:
+      - text: "Next mission: Rogue Tech (2 of 2)"
+    waves:
+      - id: initial-group-15km
+        trigger:
+          on: warpIn
+          text: Initial Group, 15km
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Traitorous Technician [State Bo-Hi]
+      - id: after-destroying-traitorous-technician
+        trigger:
+          on: other
+          text: After destroying Traitorous Technician
+          confidence: inferred
+        spawns:
+          - count: 1-4
+            class: Frigate
+            names:
+              - Unidentified Caldari
+            note: Renamed State Shinai/Shukuro Shinai/Shukuro Shuriken
+    onWarpIn: As you enter the area, you hear a frantic broad-spectrum transmission. “Oh god, the found me! Send help, quick!”

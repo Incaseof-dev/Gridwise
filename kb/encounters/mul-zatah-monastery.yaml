@@ -1,0 +1,227 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: mul-zatah-monastery
+kind: complex
+name: Mul-Zatah Monastery
+dedRating: 4
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Mul-Zatah Monastery
+    url: https://wiki.eveuniversity.org/Mul-Zatah_Monastery
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "230596"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Battlecruisers"
+notes:
+  - text: Mul-Zatah Monastery is a DED 4/10 combat site that can be scanned down with probes, and can be found in high and low security space in the Amarr regions. Alternatively it can be received as an escalation from a Blood Refuge.
+  - text: The site is behind an acceleration gate. Battlecruiser hulls and below can access it. Strategic (T3) Cruisers can not enter the site.thumb|400px|Inner Sanctum
+  - text: "Expedition start: The Mul-Zatah Monastic order has for a long time maintained close links with Omir Sarikusa and the Blood Raider Covenant. The order is considered by most law enforcement agents to pose a limited threat to security, since they seem to keep to themselves for the most part. They are, however, notoriously intolerant of trespassers near their monasteries and it is not advisable to approach lightly armed. DED Threat Assessment: Risky (4 of 10)"
+  - text: The enemies in each room remain passive until the player takes aggressive action. Therefore, sniper-fit ships can easily and safely move to long range before starting combat, and can kill enemies well before the enemies get in range to do damage.
+  - text: Short-range combat ships will face a lot of enemy cap neutralizers, so a fit that requires low or no cap to operate is recommended.
+  - text: Destroy all enemies in the first room, and be able to tank/avoid enough damage in the second room to destroy the Inner Sanctum. It goes down pretty quickly under fire.
+loot:
+  - item: 7th Tier Overseer's Personal Effects
+    from: Mul-Zatah Gatekeeper
+    note: est. 600k ISK (wiki) · 100% drop rate
+  - item: 8th Tier Overseer's Personal Effects
+    from: Inner Sanctum
+    note: est. 1.2M ISK (wiki) · 100% drop rate
+  - item: Corpum C-Type module
+    from: Inner Sanctum
+    note: est. 400k - 137M ISK (wiki) · Up to 5x
+  - item: Cruiser sized Dark Blood module
+    from: Mul-Zatah Gatekeeper
+  - item: Corpum C-Type Multispectrum Energized Membrane
+    note: est. About 137M ISK (wiki) · Most valuable loot · possible deadspace modules
+  - item: Corpum C-Type Medium Armor Repairer
+    note: est. About 113M ISK (wiki) · Most valuable loot · possible deadspace modules
+  - item: Corpum C-Type Medium Energy Neutralizer
+    note: est. About 93M ISK (wiki) · Most valuable loot · possible deadspace modules
+  - item: Corpum C-Type Medium Energy Nosferatu
+    note: est. About 15M ISK (wiki) · possible deadspace modules
+  - item: Corpum C-Type Explosive Energized Membrane
+    note: est. About 5M ISK (wiki) · possible deadspace modules
+  - item: Corpum C-Type Thermal Energized Membrane
+    note: est. Valueless (wiki) · possible deadspace modules
+  - item: Corpum C-Type EM Energized Membrane
+    note: est. Valueless (wiki) · possible deadspace modules
+  - item: Corpum C-Type Kinetic Energized Membrane
+    note: est. Valueless (wiki) · possible deadspace modules
+  - item: Corpum C-Type Medium Remote Capacitor Transmitter
+    note: est. Valueless (wiki) · possible deadspace modules
+lootNotes:
+  - text: You can get about 2 million ISK in bounties and about 2 million in Overseer's Effects. Faction loot values can vary significantly.
+npcs:
+  Sentry Gun:
+    sdeTypes:
+      - Tower Sentry Bloodraider I
+    class: Sentry
+  Mul-Zatah Knight:
+    sdeTypes:
+      - Corpum Arch Reaver
+      - Corpum Arch Engraver
+    class: Cruiser
+  Mul-Zatah Guardian:
+    sdeTypes:
+      - Corpum Sage
+    class: Cruiser
+  Mul-Zatah Guardian Cruisers:
+    sdeTypes:
+      - Corpum Priest
+      - Corpum Sage
+    class: Cruiser
+pockets:
+  - name: "Room #1"
+    notes:
+      - text: Destroying all enemies unlocks the acceleration gate.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Blood Light Missile Battery
+          - count: "5"
+            class: Sentry
+            names:
+              - Blood Heavy Missile Battery
+          - count: "4"
+            class: Sentry
+            names:
+              - Blood Point Defense Battery
+          - count: "2"
+            class: Sentry
+            names:
+              - Sentry Gun
+          - count: "4"
+            class: Cruiser
+            names:
+              - Mul-Zatah Knight
+          - count: "2"
+            class: Cruiser
+            names:
+              - Mul-Zatah Guardian
+            ewar:
+              - kind: neut
+          - count: "1"
+            class: Overseer Cruiser
+            names:
+              - Mul-Zatah Gatekeeper
+            drop: drops 7th Tier Overseer's Personal Effects and cruiser-sized faction modules
+            note: Immune to EWAR
+    onWarpIn: The gates of the Mul-Zatah are fiercely guarded by a small contingency of monastic knights.
+  - name: "Room #2"
+    notes:
+      - text: No auto-aggro on warp-in. Cruiser group will primary medium and heavy drones frequently.
+      - text: Destroying the Inner Sanctum structure drops 8th Tier Overseer's Personal Effects and potentially Dark Blood or Corpum C-Type modules. In rare cases, you can get an Ashimmu BPC.
+      - text: "Expedition complete message: This Mul-Zatah monastery has fallen silent at last, as have the screams of their final victims."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "4"
+            class: Sentry
+            names:
+              - Tower Sentry Bloodraider I
+            group: Center group (60km away from warp-in)
+          - count: "21"
+            class: Cruiser
+            names:
+              - Mul-Zatah Guardian Cruisers
+            group: Center group (60km away from warp-in)
+            ewar:
+              - kind: neut
+          - count: "1"
+            class: Hangar Array
+            names:
+              - Inner Sanctum
+            group: Center group (60km away from warp-in)
+            drop: Corpum C-Type modules
+            note: Doesn't DPS or EWAR, but it seems you already have enough in this pocket ¯\_(ツ)_/¯; immune to EWAR
+          - count: "4"
+            class: Sentry
+            names:
+              - Blood Heavy Missile Battery
+            group: Up group (20km away from center group)
+          - count: "1"
+            class: Sentry
+            names:
+              - Blood Stasis Tower
+            group: Up group (20km away from center group)
+            ewar:
+              - kind: web
+          - count: "4"
+            class: Sentry
+            names:
+              - Blood Heavy Missile Battery
+            group: Down group (20km away from center group)
+          - count: "1"
+            class: Sentry
+            names:
+              - Blood Stasis Tower
+            group: Down group (20km away from center group)
+            ewar:
+              - kind: web
+          - count: "4"
+            class: Sentry
+            names:
+              - Blood Heavy Missile Battery
+            group: North group (20km away from center group)
+          - count: "1"
+            class: Sentry
+            names:
+              - Blood Stasis Tower
+            group: North group (20km away from center group)
+            ewar:
+              - kind: web
+          - count: "4"
+            class: Sentry
+            names:
+              - Blood Heavy Missile Battery
+            group: South group (20km away from center group)
+          - count: "1"
+            class: Sentry
+            names:
+              - Blood Stasis Tower
+            group: South group (20km away from center group)
+            ewar:
+              - kind: web
+          - count: "4"
+            class: Sentry
+            names:
+              - Blood Heavy Missile Battery
+            group: West group (20km away from center group)
+          - count: "1"
+            class: Sentry
+            names:
+              - Blood Stasis Tower
+            group: West group (20km away from center group)
+            ewar:
+              - kind: web
+          - count: "4"
+            class: Sentry
+            names:
+              - Blood Heavy Missile Battery
+            group: East group (20km away from center group)
+          - count: "1"
+            class: Sentry
+            names:
+              - Blood Stasis Tower
+            group: East group (20km away from center group)
+            ewar:
+              - kind: web
+    onWarpIn: Limited information is available on the Inner Sanctum of the Mul-Zatath monasteries; and most of what is known is based on unreliable information from members of the order that have been captured in DED raids on Blood Raider strongholds. According to these cultists the Mul-Zatath engage in gruesome genetic research using Minmatar slaves legally purchased within the Amarr empire itself. The Minmatar Republic has repeatedly condemned this trade but so far with limited success.
+sde:
+  dungeonIds:
+    - 2254

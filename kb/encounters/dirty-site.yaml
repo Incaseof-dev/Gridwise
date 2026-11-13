@@ -1,0 +1,212 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: dirty-site
+kind: complex
+name: Dirty Site
+dedRating: null
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Dirty Site
+    url: https://wiki.eveuniversity.org/Dirty_Site
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "230498"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Battlecruiser"
+notes:
+  - text: Dirty Site is an Unrated Complex found in lowsec via exploration.
+  - text: The site is behind an acceleration gate. Warping to the site lands you at 0 on the gate.
+  - text: "Escalation: Loose Ends: From one of the drone ship databases your sensors burst through as you tore this hive-in-the-making apart, you gain information on something that seems to be small satellite ops. The info is largely a listing of varied equipment, dates of when it arrived here, its quality and lastly; coordinates to a couple of these places."
+  - text: "Escalation: Can escalate to Loose Ends."
+loot:
+  - item: + Commander and other valuable loot
+  - item: Rogue Drone 43-X Nexus Chip
+    note: est. 65m ISK (wiki) · 1-5% estimated drop rate from sentient drone. It can be traded for a Stratios BPC at a SoE station
+pockets:
+  - name: Room 1
+    notes:
+      - text: Acceleration gate is 25 km from warp-in.
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            triggers: "approaching triggers wave #2"
+            note: Locked
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 10-11
+            class: Frigate
+            names:
+              - Hunter
+              - Render
+              - Silverfish
+              - Splinter Alvi
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Strain Render
+              - Strain Splinter Alvi
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "6"
+            class: Cruiser
+            names:
+              - Infector Alvum
+      - id: wave-2
+        trigger:
+          on: other
+          text: "Wave #2"
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Hunter
+              - Render
+              - Silferfish
+              - Splinter Alvi
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Strain Splinter Alvi
+            ewar:
+              - kind: warpDisruption
+  - name: Room 2
+    notes:
+      - text: Additional spawns are mostly (only?) triggered by killing frigates. Shoot triggers with caution; it is very easy to trigger multiple waves at once and the large amount of elite cruisers and battlecruisers can do serious damage.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "10"
+            class: Frigate
+            names:
+              - Harvester
+              - Infectious Drone
+            triggers: killing all Infectious drones triggers commander wave. killing Harvester drones triggers other spawns
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Strain Splinter
+              - Strain Render Alvi
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+      - id: timed-spawn
+        trigger:
+          on: other
+          text: Timed spawn
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Cruiser
+            names:
+              - Processor Drone
+      - id: spawn-1
+        trigger:
+          on: other
+          text: Spawn 1
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Strain Sunder
+              - Strain Raider Alvi
+          - count: 2-3
+            class: Destroyer
+            names:
+              - Marauder
+              - Dismantler Alvior
+      - id: spawn-2
+        trigger:
+          on: other
+          text: Spawn 2
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Strain Disintegrator
+              - Strain Atomizer
+              - Strain Nuker Alvum
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Siege
+              - Exterminator Alvatis
+      - id: spawn-3
+        trigger:
+          on: other
+          text: Spawn 3
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Devilfish
+              - Hunter
+              - Barracuda Alvi
+            triggers: Attacking triggers spawn 5
+          - count: "4"
+            class: Battleship
+            names:
+              - Alvus Ruler
+              - Supreme Alvus Parasite
+      - id: spawn-4
+        trigger:
+          on: other
+          text: Spawn 4
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Strain Devilfish
+              - Strain Hunter
+              - Silverfish Alvin
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Strain Viral Infector Alvum
+          - count: "1"
+            class: Commander Cruiser
+            names:
+              - Sentient Violator Alvum
+            triggers: Escalation trigger
+            drop: Drone components, possible 43-X Nexus chip or Sentient faction modules
+      - id: spawn-5
+        trigger:
+          on: other
+          text: Spawn 5
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Strain Raider Alvi
+          - count: "4"
+            class: Destroyer
+            names:
+              - Dismantler
+              - Marauder Alvior
+sde:
+  dungeonIds:
+    - 1256

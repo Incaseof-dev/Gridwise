@@ -1,0 +1,138 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: illegal-mining
+kind: mission
+name: Illegal Mining
+level: 4
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Illegal Mining
+    url: https://wiki.eveuniversity.org/Illegal_Mining
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "221216"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Halt the Federation's illegal mining operation by killing all personnel and destroying any refining equipment.
+ewar:
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite Federation Manica/Libertus"
+  - text: Destroying the mobile refinery incurs a 3.0% standing loss with the Gallente Federation. Additional small standings losses may occur for destroying ships if it takes a while to complete.
+  - text: "Blitz: You don't need to kill the miners. Destroying the Mobile Refinery completes mission. Attempting to Blitz the mission through all of the spawns results in a very high level of incoming damage."
+  - text: Warping in at 100 km by warping to 0, stopping your ship, and then warping to 100 km does not work. Instead, use a bookmark.
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: No auto-aggro on warp-in, attacking anything aggros initial spawn.
+      - text: Reinforcement 1 spawns when the Mobile Refinery goes below 25% shield.
+      - text: Reinforcement 2 spawns when the Mobile Refinery goes below 50% hull.
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Mobile Refinery
+            triggers: <25% shield triggers reinforcement 1. <50% hull triggers reinforcement 2. Destruction marks the mission complete
+      - id: initial-spawn
+        trigger:
+          on: warpIn
+          text: Initial Spawn
+        spawns:
+          - count: "10"
+            class: Frigate
+            names:
+              - Gallente Miner
+          - count: "2"
+            class: Frigate
+            names:
+              - Federation Praktor Belos
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Elite Federation Manica
+              - Elite Federation Libertus
+            ewar:
+              - kind: web
+          - count: "4"
+            class: Destroyer
+            names:
+              - Federation Arcus
+              - Federation Pelecus
+          - count: "1"
+            class: Battleship
+            names:
+              - Federation Praktor Phanix
+              - Federation Praktor Praeses
+          - count: "2"
+            class: Battleship
+            names:
+              - Federation Praktor Hexeris
+      - id: reinforcement-1
+        trigger:
+          on: other
+          text: Reinforcement 1
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Destroyer
+            names:
+              - Federation Arcus
+              - Federation Pelecus
+          - count: "1"
+            class: Cruiser
+            names:
+              - Federation Praktor Harpago
+          - count: "3"
+            class: Cruiser
+            names:
+              - Federation Praktor Legionarius
+              - Federation Praktor Centurion
+          - count: "3"
+            class: Battleship
+            names:
+              - Federation Praktor Phanix
+              - Federation Praktor Praeses
+          - count: "3"
+            class: Battleship
+            names:
+              - Federation Praktor Hexeris
+      - id: reinforcement-2
+        trigger:
+          on: other
+          text: Reinforcement 2
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Federation Praktor Arx
+              - Federation Praktor Auxillia
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Federation Praktor Bearcus
+              - Federation Calo
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Federation Praktor Diablic
+          - count: "3"
+            class: Battleship
+            names:
+              - Federation Helipolis
+              - Federation Covinus
+          - count: "3"
+            class: Battleship
+            names:
+              - Federation Praktor Phanix
+              - Federation Praktor Praeses

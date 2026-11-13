@@ -1,0 +1,154 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: destroy-the-ammatar-base
+kind: mission
+name: Destroy the Ammatar Base
+level: 5
+enemyFaction: Amarr Empire
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Destroy the Ammatar Base
+    url: https://wiki.eveuniversity.org/Destroy_the_Ammatar_Base
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191645"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy Raider Outpost
+restrictions:
+  - text: "Ship size limit: T2 battleships and below"
+ewar:
+  - kind: neut
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: All Frigates"
+  - text: Mission is flagged complete when you finish destroying the Raider Outpost
+  - text: Use a Passive Tank for Pocket 2 or plan a capacitor that receives 320 GJ/s.
+  - text: "Second pocket maximum damage dealing of all ships is 1574 hp/s (EM: 53% Therm: 47%)"
+pockets:
+  - name: Warp-In
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Divine Imperial Imran
+              - Divine Imperial Sixtus
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Cruiser
+            names:
+              - Divine Imperial Champion
+              - Divine Imperial Justicar
+          - count: "5"
+            class: Battleship
+            names:
+              - Imperial Templar Dominator
+              - Imperial Templar Ultara
+              - Imperial Templar Torah
+            triggers: Triggers wave 1
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Divine Imperial Imran
+              - Divine Imperial Sixtus
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "10"
+            class: Cruiser
+            names:
+              - Divine Imperial Ambrose
+              - Divine Imperial Basil
+              - Divine Imperial Champion
+              - Divine Imperial Justicar
+  - name: Pocket
+    notes:
+      - text: Each of the first two Missile Batteries destroyed spawns 2 Neuts each. Total of 4 neuting towers.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "9"
+            class: Battleship
+            names:
+              - Imperial Templar Martyr
+              - Imperial Templar Torah
+          - count: "4"
+            class: Sentry
+            names:
+              - Amarr Statis Towers
+            ewar:
+              - kind: web
+          - count: "10"
+            class: Sentry
+            names:
+              - Amarr Cruise Missile Battery
+            triggers: Triggers neuting towers
+          - count: "1"
+            class: Station
+            names:
+              - Raider Outpost
+            triggers: Triggers wave 2. Mission completed once destroyed.
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Sentry
+            names:
+              - Amarr Energy Neutralizer Sentry III
+            ewar:
+              - kind: neut
+      - id: wave-2-raider-outpost-at-20-shield
+        trigger:
+          on: other
+          text: Wave 2 (Raider Outpost at 20% shield)
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Divine Imperial Imran
+              - Divine Imperial Sixtus
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "5"
+            class: Cruiser
+            names:
+              - Divine Imperial Avenger
+              - Divine Imperial Champion
+              - Divine Imperial Justicar
+          - count: "10"
+            class: Battleship
+            names:
+              - Imperial Templar Dominator
+              - Imperial Templar Ultara
+              - Imperial Templar Martyr
+          - count: "4"
+            class: Sentry
+            names:
+              - Amarr Energy Neutralizer Sentry III
+            ewar:
+              - kind: neut

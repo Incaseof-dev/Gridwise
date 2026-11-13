@@ -1,0 +1,81 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: sansha-prison-camp
+kind: complex
+name: Sansha Prison Camp
+dedRating: 8
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Sansha Prison Camp
+    url: https://wiki.eveuniversity.org/Sansha_Prison_Camp
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "194690"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: T2 Battleship"
+notes:
+  - text: Sansha Prison Camp is a DED rated combat site found in null security space.
+  - text: This site can be found by scanning cosmic signatures or as an escalation from Sansha Hub.
+loot:
+  - item: 21st Tier Overseer's Effects
+    from: Sansha's Nation Central Bastion
+    note: est. 80M ISK (wiki) · 100% drop rate
+  - item: Centus B-Type module
+    from: Sansha's Nation Central Bastion
+  - item: Nightmare BPC
+    from: Sansha's Nation Central Bastion
+  - item: True Sansha module
+    from: True Sansha Tyrant
+pockets:
+  - name: 1st pocket
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns: []
+  - name: 2nd pocket
+    notes:
+      - text: Of the battleships only Centus Beast Lords have tracking disruptors.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns: []
+  - name: 3rd pocket
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - True Sansha Tyrant
+            drop: Can drop faction modules
+  - name: 4th pocket
+    notes:
+      - text: The Sansha's Nation Central Bastion has 50 km web, and repairs its full 5,600 armor HP every 10 seconds. However, it has 50/35/25/20 armor resists, meaning it's best to not deal EM damage when trying to destroy it. The structure has 400k hull hitpoints.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Sentry
+            names:
+              - Sansha's Nation Central Bastion
+            ewar:
+              - kind: web
+            drop: cargo = 21st Overseer's Personal Effects, Centus B-Type Modules and ship Nightmare BPCs
+sde:
+  dungeonIds:
+    - 5235

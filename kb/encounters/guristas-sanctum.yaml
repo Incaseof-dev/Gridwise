@@ -1,0 +1,298 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: guristas-sanctum
+kind: anomaly
+name: Guristas Sanctum
+dedRating: null
+anomalyClass: 10
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Guristas Sanctum
+    url: https://wiki.eveuniversity.org/Guristas_Sanctum
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225164"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: The site consists of five rings in a line, each about 20 km apart. The warp-in point is between rings 1 and 2.
+  - text: "Escalation: This site can escalate to The Maze."
+  - text: "Escalation: The Maze: Your scanner has picked up a transmission originating from a nearby system. It would be wise to investigate this mysterious signal further."
+pockets:
+  - name: Site Details
+    notes:
+      - text: The site is an ungated pocket with no deadspace and multiple waves of rats.
+  - name: Ring spawn
+    waves:
+      - id: initial-defenders-spawning-on-ring-2
+        trigger:
+          on: warpIn
+          text: Initial defenders (spawning on ring 2)
+        spawns:
+          - count: 2-4
+            class: Battlecruiser
+            names:
+              - Pithatis Assaulter
+              - Pithatis Death Dealer
+          - count: 7-8
+            class: Battleship
+            names:
+              - Pith Massacrer
+              - Pith Usurper
+      - id: wave-2-spawning-on-ring-1
+        trigger:
+          on: other
+          text: Wave 2 (spawning on ring 1)
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Pithatis Assaulter
+              - Pithatis Death Dealer
+          - count: "4"
+            class: Battleship
+            names:
+              - Pith Massacrer
+      - id: wave-3-spawning-on-ring-3
+        trigger:
+          on: other
+          text: Wave 3 (spawning on ring 3)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Nullifier
+              - Dire Pithum Murderer
+              - Dire Pithum Killer
+              - Dire Pithum Annihilator
+            ewar:
+              - kind: ecm
+          - count: "3"
+            class: Battleship
+            names:
+              - Pith Usurper
+              - Pith Massacrer
+      - id: wave-4-spawning-on-ring-4
+        trigger:
+          on: other
+          text: Wave 4 (spawning on ring 4)
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Dire Pithi Arrogator
+              - Dire Pithi Imputor
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 3-4
+            class: Battleship
+            names:
+              - Pith Massacrer
+              - Pith Usurper
+      - id: wave-5-spawning-on-ring-5
+        trigger:
+          on: other
+          text: Wave 5 (spawning on ring 5)
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Dire Pithi Arrogator
+              - Dire Pithi Imputor
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Pithatis Executor
+              - Pithatis Assaulter
+              - Pithatis Death Dealer
+          - count: "6"
+            class: Battleship
+            names:
+              - Pith Massacrer
+              - Pith Usurper
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - Dread Guristas Massacrer
+            drop: Possible Dread Guristas faction modules and tags
+            note: Very rare
+  - name: Station spawn
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Dire Pithi Demolisher
+              - Dire Pithi Wrecker
+          - count: 3-4
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Abolisher
+              - Dire Pithum Eraser
+            ewar:
+              - kind: ecm
+          - count: 6-7
+            class: Battleship
+            names:
+              - Pith Massacrer
+              - Pith Usurper
+            triggers: Triggers wave 2
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Pithatis Assassin
+              - Pithatis Death Dealer
+          - count: 3-4
+            class: Battleship
+            names:
+              - Pith Massacrer
+              - Pith Usurper
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Dire Pithi Arrogator
+              - Dire Pithi Imputor
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 3-4
+            class: Battleship
+            names:
+              - Pith Massacrer
+              - Pith Usurper
+      - id: wave-4
+        trigger:
+          on: other
+          text: Wave 4
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Pithatis Assassin
+              - Pithatis Death Dealer
+          - count: 3-4
+            class: Battleship
+            names:
+              - Pith Massacrer
+              - Pith Usurper
+      - id: wave-5
+        trigger:
+          on: other
+          text: Wave 5
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Dire Pithi Wrecker
+              - Dire Pithi Demolisher
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Pithum Inferno
+              - Pithum Mortifier
+          - count: 5-7
+            class: Battleship
+            names:
+              - Pith Conquistador
+              - Pith Destroyer
+      - id: wave-6
+        trigger:
+          on: other
+          text: Wave 6
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Dire Pithi Despoiler
+              - Dire Pithi Saboteur
+            ewar:
+              - kind: ecm
+          - count: 3-4
+            class: Destroyer
+            names:
+              - Pithior Supremacist
+              - Pithior Terrorist
+          - count: 2-3
+            class: Battlecruiser
+            names:
+              - Pithatis Revolter
+              - Pithatis Death Dealer
+          - count: 3-4
+            class: Battleship
+            names:
+              - Pith Massacrer
+              - Pith Usurper
+      - id: wave-7
+        trigger:
+          on: other
+          text: Wave 7
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Dire Pithi Destructor
+              - Dire Pithi Wrecker
+          - count: 2-3
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Abolisher
+              - Dire Pithum Eraser
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Pithatis Assassin
+              - Pithatis Death Dealer
+          - count: 3-4
+            class: Battleship
+            names:
+              - Pith Massacrer
+              - Pith Usurper
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - Dread Guristas Massacrer
+            drop: Possible Dread Guristas faction modules and tags
+            note: Very rare
+          - count: 0-1
+            class: Dreadnought
+            names:
+              - Guristas Dreadnought
+            ewar:
+              - kind: web
+              - kind: neut
+            drop: may drop faction items
+            note: Extremely rare spawn
+sde:
+  dungeonIds:
+    - 2321

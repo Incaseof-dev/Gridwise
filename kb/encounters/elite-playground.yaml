@@ -1,0 +1,254 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: elite-playground
+kind: escalation
+name: Elite Playground
+dedRating: null
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Elite Playground
+    url: https://wiki.eveuniversity.org/Elite_Playground
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "228829"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Escalation from Serpentis Outpost.
+  - text: "Expedition start:: Among the debris of this Serpentis outpost, you come across some warehouse logs containing information on various luxury goods arriving from a supply station at these co-ordinates."
+loot:
+  - item: + Commander and other valuable loot.
+  - item: Corelum A-type Energized Adaptive Nano Membrane
+    note: est. 565 M ISK (wiki) · From Shadow serpentis cruiser
+  - item: Corelum A-Type Energized Thermal Membrane
+    note: est. 77 M ISK (wiki) · From shadow serpentis cruiser
+  - item: Mid-Grade Asklepian Beta (Implant)
+    note: est. 61 M ISK (wiki) · First location 03.06.21
+  - item: Mid-Grade Snake Gamma (Implant)
+    note: est. 63 M ISK (wiki) · Second location
+  - item: Mid-Grade Asklepian Gamma(Implant)
+    note: est. 83 M ISK (wiki) · Second location 03.06.21
+  - item: Mid-Grade Snake Delta (Implant)
+    note: est. 117 M ISK (wiki) · Third location
+  - item: Corelum A-Type 50MN Microwarpdrive
+    note: est. 500 M ISK (wiki) · Fourth location
+  - item: Vigilant BPC
+    note: est. 200 M ISK (wiki) · Fourth location
+  - item: Corelum A-type Multispectrum Energized Membrane
+    note: est. 600 M ISK (wiki) · Fourth location 03.06.21
+lootNotes:
+  - text: "NOTE: Mid-Grade Snake Omega (320 M ISK) looted in second location 14.08.17"
+pockets:
+  - name: First Location
+    notes:
+      - text: "Escalation message:: It seems like you arrived just in time to ambush a transport fleet from the Serpentis corporation. After disposing of the forward unit, you pick up the trail of the main group of ships..."
+      - text: "Dead end message:: It seems like you arrived just in time to ambush a transport fleet from the Serpentis corporation. Sadly the main group of ships seems to have slipped away while you were busy taking care of the forward unit."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Coreli Protector
+              - Coreli Defender
+            triggers: Escalation Trigger if no Shadow Serpentis Chief
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corelium Guardian Chief
+          - count: 0-1
+            class: Commander Cruiser
+            names:
+              - Shadow Serpentis Chief
+            triggers: Escalation Trigger
+            drop: Faction loot
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corelatis Squad
+              - Corelatis Wing Leader
+  - name: Second Location
+    notes:
+      - text: "Escalation message:: The calculations were almost too precise and lead you eye to eye with the transport detail. Investigating the logs from the transport ship wreck they reveal a location of yet another supply station..."
+      - text: "Dead end message:: The calculations were almost too precise and lead you eye to eye with the transport detail. The ensuing battle was hard and furious, leaving all the enemy ships totally obliterated. If they contained any information that could lead you to wherever they came from. It is now lost to the smoldering rubble floating all around you."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Watchman
+              - Coreli Guardian Patroller
+            ewar:
+              - kind: sensorDamp
+          - count: 3-4
+            class: Destroyer
+            names:
+              - Corelior Cannonier
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian
+          - count: "1"
+            class: Commander Cruiser
+            names:
+              - Shadow Serpentis Chief Protector
+            triggers: Escalation Trigger
+            drop: Faction loot
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corelatis Squad
+              - Corelatis Wing Leader
+          - count: 1-2
+            class: Battleship
+            names:
+              - Core Commodore
+            triggers: Alternate escalation Trigger
+  - name: First Room
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 2-3
+            class: Destroyer
+            names:
+              - Corelior Cannoneer
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Sentinel
+              - Corelum Guardian Chief Defender
+          - count: "1"
+            class: Commander Cruiser
+            names:
+              - Shadow Serpentis Chief Infantry
+            triggers: Escalation Trigger
+            drop: Faction loot
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corelatis High Captain
+              - Corelatis Captain Sentry
+  - name: Second room
+    notes:
+      - text: One group, between 40 and 50 km off room beacon.
+      - text: "Escalation message:: Rather than doing nothing, you let your scanners run through the supply outpost hangars. Nothing much is there, except cases upon cases of a beer type you have never seen before. Running the brand through your databanks reveals that this is a local brew from a solar system not far away..."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 6-7
+            class: Frigate
+            names:
+              - Coreli Guard
+              - Coreli Defender
+              - Coreli Safeguard
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Protector
+            ewar:
+              - kind: sensorDamp
+          - count: 3-4
+            class: Battleship
+            names:
+              - Core Commodore
+              - Core Baron
+  - name: First room
+    notes:
+      - text: "After taking the first acceleration gate:"
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Coreli Defender
+              - Coreli Guard
+          - count: "4"
+            class: Cruiser
+            names:
+              - Corelum Chief Scout
+              - Corelum Chief Spy
+          - count: "1"
+            class: Battleship
+            names:
+              - Core Commodore
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: 40km off
+  - name: Second Room
+    notes:
+      - text: "Escalation end message:: Not many have entered these luxury hubs of the Serpentis corporation and left again of their own free will. The poor sobs living here were no different and stayed till the bitter end."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Coreli Protector
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Initiate
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 1-2
+            class: Cruiser
+            names:
+              - Corelum Chief Protector
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Watchman
+            ewar:
+              - kind: sensorDamp
+          - count: "1"
+            class: Overseer Cruiser
+            names:
+              - Shadow Corelum Infantry
+            ewar:
+              - kind: sensorDamp
+            triggers: ends escalation
+            drop: Faction drops? May drop Corelum A-Type Mods
+            note: Immune to EWAR
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Corelatis Captain Sentry
+              - Corelatis High Captain
+          - count: "1"
+            class: Battleship
+            names:
+              - Core Commodore
+sde:
+  dungeonIds:
+    - 1430

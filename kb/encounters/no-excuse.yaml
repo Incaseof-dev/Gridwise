@@ -1,0 +1,51 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: no-excuse
+kind: mission
+name: No Excuse
+level: 3
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – No Excuse
+    url: https://wiki.eveuniversity.org/No_Excuse
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191815"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Suggested ships: Assault frigate, cruiser, battlecruiser"
+  - text: "Blitz: Kill Gallente monument, Kill spawn"
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: There are 7 monuments in this pocket; 6 Caldari and 1 Gallente monument. Destroying the Gallente monument spawns the reinforcements.
+      - text: "Message from agent: Local police authorities have been alerted to your attack. Nobody must know what happened here. Remove them and I will cover your tracks; no fines, no standings penalties. Now get to it!"
+    waves:
+      - id: structure
+        trigger:
+          on: warpIn
+          text: Structure
+        spawns:
+          - count: "7"
+            class: Structure
+            names:
+              - Monument
+            triggers: Gallente monument spawns Group 1
+      - id: group-1-15-17km
+        trigger:
+          on: other
+          text: Group 1 @ 15-17km
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Gallente Police Lieutenant
+          - count: "2"
+            class: Cruiser
+            names:
+              - Gallente Police Commander

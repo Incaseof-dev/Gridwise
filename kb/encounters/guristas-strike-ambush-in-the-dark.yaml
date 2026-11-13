@@ -1,0 +1,60 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: guristas-strike-ambush-in-the-dark
+kind: mission
+name: Guristas Strike - Ambush in the Dark
+level: 3
+enemyFaction: Rogue Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Guristas Strike - Ambush in the Dark
+    url: https://wiki.eveuniversity.org/Guristas_Strike_-_Ambush_in_the_Dark
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231157"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal:
+    - explosive
+    - kinetic
+  resist:
+    - em
+    - explosive
+objectives:
+  - text: Defeat the group of rogue pirates and rescue the prisoners. 10x Prisoners (75)
+notes:
+  - text: Guristas Strike - Ambush in the Dark is the first mission of the mission chain Guristas Strike. Unlike most storyline missions this mission gives no faction standing, but it does give agent standing. The faction standing is awarded for the final mission in the chain.
+  - text: Deadspace with gates. The prisoners are dropped in a container by the last cruiser destroyed.
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: "Next: Guristas Strike - The Interrogation"
+    waves:
+      - id: initial-forces
+        trigger:
+          on: warpIn
+          text: Initial forces
+        spawns:
+          - count: "2"
+            class: Cruiser
+            names:
+              - Rogue Pirates
+            group: Group 1 (12 km)
+          - count: "2"
+            class: Sentry
+            names:
+              - Tower Sentries Angel II
+            group: Group 1 (12 km)
+          - count: "4"
+            class: Cruiser
+            names:
+              - Rogue Pirates
+            group: Group 2 (70 km)
+          - count: "1"
+            class: Cruiser
+            names:
+              - Rogue Pirate Raider
+            group: Group 2 (70 km)

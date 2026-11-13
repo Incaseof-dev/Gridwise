@@ -1,0 +1,135 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: million-little-pieces
+kind: mission
+name: Million Little Pieces
+level: 3
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Million Little Pieces
+    url: https://wiki.eveuniversity.org/Million_Little_Pieces
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191799"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the Ore Processing Plant
+notes:
+  - text: Gate restriction to Command Ships and down. Spawns are all time based. No hostiles at initial gate.
+  - text: "Blitz: Destroy Ore Processing Plant and warp out."
+  - text: "Blitz: Via this method no Gallente Federation standing loss is incurred."
+pockets:
+  - name: 1st Pocket
+    notes:
+      - text: Destroying the Communications Relay prevents the timed waves. Auto-aggro after one minute.
+    waves:
+      - id: initial-groups
+        trigger:
+          on: warpIn
+          text: Initial Groups
+        spawns:
+          - count: "3"
+            class: Sentry
+            names:
+              - Light Missile Batteries
+            group: Group 1 (35km)
+            drop: Chance to drop missiles
+          - count: "2"
+            class: Sentry
+            names:
+              - Heavy Missile Batteries
+            group: Group 1 (35km)
+            drop: Chance to drop missiles
+          - count: "4"
+            class: Destroyer
+            names:
+              - Federation Machaira
+              - Federation Matar
+            group: Group 2 (20-40km)
+          - count: "4"
+            class: Cruiser
+            names:
+              - Federation Prak
+            group: Group 2 (20-40km)
+          - count: "2"
+            class: Industrial
+            names:
+              - Federation Courier
+            group: Group 2 (20-40km)
+      - id: wave-1-1min
+        trigger:
+          on: other
+          text: Wave 1 (~1min)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Cruiser
+            names:
+              - Federation Praktor Centurion
+              - Federation Praktor Legionarius
+      - id: wave-2-1min-30sec
+        trigger:
+          on: other
+          text: Wave 2 (~1min 30sec)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Federation Pezos
+              - Federation Praeco
+      - id: wave-3-2min
+        trigger:
+          on: other
+          text: Wave 3 (~2min)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Federation Calo
+              - Federation Praeco
+      - id: wave-4-4min
+        trigger:
+          on: other
+          text: Wave 4 (~4min)
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Destroyer
+            names:
+              - Federation Arcus
+              - Federation Pelekus
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Federation Praktor Bearcus
+              - Federation Calo
+              - Federation Praeco
+              - Federation Pezos
+      - id: wave-5-5min
+        trigger:
+          on: other
+          text: Wave 5 (~5min)
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Destroyer
+            names:
+              - Federation Praktor Pelekus
+              - Federation Praktor Phalarica
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Ore Processing Station
+            triggers: Mission completed on destruction
+            drop: Chance to drop various mining related loot

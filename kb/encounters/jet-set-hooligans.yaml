@@ -1,0 +1,455 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: jet-set-hooligans
+kind: escalation
+name: Jet-Set Hooligans
+dedRating: null
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Jet-Set Hooligans
+    url: https://wiki.eveuniversity.org/Jet-Set_Hooligans
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "232048"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Expedition start:: As the dust disperses, you receive a transmission from someone claiming to have had some rather intimite relations with your sister and that he is waiting for you a few jumps away, to see what you are going to do about it. Despite the fact that you have no sister that you know of and the guy sounds like he has been drinking more than just Quafe, you feel a certain temptation to go and see what this is all about."
+loot:
+  - item: + Commander and other valuable loot
+  - item: Mid-grade Snake implants
+    note: est. 50 million ISK (wiki) · From Shadow Serpentis Commander
+  - item: Shadow Serpentis modules
+    note: est. 5 million ISK (wiki) · From Shadow Serpentis Commander
+  - item: Standard Meta Loot
+    note: est. ??? (wiki) · From usual NPC ships
+  - item: Coreli A-Type Modules
+    note: est. Varies (wiki) · From Madcat's Stash
+  - item: Daredevil BPC
+    note: est. Varies (wiki) · From Madcat's Stash
+  - item: + Exploration logs
+  - item: August 2026
+    note: Madcat Stash
+  - item: June 2026
+    note: Madcat Stash
+  - item: May 2024
+    note: est. 1000 ISK (wiki) · Madcat Stash
+  - item: July 2023
+    note: est. 20.4 million ISK (wiki) · From Shadow Frigate @Location#01
+  - item: Shadow Serpentis Light Ion Blaster
+  - item: December 2022
+    note: est. 1.5 million ISK (wiki) · From Madcat cache @ Location#04 (was a bit disappointed) xD
+  - item: August 2021
+    note: est. 440 million ISK (wiki) · From Shadow Serpentis Frigate @ Location#02
+  - item: August 2017
+    note: est. 20 million ISK (wiki) · From Shadow Serpentis Frigate @ Location#01
+  - item: Mid-grade Snake Beta
+    note: est. From Shadow Serpentis Frigate @ Location#02 (wiki)
+  - item: Shadow Serpentis modules
+    note: est. From Shadow Serpentis Destroyer @ Location#03 (wiki)
+  - item: January 2018
+    note: est. 75 million ISK (wiki) · From Shadow Serpentis @ Location#01
+  - item: September 2018
+    note: From Shadow Serpentis @ Location#02
+  - item: March 2026
+    note: est. 60 million ISK (wiki) · From Madcat's Stash @ Location#04 (lucky drop)
+npcs:
+  Guardian Angel Elite:
+    sdeTypes:
+      - Temko Interceptor
+    class: Elite Frigate
+pockets:
+  - name: Warp-in
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Coreli Guardian Protector
+              - Coreli Guardian Defender
+              - Coreli Guardian Safeguard
+              - Coreli Guardian Guard
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Corelatis High Captain
+              - Corelatis Captain Sentry
+          - count: 0-1
+            class: Frigate
+            names:
+              - Shadow Serpentis
+            triggers: Escalation trigger
+            drop: Drops
+  - name: Single room
+    notes:
+      - text: Entering this room can trigger the escalation. Serpentis Madcat frigates are 225 km away.
+      - text: All of the Madcats will warp away, although they will attack you from a very long range for a couple of seconds.
+      - text: "Escalation message:: Heuristic analysis of this location indicates that destroying the Serpentis Armory would greatly improve your odds of uncovering further illicit activity"
+      - text: "In previous patches the Escalation message was more colorful; stating:"
+      - text: "Escalation message:: These seem to be just some Serp rich kids on Crash looking for trouble, rather than serious bloodthirsty pirates. In some jet set ships, probably with modules to die for.., in any case your instruments have an easy lock on their destination in case you have nothing more important to do than to spank those brats."
+      - text: "Escalation dead-end: These seem to be just some brats on Crash looking for trouble, rather than serious bloodthirsty pirates. In some jet set ships, probably with modules to die for.., in any case your instruments are unable to determine their destination."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Serpentis Madcat
+            ewar:
+              - kind: sensorDamp
+  - name: Warp-in
+    notes:
+      - text: "Escalation message:: These seem to be just some punks on drugs looking for trouble rather than bloodthirst pirates. In any case, your instruments have an easy lock on their destination."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Coreli Guardian Patroller
+              - Coreli Guardian Watchman
+          - count: "1"
+            class: Cruiser
+            names:
+              - Corelum Chief Defender
+              - Corelum Chief Protector
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - High Captain
+              - Captain Sentry
+          - count: 0-1
+            class: Frigate
+            names:
+              - Shadow Serpentis
+            triggers: escalation trigger
+            drop: Possibly drops Mid-grade Asklepian Omega
+  - name: Single room
+    notes:
+      - text: One of the Madcats will stay behind. Killing it can trigger escalation. Attacking it triggers first spawn.
+      - text: The Madcat is difficult to kill, uses MWD and has active shield and armor rep and small signature (~500 DPS HM Tengu was not able to kill it (possible if you manage to keep it at range (pressing E all the time) - the wreck was empty!)).
+      - text: If you are unable to kill the Madcat he will eventually warp away.
+      - text: A group of Serpentis ships (named Guardian Angels) spawn to defend the Madcat. Each pair of Guardian Angel ships will spawn a new reinforcement wave. Last ship killed will trigger Spawn 2.
+      - text: "Scarcity Update: This site, like other cosmic signatures, contains ore."
+      - text: As of 1st March 2021 the site contains large amounts of Hedbergite & Hemorphite, with smaller amounts of Omber, Kernite and ores found in high sec. The ore spans a crescent shape of 120km across and is therefore impossible to scan with a single survey. It was estimated on approximately a third of the belt scanned that ISK value at current prices would be 2.5-3b. Note that if the site is left by all players it may despawn, but leaving one player at all times within the site will retain it in space for mining.
+      - text: As of 3rd March 2021 the only asteroids showing on overview at the site were Scordite and Veldspar. Very disappointing.
+      - text: As of 15th of October 2021 the site, once again, contains only large amounts of Scordite and Veldspar.
+      - text: "Escalation message:: It seems like you have the choices of staying here and getting murdered by the Angel babysitters, or you could try to jet out and see if the lock you have on the rest of the brats is any good..."
+      - text: Each pair of first reinforcements will spawn a new pair of same type.
+      - text: Finishing reinforcement 2 spawns reinforcement 3. This group spawns around 100 km from warp-in.
+      - text: DO NOT KILL REINFORCEMENT 3!
+      - text: Killing reinforcement 3 triggers massive enemy wave. These ships will close in very quickly and will web and point. You will not be match for them.
+      - text: 'The ships have special types: "Temko Interceptor", "COSMOS Gallente Commodore", "Cosmos Gallente Elite Frigate" and "Cosmos Gallente Captain". They were easily able to overpower a Vargur with 1700 ehp/s tank.'
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Serpentis Madcat
+            ewar:
+              - kind: sensorDamp
+            triggers: escalation trigger, Reinforcement 1 trigger
+      - id: reinforcement-1
+        trigger:
+          on: other
+          text: Reinforcement 1
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Guardian Angel Lieutenant
+            ewar:
+              - kind: sensorDamp
+            triggers: Killing spawns two more frigates
+          - count: "2"
+            class: Destroyer
+            names:
+              - Guardian Angel Infiltrator
+            triggers: Killing spawns two more destroyers
+          - count: "2"
+            class: Cruiser
+            names:
+              - Guardian Angel Harpoon
+            triggers: Killing spawns two more cruisers
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Guardian Angel Warmonger
+            triggers: Killing spawns two more battlecruisers for both pairs
+      - id: reinforcements-2-full
+        trigger:
+          on: other
+          text: Reinforcements 2 (full)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Guardian Angel Lieutenant
+            ewar:
+              - kind: sensorDamp
+          - count: "2"
+            class: Destroyer
+            names:
+              - Guardian Angel Infiltrator
+          - count: "2"
+            class: Cruiser
+            names:
+              - Guardian Angel Harpoon
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Guardian Angel Warmonger
+      - id: reinforcements-3
+        trigger:
+          on: other
+          text: Reinforcements 3
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Agent
+              - Coreli Guardian Spy
+              - Coreli Guardian Initiate
+          - count: "2"
+            class: Destroyer
+            names:
+              - Coreli Cannoneer
+              - Coreli Infantry
+          - count: "7"
+            class: Battlecruiser
+            names:
+              - Corelatis Captain
+              - Corelatis High Captain
+      - id: guardian-angel-battlegroup
+        trigger:
+          on: other
+          text: Guardian Angel Battlegroup
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Elite Frigate
+            names:
+              - Guardian Angel Elite
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "10"
+            class: Elite Frigate
+            names:
+              - Guardian Angel Lieutenant
+          - count: "10"
+            class: Elite Cruiser
+            names:
+              - Guardian Angel Harpoon
+          - count: "10"
+            class: Battleship
+            names:
+              - Guardian Angel Obliterator
+  - name: Warp-in
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 0-1
+            class: Commander Destroyer
+            names:
+              - Shadow Serpentis
+            triggers: Escalation trigger
+            drop: Faction drops
+          - count: 3-4
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Infantry
+              - Corelum Guardian Chief Sentinel
+              - Corelum Guardian Chief Protector
+              - Corelum Guardian Chief Defender
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Corelatis Captain
+              - Corelatis Platoon Leader
+  - name: Single room
+    notes:
+      - text: As you enter the room three Madcat frigates are waiting. They will warp off after calling reinforcements. Their warp off is the escalation trigger.
+      - text: "Escalation message:: Finally! Your navigation panel proudly flashes a suggested destination for the Serpentis brats."
+      - text: The guardian angel battlegroup will spawn if you kill enough ships from second reinforcements. The group spawns about 50 km from warp-in.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Serpentis Madcat
+            ewar:
+              - kind: sensorDamp
+            triggers: Their warpoff is escalation trigger
+      - id: reinforcement-1
+        trigger:
+          on: other
+          text: Reinforcement 1
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Guardian Angel Lieutenant
+            ewar:
+              - kind: sensorDamp
+            triggers: Killing spawns two more frigates
+          - count: "2"
+            class: Destroyer
+            names:
+              - Guardian Angel Infiltrator
+            triggers: Killing spawns two more destroyers
+          - count: "2"
+            class: Cruiser
+            names:
+              - Guardian Angel Harpoon
+            triggers: Killing spawns two more cruisers
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Guardian Angel Warmonger
+            triggers: Killing spawns two more battlecruisers for both pairs
+      - id: reinforcements-2-full
+        trigger:
+          on: other
+          text: Reinforcements 2 (full)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Guardian Angel Lieutenant
+            ewar:
+              - kind: sensorDamp
+          - count: "2"
+            class: Destroyer
+            names:
+              - Guardian Angel Infiltrator
+          - count: "2"
+            class: Cruiser
+            names:
+              - Guardian Angel Harpoon
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Guardian Angel Warmonger
+      - id: guardian-angel-battlegroup
+        trigger:
+          on: other
+          text: Guardian Angel Battlegroup
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Elite Frigate
+            names:
+              - Guardian Angel Elite
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "10"
+            class: Elite Frigate
+            names:
+              - Guardian Angel Lieutenant
+          - count: "10"
+            class: Elite Cruiser
+            names:
+              - Guardian Angel Harpoon
+          - count: "10"
+            class: Battleship
+            names:
+              - Guardian Angel Obliterator
+  - name: Fourth location
+    notes:
+      - text: Single normal space pocket.
+      - text: This last site is not time-sensitive, though it can be time-consuming if you do not bring something that can tank the high DPS or snipe the three Madcat Frigates from afar. Once the three Madcats are killed, the container unlocks. The loot can be anything from Metal Scraps to the usual array of faction modules.
+      - text: The Madcat Frigates are effectively a DPS check, as they boast high passive shield regeneration, strong 90% armor resistances, and strong armor repair. Fortunately, you do not need that much DPS (at least 180) to kill them if you pull them away from the site, though more is always better. While it is much faster to be able to overwhelm their armor repair, it is not strictly necessary. Recommend at least 450 DPS to break their active tank.
+      - text: "Note - Apr 2025: It seems that there is some criteria under which they stop repairing their armor. I can't figure out what it is, and it doesn't seem to be consistent. It allowed me to kill 2/3 of the Madcat frigates, but not the third."
+      - text: "August 2026: Madcats destroyed with HAMs and a Web."
+      - text: "For clearing this site, there are three approaches: bookmark chaining to kite, sniping, or tanking."
+      - text: For the first two approaches (kiting/sniping), all you have to do is warp in, then warp out to the sun (or somewhere consistent) after creating a bookmark. Then, you warp to your bookmark at the site at 100km, and then create another bookmark so you are now 200km from the site. Depending on if you are kiting or sniping, you may be able to stop here and pick off the 5 Sentry Guns who can do a fair amount of damage up to 250km. However, if you can't, then you'll need to repeat the process one more time so you're 250-300km from the site. Then, you'll need to warp into the site at 0, tag an enemy once (or more, depending on your fit and tank), and then warp out to your bookmark at 250-300km. Provided you managed to shoot an enemy, they should aggro and begin moving toward you, even if you temporarily break the lock via warping to 300km. For the Madcats, this process won't take very long thanks to their MWDs. For the other rats, however, this can be a time-consuming process if not using a ship able to hit 100-250km (such as a cheap Railgun Naga, for example), as their speed is a painful 300-500 m/s.
+      - text: Once the Madcats are dead, you can warp straight to the cargo container for the loot, and then leave. If you're unlucky, you'll only get a single Metal Scrap. If you're lucky, you can receive Coreli A-type modules.
+      - text: "[More information needed for minimum tanking requirements here]"
+      - text: Structures on site
+      - text: "Escalation finished:: Killing rich kids may be lucrative, but when they have an army of hard core Guardian Angels to hold their hand like this, it can be a bit troublesome. These at least will have enough to talk about in their luxury clone bay tonight, wherever that may be."
+      - text: Note that the reinforcement spawn appears to vary to some degree, as one user reported 9 additional enemies spawning in addition to the 10 battlecruisers.
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Container
+            names:
+              - Madcat's Stash
+            drop: Possible Coreli A-type modules, 1 Metal Scraps
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Serpentis MadCat
+            ewar:
+              - kind: sensorDamp
+            triggers: Unlocks Madcat's Stash
+          - count: "5"
+            class: Elite Frigate
+            names:
+              - Guardian Angel Lieutenant
+          - count: "5"
+            class: Destroyer
+            names:
+              - Guardian Angel Infiltrator
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Guardian Angel Battle Sergeant
+            triggers: Attacking triggers reinforcements
+          - count: "5"
+            class: Sentry
+            names:
+              - Serpentis Tower Sentry
+      - id: reinforcement-spawn
+        trigger:
+          on: other
+          text: Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "10"
+            class: Battlecruiser
+            names:
+              - Guardian Angel Warmonger
+    onWarpIn: "Serpentis Madcat: That's it! You have the audacity to enter the proximity of our Pleasure Resorts! I can't lose face in front of the girls inside ... I mean I can't let you get away with that! ... Prepare to die, pest. Your computers pick up distress signals being sent from somewhere in the area. Perhaps this indicates that more enemy ships may be incoming soon. Whatever you're after here, you should probably make haste before you are overwhelmed."
+sde:
+  dungeonIds:
+    - 1778

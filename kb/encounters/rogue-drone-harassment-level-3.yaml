@@ -1,0 +1,129 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: rogue-drone-harassment-level-3
+kind: mission
+name: Rogue Drone Harassment
+level: 3
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Rogue Drone Harassment (Level 3)
+    url: https://wiki.eveuniversity.org/Rogue_Drone_Harassment_(Level_3)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "201909"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the Rogue Drones, and then report back to your agent.
+ewar:
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Strain Infester Alvi"
+  - text: "Suggested ships: Battlecruiser"
+  - text: "Blitz: Kill all drones in pocket 1. Group 1 in pocket 2 (sometimes Group 2 has to be killed too, appears to be random). Warp out."
+  - text: No hostiles at initial gate.
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: No aggro upon warp in.
+    waves:
+      - id: group-1-18-20km
+        trigger:
+          on: other
+          text: Group 1 (18-20km)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Cruiser
+            names:
+              - Annihilator Alvum
+      - id: group-2-orbit-20km
+        trigger:
+          on: other
+          text: Group 2 (orbit @ 20km)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Cruiser
+            names:
+              - Devastator Alvum
+      - id: group-3-40-50km-near-abandoned-drill
+        trigger:
+          on: other
+          text: Group 3 (40-50km Near Abandoned Drill)
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Frigate
+            names:
+              - Raider
+              - Sunder Alvi
+          - count: 0-1
+            class: Elite Frigate
+            names:
+              - Strain Infester Alvi
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "2"
+            class: Cruiser
+            names:
+              - Violator Alvum
+      - id: group-4-65km-near-solar-harvester
+        trigger:
+          on: other
+          text: Group 4 (65km Near Solar Harvester)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Viral Infector Alvum
+            note: orbits at 21km
+  - name: Pocket 2
+    notes:
+      - text: Delayed aggro.
+    waves:
+      - id: group-1-11-30km
+        trigger:
+          on: other
+          text: Group 1 (11-30km)
+          confidence: inferred
+        spawns:
+          - count: "8"
+            class: Cruiser
+            names:
+              - Devastator
+              - Violator
+              - Viral Infector Alvum
+      - id: group-2-20-45km
+        trigger:
+          on: other
+          text: Group 2 (20-45km)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Defeater Alvatis
+              - Enforcer Alvatis
+          - count: "1"
+            class: Cruiser
+            names:
+              - Violator
+              - Viral Infector
+              - Disintegrator Alvum
+      - id: group-3-20-45km
+        trigger:
+          on: other
+          text: Group 3 (20-45km)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Cruiser
+            names:
+              - Bomber Alvum

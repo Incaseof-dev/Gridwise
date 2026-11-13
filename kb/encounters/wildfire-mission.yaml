@@ -1,0 +1,90 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: wildfire-mission
+kind: mission
+name: Wildfire
+level: 4
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Wildfire (mission)
+    url: https://wiki.eveuniversity.org/Wildfire_(mission)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231278"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Insert 1x Obsidian Datacore (0.1 m3) into the Chapel Container
+ewar:
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite frigates"
+  - text: "Suggested ships: Fast ship"
+  - text: thumb|right|192px
+  - text: Ungated semi-deadspace pocket up to three jumps away.
+  - text: "Blitz: open the Chapel Container, align for quicker warp out, place the Obsidian Datacore into the Chapel Container and warp out."
+  - text: Complete the Mission remotely.
+  - text: "Tips: Ships will spawn when you place the Obsidian Datacore into the Chapel Container"
+pockets:
+  - name: Warp-in
+    notes:
+      - text: "Karkoti Rend: Even though the RSS took me off the project, I continued my search for this, the Book of St. Arzad. The RSS have been after this document for a long time now, as well as the Angel Cartel. Luckily, the Angels pay better. I wouldn't follow me, if I were you. Not unless you want this priceless relic to be destroyed."
+      - text: Spawn 2 appears shortly after Karkoti Rend. Karkoti Rend will shoot at you for a couple of seconds then warp out.
+    waves:
+      - id: spawn-1-25-km-after-inserting-obsidian-datacore
+        trigger:
+          on: other
+          text: Spawn 1 (25 km), after inserting Obsidian Datacore
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Elite Battleship
+            names:
+              - Karkoti Rend
+      - id: spawn-2-40-km
+        trigger:
+          on: other
+          text: Spawn 2 (40 km)
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Gistii Hunter
+              - Gistii Impaler
+          - count: 4-5
+            class: Elite Frigate
+            names:
+              - Arch Gistii Hijacker
+              - Arch Gistii Rogue
+              - Arch Gistii Thug
+              - Arch Gistii Outlaw
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 5-6
+            class: Elite Frigate
+            names:
+              - Arch Gistii Hunter
+              - Arch Gistii Impaler
+          - count: "4"
+            class: Battleship
+            names:
+              - Gist Throne
+              - Gist Cherubim
+      - id: structures-20km
+        trigger:
+          on: other
+          text: Structures (20km)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Container
+            names:
+              - Chapel Container
+            triggers: Spawns hostile ships after inserting Obsidian Datacore
+            drop: Insert Obsidian Datacore

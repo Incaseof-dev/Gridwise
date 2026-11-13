@@ -1,0 +1,259 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: serpentis-owned-station
+kind: escalation
+name: Serpentis Owned Station
+dedRating: null
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Serpentis Owned Station
+    url: https://wiki.eveuniversity.org/Serpentis_Owned_Station
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "232144"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: =Walkthrough=
+pockets:
+  - name: First Location
+    notes:
+      - text: Single pocket with mercenary ships.
+      - text: "Escalation message:: Among the wreckage and debris you find a few combat drones. A scan of their control units reveals they have been used not long ago, and at a location nearby."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Mercenary Wingman
+            ewar:
+              - kind: web
+          - count: "1"
+            class: Commander Battlecruiser
+            names:
+              - Mercenary Supervisor
+            triggers: Escalation trigger
+            drop: faction modules
+          - count: "4"
+            class: Battleship
+            names:
+              - Mercenary Overlord
+          - count: "7"
+            class: Sentry
+            names:
+              - Serpentis Heavy Missile Battery
+  - name: Warpin
+    notes:
+      - text: ----
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Protector
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Commander Battlecruiser
+            names:
+              - Shadow Serpentis Platoon Leader
+            triggers: Escalation trigger
+            drop: faction modules
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corelatis High Captain
+  - name: First Room
+    notes:
+      - text: ----
+      - text: "Escalation message:: All these moon mining stations suggest there must be a station or outpost somewhere in the region servicing them and refining the raw materials they produce. Again you look for clues from the drones and again the data you extract suggest a new location not too far away."
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Tower
+            names:
+              - Starbase Control Tower
+            triggers: triggers reinforcements
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "6"
+            class: Elite Frigate
+            names:
+              - Strain Hunter
+            note: type list incomplete on the source page
+          - count: "6"
+            class: Battleship
+            names:
+              - Alvus Ruler
+          - count: "3"
+            class: Battleship
+            names:
+              - Supreme Alvus Parasite
+          - count: "5"
+            class: Sentry
+            names:
+              - Starbase Sentry
+      - id: reinforcements
+        trigger:
+          on: other
+          text: Reinforcements
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Strain Atomizer
+            note: type list incomplete on the source page
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Striker
+            note: type list incomplete on the source page
+          - count: "8"
+            class: Battleship
+            names:
+              - Alvus Ruler
+              - Supreme Alvus Parasite
+  - name: Third Location
+    notes:
+      - text: Single pocket. The battleships have short range weapons and the shadow serpentis is in a very fast ship. With a warpin bookmark it is possible to draw the commander away from battleships to noticeably reduce damage.
+      - text: Reinforcements will spawn 65-140 km from the tower.
+      - text: 'Escalation message:: Going through data scanned during the destruction of the station itself, you notice reports from a place called "R&D division Black", containing information on blueprint research and booster production and even the location of this base "Black".'
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Tower
+            names:
+              - Starbase Control Tower
+            triggers: Attacking triggers reinforcements and escalation
+            drop: 12th Overseer's effect and caldari shuttle BPC (100 runs). Can also drop 500 hydrogen isotopes, 130 Heavy Water, 500-1000 Gallente Federation Starbase Charter
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Watchman
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corelatis High Captain
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Commander Battlecruiser
+            names:
+              - Shadow Serpentis High Captain
+            drop: Faction modules
+          - count: "7"
+            class: Battleship
+            names:
+              - Core Vice
+              - Core Flotilla Admiral
+            ewar:
+              - kind: sensorDamp
+          - count: "6"
+            class: Sentry
+            names:
+              - Starbase Cruise Missile
+          - count: "1"
+            class: Sentry
+            names:
+              - Starbase Stasis Tower
+            ewar:
+              - kind: web
+      - id: reinforcements
+        trigger:
+          on: other
+          text: Reinforcements
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Agent
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: type list incomplete on the source page
+          - count: "6"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Protector
+            ewar:
+              - kind: sensorDamp
+            note: type list incomplete on the source page
+          - count: "9"
+            class: Battleship
+            names:
+              - Core Vice
+            ewar:
+              - kind: sensorDamp
+            note: type list incomplete on the source page
+  - name: Fourth Location
+    notes:
+      - text: Single pocket. The Serpentis research outpost will smartbomb all nearby ships and drones once attacked. It deals approximately 1000 dps but won't attack far (30 km is already safe).
+      - text: Cloaked Metamorphosis blown up by the Serpentis research outpost smartbomb at 60 km.
+      - text: "Escalation end message:: Now, you kind of regret killing the Overseer back there, it is always useful to know corrupt leaders who are ready to sell out things like this outpost in exchange for something as cheap as their own petty lives."
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Tower
+            names:
+              - Serpentis Research Outpost
+            triggers: Escalation end
+            drop: Corelum A-type modules, Vigilant Blueprint Copy
+            note: Smartbombs
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Partroller
+            ewar:
+              - kind: sensorDamp
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Defender
+              - Corelum Guardian Chief Sentinel
+          - count: "7"
+            class: Battleship
+            names:
+              - Core High Admiral
+          - count: "2"
+            class: Sentry
+            names:
+              - Starbase Cruise Missile Battery
+sde:
+  dungeonIds:
+    - 1846

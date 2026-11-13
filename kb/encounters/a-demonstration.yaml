@@ -1,0 +1,68 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: a-demonstration
+kind: mission
+name: A Demonstration
+level: 4
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – A Demonstration
+    url: https://wiki.eveuniversity.org/A_Demonstration
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "206413"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Find and retrieve 1x Olfei Medallion (0.1 m3)
+ewar:
+  - kind: web
+  - kind: targetPaint
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite frigates"
+  - text: "Suggested ships: Battleship (sniper with Afterburner)"
+  - text: Purchase the Olfei Medallion or a Relic Analyzer from the Local Market
+  - text: "Former Selves: The fortunes of the Minmatar have ebbed and flowed continuously. At one time they had a flourishing empire with a level of mechanical excellence never before or since seen anywhere. Later, however, they had to endure centuries of enslavement, toiling and dying for the benefit of foreign masters. Today most of them have regained their freedom, but the legacy of their enslavement has been the diaspora of the race."
+  - text: thumb|right|192px
+  - text: Arsten Takalo located at the Brutor Tribe Community Area Beacon in Frarn wants you to prove your resourcefulness. Purchase or find the Olfei Medallion in the Sveipar Constellation.
+  - text: A Demonstration is a Combat Anomaly found in the Sveipar Constellation. Many A Demonstration Combat Anomalies exist at the same time.
+  - text: Kill all ships and hack the Structure Containers with a Relic Analyzer.
+pockets:
+  - name: A Demonstration
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "5"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Hunter
+              - Arch Gistii Impaler
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "11"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Centurion
+              - Arch Gistum Phalanx
+              - Arch Gistum Marauder
+            ewar:
+              - kind: targetPaint
+      - id: hacking-containers
+        trigger:
+          on: other
+          text: Hacking containers
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Hackable
+            names:
+              - Structure Container
+            drop: Olfei Medallion

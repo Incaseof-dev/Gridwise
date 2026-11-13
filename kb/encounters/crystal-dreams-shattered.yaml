@@ -1,0 +1,109 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: crystal-dreams-shattered
+kind: mission
+name: Crystal Dreams Shattered
+level: 3
+enemyFaction: Amarr Empire & Mercenaries
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Crystal Dreams Shattered
+    url: https://wiki.eveuniversity.org/Crystal_Dreams_Shattered
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191630"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy all hostile ships in the area
+restrictions:
+  - text: "Ship size limit: Battlecruiser or smaller"
+ewar:
+  - kind: web
+  - kind: warpScramble
+notes:
+  - text: "Web/warp disruption: Mercenary Wingman (Web, Scram)"
+  - text: "Suggested ships: Cruiser, Battlecruiser"
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: group-1-36-38km
+        trigger:
+          on: other
+          text: Group 1, 36-38km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Mercenary Commander
+      - id: group-2-40-43km
+        trigger:
+          on: other
+          text: Group 2, 40-43km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Mercenary Corporal
+  - name: Pocket 2
+    waves:
+      - id: group-1-36-38km-auto-aggro
+        trigger:
+          on: other
+          text: Group 1, 36-38km (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Terrorist
+            triggers: Reinforcement 1 upon shooting, Reinforcement 3 when killed
+            note: Imperial Avenger/Justicar type
+      - id: reinforcement-1
+        trigger:
+          on: other
+          text: Reinforcement 1
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Mercenary Wingman
+            group: 36-38km
+            ewar:
+              - kind: web
+              - kind: warpScramble
+            triggers: Reinforcement 2
+          - count: "1"
+            class: Cruiser
+            names:
+              - Mercenary Corporal
+            group: 34km
+      - id: reinforcement-2
+        trigger:
+          on: other
+          text: Reinforcement 2
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Cruiser
+            names:
+              - Mercenary Lieutenant
+      - id: reinforcement-3
+        trigger:
+          on: other
+          text: Reinforcement 3
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Mercenary Elite Fighter
+          - count: "2"
+            class: Battleship
+            names:
+              - Mercenary Overlord

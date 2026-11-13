@@ -1,0 +1,166 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: mass-drivers-gallente-federation
+kind: mission
+name: Mass Drivers
+level: 5
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Mass Drivers (Gallente Federation)
+    url: https://wiki.eveuniversity.org/Mass_Drivers_(Gallente_Federation)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "198940"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: web
+  - kind: neut
+  - kind: nos
+  - kind: sensorDamp
+notes:
+  - text: "Space type: Deadspace with gates"
+pockets:
+  - name: Warp-in
+    notes:
+      - text: Upon Warp-In you find yourself surrounded by eight gates whose relative positions form the shape of a cube around your ship. Each gate takes you into the same pocket, but each one leaves you at different position in relation to the centralized NPC targets.
+  - name: Single pocket
+    notes:
+      - text: The landing sites are in the same configuration as the original gates and form a cube around the NPC targets.
+    waves:
+      - id: initial-forces-full-aggro-immediately
+        trigger:
+          on: warpIn
+          text: Initial Forces (Full aggro immediately)
+        spawns:
+          - count: "6"
+            class: Elite Frigate
+            names:
+              - Elite Federation Phalarica
+              - Elite Federation Matara
+              - Elite Federation Machina
+            ewar:
+              - kind: trackingDisruption
+            triggers: Matara triggers reinforcement 1
+            note: Matara does TD
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Elite Federation Mentes
+              - Elite Federation Quadrieris
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Federation Praktor Diablic
+            triggers: Triggers reinforcement 2-1
+          - count: "9"
+            class: Battleship
+            names:
+              - Federation Praktor Polemo
+              - Federation Praktor Dionia*
+              - Federation Hyperion
+              - Federation Praktor Panix
+            ewar:
+              - kind: sensorDamp
+              - kind: neut
+            triggers: Machina triggers reinforcement 3-1
+            note: Dionia does EWAR
+          - count: "1"
+            class: Sentry
+            names:
+              - Gallente Heavy Missile Battery
+          - count: "3"
+            class: Sentry
+            names:
+              - Gallente Cruise Missile Battery
+          - count: "1"
+            class: Sentry
+            names:
+              - Gallente Stasis Tower
+            ewar:
+              - kind: web
+          - count: "2"
+            class: Sentry
+            names:
+              - Energy Neutralizer Sentry II
+            ewar:
+              - kind: neut
+          - count: "1"
+            class: Sentry
+            names:
+              - Energy Neutralizer Sentry III
+            ewar:
+              - kind: neut
+      - id: reinforcement-1
+        trigger:
+          on: other
+          text: Reinforcement 1
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Elite Federation Insidiators
+            ewar:
+              - kind: sensorDamp
+      - id: reinforcement-2-1
+        trigger:
+          on: other
+          text: Reinforcement 2-1
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Federation Praktor Erenus
+            ewar:
+              - kind: trackingDisruption
+            triggers: Reinforcement 2-2
+      - id: reinforcement-2-2
+        trigger:
+          on: other
+          text: Reinforcement 2-2
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Federation Praktor Praktor Arx
+              - Federation Praktor Auxilia
+            ewar:
+              - kind: trackingDisruption
+            triggers: Reinforcement 2-3
+      - id: reinforcement-2-3
+        trigger:
+          on: other
+          text: Reinforcement 2-3
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Battlecruiser
+            names:
+              - Federation Praktor Bearcus
+      - id: reinforcement-3-1
+        trigger:
+          on: other
+          text: Reinforcement 3-1
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Battleship
+            names:
+              - Federation Praktor Praeses
+            triggers: Reinforcement 3-2
+      - id: reinforcement-3-2
+        trigger:
+          on: other
+          text: Reinforcement 3-2
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Battleship
+            names:
+              - Federation Praktor Hexeris

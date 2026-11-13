@@ -1,0 +1,1571 @@
+/* The overlay always sits on top of the dark EVE client, so it has a single dark palette. */
+:root {
+  --panel-bg: rgba(10, 15, 22, 0.8);
+  --panel-border: rgba(120, 170, 220, 0.3);
+  --bar-bg: rgba(50, 80, 115, 0.45);
+  --text: #e6ebf0;
+  --muted: #8a9cae;
+  --line: rgba(255, 255, 255, 0.08);
+  --ok: #57d18a;
+  --warn: #f2b84b;
+  --bad: #ff6b6b;
+  --info: #7fb8ff;
+  --dmg-em: #5fa8ff;
+  --dmg-thermal: #ff6e5a;
+  --dmg-kinetic: #c2c8d0;
+  --dmg-explosive: #ffab45;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  height: 100%;
+  background: transparent;
+  overflow: hidden;
+  font:
+    12px/1.4 'Inter',
+    system-ui,
+    sans-serif;
+  color: var(--text);
+  user-select: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 3px;
+  padding: 0 6px;
+  cursor: pointer;
+}
+button:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.16);
+}
+button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+button.link {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--muted);
+  text-decoration: underline dotted;
+}
+
+kbd {
+  font:
+    11px ui-monospace,
+    monospace;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 0 3px;
+}
+
+/* The window is a larger transparent canvas; the panel has the size main sends (main/windows.ts, main.tsx). */
+.panel {
+  box-sizing: border-box;
+  width: var(--panel-w, 100%);
+  height: var(--panel-h, 100%);
+  display: flex;
+  flex-direction: column;
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: 6px;
+  position: relative;
+}
+/* Resize preview while the grip is dragged (pointerDrag.ts). */
+html[data-resize] .panel {
+  width: var(--resize-w);
+  height: var(--resize-h);
+}
+.panel.click-through {
+  border-color: transparent;
+}
+/* Only the header row (OverlayApp.tsx). */
+.panel.minimized .bar {
+  flex: 1;
+  border-radius: 5px;
+}
+
+.bar {
+  cursor: move;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 6px 4px 8px;
+  background: var(--bar-bg);
+  border-radius: 6px 6px 0 0;
+  min-height: 20px;
+}
+.bar .actions {
+  cursor: default;
+  margin-left: auto;
+  display: flex;
+  gap: 3px;
+}
+.bar .who {
+  display: flex;
+  gap: 6px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.hints {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 11px;
+  color: var(--muted);
+}
+.hint-item kbd {
+  color: var(--text);
+}
+
+.dot {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+.dot.ok {
+  background: var(--ok);
+}
+.dot.warn {
+  background: var(--warn);
+}
+.dot.bad {
+  background: var(--bad);
+}
+
+.body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  /* The brief head moves scrollTop itself when it condenses (BriefView useCondensed). */
+  overflow-anchor: none;
+  padding: 6px 8px 10px;
+}
+.body::-webkit-scrollbar {
+  width: 6px;
+}
+.body::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
+}
+
+.muted {
+  color: var(--muted);
+}
+.small {
+  font-size: 11px;
+}
+.empty {
+  padding: 12px 4px;
+  display: grid;
+  gap: 4px;
+}
+
+/* Search */
+.search input {
+  width: 100%;
+  box-sizing: border-box;
+  font: inherit;
+  font-size: 13px;
+  color: var(--text);
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid var(--panel-border);
+  border-radius: 4px;
+  padding: 5px 7px;
+  outline: none;
+}
+.search input:focus {
+  border-color: var(--info);
+}
+.results {
+  list-style: none;
+  margin: 6px 0 0;
+  padding: 0;
+}
+.results li {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 3px 6px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.results li.active {
+  background: rgba(127, 184, 255, 0.18);
+}
+.results li.sde-only .r-title {
+  color: var(--muted);
+}
+.r-sub {
+  color: var(--muted);
+  white-space: nowrap;
+  font-size: 11px;
+}
+.hint {
+  margin-top: 6px;
+  font-size: 11px;
+}
+
+/* Brief */
+.brief .title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.brief .name {
+  font-size: 14px;
+  font-weight: 600;
+}
+.badge {
+  font-size: 10px;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 0 4px;
+}
+.subtitle {
+  margin-bottom: 6px;
+}
+
+.damage {
+  display: grid;
+  gap: 3px;
+}
+.damage .row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.damage .k {
+  width: 58px;
+  color: var(--muted);
+}
+.damage .v {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  align-items: center;
+}
+.dmg {
+  font-weight: 600;
+  padding: 0 4px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.06);
+}
+.dmg.best {
+  outline: 1px solid currentColor;
+}
+.dmg-em {
+  color: var(--dmg-em);
+}
+.dmg-thermal {
+  color: var(--dmg-thermal);
+}
+.dmg-kinetic {
+  color: var(--dmg-kinetic);
+}
+.dmg-explosive {
+  color: var(--dmg-explosive);
+}
+.doc {
+  color: var(--muted);
+  font-size: 11px;
+}
+.doc.disagree,
+.warn-line {
+  color: var(--warn);
+}
+.fit-weak {
+  color: var(--warn);
+}
+.fit-ok {
+  color: var(--muted);
+}
+.fit-good {
+  color: var(--ok);
+}
+
+.top {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  align-items: start;
+  margin: 4px 0 6px;
+}
+.top-main {
+  min-width: 0;
+}
+/* EWAR: icon chips in two columns, so a long list does not stretch the header block. */
+.ewar {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 3px;
+  justify-content: end;
+  align-content: start;
+}
+.ewar-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 1px 4px 1px 2px;
+}
+.ewar-icon {
+  display: block;
+  flex: none;
+}
+/* Brief header: sticks to the top of the scrolling body; condensed to one or two rows once scrolled. */
+.brief-head {
+  position: sticky;
+  top: -6px;
+  z-index: 4;
+  margin: -6px -8px 0;
+  padding: 6px 8px 0;
+  padding-bottom: 5px;
+  background: rgba(12, 18, 26, 0.7);
+}
+/* Condensed, content scrolls underneath, so the background must hide it. */
+.brief-head.is-condensed {
+  background: rgb(12, 18, 26);
+  padding-bottom: 4px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid var(--line);
+}
+.condensed {
+  display: grid;
+  gap: 2px;
+}
+.c-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+.condensed .name {
+  font-size: 13px;
+  font-weight: 600;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.dmg-inline {
+  display: inline-flex;
+  gap: 3px;
+  align-items: center;
+  flex: none;
+  font-size: 11px;
+}
+.c-ewar {
+  display: inline-flex;
+  gap: 2px;
+  margin-left: auto;
+  flex: none;
+}
+.ewar-chip.icon-only {
+  padding: 1px;
+}
+.c-objective {
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 11px;
+}
+
+/* The open tips or loot panel floats over the content below the header. */
+.popover {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  margin-top: 2px;
+  max-height: 60vh;
+  overflow-y: auto;
+  padding: 5px 7px;
+  background: rgba(16, 24, 34, 0.98);
+  border: 1px solid var(--panel-border);
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+.chip {
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.03em;
+  padding: 1px 5px;
+  border-radius: 3px;
+  border: 1px solid;
+}
+.chip sup {
+  font-size: 8px;
+  font-weight: 400;
+  margin-left: 2px;
+  opacity: 0.8;
+}
+.sev-danger {
+  color: var(--bad);
+  border-color: var(--bad);
+  background: rgba(255, 107, 107, 0.12);
+}
+.sev-caution {
+  color: var(--warn);
+  border-color: var(--warn);
+  background: rgba(242, 184, 75, 0.1);
+}
+.sev-info {
+  color: var(--info);
+  border-color: rgba(127, 184, 255, 0.6);
+}
+.sev-text-danger {
+  color: var(--bad);
+}
+.sev-text-caution {
+  color: var(--warn);
+}
+
+.line {
+  margin: 2px 0;
+}
+
+.pocket {
+  margin-top: 8px;
+  border-top: 1px solid var(--line);
+  padding-top: 6px;
+}
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  margin-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+}
+.tab {
+  position: relative;
+  border: none;
+  border-bottom: 2px solid transparent;
+  border-radius: 3px 3px 0 0;
+  background: none;
+  padding: 2px 8px;
+  color: var(--muted);
+}
+.tab.active {
+  color: var(--text);
+  font-weight: 600;
+  border-bottom-color: var(--info);
+  background: rgba(127, 184, 255, 0.08);
+}
+.tab:disabled {
+  opacity: 0.6;
+}
+.tab-alert {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-left: 4px;
+  border-radius: 50%;
+  background: var(--bad);
+  vertical-align: middle;
+}
+.trigger {
+  color: var(--warn);
+  margin: 2px 0;
+}
+.tip {
+  color: #d9e8ff;
+  background: rgba(127, 184, 255, 0.1);
+  border-left: 2px solid var(--info);
+  padding: 1px 6px;
+  margin: 3px 0;
+  border-radius: 0 3px 3px 0;
+}
+.wave {
+  margin: 5px 0;
+}
+.wave-title {
+  color: var(--muted);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.group {
+  color: var(--muted);
+  font-size: 11px;
+  font-style: italic;
+  padding-left: 6px;
+  margin-top: 2px;
+}
+.spawn {
+  padding-left: 6px;
+}
+.count {
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+}
+.cls {
+  color: var(--muted);
+  font-size: 11px;
+}
+.mini {
+  font-size: 9px;
+  font-weight: 700;
+  margin-left: 4px;
+  padding: 0 3px;
+  border-radius: 2px;
+  color: var(--warn);
+  border: 1px solid rgba(242, 184, 75, 0.5);
+}
+.mini.danger {
+  color: var(--bad);
+  border-color: rgba(255, 107, 107, 0.6);
+}
+.mini.trig {
+  color: var(--bad);
+  border-color: rgba(255, 107, 107, 0.5);
+}
+.notes {
+  margin-top: 6px;
+  display: grid;
+  gap: 3px;
+  color: #c9d2db;
+  font-size: 11px;
+}
+/* At least as tall as the body, so the sources sit at its bottom (margin-top: auto). */
+.brief {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+/* Stays at the bottom of the scrolling body, so the source shows without scrolling to the end. */
+.sources {
+  position: sticky;
+  bottom: -10px;
+  z-index: 4;
+  margin: auto -8px -10px;
+  padding: 4px 8px 6px;
+  border-top: 1px solid var(--line);
+  /* Content scrolls underneath, like the condensed brief head. */
+  background: rgb(12, 18, 26);
+}
+
+.grip {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 14px;
+  height: 14px;
+  cursor: nwse-resize;
+  /* Above the sticky brief head and sources, and the strips that fall back over the panel: they reach the corner. */
+  z-index: 10;
+  background: linear-gradient(135deg, transparent 50%, rgba(255, 255, 255, 0.35) 50%);
+  border-bottom-right-radius: 6px;
+}
+
+/* Threats: a strip of its own below the panel */
+.threats {
+  padding: 5px 8px;
+  border: 1px solid var(--panel-border);
+  border-radius: 6px;
+  display: grid;
+  gap: 3px;
+  background: var(--panel-bg);
+}
+.threat {
+  display: flex;
+  gap: 6px;
+  align-items: baseline;
+}
+.threat .chip {
+  flex: none;
+}
+.threat.known .chip {
+  border-style: dashed;
+  background: none;
+}
+.threat.context {
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+}
+.threat.context .chip {
+  border-style: dashed;
+  background: none;
+  font-size: 10px;
+  padding: 0 4px;
+}
+.threat.known .threat-text {
+  color: var(--muted);
+}
+
+/* DPS, threat and loot strips and timed messages below the panel (Below.tsx); over the bottom of the panel when there is no room. */
+.below {
+  position: absolute;
+  top: calc(var(--panel-h, 100%) + 4px);
+  left: 0;
+  width: var(--panel-w, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+html[data-resize] .below {
+  top: calc(var(--resize-h) + 4px);
+  width: var(--resize-w);
+}
+.below.inside {
+  top: auto;
+  bottom: calc(100% - var(--panel-h, 100%) + 30px);
+  padding: 0 8px;
+  box-sizing: border-box;
+}
+html[data-resize] .below.inside {
+  bottom: calc(100% - var(--resize-h) + 30px);
+}
+.messages {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  pointer-events: none;
+}
+.message {
+  max-width: 88%;
+  padding: 5px 9px;
+  border: 1px solid rgba(127, 184, 255, 0.45);
+  border-radius: 10px 10px 2px 10px;
+  background: rgba(22, 38, 58, 0.94);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  font-size: 12px;
+  line-height: 1.35;
+  animation: message-in 0.4s ease-out;
+  transition: opacity 3s linear;
+}
+.message.known {
+  border-style: dashed;
+}
+.message-close {
+  pointer-events: auto;
+  float: right;
+  margin: -2px -4px 0 6px;
+  padding: 0 4px;
+  border: none;
+  background: none;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+}
+.message-close:hover {
+  color: var(--text);
+}
+.message.fading {
+  opacity: 0;
+}
+@keyframes message-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+/* Combat: a strip of its own below the panel */
+.combat {
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  padding: 4px 8px;
+  font-variant-numeric: tabular-nums;
+  font-size: 11px;
+}
+.combat.idle {
+  color: var(--muted);
+}
+.application {
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: 6px;
+  padding: 3px 8px;
+  font-size: 11px;
+  cursor: help;
+}
+.application-hint {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Loot */
+:root {
+  --gold: #f5c84c;
+  --npc: #ff5d5d;
+}
+.chip.loot {
+  color: var(--gold);
+  border-color: rgba(245, 200, 76, 0.7);
+  background: rgba(245, 200, 76, 0.1);
+}
+.loot-alerts {
+  padding: 5px 8px;
+  border: 1px solid rgba(245, 200, 76, 0.35);
+  border-radius: 6px;
+  display: grid;
+  gap: 3px;
+  background: linear-gradient(rgba(245, 200, 76, 0.06), rgba(245, 200, 76, 0.06)), var(--panel-bg);
+}
+.loot-alert {
+  display: flex;
+  gap: 6px;
+  align-items: baseline;
+}
+.loot-alert .chip {
+  flex: none;
+}
+.loot-badge {
+  margin-left: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--gold);
+}
+.loot-body {
+  display: grid;
+  gap: 2px;
+  margin-top: 3px;
+  padding-left: 6px;
+  border-left: 2px solid rgba(245, 200, 76, 0.5);
+}
+.mini.loot {
+  border-color: rgba(245, 200, 76, 0.5);
+}
+
+/* Compact waves */
+.view-toggle {
+  margin-left: auto;
+}
+/* Ultra compact waves (EVE-58): one row per wave, size icon + count badges */
+.ultra {
+  display: grid;
+  gap: 3px;
+  margin: 5px 0;
+}
+.ultra-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+}
+.ultra-row .wave-title {
+  min-width: 12px;
+  text-align: right;
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 1px 4px 1px 2px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.35);
+  font-size: 11px;
+  line-height: 1.2;
+}
+.badge.ewar {
+  border-color: var(--warn);
+}
+.badge.ewar-warp {
+  border-color: var(--bad);
+}
+.badge-cls {
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--muted);
+}
+.badge-count {
+  font-weight: 700;
+}
+.badge-ewar {
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--warn);
+}
+.badge-ewar.warp {
+  color: var(--bad);
+}
+
+.tiles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 3px 0 2px 4px;
+}
+.tile {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+.tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.tile.ewar {
+  border-color: var(--warn);
+}
+.tile.ewar-warp {
+  border-color: var(--bad);
+}
+.tile-cls {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--muted);
+}
+.tile-count {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 1px 3px;
+  background: rgba(0, 0, 0, 0.8);
+  border-top-left-radius: 3px;
+}
+.tile-marks {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  align-items: flex-start;
+}
+.tile-trig {
+  font-size: 9px;
+  font-weight: 800;
+  line-height: 1;
+  padding: 1px 3px;
+  color: #fff;
+  background: var(--bad);
+  border-bottom-left-radius: 3px;
+}
+.tile-loot {
+  font-size: 10px;
+  line-height: 1;
+  padding: 0 1px;
+}
+.tile-size {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  padding: 1px 2px;
+  background: rgba(0, 0, 0, 0.8);
+  border-top-right-radius: 3px;
+}
+.tile-ewar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 8px;
+  font-weight: 800;
+  line-height: 1;
+  padding: 1px 2px;
+  color: #1b1200;
+  background: var(--warn);
+  border-bottom-right-radius: 3px;
+}
+.tile-ewar.warp {
+  color: #fff;
+  background: var(--bad);
+}
+
+.bracket {
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: var(--npc);
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+.bracket.elite {
+  filter: drop-shadow(0 0 1px #fff);
+}
+
+/* Abyss panel (EVE-75) */
+.abyss {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.abyss-head {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+.abyss-timer {
+  font-size: 18px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.abyss-focus ol {
+  margin: 2px 0 0;
+  padding-left: 18px;
+}
+.abyss-focus li {
+  margin-bottom: 3px;
+}
+.abyss-focus li.stale {
+  opacity: 0.55;
+}
+.abyss-focus .focus-name {
+  font-weight: 600;
+  margin-right: 4px;
+}
+.abyss-focus .chip {
+  margin-right: 3px;
+}
+.abyss-room {
+  border-top: 1px solid var(--line);
+  padding-top: 3px;
+}
+.abyss-tips {
+  margin: 0;
+  padding-left: 14px;
+}
+/* Icon strip right of the panel (SideStrip.tsx): restrictions, tips, loot, Abyss; over the panel's edge without room. */
+.side-strip {
+  position: absolute;
+  top: 34px;
+  left: calc(var(--panel-w, 100%) + 4px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 3px;
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: 6px;
+}
+.side-strip:empty {
+  display: none;
+}
+html[data-resize] .side-strip {
+  left: calc(var(--resize-w) + 4px);
+}
+.side-strip.inside {
+  left: auto;
+  right: calc(100% - var(--panel-w, 100%) + 6px);
+}
+html[data-resize] .side-strip.inside {
+  right: calc(100% - var(--resize-w) + 6px);
+}
+.side-strip .loot-badge {
+  display: block;
+  margin: 0;
+  font-size: 8px;
+}
+.top {
+  position: relative;
+}
+.icon-hint {
+  font-size: 13px;
+  line-height: 1;
+  padding: 2px 3px;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  background: none;
+  color: var(--text);
+  cursor: help;
+}
+button.icon-hint {
+  cursor: pointer;
+}
+button.icon-hint:disabled {
+  cursor: help;
+}
+.icon-hint.on {
+  border-color: var(--panel-border);
+  background: var(--bar-bg);
+}
+.icon-hint sup {
+  font-size: 9px;
+  margin-left: 1px;
+  color: var(--muted);
+}
+.icon-hint .loot-badge {
+  margin-left: 3px;
+}
+.cargo-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cargo-button .cargo-label {
+  font-size: 8px;
+  color: var(--muted);
+}
+.cargo-button.done .cargo-label {
+  color: var(--ok);
+}
+.cargo-button.ok {
+  border-color: var(--ok);
+}
+.cargo-button.bad {
+  border-color: var(--bad);
+}
+.abyss-button {
+  cursor: pointer;
+  background: none;
+}
+.ship-select {
+  position: relative;
+}
+.ship-button {
+  display: block;
+  padding: 1px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: none;
+  cursor: pointer;
+}
+.ship-button:hover {
+  border-color: var(--panel-border);
+}
+/* Fixed size: the strip keeps its width whatever the hull's name. */
+.ship-thumb {
+  display: block;
+  width: 32px;
+  height: 32px;
+  border-radius: 3px;
+}
+.ship-thumb-text {
+  font-size: 9px;
+  line-height: 1.1;
+  color: var(--info);
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  text-align: center;
+}
+.ship-button.unfitted {
+  border: 1px dashed var(--warn);
+}
+.ship-button.on {
+  border-color: rgba(127, 184, 255, 0.6);
+  background: var(--bar-bg);
+}
+.ship-names {
+  min-width: 0;
+}
+/* Floats over the strip and the panel; the right edge stays on the strip's, so no room beside the panel is needed. */
+.ship-menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: -4px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 3px;
+  min-width: 140px;
+  background: rgba(16, 24, 34, 0.98);
+  border: 1px solid var(--panel-border);
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+.ship-pick {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font: inherit;
+  font-size: 11px;
+  text-align: left;
+  padding: 2px 5px;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  background: none;
+  color: var(--text);
+  cursor: pointer;
+  max-width: 220px;
+}
+.ship-pick:hover {
+  border-color: var(--panel-border);
+}
+.ship-pick.on {
+  border-color: rgba(127, 184, 255, 0.6);
+  background: var(--bar-bg);
+}
+.ship-fit-name {
+  display: block;
+  font-size: 9px;
+  color: var(--muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.abyss-head .abyss-actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.abyss-head .filament {
+  cursor: pointer;
+  background: none;
+}
+.abyss-head .filament:disabled {
+  cursor: help;
+}
+.abyss-picker {
+  display: grid;
+  gap: 3px;
+  padding: 4px;
+  border: 1px solid var(--panel-border);
+  border-radius: 4px;
+  background: var(--bar-bg);
+}
+.pick-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+}
+.pick {
+  font-size: 11px;
+  padding: 1px 6px;
+  border-radius: 3px;
+  border: 1px solid var(--panel-border);
+  background: none;
+  color: var(--text);
+  cursor: pointer;
+}
+.pick.on {
+  background: var(--info);
+  border-color: var(--info);
+  color: #0a0f16;
+  font-weight: 700;
+}
+.abyss-dangers {
+  display: grid;
+  gap: 3px;
+}
+.danger-npc .chip {
+  margin-left: 3px;
+  font-size: 9px;
+}
+.danger-npc {
+  white-space: nowrap;
+}
+.fit-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+}
+.fit-icon img {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+.fit-icon .fit-value {
+  font-size: 10px;
+  font-weight: 700;
+}
+.abyss-dangers > div {
+  overflow-wrap: anywhere;
+}
+.weather-icon {
+  vertical-align: -3px;
+}
+
+/* Intel (EVE-98): hostiles reported within range, each row tinted by distance (yellow at the edge → red close). */
+.intel {
+  padding: 4px 6px;
+  border: 1px solid var(--panel-border);
+  border-radius: 6px;
+  display: grid;
+  gap: 2px;
+  background: var(--panel-bg);
+}
+.intel.quick {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.intel.quick .intel-row {
+  flex: 1;
+  min-width: 0;
+}
+.intel-line {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.intel-line .intel-row {
+  flex: 1;
+  min-width: 0;
+}
+.intel {
+  position: relative;
+}
+.intel.with-toggle:not(.graph) {
+  padding-right: 26px;
+}
+.intel-row {
+  padding: 1px 6px;
+  border-left: 3px solid;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.intel-main {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  white-space: nowrap;
+}
+.intel-pilots {
+  font-size: 11px;
+  line-height: 1.3;
+  padding-left: calc(2.9em + 6px);
+}
+.intel-pilot {
+  font-weight: 600;
+}
+.intel-pilot-ship {
+  color: var(--muted);
+}
+.intel-toggle {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  font-size: 11px;
+  line-height: 16px;
+  background: var(--panel-bg);
+}
+.intel.idle {
+  min-height: 26px;
+  align-content: center;
+}
+/* Graph view (EVE-102): no background, only the lines and nodes. */
+.intel.graph {
+  background: none;
+  border: none;
+  padding: 0;
+}
+.intel-graph {
+  position: relative;
+}
+.intel-graph svg {
+  display: block;
+  overflow: visible;
+}
+.graph-row {
+  fill: rgba(230, 240, 250, 0.55);
+  font-size: 10px;
+  paint-order: stroke;
+  stroke: rgba(0, 0, 0, 0.8);
+  stroke-width: 2px;
+}
+.graph-edge {
+  stroke: rgba(225, 235, 245, 0.7);
+  stroke-width: 1.2;
+  filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.9));
+}
+.graph-edge.hot {
+  stroke: rgba(255, 150, 110, 0.9);
+}
+/* EVE-103: the route to the destination, dashed over the gates. */
+.graph-route {
+  stroke: #5fd0ff;
+  stroke-width: 2.2;
+  stroke-dasharray: 5 4;
+  filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.9));
+}
+.graph-dest {
+  fill: none;
+  stroke: #5fd0ff;
+  stroke-width: 2;
+  stroke-dasharray: 3 2;
+}
+.graph-dest-label {
+  fill: #8fdfff;
+}
+.graph-dest-text {
+  color: #8fdfff;
+}
+.graph-note {
+  position: absolute;
+  top: 0;
+  right: 28px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: rgba(10, 15, 22, 0.9);
+  font-size: 11px;
+  color: #8fdfff;
+}
+.graph-note.error {
+  color: var(--bad);
+}
+.graph-dot {
+  stroke: rgba(0, 0, 0, 0.85);
+  stroke-width: 1.5;
+}
+.graph-here {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 1.5;
+}
+.graph-halo {
+  stroke-width: 1.5;
+}
+.graph-node.reported.here .graph-halo,
+.graph-node.reported .graph-halo {
+  animation: intel-here 1.2s ease-in-out infinite alternate;
+}
+.graph-hit {
+  fill: transparent;
+}
+.graph-count {
+  fill: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  paint-order: stroke;
+  stroke: rgba(0, 0, 0, 0.9);
+  stroke-width: 3px;
+}
+.graph-label {
+  fill: #e6ebf0;
+  font-size: 10px;
+  text-anchor: middle;
+  paint-order: stroke;
+  stroke: rgba(0, 0, 0, 0.9);
+  stroke-width: 3px;
+}
+.graph-tip {
+  position: absolute;
+  transform: translateX(-50%);
+  z-index: 5;
+  min-width: 150px;
+  max-width: 280px;
+  padding: 4px 8px;
+  border: 1px solid var(--panel-border);
+  border-radius: 5px;
+  background: rgba(10, 15, 22, 0.95);
+  font-size: 11px;
+  pointer-events: none;
+}
+.graph-tip.from-left {
+  transform: translateX(-12px);
+}
+.graph-tip.from-right {
+  transform: translateX(12px);
+}
+.intel-clear {
+  flex: none;
+  align-self: center;
+  width: 14px;
+  height: 14px;
+  padding: 0;
+  font-size: 9px;
+  line-height: 12px;
+  opacity: 0.55;
+  background: none;
+  border: none;
+}
+.intel-clear:hover,
+.intel-clear.armed {
+  opacity: 1;
+}
+.intel-clear.armed {
+  width: auto;
+  padding: 0 4px;
+  color: var(--bad);
+  font-weight: 700;
+}
+.graph-closing {
+  position: absolute;
+  top: 4px;
+  right: 28px;
+}
+.intel-row.here {
+  animation: intel-here 1.2s ease-in-out infinite alternate;
+}
+@keyframes intel-here {
+  to {
+    filter: brightness(1.35);
+  }
+}
+.intel-jumps {
+  font-weight: 700;
+  min-width: 2.9em;
+}
+.intel-system {
+  font-weight: 600;
+}
+.intel-who {
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+.intel-ships {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--text);
+  opacity: 0.85;
+}
+.intel-tag {
+  font-size: 10px;
+  padding: 0 4px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 3px;
+}
+.intel-tag.tag-camp,
+.intel-tag.tag-bubble,
+.intel-tag.tag-blops,
+.intel-tag.tag-cyno {
+  border-color: var(--bad);
+  color: var(--bad);
+}
+.intel-age {
+  margin-left: auto;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.intel-more,
+.intel-closing {
+  flex: none;
+  font-size: 10px;
+  color: var(--muted);
+}
+.intel-closing {
+  color: var(--bad);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+/* zKillboard kills (EVE-100): second-hand, so dashed and lighter. */
+.intel-row.kill {
+  border-left-style: dashed;
+}
+.intel-kill-mark {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--bad);
+}
+.intel-source {
+  margin-top: 2px;
+}
+.graph-halo.kill {
+  stroke-dasharray: 3 2;
+}
+.graph-kills {
+  fill: #ff9a8a;
+  font-size: 11px;
+  font-weight: 700;
+  text-anchor: end;
+  paint-order: stroke;
+  stroke: rgba(0, 0, 0, 0.9);
+  stroke-width: 3px;
+}
+
+/* Abyss without the live combat cues: what the room can hold, no order of fire. */
+.abyss-room-options ul {
+  margin: 2px 0 4px;
+  padding-left: 14px;
+  font-size: 12px;
+}
+.abyss-room-options li .chip {
+  margin-left: 4px;
+}
+.abyss-room-options li.seen .focus-name {
+  font-weight: 700;
+}
+
+/* Intel row icons: hull sizes, the ESS with its timer, a fleet. */
+.intel-hulls {
+  display: inline-flex;
+  gap: 1px;
+  flex: none;
+}
+.intel-hull,
+.intel-mark {
+  display: inline-flex;
+  align-items: center;
+  flex: none;
+}
+.intel-glyph {
+  width: 15px;
+  height: 11px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.intel-glyph .fill {
+  fill: currentColor;
+  stroke: none;
+}
+.intel-hull {
+  color: var(--text);
+  opacity: 0.9;
+}
+.intel-hull.hull-capital,
+.intel-hull.hull-battleship {
+  color: var(--bad);
+}
+.intel-hull-n {
+  font-size: 9px;
+  opacity: 0.75;
+  margin-left: -1px;
+  font-variant-numeric: tabular-nums;
+}
+.intel-mark.mark-ess {
+  color: #e8c547;
+  gap: 2px;
+}
+.intel-mark.mark-fleet {
+  color: var(--bad);
+}
+.intel-timer {
+  font-size: 10px;
+  opacity: 0.6;
+  font-variant-numeric: tabular-nums;
+}
+.intel-timer.over {
+  opacity: 0.4;
+}
+.graph-tip-icons {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+/* The overview brackets in the text colour on an intel row (red on the brief). */
+.intel-hull .bracket {
+  width: 13px;
+  height: 13px;
+  background: currentColor;
+}
+.intel-hull .size-icon {
+  width: 14px;
+  height: 13px;
+}
+.intel-hull .size-icon g {
+  fill: currentColor;
+}
+.intel-hull .size-icon line {
+  stroke: currentColor;
+}

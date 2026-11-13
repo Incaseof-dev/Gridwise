@@ -1,0 +1,89 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: war-situation-2-of-2
+kind: mission
+name: War Situation (2 of 2)
+level: 4
+enemyFaction: Amarr Empire
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – War Situation (2 of 2)
+    url: https://wiki.eveuniversity.org/War_Situation_(2_of_2)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223230"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the General's Quarters and the ships guarding it
+ewar:
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Imperial Navy Gamma I (Web, Warp Disrupt)"
+  - text: "Suggested ships: Battleship, Marauder"
+  - text: approx 12mil
+  - text: "Video: Tengu"
+lootNotes:
+  - text: +2 implant
+  - text: 12 mil loot
+pockets:
+  - name: 1st Pocket
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Imperial Navy Gamma I
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Frigate
+            names:
+              - Imperial Navy Scout
+              - Imperial Crucifier
+          - count: "2"
+            class: Cruiser
+            names:
+              - Imperial Navy Maller
+          - count: "1"
+            class: Battleship
+            names:
+              - Imperial Navy Amargeddon
+  - name: 2nd Pocket
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Imperial Navy Crucifier
+              - Imperial Navy Scout
+              - Imperial Navy Soldier
+          - count: "4"
+            class: Cruiser
+            names:
+              - Imperial Navy Maller
+          - count: "2"
+            class: Battleship
+            names:
+              - Imperial Navy Apocalypse
+          - count: "1"
+            class: Battleship
+            names:
+              - General 'Buck' Turgidson
+          - count: "1"
+            class: Structure
+            names:
+              - General's Quarters
+            note: Mission objective

@@ -1,0 +1,64 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: convoy-attack-minmatar-republic
+kind: mission
+name: Convoy Attack
+level: 5
+enemyFaction: Minmatar Republic
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Convoy Attack (Minmatar Republic)
+    url: https://wiki.eveuniversity.org/Convoy_Attack_(Minmatar_Republic)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191623"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy all enemy ships
+ewar:
+  - kind: neut
+  - kind: targetPaint
+notes:
+  - text: No hostiles at initial gate. Freighters orbit at 70km, deal no damage, and have 142k hp. It is possible to throw off full-room aggro by leaving the room, returning and selectively aggressing certain groups that have approached quickly and separated from the others. Diviners and Dominators can be aggressed separately this way.
+pockets:
+  - name: 1st Pocket
+    notes:
+      - text: All ships aggro on initial warp-in. Republic Tribal Akila neut for a total of 80gj/s.
+    waves:
+      - id: initial-hostiles
+        trigger:
+          on: warpIn
+          text: Initial Hostiles
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Chief Republic Gleeda
+            ewar:
+              - kind: targetPaint
+          - count: "4"
+            class: Battleship
+            names:
+              - Republic Tribal Akila
+            ewar:
+              - kind: neut
+              - kind: targetPaint
+          - count: "13"
+            class: Battleship
+            names:
+              - Republic Tribal Jarl
+              - Republic Tribal Kinai
+              - Republic Tribal Pytara
+              - Republic Tribal Sigur
+              - Republic Tribal Ymir
+            ewar:
+              - kind: targetPaint
+            note: Pytara TPs
+          - count: "4"
+            class: Freighter
+            names:
+              - Republic Freighter
+            drop: Various trade goods

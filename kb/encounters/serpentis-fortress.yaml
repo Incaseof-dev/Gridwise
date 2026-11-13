@@ -1,0 +1,179 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: serpentis-fortress
+kind: complex
+name: Serpentis Fortress
+dedRating: null
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Serpentis Fortress
+    url: https://wiki.eveuniversity.org/Serpentis_Fortress
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "157229"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Battleships"
+notes:
+  - text: The site is behind an acceleration gate. Warping to the site lands you at 0 on the gate.
+  - text: Warping to the site lands on an acceleration gate at 0.
+  - text: "Escalation: Destroying the Serpentis Stronghold structure in Room #2 may cause the site to escalate to Suspicious Job."
+  - text: "Escalation: On Escalation:: As the bits and pieces from the disintegrated station charge into space, carrying the news of heightened entropy in the universe, your instruments receive an unusual message. It's obviously being transmitted from the Serpentis and even though the person on the other end does not introduce himself as such, the special cypher reveals it is indeed theirs. He demands speaking over a secure channel and after you have established one, he continues with sarcastic congratulations on your victory. He then gives you an offer: If you travel to three different locations as he instructs and assassinate the the Serpentis leaders operating there, he will reward you handsomely. He gives you coordinates to a location in a \"take it or leave it\" manner before bidding you farewell and adds that he will contact you after the first target is destroyed."
+lootNotes:
+  - text: You can get about 30 million ISK in bounties from fully clearing the site. The faction battleship may drop additional valuable loot.
+pockets:
+  - name: Room 1
+    notes:
+      - text: The enemies spawn in three groups. The groups can be aggressed individually.
+      - text: The acceleration gate to Room 2 is 25 km from warp-in.
+    waves:
+      - id: right-group-65km-from-warp-in
+        trigger:
+          on: other
+          text: Right group 65km from warp-in
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Initiate
+              - Coreli Guardian Spy
+              - Coreli Guardian Agent
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Patroller
+            ewar:
+              - kind: sensorDamp
+          - count: "5"
+            class: Battleship
+            names:
+              - Core Lord Admiral
+              - Core Grand Admiral
+            note: Grand Admirals race away to orbit at 51 km
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Infantry
+      - id: centre-group-37km-from-warp-in
+        trigger:
+          on: other
+          text: Centre group 37km from warp-in
+          confidence: inferred
+        spawns:
+          - count: "7"
+            class: Frigate
+            names:
+              - Coreli Defender
+              - Coreli Guardian Defender
+              - Coreli Guardian Protector
+              - Coreli Guardian Scout
+            ewar:
+              - kind: web
+          - count: "1"
+            class: Destroyer
+            names:
+              - Corelior Artillery
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Protector
+              - Corelum Guardian Chief Defender
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corelum Chief Infantry
+              - Corelum Chief Sentinel
+      - id: left-group-35km-from-warp-in
+        trigger:
+          on: other
+          text: Left group 35km from warp-in
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Coreli Protector
+              - Coreli Guard
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Defender
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Corelum Chief Guard
+              - Corelum Chief Safeguard
+            ewar:
+              - kind: sensorDamp
+          - count: "4"
+            class: Battleship
+            names:
+              - Core Lord Admiral
+              - Core Grand Admiral
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: Unlocks when all hostile ships are destroyed.
+  - name: Room 2
+    notes:
+      - text: ----
+      - text: Notable structures
+      - text: The large Serpentis Station can be destroyed, but drops regular modules. There is a chance of getting the Suspicious Job escalation when you destroy the Shadow Serpentis battleship if it spawns, or the Station if it doesn't.
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Structure
+            names:
+              - Serpentis Stronghold
+            note: May trigger an escalation
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial group
+        spawns:
+          - count: "10"
+            class: Elite Frigate
+            names:
+              - Guardian Angel
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "4"
+            class: Battleship
+            names:
+              - Core
+              - High Admiral
+      - id: shadow-serpentis-rare-might-spawn-after-3-min
+        trigger:
+          on: other
+          text: Shadow Serpentis Rare - Might spawn after 3 min
+          confidence: inferred
+        spawns:
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - Shadow Serpentis Rear Admiral
+              - Shadow Serpentis Port Admiral
+            drop: Faction modules
+            note: May trigger an escalation if spawned, if not destroy the station for a escalation chance
+sde:
+  dungeonIds:
+    - 1259

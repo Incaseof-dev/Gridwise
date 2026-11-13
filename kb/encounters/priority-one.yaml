@@ -1,0 +1,145 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: priority-one
+kind: mission
+name: Priority One
+level: 4
+enemyFaction: Minmatar Republic
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Priority One
+    url: https://wiki.eveuniversity.org/Priority_One
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "230635"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal: []
+  resist:
+    - em
+    - thermal
+    - kinetic
+    - explosive
+objectives:
+  - text: Escort Senator Ardanne's son safely to the film set
+ewar:
+  - kind: targetPaint
+notes:
+  - text: "Suggested ships: Battleship"
+  - text: No standing loss; Requires Salvager module (Salvage drones do not work)
+  - text: Accept the Mission remotely.
+  - text: Gated deadspace pocket within 1 jump of Tolle. You meet a shuttle that is trying to get the kid to safety. A hostile fleet arrives. When you land the Shuttle Wreck is surrounded by a fleet of Minmatar Republic ships.
+  - text: "Blitz: take the Gate, take the Gate again, salvage the Shuttle Wreck."
+  - text: Complete the Mission remotely.
+  - text: "Tips: All Acceleration Gates are unlocked"
+  - text: "Tips: There is no Minmatar Republic Faction Standing loss"
+  - text: "Tips: Depending on your ship and salvage chance you may not be able to survive long enough to salvage the Shuttle Wreck; destroy a few ships first"
+  - text: "Tips: Use a Microwarpdrive or a Micro Jump Drive to lure the Fleet way from the Shuttle Wreck"
+  - text: "Tips: Remember to fit a Salvager module (Salvage drones do not work)"
+pockets:
+  - name: Warp-in
+    notes:
+      - text: "Ardanne Residance: The normally well-guarded antechamber leading to this compound has been brought to ruin. The few structures that remain tell the tale of a swift and violent strike that was evidently part of a deeper breach. All communications arrays have been targeted and destroyed. The area that used to house the Central Security Facility, the hub of all senatorial protection details, has been reduced to a few drifting sheets of burned metal. Judging from the intensity of the fires still burning, the attack only came a few hours ago at the most. The acceleration gate into the next room shows signs of even more recent activation and a shuttle can be clearly identified on the scans ahead."
+    waves:
+      - id: structures-45-km
+        trigger:
+          on: other
+          text: Structures (45 km)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+  - name: Room 1
+    notes:
+      - text: Gate group spawns when you are 25 km away from the Acceleration Gate.
+    waves:
+      - id: gate-group
+        trigger:
+          on: other
+          text: Gate group
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Republic Tribal Takan
+              - Republic Tribal Baldur
+          - count: "2"
+            class: Frigate
+            names:
+              - Chief Republic Gleeda
+            ewar:
+              - kind: targetPaint
+          - count: "4"
+            class: Cruiser
+            names:
+              - Republic Tribal Jarpur
+              - Republic Tribal Manadis
+          - count: "3"
+            class: Battleship
+            names:
+              - Republic Tribal Jotun
+              - Republic Tribal Sigur
+      - id: structures-50-km
+        trigger:
+          on: other
+          text: Structures (50 km)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Gate to Shipyard
+            note: Not locked
+      - id: friendly-60-km
+        trigger:
+          on: other
+          text: Friendly (60 km)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Friendly Frigate
+            names:
+              - Gallente Federation Civilians
+  - name: Room 2
+    notes:
+      - text: "Agent Conversation at landing: Shit, that wasn't the Senator's son, was it? Get to that wreckage. I need to be absolutely certain who was aboard that ship before I start panicking. Please: salvage the wreck, and do it quickly! The people that did this could be back any moment, and the wreckage itself could start to drift apart and break down even sooner than that, a few hours max. You must act quickly, pilot. Find a savager and move it. You have two hours. They will want updates as quickly as I will."
+      - text: "Agent Conversation after salvaging: I'm looking at the analysis now. There is a neatly-cut hole in one of the metal sheets you salvaged; it must have been for a boarding tunnel. I can only guess that after the vessel was boarded, the attackers initiated its self destruct mechanisms. Your sensors don't show any shots fired from the Minmatar ships. This is good. Well...it's bad, very bad, but the Senator's son is still alive. I need you to stay on with us for a while, if you can. Report back to me if you're willing to take on the investigation of this matter, god knows we need the help now more than ever."
+    waves:
+      - id: group-1-30-km
+        trigger:
+          on: other
+          text: Group 1 (30 km)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Chief Republic Hrakt
+          - count: "5"
+            class: Cruiser
+            names:
+              - Republic Tribal Rodul
+              - Republic Tribal Manadis
+          - count: "3"
+            class: Battleship
+            names:
+              - Republic Tribal Jotun
+              - Republic Tribal Sigur
+              - Republic Tribal Kinal
+      - id: structures-50-km
+        trigger:
+          on: other
+          text: Structures (50 km)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Container
+            names:
+              - Shuttle Wreck
+            triggers: Salvage to complete the Mission

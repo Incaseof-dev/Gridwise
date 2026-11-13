@@ -1,0 +1,63 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: cargo-delivery-blood-raiders-level-1
+kind: mission
+name: Cargo Delivery
+level: 1
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Cargo Delivery (Blood Raiders) (Level 1)
+    url: https://wiki.eveuniversity.org/Cargo_Delivery_(Blood_Raiders)_(Level_1)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "218047"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Retrieve the goods (60m3)
+notes:
+  - text: Normal space (Warp disrupted by natural phenomena during mission, but can use bookmarks after mission completed, which can help with salvage/looting)
+  - text: The goods are in the Warehouse.
+  - text: "Blitz: Warp-in, grab the goods, warp out."
+lootNotes:
+  - text: 500,000 EST. Value (Bounty)
+  - text: 600,000 ISK Value (Salvage)
+pockets:
+  - name: Warp-in
+    notes:
+      - text: On warp-in, no rats are present. Wave one appears when approaching the objective.
+    waves:
+      - id: wave-1-at-15km-from-the-objective
+        trigger:
+          on: other
+          text: Wave 1 (At 15km from the objective)
+          confidence: inferred
+        spawns:
+          - count: "8"
+            class: Frigate
+            names:
+              - Corpii Herald
+              - Corpii Upholder
+          - count: "2"
+            class: Frigate
+            names:
+              - Corpii Raider
+            triggers: Wave 2
+      - id: wave-2-10-40km
+        trigger:
+          on: other
+          text: Wave 2 (10-40km)
+          confidence: inferred
+        spawns:
+          - count: "8"
+            class: Frigate
+            names:
+              - Corpii Worshipper
+          - count: "1"
+            class: Frigate
+            names:
+              - Kazem Tatha
+            note: Renamed Corpii Worshipper

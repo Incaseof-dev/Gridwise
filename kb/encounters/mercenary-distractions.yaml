@@ -1,0 +1,42 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: mercenary-distractions
+kind: mission
+name: Mercenary Distractions
+level: null
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Mercenary Distractions
+    url: https://wiki.eveuniversity.org/Mercenary_Distractions
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "228259"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Kill the mercenaries protecting the Guristas facility, then report back to Immuri Asaka.
+notes:
+  - text: "The Guristas Pirates: The Guristas Pirates have been a thorn in the side of the Caldari State for many years, constantly threatening the security of outlying systems and poorly defended convoys. The Guristas tend to shy away from prolonged and overt assaults, preferring instead to take down weaker prey during opportunistic raids."
+  - text: Objective
+  - text: "Kill the mercenaries protecting the Guristas facility, then report back to Immuri Asaka - Location: () Hatakani"
+  - text: Notes
+  - text: This mission is about as simple as they get. You will warp in at 33km from some Guristas frigates. Kill them, then return to the Asaka's station to complete the mission.
+  - text: "Agent Asaka will then report to you: I’m pleased to inform you that everything went smoothly with the transfer. One of the first things our new commander did was to request frigate and cruiser backup for his fleet. They should be capable of defending themselves if the drones try to fight their way out."
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: "Next Mission: An Economy Under Threat"
+    waves:
+      - id: wave-1
+        trigger:
+          on: warpIn
+          text: Wave 1
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Pithi Infiltrator
+              - Pithi Invader

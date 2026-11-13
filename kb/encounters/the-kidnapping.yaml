@@ -1,0 +1,199 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-kidnapping
+kind: mission
+name: The Kidnapping
+level: 4
+enemyFaction: Equilibrium of Mankind & Mercenaries
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Kidnapping
+    url: https://wiki.eveuniversity.org/The_Kidnapping
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "192027"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Retrieve the mission objective
+ewar:
+  - kind: web
+  - kind: warpScramble
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: EoM Saboteur (Web, Warp Disrupt), Mercenary Wingman (Web, Scram)"
+  - text: "Suggested ships: Battleship, Marauder, T3C"
+  - text: "Notes: Shield tanked ships: take out the Mercenary Commanders, unless you have an EM hardener"
+  - text: "Notes: Armor tanked ships: take out the Mercenary Wingmen, unless you have an explosive hardener"
+pockets:
+  - name: 1st Pocket
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "3"
+            class: Battleship
+            names:
+              - EoM Ogre
+              - EoM Hydra
+  - name: 2nd Pocket
+    waves:
+      - id: 1st-group
+        trigger:
+          on: other
+          text: 1st Group
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - EoM Saboteur
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Battleship
+            names:
+              - EoM Death Lord
+      - id: 2nd-group
+        trigger:
+          on: other
+          text: 2nd Group
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battleship
+            names:
+              - EoM Hydra
+      - id: 3rd-group
+        trigger:
+          on: other
+          text: 3rd Group
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - EoM Succubus
+          - count: "5"
+            class: Cruiser
+            names:
+              - EoM Crusader
+      - id: 4th-group
+        trigger:
+          on: other
+          text: 4th Group
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Cruiser
+            names:
+              - EoM Black Priest
+          - count: "2"
+            class: Battleship
+            names:
+              - EoM Ogre
+  - name: 3rd Pocket
+    waves:
+      - id: 1st-group
+        trigger:
+          on: other
+          text: 1st Group
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battleship
+            names:
+              - EoM Ogre
+              - EoM Hydra
+              - EoM Death Lord
+      - id: 2nd-group
+        trigger:
+          on: other
+          text: 2nd Group
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Cruiser
+            names:
+              - EoM Prophet
+          - count: "2"
+            class: Battleship
+            names:
+              - EoM Hydra
+            triggers: Reinforcement
+      - id: reinforcement
+        trigger:
+          on: other
+          text: Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battleship
+            names:
+              - EoM Ogre
+  - name: 4th Pocket
+    notes:
+      - text: Drones will aggro the entire pocket.
+    waves:
+      - id: 1st-group-auto-aggro
+        trigger:
+          on: other
+          text: 1st Group (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battleship
+            names:
+              - Mercenary Overlord
+      - id: 2nd-group
+        trigger:
+          on: other
+          text: 2nd Group
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Cruiser
+            names:
+              - Mercenary Commander
+          - count: "2"
+            class: Battleship
+            names:
+              - Mercenary Overlord
+      - id: 3rd-group
+        trigger:
+          on: other
+          text: 3rd Group
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Mercenary Wingman
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "6"
+            class: Cruiser
+            names:
+              - Mercenary Commander
+  - name: 5th Pocket
+    waves:
+      - id: initial-group-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group (auto-aggro)
+        spawns:
+          - count: "1"
+            class: Battleship
+            names:
+              - EoM Behemoth
+            drop: Drops mission objective
+          - count: "6"
+            class: Sentry
+            names:
+              - Tower Sentry Drone II

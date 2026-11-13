@@ -1,0 +1,56 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: thwarting-the-succession
+kind: mission
+name: Thwarting the Succession
+level: null
+enemyFaction: Mercenaries
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Thwarting the Succession
+    url: https://wiki.eveuniversity.org/Thwarting_the_Succession
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "205996"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Run interference for the Krusual spy in Tabar's training compound.
+notes:
+  - text: Objective
+  - text: Kill mercenaries to let the Krusual spy escape.
+  - text: Notes
+  - text: Warp to the encounter. You will land about 25km away from three Mercenary Rookie ships, which you will have to destroy. Then three Mercenary Fighter ships and Mizara will spawn. After you destroyed Mizara the mission is complete.
+  - text: "When you turn in Kaita Eslin says: \"You've destroyed a pirate ring that would have taken us months to work through. High marks all around.\""
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: "Next Mission: Certificate of Death"
+    waves:
+      - id: initial-25-km
+        trigger:
+          on: warpIn
+          text: Initial (25 km)
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Mercenary Rookie
+            triggers: Reinforcements
+      - id: reinforcements
+        trigger:
+          on: other
+          text: Reinforcements
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Mercenary Fighter
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Mizara
+            note: Renamed Mercenary Elite Fighter

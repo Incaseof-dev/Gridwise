@@ -1,0 +1,176 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: silence-the-informant-level-4
+kind: mission
+name: Silence the Informant
+level: 4
+enemyFaction: Rogue Drones & Mercenaries
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Silence the Informant (Level 4)
+    url: https://wiki.eveuniversity.org/Silence_the_Informant_(Level_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "227771"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Kill the informant
+ewar:
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite frigates"
+  - text: "Blitz: You have to kill everything except the sentries. In third room snipe and kill the lone cruiser. Warp out."
+  - text: The mission is flagged complete once you've killed the named Ex-Elite Secret Agent.
+  - text: No Hostiles at Initial Gate.
+lootNotes:
+  - text: "Bounties: 6M ISK"
+  - text: "Loot: 9-18M ISK"
+  - text: "Salvage: 1M ISK"
+pockets:
+  - name: 1st pocket
+    notes:
+      - text: Acceleration gate to next pocket is at 4km. The gate is locked until all ships are destroyed. Sentries do not need to be destroyed.
+      - text: Auto-aggro from the Sentry Towers, attacking them will aggro the entire pocket (use to draw 3rd group closer). Other groups can be agressed one by one.
+      - text: "Battleships deal very high thermal and kinetic damage. It is recommended to take them out first. Unlike other drones, they don't have an omni-resist: it's best to deal EM damage to their shields, then switch to explosive for their armor."
+      - text: Aggressive drones may attack the sentries and cause unwanted aggro. Watch out for drone aggro.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Tower Sentry Drone II
+            group: Group 1
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Enforcer
+              - Striker Alvatis
+            group: Group 2 (60 km)
+          - count: "2"
+            class: Battleship
+            names:
+              - Elite Drone Parasite
+            group: Group 3 (80 km)
+            drop: Elite Drone AI
+          - count: "3"
+            class: Battleship
+            names:
+              - Elite Drone Parasite
+            group: Group 4 (70 km)
+            drop: Elite Drone AI
+  - name: 2nd Pocket (Mercenaries)
+    notes:
+      - text: Acceleration gate to next pocket is at 6km. The gate is locked until all ships are destroyed.
+      - text: No auto aggro but elite frigates will target drones.
+      - text: Groups can be agressed individually
+      - text: Some of the battleships will have unique names. The named battleships do not appear to drop anything special and seem to be just normal mercenary ships with new name.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Mercenary Wingman
+            group: Group 1 (10-20 km)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "4"
+            class: Cruiser
+            names:
+              - Mercenary Commander
+            group: Group 1 (10-20 km)
+          - count: "1"
+            class: Battleship
+            names:
+              - Mercenary Overlord
+            group: Group 1 (10-20 km)
+          - count: "2"
+            class: Drone
+            names:
+              - Spider Drone I
+            group: Group 2 (55 km)
+            ewar:
+              - kind: web
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Mercenary Wingman
+            group: Group 2 (55 km)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "5"
+            class: Cruiser
+            names:
+              - Mercenary Commander
+            group: Group 2 (55 km)
+          - count: "2"
+            class: Drone
+            names:
+              - Spider Drone I
+            group: Group 3 (55 km)
+            ewar:
+              - kind: web
+          - count: "2"
+            class: Battleship
+            names:
+              - Mercenary Overlord
+              - Mercenary named
+            group: Group 3 (55 km)
+          - count: "6"
+            class: Cruiser
+            names:
+              - Mercenary Commander
+            group: Group 4 (90 km)
+          - count: "1"
+            class: Battleship
+            names:
+              - Mercenary Overlord
+              - Mercenary named
+            group: Group 4 (90 km)
+  - name: 3rd Pocket (Ex-Elite Secret Agent)
+    notes:
+      - text: Auto aggro from the Sentries. Attacking any of the Sentries will aggro the lone cruiser.
+      - text: Blow up the cruiser and return to your agent.
+      - text: The target cruiser is 77 km from warp-in.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Cruiser
+            names:
+              - Kioran Jeraulek
+          - count: "3"
+            class: Sentry
+            names:
+              - Tower Sentry Drone II
+          - count: "5"
+            class: Sentry
+            names:
+              - Tower Sentry Drone III
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Road House
+            drop: T1 Loot

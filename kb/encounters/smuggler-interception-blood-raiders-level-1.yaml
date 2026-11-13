@@ -1,0 +1,66 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: smuggler-interception-blood-raiders-level-1
+kind: mission
+name: Smuggler Interception
+level: 1
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Smuggler Interception (Blood Raiders) (Level 1)
+    url: https://wiki.eveuniversity.org/Smuggler_Interception_(Blood_Raiders)_(Level_1)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191940"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy convoy and bring 10 x Militants (20 m3)
+notes:
+  - text: "Suggested ships: Frigate"
+  - text: Single pocket with gate
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: "Blitz: Kill group 1, loot the transport, and warp out."
+      - text: "Standing: No empire standing lost."
+    waves:
+      - id: group-1-50-60km
+        trigger:
+          on: other
+          text: Group 1, 50-60km
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Industrial
+            names:
+              - Blood Raider Personnel Transport
+          - count: "4"
+            class: Frigate
+            names:
+              - Corpii Herald
+              - Corpii Upholder
+          - count: "1"
+            class: Destroyer
+            names:
+              - Corpior Converter
+              - Corpior Visionary
+      - id: group-2-50-60km
+        trigger:
+          on: other
+          text: Group 2, 50-60km
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Corpior Converter
+              - Corpior Templar
+          - count: "4"
+            class: Frigate
+            names:
+              - Corpii Herald
+              - Corpii Upholder
+            group: Reinforcement

@@ -1,0 +1,142 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: angel-forsaken-hub
+kind: anomaly
+name: Angel Forsaken Hub
+dedRating: null
+anomalyClass: 8
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Angel Forsaken Hub
+    url: https://wiki.eveuniversity.org/Angel_Forsaken_Hub
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223723"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Rating: Class 8 Level 3"
+  - text: Single ungated normal space pocket.
+  - text: "Escalation: Angel Domination Fleet Staging Point: Systems have intercepted and decrypted an encoded DED transmission suggesting the presence of another Angel Cartel fleet staging area nearby. The location has been uploaded to the Expedition panel in your NeoCom's Journal."
+  - text: "Escalation: This site can escalate to Angel Domination Fleet Staging Point or alternatively escalate to Angel Capital Staging."
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-defenders-20-30-km
+        trigger:
+          on: warpIn
+          text: Initial Defenders (20-30 km)
+        spawns:
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+              - Gistatis Praefectus
+              - Gistatis Primus
+              - Gistatis Tribuni
+          - count: 3-4
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Seraphim
+      - id: 1st-reinforcement-spawn
+        trigger:
+          on: other
+          text: 1st Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Gistatis Legionnaire
+              - Gistatis Legatus
+              - Gistatis Primus
+              - Gistatis Tribunus
+          - count: 3-4
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Seraphim
+      - id: 2nd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 2nd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Centurion
+              - Arch Gistum Liquidator
+              - Arch Gistum Marauder
+              - Arch Gistum Phalanx
+          - count: "4"
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Seraphim
+      - id: 3rd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 3rd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Arch Gistii Hijacker
+              - Arch Gistii Outlaw
+              - Arch Gistii Rogue
+              - Arch Gistii Thug
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: 3-4
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Seraphim
+      - id: 4th-reinforcement-spawn-36-40km
+        trigger:
+          on: other
+          text: 4th Reinforcement Spawn (36-40km)
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Liquidator
+              - Arch Gistum Marauder
+              - Arch Gistum Phalanx
+          - count: 3-4
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Seraphim
+      - id: 5th-reinforcement-spawn-34-41km
+        trigger:
+          on: other
+          text: 5th Reinforcement Spawn (34-41km)
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Arch Gistii Ambusher
+              - Arch Gistii Hunter
+              - Arch Gistii Impaler
+              - Arch Gistii Raider
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: 3-4
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Seraphim
+sde:
+  dungeonIds:
+    - 3462

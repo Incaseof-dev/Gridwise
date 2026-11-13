@@ -1,0 +1,95 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: quota-season
+kind: mission
+name: Quota Season
+level: 4
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Quota Season
+    url: https://wiki.eveuniversity.org/Quota_Season
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "205217"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Get 1x Custom Circuitry
+notes:
+  - text: "Suggested ships: Golem, Raven Navy Issue"
+  - text: Quota Season is a storyline mission involving combat against the Angel Cartel.
+  - text: There is a lot of DPS in this mission, so you may have to warp out. Leave one Throne from the first group active and take out the Malakims to reduce incoming DPS. Sniping is possible.
+  - text: Destroy the AI Storage Unit (not the Drone Production Lines) to get the cargo container needed for mission completion.
+  - text: The mission helper incorrectly states that you need to destroy Fuel Depot - ignore that.
+  - text: "Blitz: Destroy Drone AI Storage Unit, collect can, warp off."
+pockets:
+  - name: Warp-in/Pocket
+    waves:
+      - id: initial-forces
+        trigger:
+          on: warpIn
+          text: Initial forces
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Angel Viper
+              - Angel Webifier
+            group: Group 1 (55km) Auto aggro
+          - count: "2"
+            class: Cruiser
+            names:
+              - Gistum Phalanx
+              - Gistum Marauder
+            group: Group 1 (55km) Auto aggro
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Gistatis Praefectus
+              - Gistatis Tribuni
+            group: Group 1 (55km) Auto aggro
+          - count: "2"
+            class: Battleship
+            names:
+              - Gist Throne
+            group: Group 1 (55km) Auto aggro
+            triggers: Triggers reinforcements
+          - count: "3"
+            class: Frigate
+            names:
+              - Gistii Hunter
+            group: Group 2
+          - count: "1"
+            class: Cruiser
+            names:
+              - Gistum Phalanx
+              - Gistum Marauder
+            group: Group 2
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Gistatus Primus
+            group: Group 2
+          - count: "8"
+            class: Battleship
+            names:
+              - Gist Throne
+              - Gist Malakim
+            group: Group 2
+      - id: reinforcements-55km
+        trigger:
+          on: other
+          text: Reinforcements (55km)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Gistatus Tribumi
+          - count: "2"
+            class: Battleship
+            names:
+              - Gist Malakim

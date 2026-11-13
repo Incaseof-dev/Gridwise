@@ -1,0 +1,161 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-score-serpentis-level-4
+kind: mission
+name: The Score
+level: 4
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Score (Serpentis) (Level 4)
+    url: https://wiki.eveuniversity.org/The_Score_(Serpentis)_(Level_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225366"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: sensorDamp
+notes:
+  - text: It is recommended to fit AB or MWD as the acceleration gates are 60 and 45 km away and the rats in last room are 80 km away.
+  - text: No hostiles at warp-in area.
+  - text: "Blitz: Clear the 1st and 2nd rooms, kill the 4 Battleships in the final room."
+lootNotes:
+  - text: "bounty: 6,379,889 ISK"
+  - text: "loot: ± 1.7m ISK"
+  - text: "salvage: ± 7.7m Mil ISK"
+pockets:
+  - name: 1st Pocket
+    notes:
+      - text: Acceleration gate to next pocket is at 60 km and is locked until all hostiles are cleared. Group 2 and 3 are almost together but can be aggro separately if careful.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Corelior Infantry
+            group: Group 1 (40 km)
+            note: type list incomplete on the source page
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Defender
+            group: Group 1 (40 km)
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Corelatis Platoon Leader
+            group: Group 1 (40 km)
+          - count: "4"
+            class: Frigate
+            names:
+              - Coreli Guard
+            group: Group 2 (50-80 km)
+            note: type list incomplete on the source page
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Corelum Chief Protector
+            group: Group 2 (50-80 km)
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corelatis Squad
+              - Corelatis Platoon Leader
+            group: Group 2 (50-80 km)
+          - count: "4"
+            class: Frigate
+            names:
+              - Coreli Guard
+            group: Group 3 (50-80 km)
+            note: type list incomplete on the source page
+          - count: "4"
+            class: Destroyer
+            names:
+              - Corelior Infantry
+            group: Group 3 (50-80 km)
+            note: type list incomplete on the source page
+  - name: 2nd Pocket
+    notes:
+      - text: Acceleration gate to next pocket is 40km from warp. The gate is locked until all ships are destroyed. Aggroing group 3 will also aggro group 2.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Corelior Soldier
+            group: Group 1 (50 km)
+          - count: "6"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Defender
+            group: Group 1 (50 km)
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Corelatis Squad Leader
+            group: Group 1 (50 km)
+          - count: "3"
+            class: Battleship
+            names:
+              - Core Commodore
+            group: Group 2 (50 km)
+            note: type list incomplete on the source page
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Corelum Chief Protector
+            group: Group 3 (50 km)
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Battleship
+            names:
+              - Corelatis Rear Admiral
+              - Core Port Admiral
+            group: Group 3 (50 km)
+  - name: 3rd Pocket
+    notes:
+      - text: Third and final pocket. Destroy the battleships to complete the mission.
+      - text: The ships are clustered around an asteroid installation 80 km from warpin.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Coreli Guard
+          - count: "2"
+            class: Destroyer
+            names:
+              - Corelior Soldier
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Corelum Chief Protector
+              - Corelum Chief Defender
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Corelatis Squad
+              - Corelatis Platoon Leader
+          - count: "4"
+            class: Battleship
+            names:
+              - Core Baron
+            triggers: Mission completion trigger
+            note: type list incomplete on the source page

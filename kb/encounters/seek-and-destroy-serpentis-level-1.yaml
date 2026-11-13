@@ -1,0 +1,64 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: seek-and-destroy-serpentis-level-1
+kind: mission
+name: Seek and Destroy
+level: 1
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Seek and Destroy (Serpentis) (Level 1)
+    url: https://wiki.eveuniversity.org/Seek_and_Destroy_(Serpentis)_(Level_1)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191919"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal:
+    - kinetic
+    - thermal
+  resist:
+    - thermal
+    - kinetic
+objectives:
+  - text: Kill pirates
+notes:
+  - text: Single pocket with gate.
+  - text: "Tips: The structure drops a can with some modules and trade goods."
+  - text: "Tips: Low-Tech Energy harvester drops cheap ammo and carbon."
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Coreli Agent
+              - Coreli Spy
+            group: Group 1 (10-20km, auto aggro)
+            triggers: Triggers reinforcements when destroyed
+          - count: "2"
+            class: Frigate
+            names:
+              - Coreli Initiate
+            group: Group 2 (20-30km, auto aggro)
+          - count: "1"
+            class: Frigate
+            names:
+              - Centii Servant
+            group: Group 2 (20-30km, auto aggro)
+          - count: "3"
+            class: Frigate
+            names:
+              - Coreli Watchman
+              - Coreli Patroller
+            group: Reinforcements (20km, auto aggro)
+            ewar:
+              - kind: sensorDamp

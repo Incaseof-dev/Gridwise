@@ -1,0 +1,81 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: avenge-a-fallen-comrade-guristas-pirates-level-2
+kind: mission
+name: Avenge a Fallen Comrade
+level: 2
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Avenge a Fallen Comrade (Guristas Pirates) (Level 2)
+    url: https://wiki.eveuniversity.org/Avenge_a_Fallen_Comrade_(Guristas_Pirates)_(Level_2)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "203235"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the habitat of the pirate leaders then report back to your agent.
+ewar:
+  - kind: ecm
+notes:
+  - text: "Blitz: Destroy the Habitat, warp-out."
+  - text: No hostiles at initial gate.
+pockets:
+  - name: Single pocket
+    notes:
+      - text: Groups 1 and 2 aggro on warp-in.
+    waves:
+      - id: initial-hostiles
+        trigger:
+          on: warpIn
+          text: Initial Hostiles
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Pithi Arrogator
+              - Pithi Imputor
+            group: Group 1 (10km)
+          - count: "5"
+            class: Frigate
+            names:
+              - Pithi Infiltrator
+              - Pithi Invader
+            group: Group 2 (40km)
+          - count: "1"
+            class: Destroyer
+            names:
+              - Pithior Nihilist
+            group: Group 2 (40km)
+          - count: "3"
+            class: Frigate
+            names:
+              - Pithi Infiltrator
+              - Pithi Invader
+            group: Group 3 (40km)
+          - count: "1"
+            class: Cruiser
+            names:
+              - Pithum Silencer
+            group: Group 3 (40km)
+          - count: "5"
+            class: Frigate
+            names:
+              - Pithi Despoiler
+              - Pithi Saboteur
+            group: Group 4 (60km)
+            ewar:
+              - kind: ecm
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Habitat
+            triggers: Mission completed on destruction

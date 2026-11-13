@@ -1,0 +1,187 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: smuggler-interception-blood-raiders-level-4
+kind: mission
+name: Smuggler Interception
+level: 4
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Smuggler Interception (Blood Raiders) (Level 4)
+    url: https://wiki.eveuniversity.org/Smuggler_Interception_(Blood_Raiders)_(Level_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "216684"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Retrieve 10x militants (20 m3)
+ewar:
+  - kind: neut
+  - kind: trackingDisruption
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite frigates"
+  - text: "Blitz: Kill Group 3 (including the Blood Raider Personnel Transport) of pocket 2 and loot the Militants."
+loot:
+  - item: 2002 Mar
+lootNotes:
+  - text: "Loot: ± 4.3 Mil ISK"
+  - text: "Salvage: ± 4.3 Mil ISK"
+  - text: "Bounty: ~7.5 Mil ISK"
+pockets:
+  - name: 1st pocket
+    notes:
+      - text: Acceleration gate 60 km from warp-in. Gate is locked until all enemies destroyed.
+      - text: No aggro on warp-in. Proximity aggro on groups 2 & 3 when within 6km of the gate.
+      - text: "Tips: Group 4 can be sniped without aggroing anything else."
+      - text: "Tips: Attacking Group 2 aggroes Group 3. The last group will remain neutral and can be aggroed separately."
+      - text: "Tips: Attacking Group 1 OR 3: Aggroes whole pocket."
+      - text: You can eliminate both groups 4 and 1 without drawing pocket aggro but it gets a bit complicated. You need to fly your ship off to the side putting the station ruins between your ship and groups 1 2 and 3. After your within range eliminate group 4 this will draw group 1 aggro. If you wait for a few minutes after destroying group 4 you will notice that group 1 will be stuck in the station ruins unable to get close to you. Additionally they will have drifted out of aggro range of the other 2 pockets. At this point it should be safe to eliminate group 1 without 2 and 3 aggroing you.
+    waves:
+      - id: defenders
+        trigger:
+          on: warpIn
+          text: Defenders
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Corpii Diviner
+            group: Group 1 (90 km, Minmatar Military Station Ruins)
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Corpum Arch Sage
+            group: Group 1 (90 km, Minmatar Military Station Ruins)
+            ewar:
+              - kind: neut
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Battleship
+            names:
+              - Corpus Archon
+              - Corpus Prophet
+            group: Group 1 (90 km, Minmatar Military Station Ruins)
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Corpum Arch Priest
+            group: Group 2 (66 km, Space Anomaly)
+            ewar:
+              - kind: neut
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Corpior Bishop
+              - Corpior Seer
+            group: Group 2 (66 km, Space Anomaly)
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Corpum Revenant
+            group: Group 3 (90 km, acceleration gate)
+            ewar:
+              - kind: trackingDisruption
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Battleship
+            names:
+              - Corpus Archon
+              - Corpus Prophet...
+            group: Group 3 (90 km, acceleration gate)
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corpum Priest
+            group: Group 4 (100 km, Dysfunctional Solar Harvester)
+            note: type list incomplete on the source page
+  - name: 2nd pocket
+    notes:
+      - text: NO aggro on warp in. The transport ships drop the mission objective. Destroying the group in which the transporters are (group 3) marks the mission completed.
+      - text: "Tips: Group 1 can be ignored. Though they will aggro your drones from far away if not destroyed."
+      - text: "Tips: Aggro for Group 2 & 3 are tied with each other. Attacking either will aggro the other."
+      - text: "Tips: Attacking Group 4 aggroes group 3"
+      - text: Groups here are not exactly defined.
+    waves:
+      - id: defenders
+        trigger:
+          on: warpIn
+          text: Defenders
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Corpii Worshipper
+              - Corpii Reaver
+            group: Group 1 (55-70 km, Ripped Superstructure)
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Worshipper
+              - Elder Corpii Follower
+            group: Group 1 (55-70 km, Ripped Superstructure)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Destroyer
+            names:
+              - Corpior Friar
+              - Corpior Devoter
+            group: Group 1 (55-70 km, Ripped Superstructure)
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Corpatis Fanatic
+              - Corpatis Phantom
+            group: Group 2 (70-80 km, Ruined Monument)
+            note: type list incomplete on the source page
+          - count: "4"
+            class: Battleship
+            names:
+              - Corpus Archon
+              - Corpus Prophet
+            group: Group 2 (70-80 km, Ruined Monument)
+          - count: "2"
+            class: Cruiser
+            names:
+              - Blood Raider Personnel Transport
+            group: Group 3 (70-80 km, Spatial Rift)
+            drop: Militants
+          - count: 0-2
+            class: Elite Cruiser
+            names:
+              - Corpum Arch Sage
+            group: Group 3 (70-80 km, Spatial Rift)
+            ewar:
+              - kind: neut
+            note: type list incomplete on the source page
+          - count: 2-4
+            class: Battlecruiser
+            names:
+              - Corpatis Shade
+            group: Group 3 (70-80 km, Spatial Rift)
+            note: type list incomplete on the source page
+          - count: "4"
+            class: Battleship
+            names:
+              - Corpus Oracle
+            group: Group 3 (70-80 km, Spatial Rift)
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Frigate
+            names:
+              - Corpii Raider
+              - Corpii Diviner
+            group: Group 4 (70-80 km, Ripped Superstructure)
+          - count: 2-3
+            class: Battlecruiser
+            names:
+              - Corpatis Phantom
+            group: Group 4 (70-80 km, Ripped Superstructure)

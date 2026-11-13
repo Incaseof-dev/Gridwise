@@ -1,0 +1,66 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-serpentis-spies-level-3
+kind: mission
+name: The Serpentis Spies
+level: 3
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Serpentis Spies (Level 3)
+    url: https://wiki.eveuniversity.org/The_Serpentis_Spies_(Level_3)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223606"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Suggested ships: Battlecruiser"
+  - text: "Blitz: Kill the 3rd Group."
+  - text: Mission is in gated deadspace. No hostiles at initial warp-in point. Warp-in point is centered on the Acceleration Gate.
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: 1st-group-25-30km
+        trigger:
+          on: other
+          text: 1st Group, 25-30km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corelior Infanty
+              - Corelior Soldier
+          - count: "1"
+            class: Cruiser
+            names:
+              - Corelum Chief Infantry
+              - Corelum Chief Sentinel
+      - id: 2nd-group-41-62km
+        trigger:
+          on: other
+          text: 2nd Group, 41-62km
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Tower Sentry Serpentis I
+      - id: 3rd-group-68-71km
+        trigger:
+          on: other
+          text: 3rd Group, 68-71km
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Coreli Agent
+              - Coreli Spy
+          - count: "3"
+            class: Cruiser
+            names:
+              - Serpentis Spy

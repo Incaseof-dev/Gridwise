@@ -1,0 +1,64 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: avenge-a-fallen-comrade-angel-cartel-level-1
+kind: mission
+name: Avenge a Fallen Comrade
+level: 1
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Avenge a Fallen Comrade (Angel Cartel) (Level 1)
+    url: https://wiki.eveuniversity.org/Avenge_a_Fallen_Comrade_(Angel_Cartel)_(Level_1)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "209636"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the habitat of the pirate leaders then report back to your agent.
+notes:
+  - text: "Blitz: Destroy Habitat, warp out."
+pockets:
+  - name: Pocket
+    notes:
+      - text: Warp in on top of Group 1. Group 2-4 aggro individually on attack, or when the habitat is engaged.
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Hangar Array
+            names:
+              - Habitat
+            triggers: Mission completed on destruction
+      - id: initial-hostiles
+        trigger:
+          on: warpIn
+          text: Initial Hostiles
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Gistii Hijacker
+            group: Group 1 (Auto-aggro, 1-2km)
+          - count: "3"
+            class: Frigate
+            names:
+              - Gistii Hijacker
+              - Gistii Rogue
+            group: Group 2 (40-50km, left)
+          - count: "1"
+            class: Frigate
+            names:
+              - Gistii Raider
+              - Gistii Ambusher
+            group: Group 3 (50-60km, center, at the habitat)
+          - count: "8"
+            class: Frigate
+            names:
+              - Gistii Hijacker
+            group: Group 4 (50-60km, right)

@@ -1,0 +1,44 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: duo-of-death-blood-raiders-level-4
+kind: mission
+name: Duo of Death
+level: 4
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Duo of Death (Blood Raiders) (Level 4)
+    url: https://wiki.eveuniversity.org/Duo_of_Death_(Blood_Raiders)_(Level_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "226697"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: web
+notes:
+  - text: "Web/warp disruption: Spider Drone I (Web)"
+  - text: "Suggested ships: Battleship, Marauder"
+  - text: Dominix
+  - text: "Blitz: Kill the two battleships, pick up the Special Delivery and warp out."
+pockets:
+  - name: Single pocket
+    waves:
+      - id: initial-group-55km-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group, 55km (auto-aggro)
+        spawns:
+          - count: "6"
+            class: Drone
+            names:
+              - Spider Drone I
+            ewar:
+              - kind: web
+          - count: "2"
+            class: Battleship
+            names:
+              - Corpus Pope
+            note: Last one drops mission objective

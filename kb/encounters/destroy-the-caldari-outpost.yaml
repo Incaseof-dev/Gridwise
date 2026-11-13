@@ -1,0 +1,129 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: destroy-the-caldari-outpost
+kind: mission
+name: Destroy the Caldari Outpost
+level: 5
+enemyFaction: Caldari State
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Destroy the Caldari Outpost
+    url: https://wiki.eveuniversity.org/Destroy_the_Caldari_Outpost
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191646"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy
+ewar:
+  - kind: web
+  - kind: neut
+  - kind: ecm
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite frigates"
+  - text: Passive tank is recommended due to heavy neuting.
+pockets:
+  - name: 1st pocket
+    waves:
+      - id: initial-spawn
+        trigger:
+          on: warpIn
+          text: Initial spawn
+        spawns:
+          - count: 2-4
+            class: Sentry
+            names:
+              - Cruise missile towe
+          - count: 2-4
+            class: Sentry
+            names:
+              - Stasis tower
+            ewar:
+              - kind: web
+          - count: 2-4
+            class: Sentry
+            names:
+              - Neut tower
+            ewar:
+              - kind: neut
+      - id: wave
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns: []
+  - name: 2nd pocket
+    notes:
+      - text: Each stasis tower triggers one additional neuting tower. (I'm not sure what the trigger was; either the stasis or the cruise batteries; probably the stasis towers)
+    waves:
+      - id: initial-spawn
+        trigger:
+          on: warpIn
+          text: Initial spawn
+        spawns:
+          - count: "9"
+            class: Battleship
+            names:
+              - State Shukuro Shogun
+              - State Shukuro Taisho
+              - State Shukuro Tenno
+          - count: "10"
+            class: Sentry
+            names:
+              - Cruise Missile Battery
+          - count: 2-4
+            class: Sentry
+            names:
+              - Stasis tower
+            ewar:
+              - kind: web
+            triggers: Each spawns a neuting tower.
+          - count: "1"
+            class: Station
+            names:
+              - Outpost
+            triggers: Triggers wave 1. Triggers mission completion.
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: 2-4
+            class: Sentry
+            names:
+              - Caldari Energy Neutralizer Sentry III
+            ewar:
+              - kind: neut
+      - id: wave-2-outpost-at-15-shield
+        trigger:
+          on: other
+          text: Wave 2 (outpost at ~15% shield)
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Taibu State Nagasa
+              - Taibu State Shinai
+          - count: "5"
+            class: Cruiser
+            names:
+              - Taibu State Samurai
+              - Taibu State Kanpaku
+              - Taibu State Bajo
+          - count: "10"
+            class: Battleship
+            names:
+              - State Shukuro Shogun
+              - State Shukuro Bishamon
+          - count: 2-4
+            class: Sentry
+            names:
+              - Caldari Energy Neutralizer Sentry III
+            ewar:
+              - kind: neut

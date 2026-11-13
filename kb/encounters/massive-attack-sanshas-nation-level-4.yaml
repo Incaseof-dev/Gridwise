@@ -1,0 +1,272 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: massive-attack-sanshas-nation-level-4
+kind: mission
+name: Massive Attack
+level: 4
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Massive Attack (Sansha's Nation) (Level 4)
+    url: https://wiki.eveuniversity.org/Massive_Attack_(Sansha's_Nation)_(Level_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191796"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy Sansha ships
+ewar:
+  - kind: web
+  - kind: trackingDisruption
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite frigates"
+  - text: Sentry Dominix
+  - text: "Blitz: All warp gates are locked. Eliminate all groups from pocket 1 & 2."
+  - text: "Blitz: Eliminate all ships from Group 3 in pocket 3. Warp out."
+  - text: "Note: The majority hostile ships are frigate/destroyer/cruiser class with only a handful of battlecruisers and only two battleships."
+  - text: NPCs will aggro drones.
+lootNotes:
+  - text: (July, 2021)
+  - text: Bounties= 4M
+  - text: Loot=600K
+  - text: Salvage=2.5M
+pockets:
+  - name: Warpin
+    notes:
+      - text: The warp gate into the pocket is guarded by a small group of ships. They will aggro immediately after you have warped in.
+    waves:
+      - id: gate-guards
+        trigger:
+          on: other
+          text: Gate guards
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Centii Butcher
+              - Centii Manslayer
+          - count: "3"
+            class: Destroyer
+            names:
+              - Centior Abomination
+              - Centior Monster
+  - name: 1st pocket
+    notes:
+      - text: Group 2 has a proximity aggro of 25km. Deploying drones to attack Group 1 will aggro Group 2. No loot from structures.
+      - text: Group 1 does not always aggro. If it doesn't, engaging group 1 will aggro group 2, but group 2 can be safely engaged without aggroing group 1.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Centii Butcher
+            group: Group 1 (60 km)
+          - count: "2"
+            class: Destroyer
+            names:
+              - Centior Abomination
+              - Centior Monster
+            group: Group 1 (60 km)
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Centatis Daemon
+              - Centatis Wraith
+              - Centatis Devil
+              - Centatis Specter
+            group: Group 1 (60 km)
+          - count: "3"
+            class: Frigate
+            names:
+              - Centii Slavehunter
+              - Centii Savage
+            group: Group 2 (control tower, 45km)
+            ewar:
+              - kind: trackingDisruption
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Servant
+            group: Group 2 (control tower, 45km)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Destroyer
+            names:
+              - Centior Abomination
+              - Centior Monster
+            group: Group 2 (control tower, 45km)
+          - count: "2"
+            class: Cruiser
+            names:
+              - Centum Execrator
+              - Centum Slaughterer
+            group: Group 2 (control tower, 45km)
+            ewar:
+              - kind: trackingDisruption
+  - name: 2nd pocket
+    notes:
+      - text: Auto aggro from Group 1 at warp-in.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Centii Butcher
+            group: Group 1 (auto aggro)
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Servant
+            group: Group 1 (auto aggro)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Cruiser
+            names:
+              - Centii Execrator
+            group: Group 1 (auto aggro)
+            ewar:
+              - kind: trackingDisruption
+          - count: "4"
+            class: Destroyer
+            names:
+              - Centior Horror
+            group: Group 2 (60 km)
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Centatis Devil
+            group: Group 2 (60 km)
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Battleship
+            names:
+              - Centus Overlord
+            group: Group 2 (60 km)
+  - name: 3rd pocket
+    notes:
+      - text: When you warp in only group 1 is present. The other two group spawns in few seconds.
+      - text: Destroy group 3 on the asteroid station to complete the mission.
+      - text: Auto aggro from Group 1. Group 3 will aggro after several seconds.
+      - text: Group 2 (located in the middle) remains neutral.
+      - text: Any drones attacking Group 3 will be targeted and attacked by Group 2.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Centii Slavehunter
+              - Centii Savage
+            group: Group 1 (22-30 km)
+            ewar:
+              - kind: trackingDisruption
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Scavanger
+            group: Group 1 (22-30 km)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Destroyer
+            names:
+              - Centior Abomination
+              - Centior Monster
+            group: Group 1 (22-30 km)
+          - count: "2"
+            class: Cruiser
+            names:
+              - Centii Execrator
+              - Centii Slaughterer
+            group: Group 1 (22-30 km)
+            ewar:
+              - kind: trackingDisruption
+          - count: "2"
+            class: Frigate
+            names:
+              - Centii Manslayer
+              - Centii Butcher
+            group: Group 2 (100 km)
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Scavanger
+              - Centii Loyal Ravener
+            group: Group 2 (100 km)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "1"
+            class: Destroyer
+            names:
+              - Centior Horror
+              - Centior Monster
+            group: Group 2 (100 km)
+          - count: "1"
+            class: Cruiser
+            names:
+              - Centum Fiend
+              - Centum Hellhound
+            group: Group 2 (100 km)
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Centatis Daemon
+            group: Group 2 (100 km)
+          - count: "3"
+            class: Frigate
+            names:
+              - Centii Manslayer
+              - Centii Butcher
+            group: Group 3 (Asteroid station, 100 km)
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Servant
+              - Centii Loyal Minion
+            group: Group 3 (Asteroid station, 100 km)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "4"
+            class: Destroyer
+            names:
+              - Centior Horror
+              - Centior Monster
+            group: Group 3 (Asteroid station, 100 km)
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Centatis Devil
+            group: Group 3 (Asteroid station, 100 km)
+          - count: "1"
+            class: Battleship
+            names:
+              - Centus Overlord
+              - Centus Beast Lord
+            group: Group 3 (Asteroid station, 100 km)

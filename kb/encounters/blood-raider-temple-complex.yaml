@@ -1,0 +1,218 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: blood-raider-temple-complex
+kind: complex
+name: Blood Raider Temple Complex
+dedRating: null
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Blood Raider Temple Complex
+    url: https://wiki.eveuniversity.org/Blood_Raider_Temple_Complex
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "167404"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: T2 Battleship"
+notes:
+  - text: The site is similar to Dark Blood Fleet Staging Point. It is much harder than its counterpart, though, and should only be attempted by skilled players in a ship with a very strong tank. Warping to the site you will land at an ancient acceleration gate, which permits T2 Battleships.
+  - text: "Escalation: There is an almost 100% chance of the site escalating to the expedition Blood Raider Temple Complex (The Inner Sanctum)."
+  - text: "Escalation: Escalation trigger: Your scanner has picked up a transmission originating from a nearby system. It would be wise to investigate this mysterious signal further."
+lootNotes:
+  - text: The site does not contain any noteworthy loot.
+pockets:
+  - name: First Pocket
+    notes:
+      - text: Wave 2 is triggered by killing all ships from initial defenders.
+      - text: None of the structures drop loot.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "4"
+            class: Sentry
+            names:
+              - Tower Sentry Bloodraider III
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Raider
+              - Elder Corpii Diviner
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Arch Priest
+              - Elder Corpum Shadow Sage
+          - count: "6"
+            class: Battleship
+            names:
+              - Corpus Patriarch
+              - Corpus Pope
+            triggers: Attacking any one triggers reinforcements
+      - id: reinforcements
+        trigger:
+          on: other
+          text: Reinforcements
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corpatis Exorcist
+              - Corpatis Phantom
+          - count: "4"
+            class: Battleship
+            names:
+              - Corpus Patriarch
+              - Corpus Pope
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Destroyer
+            names:
+              - Corpior Devoter
+              - Corpior Friar
+          - count: "3"
+            class: Battleship
+            names:
+              - Corpus Patriarch
+              - Corpus Pope
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: Locked until room is cleared.
+    onWarpIn: This is the entrance to a Temple Complex built by the Blood Raider Covenant. It is an important holy site, so you can expect it to be heavily defended.
+  - name: Second Pocket
+    notes:
+      - text: Do not underestimate the neuts in this room; recommend eliminating the elite cruisers and neuting towers first.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Blood Energy Neutralizer Sentry II
+            ewar:
+              - kind: neut
+            note: Neuts 20 GJ/s
+          - count: "2"
+            class: Sentry
+            names:
+              - Blood Stasis Tower
+            ewar:
+              - kind: web
+          - count: "4"
+            class: Sentry
+            names:
+              - Tower Sentry Bloodraider II
+          - count: "4"
+            class: Sentry
+            names:
+              - Tower Sentry Bloodraider III
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Herald
+              - Elder Corpii Upholder
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            triggers: Triggers elite reinforcements upon destruction
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Priest
+              - Elder Corpum Sage
+            ewar:
+              - kind: neut
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corpatis Seer
+              - Corpatis Shade
+          - count: "8"
+            class: Battleship
+            names:
+              - Corpus Cardinal
+              - Corpus Monsignor
+              - Corpus Patriarch
+              - Corpus Pope
+            triggers: Triggers battleship reinforcements upon attack and destruction
+      - id: battleship-reinforcements-initial-spawn-battleships-attacked
+        trigger:
+          on: warpIn
+          text: Battleship reinforcements (initial spawn battleships attacked)
+        spawns:
+          - count: "3"
+            class: Battleship
+            names:
+              - Corpus Cardinal
+              - Corpus Monsignor
+      - id: battleship-reinforcements-2-initial-spawn-battleships-destroyed
+        trigger:
+          on: warpIn
+          text: Battleship reinforcements 2 (initial spawn battleships destroyed)
+        spawns:
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corpatis Bishop
+              - Corpatis Phantom
+          - count: "4"
+            class: Battleship
+            names:
+              - Corpus Archbishop
+              - Corpus Harbinger
+            ewar:
+              - kind: neut
+      - id: elite-reinforcements-elite-frigates-from-initial-spawn-destroyed
+        trigger:
+          on: warpIn
+          text: Elite reinforcements (elite frigates from initial spawn destroyed)
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Herald
+              - Elder Corpii Upholder
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+      - id: final-reinforcements-battleship-reinforcements-2-destroyed
+        trigger:
+          on: other
+          text: Final reinforcements (battleship reinforcements 2 destroyed)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Reaver
+              - Elder Corpii Engraver
+          - count: "3"
+            class: Battleship
+            names:
+              - Corpus Patriarch
+              - Corpus Pope
+sde:
+  dungeonIds:
+    - 2516

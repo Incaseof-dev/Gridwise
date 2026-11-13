@@ -1,0 +1,50 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: warlord-strikes
+kind: mission
+name: Warlord Strikes
+level: 4
+enemyFaction: Minmatar Republic
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Warlord Strikes
+    url: https://wiki.eveuniversity.org/Warlord_Strikes
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "194923"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: web
+  - kind: warpScramble
+notes:
+  - text: "Web/warp disruption: Republic Fleet C-2 Support Frigate (Web, Scram)"
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Republic Fleet C-2 Support Frigate
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "3"
+            class: Cruiser
+            names:
+              - Republic Fleet Officer
+          - count: "2"
+            class: Battleship
+            names:
+              - Republic Fleet Typhoon
+          - count: "1"
+            class: Battleship
+            names:
+              - Warlord Ixon Kruxz

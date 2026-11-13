@@ -1,0 +1,95 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-mordus-headhunters-level-3
+kind: mission
+name: The Mordus Headhunters
+level: 3
+enemyFaction: Mordu's Legion Command
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Mordus Headhunters (Level 3)
+    url: https://wiki.eveuniversity.org/The_Mordus_Headhunters_(Level_3)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231955"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: web
+  - kind: warpScramble
+notes:
+  - text: "Web/warp disruption: Mordus Bounty Hunter (Scram)"
+  - text: "Suggested ships: Cruiser (T2 Fit), Battlecruiser, HAC"
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Mordus Katana
+            group: Group A
+          - count: "2"
+            class: Cruiser
+            names:
+              - Mordus Leopard
+              - Mordus Lion
+            group: Group A
+          - count: "2"
+            class: Frigate
+            names:
+              - Mordus Katana
+            group: Group B (After ~3 seconds)
+          - count: "2"
+            class: Cruiser
+            names:
+              - Mordus Puma
+            group: Group B (After ~3 seconds)
+          - count: "5"
+            class: Frigate
+            names:
+              - Mordus Katana
+            group: Group C (After ~3 seconds)
+          - count: "2"
+            class: Frigate
+            names:
+              - Mordus Rapier
+            group: Group D (After ~11 seconds)
+          - count: "1"
+            class: Cruiser
+            names:
+              - Mordus Leopard
+            group: Group D (After ~11 seconds)
+  - name: Pocket 2
+    notes:
+      - text: "Blitz: Kill the 3 Mordus Lions (cruiser) in this pocket."
+    waves:
+      - id: initial-group-30-50km
+        trigger:
+          on: warpIn
+          text: Initial Group, 30-50km
+        spawns:
+          - count: "10"
+            class: Frigate
+            names:
+              - Mordus Gladius
+              - Mordus Katana
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Mordus Bounty Hunter
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "7"
+            class: Cruiser
+            names:
+              - Mordus Puma
+              - Mordus Leopard
+              - Mordus Lion

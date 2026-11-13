@@ -1,0 +1,135 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: portal-to-war-1-of-5
+kind: mission
+name: Portal to War (1 of 5)
+level: 3
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Portal to War (1 of 5)
+    url: https://wiki.eveuniversity.org/Portal_to_War_(1_of_5)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223373"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Clear the entire area of rogue drones
+notes:
+  - text: "Suggested ships: HAC, Battlecruiser"
+  - text: Decimator/Sunder Alvi will target drones
+pockets:
+  - name: Warp-in
+    notes:
+      - text: "Drone Transmission: bzzzzzt*010100000101001001000101010100000100000101010010010001010010000001010100010011110010000001000100010010010100010100101100001000000100111000110000001100000100001000101110"
+      - text: The Rogue Drone transmission is binary and, when converted to ASCII, says "PREPARE TO DIE, N00B."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Cruiser
+            names:
+              - Destructor Alvum
+  - name: 1st Pocket
+    notes:
+      - text: All groups contain the same ships and missile batteries.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Decimator
+              - Sunder Alvi
+            group: 1st Group, 10-30km (auto-aggro)
+          - count: "2"
+            class: Cruiser
+            names:
+              - Viral Infector Alvum
+            group: 1st Group, 10-30km (auto-aggro)
+          - count: "1"
+            class: Sentry
+            names:
+              - Drone Light Missile Battery
+            group: 1st Group, 10-30km (auto-aggro)
+            drop: T1 missiles
+          - count: "3"
+            class: Frigate
+            names:
+              - Decimator
+              - Sunder Alvi
+            group: 2nd Group, 55-60km
+          - count: "2"
+            class: Cruiser
+            names:
+              - Viral Infector Alvum
+            group: 2nd Group, 55-60km
+          - count: "1"
+            class: Sentry
+            names:
+              - Drone Light Missile Battery
+            group: 2nd Group, 55-60km
+            drop: T1 missiles
+          - count: "3"
+            class: Frigate
+            names:
+              - Decimator
+              - Sunder Alvi
+            group: 3rd Group, 60-65km
+          - count: "2"
+            class: Cruiser
+            names:
+              - Viral Infector Alvum
+            group: 3rd Group, 60-65km
+          - count: "1"
+            class: Sentry
+            names:
+              - Drone Light Missile Battery
+            group: 3rd Group, 60-65km
+            drop: T1 missiles
+          - count: "3"
+            class: Frigate
+            names:
+              - Decimator
+              - Sunder Alvi
+            group: 4th Group, 65-70km
+          - count: "2"
+            class: Cruiser
+            names:
+              - Viral Infector Alvum
+            group: 4th Group, 65-70km
+          - count: "1"
+            class: Sentry
+            names:
+              - Drone Light Missile Battery
+            group: 4th Group, 65-70km
+            drop: T1 missiles
+  - name: 2nd Pocket
+    notes:
+      - text: "Agent hand-in message: Good work. I've notified our engineers which were on stand-by near the deadspace area to warp inside and start modifying the gate which leads to the Drone Hive. After the modifications it should lead you to the Amarrian complex instead …"
+      - text: "Next: Portal to War (2 of 5)"
+    waves:
+      - id: initial-group-20km
+        trigger:
+          on: warpIn
+          text: Initial Group, 20km
+        spawns:
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Drone Watcher
+            note: Renamed Enforcer Alvatis
+          - count: "1"
+            class: Sentry
+            names:
+              - Drone Watcher Post
+            note: Renamed Tower Sentry Drone II

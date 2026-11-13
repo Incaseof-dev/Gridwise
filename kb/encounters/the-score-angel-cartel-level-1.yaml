@@ -1,0 +1,80 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-score-angel-cartel-level-1
+kind: mission
+name: The Score
+level: 1
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Score (Angel Cartel) (Level 1)
+    url: https://wiki.eveuniversity.org/The_Score_(Angel_Cartel)_(Level_1)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "209646"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Time to settle the score. Go and destroy all the ships at the encounter. Your main target will be lurking around the ghost ship, seek and destroy then return to me.
+ewar:
+  - kind: targetPaint
+notes:
+  - text: Single gated pocket where you kill Angel Cartel ships.
+  - text: Despite the mission telling you to 'destroy all the ships', only the 'main target' and the surrounding group needs to be destroyed.
+  - text: "Blitz: Kill the destroyer (Gistior Defacer/Haunter) and the group around it by the ghost ship and the mission will be marked as complete."
+  - text: Structures do not drop loot.
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: No Aggro at warp in.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Gistii Raider
+              - Gistii Hunter
+            group: Group 1, 45 km (left)
+          - count: "1"
+            class: Frigate
+            names:
+              - Gistii Nomad
+              - Gistii Ambusher
+            group: Group 1, 45 km (left)
+          - count: "1"
+            class: Frigate
+            names:
+              - Gistii Nomad
+              - Gistii Ambusher
+            group: Group 2, 45 km (center) - kill this group to complete mission objectives
+          - count: "1"
+            class: Frigate
+            names:
+              - Gistii Hunter
+              - Gistii Raider
+            group: Group 2, 45 km (center) - kill this group to complete mission objectives
+          - count: "1"
+            class: Frigate
+            names:
+              - Gistii Ruffian
+            group: Group 2, 45 km (center) - kill this group to complete mission objectives
+            ewar:
+              - kind: targetPaint
+          - count: "1"
+            class: Destroyer
+            names:
+              - Gistior Defacer
+              - Gistior Haunter
+            group: Group 2, 45 km (center) - kill this group to complete mission objectives
+          - count: "3"
+            class: Frigate
+            names:
+              - Gistii Nomad
+              - Gistii Ambusher
+            group: Group 3, 45 km (right)

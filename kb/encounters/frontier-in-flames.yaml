@@ -1,0 +1,186 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: frontier-in-flames
+kind: escalation
+name: Frontier in Flames
+dedRating: null
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Frontier in Flames
+    url: https://wiki.eveuniversity.org/Frontier_in_Flames
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "214099"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Escalation start: Going through the logs from one of the command ships you blasted, you come across a recent memo containing a draft for a plan where forces from this Military Complex and another similar to this one were to gang up and raid a space trucker station somewhere in the region. Where this space trucker station is, is not included in the logs, but the location of the rally point is there. It is supposed to be by a small asteroid belt, not too far away."
+pockets:
+  - name: First location
+    notes:
+      - text: You land at a Newly Constructed Acceleration Gate.
+      - text: "Killing Dark Blood Cardinal activates another escalation: From the wreckage of this ship, you get info on where it is from, it is another Blood station. Well, more an outpost than a station perhaps, but it is a pure military outfit, not a regular colony."
+      - text: Destroy the Blood Raider Outpost if no escalation is triggered from the Dark Blood commander.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Corpus Bishop
+              - Corpus Shade
+              - Corpus Exorcist
+          - count: "2"
+            class: Battleship
+            names:
+              - Corpus Patriarch
+          - count: "3"
+            class: Battleship
+            names:
+              - Corpus Pope
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - Dark Blood Cardinal
+            triggers: Escalation trigger
+            drop: May drop Dark Blood faction modules or an implant
+  - name: Second location
+    notes:
+      - text: "Escalation dead-end: Again you let your scanners comb the remains of the station and the ships, looking for clues on this alleged raid, but alas ... nothing, not a word anywhere."
+      - text: "Escalation trigger: Again you let your scanners comb the remains of the station and the ships, looking for clues on this alleged raid, and before long you are holding a log listing the second rally spot and as far as you can see, the raiding parties have already departed from here and two other stations and are supposed to convene within the hour. If one of the raiding parties was supposed to come from the Blood station you destroyed originally, you have already managed to diminish their forces somewhat."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Blood Stasis Tower
+            ewar:
+              - kind: web
+          - count: 3-4
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Revenant
+              - Elder Corpum Sage
+            ewar:
+              - kind: neut
+          - count: 3-4
+            class: Battleship
+            names:
+              - Blood Patriarch
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - Dark Blood Cardinal
+            triggers: Escalation trigger
+            drop: May drop Dark Blood faction modules or an implant
+      - id: timed-wave-1-minute-after-warp-in
+        trigger:
+          on: other
+          text: Timed wave (1 minute after warp-in)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corpatis Shade
+              - Corpatis Exorcist
+              - Corpatis Bishop
+          - count: "3"
+            class: Battleship
+            names:
+              - Blood Patriarch
+              - Blood Pope
+      - id: timed-wave-2-minutes-after-warp-in
+        trigger:
+          on: other
+          text: Timed wave (2 minutes after warp-in)
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Corpatis Archbishop
+            note: type list incomplete on the source page
+          - count: 1-2
+            class: Battleship
+            names:
+              - Blood Harbinger
+            ewar:
+              - kind: neut
+          - count: 2-3
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Shade
+              - Elder Corpum Phantom
+            ewar:
+              - kind: neut
+      - id: reinforcements-triggered-by-destroying-all-ships-from-initial-defenders
+        trigger:
+          on: warpIn
+          text: Reinforcements (triggered by destroying all ships from initial defenders)
+        spawns:
+          - count: "5"
+            class: Battleship
+            names:
+              - Blood Pope
+              - Blood Harbinger
+            ewar:
+              - kind: neut
+      - id: notable-structures
+        trigger:
+          on: warpIn
+          text: Notable structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Blood Outpost Station
+            triggers: Alternate escalation trigger
+  - name: Third location
+    notes:
+      - text: You land at a Newly Constructed Acceleration Gate.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Corpus Fanatic
+              - Corpus Seer
+          - count: "3"
+            class: Battleship
+            names:
+              - Corpus Patriarch
+          - count: "3"
+            class: Battleship
+            names:
+              - Corpus Pope
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Diviner
+              - Elder Corpii Engraver
+              - Elder Corpii Reaver
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - Dark Blood Cardinal
+              - Dark Blood Pope
+            triggers: Escalation trigger
+            drop: May drop Dark Blood faction modules or an implant
+sde:
+  dungeonIds:
+    - 1931

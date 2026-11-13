@@ -1,0 +1,58 @@
+{
+ "abyss-preview": {
+  "hash": "b35e86d9bfb30ab847b3297bca280679e8be583dbc8d4d0a6d360f1b49537d40",
+  "url": "/api/docs/gridwise/images/95df86fe9e142a5e0ba8076a00a6452a.png"
+ },
+ "abyss-run": {
+  "hash": "f8a7e1c4eca4a1ed9f9e6b630f33465d84591670e5ba4f630e3b4226b04a3e24",
+  "url": "/api/docs/gridwise/images/a51556b388fb3d08ded1896e7da30e98.png"
+ },
+ "brief-compact": {
+  "hash": "fb2c2799e89f5630b8d2a8e6555911823738ea310a13b2169e5f38f2ef027a9f",
+  "url": "/api/docs/gridwise/images/49245db98838e76b7ef6fd75da36168c.png"
+ },
+ "brief-live-fight": {
+  "hash": "9b16b15e1e0609a603f33719296f28f4fe020f05364f83a779fdde81af3cced6",
+  "url": "/api/docs/gridwise/images/0d3a30aa73f523802473b40cc16cac30.png"
+ },
+ "minimized": {
+  "hash": "7e9a2ab000553b07011d362f1c158678ff84d422195a1a87f449108eb835b7ba",
+  "url": "/api/docs/gridwise/images/171f36b3ee9b0c0f08d0c22ab7bd22fe.png"
+ },
+ "settings-abyss": {
+  "hash": "264b7d0f208b9850ff4d161579b82d761d95a9142fe464bea3454a652c4a45aa",
+  "url": "/api/docs/gridwise/images/c89c098a651c4caf9cfa1d3ca139d8ec.png"
+ },
+ "settings-enemy-sites": {
+  "hash": "e1fefa2581186adac19fd337439c894afadd8eab442592dae5339b61b75d5691",
+  "url": "/api/docs/gridwise/images/f95ce68fc25a4a3e1ec253a1fdda4fb3.png"
+ },
+ "settings-overlay": {
+  "hash": "d00c25fec60e572d5e9932604d1e6c2e6385da1b9f6431b3a1e8f7fc3919b72c",
+  "url": "/api/docs/gridwise/images/eab944f4dbc6997ebd823a4fa6f1f79f.png"
+ },
+ "abyss-loot-prompt": {
+  "hash": "7d908980d53c7c6a3737adf41837b6b94f604e338d6a42f1c7183a529619647e",
+  "url": "/api/docs/gridwise/images/13b164b6f9ba5f7b5b9d390837a68061.png"
+ },
+ "damage-application": {
+  "hash": "e7e9ecb8c2f27dd2b040f8723aa90030290739b1f368f779148caf8e7d466d6c",
+  "url": "/api/docs/gridwise/images/85d1f3475c1cf40ae4540f710bbca351.png"
+ },
+ "quick-ship-select": {
+  "hash": "f4eaf4a46d57abe486a571d94c3eea64835a10f604d48ea15a0fd6d9fbb4bd0d",
+  "url": "/api/docs/gridwise/images/94717990f84603478766f7f3592a64c0.png"
+ },
+ "settings-eve-login": {
+  "hash": "e6461f9833830a398e14740f8c3d235f6f7973d0f68543e25a1becf9b8ab31f0",
+  "url": "/api/docs/gridwise/images/640628f30caad99e0121d29704993955.png"
+ },
+ "settings-ship-fit": {
+  "hash": "19432204d082920b822aa771e614f20bbcec0c71ab40aa4b2666efb1cb012888",
+  "url": "/api/docs/gridwise/images/166e7c1c1397f2115e1efb07c6c51155.png"
+ },
+ "settings-abyss-log": {
+  "hash": "5b4697b266dc3c4120f62601f0015df1f41d304f7b3eb30cc1381ca7757471d4",
+  "url": "/api/docs/gridwise/images/f5f51e2c1e7a24c36999edb7cd4a2b94.png"
+ }
+}

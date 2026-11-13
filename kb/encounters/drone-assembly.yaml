@@ -1,0 +1,154 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: drone-assembly
+kind: anomaly
+name: Drone Assembly
+dedRating: null
+anomalyClass: 3
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Drone Assembly
+    url: https://wiki.eveuniversity.org/Drone_Assembly
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225182"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "This site has two variants: one with a hollow asteroid and another with outpost remains."
+  - text: "Blitz: Blow up the Cargo Rig structure."
+  - text: New drones spawn after finishing previous spawn.
+  - text: "Escalation: This site can escalate to Rogue Drone Asteroid Infestation."
+loot:
+  - item: Rogue Drone components
+    from: Sentient Shatter Alvior
+    note: 100% drop rate
+  - item: Rogue Drone 46-X Nexus Chip
+    from: Sentient Shatter Alvior
+    note: rare
+  - item: Sentient faction module
+    from: Sentient Shatter Alvior
+    note: rare
+lootNotes:
+  - text: Possible drone component drops are Capillary Fluid, Synaptic Relay Wiring, Tactical Limb, Cerebral Fragment. Sentient drone wreck contains 1-2 stacks of random type.
+pockets:
+  - name: Outpost remains
+    notes:
+      - text: The Cargo Rig has a large amount of hit points in structure.
+      - text: 21 Veldspar asteroids in site.
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Cargo Rig
+            drop: T1 Ammo
+          - count: "1"
+            class: Structure
+            names:
+              - Dirty Shipyard
+      - id: on-arival
+        trigger:
+          on: other
+          text: On arival
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Frigate
+            names:
+              - Infester
+              - Splinter Alvi
+      - id: first-spawn
+        trigger:
+          on: other
+          text: First spawn
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Frigate
+            names:
+              - Hunter
+              - Devilfish
+              - Silverfish
+              - Barracuda Alvi
+          - count: 1-2
+            class: Destroyer
+            names:
+              - Ripper
+              - Shatter Alvior
+      - id: second-spawn
+        trigger:
+          on: other
+          text: Second spawn
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Frigate
+            names:
+              - Hunter
+              - Devilfish
+              - Silverfish
+              - Barracuda Alvi
+          - count: 1-2
+            class: Destroyer
+            names:
+              - Predator
+              - Shredder Alvior
+      - id: third-spawn
+        trigger:
+          on: other
+          text: Third spawn
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Hunter
+              - Devilfish
+              - Silverfish
+              - Barracuda Alvi
+          - count: 2-3
+            class: Destroyer
+            names:
+              - Ripper
+              - Shatter Alvior
+      - id: fourth-spawn
+        trigger:
+          on: other
+          text: Fourth spawn
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Hunter
+              - Devilfish
+              - Silverfish
+              - Barracuda Alvi
+          - count: 2-3
+            class: Destroyer
+            names:
+              - Predator
+              - Shredder Alvior
+      - id: commander-spawn
+        trigger:
+          on: other
+          text: Commander spawn
+          confidence: inferred
+        spawns:
+          - count: 0-1
+            class: Commander Destroyer
+            names:
+              - Sentient Shatter Alvior
+            drop: Wreck may contain Rogue Drone 46-X Nexus Chip as well as Drone Components.
+    onWarpIn: You observe the remnants of a small outpost, probably used by smugglers or perhaps it was a small mining colony. All that remains now are dust and echoes.
+sde:
+  dungeonIds:
+    - 2341

@@ -1,0 +1,146 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: crush-the-sebiestor-station
+kind: mission
+name: Crush The Sebiestor Station
+level: 5
+enemyFaction: Minmatar Republic
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Crush The Sebiestor Station
+    url: https://wiki.eveuniversity.org/Crush_The_Sebiestor_Station
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191629"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the Raider Outpost and all ships
+ewar:
+  - kind: neut
+  - kind: web
+  - kind: warpScramble
+notes:
+  - text: "Web/warp disruption: Elite Frigates (Web, Scram), Stasis Towers (Web)"
+  - text: "Suggested ships: Passive Battleship, Battleship + Logi"
+pockets:
+  - name: 1st Pocket
+    waves:
+      - id: initial-group-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group (auto-aggro)
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Chief Republic Magni
+              - Chief Republic Ivan
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Chief Republic Orka
+              - Chief Republic Jarpur
+          - count: "5"
+            class: Battleship
+            names:
+              - Republic Tribal Sigur
+              - Republic Tribal Jarl
+              - Republic Tribal Jotun
+            triggers: Reinforcement
+      - id: reinforcement
+        trigger:
+          on: other
+          text: Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Chief Republic Magni
+              - Chief Republic Ivan
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "10"
+            class: Elite Cruiser
+            names:
+              - Chief Republic Pafi
+              - Chief Republic Orka
+              - Chief Republic Tenar
+              - Chief Republic Jarpur
+  - name: 2nd Pocket
+    waves:
+      - id: initial-group-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group (auto-aggro)
+        spawns:
+          - count: "10"
+            class: Sentry
+            names:
+              - Minmatar Cruise Missile Battery
+          - count: "4"
+            class: Sentry
+            names:
+              - Minmatar Stasis Tower
+            ewar:
+              - kind: web
+          - count: "4"
+            class: Sentry
+            names:
+              - Minmatar Energy Neutralizer Sentry III
+            ewar:
+              - kind: neut
+          - count: "9"
+            class: Battleship
+            names:
+              - Republic Tribal Jarl
+              - Republic Tribal Ymir
+              - Republic Tribal Sigur
+      - id: mission-objective
+        trigger:
+          on: other
+          text: Mission Objective
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Raider Outpost
+            triggers: Reinforcement
+          - count: "4"
+            class: Sentry
+            names:
+              - Minmatar Energy Neutralizer Sentry III
+            group: Reinforcement - Partway through outpost destruction
+            ewar:
+              - kind: neut
+          - count: "5"
+            class: Elite Frigate
+            names:
+              - Chief Republic Magni
+              - Chief Republic Ivan
+            group: Reinforcement - Partway through outpost destruction
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "5"
+            class: Elite Cruiser
+            names:
+              - Chief Republic Orka
+              - Chief Republic Manadis
+              - Chief Republic Rodul
+            group: Reinforcement - Partway through outpost destruction
+          - count: "10"
+            class: Battleship
+            names:
+              - Republic Tribal Jotun
+              - Republic Tribal Sigur
+              - Republic Tribal Ymir
+            group: Reinforcement - Partway through outpost destruction

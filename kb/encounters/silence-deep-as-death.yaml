@@ -1,0 +1,91 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: silence-deep-as-death
+kind: mission
+name: Silence Deep as Death
+level: 3
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Silence Deep as Death
+    url: https://wiki.eveuniversity.org/Silence_Deep_as_Death
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "207698"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Investigate the distress beacon and rescue the lost miners (17x Troubled Miner 34).
+notes:
+  - text: "Suggested ships: Battlecruiser"
+  - text: "The Slave Trade: It never fails to amuse the more cynical in New Eden that the Amarr — with all their holier than thou piety — see nothing wrong with their use of slaves. Still, this darker side of the Amarrian faith, while upsetting to many, never fails to generate the gleam of potential profits for those willing to provide such slaves. The Angel Cartel — arguably the strongest criminal organization plaguing the star lanes today — has not let this business opportunity go amiss. Yet it is a matter even the Cartel handles delicately, since it has no wish to openly provoke the Minmatar Empire or its Gallente allies. Still, if a few Minmatar ships go missing, who would notice? The blackness of space promises many dangers to the unwary, and much ISK to those who happen to be in the right place at the right time (with the right weapons...)."
+pockets:
+  - name: Warp-in
+    notes:
+      - text: A few seconds after arrival, the three Republic frigates (flagged as enemies) are triggered to blow up regardless of player interaction. A reinforcement group arrives when the last initial enemy is destroyed. After the last ship is destroyed, the Troubled Miners are transferred to your cargo, no need to loot.
+    waves:
+      - id: initial-5-20km
+        trigger:
+          on: warpIn
+          text: Initial (5-20km)
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Republic Radur
+              - Republic Skadi
+              - Republic Ormur
+            group: The miners (Blow up soon after warp-in)
+          - count: "1"
+            class: Cruiser
+            names:
+              - Republic Solon
+            group: The miners (Blow up soon after warp-in)
+          - count: 2-3
+            class: Frigate
+            names:
+              - Gistii Outlaw
+              - Gistii Thug
+            group: The Angels (Auto aggro)
+          - count: "2"
+            class: Destroyer
+            names:
+              - Gistior Defacer
+              - Gistior Defiler
+              - Gistior Shatterer
+            group: The Angels (Auto aggro)
+          - count: "3"
+            class: Cruiser
+            names:
+              - Gistum Liquidator
+              - Gistum Marauder
+            group: The Angels (Auto aggro)
+      - id: reinforcement-5-20km
+        trigger:
+          on: other
+          text: Reinforcement (5-20km)
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Gistii Ambusher
+              - Gistii Hunter
+              - Gistii Impaler
+          - count: 2-3
+            class: Battlecruiser
+            names:
+              - Gistatis Praefactus
+              - Gistatis Tribuni
+      - id: asteroids
+        trigger:
+          on: other
+          text: Asteroids
+          confidence: inferred
+        spawns:
+          - count: "16"
+            class: Astroids
+            names:
+              - Veldspar

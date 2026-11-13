@@ -1,0 +1,181 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: wightstorm-transit-site
+kind: anomaly
+name: Wightstorm Transit Site
+dedRating: null
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Wightstorm Transit Site
+    url: https://wiki.eveuniversity.org/Wightstorm_Transit_Site
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "228345"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal: []
+  resist:
+    - em
+    - thermal
+    - kinetic
+    - explosive
+restrictions:
+  - text: "Ship size limit: T2 Battleship"
+notes:
+  - text: Wightstorm Transit Site is a Null Security Combat Anomaly that appears inside Volatile Ice Storms during the Winter Nexus event in 2020 till 2025.
+  - text: If a capsuleer is present at the Transit Site it will appear in the Overview of every capsuleer in the same System.
+  - text: The Sansha's Transit Modulator near the entry gate can be loaded wit a Cryostorm Mapper (Verity Cryo Tech), granting access to a more dangerous sector of the storm.
+  - text: Enemy ships can warp to tactical bookmarks and often target drones. They deal EM & Thermal damage with lasers, and Kinetic & Explosive damage with missiles, similar to their Incursion counterparts.
+  - text: A very well-tanked battleship is a must-have for the boss, which can and will shred you if you do not pilot well.
+pockets:
+  - name: Warp-in
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+  - name: Room 1
+    notes:
+      - text: The first wave spawns after 30 seconds.
+      - text: After the Wave 2 is defeated, the boss will warp in at about 20 km from the beacon after about 10 seconds. They deal VERY high damage, totaling around 500 DPS @ 20km. You may need to overheat to tank them.
+    waves:
+      - id: wave-1-2-9-ships
+        trigger:
+          on: other
+          text: Wave 1 (2-9 ships)
+          confidence: inferred
+        spawns:
+          - count: 0-6
+            class: Elite Frigate
+            names:
+              - Sansha's Daunting Frostwight
+            ewar:
+              - kind: warpScramble
+          - count: 0-6
+            class: Frigate
+            names:
+              - Sansha's Hailburst Frostwight
+            ewar:
+              - kind: web
+          - count: 0-6
+            class: Elite Frigate
+            names:
+              - Sansha's Darkling Frostwight
+            ewar:
+              - kind: neut
+            note: Neuts about 1.6 GJ/s
+          - count: 0-6
+            class: Elite Frigate
+            names:
+              - Sansha's Numbing Frostwight
+            ewar:
+              - kind: neut
+              - kind: warpDisruption
+          - count: 0-3
+            class: Cruiser
+            names:
+              - Sansha's Hailburst Icewight
+            ewar:
+              - kind: web
+          - count: 0-3
+            class: Elite Cruiser
+            names:
+              - Sansha's Numbing Icewight
+            ewar:
+              - kind: neut
+            note: Neuts about 5.3 GJ/s
+          - count: 0-2
+            class: Battlecruiser
+            names:
+              - Sansha's Hailburst Stormwight
+            note: Very high damage; recommended to destroy this ship first
+      - id: wave-2-2-9-ships
+        trigger:
+          on: other
+          text: Wave 2 (2-9 ships)
+          confidence: inferred
+        spawns:
+          - count: 0-6
+            class: Elite Frigate
+            names:
+              - Sansha's Daunting Frostwight
+            ewar:
+              - kind: warpScramble
+          - count: 0-6
+            class: Frigate
+            names:
+              - Sansha's Hailburst Frostwight
+            ewar:
+              - kind: web
+          - count: 0-6
+            class: Elite Frigate
+            names:
+              - Sansha's Darkling Frostwight
+            ewar:
+              - kind: neut
+            note: Neuts about 1.6 GJ/s
+          - count: 0-6
+            class: Elite Frigate
+            names:
+              - Sansha's Numbing Frostwight
+            ewar:
+              - kind: neut
+              - kind: warpDisruption
+          - count: 0-3
+            class: Cruiser
+            names:
+              - Sansha's Hailburst Icewight
+            ewar:
+              - kind: web
+          - count: 0-3
+            class: Elite Cruiser
+            names:
+              - Sansha's Numbing Icewight
+            ewar:
+              - kind: neut
+            note: Neuts about 5.3 GJ/s
+          - count: 0-2
+            class: Battlecruiser
+            names:
+              - Sansha's Hailburst Stormwight
+            note: Very high damage; recommended to destroy this ship first
+      - id: boss-wave
+        trigger:
+          on: other
+          text: Boss wave
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Sansha's Dreadwight Stormlord
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            drop: Ice storm filaments, 9th-23th tier Overseer's Personal Effects, SKINS, boosters, limited time accelerators, apparel
+      - id: alternate-boss-wave-if-cryostorm-mapper-has-been-inserted
+        trigger:
+          on: other
+          text: Alternate boss wave, if Cryostorm Mapper has been inserted
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Sansha's Doomwight Stormlord
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            drop: Ice storm filaments, 9th-23th tier Overseer's Personal Effects, SKINS, boosters, limited time accelerators, apparel
+sde:
+  dungeonIds:
+    - 9047

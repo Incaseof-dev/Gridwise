@@ -1,0 +1,324 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: serpentis-watch
+kind: complex
+name: Serpentis Watch
+dedRating: null
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Serpentis Watch
+    url: https://wiki.eveuniversity.org/Serpentis_Watch
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "232169"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Battlecruisers/T3"
+notes:
+  - text: T1 Cruisers (with good skills)
+  - text: T1 Battlecruisers
+  - text: This site is possible to complete in a T1 Cruiser, however the damage can easily become excessive if care is not taken in managing the triggers. It is recommended to bring a well-tanked T2 Heavy Assault Cruiser or Battlecruiser.
+  - text: You will arrive at an ancient acceleration gate.
+  - text: "Escalation: This site has a chance to escalate to Jet-Set Hooligans."
+  - text: "Escalation: Expeditions: Jet-Set Hooligans: As the dust disperses, you receive a transmission from a few jumps away. You feel a certain temptation to go and investigate."
+  - text: "Escalation: Previously the escalation message was much more entertaining and read"
+  - text: "Escalation: Expeditions: Jet-Set Hooligans: As the dust disperses, you receive a transmission from someone claiming to have had some rather intimite relations with your sister and that he is waiting for you a few jumps away, to see what you are going to do about it. Despite the fact that you have no sister that you know of and the guy sounds like he has been drinking more than just Quafe, you feel a certain temptation to go and see what this is all about."
+loot:
+  - item: +Overview
+  - item: Bounties
+    note: est. 4M - 5M ISK (wiki)
+  - item: Commander Loot Avg.
+    note: est. 5M ISK (wiki)
+  - item: +Commander and other valuable loot
+  - item: Mid-Grade Snake Alpha/Beta/Gamma/Delta
+    note: est. 10M - 150M ISK (wiki)
+  - item: Mid-Grade Asklepian Alpha/Beta
+    note: est. 40M - 55M ISK (wiki)
+  - item: Daredevil blueprint
+  - item: +Exploration logs
+  - item: Nov. 2014
+    note: est. 9M ISK (wiki)
+  - item: Nov. 2014
+    note: est. 25M ISK (wiki)
+  - item: Jul. 2017
+    note: est. 0.5M ISK (wiki)
+  - item: Nov. 2019
+    note: est. 166M ISK (wiki)
+  - item: May 2020
+    note: est. 72M ISK (wiki) · Doable in a double armor-rep tank Gnosis, though the supervisor wave has very high DPS.
+  - item: May 2020
+    note: est. 135M ISK (wiki)
+  - item: Jul. 2022
+    note: est. 21M ISK (wiki)
+  - item: Jul. 2022
+    note: est. 41M ISK (wiki)
+  - item: Sep. 2024
+    note: est. 218M ISK (wiki) · Done on an Alpha Prophecy with T2 fit. Slowboating away from gate wave and shooting provides 0 challenge. 320 DPS on Standards is enough, NPC didn't focus drones at all.
+  - item: April 9th, 2025 - Lord Peche Run
+    note: "est. Est. 45m ISK (wiki) · Completed Via 1x Vexor Semi T2 fit: Pure drone fit. Some Aggro of drones, be careful, otherwise, recall and re, release, and should be good to go. Watch for ranges, MWD was king and I burned straight down/up/side (whatever you prefer)"
+  - item: August 2026
+    note: est. 1M isk (wiki) · Guardian Iron Charge S 1,000, Shadow Serpentis Copper Tag, Regulated Light Ion Phase Cannon, Initiated Compact Warp Scrambler
+npcs:
+  Militant Commander's Escorter:
+    sdeTypes:
+      - Corelum Chief Defender
+      - Corelum Chief Protector
+    class: Cruiser
+  Corelum Militant Commander:
+    sdeTypes:
+      - Corelatis Squad Leader
+    class: Battlecruiser
+  Core Gate Guardian:
+    sdeTypes:
+      - Corelum Chief Scout
+      - Corelum Chief Spy
+    class: Cruiser
+  Supervisor's Henchman:
+    sdeTypes:
+      - Coreli Guardian Guard
+      - Coreli Guardian Safeguard
+    class: Elite Frigate
+pockets:
+  - name: First Pocket
+    notes:
+      - text: There are three options for unlocking the Acceleration gate to the next room.
+      - text: Destroy each wave until the fourth wave, and destroy the Corelum Militant Commander
+      - text: Approach the Acceleration gate, which sets off the alarm and spawns the fourth wave, skipping waves 2 and 3, and destroy the Corelum Militant Commander. If you cannot tank the rats, destroy all of them EXCEPT FOR THE CORELUM SCOUT.
+      - text: Unlock the Acceleration gate by having a Serpentis Silver Tag in your inventory (the tag is consumed).
+      - text: Attack the Corelum Scout to trigger the next wave.
+      - text: Attack the Corelum Scout to trigger the next wave.
+      - text: Attack the Corelum Scout to trigger the next wave.
+      - text: Destroy the Corelum Militant Commander to unlock the Acceleration Gate.
+      - text: 16 x Scordite (~1.1 million units)
+      - text: 26 x Veldspar (~1.25 million units)
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 5 - 7
+            class: Destroyer
+            names:
+              - Corelior Artillery
+              - Corelior Infantry
+              - Corelior Soldier
+              - Corelior Trooper
+          - count: 6 - 8
+            class: Cruiser
+            names:
+              - Corelum Chief Patroller
+              - Corelum Chief Watchman
+            ewar:
+              - kind: sensorDamp
+          - count: "1"
+            class: Cruiser
+            names:
+              - Corelum Scout
+            triggers: Attacking the Corelum Scout triggers the next wave
+      - id: second-wave
+        trigger:
+          on: other
+          text: Second wave
+          confidence: inferred
+        spawns:
+          - count: 1 - 2
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Patroller
+              - Coreli Guardian Watchman
+          - count: 6 - 8
+            class: Cruiser
+            names:
+              - Corelum Chief Infantry
+              - Corelum Chief Sentinel
+              - Corelum Chief Safeguard
+            ewar:
+              - kind: sensorDamp
+          - count: "1"
+            class: Cruiser
+            names:
+              - Corelum Scout
+            triggers: Attacking the Corelum Scout triggers the next wave
+      - id: third-wave
+        trigger:
+          on: other
+          text: Third Wave
+          confidence: inferred
+        spawns:
+          - count: 5 - 7
+            class: Destroyer
+            names:
+              - Corelior Artillery
+              - Corelior Infantry
+              - Corelior Soldier
+              - Corelior Trooper
+          - count: 6 - 8
+            class: Cruiser
+            names:
+              - Corelum Chief Patroller
+              - Corelum Chief Watchman
+            ewar:
+              - kind: sensorDamp
+          - count: "1"
+            class: Cruiser
+            names:
+              - Corelum Scout
+            triggers: Attacking the Corelum Scout triggers the next wave
+      - id: fourth-wave
+        trigger:
+          on: other
+          text: Fourth Wave
+          confidence: inferred
+        spawns:
+          - count: 4 - 5
+            class: Cruiser
+            names:
+              - Militant Commander's Escorter
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Corelum Militant Commander
+            triggers: Destroying the Corelum Militant Commander unlocks the acceleration gate.
+    onWarpIn: Previous explorers have commented that one of the gates requires a passkey. Alternatively, it can be bypassed by convincing the commander to unlock it. The overseer guards the Starbase Control Tower vigorously.
+  - name: Second Pocket
+    notes:
+      - text: Tower wave is triggered by attacking the Starbase Control Tower. It will not spawn if the Gate Wave is already destroyed.
+      - text: Gate wave is triggered by attacking the Smuggler's Gate. Simply using an EWAR module(preferably Target Painter) works. Shooting at the gate will also trigger tower wave if it has not been triggered already.
+      - text: The gate wave consists of one large group by the gate and three smaller groups scattered around the site. Once all groups are in range the incoming dps can be too much for t1 cruiser or even a battlecruiser.
+      - text: The commander wave is triggered by destroying Supervisor's Guardians (in the Gate Wave). The Shadow Serpentis frigate will approach you very quickly, at 1700 m/s. He can be separated from the others, therefore avoiding a lot of DPS. Supervisor's Henchmen tend to keep behind the supervisor and regularly retarget drones.
+    waves:
+      - id: initial-defenders-40km-55km
+        trigger:
+          on: warpIn
+          text: Initial Defenders 40km - 55km
+        spawns:
+          - count: 2 - 3
+            class: Frigate
+            names:
+              - Coreli Guard
+              - Coreli Protector
+          - count: 2 - 3
+            class: Destroyer
+            names:
+              - Corelior Soldier
+              - Corelior Trooper
+      - id: tower-wave
+        trigger:
+          on: other
+          text: Tower Wave
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Destroyer
+            names:
+              - Corelior Artillery
+              - Corelior Sentinel
+              - Corelior Soldier
+              - Corelior Trooper
+            group: 45km - 55km, right of the Smuggler's Gate
+          - count: 3 - 4
+            class: Cruiser
+            names:
+              - Corelum Chief Scout
+              - Corelum Chief Spy
+            group: 45km - 55km, right of the Smuggler's Gate
+          - count: "4"
+            class: Cruiser
+            names:
+              - Core Gate Guardian
+            group: Near Smuggler's Gate
+      - id: gate-wave
+        trigger:
+          on: other
+          text: Gate Wave
+          confidence: inferred
+        spawns:
+          - count: 3 - 5
+            class: Elite Frigate
+            names:
+              - Supervisor's Henchman
+            group: Near Smuggler's Gate
+          - count: "7"
+            class: Destroyer
+            names:
+              - Corelior Sentinel
+              - Corelior Trooper
+            group: Near Smuggler's Gate
+          - count: "7"
+            class: Cruiser
+            names:
+              - Corelum Chief Sentinel
+            group: Near Smuggler's Gate
+          - count: "2"
+            class: Cruiser
+            names:
+              - Supervisor's Guardian
+            group: Near Smuggler's Gate
+            triggers: Destroying both Supervisor's Guardians triggers the spawning of the commander wave.
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Core Militant Supervisor
+            group: Near Smuggler's Gate
+            triggers: Destroying the Core Militant Supervisor finishes the site, and has a chance to trigger an escalation
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corelior Sentinel
+              - Corelior Trooper
+            group: 35km - 55km from gate
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corelum Chief Sentinel
+              - Corelum Chief Infantry
+            group: 35km - 55km from gate
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corelior Sentinel
+              - Corelior Trooper
+            group: 35km - 55km from gate
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corelum Chief Sentinel
+              - Corelum Chief Infantry
+            group: 35km - 55km from gate
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corelior Sentinel
+              - Corelior Trooper
+            group: 35km - 55km from gate
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corelum Chief Sentinel
+              - Corelum Chief Infantry
+            group: 35km - 55km from gate
+      - id: commander-wave-near-smugglers-gate
+        trigger:
+          on: other
+          text: Commander Wave, near Smuggler's Gate
+          confidence: inferred
+        spawns:
+          - count: 0 - 1
+            class: Commander Frigate
+            names:
+              - Shadow Serpentis Guard
+              - Shadow Serpentis Safeguard
+            triggers: Escalation trigger
+            drop: May drop Shadow Serpentis modules when destroyed, and may contain T2 salvage. Rarely drops Daredevil blueprint.
+          - count: "2"
+            class: Cruiser
+            names:
+              - Corelum Chief Protector
+sde:
+  dungeonIds:
+    - 1217

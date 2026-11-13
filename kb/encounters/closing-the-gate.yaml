@@ -1,0 +1,102 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: closing-the-gate
+kind: mission
+name: Closing the Gate
+level: 1
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Closing the Gate
+    url: https://wiki.eveuniversity.org/Closing_the_Gate
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191616"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the smuggler stargate
+restrictions:
+  - text: "Ship size limit: Cruiser"
+notes:
+  - text: Mission is completed on destruction of Smuggler Stargate in second pocket. Possibly blitzable.
+pockets:
+  - name: Warp-in
+    notes:
+      - text: No aggro.
+    waves:
+      - id: initial-hostiles-15km
+        trigger:
+          on: warpIn
+          text: Initial Hostiles (15km)
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Coreli Scout
+  - name: 1st Pocket
+    notes:
+      - text: All ships aggro on warp-in.
+    waves:
+      - id: initial-hostiles-20-30km
+        trigger:
+          on: warpIn
+          text: Initial Hostiles (20-30km)
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Coreli Agent
+              - Coreli Scout
+  - name: 2nd Pocket
+    notes:
+      - text: All ships aggro on warp-in. Mission completes on Smuggler Stargate destruction.
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Smuggler Stargate
+            triggers: Mission completed on destruction
+      - id: initial-hostiles-20-25km
+        trigger:
+          on: warpIn
+          text: Initial Hostiles (20-25km)
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Coreli Agent
+              - Coreli Scout
+            triggers: Wave 1
+          - count: "1"
+            class: Sentry
+            names:
+              - Serpentis Sentry Gun
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Destroyer
+            names:
+              - Corelior Soldier
+      - id: wave-2-when-stargate-takes-armor-damage
+        trigger:
+          on: other
+          text: Wave 2 (When stargate takes armor damage
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Coreli Initiate
+              - Coreli Scout

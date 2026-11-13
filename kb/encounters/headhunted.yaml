@@ -1,0 +1,27 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: headhunted
+kind: mission
+name: Headhunted
+level: 3
+enemyFaction: null
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Headhunted
+    url: https://wiki.eveuniversity.org/Headhunted
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "206606"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Report to Abdiel Verat at K-QWHE V - Moon 4 - Archangels Assembly Plant
+notes:
+  - text: "WARNING!: This is a high-level stealth operation that will send you to nullsec. It is strongly recommended that you use an interceptor to move about freely in the depths of 0.0 space and complete these missions. The journey into nullsec is a dangerous one. You should only accept the assignment if you are prepared to encounter (and evade) high-risk situations such as interdiction bubble camps and entire alliances wanting to kill you. The Republic Security Service is in no way liable for any assets or personnel lost as a result of accepting this assignment."
+  - text: Headhunted is the Angel way of starting the Angel Angel Sound Epic Arc.
+  - text: "To accept the Missions you need 3.00 Standing with either:"
+  - text: Ellar Stin
+  - text: Dominations
+  - text: Angel Cartel

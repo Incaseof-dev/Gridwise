@@ -1,0 +1,173 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: navy-armada-caldari
+kind: mission
+name: Navy Armada
+level: 4
+enemyFaction: Caldari State
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Navy Armada (Caldari)
+    url: https://wiki.eveuniversity.org/Navy_Armada_(Caldari)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191811"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: ecm
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite frigates web/point"
+pockets:
+  - name: 1st Pocket
+    notes:
+      - text: Gate to second pocket is 80 km from arrival point
+    waves:
+      - id: 3-groups-60-110km
+        trigger:
+          on: other
+          text: 3 groups, 60-110km
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - State Shuriken
+              - State Daito
+            ewar:
+              - kind: ecm
+          - count: "7"
+            class: Frigate
+            names:
+              - State Wakizashi
+              - State Katana
+          - count: "2"
+            class: Destroyer
+            names:
+              - State Shukuro Choji
+          - count: "5"
+            class: Cruiser
+            names:
+              - State Fudai
+            ewar:
+              - kind: ecm
+          - count: "2"
+            class: Cruiser
+            names:
+              - State Ashigaru
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - State Oni
+          - count: "4"
+            class: Battleship
+            names:
+              - State Tenkyu
+              - State Utaisho
+  - name: 2nd Pocket
+    notes:
+      - text: Gate to third pocket is 69 km from arrival point
+    waves:
+      - id: 4-groups-35-90km
+        trigger:
+          on: other
+          text: 4 groups, 35-90km
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - State Shuriken
+              - State Daito
+            ewar:
+              - kind: ecm
+          - count: "6"
+            class: Frigate
+            names:
+              - State Wakizashi
+              - State Katana
+          - count: "4"
+            class: Destroyer
+            names:
+              - State Kai Gunto
+              - State Shukuro Choji
+          - count: "5"
+            class: Cruiser
+            names:
+              - State Fudai
+            ewar:
+              - kind: ecm
+          - count: "3"
+            class: Cruiser
+            names:
+              - State Ashigaru
+              - State Shukuro Chugen
+          - count: "7"
+            class: Battlecruiser
+            names:
+              - State Kerai
+              - State Ronin
+              - State Oni
+          - count: "6"
+            class: Battleship
+            names:
+              - State Tenkyu
+              - State Utaisho
+  - name: 3rd Pocket
+    waves:
+      - id: 3-groups-40-65km
+        trigger:
+          on: other
+          text: 3 groups, 40-65km
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - State Shukuro Shinai
+              - State Shukuro Shuriken
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Taibu State Shirasaya
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "4"
+            class: Destroyer
+            names:
+              - State Tsuba
+              - State Shukuro Choji
+          - count: "16"
+            class: Cruiser
+            names:
+              - State Shukuro Ashigaru
+              - State Shukuro Chugen
+              - State Shukuro Buke
+              - State Shukuro Ashura
+          - count: "1"
+            class: Cruiser
+            names:
+              - Taibu State Kanpaku
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - State Ronin
+              - State Oni
+              - State Kanpaku
+              - State Shukuro Bajo
+          - count: "5"
+            class: Battleship
+            names:
+              - State Utaisho
+              - State Zen
+          - count: "1"
+            class: Battleship
+            names:
+              - State Shukuro Tenno
+            ewar:
+              - kind: ecm

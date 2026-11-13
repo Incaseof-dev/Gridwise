@@ -1,0 +1,41 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: glowing-embers
+kind: mission
+name: Glowing Embers
+level: 4
+enemyFaction: null
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Glowing Embers
+    url: https://wiki.eveuniversity.org/Glowing_Embers
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "206418"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Deliver 1x Wildfire Khumaak (0.3 m3) to Defiants Base.
+notes:
+  - text: "Suggested ships: Combat ship (next mission requires combat)"
+  - text: "Defiance: The Defiants were a splinter group of the Republic Fleet commanded by Admiral Karishal Muritor, a Brutor warrior and figure of great renown within military circles. Skirting the edge of all-out conflict with the Amarr Empire, the Defiants waged constant guerilla warfare with Amarr forces in the years leading up to the Elder Fleet Invasion of YC110, despite insistent urgings from the Republic to back down. Though the good Admiral is now fallen and most of his force gone -- lost while covering the retreat of the Elder Fleet -- a small contingent lives on, scheming to stamp themselves once again into the hearts and minds of freedom-loving Minmatar."
+  - text: thumb|right|192px
+  - text: "Defiants Camp: This camp is reminiscent of the Thukker caravans that ply the spacelanes of the Great Wildlands – their home and sanctuary. After their defeat at the hands of a vicious Amarrian counter-attack, the Defiants were thought to have been completely destroyed. Rumors always persisted however, that a few survivors had fled with the Thukker to the safe havens of the south, outside Republic borders. Evidently, there is a kernel of truth to such tales, but the fleet here now is but a shadow of its former self."
+  - text: Accept the Mission remotely.
+  - text: Deliver Wildfire Khumaak to Todeko, warp to the deadspace pocket and place Wildfire Khumaak into Defiants Storage Facility. Six jumps for delivery.
+  - text: Complete the Mission remotely.
+pockets:
+  - name: Warp-in
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Container
+            names:
+              - Defiants Storage Facility
+            drop: Insert Wildfire Khumaak

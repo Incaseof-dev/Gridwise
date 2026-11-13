@@ -1,0 +1,189 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: radiance
+kind: complex
+name: Radiance
+dedRating: null
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Radiance
+    url: https://wiki.eveuniversity.org/Radiance
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "204988"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: The site is behind an acceleration gate. Warping to the site lands you at 0 on the gate.
+  - text: "Escalation: This combat site can escalate into the Molting Season expedition."
+loot:
+  - item: + Exploration logs
+  - item: March 2015
+    note: est. 1M ISK (wiki) · From Sentient Spearhead Alvus
+  - item: September 2018
+    note: est. 180M ISK (wiki) · From Sentient Spearhead Alvus
+  - item: November 2018
+    note: est. 190M ISK (wiki) · From Sentient Spearhead Alvus
+  - item: April 2020
+    note: est. 54M ISK (wiki) · From Sentient Spearhead Alvus
+  - item: May 2020
+    note: est. 2.5M ISK (wiki) · From Sentient Spearhead Alvus
+  - item: May 2020
+    note: est. 3.3M ISK (wiki) · From Sentient Spearhead Alvus
+  - item: March 2021
+    note: est. 11.6M ISK (wiki) · From Sentient Spearhead Alvus
+  - item: June 2023
+    note: est. 17.2M ISK (wiki) · From Sentient Supreme Alvus Parasite
+pockets:
+  - name: First Pocket
+    notes:
+      - text: The acceleration gate in the first pocket is not locked, so you can fly to it and take the gate to the next room, and thereby skip this room altogether if you want. Be careful though, as proximity to the gate spawns additional reinforcement waves, so you need a strong tank if you chose to skip the room.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+            note: Unlocked from the start.
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Infestious Drone
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Digger Drone
+      - id: wave-1-trigger-by-gate-proximity-at-35km
+        trigger:
+          on: other
+          text: Wave 1 (trigger by gate proximity at 35km)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Strain Sunder Alvi
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Nuker
+              - Atomizer Alvum
+      - id: wave-1-reinforcements
+        trigger:
+          on: other
+          text: Wave 1 (reinforcements)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Strain Sunder
+              - Strain Raider Alvi
+          - count: "3"
+            class: Cruiser
+            names:
+              - Desintegrator
+              - Bomber Alvum
+      - id: wave-2-trigger-by-gate-proximity-at-10km
+        trigger:
+          on: other
+          text: Wave 2 (trigger by gate proximity at 10km)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Strain Atomizer
+              - Strain Bomber
+              - Strain Nuker Alvum
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Siege
+              - Exterminator Alvatis
+  - name: Second Pocket
+    notes:
+      - text: To get the commander wave to spawn, you have to approach the Warning Sign in the corner of the station. Alternatively, it can be triggered by destroying the battlecruisers from initial defenders.
+      - text: There is also a second version, where the commander wave consists of around 15 cruisers and battlecruisers instead of the battleships. 15 cruisers wave was additional one for me, which spawned battleship wave with Sentient Supreme Alvus Parasite after.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "5"
+            class: Elite Frigate
+            names:
+              - Strain Decimator Alvi
+              - Strain Devilfish Alvi
+              - Strain Barracuda Alvi
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: The Strain Decimator Alvi webs and points
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Crippler Alvatis
+            triggers: Triggers commander wave
+          - count: "7"
+            class: Sentry
+            names:
+              - Drone Heavy Missile Battery
+          - count: "7"
+            class: Sentry
+            names:
+              - Drone Cruise Missile Battery
+      - id: commander-wave
+        trigger:
+          on: other
+          text: Commander wave
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battleship
+            names:
+              - Patriarch Alvus
+              - Alvus Creator
+            triggers: killing these spawns additional waves
+          - count: 0-1
+            class: Battleship
+            names:
+              - Sentient Spearhead Alvus
+            triggers: Escalation trigger
+            drop: Drone components and probably Rogue Drone 42-X Nexus Chip
+            note: Sentient Spearhead Alvus 12m ISK
+      - id: last-wave
+        trigger:
+          on: other
+          text: Last wave
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Battleship
+            names:
+              - Supreme Alvus Parasite
+            note: Supreme Alvus Parasite 0.8m ISK
+          - count: "3"
+            class: Battleship
+            names:
+              - Alvus Ruler
+            note: Alvus Ruler 0.8m ISK
+sde:
+  dungeonIds:
+    - 1268

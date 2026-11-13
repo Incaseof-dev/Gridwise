@@ -1,0 +1,78 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: break-the-slave-trade
+kind: mission
+name: Break The Slave Trade
+level: 2
+enemyFaction: Amarr Empire
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Break The Slave Trade
+    url: https://wiki.eveuniversity.org/Break_The_Slave_Trade
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "217202"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: neut
+  - kind: trackingDisruption
+notes:
+  - text: No hostiles at initial gate.
+  - text: "Blitz: Kill the Imperial Industrial Ship, loot auto-scoops into hold, warp out."
+pockets:
+  - name: 1st Pocket
+    notes:
+      - text: No aggro at warp-in. Imperial Tamir neut for 5gj/s each.
+    waves:
+      - id: initial-hostiles
+        trigger:
+          on: warpIn
+          text: Initial Hostiles
+        spawns:
+          - count: "1"
+            class: Industrial
+            names:
+              - Imperial Industrial Ship
+            group: Group 1 (36km)
+            drop: Mission item
+          - count: "3"
+            class: Frigate
+            names:
+              - Imperial Felix
+              - Imperial Paladin
+            group: Group 1 (36km)
+          - count: "2"
+            class: Cruiser
+            names:
+              - Imperial Muthura
+              - Imperial Muzakir
+            group: Group 1 (36km)
+          - count: "5"
+            class: Frigate
+            names:
+              - Imperial Forian
+              - Imperial Matendi
+            group: Group 2 (45km)
+            ewar:
+              - kind: trackingDisruption
+            note: Forian is the only variant with EWAR
+          - count: "3"
+            class: Cruiser
+            names:
+              - Imperial Tamir
+            group: Group 2 (45km)
+            ewar:
+              - kind: neut
+          - count: "7"
+            class: Frigate
+            names:
+              - Imperial Bahir
+              - Imperial Paladin
+              - Imperial Sixtus
+            group: Group 3 (55km)
+            ewar:
+              - kind: trackingDisruption
+            note: Bahir is the only variant with EWAR

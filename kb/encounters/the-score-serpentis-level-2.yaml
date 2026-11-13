@@ -1,0 +1,78 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-score-serpentis-level-2
+kind: mission
+name: The Score
+level: 2
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Score (Serpentis) (level 2)
+    url: https://wiki.eveuniversity.org/The_Score_(Serpentis)_(level_2)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "192055"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Go and destroy all the ships at the encounter. Your main target will be lurking around the monument, seek and destroy then return to me.
+ewar:
+  - kind: sensorDamp
+notes:
+  - text: "Suggested ships: Cruiser"
+  - text: "Blitz: Kill Group 3 and warp out."
+pockets:
+  - name: Single gated pocket
+    waves:
+      - id: group-1-35-40km
+        trigger:
+          on: other
+          text: Group 1, 35-40km
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Coreli Initiate
+              - Coreli Scout
+              - Coreli Watchman
+              - Coreli Patroller
+            ewar:
+              - kind: sensorDamp
+      - id: group-2-40-45km
+        trigger:
+          on: other
+          text: Group 2, 40-45km
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Coreli Initiate
+              - Coreli Scout
+          - count: "1"
+            class: Destroyer
+            names:
+              - Corelior Soldier
+              - Corelior Infantry
+      - id: group-3-45-50km
+        trigger:
+          on: other
+          text: Group 3, 45-50km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Coreli Spy
+              - Coreli Agent
+          - count: "2"
+            class: Destroyer
+            names:
+              - Corelior Trooper
+          - count: "1"
+            class: Cruiser
+            names:
+              - Corelum Chief Spy

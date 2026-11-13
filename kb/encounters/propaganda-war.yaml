@@ -1,0 +1,121 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: propaganda-war
+kind: mission
+name: Propaganda War
+level: 5
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Propaganda War
+    url: https://wiki.eveuniversity.org/Propaganda_War
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191864"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: neut
+  - kind: sensorDamp
+  - kind: web
+  - kind: warpScramble
+notes:
+  - text: "Web/warp disruption: Elite Federation Lochos/Lixa (Web, Scram), Gallente Stasis Tower (Web)"
+  - text: "Suggested ships: Battleship + Logistics, Passive Shield HAC"
+  - text: "Blitz: Destroy Broadcast Station."
+  - text: Initial DPS very high at close range.
+  - text: Warp in Logi as soon as full aggro is on tank ship.
+  - text: Destroying Cruise Missile Batteries will reduce incoming thermal damage.
+  - text: No extra spawns when attacking structures.
+  - text: Broadcast Station drops no loot.
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: initial-group-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group (auto-aggro)
+        spawns:
+          - count: "1"
+            class: Sentry
+            names:
+              - Gallente Stasis Tower
+            group: 5-10km
+            ewar:
+              - kind: web
+          - count: "5"
+            class: Elite Frigate
+            names:
+              - Elite Federation Lochos
+              - Elite Federation Lixa
+              - Elite Federation Insidiator
+            group: 10-60km
+            ewar:
+              - kind: web
+              - kind: sensorDamp
+              - kind: warpScramble
+          - count: "5"
+            class: Elite Cruiser
+            names:
+              - Elite Federation Mentes
+              - Elite Federation Quadrieris
+            group: 10-60km
+          - count: "12"
+            class: Battleship
+            names:
+              - Federation Covinus
+              - Federation Hyperion
+              - Federation Praktor Phanix
+              - Federation Praktor Praeses
+            group: 10-60km
+          - count: "1"
+            class: Sentry
+            names:
+              - Gallente Stasis Tower
+            group: 40-80km
+            ewar:
+              - kind: web
+          - count: "4"
+            class: Sentry
+            names:
+              - Gallente Tower Sentry III
+            group: 40-80km
+          - count: "3"
+            class: Sentry
+            names:
+              - Gallente Energy Neutralizer III
+            group: 50km
+            ewar:
+              - kind: neut
+            triggers: Spawns Neutralizer Group
+          - count: "5"
+            class: Sentry
+            names:
+              - Gallente Cruise Missile Battery
+            group: 80-110km
+            note: Thermal damage
+      - id: neutralizer-group-auto-aggro
+        trigger:
+          on: other
+          text: Neutralizer Group (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Sentry
+            names:
+              - Gallente Energy Neutralizer III
+            ewar:
+              - kind: neut
+            note: Respawns an additional 2 times
+      - id: structure
+        trigger:
+          on: warpIn
+          text: Structure
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Broadcast Station
+            note: 150,000 HP

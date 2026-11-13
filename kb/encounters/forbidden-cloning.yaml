@@ -1,0 +1,64 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: forbidden-cloning
+kind: mission
+name: Forbidden Cloning
+level: 1
+enemyFaction: Mercenaries
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Forbidden Cloning
+    url: https://wiki.eveuniversity.org/Forbidden_Cloning
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "219388"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: "Stop the scientist's heretical experiments: Destroy his lab and all its guardians."
+notes:
+  - text: "Suggested ships: Frigate"
+  - text: "Amarr and Cloning: The Holders (the higher born class) are rarely cloned. The Amarr are a very religious people, and they consider the flesh to be sacred. This is particularly true of the Holders, since any of them could potentially become Heir and eventually Emperor. In addition, the few instances of such blasphemy that have been carried out have resulted in madness or other deformities, clearly manifesting God's will in these matters."
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Structure
+            names:
+              - Laboratory
+      - id: initial-group-around-the-laboratory
+        trigger:
+          on: warpIn
+          text: Initial Group (Around the Laboratory)
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Mercenary Rookie
+      - id: on-shooting-laboratory
+        trigger:
+          on: other
+          text: On Shooting Laboratory
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Mercenary Rookie
+      - id: on-destruction-of-the-laboratory
+        trigger:
+          on: other
+          text: On destruction of the Laboratory
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Mercenary Fighter

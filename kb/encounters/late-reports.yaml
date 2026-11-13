@@ -1,0 +1,90 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: late-reports
+kind: mission
+name: Late Reports
+level: null
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Late Reports
+    url: https://wiki.eveuniversity.org/Late_Reports
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223071"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy all enemy ships and retrieve 1 Reports (0.1 m3)
+ewar:
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite frigates"
+  - text: thumb|192px
+  - text: "Tips: No aggro on warp-in."
+  - text: "Tips: Ungated pocket. You can warp in at range."
+  - text: "Tips: The report is placed in your cargo hold after last ship is destroyed."
+  - text: "Tips: The last ship destroyed in each group will trigger a new wave."
+  - text: "The Investigator: As you come upon the battle site, you immediately see why the previous investigator was so late. His ship has been reduced to wreckage. The Sansha's Nation ships responsible are picking it over. Eliminate the Sansha ships and retrieve the investigator's reports they surely salvaged."
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Ravener
+              - Centii Loyal Scavenger
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "4"
+            class: Battleship
+            names:
+              - Centus Mutant
+              - Centus Savage Lord
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Juggernaut
+              - Centum Loyal Execrator
+            ewar:
+              - kind: trackingDisruption
+          - count: "3"
+            class: Battleship
+            names:
+              - Centus Beast
+              - Centus Plague Lord
+            ewar:
+              - kind: trackingDisruption
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Manslayer
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: type list incomplete on the source page
+          - count: "4"
+            class: Battleship
+            names:
+              - Centus Overlord

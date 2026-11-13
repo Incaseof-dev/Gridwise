@@ -1,0 +1,110 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: gone-berserk-level-3
+kind: mission
+name: Gone Berserk
+level: 3
+enemyFaction: Equilibrium of Mankind
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Gone Berserk (Level 3)
+    url: https://wiki.eveuniversity.org/Gone_Berserk_(Level_3)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "211496"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy all enemy ships
+notes:
+  - text: 'Blitz: Kill right spawn, then all Cruisers and "Demon" Frigates reinforcements in that chain.'
+  - text: It is recommended to target one EoM Prophet from each group and kill them first. Then kill the remaining ships one at a time and eliminate the chain of spawns after it. This means you get a total of three of each of the Reinforcement Spawns!
+  - text: An easy way to tackle this is to approach from either the left or right hand side and just pick off the ships as they approach.
+pockets:
+  - name: Warp-in
+    notes:
+      - text: Like the level 4 variant, the spawns appear in chains.
+      - text: All spawns appear 45-55km from warp-in point and automatically aggro.
+      - text: For each initial spawn group you kill, you'll get an additional reinforcement spawn consisting of 4 waves.
+    waves:
+      - id: initial-hostiles
+        trigger:
+          on: warpIn
+          text: Initial Hostiles
+        spawns:
+          - count: "2"
+            class: Cruiser
+            names:
+              - EoM Prophet
+            group: Left
+          - count: "2"
+            class: Cruiser
+            names:
+              - EoM Prophet
+            group: Center
+          - count: "2"
+            class: Cruiser
+            names:
+              - EoM Prophet
+            group: Right
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - EoM Demon
+          - count: "1"
+            class: Cruiser
+            names:
+              - EoM Black Priest
+            triggers: spawns reinforcement wave 2
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - EoM Succubus
+          - count: "1"
+            class: Cruiser
+            names:
+              - EoM Crusader
+            triggers: spawns reinforcement wave 3
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - EoM Succubus
+          - count: "1"
+            class: Cruiser
+            names:
+              - EoM Crusader
+            triggers: spawns reinforcement wave 4
+      - id: wave-4
+        trigger:
+          on: other
+          text: Wave 4
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - EoM Demon
+          - count: "1"
+            class: Cruiser
+            names:
+              - EoM Death Knight

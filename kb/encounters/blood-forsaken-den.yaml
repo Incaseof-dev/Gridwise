@@ -1,0 +1,129 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: blood-forsaken-den
+kind: anomaly
+name: Blood Forsaken Den
+dedRating: null
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Blood Forsaken Den
+    url: https://wiki.eveuniversity.org/Blood_Forsaken_Den
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225169"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Single ungated normal space pocket.
+  - text: "Escalation: 7/10"
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-defending-fleet
+        trigger:
+          on: warpIn
+          text: Initial Defending Fleet
+        spawns:
+          - count: 2 - 3
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Dark Priest
+              - Elder Corpum Shadow Sage
+          - count: 2 - 3
+            class: Battlecruiser
+            names:
+              - Corpatis Exorcist
+              - Corpatis Phantom
+      - id: 1st-reinforcement-spawn
+        trigger:
+          on: other
+          text: 1st Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 2 - 3
+            class: Elite Frigate
+            names:
+              - Elder Corpii Engraver
+              - Elder Corpii Raider
+              - Elder Corpii Reaver
+          - count: 2 - 3
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Arch Sage
+              - Elder Corpum Dark Priest
+              - Elder Corpum Shadow Sage
+      - id: 2nd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 2nd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 3 - 4
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Arch Priest
+              - Elder Corpum Arch Sage
+              - Elder Corpum Dark Priest
+          - count: 3 - 4
+            class: Battlecruiser
+            names:
+              - Corpatis Exorcist
+              - Corpatis Phantom
+      - id: 3rd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 3rd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 3 - 4
+            class: Battlecruiser
+            names:
+              - Corpatis Exorcist
+              - Corpatis Phantom
+      - id: 4th-reinforcement-spawn
+        trigger:
+          on: other
+          text: 4th Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 3 - 4
+            class: Cruiser
+            names:
+              - Corpum Arch Sage
+              - Corpum Dark Priest
+              - Corpum Arch Priest
+              - Corpum Shadow Sage
+            note: type list incomplete on the source page
+          - count: 3 - 4
+            class: Battlecruiser
+            names:
+              - Corpatis Exorcist
+              - Corpatis Phantom
+      - id: 5th-reinforcement-spawn
+        trigger:
+          on: other
+          text: 5th Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 2 - 3
+            class: Elite Frigate
+            names:
+              - Elder Corpii Herald
+              - Elder Corpii Upholder
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 2 - 3
+            class: Battlecruiser
+            names:
+              - Corpatis Exorcist
+              - Corpatis Phantom
+          - count: "1"
+            class: Commander Cruiser
+            names:
+              - Dark Blood Arch Templar
+            group: Possible Rare Spawn
+            drop: Possible Faction charges, modules or tags

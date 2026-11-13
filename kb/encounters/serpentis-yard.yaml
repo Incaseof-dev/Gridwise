@@ -1,0 +1,176 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: serpentis-yard
+kind: anomaly
+name: Serpentis Yard
+dedRating: null
+anomalyClass: 5
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Serpentis Yard
+    url: https://wiki.eveuniversity.org/Serpentis_Yard
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "229407"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Serpentis Yard is a class 5 combat anomaly found in low security space.
+  - text: All ships spawn at 0 on the site. Each successive wave is triggered by killing the last ship in the previous wave.
+  - text: Also has 30x Veldspar Asteroids
+  - text: "Attention: Number of NPCs and type needs updating"
+  - text: "Attention: Type and number of NPCs needs updating"
+  - text: "Escalation: This site can escalate to Serpentis Logistical Outpost"
+pockets:
+  - name: "Type 1: Silos"
+    waves:
+      - id: initial-spawn
+        trigger:
+          on: warpIn
+          text: Initial spawn
+        spawns:
+          - count: "4"
+            class: Destroyer
+            names:
+              - Corelior
+          - count: "4"
+            class: Cruiser
+            names:
+              - Corelum
+      - id: first-spawn
+        trigger:
+          on: other
+          text: First spawn
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Corelum
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corelatis
+      - id: second-spawn
+        trigger:
+          on: other
+          text: Second spawn
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Coreli
+          - count: "2"
+            class: Cruiser
+            names:
+              - Corelum
+      - id: third-spawn
+        trigger:
+          on: other
+          text: Third spawn
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Cruiser
+            names:
+              - Corelum
+            ewar:
+              - kind: sensorDamp
+      - id: fourth-spawn
+        trigger:
+          on: other
+          text: Fourth spawn
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Cruiser
+            names:
+              - Corelum
+            ewar:
+              - kind: sensorDamp
+          - count: "1"
+            class: Battleship
+            names:
+              - Core Commodore
+          - count: "1"
+            class: Battleship
+            names:
+              - Core Baron
+  - name: "Type 2: Shipyard"
+    waves:
+      - id: initial-spawn
+        trigger:
+          on: warpIn
+          text: Initial spawn
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Heavy Missile Batteries
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corelum
+      - id: first-spawn
+        trigger:
+          on: other
+          text: First spawn
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Cruiser
+            names:
+              - Corelum
+      - id: second-spawn
+        trigger:
+          on: other
+          text: Second spawn
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Coreli
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corelum
+      - id: third-spawn
+        trigger:
+          on: other
+          text: Third spawn
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Destroyer
+            names:
+              - Corelum
+            ewar:
+              - kind: sensorDamp
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corelum
+            ewar:
+              - kind: sensorDamp
+      - id: fourth-spawn
+        trigger:
+          on: other
+          text: Fourth spawn
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Corelior
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corelum
+sde:
+  dungeonIds:
+    - 2276

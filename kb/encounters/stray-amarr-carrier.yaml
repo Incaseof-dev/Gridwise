@@ -1,0 +1,152 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: stray-amarr-carrier
+kind: mission
+name: Stray Amarr Carrier
+level: 5
+enemyFaction: Amarr Empire
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Stray Amarr Carrier
+    url: https://wiki.eveuniversity.org/Stray_Amarr_Carrier
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "198294"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: neut
+  - kind: nos
+  - kind: trackingDisruption
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: All Frigates"
+  - text: "Suggested ships: (1) Maelstrom w/ Passive Tank and (1) Maelstrom with Shield Transporters but recommend more DPS"
+  - text: "Space type: Normal Space, No Gates"
+pockets:
+  - name: Warp-In
+    notes:
+      - text: Ships at 20-75k unless you choose to warp to within a different distance
+      - text: Ships relative to Warp-in Beacon
+      - text: "Tips: Mission occurs in normal space, so you can always warp to distances and to bookmarks farther away from the NPCs."
+      - text: "Tips: Your first warp attempt will be a forced Warp to 0. Even if you select Warp to 100 you will arrive at the Warp-In Beacon."
+      - text: "Tips: Try selecting warp, canceling your warp, then warping to your desired distance."
+      - text: "Tips: Warping to within 100km leaves plenty of distance that spreads out the aggro."
+      - text: "Tips: Cruise Missile Batteries have a maximum range of 170km, and the Carrier’s NOS has a maximum range of 150km."
+      - text: "Tips: Fighters will immediately attack your drones when they spawn from the Carrier, but this can be used to your advantage."
+      - text: "Tips: Small Drones are invulnerable to the Fighters, as long as they are moving/attacking; and they are a great way to draw-off the Fighters aggro. Have your small drones attacking the carrier when the fighters spawn."
+      - text: "Tips: The Fighters are only be able to hit Large and Medium drones."
+      - text: "Tips: Mission is flagged complete when the Carrier and Fighters are destroyed. You do not need to destroy the Cap Ship Maint Array."
+    waves:
+      - id: initial-forces
+        trigger:
+          on: warpIn
+          text: Initial forces
+        spawns:
+          - count: "5"
+            class: Fighter
+            names:
+              - Imperial Fighter (Carrier Support Group 1)
+            note: Orbits at 3k
+          - count: "8"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Imran
+              - Divine Imperial Napat*
+              - Divine Imperial Paladin
+              - Divine Imperial Valok
+            ewar:
+              - kind: web
+              - kind: trackingDisruption
+              - kind: warpScramble
+            note: Orbits of 4-16k, * Napat has Tracking Disruptor
+          - count: "7"
+            class: Elite Cruiser
+            names:
+              - Divine Imperial Ambrose*
+              - Divine Imperial Basil*
+              - Divine Imperial Champion
+              - Divine Imperial Justicar
+            ewar:
+              - kind: neut
+            note: Orbits of 7-32k, * Ambose/Basil do NOS
+          - count: "7"
+            class: Battleship
+            names:
+              - Imperial Dominator*^^
+              - Imperial Martyr*
+              - Imperial Templar Martyr
+            ewar:
+              - kind: neut
+            triggers: Dominator triggers reinforcement
+            note: Orbits of 17-49k, * Dominator/Martyr do NOS
+          - count: "1"
+            class: Carrier
+            names:
+              - Imperial Redeemer
+            ewar:
+              - kind: neut
+            triggers: Damage level triggers Carrier spawns
+          - count: "12"
+            class: Sentry
+            names:
+              - Amarr Cruise Missile Battery
+      - id: reinforcement
+        trigger:
+          on: other
+          text: Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Battleship
+            names:
+              - Imperial Templar Dominator
+            note: Orbits at 17k
+      - id: carrier-spawns
+        trigger:
+          on: other
+          text: Carrier Spawns
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Fighter
+            names:
+              - Imperial Fighter (Carrier Support Group 2)
+            group: Carrier shields reduced to 60%
+          - count: "3"
+            class: Sentry
+            names:
+              - Amarr Energy Neutralizer II
+            group: Carrier shields reduced to 60%
+            ewar:
+              - kind: neut
+          - count: "5"
+            class: Fighter
+            names:
+              - Imperial Fighter (Carrier Support Group 3)
+            group: Carrier shields reduced to 5%
+          - count: "3"
+            class: Sentry
+            names:
+              - Amarr Energy Neutralizer IiI
+            group: Carrier shields reduced to 5%
+            ewar:
+              - kind: neut
+          - count: "5"
+            class: Fighter
+            names:
+              - Imperial Fighter (Carrier Support Group 4)
+            group: Carrier armor reduced to 60%
+          - count: "5"
+            class: Fighter
+            names:
+              - Imperial Fighter (Carrier Support Group 5)
+            group: Carrier armor reduced to 5%
+          - count: "5"
+            class: Fighter
+            names:
+              - Imperial Fighter (Carrier Support Group 6)
+            group: Carrier hull reduced to 50%

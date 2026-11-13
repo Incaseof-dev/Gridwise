@@ -1,0 +1,341 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: guristas-hidden-hub
+kind: anomaly
+name: Guristas Hidden Hub
+dedRating: null
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Guristas Hidden Hub
+    url: https://wiki.eveuniversity.org/Guristas_Hidden_Hub
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "194744"
+defaults:
+  confidence: verified
+  source: uni
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: Destroying the battleships will trigger the next wave.
+      - text: Destroying the Pithum Eraser will trigger the next wave.
+      - text: Destroying the battleships will trigger the next wave.
+      - text: Destroying the battleships will trigger the next wave.
+      - text: Destroying the battleships will trigger the next wave.
+      - text: Destroying the battleships will trigger the next wave.
+    waves:
+      - id: wave-1
+        trigger:
+          on: warpIn
+          text: Wave 1
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Pithi Destructor
+          - count: "1"
+            class: Frigate
+            names:
+              - Pithi Demolisher
+          - count: "1"
+            class: Frigate
+            names:
+              - Pithi Plunderer
+          - count: "1"
+            class: Frigate
+            names:
+              - Pithi Wrecker
+          - count: "2"
+            class: Destroyer
+            names:
+              - Pithior Supremacist
+          - count: "2"
+            class: Destroyer
+            names:
+              - Pithior Terrorist
+          - count: "1"
+            class: Destroyer
+            names:
+              - Pithior Guerilla
+          - count: "2"
+            class: Cruiser
+            names:
+              - Pithum Eraser
+          - count: "2"
+            class: Cruiser
+            names:
+              - Pithum Inferno
+          - count: "2"
+            class: Cruiser
+            names:
+              - Pithum Mortifier
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Pithatis Revolter
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Pithatis Death Dealer
+          - count: "2"
+            class: Battleship
+            names:
+              - Pith Massacrer
+          - count: "1"
+            class: Battleship
+            names:
+              - Pith Usurper
+          - count: "?"
+            class: Sentry
+            names:
+              - Guristas Cruise Missile Batteries
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Pithi Plunderer
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Demolisher
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Destructor
+          - count: "3"
+            class: Cruiser
+            names:
+              - Pithum Eraser
+            triggers: Triggers next wave
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Pithi Destructor
+          - count: "1"
+            class: Frigate
+            names:
+              - Pithi Demolisher
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Saboteur
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Despoiler
+          - count: "3"
+            class: Destroyer
+            names:
+              - Pithior Terrorist
+          - count: "1"
+            class: Battleship
+            names:
+              - Pith Destroyer
+          - count: "1"
+            class: Battleship
+            names:
+              - Pith Conquistador
+      - id: wave-4
+        trigger:
+          on: other
+          text: Wave 4
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Pithi Plunderer
+          - count: "2"
+            class: Frigate
+            names:
+              - Pithi Wrecker
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Plunderer
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Wrecker
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Destructor
+          - count: "2"
+            class: Cruiser
+            names:
+              - Pithum Abolisher
+          - count: "2"
+            class: Battleship
+            names:
+              - Pith Dismantler
+          - count: "1"
+            class: Battleship
+            names:
+              - Pith Extinguisher
+      - id: wave-5
+        trigger:
+          on: other
+          text: Wave 5
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Pithi Plunderer
+          - count: "2"
+            class: Frigate
+            names:
+              - Pithi Wrecker
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Destructor
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Demolisher
+          - count: "1"
+            class: Cruiser
+            names:
+              - Pithum Eraser
+          - count: "1"
+            class: Cruiser
+            names:
+              - Pithum Abolisher
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Eraser
+          - count: "2"
+            class: Battleship
+            names:
+              - Pith Destroyer
+          - count: "1"
+            class: Battleship
+            names:
+              - Pith Conquistador
+      - id: wave-6
+        trigger:
+          on: other
+          text: Wave 6
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Pithi Plunderer
+          - count: "1"
+            class: Frigate
+            names:
+              - Pithi Wrecker
+          - count: "2"
+            class: Cruiser
+            names:
+              - Pithum Eraser
+          - count: "1"
+            class: Battleship
+            names:
+              - Pith Destroyer
+          - count: "1"
+            class: Battleship
+            names:
+              - Pith Conquistador
+      - id: wave-7
+        trigger:
+          on: other
+          text: Wave 7
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Pithi Wrecker
+          - count: "1"
+            class: Frigate
+            names:
+              - Pithi Plunderer
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Destructor
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Wrecker
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Abolisher
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Pithatis Death Dealer
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Pithatis Revolter
+          - count: "2"
+            class: Battleship
+            names:
+              - Pith Conquistador
+      - id: wave-8
+        trigger:
+          on: other
+          text: Wave 8
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Pithi Plunderer
+          - count: "1"
+            class: Frigate
+            names:
+              - Pithi Wrecker
+          - count: "2"
+            class: Cruiser
+            names:
+              - Pithum Inferno
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Pithatis Revolter
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Pithatis Death Dealer
+      - id: wave-9
+        trigger:
+          on: other
+          text: Wave 9
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Pithi Demolisher
+          - count: "1"
+            class: Frigate
+            names:
+              - Pithi Wrecker
+          - count: "2"
+            class: Cruiser
+            names:
+              - Pithum Abolisher
+sde:
+  dungeonIds:
+    - 3472

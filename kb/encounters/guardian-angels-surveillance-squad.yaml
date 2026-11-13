@@ -1,0 +1,426 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: guardian-angels-surveillance-squad
+kind: escalation
+name: Guardian Angels Surveillance Squad
+dedRating: null
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Guardian Angels Surveillance Squad
+    url: https://wiki.eveuniversity.org/Guardian_Angels_Surveillance_Squad
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "227018"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Guardian Angels Surveillance Squad is an expedition that escalates from Provisional Serpentis Outpost.
+  - text: "Expedition start:: It seemed for a while you would manage to get all of the pirates, but evidently one of the guard ships from the Guardian Angels has slipped away. Luckily your scanners seem to have gathered enough information to give you its approximate destination."
+  - text: The first three locations are usually in low security space while the last location is usually in null security space but this varies.
+loot:
+  - item: + Commander and other valuable loot
+  - item: Shadow Serpentis Brass Tag
+    note: est. 7,500 ISK (wiki)
+  - item: Mid-Grade Asklepian Gamma (Implant)
+    note: est. 78.2 M ISK (wiki) · Second location
+  - item: Mid-Grade Snake Beta (Implant)
+    note: est. ~40 M ISK (wiki) · Third location
+  - item: Shadow Serpentis Medium Plasma Smartbomb
+    note: est. 6.6 M ISK (wiki) · Third location
+  - item: Corelum C-Type Medium Armor Repairer
+    note: est. ~80 M ISK (wiki) · Fourth location
+  - item: Vigilant Blueprint (1-run BPC)
+    note: est. ~180 M ISK (wiki) · Fourth location
+  - item: Mid-grade Asklepian Omega
+    note: est. ~370m isk (wiki) · Second location
+  - item: Mid-Grade Snake Gamma
+    note: est. ~67m isk (wiki) · Third Location
+  - item: Vigilant Blueprint (1-run BPC)
+    note: est. ~100 M ISK (wiki) · Third location
+  - item: + Exploration logs
+  - item: Sep 2016
+    note: est. 7,500 ISK (wiki) · A. Single. Frackin'. Brass. Tag. After whelping a Vaga in the site. Hope those that come after me have more luck!
+  - item: Nov 2016
+    note: est. 84.4 M ISK (wiki)
+  - item: Jun 2020
+    note: est. 300 M ISK (wiki)
+  - item: Apr 2025
+    note: est. 465 M ISK (wiki) · Third Location
+  - item: Sep 2025
+    note: est. 408 M ISK (wiki) · Second Location. Marin Matola drop only a Brass Tag and some ammo
+pockets:
+  - name: First Location
+    notes:
+      - text: ----
+      - text: "Warp in. If Shadow Serpentis is there: kill him, possibly get escalation. Else (or If didn't get escalation): Use acceleration gate, kill Serpentis Security Station (if present), possibly get escalation."
+  - name: Warpin
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: 3-4
+            class: Destroyer
+            names:
+              - Corelior Trooper
+            note: type list incomplete on the source page
+          - count: 0-1
+            class: Commander Cruiser
+            names:
+              - Shadow Serpentis Chief Spy
+              - Shadow Serpentis Agent
+            triggers: escalation trigger
+            drop: Faction drops
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Corelatis Squad
+              - Corelatis Wing Leader
+  - name: Room 2
+    notes:
+      - text: When you warp in to the site there is additional group present. These ships will warp off and won't engage you.
+      - text: "Escalation continue:: The station databanks contain information on the local Guardian Angel security network and among it; a location of yet another station similar to this one. That is your best clue as to where the ships that fled as you entered have gone."
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Station
+            names:
+              - Serpentis Security Station
+            triggers: Trigger for possible escalation
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: 1-2
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Watchman
+            ewar:
+              - kind: sensorDamp
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Safeguard
+            ewar:
+              - kind: sensorDamp
+            note: type list incomplete on the source page
+          - count: 2-3
+            class: Battlecruiser
+            names:
+              - Corelatis Wing Leader
+      - id: additional-group-warps-off
+        trigger:
+          on: other
+          text: Additional group (warps off)
+          confidence: inferred
+        spawns:
+          - count: "10"
+            class: Frigate
+            names:
+              - coreli Guard
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - coreli Guardian Guard
+            note: type list incomplete on the source page
+          - count: "5"
+            class: Destroyer
+            names:
+              - Corelior Artillery
+            note: type list incomplete on the source page
+          - count: "7"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Scout
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corelatis Wing
+              - Corelatis Squad Leader
+  - name: Second Location
+    notes:
+      - text: ----
+      - text: "Warp in. If Shadow Serpentis is there: kill him, possibly get escalation. Else (or If didn't get escalation): Use acceleration gate, kill Serpentis Security Station, possibly get escalation."
+  - name: Room 1
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: 0-1
+            class: Commander Cruiser
+            names:
+              - Shadow Serpentis
+            triggers: Trigger for possible escalation
+            drop: Can drop a faction module or implant
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corelatis Squad
+              - Corelatis Wing Leader
+  - name: Room 2
+    notes:
+      - text: "Escalation continue:: To your dismay, the main computers of this station took a direct hit during your assault and any information that might have been there is gone up in smoke. However, your instruments ran through the data from the fleeing ships and have come up with this location as a suggestion to where they might have warped."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "16"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Patroller
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Defender
+              - Corelum Guardian Chief Infantry
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corelatis Squad Leader
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Station
+            names:
+              - Serpentis Security Station
+            triggers: Trigger for possible escalation
+  - name: Third Location
+    notes:
+      - text: ----
+      - text: "Warp in. If Shadow Serpentis is there: kill him, possibly get escalation. Else (or If didn't get escalation): Use acceleration gate, kill Serpentis Security Station, possibly get escalation."
+  - name: Room 1
+    notes:
+      - text: "Escalation continue:: It looks like a Serpentis executive vessel the angels were escorting got away during the fight. Luckily for you though, one of its communication devices seems to be malfunctioning and is for no apparent reason sending out a constant stream of sentimental and dreamy meditation muzak. Your instruments have no problems tracing where it is coming from. This wailing is extremely irritating. Aggravating in fact. The muzak of doom."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Agent
+              - Coreli Guardian Initiate
+              - Coreli Guardian Patroller
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: type list incomplete on the source page
+          - count: 2-3
+            class: Destroyer
+            names:
+              - Corelior Soldier
+              - Corelior Trooper
+          - count: 3-4
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Corelatis Squad
+              - Wind Leader
+          - count: "1"
+            class: Commander Cruiser
+            names:
+              - Shadow Serpentis Chief Defender
+            triggers: Trigger
+            drop: BPCs, Shadow Serpentis modules
+  - name: Room 2
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Station
+            names:
+              - Serpentis Security Station
+            triggers: Trigger for possible escalation
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "16"
+            class: Destroyer
+            names:
+              - Corelior Canoneer
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Defender
+              - Corelum Guardian Chief Infantry
+            ewar:
+              - kind: sensorDamp
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Corelatis Squad Leader
+            ewar:
+              - kind: sensorDamp
+  - name: Fourth Location
+    notes:
+      - text: ----
+      - text: First aggression on the Jeroon structure triggers multiple AoE smartbomb waves with 30+ km radius and 1k damage per wave. Return drones to dronebay before attacking the structure, warp out and back to stop the waves. After that, deploy drones normally.
+      - text: "Expeditions - Guardian Angels Surveillance Squad (expedition end): For a while there, you almost wished you had brought more friends with you and you are relieved you managed to blow the station before more could scramble against you. You are also relieved you managed to kill off that blasted gurgle sound. Permanently."
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Jeroon
+            triggers: "Trigger for waves #2-6"
+      - id: wave-1-timed-approx-10s-after-warp-in
+        trigger:
+          on: other
+          text: "Wave #1 (timed, approx. 10s after warp in)"
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Destroyer
+            names:
+              - Corelior Trooper
+          - count: "7"
+            class: Cruiser
+            names:
+              - Corelum Chief Infantry
+              - Corelum Chief Sentinel
+      - id: wave-2-first-aggression-wave
+        trigger:
+          on: other
+          text: "Wave #2 (first aggression wave)"
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Sentry
+            names:
+              - Serpentis Heavy Missile Battery
+      - id: wave-3-50-armor-wave
+        trigger:
+          on: other
+          text: "Wave #3 (50% armor wave)"
+          confidence: inferred
+        spawns:
+          - count: 0-3
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Defender
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 3-4
+            class: Cruiser
+            names:
+              - Corelum Chief Infantry
+              - Corelum Chief Protector
+              - Corelum Chief Sentinel
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Guard
+              - Corelum Guardian Chief SafeGuard
+            ewar:
+              - kind: sensorDamp
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Corelatis Captain
+              - Corelatis Platoon Leader
+      - id: wave-4-25-armor-wave
+        trigger:
+          on: other
+          text: "Wave #4 (25% armor wave)"
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Destroyer
+            names:
+              - Corelior Soldier
+              - Corelior Infantry
+              - Corelior Cannoneer
+              - Corelior Atillery
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Corelatis Captain Sentry
+              - Corelatis High Captain
+      - id: wave-5-0-armor-wave
+        trigger:
+          on: other
+          text: "Wave #5 (0% armor wave)"
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Defender
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corelior Sentinel
+              - Corelior Artillery
+              - Corelior Cannoneer
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Guard
+              - Corelum Guardian Chief SafeGuard
+            ewar:
+              - kind: sensorDamp
+      - id: wave-6-structure-death
+        trigger:
+          on: other
+          text: "Wave #6 (structure death)"
+          confidence: inferred
+        spawns:
+          - count: 3-5
+            class: Frigate
+            names:
+              - Guardian Veteran
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: Point unconfirmed
+          - count: "1"
+            class: Storyline Mission Cruiser
+            names:
+              - Marin Matola
+            drop: Can contain Corelum C-Type modules
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corelatis Squad
+              - Corelatis Platoon Leader
+sde:
+  dungeonIds:
+    - 1760

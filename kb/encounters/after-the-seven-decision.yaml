@@ -1,0 +1,59 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: after-the-seven-decision
+kind: mission
+name: After The Seven - "Decision"
+level: 1
+enemyFaction: Serpentis & Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – After The Seven - "Decision"
+    url: https://wiki.eveuniversity.org/After_The_Seven_-_%22Decision%22
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "230798"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Deal with Locced
+notes:
+  - text: This mission is issued by a Security division agent and is part 5 of the 5 part mission chain After The Seven
+  - text: Upon warp-in, Locced (Destroyer) will be within 20km. If you attack him, 2 extra Guristas frigates will spawn at 25km. There is also a bribe container . If you approach the cargo container Locced will despawn. If you attack Locced the cargo container will despawn.
+  - text: Kill Locced or open the cargo container to complete the mission.
+  - text: "Locced's Message: I'm glad you got my message. Implanting triggered responses into the minds of our former captives is the easy part; the hard part is figuring out what to do with nosy capsuleers that interfere with our operation. Listen, we're both capsuleers, so there's really no point in dueling out here in the middle of space, is there? Here's my offer: If you head over to those asteroids, you'll find a cargo container with some valuable odds and ends inside. You don't have to tell anyone where you got them."
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: "When attacking Locced - Locced's message: I had hoped you where smarter than that. Let’s waste some time and resources then. Here we go, boys!"
+      - text: "When taking the container - Locced's message: Good Capsuleer."
+      - text: "Agent after completion: What am I, your receptionist? Here's another message from that hostage you rescued: “Trustworthy Capsuleer, It's going to take Locced quite a while to replace that ship. Well done, and thank you again for all of your efforts against The Seven.”"
+      - text: Previous mission
+    waves:
+      - id: initial-on-grid
+        trigger:
+          on: warpIn
+          text: Initial on grid
+        spawns:
+          - count: "1"
+            class: Destroyer
+            names:
+              - Locced
+            triggers: Reinforcement and message on damage
+          - count: "?"
+            class: Container
+            names:
+              - Locced's Bribe
+            drop: Scrap Metal/Small Hybrid Blaster
+      - id: reinforcements-only-when-attacking-locced
+        trigger:
+          on: other
+          text: Reinforcements (Only when attacking Locced)
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Frigate
+            names:
+              - Pithi Invader
+              - Pithi Infiltrator

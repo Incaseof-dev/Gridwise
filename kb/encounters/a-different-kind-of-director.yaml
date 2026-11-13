@@ -1,0 +1,24 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: a-different-kind-of-director
+kind: mission
+name: A Different Kind of Director
+level: 4
+enemyFaction: null
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – A Different Kind of Director
+    url: https://wiki.eveuniversity.org/A_Different_Kind_of_Director
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "206466"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Report to Eron Viette
+notes:
+  - text: Accept the Mission remotely.
+  - text: Report to Eron Viette nine jumps away in Stetille II - Impetus Publisher.
+  - text: "Tips: You only need to run one encounter mission for this agent before moving to the next chapter hub, it may not be worth moving everything here just for this one mission."

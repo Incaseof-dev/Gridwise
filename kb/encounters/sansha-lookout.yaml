@@ -1,0 +1,179 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: sansha-lookout
+kind: complex
+name: Sansha Lookout
+dedRating: null
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Sansha Lookout
+    url: https://wiki.eveuniversity.org/Sansha_Lookout
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "230821"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Battlecruisers"
+notes:
+  - text: "Escalation: This site can escalate to Slave Breeding Plants."
+pockets:
+  - name: First Room
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Centii Ravener
+              - Centii Scavenger
+            group: 25-30 km away by Radio Telescope, autoaggro
+          - count: 3-4
+            class: Frigate
+            names:
+              - Centii Butcher
+              - Centii Enslaver
+              - Centii Manslayer
+            group: 40 km away, by Ruined Drill
+          - count: 4-5
+            class: Frigate
+            names:
+              - Centii Minion
+              - Centii Servant
+              - Centii Enslaver
+              - Centii Plague
+            group: 50-60 km away, right of acceleration gate
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Destroyer
+            names:
+              - Centior Misshape
+            group: 50-60 km away, right of acceleration gate
+          - count: "1"
+            class: Sentry
+            names:
+              - Sansha Light Missile Battery
+            group: 50-60 km away, right of acceleration gate
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: Unlocks when first room is cleared
+          - count: "1"
+            class: Structure
+            names:
+              - Communications Control Center
+          - count: "1"
+            class: Structure
+            names:
+              - Ruined Drill
+          - count: "1"
+            class: Structure
+            names:
+              - Barren Asteroid
+          - count: "1"
+            class: Structure
+            names:
+              - Clovern Red Asteroid
+          - count: "1"
+            class: Structure
+            names:
+              - Abandoned Mining Ship
+          - count: "1"
+            class: Structure
+            names:
+              - Shipyard
+          - count: "1"
+            class: Structure
+            names:
+              - Wreck
+          - count: "1"
+            class: Structure
+            names:
+              - Ruined Neon Sign
+          - count: "1"
+            class: Structure
+            names:
+              - Walkway Debris
+          - count: "1"
+            class: Structure
+            names:
+              - Snake Shaped Asteroid
+          - count: "2"
+            class: Structure
+            names:
+              - Sansha Bunker
+          - count: "2"
+            class: Structure
+            names:
+              - Fortified Shipyard
+          - count: "2"
+            class: Structure
+            names:
+              - Radio Telescope
+          - count: "3"
+            class: Structure
+            names:
+              - Frozen Corpse
+  - name: Second Room
+    notes:
+      - text: ----
+      - text: The ships are scattered around second room
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 13-15
+            class: Frigate
+            names:
+              - Centii Minion
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Cruiser
+            names:
+              - Centum Ravager
+            triggers: Triggers wave 2
+      - id: wave-2-spawn-not-guaranteed
+        trigger:
+          on: other
+          text: "Wave #2 (Spawn not guaranteed)"
+          confidence: inferred
+        spawns:
+          - count: 0-1
+            class: Commander Frigate
+            names:
+              - True Sansha's Scavenger
+              - True Sansha's Savage
+            triggers: escalation trigger
+            drop: Faction modules
+          - count: "3"
+            class: Destroyer
+            names:
+              - Centior Cannibal
+              - Centior Misshape
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Sansha Control Center
+            triggers: Escalation trigger
+sde:
+  dungeonIds:
+    - 1237

@@ -1,0 +1,158 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: intercept-the-saboteurs-amarr-level-4
+kind: mission
+name: Intercept The Saboteurs
+level: 4
+enemyFaction: Amarr Empire
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Intercept The Saboteurs (Amarr) (Level 4)
+    url: https://wiki.eveuniversity.org/Intercept_The_Saboteurs_(Amarr)_(Level_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "195553"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: neut
+  - kind: trackingDisruption
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Divine Imperial Sixtus/Imran"
+  - text: "Suggested ships: CNR"
+  - text: "Space type: Deadspace with gates"
+pockets:
+  - name: Warp-in
+    notes:
+      - text: 5x Frigates (aggro)
+      - text: 2 Imperial Templar Forian (tracking disruption)
+      - text: 1 Imperial Templar Paladin
+      - text: 1 Imperial Templar Caius
+      - text: 1 Imperial Crusader
+    waves:
+      - id: aggro
+        trigger:
+          on: other
+          text: (Aggro)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Imperial Crusader
+          - count: "1"
+            class: Frigate
+            names:
+              - Imperial Templar Paladin
+          - count: "2"
+            class: Frigate
+            names:
+              - Imperial Templar Forian
+            ewar:
+              - kind: trackingDisruption
+          - count: "1"
+            class: Cruiser
+            names:
+              - Imperial Templar Caius
+  - name: Single Pocket
+    notes:
+      - text: Looks like 3 groups. Shooting the leftmost or rightmost group aggroes that and the group in the middle.
+      - text: Slow ships, no inital aggro makes this snipable.
+      - text: Mission objective drops from the last destroyed ship (of group 2?). Not all three groups have to be destroyed for this.
+    waves:
+      - id: group-1-left
+        trigger:
+          on: other
+          text: Group 1 (Left)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Destroyer
+            names:
+              - Imperial Crusader
+          - count: "2"
+            class: Cruiser
+            names:
+              - Imperial Tamir
+          - count: "2"
+            class: Cruiser
+            names:
+              - Imperial Templar Caius
+              - Imperial Templar Muzakir
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Imperial (Templar) Avenger
+          - count: "1"
+            class: Battleship
+            names:
+              - Imperial Origen
+      - id: group-2-middle
+        trigger:
+          on: other
+          text: Group 2 (Middle)
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Imperial Templar Paladin
+          - count: "4"
+            class: Frigate
+            names:
+              - Imperial Templar Forian
+            ewar:
+              - kind: trackingDisruption
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Sixtus
+            ewar:
+              - kind: warpDisruption
+          - count: "5"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Imran
+            ewar:
+              - kind: warpDisruption
+          - count: "3"
+            class: Cruiser
+            names:
+              - Imperial Templar Mathura
+          - count: "1"
+            class: Battleship
+            names:
+              - Imperial Ultara
+          - count: "3"
+            class: Cruiser
+            names:
+              - Amarr Transport Ship
+      - id: group-3-right
+        trigger:
+          on: other
+          text: Group 3 (Right)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Imperial Templar Caius
+              - Imperial Templar Muzakir
+          - count: "1"
+            class: Cruiser
+            names:
+              - Imperial Tamir
+            ewar:
+              - kind: neut
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Imperial (Templar) Avenger
+          - count: "1"
+            class: Battleship
+            names:
+              - Imperial Bataivah

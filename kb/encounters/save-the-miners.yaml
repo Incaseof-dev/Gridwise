@@ -1,0 +1,74 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: save-the-miners
+kind: mission
+name: Save the Miners
+level: 3
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Save the Miners
+    url: https://wiki.eveuniversity.org/Save_the_Miners
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191901"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: sensorDamp
+notes:
+  - text: "Suggested ships: Hurricane, Ferox"
+  - text: Space type Deadspace with gates
+pockets:
+  - name: Warp-in
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 3-6
+            class: Cruiser
+            names:
+              - Gallente Privateer
+  - name: Pocket 1
+    waves:
+      - id: spawn-1
+        trigger:
+          on: other
+          text: Spawn 1
+          confidence: inferred
+        spawns:
+          - count: 3-6
+            class: Cruiser
+            names:
+              - Gallente Privateer Leader
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Gallente Privateer
+            triggers: Final kill of these is trigger for second spawn.
+      - id: spawn-2
+        trigger:
+          on: other
+          text: Spawn 2
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Cruiser
+            names:
+              - Gallente Privateer
+            triggers: Final kill is trigger.
+            drop: Mission objective in final kill.
+      - id: spawn-3
+        trigger:
+          on: other
+          text: Spawn 3
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Gallente Privateer

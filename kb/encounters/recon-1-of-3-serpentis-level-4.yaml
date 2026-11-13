@@ -1,0 +1,134 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: recon-1-of-3-serpentis-level-4
+kind: mission
+name: Recon (1 of 3)
+level: 4
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Recon (1 of 3) (Serpentis) (Level 4)
+    url: https://wiki.eveuniversity.org/Recon_(1_of_3)_(Serpentis)_(Level_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231450"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Recon the area
+ewar:
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite frigates"
+  - text: "Suggested ships: Frigate (blitz), Battleship (clear)"
+  - text: "Parts: 1 of 3 (Serpentis), 1 of 3 (Blood Raiders), 1 of 3 (Guristas Pirates), 1 of 3 (Sansha's Nation), 1 of 3 (Angel Cartel), 2 of 3, 3 of 3"
+  - text: Part 2 and part 3 are the same for all factions.
+  - text: No Hostiles at initial gate. Acceleration gate to next pocket is 25km from warp in.
+  - text: The gates are not locked, so you can blitz this mission without a single kill.
+  - text: Spawns are time based, 1 minute interval between spawns.
+  - text: Heavy long range dampening in the second room, you may want to fit an extra Sensor Booster or Signal Amplifier.
+  - text: "Blitz: Use a fast frigate, take the acceleration gate and return to agent."
+pockets:
+  - name: 1st Pocket
+    waves:
+      - id: 1st-spawn-20-40-km
+        trigger:
+          on: other
+          text: 1st Spawn (20-40 km)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Guard
+            ewar:
+              - kind: sensorDamp
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Corelatis Captain Sentry
+          - count: "1"
+            class: Battleship
+            names:
+              - Core Grand Admiral
+      - id: 2nd-spawn-17-32-km
+        trigger:
+          on: other
+          text: 2nd Spawn (17-32 km)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Infantry
+          - count: "1"
+            class: Battleship
+            names:
+              - Core Lord Admiral
+      - id: 3rd-spawn-18-34-km
+        trigger:
+          on: other
+          text: 3rd Spawn (18-34 km)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief
+            ewar:
+              - kind: sensorDamp
+          - count: "2"
+            class: Battleship
+            names:
+              - Core Lord Admiral
+      - id: 4th-spawn-18-34-km
+        trigger:
+          on: other
+          text: 4th Spawn (18-34 km)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Infantry
+          - count: "2"
+            class: Battleship
+            names:
+              - Core Lord Admiral, Grand Admiral
+  - name: 2nd Pocket
+    waves:
+      - id: 1st-spawn-35-36-km
+        trigger:
+          on: other
+          text: 1st Spawn (35-36 km)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Patroller, Watchman
+            ewar:
+              - kind: sensorDamp
+          - count: "2"
+            class: Battleship
+            names:
+              - Core Admiral, High Admiral
+      - id: 2nd-spawn-29-42-km
+        trigger:
+          on: other
+          text: 2nd Spawn (29-42 km)
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Coreli Guardian Initiate, Agent, Scout, Spy
+            ewar:
+              - kind: web
+          - count: "3"
+            class: Battleship
+            names:
+              - Core Admiral, High Admiral

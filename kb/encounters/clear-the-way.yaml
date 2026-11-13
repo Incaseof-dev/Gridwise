@@ -1,0 +1,70 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: clear-the-way
+kind: mission
+name: Clear the Way
+level: null
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Clear the Way
+    url: https://wiki.eveuniversity.org/Clear_the_Way
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "229750"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Drive off the Guristas raiders
+restrictions:
+  - text: "Ship size limit: T3 destroyers and below"
+notes:
+  - text: "Relics of Past Greatness: The Jove left Curse behind long ago. Their ruins in the form of stations and forgotten outposts. Centuries later the Angel Cartel moved. The Angels have managed to scavenge a good deal of information from these Jovian relics. This is most obviously reflected in Angel ships, which bear striking designs and unique capabilities. But the Cartel has yet to understand more than a fraction of the old Jovian technologies. Even the Serpentis, whose research capabilities surpass the Cartel's by leaps and bounds, have great difficulty even understanding the principles of Jovian engineering."
+  - text: Single gated deadspace pocket. Initial defenders and all subsequent waves will be roughly 30 km away from warp-in.
+  - text: The mission can be completed and the next mission accepted remotely.
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: After wave 2 is cleared you'll receive a completion message from the agent and a friendly Angel Recovery Team hauler will spawn in. This is purely cosmetic and you can complete the mission immediately.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Destructor
+              - Dire Pithi Wrecker
+          - count: "1"
+            class: Destroyer
+            names:
+              - Pithior Nihilist
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Pithi Demolisher
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Pithi Destructor
+            note: type list incomplete on the source page
+          - count: 2-3
+            class: Destroyer
+            names:
+              - Pithior Guerilla

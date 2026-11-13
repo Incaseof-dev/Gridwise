@@ -1,0 +1,42 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: fair-play-more-bark
+kind: mission
+name: Fair Play - More Bark
+level: 1
+enemyFaction: Mercenaries
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Fair Play - More Bark
+    url: https://wiki.eveuniversity.org/Fair_Play_-_More_Bark
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223304"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Defend our miner from the pirate.
+notes:
+  - text: This mission is part 2 of the mission chain Fair Play
+  - text: Single pocket, no gate.
+  - text: "Walkthrough: When you warp in there is a Mercenary Fighter and a neutral industrial ship."
+  - text: "Walkthrough: As you approach them (within around 20km) the pirate destroys the industrial ship and starts to aggress you."
+  - text: "Walkthrough: Destroy the pirate to complete the mission."
+  - text: Pop-up when starting to warp to the location
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: "Agent's comments on completion of mission:"
+      - text: '"Drat. Ah well. Miners are an ISK a dozen. At least you took the pirate out."'
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Mercenary Fighter

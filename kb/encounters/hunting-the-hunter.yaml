@@ -1,0 +1,177 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: hunting-the-hunter
+kind: mission
+name: Hunting the Hunter
+level: null
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Hunting the Hunter
+    url: https://wiki.eveuniversity.org/Hunting_the_Hunter
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231008"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Retrieve 1 x Rahsa, Sansha Commander (1.0 m3)
+ewar:
+  - kind: neut
+  - kind: trackingDisruption
+notes:
+  - text: 3% Sansha's Nation standing loss for destroying the Battletower
+  - text: thumb
+  - text: Progress through the rooms and obtain 1 x Rahsa, Sansha Commander (1.0 m3). To unlock the gate in Room 1, destroy the Sansha Battletower.
+  - text: "Blitz: Clear the warpin. In first room kill enough ships for your tank to sustain the incoming DPS. Do not trigger the additional spawns and blow up the structure. Proceed to last room, destroy the commander and grab Rahsa, Sansha Commander from the wreck."
+pockets:
+  - name: Acceleration Gate Entrance
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "6"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Fiend
+              - Centum Loyal Hellhound
+          - count: "3"
+            class: Battleship
+            names:
+              - Centus Dark Lord
+              - Centus Dread Lord
+          - count: "6"
+            class: Sentry
+            names:
+              - Sansha Heavy Missile Battery
+            note: Mjolnir missiles (EM)
+  - name: Room 1
+    notes:
+      - text: Sansha's Battletower has ~175k HP. It seems to self-destruct and unlock the gate once it reaches ~30% armor.
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Savage
+              - Centii Loyal Slavehunter
+            ewar:
+              - kind: trackingDisruption
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Centatis Devil
+              - Centatis Daemon
+            triggers: Last ship destroyed triggers Wave 1
+          - count: "4"
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Dread Lord
+            triggers: Last ship destroyed triggers Wave 2
+          - count: "1"
+            class: Sentry
+            names:
+              - Sansha Energy Neutralizer Sentry I
+            ewar:
+              - kind: neut
+            note: 100km range
+          - count: "2"
+            class: Sentry
+            names:
+              - Tower Sentry Sansha III
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Mutilator
+              - Centum Loyal Torturer
+            group: Far group +100 km
+          - count: "3"
+            class: Battleship
+            names:
+              - Centus Beast Lord
+              - Centus Savage Lord
+              - Centus Overlord
+            group: Far group +100 km
+            ewar:
+              - kind: trackingDisruption
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Execrator
+              - Centum Loyal Slaughterer
+            ewar:
+              - kind: trackingDisruption
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Plague
+              - Centii Loyal Butcher
+          - count: "3"
+            class: Battleship
+            names:
+              - Centus Beast Lord
+              - Centus Plague Lord
+            ewar:
+              - kind: trackingDisruption
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: Locked until the battletower is destroyed.
+          - count: "1"
+            class: Structure
+            names:
+              - Sansha's Battletower
+            drop: T1 ammo and modules.
+            note: Destroying unlocks the Acceleration Gate
+  - name: Room 2
+    notes:
+      - text: Destroying Rahsa's Battleship completes the mission objective. Don't forget to grab the commander from the wreck.
+      - text: "Message from Rahsa:: Well, you're quite the formidable one, aren't you? I have a proposal for you. When you report back to your agent, tell him that you've destroyed my forces, and that I should be executed. Yes, I'm a capsuleer too, but he doesn't need to know that. Do this and I'll make sure you get introduced to one of my friends. The Nation treats its friends well."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Battleship
+            names:
+              - Rahsa's Battleship
+            drop: 1x Rahsa, Sansha Commander
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Rahsa's Habitation Module
+            drop: Basic trade goods

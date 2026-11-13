@@ -1,0 +1,142 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: gurista-outpost
+kind: complex
+name: Guristas Outpost
+dedRating: null
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Gurista Outpost
+    url: https://wiki.eveuniversity.org/Gurista_Outpost
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "227329"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: This combat site is an unrated complex which can be found in Low-sec through exploration.
+  - text: You can do first pocket in Assault Frigate with ~200DPS, orbiting at 10km. Second pocket is same except you need to manually control your range due to large asteroid in center of complex.
+  - text: "Escalation: This site has a chance to escalate to Gurista Productions Shipment."
+  - text: "Escalation: Expeditions: Gurista Productions Shipment: As the bits and pieces from the disintegrated station charge into space, carrying the news of heightened entropy in the universe, your instruments receive an unusual message. It's obviously being transmitted from the Guristas and even though the person on the other end does not introduce himself as such, the special cypher reveals it is indeed theirs. He demands speaking over a secure channel and after you have established one, he continues with sarcastic congratulations on your victory. He then gives you an offer: If you travel to three different locations as he instructs and assassinate the Guristas leaders operating there, he will reward you handsomely. He then gives you coordinates to a location in a \"take it or leave it\" manner before bidding you farewell and adds that he will contact you after the first target is destroyed."
+pockets:
+  - name: First Pocket
+    notes:
+      - text: Destroy all hostiles, advance to the next pocket.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Pithi Demolisher
+              - Pithi Destructor
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Imputor
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 4-8
+            class: Destroyer
+            names:
+              - Pithior Renegate
+              - Pithior Terrorist
+              - Pithior Nihilist
+          - count: 3-4
+            class: Cruiser
+            names:
+              - Pithum Abolisher
+              - Pithum Eraser
+          - count: 2-3
+            class: Battlecruiser
+            names:
+              - Pithatis Abolisher
+              - Pithatis Eraser
+              - Pithatis Revolter
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: Locked until all ships are destroyed
+  - name: Second Pocket
+    notes:
+      - text: Destroy all battlecruisers, if spawned destroy commander and loot it. Also destroy Guristas Bunker for possible escalation.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Pithi Plunderer
+              - Pithi Wrecker
+          - count: "6"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Arrogator
+              - Dire Pithi Demolisher
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "4"
+            class: Destroyer
+            names:
+              - Pithior Renegate
+              - Pithior Suprematist
+          - count: "4"
+            class: Cruiser
+            names:
+              - Pithum Annihilator
+              - Pithum Nullifier
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Pithatis Enforcer
+              - Pithatis Revolter
+            triggers: Trigger for commander wave
+      - id: commander-wave
+        trigger:
+          on: other
+          text: Commander wave
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Pithi Plunderer
+              - Pithi Wrecker
+          - count: 0-1
+            class: Cruiser
+            names:
+              - Dread Guristas Annihilator
+              - Dread Guristas Mortifer
+            triggers: Trigger for possible escalation
+            drop: Possible Dread Guristas modules
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "4"
+            class: Structure
+            names:
+              - Guristas Bunker
+          - count: "1"
+            class: Structure
+            names:
+              - Guristas Control Center
+            triggers: Possible escalation trigger

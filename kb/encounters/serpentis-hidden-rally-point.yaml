@@ -1,0 +1,149 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: serpentis-hidden-rally-point
+kind: anomaly
+name: Serpentis Hidden Rally Point
+dedRating: null
+anomalyClass: 6
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Serpentis Hidden Rally Point
+    url: https://wiki.eveuniversity.org/Serpentis_Hidden_Rally_Point
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225147"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: The site is an open deadspace pocket that can be warped to at any range. It consists of a rock formation inside a cloud, with the Serpentis rats spawning around it.
+lootNotes:
+  - text: "Bounty: ~21.000.000 ISK."
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "5"
+            class: Destroyer
+            names:
+              - Corelior Sentinel
+              - Corelior Cannoneer
+          - count: "6"
+            class: Cruiser
+            names:
+              - Corelum Chief Defender
+              - Corelum Chief Protector
+            triggers: Last trigger next wave
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corelatis Captain Sentry
+              - Corelatis Squad Leader
+              - Corelatis High Captain
+          - count: "4"
+            class: Battleship
+            names:
+              - Core Grand
+              - Core Lord Admiral
+      - id: 1-wave
+        trigger:
+          on: other
+          text: 1° Wave
+          confidence: inferred
+        spawns:
+          - count: 2-4
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Scout
+              - Coreli Guardian Spy
+              - Coreli Guardian Agent
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "6"
+            class: Cruiser
+            names:
+              - Core Chief Protector
+              - Core Chief Defender
+          - count: "7"
+            class: Battlecruiser
+            names:
+              - Corelatis Captain
+              - Corelatis Captain Sentry
+            triggers: Last trigger next wave
+          - count: "3"
+            class: Battleship
+            names:
+              - Core Baron
+              - Core Commodore
+      - id: 2-wave
+        trigger:
+          on: other
+          text: 2° Wave
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Cruiser
+            names:
+              - Core Chief Infantry
+              - Core Chief Sentinel
+          - count: "7"
+            class: Battlecruiser
+            names:
+              - Corelatis Captain Sentry
+              - Corelatis High Captain
+            triggers: Last trigger next wave
+      - id: 3-wave
+        trigger:
+          on: other
+          text: 3° Wave
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Patroller
+              - Coreli Guardian Watchman
+            ewar:
+              - kind: sensorDamp
+          - count: "5"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Defender
+              - Corelum Guardian Chief Protector
+            triggers: Last trigger next wave
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Corelatis Captain Sentry
+              - Corelatis High Captain
+          - count: "2"
+            class: Battleship
+            names:
+              - Core Flotilla Admiral
+            ewar:
+              - kind: sensorDamp
+      - id: 4-wave
+        trigger:
+          on: other
+          text: 4° Wave
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Sentinel
+          - count: "8"
+            class: Battleship
+            names:
+              - Corelatis High Admiral
+              - Grand Admiral
+sde:
+  dungeonIds:
+    - 3515

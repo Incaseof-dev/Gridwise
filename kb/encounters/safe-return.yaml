@@ -1,0 +1,75 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: safe-return
+kind: mission
+name: Safe Return
+level: 4
+enemyFaction: The Syndicate
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Safe Return
+    url: https://wiki.eveuniversity.org/Safe_Return
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "230828"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: You're giving Ralie Ardanne back to the authorities.
+ewar:
+  - kind: neut
+  - kind: sensorDamp
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite Frigates"
+  - text: "Suggested ships: Fast ship"
+  - text: Ungated semi-deadspace pocket 9 jumps away.
+  - text: "Blitz: place Ralie Ardanne into the Senator Pillius Ardanne Container."
+  - text: "Tips: There is no need to engage the enemy ships"
+  - text: "Tips: You can use fast frigate for this mission, as you will need to come back to the agent for reward."
+  - text: "Tips: Enemies spawn after you place the item in the container, align to warp out first"
+  - text: "Tips: Consider fitting a few passive tanking modules to minimize the risk of being alpha'd off the field by the battleships. They spawn well within their optimal range (56 km) and will lock you quite fast."
+pockets:
+  - name: Warp-in
+    notes:
+      - text: "Do You Have My Boy?: Ralie? Are you ok? Did they hurt you? Thank you for your help, kind stranger. You have done a great service to the Gallente Federation. As a token of my appreciation, I have left a gift for you with your agent."
+      - text: "Let No One Live!: You have not seen the last of us, Senator. Your family is not safe as long as you are in power. We will hound you until every last one of them suffers. You will pay for what you have done to our organization. And we’ll start by destroying this happy reunion! This will never end, Senator Ardanne. Never."
+    waves:
+      - id: structures-5-km
+        trigger:
+          on: other
+          text: Structures (5 km)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Container
+            names:
+              - Senator Pillius Ardanne
+            triggers: Completes the Mission and spawns Syndicate Ships
+      - id: syndicate-ships-40-km-from-container
+        trigger:
+          on: other
+          text: Syndicate Ships (40 km from container)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Syndicate Elite Frigate
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Syndicate Elite Cruiser
+            ewar:
+              - kind: neut
+              - kind: sensorDamp
+          - count: "7"
+            class: Battleship
+            names:
+              - Syndicate Battleship

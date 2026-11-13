@@ -1,0 +1,83 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: whats-in-a-name-1-of-5
+kind: mission
+name: What's In a Name (1 of 5)
+level: 1
+enemyFaction: Rogue Drones & Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – What's In a Name (1 of 5)
+    url: https://wiki.eveuniversity.org/What's_In_a_Name_(1_of_5)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223307"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Give the diplomats enough time to evacuate. Engage any hostiles.
+notes:
+  - text: "Suggested ships: Destroyer"
+  - text: "Video: Corax"
+  - text: "Next: What's In a Name (2 of 5)"
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: No rats on warp-in.
+      - text: All the rats spawn in at around 6-10km
+    waves:
+      - id: group-1-auto-aggro
+        trigger:
+          on: other
+          text: Group 1 (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Drone
+            names:
+              - Belphegor Apis
+          - count: "2"
+            class: Frigate
+            names:
+              - Infester Alvi
+      - id: group-2-auto-aggro
+        trigger:
+          on: other
+          text: Group 2 (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Drone
+            names:
+              - Belphegor
+              - Mammon Apis
+          - count: "2"
+            class: Frigate
+            names:
+              - Infester Alvi
+      - id: group-3-auto-aggro
+        trigger:
+          on: other
+          text: Group 3 (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Drone
+            names:
+              - Belphegor Apis
+          - count: "1"
+            class: Frigate
+            names:
+              - Infester Alvi
+      - id: group-4-auto-aggro
+        trigger:
+          on: other
+          text: Group 4 (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Gallente Nationalist

@@ -1,0 +1,55 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: father-and-son
+kind: mission
+name: Father And Son
+level: 3
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Father And Son
+    url: https://wiki.eveuniversity.org/Father_And_Son
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191694"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: sensorDamp
+notes:
+  - text: "Suggested ships: Cruiser, Battlecruiser"
+  - text: "Blitz: Destroy the Sector Commander, then warp out."
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: initial-group-45km-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group, 45km (auto-aggro)
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Federation Praktor Belos
+              - Federation Praktor Harpago
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Federation Praktor Diablic
+            triggers: Reinforcement
+      - id: reinforcement-45km-auto-aggro
+        trigger:
+          on: other
+          text: Reinforcement, 45km (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Cruiser
+            names:
+              - Elite Federation Liburna
+              - Elite Federation Mentes
+              - Elite Federation Calo
+            ewar:
+              - kind: sensorDamp

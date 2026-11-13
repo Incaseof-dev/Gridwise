@@ -1,0 +1,113 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: preaching-to-the-masses
+kind: mission
+name: Preaching to the Masses
+level: 5
+enemyFaction: Amarr Empire
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Preaching to the Masses
+    url: https://wiki.eveuniversity.org/Preaching_to_the_Masses
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "198339"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: web
+  - kind: neut
+  - kind: trackingDisruption
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: All Frigates"
+  - text: "Suggested ships: (1) Maelstrom w/ Passive Tank and (1) Maelstrom w/ Shield Transporters"
+  - text: "Space type: Deadspace with Gate"
+npcs:
+  Amarr Energy Neutralizer Sentry III:
+    sdeTypes:
+      - Both respawn once!
+    class: Sentry
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: Initial Group at warp-in
+      - text: Destroy Broadcast Station (150,000HP)
+      - text: "Tips: Use a Passive Tank and save time by not having to destroy Energy Neutralizer Sentries which re-spawn themselves if destroyed"
+      - text: "Tips: Or plan a capacitor that receives an additional 80 units/s"
+      - text: "Tips: Maximum damage dealing of initial group is 1981 hp/s (EM 58%, Therm 42%)"
+      - text: "Tips: Mission flagged complete when the Broadcast Station is destroyed"
+    waves:
+      - id: initial-group-35-85km-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group (35-85km, Auto aggro)
+        spawns:
+          - count: "10"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Nabih
+              - Divine Imperial Paladin
+              - Divine Imperial Valok
+              - Divine Imperial Bahir*
+            ewar:
+              - kind: web
+              - kind: trackingDisruption
+            triggers: Triggers reinforcement
+            note: Orbits of 4-16km - *Bahir does Tracking Disrupter
+          - count: "12"
+            class: Battleship
+            names:
+              - Imperial Templar Dominator
+              - Imperial Templar Martyr
+              - Imperial Templar Ultara
+            note: Orbits of 17-49km
+          - count: "2"
+            class: Sentry
+            names:
+              - Amarr Energy Neutralizer Sentry III
+            ewar:
+              - kind: neut
+          - count: "2"
+            class: Sentry
+            names:
+              - Amarr Stasis Towers
+            ewar:
+              - kind: web
+          - count: "5"
+            class: Sentry
+            names:
+              - Amarr Cruise Missile Battery
+          - count: "4"
+            class: Sentry
+            names:
+              - Tower Sentry Amarr III
+      - id: reinforcement
+        trigger:
+          on: other
+          text: Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Imran
+            note: Orbits at 4km
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Napat
+            ewar:
+              - kind: trackingDisruption
+            note: Orbits at 10km
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Divine Imperial Wrath
+              - Divine Imperial Tamir
+            ewar:
+              - kind: trackingDisruption
+              - kind: neut
+            note: Orbits of 7-19km

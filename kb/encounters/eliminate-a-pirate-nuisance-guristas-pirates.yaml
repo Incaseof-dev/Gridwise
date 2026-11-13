@@ -1,0 +1,39 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: eliminate-a-pirate-nuisance-guristas-pirates
+kind: mission
+name: Eliminate a Pirate Nuisance
+level: 1
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Eliminate a Pirate Nuisance (Guristas Pirates)
+    url: https://wiki.eveuniversity.org/Eliminate_a_Pirate_Nuisance_(Guristas_Pirates)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191669"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Eliminate the pirates causing the nuisance
+notes:
+  - text: "Suggested ships: Frigate"
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: initial-group-45km-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group, 45km (auto-aggro)
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Pithi Imputor
+          - count: "1"
+            class: Structure
+            names:
+              - Low-Tech Energy Harvester
+            drop: Drops T1 ammo/commodities

@@ -1,0 +1,84 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: pirate-business-amarr
+kind: mission
+name: Pirate Business
+level: 4
+enemyFaction: Amarr Empire
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Pirate Business (Amarr)
+    url: https://wiki.eveuniversity.org/Pirate_Business_(Amarr)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191829"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the convoy and return with the cargo(10 holoreels 5.0m³) to me(.. the agent). Be careful it will be guarded.
+ewar:
+  - kind: trackingDisruption
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Unknown"
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: 4 groups at 60km or more from the warp in. Each group can be aggroed separately, aggroing the closest group aggroes all groups
+    waves:
+      - id: unknown-groupings
+        trigger:
+          on: other
+          text: Unknown groupings
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Imperial Matendi
+          - count: "2"
+            class: Frigate
+            names:
+              - Imperial Forian
+            ewar:
+              - kind: trackingDisruption
+          - count: "2"
+            class: Frigate
+            names:
+              - Imperial Sixtus
+          - count: "7"
+            class: Cruiser
+            names:
+              - Imperial Templar Mathura
+          - count: "3"
+            class: Cruiser
+            names:
+              - Imperial Templar Agatho
+          - count: "3"
+            class: Cruiser
+            names:
+              - Imperial Agatho
+            ewar:
+              - kind: trackingDisruption
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Imperial Avenger
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Imperial Equalizer
+          - count: "1"
+            class: Battleship
+            names:
+              - Imperial Bataivah
+          - count: "4"
+            class: Battleship
+            names:
+              - Imperial Origen
+  - name: Pocket 2
+    notes:
+      - text: 4 groups

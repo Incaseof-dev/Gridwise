@@ -1,0 +1,104 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: rogue-drone-harassment-level-1
+kind: mission
+name: Rogue Drone Harassment
+level: 1
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Rogue Drone Harassment (Level 1)
+    url: https://wiki.eveuniversity.org/Rogue_Drone_Harassment_(Level_1)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "230493"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the Rogue Drones and then report back to your agent.
+notes:
+  - text: "Suggested ships: Frigate"
+  - text: This mission can be viewed by clicking here. (Rifter GamePlay)
+  - text: "Blitz: In Pocket 2, kill the initial forces and get out"
+  - text: Mission completes upon pocket 2 initial forces destruction.
+pockets:
+  - name: Warpin
+    notes:
+      - text: No opposing forces on grid. Just the acceleration gate.
+  - name: Pocket 1
+    notes:
+      - text: The 3 groups can be separately handled.
+      - text: Reinforcements are triggered by the destruction of the last ship of the initial forces.
+    waves:
+      - id: initial-forces-on-grid
+        trigger:
+          on: warpIn
+          text: Initial forces on grid
+        spawns:
+          - count: 2-3
+            class: Drone
+            names:
+              - Belphegor
+              - Mammon Apis
+            group: Group A (25km), 4-5 vessels
+          - count: 1-2
+            class: Frigate
+            names:
+              - Infester Alvi
+            group: Group A (25km), 4-5 vessels
+          - count: 1-5
+            class: Drone
+            names:
+              - Belphegor
+              - Mammon Apis
+            group: Group B (25km), 4-5 vessels
+          - count: 0-3
+            class: Frigate
+            names:
+              - Infester Alvi
+            group: Group B (25km), 4-5 vessels
+          - count: "3"
+            class: Frigate
+            names:
+              - Infester
+              - Splinter Alvi
+            group: Group C (45km)
+      - id: reinforcement
+        trigger:
+          on: other
+          text: Reinforcement
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Render
+              - Decimator Alvi
+  - name: Pocket 2
+    waves:
+      - id: initial-forces-20km
+        trigger:
+          on: warpIn
+          text: Initial forces (20km)
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Infester
+              - Splinter
+              - Render Alvi
+            triggers: Destruction of the last ship triggers Reinforcement
+            note: Elimination of this group leads to completing the mission objective
+      - id: reinforcement-20km
+        trigger:
+          on: other
+          text: Reinforcement (20km)
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Sunder
+              - Raider Alvi

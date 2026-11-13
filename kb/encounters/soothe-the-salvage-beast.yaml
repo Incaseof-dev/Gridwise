@@ -1,0 +1,128 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: soothe-the-salvage-beast
+kind: mission
+name: Soothe The Salvage Beast
+level: 4
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Soothe The Salvage Beast
+    url: https://wiki.eveuniversity.org/Soothe_The_Salvage_Beast
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "205197"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal: []
+  resist:
+    - em
+    - thermal
+    - kinetic
+    - explosive
+objectives:
+  - text: Retrieve 3x Datacore and kill everything
+notes:
+  - text: "Suggested ships: Battleship"
+  - text: Single ungated pocket. You must loot a datacore from each of the three science vessels and destroy all rogue drones. There are two initial groups of NPCs that aggro right away. The other NPCs are triggered when you get close to the science vessels.
+  - text: "Note: Science vessels can be looted (not salvaged) but cannot be tracked."
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: thumb|Initial placement
+      - text: "Total Bounties: About 16M ISK (23rd of March 2021)."
+      - text: "Loot: Drone rats don't drop any loot, salvaging all the ships is worth about 1.5M ISK."
+      - text: "Noteworthy: This mission gave a standings gain of 2.25 for the corporation I was doing it for (Core Complexion) and a derived gain of 0.9 for the major faction (Minmatar Republic) at Social IV."
+    waves:
+      - id: initial-spawn
+        trigger:
+          on: warpIn
+          text: "Initial Spawn:"
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Render
+              - Decimator Alvi
+            group: Auto Aggro (30km away from warp in)
+          - count: "2"
+            class: Battleship
+            names:
+              - Patriarch Alvus
+            group: Auto Aggro (30km away from warp in)
+          - count: "1"
+            class: Cruiser
+            names:
+              - Bomber Alvum
+            group: Auto Agro (50km away from warp in)
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Defeater Alvatis
+            group: Auto Agro (50km away from warp in)
+          - count: "3"
+            class: Battleship
+            names:
+              - Matriarch Alvus
+              - Alvus Queen
+            group: Auto Agro (50km away from warp in)
+            note: Deals massive thermal damage
+      - id: top-science-vessel-spawn-on-proximity
+        trigger:
+          on: other
+          text: Top Science Vessel (spawn on proximity)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Viral Infector Alvum
+          - count: "3"
+            class: Battleship
+            names:
+              - Alvus Queen
+              - Matriarch Alvus
+      - id: left-science-vessel-spawn-on-proximity
+        trigger:
+          on: other
+          text: Left Science Vessel (spawn on proximity)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Crippler Alvatis
+          - count: "3"
+            class: Battleship
+            names:
+              - Patriarch Alvus
+              - Alvus Creator
+      - id: bottom-science-vessel-spawn-on-proximity
+        trigger:
+          on: other
+          text: Bottom Science Vessel (spawn on proximity)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Crippler Alvatis
+          - count: "3"
+            class: Battleship
+            names:
+              - Patriarch Alvus
+              - Alvus Creator
+      - id: cargo-container
+        trigger:
+          on: other
+          text: Cargo container
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Container
+            names:
+              - Science Vessel Wreck
+            drop: 1x Mission objective datacore, 1x Janitor, 3x Scientists

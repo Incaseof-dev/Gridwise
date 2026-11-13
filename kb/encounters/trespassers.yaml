@@ -1,0 +1,62 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: trespassers
+kind: mission
+name: Trespassers
+level: 3
+enemyFaction: Minmatar Republic
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Trespassers
+    url: https://wiki.eveuniversity.org/Trespassers
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "208709"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy Minmatar ships
+ewar:
+  - kind: web
+notes:
+  - text: "Suggested ships: Battlecruiser"
+  - text: This mission is the first mission of a 2 part mission chain. The other mission is Revenge Attack.
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: No aggro on warp-in.
+      - text: "Next: Revenge Attack"
+    waves:
+      - id: group-1-25km
+        trigger:
+          on: other
+          text: Group 1, 25km
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Republic Fleet D-1 Support Frigate
+            ewar:
+              - kind: web
+          - count: "3"
+            class: Frigate
+            names:
+              - Republic Fleet Soldier
+          - count: "3"
+            class: Cruiser
+            names:
+              - Republic Fleet Officer
+            note: RF Officers appear as frigates, but have cruiser stats.
+      - id: group-2-55km
+        trigger:
+          on: other
+          text: Group 2, 55km
+          confidence: inferred
+        spawns:
+          - count: "8"
+            class: Frigate
+            names:
+              - Minmatar Miner

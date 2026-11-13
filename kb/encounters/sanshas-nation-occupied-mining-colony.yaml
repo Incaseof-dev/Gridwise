@@ -1,0 +1,144 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: sanshas-nation-occupied-mining-colony
+kind: complex
+name: Sansha's Nation Occupied Mining Colony
+dedRating: 4
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Sansha's Nation Occupied Mining Colony
+    url: https://wiki.eveuniversity.org/Sansha's_Nation_Occupied_Mining_Colony
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "232225"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Battlecruisers"
+notes:
+  - text: The site consists of a volume of space with an acceleration gate and contains various structures and their defending pirates. Using the gate allows access to other areas within the site. When attacked, the defenders may send multiple waves of reinforcements. Each group's appearance is triggered by the destruction of members of the previous group. The names and amount of ships listed may vary slightly, but will always be of Battlecruiser class or smaller.
+  - text: This site's acceleration gate allows only Battlecruiser class ships or lower and their Tech 2 equivalents to enter the site.
+loot:
+  - item: 8th Tier Overseers Effects
+    from: True Sansha Foreman
+    note: est. 1.2M Isk (wiki) · 100% drop rate
+  - item: True Sansha module
+    from: True Sansha Foreman
+    note: est. 10k - 190M ISK (wiki) · rare
+  - item: Centii A-type modules
+    from: True Sansha Foreman
+    note: est. 100k - 210M ISK (wiki) · rare (up to 3x)
+  - item: Centum C-type modules
+    from: True Sansha Foreman
+    note: est. 1.5M - 130M ISK (wiki) · rare (up to 3x)
+  - item: Phantasm BPC
+    from: True Sansha Foreman
+    note: est. 57M ISK (wiki) · Very rare
+lootNotes:
+  - text: 3.442.000 ISK
+pockets:
+  - name: Room 1
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "14"
+            class: Frigate
+            names:
+              - Centii Butcher
+              - Centii Enslaver
+              - Centii Plague
+              - Centii Ravener
+              - Centii Scavenger
+          - count: "8"
+            class: Frigate
+            names:
+              - Centii Savage
+              - Centii Slavehunter
+            ewar:
+              - kind: trackingDisruption
+          - count: "2"
+            class: Cruiser
+            names:
+              - Centum Execrator
+            ewar:
+              - kind: trackingDisruption
+          - count: "3"
+            class: Cruiser
+            names:
+              - Centum Mutilator
+              - Centum Torturer
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Centatis Phantasm
+              - Centatis Specter
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: Unlocks when first room is cleared
+    onWarpIn: 'DED Database Excerpt: Despite numerous laws across the empires bolstering security regulations after the outbreak of Sansha incursions in YC 113, mining colonies still provide a weak, target-rich environment for pirate factions... Sansha raiding fleets are wiping out the colonists and using their own Slaves to crew the mining equipment until it fails, leaving the colony as an empty husk. Eliminating the True Sansha Foreman is the most reliable way of shutting down the entire operation. DED Threat Assessment: 4 of 10"'
+  - name: Room 2
+    notes:
+      - text: Rats are split in two groups and auto-aggro very quickly. Combined pocket damage can well exceed 500 DPS, but it falls off very quickly past 40 km. The left group will primary medium and heavy drones en masse and can quickly kill them from the sheer burst damage.
+      - text: True Sansha Foreman requires 190 DPS EM to break its armor tank, but that will take time, so 200+dps EM is advised.
+      - text: "Example times: A Jaguar with 180dps EM unheated will do the whole site (all opponents - loot Foreman) in about 25-27mn (11-12mn blitzing), whereas a Gila can do the whole site in less than 10mn (5-6 if blitzing)."
+      - text: "Upon foreman death: Foreman Eliminated: The Foreman has been eliminated. All attached Slaves in the colony are now useless to the Sansha. Time to scoop up the loot."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "12"
+            class: Frigate
+            names:
+              - Centii Enslaver
+              - Centii Minion
+              - Centii Plague
+              - Centii Ravener
+              - Centii Servant
+          - count: "6"
+            class: Frigate
+            names:
+              - Centii Savage
+              - Centii Slavehunter
+            ewar:
+              - kind: trackingDisruption
+          - count: "6"
+            class: Cruiser
+            names:
+              - Centum Mutilator
+              - Centum Torturer
+          - count: "3"
+            class: Cruiser
+            names:
+              - Centum Juggernaut
+              - Centum Slaughterer
+            ewar:
+              - kind: trackingDisruption
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Centatis Specter
+              - Centatis Phantasm
+          - count: "1"
+            class: Overseer Cruiser
+            names:
+              - True Sansha Foreman
+            drop: Contains 8th Tier Overseers Personal Effects. May contain Centum C-type Modules, True Sansha Cruiser Modules, Or rarely a Phantasm BPC
+    onWarpIn: "Enemy Detected: True Sansha Foreman detected in the next pocket. Eliminating this ship will cause the Sansha miners to lose their efficiency and eventually abandon the base."
+sde:
+  dungeonIds:
+    - 5276

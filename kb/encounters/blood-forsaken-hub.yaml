@@ -1,0 +1,136 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: blood-forsaken-hub
+kind: anomaly
+name: Blood Forsaken Hub
+dedRating: null
+anomalyClass: 8
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Blood Forsaken Hub
+    url: https://wiki.eveuniversity.org/Blood_Forsaken_Hub
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "222889"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Rating: Class 8 Level 3"
+  - text: Single ungated normal space pocket. Killing the last hostile ship triggers a reinforcement spawn. Be advised, especially if attempting to complete the site inattentively, that in addition to being warp disrupted during the 3rd Reinforcement Spawn, you will often be double-webbed and occassionally triple-webbed, causing damage to spike if you are attempting to tank with angular velocity. Bounties of 24m as at 03-14-2025. They have since been nerfed.
+  - text: "Escalation: The anomaly can escalate to: Dark Blood Fleet Staging Point"
+  - text: "Escalation: The anomaly can escalate to: Blood Raider Capital Staging"
+  - text: "Escalation: The anomaly can escalate to: Blood Shielded Starbase"
+  - text: "Escalation: The anomaly can escalate to: Blood Occupied Mine"
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-defending-fleet
+        trigger:
+          on: warpIn
+          text: Initial Defending Fleet
+        spawns:
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Corpatis Exorcist
+              - Corpatis Shade
+          - count: 3-4
+            class: Battleship
+            names:
+              - Corpus Pope
+              - Corpus Patriarch
+      - id: 1st-reinforcement-spawn
+        trigger:
+          on: other
+          text: 1st Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Corpatis Seer
+              - Corpatis Phantom
+              - Corpatis Fanatic
+          - count: 3-4
+            class: Battleship
+            names:
+              - Corpus Pope
+              - Corpus Patriarch
+      - id: 2nd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 2nd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 4-5
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Shadow Sage
+              - Elder Corpum Arch Sage
+          - count: 3-4
+            class: Battleship
+            names:
+              - Corpus Pope
+              - Corpus Patriarch
+      - id: 3rd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 3rd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Elder Corpii Upholder
+              - Elder Corpii Worshipper
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 3-4
+            class: Battleship
+            names:
+              - Corpus Pope
+              - Corpus Patriarch
+      - id: 4th-reinforcement-spawn
+        trigger:
+          on: other
+          text: 4th Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Dark Priest
+              - Elder Corpum Arch Sage
+              - Elder Corpum Shadow Sage
+          - count: 3-4
+            class: Battleship
+            names:
+              - Corpus Pope
+              - Corpus Patriarch
+      - id: 5th-reinforcement-spawn
+        trigger:
+          on: other
+          text: 5th Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Elder Corpii Reaver
+              - Elder Corpii Diviner
+              - Elder Corpii Raider
+          - count: 3-4
+            class: Battleship
+            names:
+              - Corpus Pope
+              - Corpus Patriarch
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - Dark Blood Commander
+            group: Possible Rare Spawn
+            drop: Possible Faction charges, modules or tags

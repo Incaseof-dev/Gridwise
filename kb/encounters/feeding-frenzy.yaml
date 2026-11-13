@@ -1,0 +1,47 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: feeding-frenzy
+kind: mission
+name: Feeding Frenzy
+level: 4
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Feeding Frenzy
+    url: https://wiki.eveuniversity.org/Feeding_Frenzy
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191695"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: sensorDamp
+notes:
+  - text: Single gated pocket.
+  - text: Wave 1 spawns when initial defenders are attacked.
+  - text: "Blitz: Destroy Badly Damaged Megathron, grab cargo from the cargo container, deliver back to station."
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-defenders-20-km
+        trigger:
+          on: warpIn
+          text: Initial defenders (20 km)
+        spawns:
+          - count: "1"
+            class: Battleship
+            names:
+              - Badly Damaged Megathron
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Cruiser
+            names:
+              - Federation Pezcos
+              - Federation Praeco

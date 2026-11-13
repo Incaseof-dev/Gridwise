@@ -1,0 +1,239 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: worlds-collide-gallente-federation-sanshas-nation
+kind: mission
+name: Worlds Collide
+level: 4
+enemyFaction: Gallente Federation & Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Worlds Collide (Gallente Federation & Sansha's Nation)
+    url: https://wiki.eveuniversity.org/Worlds_Collide_(Gallente_Federation_%26_Sansha's_Nation)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "192114"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: trackingDisruption
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite frigates point & web"
+  - text: "Blitz: Pocket 1: Approach the Sansha gate kill the triggers or use Zbikoki's Hacker Card to jump in. (the card is consumed in process)"
+  - text: "Blitz: Pocket 2: Kill web frigates with your guns/missiles then approach the acceleration gate (be sure that you don't go near group 2 or group 3 in order to do that go to smaller end of acceleration gate) and use it."
+  - text: "Blitz: Pocket 3: Kill all Ships. (sometimes the cargo is unlocked before you kill all ships)"
+pockets:
+  - name: Pocket 1 (War Zone)
+    notes:
+      - text: Each gate is locked until you kill a trigger from each group. Gates can, however, be activated, before killing the trigger, by using a Zbikoki's Hacker Card.
+      - text: Groups aggro individually and will not fly further than 30km from their control towers.
+      - text: Strongly recommend using Thermal missiles against the Federation Navy Orion, even if you're flying a Drake or Tengu, as they'll deal 2x the damage, even after the 25% damage bonus from the hull / offensive subsystem is taken into account.
+    waves:
+      - id: gallente-group
+        trigger:
+          on: other
+          text: Gallente Group
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Federeration Navy Gamma I Support Frigate
+          - count: "4"
+            class: Cruiser
+            names:
+              - Federation Navy Thorax
+          - count: "5"
+            class: Battleship
+            names:
+              - Federation Navy Dominix
+              - Federation Navy Orion
+            triggers: Orion is Gate Unlock trigger
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Centi Loyal Ravener
+              - Centi Loyal Scavanger
+            group: Sansha Group
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Centatis Specter
+            group: Sansha Group
+          - count: "3"
+            class: Battleship
+            names:
+              - Centus Mutant Lord
+              - Centus Savage Lord
+            group: Sansha Group
+            triggers: Centus Savage Lord is Gate Unlock trigger
+  - name: Pocket 2 (Federation Base)
+    waves:
+      - id: initial-spawn
+        trigger:
+          on: warpIn
+          text: Initial Spawn
+        spawns:
+          - count: "3"
+            class: Sentry
+            names:
+              - Tower Sentry Gallente III
+          - count: "5"
+            class: Frigate
+            names:
+              - Federation Navy Soldier
+          - count: "5"
+            class: Elite Frigate
+            names:
+              - Federation Navy Delta II Support Frigate
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "6"
+            class: Cruiser
+            names:
+              - Federation Navy Detective
+              - Federation Navy Thorax
+            note: Detectives deal EM damage
+          - count: "5"
+            class: Battleship
+            names:
+              - Federation Navy Dominix
+              - Federation Navy Megathron
+              - Federation Navy Orion
+          - count: "1"
+            class: Battleship
+            names:
+              - Republic Fleet Tempest
+  - name: Pocket 2 (Sansha Base)
+    waves:
+      - id: first-group
+        trigger:
+          on: other
+          text: First Group
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Sansha Spy
+            ewar:
+              - kind: web
+          - count: "3"
+            class: Battleship
+            names:
+              - Centus Dread Lord
+              - Centus Savage Lord
+              - Centus Dark Lord
+              - Centus Beast Lord
+          - count: "5"
+            class: Destroyer
+            names:
+              - Centus Monster
+              - Centus Abomination
+            group: Second Group
+          - count: "4"
+            class: Battleship
+            names:
+              - Centus Dark Lord
+              - Centus Beast Lord
+              - Centus Overlord
+            group: Second Group
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Scavanger
+              - Centii Loyal Ravener
+            group: Third Group
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "5"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Hellhound
+              - Centum Loyal Fiend
+            group: Third Group
+          - count: "3"
+            class: Battleship
+            names:
+              - Centus Savage Lord
+              - Centus Plague Lord
+              - Centus Mutant Lord
+              - Centus Slave Lord
+            group: Third Group
+          - count: "1"
+            class: Battleship
+            names:
+              - Sansha’s Overseer
+            group: Random Spawn
+  - name: Pocket 3 (Pirate Stash)
+    notes:
+      - text: Groups aggro when engaged or on proximity. Initial auto-aggro will vary, depending on which group you land closest to.
+    waves:
+      - id: group-1
+        trigger:
+          on: warpIn
+          text: Group 1
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Scavanger
+              - Centii Loyal Ravener
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centatis Daemon
+          - count: "2"
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Mutant Lord
+          - count: "5"
+            class: Destroyer
+            names:
+              - Centior Monster
+            group: Group 2
+          - count: "2"
+            class: Battleship
+            names:
+              - Centus Plague Lord
+              - Centus Savage Lord
+            group: Group 2
+            ewar:
+              - kind: trackingDisruption
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Centatis Specter
+              - Centatis Phantasm
+            group: Group 3
+          - count: "1"
+            class: Battleship
+            names:
+              - Centus Dark Lord
+            group: Group 3
+          - count: "4"
+            class: Destroyer
+            names:
+              - Centior Monster
+            group: Group 4
+          - count: "1"
+            class: Battleship
+            names:
+              - Centus Plague Lord
+              - Centus Savage Lord
+            group: Group 4
+            ewar:
+              - kind: trackingDisruption

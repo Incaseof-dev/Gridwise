@@ -1,0 +1,23 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: into-the-black
+kind: mission
+name: Into the Black
+level: 4
+enemyFaction: null
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Into the Black
+    url: https://wiki.eveuniversity.org/Into_the_Black
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "206478"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Report to Mourmarie Mone
+notes:
+  - text: Report to Mourmarie Mone eight jumps away in Noghere at the Unmarked Operation Beacon.
+  - text: "Tips: Noghere and adjacent System are where you will be doing the next several Missions"

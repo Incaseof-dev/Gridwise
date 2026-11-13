@@ -1,0 +1,177 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: angel-creo-corp-mining
+kind: complex
+name: Angel Creo-Corp Mining
+dedRating: 2
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Angel Creo-Corp Mining
+    url: https://wiki.eveuniversity.org/Angel_Creo-Corp_Mining
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "220827"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Destroyers"
+notes:
+  - text: Angel Creo-Corp Mining is a DED Complex (rated 2/10), occupied by the Angel Cartel pirate faction. It can be found via exploration by probing in Highsec systems.
+  - text: The site consists of a volume of space with an acceleration gate and contains various structures and their defending pirates. Using the gate allows access to other areas within the site. The names and amount of ships listed may vary slightly, but will always be of Cruiser class or smaller.
+  - text: This site's acceleration gate allows only destroyer class ships including tech 2 and tech 3 destroyers.
+  - text: This site is doable in a beam-laser-fit Punisher with good piloting, but destroyers are recommended due to high number of ships. Pirate Frigates will have no problems with this site, and a Tactical Destroyer will make this site laughably easy. Avoid using Amarr ships as they deal EM and Thermal damage, the strongest resists of the Angel rats.
+loot:
+  - item: 4th Tier Overseer's Personal Effects
+    from: CreoCorp Main Factory
+    note: est. 60k ISK (wiki) · 100% drop rate
+  - item: Domination module
+    from: Deadspace Synchronization HQ
+  - item: Domination modules
+    from: Creo-Corp Main Factory
+  - item: Gistii B-type Modules
+    from: Deadspace Control Station
+    note: Up to 3x
+  - item: Dramiel Blueprint
+    from: Deadspace Control Station
+pockets:
+  - name: Room 1
+    notes:
+      - text: The acceleration gate is locked and requires key for operating it. The key is found in the wreck of Deadspace Synchronization HQ.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "12"
+            class: Frigate
+            names:
+              - Gistii Hijacker
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Frigate
+            names:
+              - Gistii Ruffian
+            ewar:
+              - kind: targetPaint
+          - count: "3"
+            class: Sentry
+            names:
+              - Angel Sentry Gun
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+          - count: "1"
+            class: Structure
+            names:
+              - Deadspace Synchronization HQ
+            drop: Key for the acceleration gate. 3th Tier Overseer's Personal Effects. May contain Domination Items.
+    onWarpIn: Creo-Corp purchases materials and know-how from the Minmatar to be able to build the most recently developed mining facilities. They routinely build automatic sentry guns for defense purposes.
+  - name: Room 2
+    notes:
+      - text: The acceleration gate to next room is locked and requires key. The key is found in the wreck of CreoCorp Main Factory.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "23"
+            class: Frigate
+            names:
+              - Gistii Hijacker
+          - count: "3"
+            class: Frigate
+            names:
+              - Gistii Ruffian
+            ewar:
+              - kind: targetPaint
+          - count: "1"
+            class: Cruiser
+            names:
+              - Gistum Depredator
+          - count: "3"
+            class: Sentry
+            names:
+              - Angel Sentry Gun
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+          - count: "1"
+            class: Structure
+            names:
+              - CreoCorp Main Factory
+            drop: Key for the acceleration gate. 4th Tier Overseer's Personal Effects. May contain Domination items.
+          - count: "1"
+            class: Structure
+            names:
+              - Tools and Parts (1)
+            drop: T1 Ammo.
+            note: Has Fast regenerating shield, but armor and structure are very weak
+          - count: "1"
+            class: Structure
+            names:
+              - Tools and Parts (2)
+            drop: T1 Ammo.
+            note: Has Fast regenerating shield, but armor and structure are very weak
+          - count: "1"
+            class: Structure
+            names:
+              - Asteroid Colony Tower
+            note: Drops no loot. Very high (10K) armor and obscene (50k) structure HP
+    onWarpIn: In this deadspace pocket, Creo-Corp collects and stores spare parts and tools for use in the entire complex. The mining facilities in there are impressive, given the short time it has taken Creo-Corp to plan and build them.
+  - name: Room 3
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "22"
+            class: Frigate
+            names:
+              - Gistii Hijacker
+            note: type list incomplete on the source page
+          - count: "6"
+            class: Frigate
+            names:
+              - Gistii Ruffian
+            ewar:
+              - kind: targetPaint
+          - count: "1"
+            class: Cruiser
+            names:
+              - Gistum Depredator
+          - count: "6"
+            class: Sentry
+            names:
+              - Angel Sentry gun
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Deadspace Control Station
+            drop: 5th Tier Overseer's Personal Effects. May contain Gistii B-type Modules and/or a rare Dramiel BPC.
+    onWarpIn: This deadspace pocket contains plentiful resources of valuable ore as well as large asteroids that have already been mined to the core. The pocket is well guarded with stationary sentry guns, and a number of frigates patrol key locations.
+sde:
+  dungeonIds:
+    - 150

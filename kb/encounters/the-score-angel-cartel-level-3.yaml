@@ -1,0 +1,104 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-score-angel-cartel-level-3
+kind: mission
+name: The Score
+level: 3
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Score (Angel Cartel) (Level 3)
+    url: https://wiki.eveuniversity.org/The_Score_(Angel_Cartel)_(Level_3)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223035"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Time to settle the score. Go and destroy all the ships at the encounter. Your main target will be lurking around the radio telescope, seek and destroy then return to me.
+ewar:
+  - kind: targetPaint
+notes:
+  - text: "Suggested ships: Battlecruiser"
+pockets:
+  - name: 1st Pocket
+    notes:
+      - text: Full room aggro upon attacking.
+    waves:
+      - id: single-group
+        trigger:
+          on: other
+          text: Single Group
+          confidence: inferred
+        spawns:
+          - count: "7"
+            class: Frigate
+            names:
+              - Gistii Ambusher
+              - Gistii Nomad
+              - Gistii Raider
+              - Gistii Ruffian
+            ewar:
+              - kind: targetPaint
+          - count: "2"
+            class: Destroyer
+            names:
+              - Gistior Defacer
+              - Gistior Haunter
+          - count: "8"
+            class: Cruiser
+            names:
+              - Gistum Crusher
+              - Gistum Defeater
+              - Gistum Depredator
+              - Gistum Smasher
+            ewar:
+              - kind: targetPaint
+  - name: 2nd Pocket
+    notes:
+      - text: Group 1 is the mission objective and engaging it causes full pocket aggro.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Gistii Ambusher
+              - Gistii Raider
+              - Gistii Thug
+            group: Group 1, 60-70km [Left]
+          - count: "4"
+            class: Cruiser
+            names:
+              - Gistum Centurion
+              - Gistum Liquidator
+              - Gistum Marauder
+              - Gistum Phalanx
+            group: Group 1, 60-70km [Left]
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Gistatis Prime
+              - Gistatis Tribuni
+            group: Group 1, 60-70km [Left]
+          - count: "2"
+            class: Frigate
+            names:
+              - Gistii Ambusher
+              - Gistii Outlaw
+              - Gistii Raider
+              - Gistii Thug
+            group: Group 2, 60-65km [Right]
+          - count: "2"
+            class: Cruiser
+            names:
+              - Gistum Centurion
+              - Gistum Liquidator
+              - Gistum Marauder
+              - Gistum Phalanx
+            group: Group 2, 60-65km [Right]

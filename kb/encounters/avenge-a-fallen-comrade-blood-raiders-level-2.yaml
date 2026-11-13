@@ -1,0 +1,95 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: avenge-a-fallen-comrade-blood-raiders-level-2
+kind: mission
+name: Avenge a Fallen Comrade
+level: 2
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Avenge a Fallen Comrade (Blood Raiders) (Level 2)
+    url: https://wiki.eveuniversity.org/Avenge_a_Fallen_Comrade_(Blood_Raiders)_(Level_2)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "202971"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the habitat of the pirate leaders then report back to your agent
+ewar:
+  - kind: trackingDisruption
+notes:
+  - text: "Blitz: Destroy Habitat, warp out."
+  - text: No hostiles at initial gate.
+pockets:
+  - name: Single pocket
+    notes:
+      - text: All groups aggro immediately.
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Hangar Array
+            names:
+              - Habitat
+            triggers: Mission completed on destruction
+      - id: initial-hostiles-10km
+        trigger:
+          on: warpIn
+          text: Initial Hostiles (10km)
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Corpii Diviner
+              - Corpii Raider
+      - id: reinforcement-1-on-initial-destruction
+        trigger:
+          on: warpIn
+          text: Reinforcement 1 (On initial destruction)
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corpior Visionary
+      - id: reinforcement-2-on-reinforcement-1-destruction
+        trigger:
+          on: other
+          text: Reinforcement 2 (On reinforcement 1 destruction)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Cruiser
+            names:
+              - Corpum Arch Templar
+            ewar:
+              - kind: trackingDisruption
+            triggers: Shield 50% reinforcement 3A, destruction reinforcement 3B
+      - id: reinforcement-3a-50-shield-arch-templar
+        trigger:
+          on: other
+          text: Reinforcement 3A (50% Shield Arch Templar
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Corpii Follower
+      - id: reinforcement-3b-arch-templar-destruction
+        trigger:
+          on: other
+          text: Reinforcement 3B (Arch Templar destruction)
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Corpii Raider
+              - Corpii Diviner
+              - Corpii Reaver
+              - Corpii Engraver

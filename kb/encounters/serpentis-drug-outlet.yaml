@@ -1,0 +1,151 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: serpentis-drug-outlet
+kind: complex
+name: Serpentis Drug Outlet
+dedRating: 1
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Serpentis Drug Outlet
+    url: https://wiki.eveuniversity.org/Serpentis_Drug_Outlet
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225101"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Frigate"
+loot:
+  - item: 6th Tier Overseer's Effects
+    from: From Serpentis Drugstore Overseer
+    note: est. 358k ISK (wiki) · 100% drop rate
+  - item: Coreli C-Type modules
+    from: From Serpentis Financing Office
+    note: Up to 3x
+  - item: Shadow Serpentis modules
+    from: From Serpentis Financing Office
+lootNotes:
+  - text: thumb|none|alt=A|Example loot drop from a Drug Outlet
+pockets:
+  - name: First Room
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Serpentis Rookie Gatekeeper
+            note: Renamed Coreli Initiate/Scout
+    onWarpIn: "This deadspace complex is under control of the drug-dealing Serpentis Corporation. This particular branch is a drug dealing outlet, containing narcotic supermarkets and local storages for illicit substances. DED Threat Assessment: Training (1 of 10)"
+  - name: Second Room
+    notes:
+      - text: "Note: In the second room, kill the Serpentis Drugstore Overseer and loot his wreck, then kill all the rats and burn to and take the gate into the last room. The Drugdealer passcard is consumed on use."
+      - text: Left Group
+      - text: Gate Group
+      - text: Right Group
+      - text: Structures
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Centii Minion
+              - Centii Servant
+          - count: "3"
+            class: Frigate
+            names:
+              - Coreli Agent
+              - Coreli Scout
+              - Coreli Spy
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Coreli Agent
+              - Coreli Scout
+              - Coreli Spy
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: "8"
+            class: Frigate
+            names:
+              - Coreli Scout
+              - Coreli Spy
+          - count: "1"
+            class: Overseer Frigate
+            names:
+              - Serpentis Drugstore Overseer
+            drop: Contains 6th tier Overseers Personal Effects and Drugdealer passcard to storage area, and may rarely contain Shadow Serpentis Frigate Modules
+      - id: wave-4
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Container
+            names:
+              - Serpentis Property
+            drop: Metal scraps, T1 ammo and drones
+            note: Locked until ships guarding the are destroyed
+    onWarpIn: This deadspace complex is known to be a haven for Serpentis drug dealers. The Dealer Gate is merely the actual entrance gate of the complex and is usually guarded by a single henchman from the corporation. Hundreds of drug dealers use the gate every week to get their hands on the newest merchandise from the local vendors.
+  - name: Third Room
+    notes:
+      - text: "Note: In the third room, kill only the Serpentis Financing office, loot the cargo container it drops, this drops your shiny loot, not the Overseer."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "22"
+            class: Frigate
+            names:
+              - Coreli Agent
+              - Coreli Initiate
+              - Coreli Scout
+              - Coreli Spy
+          - count: "1"
+            class: Overseer Frigate
+            names:
+              - Serpentis Outlet Crime Boss
+            drop: May contain 3rd Tier Overseer's Personal Effects
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Serpentis Financing Office
+            drop: Contains 3rd Tier Overseer's Personal Effects, Coreli C-type Modules, and May contain Shadow Serpentis Frigate Modules, or, rarely, a Daredevil BPC
+          - count: "3"
+            class: Container
+            names:
+              - Serpentis Container
+            drop: Metal scraps, T1 ammo and drones
+    onWarpIn: This part of the complex houses the center of the local drug dealing scene. Only the overseer of the dealers can give access to the Core Serpentis base of operations hidden deep beyond the acceleration gate at the far end.
+sde:
+  dungeonIds:
+    - 116

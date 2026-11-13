@@ -1,0 +1,76 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-left-hook
+kind: mission
+name: The Left Hook
+level: 3
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Left Hook
+    url: https://wiki.eveuniversity.org/The_Left_Hook
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "192028"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the Gallente Tactical Support Center
+ewar:
+  - kind: sensorDamp
+notes:
+  - text: "Suggested ships: Cruiser, Battlecruiser"
+  - text: "Blitz: Destroy the Gallente Tactical Support Center and ignore all rats."
+  - text: Mission may be run in a sniper fit Manticore (stealth bomber). Orbit at max range, shoot the Tactical Support Center and speed tank all NPCs.
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Elite Federation Arx
+              - Elite Federation Quadrieris
+            ewar:
+              - kind: sensorDamp
+      - id: wave
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Gallente Tactical Support Center
+            triggers: reinforcement spawn on attacking
+          - count: "4"
+            class: Frigate
+            names:
+              - Federation Praktor Belos
+              - Federation Praktor Harpagos
+            group: Attacking the Support Center
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Federation Praktor Arx
+              - Federation Praktor Auxilla
+            group: Attacking the Support Center
+          - count: "4"
+            class: Frigate
+            names:
+              - Federation Praktor Belos
+              - Federation Praktor Harpagos
+            group: Damaging armor of Support Center
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Federation Praktor Arx
+              - Federation Praktor Auxilla
+            group: Damaging armor of Support Center

@@ -1,0 +1,169 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: intercept-the-saboteurs-guristas-pirates
+kind: mission
+name: Intercept The Saboteurs
+level: 4
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Intercept The Saboteurs (Guristas Pirates)
+    url: https://wiki.eveuniversity.org/Intercept_The_Saboteurs_(Guristas_Pirates)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "229380"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Retrieve 60x Confiscated Viral Agent (30 m3)
+ewar:
+  - kind: ecm
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite frigates"
+  - text: "Blitz: Kill ships at entry room, use gate."
+  - text: "Blitz: Kill all ships in group 2, collect viral agent, return to agent."
+lootNotes:
+  - text: "Bounty: 3,295,692 ISK (01/31/2026 - Verum Peto)"
+  - text: "Loot: 1.2 Mil ISK (100% Jita Buy, 2020-12-05)"
+  - text: "Salvage: 760 k ISK (100% Jita Buy, 2020-12-05)"
+pockets:
+  - name: Warp-in
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Pithi Destructor
+              - Pithi Demolisher
+          - count: "2"
+            class: Destroyer
+            names:
+              - Pithior Guerilla
+              - Pithior Terrorist
+  - name: 1st pocket
+    notes:
+      - text: Attacking group 2 aggros entire pocket.
+      - text: Group 2 is actually two groups so the whole group doesn't need to be killed. Though they spawn at the same spot so it's impossible to see what ships are in what group.
+      - text: Attacking groups 1 or 4 will usually aggro that group and group 2.
+      - text: Drones will get aggroed by neutral groups due to proximity. Elite frigates will also agress drones.
+      - text: Attacking an elite frigate in group 3 will only aggro that group, which can be sniped at leisure.
+      - text: Confiscated Viral Agent is dropped by the last defeated ship in group 2 (mission completion trigger).
+      - text: Armories drop T1 Ammo, Habitation Modules may drop Trade Goods
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Pithior Guerilla
+              - Pithior Terrorist
+            group: Group 1 (50 km, Coral Rock Formation)
+          - count: "3"
+            class: Cruiser
+            names:
+              - Pithum Annihilator
+            group: Group 1 (50 km, Coral Rock Formation)
+            ewar:
+              - kind: ecm
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Pithatis Assaulter
+              - Pithatis Assassin
+            group: Group 1 (50 km, Coral Rock Formation)
+          - count: "1"
+            class: Battleship
+            names:
+              - Pith Eradicator
+            group: Group 1 (50 km, Coral Rock Formation)
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Invader
+            group: Group 2 (55-75 km)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: type list incomplete on the source page
+          - count: "6"
+            class: Frigate
+            names:
+              - Pithi Destructor
+            group: Group 2 (55-75 km)
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Cruiser
+            names:
+              - Pithum Mortifier
+              - Pithum Inferno
+            group: Group 2 (55-75 km)
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Pithatis Assassin
+            group: Group 2 (55-75 km)
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Battleship
+            names:
+              - Pith Eliminator
+            group: Group 2 (55-75 km)
+            ewar:
+              - kind: ecm
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Industrial
+            names:
+              - Guristas Transport
+            group: Group 2 (55-75 km)
+            drop: Commodities
+          - count: "3"
+            class: Frigate
+            names:
+              - Pithi Demolisher
+              - Pithi Destructor
+            group: Group 3 (60 km, Shipyards)
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Infiltrator
+            group: Group 3 (60 km, Shipyards)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Destroyer
+            names:
+              - Pithior Terrorist
+              - Pithior Guerilla
+            group: Group 4 (70 km, Rock formation)
+          - count: "3"
+            class: Cruiser
+            names:
+              - Pithum Mortifier
+              - Pithum Inferno
+            group: Group 4 (70 km, Rock formation)
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Pithatis Assaulter
+            group: Group 4 (70 km, Rock formation)
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Battleship
+            names:
+              - Pith Obliterator
+              - Pith Eradicator
+            group: Group 4 (70 km, Rock formation)

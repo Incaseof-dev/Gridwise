@@ -1,0 +1,125 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: serpentis-lookout
+kind: complex
+name: Serpentis Lookout
+dedRating: null
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Serpentis Lookout
+    url: https://wiki.eveuniversity.org/Serpentis_Lookout
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223108"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Battlecruisers/T3"
+notes:
+  - text: No NPCs at initial warp in.
+  - text: Initial gate will allow Tech 2 and 3 cruisers to pass.
+  - text: While mining after the site is complete, an additional frigate may occasionally spawn.
+  - text: "Escalation: This site has a chance to escalate to Angel Kickbacks."
+  - text: "Escalation: Expeditions: Angel Kickbacks: As soon as you arrive, your instruments detect a large group of ships departing. Further analysis of the data indicates this was a convoy of six to eight transport ships from the Salvation Angels accompanied by an unknown number of combat vessels. Your navigational systems have already come up with a likely destination in case you feel you have any business with them."
+  - text: "Escalation: Escalation Failure: The trail seems to have run cold at this point."
+pockets:
+  - name: First Room
+    notes:
+      - text: The acceleration gate to next room is locked until all ships have been destroyed. The missile battery does not need to be destroyed to proceed. Shooting at each group once before deploying drones avoids drone aggro.
+      - text: The gate to the second room is 27km from warp in.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Coreli Agent
+              - Coreli Spy
+            group: Group 1
+          - count: "5"
+            class: Frigate
+            names:
+              - Coreli Defender
+              - Coreli Protector
+            group: Group 2
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Patroller
+              - Coreli Guardian Watchman
+            group: Group 2
+            ewar:
+              - kind: sensorDamp
+          - count: "1"
+            class: Sentry
+            names:
+              - Serpentis Light Missile Battery
+            group: Group 2
+          - count: "4"
+            class: Frigate
+            names:
+              - Coreli Defender
+              - Coreli Protector
+            group: Group 3
+          - count: "1"
+            class: Cruiser
+            names:
+              - Corelum Chief Spy
+            group: Group 3
+  - name: Second Room
+    notes:
+      - text: To trigger commander spawn destroy the destroyers by the solar harvesters. These destroyers are on left side when looking at the enemies. Escalation can be triggered by killing the commander or by destroying the Serpentis control center.
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Serpentis Control Center
+            triggers: Escalation trigger
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "15"
+            class: Frigate
+            names:
+              - Coreli Agent
+            note: type list incomplete on the source page
+          - count: "6"
+            class: Destroyer
+            names:
+              - Corelior Infantry
+            note: type list incomplete on the source page
+          - count: 2-3
+            class: Destroyer
+            names:
+              - Corelior Artillery
+              - Corelior Cannoneer
+            group: Group by solar harvesters
+            triggers: Destroying triggers possible commander spawn
+      - id: commander
+        trigger:
+          on: other
+          text: Commander
+          confidence: inferred
+        spawns:
+          - count: 0-1
+            class: Commander Frigate
+            names:
+              - Shadow Serpentis
+            triggers: Escalation trigger
+            drop: Can drop a faction item
+sde:
+  dungeonIds:
+    - 1238

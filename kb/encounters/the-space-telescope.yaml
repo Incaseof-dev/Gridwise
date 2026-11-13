@@ -1,0 +1,106 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-space-telescope
+kind: mission
+name: The Space Telescope
+level: 3
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Space Telescope
+    url: https://wiki.eveuniversity.org/The_Space_Telescope
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "192065"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Suggested ships: Battlecruiser, Battleship"
+  - text: "Blitz: Destroy the Space Telescope and warp out. Be prepared for very heavy incoming damage."
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: Groups spawn 5 to 8 seconds after warp-in
+      - text: Be prepared to warp out if you don't have substantial tank and aggro the entire room
+    waves:
+      - id: group-1-50-60km
+        trigger:
+          on: other
+          text: Group 1, 50-60km
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Pithi Demolisher
+          - count: "2"
+            class: Cruiser
+            names:
+              - Pithum Eraser
+              - Pithum Abolisher
+      - id: group-2-90-120km
+        trigger:
+          on: other
+          text: Group 2, 90-120km
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Sentry Gun
+          - count: "3"
+            class: Cruiser
+            names:
+              - Pithum Ascriber
+              - Pithum Silencer
+      - id: group-3-90-100km
+        trigger:
+          on: other
+          text: Group 3, 90-100km
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Sentry Gun
+          - count: "1"
+            class: Destroyer
+            names:
+              - Pithior Terrorist
+          - count: "1"
+            class: Cruiser
+            names:
+              - Pithum Eraser
+      - id: group-4-80-90km
+        trigger:
+          on: other
+          text: Group 4, 80-90km
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Sentry Gun
+          - count: "2"
+            class: Cruiser
+            names:
+              - Pithum Inferno
+              - Pithum Mortifier
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Space Telescope
+            drop: Electronic Parts, Toxic Waste
+            note: Mission objective
+          - count: "1"
+            class: Structure
+            names:
+              - Guristas Bunker
+            drop: random ammo

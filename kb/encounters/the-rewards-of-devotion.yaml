@@ -1,0 +1,430 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-rewards-of-devotion
+kind: escalation
+name: The Rewards of Devotion
+dedRating: null
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Rewards of Devotion
+    url: https://wiki.eveuniversity.org/The_Rewards_of_Devotion
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "178646"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: The expedition has a chance to trigger upon the destruction of the Corpus Station Manager, a Dark Blood Cruiser Commander found in the Blood Vigil.
+  - text: "Expedition trigger message:: Among the information your scanners pick out of the badly damaged station manager ship are logs containing a conversation indicating that the manager himself had an RR hideout not far away where he spent his free time doing whatever perverted things Blood Raider hotshots do when they are on a vacation."
+pockets:
+  - name: Room 1 (Gateless Entry)
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Collector
+              - Elder Corpii Seeker
+            ewar:
+              - kind: trackingDisruption
+          - count: 3-4
+            class: Cruiser
+            names:
+              - Corpum Dark Priest
+              - Corpum Shadow Sage
+          - count: 0-1
+            class: Commander Cruiser
+            names:
+              - Dark Blood Revenant
+            ewar:
+              - kind: trackingDisruption
+            triggers: Destroying this may trigger further escalation
+            drop: Drops faction modules/tags/ammo
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Newly Constructed Acceleration Gate
+            note: Leads to Room 2
+  - name: Room 2
+    notes:
+      - text: Initially only the elite frigates and destroyers are present. Frigates and cruisers spawn within about 10 seconds or so. The elite cruisers and battlecruisers are on a ~1 minute timer.
+      - text: "Escalation trigger message:: The janitor of this tiny pleasure dome is an old sickly man, who seems quite pleased to see his former employer's real-estate been blown apart. Among the things he tells you is that he was a slave captured by the Blood Raiders years ago and what saved his life was that his blood was useless to them as he had contracted some nasty VD during his teenage years while he worked as a page at the interregional trade council in Jita. He can also inform you about the location to a small hideaway, similar to this one, where he once served as a janitor, until his old master lost him in a game of craps to the station manager, for whom he has worked ever since."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Collector
+              - Elder Corpii Seeker
+            ewar:
+              - kind: trackingDisruption
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corpior Converter
+              - Corpior Visionary
+      - id: additional-defenders-on-very-short-timer
+        trigger:
+          on: timer
+          text: Additional defenders on very short timer
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Corpii Diviner
+              - Corpii Engraver
+              - Corpii Raider
+          - count: "2"
+            class: Cruiser
+            names:
+              - Corpum Arch Templar
+              - Corpum Revenant
+            ewar:
+              - kind: trackingDisruption
+      - id: timed-wave-about-1-minute
+        trigger:
+          on: other
+          text: Timed wave (about 1 minute)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Elder corpum Arch Templar
+              - Elder corpum Arch Priest
+              - Elder corpum Arch Sage
+            ewar:
+              - kind: neut
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corpatis Exorcist
+              - Corpatis Phantom
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "6"
+            class: Structure
+            names:
+              - Blood Bunker
+            drop: Faction ammo
+          - count: "1"
+            class: Structure
+            names:
+              - Blood Lockout
+          - count: "1"
+            class: Structure
+            names:
+              - Blood Elevator
+          - count: "1"
+            class: Structure
+            names:
+              - Station Ruins
+  - name: Location 2 (Highsec, Gateless)
+    notes:
+      - text: "Escalation message:: While blasting the station, your instruments picked up transmissions in connection with its security system, which apparently was communicating with some central security station. You have the feeling that sticking around for too long is not a very good idea, as it is pretty certain that a security detail has already been dispatched to take care of whoever is vandalizing the executive pleasure huts in the area, i.e. you. But if the security detail is coming your way, it means they are not at their base, so... you quickly hit some buttons and in a few seconds you have the location of what presumably is the security station flashing on your navigation panel."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "10"
+            class: Sentry
+            names:
+              - Blood Point Defense Battery
+          - count: "4"
+            class: Frigate
+            names:
+              - Corpii Diviner
+              - Corpii Engraver
+              - Corpii Raider
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Collector
+              - Elder Corpii Seeker
+            ewar:
+              - kind: trackingDisruption
+          - count: 3-6
+            class: Destroyer
+            names:
+              - Corpior Converter
+              - Corpior Devoter
+              - Corpior Templar
+              - Corpior Visionary
+      - id: station-wave
+        trigger:
+          on: other
+          text: Station Wave
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Destroyer
+            names:
+              - Corpior Converter
+              - Corpior Devoter
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Corpum Arch Priest
+              - Corpum Arch Sage
+          - count: 0-1
+            class: Commander Cruiser
+            names:
+              - Dark Blood Arch Templar
+              - Dark Blood Revenant
+            ewar:
+              - kind: trackingDisruption
+            triggers: Destroying this triggers Reinforcement Wave
+            drop: Faction modules/ammo
+      - id: reinforcement-wave
+        trigger:
+          on: other
+          text: Reinforcement Wave
+          confidence: inferred
+        spawns:
+          - count: 4-5
+            class: Cruiser
+            names:
+              - Corpum Arch Sage
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corpatis Exorcist
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Station
+            names:
+              - Blood Raider Resort
+            triggers: Attacking triggers Station Wave
+            drop: May contain 10x Janitor
+  - name: Location 3 (Highsec, Gateless)
+    notes:
+      - text: "Escalation message:: Hastily you scan through what is left of the security station's logs and databanks. Most have been totally wasted during your attack, but it seems that a list of time schedules and locations you find contain some of the station's clients, at least two of the locations are identical to the ones the two pleasure casas you previously made a short story of were located at. The list contains one more site..."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: 6-7
+            class: Sentry
+            names:
+              - Blood Point Defense Battery
+            triggers: Destroying may trigger escalation
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corpatis Seer
+              - Corpatis Shade
+          - count: 0-1
+            class: Commander Cruiser
+            names:
+              - Dark Blood Revenant
+              - Dark Blood Sage
+            ewar:
+              - kind: trackingDisruption
+              - kind: neut
+            triggers: Destroying this may trigger further escalation
+            drop: Dark Blood ammo/modules
+      - id: station-wave
+        trigger:
+          on: other
+          text: Station Wave
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Corpii Reaver
+              - Corpii Engraver
+          - count: "6"
+            class: Destroyer
+            names:
+              - Corpior Converter
+              - Corpior Friar
+          - count: "2"
+            class: Cruiser
+            names:
+              - Corpum Shadow Sage
+              - Corpum Dark Priest
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corpatis Phantom
+              - Corpatis Exorcist
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Station
+            names:
+              - Blood Vessel Resort
+            triggers: Attacking triggers Station Wave, destroying is alternate trigger for possible escalation
+  - name: Location 4 (Lowsec/Rarely Highsec, Gateless)
+    notes:
+      - text: Triggered by attacking a Missile Battery, of after 1 minute. Wave will contain 5-7 total elite frigates.
+      - text: Triggered by attacking the last Missile Battery, or after 2-3 minutes.
+      - text: Station Wave contains 9 total elite frigates.
+      - text: "Escalation completion message:: You will never know if these three places you got to constituted the only elite playgrounds of the Blood in this part of space, but if so, they surely will have some work to do before they can have more play."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "6"
+            class: Sentry
+            names:
+              - Blood Heavy Missile Battery
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: "?"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Herald
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "?"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Follower
+              - Elder Corpii Worshipper
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "?"
+            class: Elite Frigate
+            names:
+              - Elder corpii Engraver
+              - Elder corpii Raider
+          - count: "2"
+            class: Cruiser
+            names:
+              - Corpum Dark Priest
+              - Corpum Shadow Sage
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Corpatis Bishop
+              - Corpatis Seer
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Engraver
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Upholder
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corpum Shadow Sage
+      - id: station-wave
+        trigger:
+          on: other
+          text: Station Wave
+          confidence: inferred
+        spawns:
+          - count: "?"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Reaver
+              - Elder Corpii Raider
+          - count: "?"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Collector
+            ewar:
+              - kind: trackingDisruption
+          - count: "?"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Herald
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "?"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Worshipper
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 3-4
+            class: Destroyer
+            names:
+              - Corpior Converter
+              - Corpior Visionary
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Arch Templar
+              - Elder Corpum Revenant
+            ewar:
+              - kind: neut
+      - id: commander-wave-100km
+        trigger:
+          on: other
+          text: Commander Wave (100km)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Overseer Battleship
+            names:
+              - Blood Messiah
+            drop: Dark Blood ammo/modules, Corpii A-Type modules
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Station
+            names:
+              - Blood Paradise
+            triggers: Triggers Station Wave when attacked, Commander Wave at 5% structure
+            drop: May contain Trade Goods
+            note: Has ~300k HP
+sde:
+  dungeonIds:
+    - 1713

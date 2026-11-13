@@ -1,0 +1,132 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: angel-occupied-mine
+kind: escalation
+name: Angel Occupied Mine
+dedRating: 4
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Angel Occupied Mine
+    url: https://wiki.eveuniversity.org/Angel_Occupied_Mine
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "229521"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Escalation: Expeditions"
+  - text: "Escalation: You have traced a signal being broadcast from this location. It leads to an Angel occupied mining site. This site is likely to contain high-ranking members of the Cartel."
+  - text: "Escalation: Description"
+  - text: "Escalation: An abandoned mine occupied by the Angel Cartel and home to some high-ranking members. This is considered high-risk"
+  - text: "Escalation: Operational Intel"
+  - text: "Escalation: Difficulty Level 4"
+  - text: "Escalation: Hostiles Angel Cartel"
+  - text: "Escalation: Escalation"
+  - text: "Escalation: Escalation Sites are sometimes revealed by your participation in other Deadspace sites."
+  - text: "Escalation: Waves"
+  - text: "Escalation: There is a total of 5 waves in this site."
+  - text: The Angel Occupied Mine is obtainable as an escalation while doing Angel Havens; once you get it and warp on site there will be 5 waves of Angel NPCs that will come to get you. The site is feasible with anything you used to do the Angel Haven.
+  - text: "Escalation: Previously, it was believed this site can only be escalated from Angel Havens. Currently (February 2026) it can also escalate from Angel Forsaken Hub"
+lootNotes:
+  - text: Bounty of the site is around 30 Million ISK. (Is this only the bounty or is the loot included?)
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Structure
+            names:
+              - Unknown amount and name
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Arch Gistii Hijacker
+              - Arch Gistii Outlaw
+          - count: "3"
+            class: Battleship
+            names:
+              - Gist Seraphim
+          - count: "4"
+            class: Sentry
+            names:
+              - Tower Sentry Angels
+      - id: 1st-reinforcement-spawn
+        trigger:
+          on: other
+          text: 1st Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Raider
+              - Arch Gistii Impaler
+          - count: "3"
+            class: Battleship
+            names:
+              - Gist Cherubim
+      - id: 2nd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 2nd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battleship
+            names:
+              - Gist Seraphim
+      - id: 3rd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 3rd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Rogue
+              - Arch Gistii Thug
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Gistatis Tribunus
+      - id: 4th-reinforcement-spawn
+        trigger:
+          on: other
+          text: 4th Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Thug
+              - Arch Gistii Hijacker
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Battleship
+            names:
+              - Gist Seraphim
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Domination Throne]
+sde:
+  dungeonIds:
+    - 10662

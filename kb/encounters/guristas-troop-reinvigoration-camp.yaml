@@ -1,0 +1,240 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: guristas-troop-reinvigoration-camp
+kind: complex
+name: Guristas Troop Reinvigoration Camp
+dedRating: 6
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Guristas Troop Reinvigoration Camp
+    url: https://wiki.eveuniversity.org/Guristas_Troop_Reinvigoration_Camp
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231797"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: T2 Battleship"
+notes:
+  - text: Guristas Troop Reinvigoration Camp is a DED rated site found through exploration. It can also be received as an escalation from the Guristas Rally Point and Guristas Hidden Den combat anomalies.
+  - text: 800 DPS T3 Cruiser is sufficient to clear the site in ~20-25 minutes.
+loot:
+  - item: 19th Tier Overseer's Effects
+    from: Captive Fighting Arena
+    note: est. 51.6M ISK (wiki) · 100% drop rate
+  - item: Pithum A-Type module
+    from: Captive Fighting Arena
+    note: est. 2M - 1B ISK (wiki)
+  - item: Gila BPC
+    from: Captive Fighting Arena
+    note: Rare drop
+  - item: Dread Guristas module
+    from: Captive Fighting Arena
+  - item: Dread Guristas module
+    from: Pithatis Speaker
+  - item: Dread Guristas module
+    from: Guristas Harlot Procurer
+  - item: Dread Guristas module
+    from: Intoxicated Commander
+lootNotes:
+  - text: Clearing the entire site gives roughly 13 million ISK in bounties before risk modifiers.
+pockets:
+  - name: 1st pocket
+    notes:
+      - text: "Database information:: This entrance pocket of the complex serves as a checkpoint to alert the internal pockets of the complex in the case of any intrusion or a Concord raid. The acceleration gate leading towards the Recuperation Tower is scrambled by the resident Guristas pilots, making it critical to take out those peripheral defenses before advancing forth."
+      - text: The acceleration gate is locked until all defenders are dead. All ships are ~15 km away and auto-aggro.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "11"
+            class: Destroyer
+            names:
+              - Pithior Anarchist
+              - Pithior Nihilist
+          - count: "1"
+            class: Overseer Battlecruiser
+            names:
+              - Pithatis Speaker
+            drop: May drop Pith Guristas Spa-card
+    onWarpIn: "This deadspace complex has been annexed by the Guristas forces to house an entertainment and recuperation center for troops on leave. While the area is not heavily guarded by on-duty personnel, the complex is normally occupied by a wide range of warships and experienced off-duty military staff. DED Threat Assessment: Major (6 of 10)"
+  - name: 2nd pocket
+    notes:
+      - text: "Database information:: The so called 'Recuperation Tower' pocket appears to be a sector where Pith Guristas soldiers can rest and help themselves to a drink at the local cantina. It serves as a meeting point for troops coming in with weekend passes, to continue further into the festivities that take place deeper into the complex."
+      - text: The NPCs are spread out in 3 groups. The closest group (2 battleships, all frigates and 3-4 destroyers) will auto-aggro on landing, the other two groups will not attack unless approached within 25 km and will shoot drones. Combined damage output will be quite high if you aren't careful with pulling room aggro. The acceleration gate is locked until all defenders are dead.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Pithi Demolisher
+              - Pithi Destructor
+          - count: "13"
+            class: Destroyer
+            names:
+              - Pithior Anarchist
+              - Pithior Nihilist
+              - Pithior Renegade
+          - count: "1"
+            class: Overseer Cruiser
+            names:
+              - Intoxicated Commander
+            drop: Can drop faction modules
+          - count: "13"
+            class: Battlecruiser
+            names:
+              - Pithatis Enforcer
+              - Pithatis Executor
+          - count: "7"
+            class: Battleship
+            names:
+              - Pith Dismantler
+              - Pith Eradicator
+              - Pith Extinguisher
+              - Pith Obliterator
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "2"
+            class: Container
+            names:
+              - Guristas Recreational Supplies
+            drop: meta modules, metal scraps
+  - name: 3rd pocket
+    notes:
+      - text: "Database information:: According to intelligence reports, this pocket has been named 'Sin Boulevard' by the mercenaries that frequent this place of degeneracy. It is the central section of the complex and contains the main attraction for visiting members of the Guristas army. The acceleration gate leading deeper into the complex is for high-rollers only, being a hub for gambling and bloodsport events."
+      - text: Sentries have limited aggro range of ~20-25 km, you land 40 km away from them. Like the previous pocket, the NPCs are spread out in 3 groups and one group will auto-aggro on landing while the rest will shoot drones. The acceleration gate is locked until all defenders are dead.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "21"
+            class: Destroyer
+            names:
+              - Pithior Anarchist
+              - Pithior Nihilist
+          - count: "1"
+            class: Overseer Cruiser
+            names:
+              - Guristas Harlot Procurer
+            drop: Can drop faction modules
+          - count: "7"
+            class: Battlecruiser
+            names:
+              - Pithatis Enforcer
+              - Pithatis Executor
+          - count: "4"
+            class: Battleship
+            names:
+              - Pith Dismantler
+              - Pith Extinguisher
+              - Pith Obliterator
+          - count: "4"
+            class: Sentry
+            names:
+              - Guristas Sentry Gun
+          - count: "1"
+            class: Sentry
+            names:
+              - Guristas Stasis Tower
+            ewar:
+              - kind: web
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "2"
+            class: Container
+            names:
+              - Guristas Recreational Supplies
+            drop: meta modules, metal scraps
+          - count: "2"
+            class: Container
+            names:
+              - Ammunition Storage
+            drop: T1 ammo
+  - name: 4th pocket
+    notes:
+      - text: "Database information:: The final sector of the reinvigoration camp houses casinos and a large arena for pitching involuntary captives of the Pith Guristas against each other in violent bloodsport events. According to intelligence reports this pocket contains the greatest military might within the complex, being such a strong attraction for the wealthy and world-weary officers of the mercenary league."
+      - text: Total of 3 cruisers, which may or may not jam. No auto-aggro on warp-in. You land roughly 35-40 km away from the spawn.
+      - text: The good stuff drops from Captive Fighting Arena.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "9"
+            class: Frigate
+            names:
+              - Pithi Demolisher
+              - Pithi Destructor
+          - count: "8"
+            class: Destroyer
+            names:
+              - Pithior Anarchist
+              - Pithior Guerilla
+              - Pithior Nihilist
+              - Pithior Renegade
+          - count: 0-3
+            class: Cruiser
+            names:
+              - Pithum Ascriber
+              - Pithum Silencer
+          - count: 0-3
+            class: Cruiser
+            names:
+              - Pithum Killer
+              - Pithum Murderer
+            ewar:
+              - kind: ecm
+          - count: "3"
+            class: Battleship
+            names:
+              - Pith Dismantler
+              - Pith Extinguisher
+              - Pith Obliterator
+          - count: 2-3
+            class: Battleship
+            names:
+              - Guristas Entertainment Officer
+          - count: "3"
+            class: Sentry
+            names:
+              - Guristas Light Missile Battery
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Captive Fighting Arena
+            drop: 19th Tier Overseer's Personal Effects and may contain Dread Guristas Cruiser Modules and Pithum A-Type Modules and Gila BPC.
+          - count: "1"
+            class: Structure
+            names:
+              - Casino
+            drop: Can contain people and commodities.
+          - count: "3"
+            class: Container
+            names:
+              - Confiscated Property Container
+sde:
+  dungeonIds:
+    - 2265

@@ -1,0 +1,293 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: shady-operation
+kind: escalation
+name: Shady Operation
+dedRating: null
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Shady Operation
+    url: https://wiki.eveuniversity.org/Shady_Operation
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "167532"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: All four parts are in Sansha infested nullsec. The first two locations are ungated, while the last two have acceleration gates which permit subcaptials.
+  - text: 'Escalation from Sansha Fortress: As the bits and pieces from the disintegrated station charge into space, carrying the news of heightened entropy in the universe, your instruments receive an unusual message. It obviously is being transmitted from a Sansha ship and even though the person on the other end does not introduce himself as such, there is no doubt that this is the voice of one of those facistic Sansha pricks who have "True Power" printed on their undies. He demands talking in a closed channel and after you have establised one, he continues with some congratulations on your brave victory and then he gives you an offer; If you go to three different locations he provides, assassinate the Sansha leaders operating there and gather all loot you find for him, he will pay you one billion ISK. He then gives you coordinates to a location in a "take it or leave it" manner, before saying farewell and adds that he will contact you after this first target is destroyed.'
+loot:
+  - item: + Overseer and other valuable loot
+  - item: Centus A-Type modules
+    note: est. Varies widely (wiki) · From True Centus Preacher
+  - item: Nightmare BPC
+    note: est. Unknown value (wiki) · From True Centus Preacher
+  - item: Mid/High-Grade implants and faction ammo/tags
+    note: est. Varies (wiki) · From True Sansha Commander Battleships
+  - item: True Sansha faction modules
+    note: est. Varies widely (wiki) · From True Sansha Commander Battleships
+npcs:
+  Gruel Minjoan:
+    sdeTypes:
+      - Centus Mutant
+      - Centus Savage Lord
+    class: Battleship
+  Targani Lopar:
+    sdeTypes:
+      - True Sansha's Plague Lord
+    class: Commander Battleship
+  Raeton Kobryn:
+    sdeTypes:
+      - True Sansha's Overlord
+    class: Commander Battleship
+pockets:
+  - name: First Location
+    notes:
+      - text: Large number of ships at warpin. If True Sansha does not spawn or trigger escalation, destroy Gruel Minjoan to escalate site.
+      - text: "Escalation dead end: Having waited for this devious Sansha guy for a while, you are starting to think he is not going to show up at all. You kind of feel used ... but on the other hand, you got to rob some more Sanshas."
+      - text: "Escalation trigger: Finally your communication instruments come alive as this devious Sansha guy who hired you starts talking on the private channel. He commends you on a job well done and gives you directions to the next assassination target."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 1-2
+            class: Elite Frigate
+            names:
+              - Centii Loyal Savage
+              - Centii Loyal Slavehunter
+            ewar:
+              - kind: trackingDisruption
+          - count: 2-3
+            class: Destroyer
+            names:
+              - Centior Abomination
+              - Centior Devourer
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Centum Fiend
+              - Centum Hellhound
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Torturer
+              - Centum Loyal Mutilator
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centatis Daemon
+          - count: "1"
+            class: Battleship
+            names:
+              - Gruel Minjoan
+            triggers: Escalation trigger
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - True Sansha's Beast
+              - True Sansha's Plague Lord
+            ewar:
+              - kind: trackingDisruption
+            triggers: Escalation trigger
+            drop: Possible True Sansha faction modules, ammo/tags
+  - name: Second Location
+    notes:
+      - text: Similar number of enemies at warpin.
+      - text: "Escalation trigger: This time your employer is right on time with the coordinates to the last location. He sounds somewhat stressed, but before you can reply he is gone."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Centii Butcher
+              - Centii Manslayer
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Centii Loyal Minion
+              - Centii Loyal Servant
+              - Centii Loyal Ravener
+              - Centii Loyal Scavenger
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Execrator
+              - Centum Loyal Slaughterer
+            ewar:
+              - kind: trackingDisruption
+          - count: 1-2
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centatis Daemon
+          - count: "4"
+            class: Battleship
+            names:
+              - Centus Beast
+              - Centus Plague Lord
+            ewar:
+              - kind: trackingDisruption
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Targani Lopar
+            ewar:
+              - kind: trackingDisruption
+            triggers: Escalation trigger
+            drop: Possible True Sansha faction modules, ammo/tags
+  - name: Third Location
+    notes:
+      - text: Elite frigates and battleships at warpin.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 5-6
+            class: Elite Frigate
+            names:
+              - Centii Loyal Plague
+              - Centii Loyal Savage
+            ewar:
+              - kind: trackingDisruption
+          - count: 5-6
+            class: Battleship
+            names:
+              - Centus Dark Lord
+              - Centus Overlord
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+            note: Locked until all ships are destroyed
+  - name: First Pocket
+    notes:
+      - text: "Escalation trigger: After blowing up his third rival, you have probably come closer than you ever will to hear how an uptight head honcho with the Sanshas sounds when he is ecstatically pleased. He gives you one last location, tells you to come meet him there and take with you everything you looted from the three raids. It is pay day."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 5-6
+            class: Elite Frigate
+            names:
+              - Centii Loyal Ravener
+              - Centii Loyal Scavenger
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "4"
+            class: Cruiser
+            names:
+              - Centum Fiend
+              - Centum Torturer
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centatis Daemon
+          - count: "4"
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Dread Lord
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Raeton Kobryn
+            triggers: Escalation trigger
+            drop: Possible True Sansha faction modules, ammo/tags
+  - name: Fourth Location
+    notes:
+      - text: Battlecruisers and elite cruisers near warpin. Gate to first pocket is 30 km from warpin.
+    waves:
+      - id: near-acceleration-gate
+        trigger:
+          on: other
+          text: Near acceleration gate
+          confidence: inferred
+        spawns:
+          - count: 4-5
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Beast
+              - Centum Loyal Juggernaut
+            ewar:
+              - kind: trackingDisruption
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centatis Daemon
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+            note: Locked until all ships are destroyed
+  - name: First Pocket
+    notes:
+      - text: The True Centus Preacher has high armor Explosive resists and a moderate active tank.
+      - text: 'Expedition end: You have always been a bit ambivalent to having a day job and the employers you knew have more often than not been bastards. This one was no exception, leaving without a trace and no sight of the "billion ISK reward". You curse yourself for being so gullible.'
+    waves:
+      - id: large-group-20-60-km-away-auto-aggro
+        trigger:
+          on: other
+          text: Large group(20-60 km away, auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "22"
+            class: Frigate
+            names:
+              - Centii Butcher
+              - Centii Manslayer
+              - Centii Plague
+          - count: "11"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Minion
+              - Centii Loyal Ravener
+              - Centii Loyal Scavenger
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Battleship
+            names:
+              - Centus Lord
+              - Centus Slave Lord
+          - count: "1"
+            class: Overseer Battleship
+            names:
+              - True Centus Preacher
+            triggers: Trigger for expedition end
+            drop: 17th tier Overseer's Personal Effects, Centus A-Type modules, possible Nightmare BPC
+            note: Uses a strong armor repairer
+sde:
+  dungeonIds:
+    - 1435

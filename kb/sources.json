@@ -1,0 +1,7 @@
+{
+  "missionLevels": [1, 2, 3, 4, 5],
+  "storylineMissions": true,
+  "missionCategories": ["Epic_Arcs"],
+  "siteCategories": ["DED_Complexes", "Unrated_Complexes", "Combat_Anomalies", "Expeditions"],
+  "eventPages": ["Crimson Harvest (2026)"]
+}

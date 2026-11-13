@@ -1,0 +1,24 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: edencom-field-base
+kind: anomaly
+name: EDENCOM Field Base
+dedRating: null
+enemyFaction: Triglavian Collective
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – EDENCOM Field Base
+    url: https://wiki.eveuniversity.org/EDENCOM_Field_Base
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "163498"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: EDENCOM Field Base is a combat anomaly that can be found in EDENCOM Fortress systems. It is the hardest of the three EDENCOM combat anomalies.
+  - text: The site consists of single ungated normal space pocket. Triglavian Collective rats spawn in waves at the center of the site.
+sde:
+  dungeonIds:
+    - 8808

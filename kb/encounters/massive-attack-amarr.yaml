@@ -1,0 +1,244 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: massive-attack-amarr
+kind: mission
+name: Massive Attack
+level: 4
+enemyFaction: Amarr Empire
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Massive Attack (Amarr)
+    url: https://wiki.eveuniversity.org/Massive_Attack_(Amarr)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223436"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: trackingDisruption
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite Frigates"
+  - text: "Suggested ships: Nightmare, Abaddon, Apocalypse, Armageddon, Maelstrom, Dominix"
+  - text: "Space type: Deadspace"
+  - text: "Note: The mission is reported to be against Amarr, but the Tracking Disruptor ships given are Sansha's Nation They do not appear in the details.."
+  - text: The majority of hostile ships are frigate/destroyer/cruiser class with only a handful of battlecruisers and only a few battleships.
+  - text: When first posted, (on EVE-Survival) there were questions about whether an Angel Cartel Gistum Defeater was outside of the gate for an anti-Amarr mission. If anyone else getting this mission could confirm it that would be useful.
+  - text: "MariaEpiconthe (2009-03-04) : I doubt Angel Cartel is working alongside Amarr empire, so if anyone picks this mission up, enlighten us if the Angel Cartel rats are there for you or if this is a bug or whatnot. Thanks"
+  - text: "StraightChillen (2009-04-15) : I can confrim that as of today, there were infact gistum angel rats at the gate"
+  - text: "HappyPants (2013-07-02) : Confirmed again 2xgistum rats, didn't need to kill them to use gate, just killed amarr rats"
+  - text: "Anonymous (2022-07-14) : Confirmed 2x Angel Cartel Cruisers amongst Amarr rats. Cannot confirm presence or absence of any EWar. No need to kill any of them, could go straight into the first mission room."
+  - text: thumb|Two Gistum Cruisers amongst Amarr rats
+pockets:
+  - name: Warp-in
+    notes:
+      - text: The warp gate into the pocket is guarded by a small group of ships. They will aggro immediately after you have warped in.
+    waves:
+      - id: warp-gate-guards-auto-aggro
+        trigger:
+          on: other
+          text: Warp Gate Guards - Auto aggro
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Imperial Crusader
+          - count: "1"
+            class: Destroyer
+            names:
+              - Imperial Templar Caius
+          - count: "1"
+            class: Cruiser
+            names:
+              - Gistum Defeater
+            group: See EVE-Survival comments
+            ewar:
+              - kind: web
+              - kind: warpScramble
+  - name: Pocket 1
+    notes:
+      - text: Warp in is very near the Acceleration Gate (3500m)
+      - text: Deploying drones to attack Group 1 will aggro Group 2.
+      - text: Group 1 does not always aggro, if it doesn't shooting group 1 will also aggro group 2.
+      - text: Group 2 has a proximity aggro of 25km.
+      - text: "Note: No loot from structures"
+    waves:
+      - id: group-1-sanshas-outpost-auto-aggro-53km
+        trigger:
+          on: other
+          text: Group 1 - Sansha's Outpost - Auto aggro (53km)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Nahib
+          - count: "2"
+            class: Destroyer
+            names:
+              - Imperial Crusader
+          - count: "2"
+            class: Cruiser
+            names:
+              - Imperial Tamir
+          - count: "1"
+            class: Cruiser
+            names:
+              - Imperial Templar Muzakir
+      - id: group-2-40-45km
+        trigger:
+          on: other
+          text: Group 2 (40-45km)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Imperial Crusader
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Imperial Avenger
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Imperial Equalizer
+          - count: "1"
+            class: Battleship
+            names:
+              - Imperial Utara
+          - count: "1"
+            class: Battleship
+            names:
+              - Imperial Dominator
+  - name: Pocket 2
+    notes:
+      - text: Warp in is very near the Acceleration Gate (3500m)
+      - text: Deploying drones to attack Group 1 will aggro the entire pocket.
+    waves:
+      - id: group-1-conquered-sanshas-ruins-auto-aggro-79-85km
+        trigger:
+          on: other
+          text: Group 1 - Conquered Sansha's Ruins - Auto aggro (79-85km)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Imperial Templar Paladin
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Felix
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Nabih
+          - count: "2"
+            class: Cruiser
+            names:
+              - Imperial Tamir
+          - count: "1"
+            class: Cruiser
+            names:
+              - Imperial Templar Muzakir
+      - id: group-2-140-155km
+        trigger:
+          on: other
+          text: Group 2 (140-155km)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Imperial Crusader
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Imperial Avenger
+          - count: "2"
+            class: Battleship
+            names:
+              - Imperial Ultara
+  - name: Pocket 3
+    notes:
+      - text: Auto aggro from Group 1. Group 3 will aggro after several seconds.
+      - text: Group 2 (located in the middle) remains neutral.
+      - text: Any drones attacking Group 3 will be targeted and attacked by Group 2.
+      - text: "Blitz: Eliminate all ships from Group 3 in pocket 3. Warp out."
+      - text: "Tip: Mission is flagged completed after you have eliminated all ships from Group 3."
+    waves:
+      - id: group-1-auto-aggro-15km
+        trigger:
+          on: other
+          text: Group 1 - Auto aggro (15km)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Imperial Nabih
+          - count: "3"
+            class: Cruiser
+            names:
+              - Imperial Tamir
+      - id: group-2-asteroid-factory-98-100km
+        trigger:
+          on: other
+          text: Group 2 - Asteroid Factory (98-100km)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Imran
+          - count: "1"
+            class: Destroyer
+            names:
+              - Imperial Templar Caius
+          - count: "1"
+            class: Destroyer
+            names:
+              - Imperial Templar Crusader
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Imperial Justicar
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Imperial Avenger
+          - count: "1"
+            class: Battleship
+            names:
+              - Imperial Dominator
+          - count: "2"
+            class: Battleship
+            names:
+              - Imperial Ultara
+      - id: group-3-asteroid-station-94-100km
+        trigger:
+          on: other
+          text: Group 3 - Asteroid Station (94-100km)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Cruiser
+            names:
+              - Imperial Templar Muzakir
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Divine Imperial Equalizer
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Imperial Avenger
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Imperial Justicar

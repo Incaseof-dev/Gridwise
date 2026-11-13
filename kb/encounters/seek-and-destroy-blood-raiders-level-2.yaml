@@ -1,0 +1,51 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: seek-and-destroy-blood-raiders-level-2
+kind: mission
+name: Seek and Destroy
+level: 2
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Seek and Destroy (Blood Raiders) (Level 2)
+    url: https://wiki.eveuniversity.org/Seek_and_Destroy_(Blood_Raiders)_(Level_2)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191911"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Suggested ships: Destroyer, Cruiser"
+  - text: "Blitz: Kill the Initial Group."
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: initial-group-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group (auto-aggro)
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Corpii Diviner
+              - Corpii Raider
+          - count: "1"
+            class: Cruiser
+            names:
+              - Corpum Arch Reaver
+              - Corpum Arch Engraver
+            triggers: On attack, triggers Reinforcement
+      - id: reinforcement-20km
+        trigger:
+          on: other
+          text: Reinforcement, 20km
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Corpii Reaver
+              - Corpii Engraver

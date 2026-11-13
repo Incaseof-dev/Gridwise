@@ -1,0 +1,310 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: angel-kickbacks
+kind: escalation
+name: Angel Kickbacks
+dedRating: null
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Angel Kickbacks
+    url: https://wiki.eveuniversity.org/Angel_Kickbacks
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "215127"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Expedition start: As soon as you arrive, your instruments detect a large group of ships departing. Further analysis of the data indicates this was a convoy of six to eight transport ships from the Salvation Angels accompanied by an unknown number of combat vessels. Your navigational systems have already come up with a likely destination in case you feel you have any business with them."
+  - text: Angel Kickbacks is an expedition that escalates from Serpentis Lookout.
+  - text: The three first locations are usually in high security space while the last location is usually in low security space but this can vary.
+loot:
+  - item: + Commander and other valuable loot
+  - item: Coreli A-Type modules
+    note: From Shadow Coreli Antagonist
+  - item: Daredevil BPC
+    note: From Shadow Coreli Antagonist
+  - item: Mid-Grade implants and faction ammo/tags
+    note: From Shadow Serpentis Commander Frigates
+  - item: + Exploration logs
+  - item: 2014 Nov
+    note: est. 37M ISK (wiki) · From Shadow Coreli Antagonist
+  - item: Coreli A-Type Remote Armor Repairer
+    note: est. From Shadow Coreli Antagonist (wiki)
+  - item: 2014 Nov
+    note: est. 32M ISK (wiki) · From Shadow Coreli Antagonist
+  - item: Coreli A-Type EM Plating
+    note: est. From Shadow Coreli Antagonist (wiki)
+  - item: 2015 Apr
+    note: est. 24M ISK (wiki) · From Shadow Coreli Antagonist
+  - item: Coreli A-Type Remote Armor Repairer
+    note: est. From Shadow Coreli Antagonist (wiki)
+  - item: Shadow Serpentis Thermal Plating
+    note: est. From Shadow Serpentis Patroller (wiki)
+  - item: 2016 Mar
+    note: est. 11.6M ISK (wiki) · From Shadow Serpentis Guard
+  - item: Coreli A-Type 1MN Afterburner
+    note: est. From Shadow Coreli Antagonist (wiki)
+  - item: 2016 May
+    note: est. 19.6M ISK (wiki) · From Shadow Coreli Antagonist
+  - item: Coreli A-Type 5MN Microwarpdrive
+    note: est. From Shadow Coreli Antagonist (wiki)
+  - item: 2020 March
+    note: est. 36.65M ISK (wiki) · From Shadow Coreli Antagonist
+  - item: Coreli A-Type Small Armor Repairer
+    note: est. From Shadow Coreli Antagonist (wiki)
+  - item: Coreli A-Type Adaptive Nano Plating
+    note: est. From Shadow Coreli Antagonist Very valuable loot, plus I didn't get blown up carrying it. I hope other people have as good luck as I did! (wiki)
+  - item: 2020 August
+    note: est. 282k ISK (wiki) · From Shadow Coreli Antagonist All parts were in hisec.
+  - item: 2021 Januari
+    note: est. 30.6M ISK (wiki) · From Shadow Coreli Antagonist All parts were in hisec.
+  - item: 2022 April
+    note: est. 86M ISK (wiki) · From Shadow Serpentis Guard (Part 3) In highsec.
+  - item: Coreli A-Type EM Coating
+    note: est. From Shadow Coreli Antagonist In lowsec. (wiki)
+  - item: Coreli A-Type Multispectrum Coating
+  - item: Coreli A-Type Small Armor Repairer
+  - item: Coreli A-Type Small Remote Armor Repairer
+  - item: 2023 July
+    note: est. 602k ISK (wiki) · From Shadow Coreli Antagonist In highsec.
+  - item: Coreli A-Type 1MN Afterburner
+  - item: Coreli A-Type 5MN Microwarpdrive
+  - item: Daredevil Blueprint
+  - item: 2024 April
+    note: est. 121M ISK (wiki) · From part 3 in highsec.
+  - item: Daredevil Blueprint x2
+    note: est. From part 3 and part 4. (wiki)
+  - item: Coreli A-Type 5MN Microwarpdrive
+    note: est. From part 4 in lowsec. (wiki)
+pockets:
+  - name: "Part #1"
+    notes:
+      - text: ----
+      - text: On warp-in kill Shadow Serpentis Commander Frigate if present, then proceed into second pocket.
+  - name: Warpin
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 0-4
+            class: Frigate
+            names:
+              - Coreli Patroller
+              - Coreli Watchman
+            ewar:
+              - kind: sensorDamp
+          - count: 0-4
+            class: Frigate
+            names:
+              - Coreli Defender
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corelior Infantry
+            note: type list incomplete on the source page
+          - count: 0-1
+            class: Commander Frigate
+            names:
+              - Shadow Serpentis Agent
+            triggers: Trigger for possible escalation
+            drop: Chance to drop Shadow Serpentis modules and implants
+            note: type list incomplete on the source page
+  - name: "Pocket #2"
+    notes:
+      - text: Simple warp-in to the pocket for possible escalation.
+      - text: "Escalation message: Not much here, except this empty warehouse. Perhaps the next location will reveal something more..."
+      - text: "Escalation end message: Nothing much here, except these empty warehouses. While flying here, your navigational systems have mulled over the other locations included in the report and reached the conclusion they are actually not coordinates, but encrypted dates. Who knows what purpose this document really had? In any case, you have no more steps to follow and no clue as to how to find them."
+  - name: "Part #2"
+    notes:
+      - text: ----
+      - text: On warp-in kill Shadow Serpentis Commander Frigate if present, then proceed into second pocket.
+  - name: Warpin
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Coreli Defender
+            note: type list incomplete on the source page
+          - count: 5-6
+            class: Destroyer
+            names:
+              - Corelior Artillery
+            note: type list incomplete on the source page
+          - count: 0-1
+            class: Commander Frigate
+            names:
+              - Shadow Serpentis Patroller
+            triggers: Trigger for possible escalation
+            drop: Chance to drop Shadow Serpentis modules and implants
+            note: type list incomplete on the source page
+  - name: "Pocket #2"
+    notes:
+      - text: Probably simple warp-in to the pocket for possible escalation as in all previous locations.
+      - text: 'Escalation message: Again, a similar setup and this time you caught some bad guys in the act. Not that stealing from the Serpentis is necessarily "bad". Now if you only would find one of these hideouts where the Angels still store some booty. Perhaps the next location will lead you to something more interesting.'
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Coreli Initiate
+            note: type list incomplete on the source page
+          - count: 1-2
+            class: Destroyer
+            names:
+              - Corelior Artillery
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Cruiser
+            names:
+              - Corelum Chief Scout
+            note: type list incomplete on the source page
+  - name: "Part #3"
+    notes:
+      - text: ----
+      - text: On warp-in kill Shadow Serpentis Commander Frigate if present, then proceed into second pocket.
+  - name: Warpin
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Coreli Guard
+            note: type list incomplete on the source page
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Guard
+            ewar:
+              - kind: sensorDamp
+            note: type list incomplete on the source page
+          - count: 4-6
+            class: Destroyer
+            names:
+              - Corelior Infantry
+              - Corelior Sentinel
+            note: type list incomplete on the source page
+          - count: 0-1
+            class: Commander Frigate
+            names:
+              - Shadow Serpentis Patroller
+              - Shadow Serpentis Guard
+              - Shadow Serpentis Safeguard
+            triggers: Trigger for possible escalation
+            drop: Chance to drop Shadow Serpentis modules and implants
+            note: type list incomplete on the source page
+  - name: "Pocket #2"
+    notes:
+      - text: "Escalation message: It's another hidden warehouse and this time a stiffer resistance. There is one location left and it should get interesting. Your computer grabs your attention, indicating that the route to the last location has been calculated."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Coreli Guardian
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Destroyer
+            names:
+              - Corelior Infantry
+            note: type list incomplete on the source page
+  - name: "Part #4 (low-sec, high-sec possible)"
+    notes:
+      - text: ----
+  - name: "Pocket #1"
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Coreli Guardian Initiate
+              - Coreli Guardian Scout
+            group: "Group #1"
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corelior Soldier
+              - Corelior Trooper
+            group: "Group #1"
+          - count: 3-4
+            class: Frigate
+            names:
+              - Coreli Defender
+            group: "Group #2"
+  - name: "Pocket #2"
+    notes:
+      - text: "End of expedition: The ethics involved in robbing this hapless band of Angels are are interesting. Robbing from thieves who stole from drug dealers who sold their drugs to people who robbed someone to afford them...You wonder how long it has been since the valuables in your cargo hold were in honest hands."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Coreli Patroller
+              - Coreli Watchman
+            group: "Group #1 (aggro on warp-in)"
+            ewar:
+              - kind: sensorDamp
+          - count: "1"
+            class: Overseer Frigate
+            names:
+              - Shadow Coreli Antagonist Trigger for expedition end
+            group: "Group #1 (aggro on warp-in)"
+            drop: Drops possibly Coreli A-Type modules
+          - count: "3"
+            class: Frigate
+            names:
+              - Coreli Defender
+            group: "Group #2"
+            note: type list incomplete on the source page
+          - count: 1-2
+            class: Frigate
+            names:
+              - Coreli Guardian Patroller
+            group: "Group #2"
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "1"
+            class: Cruiser
+            names:
+              - Corelum Chief Patroller
+              - Corelum Chief Watchman
+            group: "Group #2"
+            ewar:
+              - kind: sensorDamp
+sde:
+  dungeonIds:
+    - 1425

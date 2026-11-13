@@ -1,0 +1,190 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: pirate-invasion-serpentis
+kind: mission
+name: Pirate Invasion
+level: 3
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Pirate Invasion (Serpentis)
+    url: https://wiki.eveuniversity.org/Pirate_Invasion_(Serpentis)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223041"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Neutralize the entire enemy force
+ewar:
+  - kind: sensorDamp
+  - kind: web
+  - kind: warpScramble
+notes:
+  - text: "Web/warp disruption: Elite Frigates (Web, Scram)"
+  - text: "Suggested ships: HAC, Battlecruiser"
+  - text: Prop mod recommended for travel to acceleration gate
+  - text: "Video: Cerberus"
+  - text: The War Installation in Pocket 1 may take over 1,000 Heavy Missiles to destroy, making it not worthwhile.
+  - text: Structures not listed don't drop loot.
+  - text: Structures in the 2nd Pocket are invulnerable.
+pockets:
+  - name: Warp-In
+    waves:
+      - id: initial-group-8-32km-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group, 8-32km (auto-aggro)
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Coreli Patroller
+              - Coreli Watchman
+            ewar:
+              - kind: sensorDamp
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Initiate
+              - Coreli Guardian Scout
+            ewar:
+              - kind: web
+              - kind: warpScramble
+  - name: 1st Pocket
+    notes:
+      - text: Each group will aggro independently when attacked.
+      - text: Acceleration gate to 2nd pocket is at 65-70km.
+    waves:
+      - id: 1st-group-40-50km
+        trigger:
+          on: other
+          text: 1st Group, 40-50km
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Coreli Guard
+              - Coreli Safeguard
+          - count: "2"
+            class: Destroyer
+            names:
+              - Corelior Soldier
+              - Corelior Trooper
+          - count: "2"
+            class: Cruiser
+            names:
+              - Corelum Chief Defender
+              - Corelum Chief Protector
+      - id: 2nd-group-80-90km
+        trigger:
+          on: other
+          text: 2nd Group, 80-90km
+          confidence: inferred
+        spawns:
+          - count: 5-7
+            class: Frigate
+            names:
+              - Coreli Defender
+              - Coreli Protector
+              - Coreli Safeguard
+              - Coreli Soldier
+          - count: 1-3
+            class: Destroyer
+            names:
+              - Corelior Infantry
+              - Corelior Soldier
+          - count: "5"
+            class: Cruiser
+            names:
+              - Corelum Chief Defender
+              - Corelum Chief Patroller
+              - Corelum Chief Watchman
+            ewar:
+              - kind: sensorDamp
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Corelatis Wing Leader
+      - id: wave
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - War Installation
+            drop: T1 loot and/or ammo
+          - count: "12"
+            class: Structure
+            names:
+              - Starbase Major Assembly Array
+            drop: Minerals
+  - name: 2nd Pocket
+    notes:
+      - text: Attacking the 3rd Group will aggro the entire pocket.
+    waves:
+      - id: 1st-group-30-40km-auto-aggro
+        trigger:
+          on: other
+          text: 1st Group, 30-40km (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Coreli Guard
+              - Coreli Safeguard
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Initiate
+              - Coreli Guardian Scout
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corelior Infantry
+              - Corelior Soldier
+              - Corelior Trooper
+      - id: 2nd-group-25-35km
+        trigger:
+          on: other
+          text: 2nd Group, 25-35km
+          confidence: inferred
+        spawns:
+          - count: "9"
+            class: Cruiser
+            names:
+              - Corelum Chief Defender
+              - Corelum Chief Safeguard
+              - Corelum Chief Guard
+              - Corelum Chief Watchman
+            ewar:
+              - kind: sensorDamp
+      - id: 3rd-group-50-60km
+        trigger:
+          on: other
+          text: 3rd Group, 50-60km
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Cruiser
+            names:
+              - Corelum Chief Guard
+              - Corelum Chief Safeguard
+            ewar:
+              - kind: sensorDamp
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corelatis Plantoon Leader
+              - Corelatis Squad Leader
+              - Corelatis Wing Leader

@@ -1,0 +1,134 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: drone-infested-mine
+kind: complex
+name: Drone Infested Mine
+dedRating: 4
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Drone Infested Mine
+    url: https://wiki.eveuniversity.org/Drone_Infested_Mine
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "230491"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Drone Infested Mine is a DED 4/10 rated combat site that is found in ? and null security space. It lasts 8h once earned in the Opportunities journal
+  - text: "Expeditions: You have traced a signal being broadcast from this site. It leads to a Rogue Drone infested mining site. This site is likely to contain high-powered vessels infested by the Rogue Drones."
+  - text: "Description: There is a Rogue Drone infestation running amok in this abandoned mine. Readings indicate high-powered vessel may be present. This site is considered high-risk."
+pockets:
+  - name: First Pocket
+    notes:
+      - text: See this video (July 2024) for a preview of possible loot and site configuration (careful they are wrong on the no pointing, something points in a later wave)
+    waves:
+      - id: wave-1
+        trigger:
+          on: warpIn
+          text: Wave 1
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Strain Splinter Alvi
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "?"
+            class: Battleship
+            names:
+              - Matriarch Alvus
+          - count: "?"
+            class: Battleship
+            names:
+              - Alvus Queen
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Strain Splinter Alvi
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "?"
+            class: Battleship
+            names:
+              - Matriarch Alvus
+          - count: "?"
+            class: Battleship
+            names:
+              - Alvus Queen
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: "?"
+            class: Battleship
+            names:
+              - Matriarch Alvus
+          - count: "3"
+            class: Battleship
+            names:
+              - Alvus Queen
+      - id: wave-4
+        trigger:
+          on: other
+          text: Wave 4
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Strain Splinter Alvi
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Exterminator Alvatis
+      - id: wave-5
+        trigger:
+          on: other
+          text: Wave 5
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Strain Splinter Alvi
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Battleship
+            names:
+              - Matriarch Alvus
+          - count: "1"
+            class: Battleship
+            names:
+              - Commander Sentient Patriarch Alvus
+            drop: Drone Cerebral Fragment (27), Drone Coronary Unit (16), Drone Epidermal Shielding Chunk (39), Elite Drone AI (1)
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "4"
+            class: Sentry
+            names:
+              - Drone Sentry Turret III
+    onWarpIn: Drone Infested Mine This is the origin point of the Rogue Drone signal you traced, a former mining site infested by Rogue Drones protected by a high-powered vessel. Destroy them before they destroy you.
+sde:
+  dungeonIds:
+    - 10977

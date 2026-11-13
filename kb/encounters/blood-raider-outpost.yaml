@@ -1,0 +1,132 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: blood-raider-outpost
+kind: complex
+name: Blood Raider Outpost
+dedRating: null
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Blood Raider Outpost
+    url: https://wiki.eveuniversity.org/Blood_Raider_Outpost
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "221441"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Battleships"
+notes:
+  - text: 400px
+  - text: The site is behind an acceleration gate. Warping to the side lands you at 0 on the gate.
+  - text: A passive shield-tanked Drake can run this site.
+  - text: =Walkthrough=
+lootNotes:
+  - text: "Bounty: about 4,000,000 ISK"
+  - text: =Escalation=
+  - text: This site can escalate to Save The Slaves
+pockets:
+  - name: First Room
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Corpii Reaver
+              - Corpii Engraver
+          - count: 3-4
+            class: Cruiser
+            names:
+              - Corpum Dark Priest
+              - Corpum Arch Priest
+            note: type list incomplete on the source page
+          - count: 2-4
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Arch Priest
+            note: type list incomplete on the source page
+          - count: 6-7
+            class: Battlecruiser
+            names:
+              - Corpatis Fanatic
+            note: type list incomplete on the source page
+  - name: Second Room
+    notes:
+      - text: Last ship in nearest group triggers commander spawn
+      - text: This site may trigger the escalation Save The Slaves.
+      - text: Corpum cruisers can neut.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Corpii Reaver
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Collector
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corpior Devoter
+            note: type list incomplete on the source page
+          - count: "5"
+            class: Cruiser
+            names:
+              - Corpum Dark Priest
+            ewar:
+              - kind: neut
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corpatis Phantom
+            note: type list incomplete on the source page
+      - id: commander-spawn
+        trigger:
+          on: other
+          text: Commander Spawn
+          confidence: inferred
+        spawns:
+          - count: 0-1
+            class: Commander Cruiser
+            names:
+              - Dark Blood Sage
+              - Dark Blood Priest
+            ewar:
+              - kind: neut
+            drop: Possible faction ammo, tags, modules and/or implants
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corpatis Phantom
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corpior Devoter
+              - Corpior Templar
+              - Corpior Visionary
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "5"
+            class: Structure
+            names:
+              - Blood Raider Bunker
+            triggers: Destroying all Bunkers may result in getting the escalation.
+sde:
+  dungeonIds:
+    - 1254

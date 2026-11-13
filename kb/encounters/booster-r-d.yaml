@@ -1,0 +1,354 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: booster-r-d
+kind: escalation
+name: Booster R&D
+dedRating: null
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Booster R&D
+    url: https://wiki.eveuniversity.org/Booster_R%26D
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "215876"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Escalates from Serpentis Vigil
+  - text: 'Expedition start:: Going through the items found in the Serpentis outpost, you notice some unused boosters still in their original packs complete with documentation and bear the seal of the Serpentis Corporation. The documentation notes further that these boosters as "Field Test" material and not for common consumption and at the bottom there is ordering info, stating item number and the makers electronic address. Feeling it is worth a shot, you set your communication instruments to emulate those of the Serpentis facility you just laid to waste, feed in the booster factory addy and hit send. And lo and behold, you get an instant reply, a sleepy sounding female voice says "SC medical research 504, good day. How may I help you? Oh! It is Vigil 15? I have a message for you from the supply office, they say you are late. Get to G5, pick up the materials and get here as soon as possible" She adds information on the location and tells you to talk to Nadir, also at G5 if there is anything. And with that she is off the air.'
+  - text: "Warning: this expedition seems to despawn shortly after you warp out of it."
+npcs:
+  Harvester Guard:
+    sdeTypes:
+      - Coreli Guardian Defender
+      - Coreli Guardian Protector
+    class: Frigate
+  Harvester:
+    sdeTypes:
+      - Corelatis Captain
+      - Corelatis Platoon Leader
+    class: Battlecruiser
+pockets:
+  - name: First Location
+    notes:
+      - text: Astero
+      - text: Harvesters and Harvester Guards does high DPS.
+      - text: Notable structures
+      - text: 'Escalation message:: Suddenly the channel comes alive with the Serpentis lady from the medical station again. "SCmr504 to Vigil 15, divert to a new location, we have news of pirate activity at G5, confirm please!" You broadcast a reply with the identification from the one of the ships you destroyed back at the Serpentis Vigil station, which seems to be sufficient for her; she says that you should stay off the air for security reasons and that she will contact you soon again with further instructions.'
+      - text: 'Escalation dead-end:: Suddenly the channel comes alive with the Serpentis lady from the medical station again. "SCmr504 to Vigil 15, divert to a new location, we have news of pirate activity at G5, confirm please!" You broadcast a reply with the identification from the one of the ships you destroyed back at the Serpentis Vigil station, but it must have been invalid or outdated, because she spits some curses at you and vanishes.'
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Harvester Guard
+          - count: "1"
+            class: Commander Cruiser
+            names:
+              - Shadow Serpentis Chief Patroller
+              - Shadow Serpentis Chief Watchman
+            ewar:
+              - kind: sensorDamp
+            triggers: Escalation trigger
+            drop: Drops
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Harvester
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns: []
+  - name: Second Location
+    notes:
+      - text: Stratios
+      - text: "Message on attacking Core Lord Admiral:: Mayday! Mayday G6 industrial group being attacked by pirates!"
+      - text: Notable structures
+      - text: 'Escalation message:: Again your radio comes alive with the voice of this femme serpentia "This is an important security announcement, all ships in G5, G6, G8 and G9: evacuate immediately to a new location and wait for security forces to escort you back to base." It seems like your little enterprise has made the local division of the Serpentis organization a bit confused, perhaps they are not used to be the hunted. This message was a bit troubling though... you can expect two whole gas mining teams and a security team of an undisclosed size. You need to be more careful here...'
+      - text: 'Dead-end message:: Again your radio comes alive with the voice of this femme serpentia "This is an important security announcement, all ships in G5, G6, G8 and G9: evacuate immediately and return to base."'
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 3-4
+            class: Destroyer
+            names:
+              - Harvester
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardien Chief
+          - count: "1"
+            class: Cruiser
+            names:
+              - Shadow Serpentis Chief Partroller
+            ewar:
+              - kind: sensorDamp
+            triggers: Escalation trigger
+            drop: Can drop faction modules or mid-grade Asklepian implants
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Corelatis Squad
+              - Corelatis Wing Leader
+          - count: 2-3
+            class: Battleship
+            names:
+              - Core Lord Admiral
+            triggers: Triggers spawn 1
+      - id: spawn-1
+        trigger:
+          on: other
+          text: "Spawn #1"
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Scout
+            ewar:
+              - kind: sensorDamp
+            triggers: Attacking triggers Spawn 2
+            note: type list incomplete on the source page
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief
+            ewar:
+              - kind: sensorDamp
+            triggers: Attacking triggers Spawn 2
+      - id: spawn-2
+        trigger:
+          on: other
+          text: "Spawn #2"
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Scout
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Battleship
+            names:
+              - Core Grand Admiral
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns: []
+  - name: Third Location
+    notes:
+      - text: Dominix
+      - text: Ungated normal space pocket. For blitzing pick a asteroid/trash object near the shadow serpentis and warp to it. The trigger for escalation in case no commander is present is unknown.
+      - text: There are damps. The elite cruisers and battlecruisers will approach to 6 and 20 km orbits. Once enemies get in range the incoming damage is quite high. Each group can be agressed separately. The reinforcements spawn in same locations where initial groups were.
+      - text: "Dead End Message:: You follow the coming and going of the Serpentis who are seemingly unaware there is an enemy amongst them. When they start warping out again, you position your scanners, let your instruments run a tracking routine, sit back and hope for the best. And you win! The probability of loosing s simple destination track on a fleet like this is according to your instruments around 23100 to one, and you managed to do exactly that. You make a mental note to buy a ticket in The Forge Lottery the next time you are up in Jita."
+      - text: "Escalation Message:: You follow the coming and going of the Serpentis who are seemingly unaware there is an enemy amongst them. When they start warping out again, you position your scanners, let your instruments run a tracking routine, sit back and hope for the best. And yes, you do indeed get a feedback indicating a location not too far away as their destination. If they have stuck their plans, this should be the site of the Serpentis medical research facility!"
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "11"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Defender
+            group: Group 1 (100 km)
+            note: type list incomplete on the source page
+          - count: "11"
+            class: Battlecruiser
+            names:
+              - Corelatis Squad
+              - Corelatis Wing Leader
+            group: Group 1 (100 km)
+          - count: "7"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Defender
+            group: Group 2 (100 km)
+            note: type list incomplete on the source page
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Corelatis Squad
+              - Corelatis Wing Leader
+            group: Group 2 (100 km)
+          - count: "6"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Defender
+            group: Group 3 (100 km)
+            note: type list incomplete on the source page
+          - count: "7"
+            class: Battlecruiser
+            names:
+              - Corelatis Squad
+              - Corelatis Wing Leader
+            group: Group 3 (100 km)
+          - count: "14"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Defender
+            group: Group 4 (200 km)
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Commander Cruiser
+            names:
+              - Shadow Serpentis
+            group: Group 4 (200 km)
+            triggers: Escalation trigger
+            drop: Drops
+          - count: "13"
+            class: Battlecruiser
+            names:
+              - Corelatis Squad
+              - Corelatis Wing Leader
+            group: Group 4 (200 km)
+      - id: spawn-1
+        trigger:
+          on: other
+          text: "Spawn #1"
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Partroller
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Destroyer
+            names:
+              - Coreli Artillery
+      - id: spawn-2
+        trigger:
+          on: other
+          text: "Spawn #2"
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Coreli Guard
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Partroller
+            note: type list incomplete on the source page
+      - id: spawn-3
+        trigger:
+          on: other
+          text: "Spawn #3"
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Partroller
+            note: type list incomplete on the source page
+          - count: "7"
+            class: Destroyer
+            names:
+              - Coreli Sentinel
+            note: type list incomplete on the source page
+          - count: "8"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Sentinel
+            note: type list incomplete on the source page
+      - id: spawn-4
+        trigger:
+          on: other
+          text: "Spawn #4"
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Coreli Guard
+            note: type list incomplete on the source page
+          - count: "13"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Partroller
+            note: type list incomplete on the source page
+          - count: "7"
+            class: Destroyer
+            names:
+              - Coreli Sentinel
+            note: type list incomplete on the source page
+          - count: "6"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Sentinel
+            note: type list incomplete on the source page
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corlatis Captain
+            note: type list incomplete on the source page
+  - name: Fourth Location
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Serpentis Stronghold
+            triggers: Triggers more defenders. Drops meta modules
+      - id: spawn-1-on-attack
+        trigger:
+          on: other
+          text: "Spawn #1 (on attack)"
+          confidence: inferred
+        spawns: []
+      - id: spawn-2-50-shield
+        trigger:
+          on: other
+          text: "Spawn #2 (50% shield)"
+          confidence: inferred
+        spawns: []
+      - id: spawn-3-50-armor
+        trigger:
+          on: other
+          text: "Spawn #3 (50% armor)"
+          confidence: inferred
+        spawns: []
+      - id: spawn-4-structure
+        trigger:
+          on: other
+          text: "Spawn #4 (structure)"
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Overseer Cruiser
+            names:
+              - Serpentis Drug Escort
+            triggers: Ends escalation
+            drop: Drops A-Type Frigate modules, A-Type ANPs
+      - id: spawn-5-50-structure
+        trigger:
+          on: other
+          text: "Spawn #5 (50% structure)"
+          confidence: inferred
+        spawns: []
+sde:
+  dungeonIds:
+    - 1717

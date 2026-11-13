@@ -1,0 +1,97 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: chain-reaction
+kind: mission
+name: Chain Reaction
+level: 3
+enemyFaction: Gallente Federation & Minmatar Republic
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Chain Reaction
+    url: https://wiki.eveuniversity.org/Chain_Reaction
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "226755"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the Starbase Main Reactor
+ewar:
+  - kind: sensorDamp
+notes:
+  - text: This mission can incur a lot of faction standing loss if not blitzed.
+  - text: No hostiles at initial gate.
+  - text: "Blitz: Warp-in, destroy Starbase Main Reactor(72km), warpout."
+pockets:
+  - name: 1st Pocket
+    notes:
+      - text: The four groups will either auto aggro or proximity aggro at 40km.
+    waves:
+      - id: initial-hostiles
+        trigger:
+          on: warpIn
+          text: Initial Hostiles
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Federation Praktor Centurion
+              - Federation Praktor Legionarius
+            group: Group 1 (60km)
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Federation Praktor Arx
+            group: Group 1 (60km)
+          - count: "1"
+            class: Frigate
+            names:
+              - Federation Praktor Belos
+              - Federation Praktor Harpago
+            group: Group 2 (35km)
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Elite Federation Matara
+            group: Group 2 (35km)
+            ewar:
+              - kind: sensorDamp
+          - count: "2"
+            class: Cruiser
+            names:
+              - Federation Calo
+            group: Group 2 (35km)
+          - count: "5"
+            class: Cruiser
+            names:
+              - Republic Tribal Jarpu
+              - Republic Tribal Manadis
+            group: Group 3 (35km)
+          - count: "3"
+            class: Sentry
+            names:
+              - Gallente Light Missile Battery
+            group: Group 4 (70km)
+          - count: "3"
+            class: Sentry
+            names:
+              - Gallente Heavy Missile Battery
+            group: Group 4 (70km)
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Starbase Shield Generator
+            drop: Various trade goods
+            note: Eliminates the force field bubble around the main reactor
+          - count: "1"
+            class: Structure
+            names:
+              - Starbase Main Reactor
+            triggers: Mission completed on destruction

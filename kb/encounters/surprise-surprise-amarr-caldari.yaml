@@ -1,0 +1,104 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: surprise-surprise-amarr-caldari
+kind: mission
+name: Surprise Surprise
+level: 4
+enemyFaction: Amarr Empire & Caldari State
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Surprise Surprise (Amarr & Caldari)
+    url: https://wiki.eveuniversity.org/Surprise_Surprise_(Amarr_%26_Caldari)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191961"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal: []
+  resist:
+    - em
+    - thermal
+    - kinetic
+objectives:
+  - text: Investigate the disturbance at the location of the bookmark, deal with any hostiles, then report back to your agent.
+ewar:
+  - kind: web
+notes:
+  - text: Use a target painter to aggro the transport ship. This will cause Wave 1 to spawn, but will NOT cause you to lose any Amarr faction standing.
+  - text: Kill the Imperial Battleship which spawns on the Right Hand side of the room (Should be the Battleship which spawns furthest from you), and the State Battleship which spawns slightly off from the other two - Mission Complete.
+  - text: "WARNING: Killing the stasis tower incurs -2.4% standing loss after the mission, even without killing the transport!"
+lootNotes:
+  - text: "Bounties: 0 ISK"
+  - text: "Salvage: 1.5M ISK"
+  - text: "Loot: 10M ISK"
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: Killing one of the Battleships from wave 1 will trigger wave 2.
+      - text: Killing a second Battleship from wave 1 will trigger wave 3.
+      - text: The Caldari Stasis Tower can web out to 180 km.
+    waves:
+      - id: initial-defender-65-70km
+        trigger:
+          on: warpIn
+          text: Initial defender (65-70km)
+        spawns:
+          - count: "1"
+            class: Industrial
+            names:
+              - Amarr Transport
+            triggers: triggers wave 1
+      - id: wave-1-55-105-km
+        trigger:
+          on: other
+          text: Wave 1 (55-105 km)
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Cruiser
+            names:
+              - Imperial Templar Tamir
+              - Imperial Templar Donus
+          - count: "3"
+            class: Battleship
+            names:
+              - Imperial Tanakh
+              - Imperial Ultara
+            triggers: triggers wave 2
+      - id: wave-2-50-90-km
+        trigger:
+          on: other
+          text: Wave 2 (50-90 km)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Battleship
+            names:
+              - State Ttaisho
+              - State Tenkyu
+          - count: "1"
+            class: Sentry
+            names:
+              - Stasis Tower
+            ewar:
+              - kind: web
+      - id: wave-3-70-90-km
+        trigger:
+          on: other
+          text: Wave 3 (70-90 km)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battleship
+            names:
+              - State Ttaisho
+              - State Tenkyu
+          - count: "1"
+            class: Sentry
+            names:
+              - Stasis Tower
+            ewar:
+              - kind: web

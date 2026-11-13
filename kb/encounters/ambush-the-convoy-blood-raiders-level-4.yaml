@@ -1,0 +1,46 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: ambush-the-convoy-blood-raiders-level-4
+kind: mission
+name: Ambush the Convoy
+level: 4
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Ambush the Convoy (Blood Raiders) (Level 4)
+    url: https://wiki.eveuniversity.org/Ambush_the_Convoy_(Blood_Raiders)_(Level_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231769"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: neut
+notes:
+  - text: Ambush the Convoy is a combat mission with multiple racial and level variants. The Blood Raiders variant can be Level 3 or 4.
+  - text: Objective item (50 Prisoners, 375) drops from the last hostile NPC destroyed.
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Industrial
+            names:
+              - Blood Raider Transport
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Corpior Phantom
+              - Blood Raider Escort
+          - count: "2"
+            class: Battleship
+            names:
+              - Corpus Monsignor
+            ewar:
+              - kind: neut

@@ -1,0 +1,160 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: honor-blood-raiders
+kind: mission
+name: Honor
+level: 5
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Honor (Blood Raiders)
+    url: https://wiki.eveuniversity.org/Honor_(Blood_Raiders)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "221287"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: web
+  - kind: neut
+  - kind: nos
+  - kind: warpScramble
+notes:
+  - text: "Web/warp disruption: T2 frigates(Elder Corpi prefix) have a chance to web/scramble."
+  - text: "Suggested ships: Passive shield tanked ships(eg: Drake, Nighthawk, etc)"
+  - text: "Space type: Deadspace with acceleration gates"
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-forces-aggro-on-warp-in
+        trigger:
+          on: warpIn
+          text: Initial Forces (Aggro on warp in
+        spawns:
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Arch Sage
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corpior Exorcist
+          - count: "11"
+            class: Battleship
+            names:
+              - Corpus Archbishop
+              - Corpus Patriarch
+              - Corpus Pope
+            ewar:
+              - kind: neut
+            note: Neut by Archbishop
+          - count: "4"
+            class: Sentry
+            names:
+              - Blood Cruise Missile Battery
+          - count: "1"
+            class: Sentry
+            names:
+              - Tower Sentry Bloodraider III
+          - count: "1"
+            class: Sentry
+            names:
+              - Blood Stasis Tower
+            ewar:
+              - kind: web
+          - count: "2"
+            class: Sentry
+            names:
+              - Blood Energy Neutralizer Sentry III
+            ewar:
+              - kind: neut
+  - name: Pocket 2
+    notes:
+      - text: "Note: This pocket contains the recruitment station that must be destroyed to complete the mission."
+      - text: "EVE-Survival import: Unclear if triggered by initial Corpus Patriarch or reinforcement C's. Initial most likely."
+      - text: "EVE-Survival import: Unclear if triggered by initial Corpus Pope or reinforcement A's. Initial most likely."
+    waves:
+      - id: initial-aggro-on-warp-in
+        trigger:
+          on: warpIn
+          text: Initial (Aggro on warp in)
+        spawns:
+          - count: "6"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Collector
+              - Elder Corpii Reaver
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Sage
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corpatis Exorcist
+          - count: "10"
+            class: Battleship
+            names:
+              - Corpus Archbishop
+              - Corpus Patriarch
+              - Corpus Pope
+              - Corpus Harbinger
+            ewar:
+              - kind: neut
+            triggers: Last Harbinger triggers reinforcement A, last Patriarch likely triggers reinforcement B and last Pope likely triggers reinforcement C
+            note: Neut by Archbishop
+          - count: "8"
+            class: Sentry
+            names:
+              - Blood Cruise Missile Battery
+          - count: "4"
+            class: Sentry
+            names:
+              - Blood Heavy Missile Battery
+          - count: "5"
+            class: Sentry
+            names:
+              - Blood Energy Neutralizer Sentry II
+            ewar:
+              - kind: neut
+      - id: reinforcement-a-last-corpus-harbinger
+        trigger:
+          on: other
+          text: Reinforcement A (last Corpus Harbinger)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battleship
+            names:
+              - Corpus Cardinal
+              - Corpus Pope
+      - id: reinforcement-b-last-corpus-patriarch
+        trigger:
+          on: other
+          text: Reinforcement B (last Corpus Patriarch)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corpum Arch Priest
+          - count: "4"
+            class: Battleship
+            names:
+              - Corpus Patriarch
+      - id: reinforcement-c-last-corpus-pope
+        trigger:
+          on: other
+          text: Reinforcement C (last Corpus Pope)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Reaver
+          - count: "4"
+            class: Battleship
+            names:
+              - Corpus Patriarch

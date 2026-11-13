@@ -1,0 +1,47 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: everybody-has-a-price
+kind: mission
+name: Everybody Has a Price
+level: 4
+enemyFaction: null
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Everybody Has a Price
+    url: https://wiki.eveuniversity.org/Everybody_Has_a_Price
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "206493"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Take Ralie Ardanne (1 m3) to the warehouse and drop him off.
+notes:
+  - text: Place Ralie Ardanne into the Syndicate Warehouse Container.
+pockets:
+  - name: Warp-in
+    notes:
+      - text: "Everybody has a price: And we've found yours. Bring the kid to the warehouse. We'll give you what you deserve after that."
+      - text: "The Right Thing: What? You expected an ambush? Why would we do that to a trusted friend such as yourself? You did exactly what any good capsuleer would do: You chose the money over the kid's safety. Kudos to you. You'll go far in this world. Not that I think you care, but we're not going to kill the kid. He's too useful to us. Impetus will make sure we wring as much money out of him as possible. There's a market for everything, and everybody has a price."
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Container
+            names:
+              - Syndicate Warehouse
+      - id: friendly
+        trigger:
+          on: other
+          text: Friendly
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Friendly Cruiser
+            names:
+              - Syndicate Cruiser

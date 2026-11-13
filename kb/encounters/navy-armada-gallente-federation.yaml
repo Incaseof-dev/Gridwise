@@ -1,0 +1,166 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: navy-armada-gallente-federation
+kind: mission
+name: Navy Armada
+level: 4
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Navy Armada (Gallente Federation)
+    url: https://wiki.eveuniversity.org/Navy_Armada_(Gallente_Federation)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223395"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal: []
+  resist:
+    - thermal
+    - kinetic
+ewar:
+  - kind: web
+  - kind: sensorDamp
+notes:
+  - text: "Suggested ships: High DPS ship"
+lootNotes:
+  - text: "Loot: ± 10 Mil ISK"
+  - text: "Besides normal meta modules, the NPCs also drop Federation Navy Insignia ('tags'):"
+  - text: 18 Federation Navy Fleet Captain Insignia I
+  - text: 21 Federation Navy Fleet Colonel Insignia I
+  - text: 3 Federation Navy Fleet Colonel Insignia II
+  - text: 53 Federation Navy Fleet Major Insignia I
+  - text: 2 Federation Navy Sergeant Insignia I
+  - text: 8 Federation Navy Sergeant Insignia II
+  - text: 2 Federation Navy Sergeant Insignia III
+  - text: "Federation Navy Insignia: Current Jita sell value is 87 million isk and buy value 78 million isk."
+  - text: "Salvage: ± 6.5 Mil ISK"
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: Gate to next pocket is 79 km from arrival point.
+      - text: (3 groups, 60-110 km)
+    waves:
+      - id: initial-spawn
+        trigger:
+          on: warpIn
+          text: Initial spawn
+        spawns:
+          - count: "8"
+            class: Frigate
+            names:
+              - Federation Matara
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Elite Federation Lixa
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Destroyer
+            names:
+              - Federation Phalarica
+          - count: "5"
+            class: Cruiser
+            names:
+              - Federation Praeco?
+            note: "2023-01-25: According to EVE Ref Praeco is a battlecruiser"
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Elite Federation Quadrieris
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Federation Praeco
+              - Federation Calo
+          - count: "3"
+            class: Battleship
+            names:
+              - Federation Covinus
+              - Federation Triarius
+  - name: Pocket 2
+    notes:
+      - text: Gate to next pocket is 68 km from arrival point.
+      - text: (3 groups, 35-90 km)
+    waves:
+      - id: initial-spawn
+        trigger:
+          on: warpIn
+          text: Initial spawn
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Elite Federation Matara
+          - count: "4"
+            class: Destroyer
+            names:
+              - Federation Phalarica
+          - count: "10"
+            class: Cruiser
+            names:
+              - Elite Federation Mentes
+              - Elite Federation Quadrieris?
+            note: "20230125: EVE Ref only knows elite cruisers with those names"
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Federation Praktor Arx
+              - Federation Praktor Bearcus?
+            note: "2023-01-25: EVE ref Arx/Bearcus battlecruisers are Praktor"
+          - count: "10"
+            class: Battleship
+            names:
+              - Federation Xenan
+              - Federation Triarius
+              - Federation Helepolis
+  - name: Pocket 3
+    notes:
+      - text: (3 groups, 40-65 km)
+    waves:
+      - id: initial-spawn
+        trigger:
+          on: warpIn
+          text: Initial spawn
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Federation Matara
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Elite Federation Lixa
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "4"
+            class: Destroyer
+            names:
+              - Federation Destroyer Phalarica
+          - count: "16"
+            class: Cruiser
+            names:
+              - Federation ???
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Elite Federation Mentes
+              - Elite Federation Quadrieris
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Federation Praktor Arx
+              - Federation Praktor Bearcus?
+            note: "2023-01-25: EVE ref Arx/Bearcus battlecruisers are Praktor"
+          - count: "6"
+            class: Battleship
+            names:
+              - Federation Xenan
+              - Federation Triarius
+              - Federation Helepolis

@@ -1,0 +1,62 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: eliminate-the-pirate-campers-blood-raiders
+kind: mission
+name: Eliminate the Pirate Campers
+level: 3
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Eliminate the Pirate Campers (Blood Raiders)
+    url: https://wiki.eveuniversity.org/Eliminate_the_Pirate_Campers_(Blood_Raiders)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "229836"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Eliminate the Blood Raider ships roaming around the stargate near the coordinates of your bookmark.
+notes:
+  - text: "Blitz: Kill trigger in initial group. Then kill all reinforcements."
+pockets:
+  - name: Warp-in
+    notes:
+      - text: "2026.03.17: Frigates and Destroyer aggro medium drones hard so mind your Hammerheads. - Ryker III"
+      - text: "5 June 2023: Reinforcement were reported at 100km, mine were at 150km. They probably spawn in a fixed location, so distance depends on your movements. -- Evon R'al."
+    waves:
+      - id: initial-hostiles-90-100km-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Hostiles (90-100km, Auto aggro)
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Elder Corpii Raider
+              - Elder Corpii Diviner
+              - Elder Corpii Reaver
+            note: aggro drones; type list incomplete on the source page
+          - count: "1"
+            class: Destroyer
+            names:
+              - Corpior Devoter
+              - Corpior Templar
+            triggers: Triggers reinforcement
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Corpatis Bishop
+              - Corpatis Seer
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corpum Dark Priest
+              - Corpum Shadow Sage
+            note: "Different versions of Sage and Priest have been observed: Arch Sage/Priest, Shadow Sage, Dark Priest; type list incomplete on the source page"
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Corpatis Fanatic
+              - Corpatis Shade

@@ -1,0 +1,163 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-heirs-favorite-slave
+kind: mission
+name: The Heir's Favorite Slave
+level: 1
+enemyFaction: Minmatar Republic
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Heir's Favorite Slave
+    url: https://wiki.eveuniversity.org/The_Heir's_Favorite_Slave
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "205211"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Find the Heir's slave and bring her back to your agent. (5)
+restrictions:
+  - text: "Ship size limit: Destroyer"
+ewar:
+  - kind: targetPaint
+notes:
+  - text: "Suggested ships: Frigate"
+pockets:
+  - name: Warp-in
+    notes:
+      - text: The 2 groups on grid at arrival can be separately engaged. Group A will approach and lock on you. Group B will hold on station.
+      - text: When approaching group B they will start locking on you at about 50km.
+      - text: Just before entering the acceleration gate the following message appears
+    waves:
+      - id: forces-on-grid
+        trigger:
+          on: other
+          text: Forces on grid
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Republic Baldur
+              - Republic Takan
+            group: Group A 40km (auto-aggro)
+            triggers: Reinforcement A
+          - count: 1-2
+            class: Frigate
+            names:
+              - Republic Kvarm
+            group: Group B 70km (2 vessels)
+            triggers: Last ship of the group triggers reinforcement B
+          - count: 0-1
+            class: Commander Frigate
+            names:
+              - Republic Tribal Gleeda
+            group: Group B 70km (2 vessels)
+            ewar:
+              - kind: targetPaint
+      - id: reinforcement-a-5-vessels
+        trigger:
+          on: other
+          text: Reinforcement A (5 vessels)
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Republic Otur
+          - count: 2-3
+            class: Frigate
+            names:
+              - Republic Gleeda
+            ewar:
+              - kind: targetPaint
+      - id: reinforcement-b
+        trigger:
+          on: other
+          text: Reinforcement B
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Republic Radur
+              - Republic Skani
+  - name: Pocket
+    notes:
+      - text: When approaching Kilm Redstock at about 8km the following message appears
+      - text: At this point the mission objective has been reached. It is however possible to trigger another wave of rats by destroying the Luxury Vessel
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "1"
+            class: Destroyer
+            names:
+              - Kilm Redstock
+            triggers: 1st Reinforcement on approach, 2nd reinforcement on destruction.
+            note: Renamed Republic Bormin
+      - id: 1st-reinforcement
+        trigger:
+          on: other
+          text: 1st Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Republic Kvarm
+          - count: "1"
+            class: Commander Frigate
+            names:
+              - Republic Tribal Gleeda
+            ewar:
+              - kind: targetPaint
+      - id: 2nd-reinforcement
+        trigger:
+          on: other
+          text: 2nd Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Commander Frigate
+            names:
+              - Republic Tribal Baldur
+              - Republic Tribal Takan
+            triggers: Last ship destroyed put the Slaves into your cargohold
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Luxury Vessel
+            triggers: Structure Reinforcement
+          - count: "1"
+            class: Structure
+            names:
+              - Repair Outpost
+          - count: "1"
+            class: Structure
+            names:
+              - Rebel Outpost
+          - count: "1"
+            class: Structure
+            names:
+              - Landing Pad
+      - id: structure-reinforcement-10-15km-from-luxury-vessel
+        trigger:
+          on: other
+          text: Structure Reinforcement, 10-15km from Luxury Vessel
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Cruiser
+            names:
+              - Republic Solon
+              - Republic Ormur

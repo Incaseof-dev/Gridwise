@@ -1,0 +1,115 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: missing-persons-report
+kind: mission
+name: Missing Persons Report
+level: 4
+enemyFaction: Caldari State
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Missing Persons Report
+    url: https://wiki.eveuniversity.org/Missing_Persons_Report
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "216961"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Kill the enemy ships
+notes:
+  - text: "Suggested ships: Raven, Drake, Dominix, Typhoon"
+lootNotes:
+  - text: "tags: Caldari Navy Admiral Insignia I x36"
+  - text: Caldari Navy Captain Insignia II x4
+  - text: Caldari Navy Commodore Insignia I x12
+  - text: Caldari Navy Commodore Insignia II x16
+  - text: Caldari Navy Midshipman Insignia III x4
+  - text: "(Total value: 83,700,000 ISK)."
+  - text: "Loot and Salvage: 11,000,000 ISK."
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: No spawn on entry, can warp at range.
+      - text: Spawn is triggered by approaching the Acceleration Gate (13km, inactive until approached) or the Damaged Gallente Passenger Liner (22km).
+      - text: The gate is unlocked.
+    waves:
+      - id: 20-40km
+        trigger:
+          on: other
+          text: (20-40km)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battleship
+            names:
+              - Caldari Battleship
+          - count: "4"
+            class: Frigate
+            names:
+              - Caldari Frigate
+  - name: Pocket 2
+    notes:
+      - text: The Damaged Gallente Passenger Liner is 34km from the warp in beacon but does NOT contain the mission objective.
+      - text: You must destroy all ships in this pocket and loot a Cargo Container that is dropped when the last ship is destroyed.
+      - text: Enemy types and numbers may vary, below is just one example.
+      - text: Killing the last ship in Group 5 drops a Cargo Container at the Damaged Gallente Passenger Liner. This contains 1 x Survivors which is the mission objective.
+      - text: Triggering Groups 3 and 4 of Pocket 2 may cause an uncomfortable amount of DPS heading your way. If you had difficulty tanking the first 2 groups of that pocket you might want to call a friend.
+      - text: Something (waiting around or looting the objective?) causes a small amount of AoE damage near the passenger liner that can destroy drones.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Battleship
+            names:
+              - Caldari Battleship
+            group: "Group 1: (40km) auto-aggro"
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Caldari BattleCruiser
+            group: "Group 1: (40km) auto-aggro"
+          - count: "3"
+            class: Battleship
+            names:
+              - Caldari BattleShip
+            group: "Group 2: (48km) auto-aggro"
+          - count: "3"
+            class: Frigate
+            names:
+              - Caldari Frigate
+            group: "Group 2: (48km) auto-aggro"
+          - count: "3"
+            class: Battleship
+            names:
+              - Caldari BattleShip
+            group: "Group 3: On killing last battleship of Groups 1 and 2"
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Caldari BattleCruiser
+            group: "Group 3: On killing last battleship of Groups 1 and 2"
+          - count: "4"
+            class: Battleship
+            names:
+              - Caldari BattleShip
+            group: "Group 4: Aggro after firing at Group 3 (or hitting them with a Target Painter) (45km):"
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Caldari BattleCruiser
+            group: "Group 4: Aggro after firing at Group 3 (or hitting them with a Target Painter) (45km):"
+          - count: "4"
+            class: Battleship
+            names:
+              - Caldari BattleShip
+            group: "Group 5: On killing the last ship in Group 4: (45km)"
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Caldari BattleCruiser
+            group: "Group 5: On killing the last ship in Group 4: (45km)"

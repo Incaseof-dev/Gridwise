@@ -1,0 +1,64 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: racetrack-ruckus
+kind: mission
+name: Racetrack Ruckus
+level: 4
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Racetrack Ruckus
+    url: https://wiki.eveuniversity.org/Racetrack_Ruckus
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "219290"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Find the Gallente ships attacking the new race track and destroy them.
+ewar:
+  - kind: sensorDamp
+notes:
+  - text: "Suggested ships: Battleship, Marauder"
+  - text: "Lore blurb: Racing: Ship racing has become very popular in the past few years. Pilots race their ships to see who can complete a circuit the fastest and thus show off proper ship handling, attention to quick course corrections, and how much power can be coaxed out of a ship. The Amarr have some of the best racers in the sector and to commemorate their successes, they are building a new racing area in one of our poorer systems to help stimulate the economy, while at the same time showcasing Amarr skill in flying the best ships in pod pilot hands today."
+  - text: Federation Praktor Praeses come to close range (15km), but all the others stay at around 45-51km.
+  - text: Beside the derived standing loss you get a -0.002 standing loss for Gallente per tick for Ship Kill. In a Marauder, it can be done in a single tick.
+  - text: "Loot/Salvage: ~54M"
+pockets:
+  - name: Single pocket
+    waves:
+      - id: initial-group-35-40km
+        trigger:
+          on: warpIn
+          text: Initial Group, 35-40km
+        spawns:
+          - count: "4"
+            class: Battleship
+            names:
+              - Federation Covinus
+      - id: wave-2-35-40km
+        trigger:
+          on: other
+          text: Wave 2, 35-40km
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Battleship
+            names:
+              - Federation Navis Longa
+              - Federation Praktor Navis Praetoria
+            ewar:
+              - kind: sensorDamp
+      - id: wave-3-35-40km
+        trigger:
+          on: other
+          text: Wave 3, 35-40km
+          confidence: inferred
+        spawns:
+          - count: 5-7
+            class: Battleship
+            names:
+              - Federation Praktor Hexeris
+              - Federation Praktor Praeses

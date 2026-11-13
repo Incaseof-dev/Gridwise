@@ -1,0 +1,48 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: trimming-the-fat
+kind: mission
+name: Trimming The Fat
+level: 2
+enemyFaction: Caldari State
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Trimming The Fat
+    url: https://wiki.eveuniversity.org/Trimming_The_Fat
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "212599"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Suggested ships: Frigate, Destroyer"
+  - text: "Lore Blurb: Termination: Because of the importance placed on \"saving face\" in Caldari culture, mid- and high-level executives often remain employed despite failures in leadership or performance, simply because firing them publicly would damage the corporation's reputation. In extreme cases, it is not altogether unknown for superiors within the corporation to arrange \"accidents\" for executives who fail to meet objectives and threaten their employer's bottom line. This eliminates the drain on corporate resources and allows them to save face. While such methods of dealing with \"problem employees\" are simply not discussed openly (doing so would be in horribly poor taste, after all), it is something that lurks in the back of every corporate executive's mind."
+  - text: "Blitz: Kill The Executive (cruiser)."
+  - text: Structures drop no loot
+  - text: Wait if hostiles do not spawn
+  - text: Mission does not impact Caldari standing
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: initial-group-20km-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group, 20km (auto-aggro)
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - State Nagasa
+              - State Shinai
+          - count: "1"
+            class: Destroyer
+            names:
+              - State Yumi
+              - State Kai Gunto
+          - count: "1"
+            class: Cruiser
+            names:
+              - The Executive
+            note: State Bushi/State Dogo Type

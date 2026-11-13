@@ -1,0 +1,192 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: sansha-fortress
+kind: complex
+name: Sansha Fortress
+dedRating: null
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Sansha Fortress
+    url: https://wiki.eveuniversity.org/Sansha_Fortress
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "204829"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Battleships"
+notes:
+  - text: Upon warping to the site you land at an acceleration gate.
+  - text: "Escalation: Destroying the True Sansha commander and/or the Sansha Control Center may escalate the site to Shady Operation."
+  - text: 'Escalation: Escalation trigger: As the bits and pieces from the disintegrated station charge into space, carrying the news of heightened entropy in the universe, your instruments receive an unusual message. It obviously is being transmitted from a Sansha ship and even though the person on the other end does not introduce himself as such, there is no doubt that this is the voice of one of those facistic Sansha pricks who have "True Power" printed on their undies. He demands talking in a closed channel and after you have established one, he continues with some congratulations on your brave victory and then he gives you an offer; If you go to three different locations he provides, assassinate the Sansha leaders operating there and gather all loot you find for him, he will pay you one billion ISK. He then gives you coordinates to a location in a "take it or leave it" manner, before saying farewell and adds that he will contact you after this first target is destroyed.'
+loot:
+  - item: + Commander and other valuable loot
+  - item: Nightmare BPC
+    note: est. Unknown value (wiki) · From True Sansha Commander Battleship
+  - item: Mid/High-Grade implants and faction ammo/tags
+    note: est. Varies (wiki) · From True Sansha Commander Battleship
+  - item: True Sansha faction modules
+    note: est. Varies widely (wiki) · From True Sansha Commander Battleship
+lootNotes:
+  - text: You will possibly get True Sansha modules, faction ammo/tags, or rarely a Nightmare BPC. Salvaging the True Sansha battleship wreck may produce T2 salvage.
+pockets:
+  - name: First Pocket
+    notes:
+      - text: Gate wave is triggered by approaching the Acceleration Gate.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Sansha Cruise Missile Battery
+          - count: "2"
+            class: Sentry
+            names:
+              - Sansha Stasis Tower
+            ewar:
+              - kind: web
+          - count: 9-11
+            class: Elite Frigate
+            names:
+              - Centii Loyal Ravener
+              - Centii Loyal Scavenger
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: type list incomplete on the source page
+          - count: 5-7
+            class: Destroyer
+            names:
+              - Centior Cannibal
+              - Centior Abomination
+          - count: 3-5
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Execrator
+              - Centum Loyal Slaughterer
+            ewar:
+              - kind: trackingDisruption
+          - count: 8-11
+            class: Battleship
+            names:
+              - Centus Beast Lord
+              - Centus Plague Lord
+            ewar:
+              - kind: trackingDisruption
+      - id: gate-wave-triggered-by-approaching-the-acceleration-gate
+        trigger:
+          on: other
+          text: Gate wave (triggered by approaching the Acceleration Gate)
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Centii Loyal Butcher
+              - Centii Loyal Manslayer
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Structure
+            names:
+              - Sansha Bunker
+            drop: T1 ammo
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: Locked until all ships are destroyed
+  - name: Second Pocket
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "4"
+            class: Sentry
+            names:
+              - Sansha Cruise Missile Battery
+          - count: "4"
+            class: Sentry
+            names:
+              - Sansha Stasis Tower
+            ewar:
+              - kind: web
+          - count: 3-6
+            class: Elite Frigate
+            names:
+              - Centii Loyal Ravener
+              - Centii Loyal Scavenger
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 3-4
+            class: Destroyer
+            names:
+              - Centior Horror
+              - Centior Misshape
+          - count: 2-3
+            class: Battlecruiser
+            names:
+              - Centatis Devil
+              - Centatis Behemoth
+              - Centatis Daemon
+          - count: 9-11
+            class: Battleship
+            names:
+              - Centus Beast Lord
+              - Centus Mutant Lord
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Frigate
+            names:
+              - Centii Butcher
+              - Centii Manslayer
+          - count: 4-5
+            class: Elite Frigate
+            names:
+              - Centii Loyal Savage
+              - Centii Loyal Slavehunter
+            ewar:
+              - kind: trackingDisruption
+          - count: 3-4
+            class: Cruiser
+            names:
+              - Centum Fiend
+              - Centum Hellhound
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - True Sansha's Mutant Lord
+              - True Sansha's Savage Lord
+            triggers: Escalation trigger
+            drop: Possible True Sansha faction modules or a Nightmare BPC, faction ammo/tags
+      - id: notable-structures
+        trigger:
+          on: warpIn
+          text: Notable structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Sansha Control Center
+            drop: T1 ammo
+sde:
+  dungeonIds:
+    - 1258

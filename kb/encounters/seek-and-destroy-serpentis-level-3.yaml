@@ -1,0 +1,49 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: seek-and-destroy-serpentis-level-3
+kind: mission
+name: Seek and Destroy
+level: 3
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Seek and Destroy (Serpentis) (Level 3)
+    url: https://wiki.eveuniversity.org/Seek_and_Destroy_(Serpentis)_(Level_3)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "193399"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: sensorDamp
+  - kind: web
+notes:
+  - text: "Web/warp disruption: Guardian Veteran (Web)"
+  - text: "Suggested ships: Battlecruiser"
+  - text: Corelum Chief Guard may spawn if you stay in the pocket after completion.
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: initial-group-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group (auto-aggro)
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Guardian Veteran
+            ewar:
+              - kind: web
+          - count: "4"
+            class: Cruiser
+            names:
+              - Corelum Chief Safeguard
+            ewar:
+              - kind: sensorDamp
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Corelatis Squad Leader

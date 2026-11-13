@@ -1,0 +1,59 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: royal-jelly
+kind: mission
+name: Royal Jelly
+level: null
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Royal Jelly
+    url: https://wiki.eveuniversity.org/Royal_Jelly
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "205948"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Evacuate the FR Personnel from the area. You might get surprised by rogue drones. Stay on task, though.
+notes:
+  - text: "Food Relief Corporation: The Food Relief corporation is owned and run by the Sisters of EVE. Food Relief (FR) is ostensibly responsible for delivering necessities (primarily food and medicine) to people in need in any empire. FR have never officially withheld their deliveries, but in recent times there have been occasions where their medicine drops were delayed or reduced due to unforeseen environmental conditions or a sudden outbreak of hostility on their caravan routes. Some political analysts maintain that these delays indirectly affected the outcomes of other factions' military campaigns."
+  - text: Objective
+  - text: "Evacuate the Food Relief Personnel (15 x FR Personnel - 15.0 m³) from the area. You might get surprised by rogue drones. Stay on task, though. Location: Arnon"
+  - text: Notes
+  - text: This is a rescue mission - and it is remarkably easy if you have a fast ship, despite a large number of rogue drones that will fill your overview. Fit a micro warp drive (MWD) or an afterburner to your ship, if you can. When you warp to the mission location, the Habitation Module will be about 80 km away. Head towards that container at top speed. Rogue drones will begin to appear, and appear, and appear - about 30 of them, in total - at ranges of 50-75 km away. Don't panic - you have plenty of time to pick up the personnel and get them into your cargo hold, as the growing swarm does not attack right away. When they finally do, it comes piecemeal, only a few rogue drones at a time. You do not have to destroy them - just pick up the personnel and return to the Arnon IX - Moon 3 - Sisters of EVE Bureau station to complete the mission.
+  - text: "Sister Alitura will be thankful: Bless you for saving those people. I know you didn’t do this out of charity, but your help is appreciated anyway. You have been paid, but when you’re ready, I have another lead on this drone."
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: "Next Mission: Nature Pictures"
+    waves:
+      - id: 80km
+        trigger:
+          on: other
+          text: (80km)
+          confidence: inferred
+        spawns:
+          - count: "?"
+            class: Container
+            names:
+              - Habitation Module – Personnel Quarters
+            drop: 15x FR personnel
+      - id: slowly-spawning-30-ships-50-75-km
+        trigger:
+          on: other
+          text: Slowly spawning (30 ships, 50-75 km)
+          confidence: inferred
+        spawns:
+          - count: 18-23
+            class: Drone
+            names:
+              - Belphegor
+              - Mammon
+            note: type list incomplete on the source page
+          - count: 7-12
+            class: Frigate
+            names:
+              - Infestor Alvi

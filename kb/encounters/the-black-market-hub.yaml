@@ -1,0 +1,127 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-black-market-hub
+kind: mission
+name: The Black Market Hub
+level: 3
+enemyFaction: Mercenaries
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Black Market Hub
+    url: https://wiki.eveuniversity.org/The_Black_Market_Hub
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "205335"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Find the sealed containers, and then return to your agent with the goods (10x Small Sealed Cargo Containers 100).
+notes:
+  - text: "Suggested ships: Drake, Cerberus, Hurricane"
+  - text: "Blitz: Kill all enemy ships in Pocket 1. Destroying the Docked Bestower in Pocket 2 and retrieving the content will complete the mission. You may also want to destroy the Starbase Control Tower before destroying the Docked Bestower so that you won't bump into it on your way (Its HP is between 2.5k and 50k so very easy to destroy)."
+pockets:
+  - name: Warp-in
+    notes:
+      - text: "Pop-up when activating the gate - Mission Info: This is the security post erected to scan incoming ships en route to the new trade center nearby. A couple industrials are docked nearby waiting for the green light to proceed. As soon as the security forces detect your presence, you sense yourself being target locked. Obviously, they know who you are."
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+  - name: Pocket 1
+    notes:
+      - text: Attacking Heavy Missile Batteries from one group will not aggro the other group. Besides, just ignore the Batteries. They don't aggro you unless you move towards them, and completely ignore drones. Need to get rid of all ships to unlock the gate.
+      - text: "Pop-up when activating the gate - Mission Info: This is the central hub of the fledgling trade outpost. A steady stream of merchants come and go as they please, while mercenary guard ships diligently patrol the area."
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+      - id: wave
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Mercenary Commander
+            group: Group A (55-60km)
+          - count: "2"
+            class: Sentry
+            names:
+              - Caldari Heavy Missile Battery
+            group: Group A (55-60km)
+            drop: May drop ammo
+          - count: "2"
+            class: Frigate
+            names:
+              - Mercenary Elite Fighter
+            group: Group B (10-12km, Auto Aggro)
+          - count: "2"
+            class: Cruiser
+            names:
+              - Mercenary Commander
+            group: Group B (10-12km, Auto Aggro)
+          - count: "3"
+            class: Cruiser
+            names:
+              - Mercenary Commander
+            group: Group C (55-60km)
+          - count: "2"
+            class: Sentry
+            names:
+              - Caldari Heavy Missile Battery
+            group: Group C (55-60km)
+            drop: May drop ammo
+  - name: Pocket 2
+    notes:
+      - text: "Notes: Auto aggro from Sentries, attacking them will aggro the rest."
+      - text: The objective is to destroy and loot (objective requires 100.0 m3 cargo space) a Docked Bestower, 30km away.
+      - text: Rewards
+      - text: "Bounty: ~1,130,000 ISK"
+      - text: "Loot: ~973,000 - 5,390,000 ISK (EVE estimated, including salvage)"
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "?"
+            class: Structure
+            names:
+              - Docked Bestower
+            triggers: Drops mission objective
+            drop: 10x Small Sealed Cargo Containers (Mission objective)
+      - id: single-group
+        trigger:
+          on: other
+          text: Single Group
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Mercenary Elite Fighter
+          - count: "2"
+            class: Cruiser
+            names:
+              - Mercenary Commander
+          - count: "2"
+            class: Sentry
+            names:
+              - Tower Sentry Caldari I
+              - Tower Sentry Caldari II

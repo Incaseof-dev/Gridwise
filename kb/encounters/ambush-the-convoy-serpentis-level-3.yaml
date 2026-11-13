@@ -1,0 +1,57 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: ambush-the-convoy-serpentis-level-3
+kind: mission
+name: Ambush the Convoy
+level: 3
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Ambush the Convoy (Serpentis) (Level 3)
+    url: https://wiki.eveuniversity.org/Ambush_the_Convoy_(Serpentis)_(Level_3)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231767"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal: []
+  resist:
+    - kinetic
+    - thermal
+objectives:
+  - text: Retrieve narcotics (50).
+ewar:
+  - kind: sensorDamp
+notes:
+  - text: Ambush the Convoy is a combat mission with multiple faction and level variants. The Level 3 variant always involves combat against the Serpentis.
+  - text: The objective item (Narcotics) is 50 and will drop from one of the transports.
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Heavy Missile Battery
+          - count: "2"
+            class: Industrial
+            names:
+              - Transport Ship
+            note: Random ship will drop Narcotics (50.0 m3)
+          - count: "4"
+            class: Frigate
+            names:
+              - Coreli Protector
+              - Coreli Defender
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corelatis Wing Leader
+              - Corelatis Platoon Leader

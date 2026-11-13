@@ -1,0 +1,43 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-blood-raider-spies-level-1
+kind: mission
+name: The Blood Raider Spies
+level: 1
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Blood Raider Spies (Level 1)
+    url: https://wiki.eveuniversity.org/The_Blood_Raider_Spies_(Level_1)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191995"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Suggested ships: Frigate, Destroyer"
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: group-1
+        trigger:
+          on: warpIn
+          text: Group 1
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Corpii Follower
+              - Corpii Collector
+      - id: group-2
+        trigger:
+          on: other
+          text: Group 2
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Blood Raider Spy

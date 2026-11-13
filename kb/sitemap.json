@@ -1,0 +1,5886 @@
+{
+ "schema": 1,
+ "source": {
+  "title": "Combat site",
+  "url": "https://wiki.eveuniversity.org/Combat_site",
+  "revision": 230825,
+  "retrieved": "2026-10-23",
+  "license": "CC BY-SA 4.0"
+ },
+ "factions": [
+  {
+   "id": "angel",
+   "name": "Angel Cartel",
+   "sdeFactionId": 500011
+  },
+  {
+   "id": "blood",
+   "name": "Blood Raider Covenant",
+   "sdeFactionId": 500012
+  },
+  {
+   "id": "guristas",
+   "name": "Guristas Pirates",
+   "sdeFactionId": 500010
+  },
+  {
+   "id": "sansha",
+   "name": "Sansha's Nation",
+   "sdeFactionId": 500019
+  },
+  {
+   "id": "serpentis",
+   "name": "Serpentis",
+   "sdeFactionId": 500020
+  },
+  {
+   "id": "drones",
+   "name": "Rogue Drones",
+   "sdeFactionId": 500025
+  }
+ ],
+ "sites": [
+  {
+   "id": "angel-hideaway",
+   "name": "Angel Hideaway",
+   "faction": "angel",
+   "kind": "anomaly",
+   "tier": 1,
+   "level": 1,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Angel Hideaway",
+   "sdeDungeonIds": [
+    2132
+   ],
+   "order": 124
+  },
+  {
+   "id": "angel-hidden-hideaway",
+   "name": "Angel Hidden Hideaway",
+   "faction": "angel",
+   "kind": "anomaly",
+   "tier": 1,
+   "level": 2,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Angel Hidden Hideaway",
+   "sdeDungeonIds": [
+    3407
+   ],
+   "order": 130
+  },
+  {
+   "id": "angel-forsaken-hideaway",
+   "name": "Angel Forsaken Hideaway",
+   "faction": "angel",
+   "kind": "anomaly",
+   "tier": 1,
+   "level": 3,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Angel Forsaken Hideaway",
+   "sdeDungeonIds": [
+    3402
+   ],
+   "order": 135
+  },
+  {
+   "id": "angel-forlorn-hideaway",
+   "name": "Angel Forlorn Hideaway",
+   "faction": "angel",
+   "kind": "anomaly",
+   "tier": 1,
+   "level": 4,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Angel Forlorn Hideaway",
+   "sdeDungeonIds": [
+    3408
+   ],
+   "order": 140
+  },
+  {
+   "id": "angel-burrow",
+   "name": "Angel Burrow",
+   "faction": "angel",
+   "kind": "anomaly",
+   "tier": 2,
+   "space": [
+    "high"
+   ],
+   "page": "Angel Burrow",
+   "sdeDungeonIds": [
+    2209
+   ],
+   "order": 145
+  },
+  {
+   "id": "angel-refuge",
+   "name": "Angel Refuge",
+   "faction": "angel",
+   "kind": "anomaly",
+   "tier": 3,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Angel Refuge",
+   "sdeDungeonIds": [
+    2114
+   ],
+   "order": 151
+  },
+  {
+   "id": "angel-den",
+   "name": "Angel Den",
+   "faction": "angel",
+   "kind": "anomaly",
+   "tier": 4,
+   "level": 1,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Angel Den",
+   "sdeDungeonIds": [
+    2200
+   ],
+   "order": 157
+  },
+  {
+   "id": "angel-hidden-den",
+   "name": "Angel Hidden Den",
+   "faction": "angel",
+   "kind": "anomaly",
+   "tier": 4,
+   "level": 2,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Angel Hidden Den",
+   "sdeDungeonIds": [
+    3446
+   ],
+   "order": 163
+  },
+  {
+   "id": "angel-forsaken-den",
+   "name": "Angel Forsaken Den",
+   "faction": "angel",
+   "kind": "anomaly",
+   "tier": 4,
+   "level": 3,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Angel Forsaken Den",
+   "sdeDungeonIds": [
+    3426
+   ],
+   "order": 168
+  },
+  {
+   "id": "angel-forlorn-den",
+   "name": "Angel Forlorn Den",
+   "faction": "angel",
+   "kind": "anomaly",
+   "tier": 4,
+   "level": 4,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Angel Forlorn Den",
+   "sdeDungeonIds": [
+    3420
+   ],
+   "order": 173
+  },
+  {
+   "id": "angel-yard",
+   "name": "Angel Yard",
+   "faction": "angel",
+   "kind": "anomaly",
+   "tier": 5,
+   "space": [
+    "low"
+   ],
+   "page": "Angel Yard",
+   "sdeDungeonIds": [
+    2231
+   ],
+   "order": 178
+  },
+  {
+   "id": "angel-rally-point",
+   "name": "Angel Rally Point",
+   "faction": "angel",
+   "kind": "anomaly",
+   "tier": 6,
+   "level": 1,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Angel Rally Point",
+   "sdeDungeonIds": [
+    2113
+   ],
+   "order": 184
+  },
+  {
+   "id": "angel-hidden-rally-point",
+   "name": "Angel Hidden Rally Point",
+   "faction": "angel",
+   "kind": "anomaly",
+   "tier": 6,
+   "level": 2,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Angel Hidden Rally Point",
+   "sdeDungeonIds": [
+    3511
+   ],
+   "order": 190
+  },
+  {
+   "id": "angel-forsaken-rally-point",
+   "name": "Angel Forsaken Rally Point",
+   "faction": "angel",
+   "kind": "anomaly",
+   "tier": 6,
+   "level": 3,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Angel Forsaken Rally Point",
+   "sdeDungeonIds": [
+    3441
+   ],
+   "order": 196
+  },
+  {
+   "id": "angel-forlorn-rally-point",
+   "name": "Angel Forlorn Rally Point",
+   "faction": "angel",
+   "kind": "anomaly",
+   "tier": 6,
+   "level": 4,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Angel Forlorn Rally Point",
+   "sdeDungeonIds": [
+    3431
+   ],
+   "order": 201
+  },
+  {
+   "id": "angel-port",
+   "name": "Angel Port",
+   "faction": "angel",
+   "kind": "anomaly",
+   "tier": 7,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Angel Port",
+   "sdeDungeonIds": [
+    2126
+   ],
+   "order": 206
+  },
+  {
+   "id": "angel-hub",
+   "name": "Angel Hub",
+   "faction": "angel",
+   "kind": "anomaly",
+   "tier": 8,
+   "level": 1,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Angel Hub",
+   "sdeDungeonIds": [
+    2146
+   ],
+   "order": 212
+  },
+  {
+   "id": "angel-hidden-hub",
+   "name": "Angel Hidden Hub",
+   "faction": "angel",
+   "kind": "anomaly",
+   "tier": 8,
+   "level": 2,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Angel Hidden Hub",
+   "sdeDungeonIds": [
+    3470
+   ],
+   "order": 218
+  },
+  {
+   "id": "angel-forsaken-hub",
+   "name": "Angel Forsaken Hub",
+   "faction": "angel",
+   "kind": "anomaly",
+   "tier": 8,
+   "level": 3,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Angel Forsaken Hub",
+   "sdeDungeonIds": [
+    3462
+   ],
+   "order": 223
+  },
+  {
+   "id": "angel-forlorn-hub",
+   "name": "Angel Forlorn Hub",
+   "faction": "angel",
+   "kind": "anomaly",
+   "tier": 8,
+   "level": 4,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Angel Forlorn Hub",
+   "sdeDungeonIds": [
+    3452
+   ],
+   "order": 228
+  },
+  {
+   "id": "angel-haven",
+   "name": "Angel Haven",
+   "faction": "angel",
+   "kind": "anomaly",
+   "tier": 9,
+   "space": [
+    "null"
+   ],
+   "page": "Angel Haven",
+   "sdeDungeonIds": [
+    2115
+   ],
+   "order": 233
+  },
+  {
+   "id": "angel-sanctum",
+   "name": "Angel Sanctum",
+   "faction": "angel",
+   "kind": "anomaly",
+   "tier": 10,
+   "level": 1,
+   "space": [
+    "null"
+   ],
+   "page": "Angel Sanctum",
+   "sdeDungeonIds": [
+    2311
+   ],
+   "order": 239
+  },
+  {
+   "id": "angel-forsaken-sanctum",
+   "name": "Angel Forsaken Sanctum",
+   "faction": "angel",
+   "kind": "anomaly",
+   "tier": 10,
+   "level": 2,
+   "space": [
+    "null"
+   ],
+   "page": "Angel Forsaken Sanctum",
+   "sdeDungeonIds": [
+    10760
+   ],
+   "order": 245
+  },
+  {
+   "id": "angel-hideout",
+   "name": "Angel Hideout",
+   "faction": "angel",
+   "kind": "unrated",
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Angel Hideout",
+   "sdeDungeonIds": [
+    1221
+   ],
+   "order": 50
+  },
+  {
+   "id": "angel-lookout",
+   "name": "Angel Lookout",
+   "faction": "angel",
+   "kind": "unrated",
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Angel Lookout",
+   "sdeDungeonIds": [
+    1235
+   ],
+   "order": 56
+  },
+  {
+   "id": "angel-watch",
+   "name": "Angel Watch",
+   "faction": "angel",
+   "kind": "unrated",
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Angel Watch",
+   "sdeDungeonIds": [
+    1214
+   ],
+   "order": 62
+  },
+  {
+   "id": "angel-vigil",
+   "name": "Angel Vigil",
+   "faction": "angel",
+   "kind": "unrated",
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Angel Vigil",
+   "sdeDungeonIds": [
+    1228
+   ],
+   "order": 68
+  },
+  {
+   "id": "provisional-angel-outpost",
+   "name": "Provisional Angel Outpost",
+   "faction": "angel",
+   "kind": "unrated",
+   "space": [
+    "low"
+   ],
+   "page": "Provisional Angel Outpost",
+   "sdeDungeonIds": [
+    1407
+   ],
+   "order": 73
+  },
+  {
+   "id": "angel-outpost",
+   "name": "Angel Outpost",
+   "faction": "angel",
+   "kind": "unrated",
+   "space": [
+    "low"
+   ],
+   "page": "Angel Outpost",
+   "sdeDungeonIds": [
+    1250
+   ],
+   "order": 79
+  },
+  {
+   "id": "minor-angel-annex",
+   "name": "Minor Angel Annex",
+   "faction": "angel",
+   "kind": "unrated",
+   "space": [
+    "low"
+   ],
+   "page": "Minor Angel Annex",
+   "sdeDungeonIds": [
+    1566
+   ],
+   "order": 85
+  },
+  {
+   "id": "angel-annex",
+   "name": "Angel Annex",
+   "faction": "angel",
+   "kind": "unrated",
+   "space": [
+    "low"
+   ],
+   "page": "Angel Annex",
+   "sdeDungeonIds": [
+    1567
+   ],
+   "order": 91
+  },
+  {
+   "id": "angel-base",
+   "name": "Angel Base",
+   "faction": "angel",
+   "kind": "unrated",
+   "space": [
+    "null"
+   ],
+   "page": "Angel Base",
+   "sdeDungeonIds": [
+    1459
+   ],
+   "order": 96
+  },
+  {
+   "id": "angel-fortress",
+   "name": "Angel Fortress",
+   "faction": "angel",
+   "kind": "unrated",
+   "space": [
+    "null"
+   ],
+   "page": "Angel Fortress",
+   "sdeDungeonIds": [
+    1261
+   ],
+   "order": 102
+  },
+  {
+   "id": "angel-military-complex",
+   "name": "Angel Military Complex",
+   "faction": "angel",
+   "kind": "unrated",
+   "space": [
+    "null"
+   ],
+   "page": "Angel Military Complex",
+   "sdeDungeonIds": [
+    1637
+   ],
+   "order": 108
+  },
+  {
+   "id": "angel-provincial-hq",
+   "name": "Angel Provincial HQ",
+   "faction": "angel",
+   "kind": "unrated",
+   "space": [
+    "null"
+   ],
+   "page": "Angel Provincial HQ",
+   "sdeDungeonIds": [
+    1643
+   ],
+   "order": 114
+  },
+  {
+   "id": "angel-domination-fleet-staging-point",
+   "name": "Angel Domination Fleet Staging Point",
+   "faction": "angel",
+   "kind": "unrated",
+   "space": [
+    "null"
+   ],
+   "page": "Angel Domination Fleet Staging Point",
+   "sdeDungeonIds": [
+    2519
+   ],
+   "order": 119
+  },
+  {
+   "id": "minmatar-contracted-bio-farm",
+   "name": "Minmatar Contracted Bio-Farm",
+   "faction": "angel",
+   "kind": "ded",
+   "ded": 1,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Minmatar Contracted Bio-Farm",
+   "sdeDungeonIds": [
+    178
+   ],
+   "order": 0
+  },
+  {
+   "id": "angel-creo-corp-mining",
+   "name": "Angel Creo-Corp Mining",
+   "faction": "angel",
+   "kind": "ded",
+   "ded": 2,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Angel Creo-Corp Mining",
+   "sdeDungeonIds": [
+    150
+   ],
+   "order": 5
+  },
+  {
+   "id": "angel-repurposed-outpost",
+   "name": "Angel Repurposed Outpost",
+   "faction": "angel",
+   "kind": "ded",
+   "ded": 3,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Angel Repurposed Outpost",
+   "sdeDungeonIds": [
+    5278
+   ],
+   "order": 11
+  },
+  {
+   "id": "angel-cartel-occupied-mining-colony",
+   "name": "Angel Cartel Occupied Mining Colony",
+   "faction": "angel",
+   "kind": "ded",
+   "ded": 4,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Angel Cartel Occupied Mining Colony",
+   "sdeDungeonIds": [
+    5275
+   ],
+   "order": 17
+  },
+  {
+   "id": "angels-red-light-district",
+   "name": "Angel's Red Light District",
+   "faction": "angel",
+   "kind": "ded",
+   "ded": 5,
+   "notes": [
+    "DED 5/10s cannot naturally spawn in high security systems, however they can be received as an escalation that spawns in a high security system."
+   ],
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Angel's Red Light District",
+   "sdeDungeonIds": [
+    2264
+   ],
+   "order": 23
+  },
+  {
+   "id": "angel-mineral-acquisition-outpost",
+   "name": "Angel Mineral Acquisition Outpost",
+   "faction": "angel",
+   "kind": "ded",
+   "ded": 6,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Angel Mineral Acquisition Outpost",
+   "sdeDungeonIds": [
+    2477
+   ],
+   "order": 29
+  },
+  {
+   "id": "angel-military-operations-complex",
+   "name": "Angel Military Operations Complex",
+   "faction": "angel",
+   "kind": "ded",
+   "ded": 7,
+   "space": [
+    "null"
+   ],
+   "page": "Angel Military Operations Complex",
+   "sdeDungeonIds": [
+    2246
+   ],
+   "order": 34
+  },
+  {
+   "id": "cartel-prisoner-retention",
+   "name": "Cartel Prisoner Retention",
+   "faction": "angel",
+   "kind": "ded",
+   "ded": 8,
+   "space": [
+    "null"
+   ],
+   "page": "Cartel Prisoner Retention",
+   "sdeDungeonIds": [
+    2261
+   ],
+   "order": 39
+  },
+  {
+   "id": "angel-cartel-naval-shipyard",
+   "name": "Angel Cartel Naval Shipyard",
+   "faction": "angel",
+   "kind": "ded",
+   "ded": 10,
+   "space": [
+    "null"
+   ],
+   "page": "Angel Cartel Naval Shipyard",
+   "sdeDungeonIds": [
+    2256
+   ],
+   "order": 44
+  },
+  {
+   "id": "blue-pill",
+   "name": "Blue Pill",
+   "faction": "angel",
+   "kind": "expedition",
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Blue Pill",
+   "sdeDungeonIds": [
+    1543
+   ],
+   "order": 251
+  },
+  {
+   "id": "chasing-the-dragon",
+   "name": "Chasing the Dragon",
+   "faction": "angel",
+   "kind": "expedition",
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Chasing the Dragon",
+   "sdeDungeonIds": [
+    1422
+   ],
+   "order": 257
+  },
+  {
+   "id": "the-nuclear-small-arms-project",
+   "name": "The Nuclear Small Arms Project",
+   "faction": "angel",
+   "kind": "expedition",
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "The Nuclear Small Arms Project",
+   "sdeDungeonIds": [
+    1317
+   ],
+   "order": 263
+  },
+  {
+   "id": "the-big-blue-expedition",
+   "name": "The Big Blue",
+   "faction": "angel",
+   "kind": "expedition",
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "The Big Blue (expedition)",
+   "sdeDungeonIds": [
+    1712
+   ],
+   "order": 269
+  },
+  {
+   "id": "domination-surveillance-squad",
+   "name": "Domination Surveillance Squad",
+   "faction": "angel",
+   "kind": "expedition",
+   "space": [
+    "low"
+   ],
+   "page": "Domination Surveillance Squad",
+   "sdeDungeonIds": [],
+   "order": 274
+  },
+  {
+   "id": "salvation-angels-shipment",
+   "name": "Salvation Angel's Shipment",
+   "faction": "angel",
+   "kind": "expedition",
+   "space": [
+    "low"
+   ],
+   "page": "Salvation Angel's Shipment",
+   "sdeDungeonIds": [],
+   "order": 280
+  },
+  {
+   "id": "angel-owned-station",
+   "name": "Angel Owned Station",
+   "faction": "angel",
+   "kind": "expedition",
+   "space": [
+    "low"
+   ],
+   "page": "Angel Owned Station",
+   "sdeDungeonIds": [
+    1784
+   ],
+   "order": 286
+  },
+  {
+   "id": "angel-powergrid",
+   "name": "Angel Powergrid",
+   "faction": "angel",
+   "kind": "expedition",
+   "space": [
+    "low"
+   ],
+   "page": "Angel Powergrid",
+   "sdeDungeonIds": [
+    1241
+   ],
+   "order": 292
+  },
+  {
+   "id": "angel-mineral-acquisition-outpost-2nd-part",
+   "name": "Angel Mineral Acquisition Outpost, 2nd Part",
+   "faction": "angel",
+   "kind": "expedition",
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Angel Mineral Acquisition Outpost, 2nd Part",
+   "sdeDungeonIds": [],
+   "order": 297
+  },
+  {
+   "id": "toxic-waste-scandal",
+   "name": "Toxic Waste Scandal!",
+   "faction": "angel",
+   "kind": "expedition",
+   "space": [
+    "null"
+   ],
+   "page": "Toxic Waste Scandal!",
+   "sdeDungeonIds": [
+    1304
+   ],
+   "order": 299
+  },
+  {
+   "id": "operation-spring-cleaning",
+   "name": "Operation Spring Cleaning",
+   "faction": "angel",
+   "kind": "expedition",
+   "space": [
+    "null"
+   ],
+   "page": "Operation Spring Cleaning",
+   "sdeDungeonIds": [
+    1434
+   ],
+   "order": 305
+  },
+  {
+   "id": "pioneers-peril",
+   "name": "Pioneers Peril",
+   "faction": "angel",
+   "kind": "expedition",
+   "space": [
+    "null"
+   ],
+   "page": "Pioneers Peril",
+   "sdeDungeonIds": [
+    1914
+   ],
+   "order": 311
+  },
+  {
+   "id": "special-forces",
+   "name": "Special Forces",
+   "faction": "angel",
+   "kind": "expedition",
+   "space": [
+    "null"
+   ],
+   "page": "Special Forces",
+   "sdeDungeonIds": [
+    1854
+   ],
+   "order": 317
+  },
+  {
+   "id": "angel-domination-fleet-staging-point-2",
+   "name": "Angel Domination Fleet Staging Point 2",
+   "faction": "angel",
+   "kind": "expedition",
+   "space": [
+    "null"
+   ],
+   "page": "Angel Domination Fleet Staging Point 2",
+   "sdeDungeonIds": [],
+   "order": 322
+  },
+  {
+   "id": "angel-domination-fleet-staging-point-3",
+   "name": "Angel Domination Fleet Staging Point 3",
+   "faction": "angel",
+   "kind": "expedition",
+   "space": [
+    "null"
+   ],
+   "page": "Angel Domination Fleet Staging Point 3",
+   "sdeDungeonIds": [],
+   "order": 323
+  },
+  {
+   "id": "blood-hideaway",
+   "name": "Blood Hideaway",
+   "faction": "blood",
+   "kind": "anomaly",
+   "tier": 1,
+   "level": 1,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Blood Hideaway",
+   "sdeDungeonIds": [
+    2141
+   ],
+   "order": 125
+  },
+  {
+   "id": "blood-hidden-hideaway",
+   "name": "Blood Hidden Hideaway",
+   "faction": "blood",
+   "kind": "anomaly",
+   "tier": 1,
+   "level": 2,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Blood Hidden Hideaway",
+   "sdeDungeonIds": [],
+   "order": 131
+  },
+  {
+   "id": "blood-forsaken-hideaway",
+   "name": "Blood Forsaken Hideaway",
+   "faction": "blood",
+   "kind": "anomaly",
+   "tier": 1,
+   "level": 3,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Blood Forsaken Hideaway",
+   "sdeDungeonIds": [],
+   "order": 136
+  },
+  {
+   "id": "blood-forlorn-hideaway",
+   "name": "Blood Forlorn Hideaway",
+   "faction": "blood",
+   "kind": "anomaly",
+   "tier": 1,
+   "level": 4,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Blood Forlorn Hideaway",
+   "sdeDungeonIds": [],
+   "order": 141
+  },
+  {
+   "id": "blood-burrow",
+   "name": "Blood Burrow",
+   "faction": "blood",
+   "kind": "anomaly",
+   "tier": 2,
+   "space": [
+    "high"
+   ],
+   "page": "Blood Burrow",
+   "sdeDungeonIds": [
+    2219
+   ],
+   "order": 146
+  },
+  {
+   "id": "blood-refuge",
+   "name": "Blood Refuge",
+   "faction": "blood",
+   "kind": "anomaly",
+   "tier": 3,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Blood Refuge",
+   "sdeDungeonIds": [
+    2316
+   ],
+   "order": 152
+  },
+  {
+   "id": "blood-den",
+   "name": "Blood Den",
+   "faction": "blood",
+   "kind": "anomaly",
+   "tier": 4,
+   "level": 1,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Blood Den",
+   "sdeDungeonIds": [
+    2205
+   ],
+   "order": 158
+  },
+  {
+   "id": "blood-hidden-den",
+   "name": "Blood Hidden Den",
+   "faction": "blood",
+   "kind": "anomaly",
+   "tier": 4,
+   "level": 2,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Blood Hidden Den",
+   "sdeDungeonIds": [],
+   "order": 164
+  },
+  {
+   "id": "blood-forsaken-den",
+   "name": "Blood Forsaken Den",
+   "faction": "blood",
+   "kind": "anomaly",
+   "tier": 4,
+   "level": 3,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Blood Forsaken Den",
+   "sdeDungeonIds": [],
+   "order": 169
+  },
+  {
+   "id": "blood-forlorn-den",
+   "name": "Blood Forlorn Den",
+   "faction": "blood",
+   "kind": "anomaly",
+   "tier": 4,
+   "level": 4,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Blood Forlorn Den",
+   "sdeDungeonIds": [],
+   "order": 174
+  },
+  {
+   "id": "blood-yard",
+   "name": "Blood Yard",
+   "faction": "blood",
+   "kind": "anomaly",
+   "tier": 5,
+   "space": [
+    "low"
+   ],
+   "page": "Blood Yard",
+   "sdeDungeonIds": [
+    2277
+   ],
+   "order": 179
+  },
+  {
+   "id": "blood-rally-point",
+   "name": "Blood Rally Point",
+   "faction": "blood",
+   "kind": "anomaly",
+   "tier": 6,
+   "level": 1,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Blood Rally Point",
+   "sdeDungeonIds": [
+    2163
+   ],
+   "order": 185
+  },
+  {
+   "id": "blood-hidden-rally-point",
+   "name": "Blood Hidden Rally Point",
+   "faction": "blood",
+   "kind": "anomaly",
+   "tier": 6,
+   "level": 2,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Blood Hidden Rally Point",
+   "sdeDungeonIds": [],
+   "order": 191
+  },
+  {
+   "id": "blood-forsaken-rally-point",
+   "name": "Blood Forsaken Rally Point",
+   "faction": "blood",
+   "kind": "anomaly",
+   "tier": 6,
+   "level": 3,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Blood Forsaken Rally Point",
+   "sdeDungeonIds": [],
+   "order": 197
+  },
+  {
+   "id": "blood-forlorn-rally-point",
+   "name": "Blood Forlorn Rally Point",
+   "faction": "blood",
+   "kind": "anomaly",
+   "tier": 6,
+   "level": 4,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Blood Forlorn Rally Point",
+   "sdeDungeonIds": [],
+   "order": 202
+  },
+  {
+   "id": "blood-port",
+   "name": "Blood Port",
+   "faction": "blood",
+   "kind": "anomaly",
+   "tier": 7,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Blood Port",
+   "sdeDungeonIds": [
+    2130
+   ],
+   "order": 207
+  },
+  {
+   "id": "blood-hub",
+   "name": "Blood Hub",
+   "faction": "blood",
+   "kind": "anomaly",
+   "tier": 8,
+   "level": 1,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Blood Hub",
+   "sdeDungeonIds": [
+    2151
+   ],
+   "order": 213
+  },
+  {
+   "id": "blood-hidden-hub",
+   "name": "Blood Hidden Hub",
+   "faction": "blood",
+   "kind": "anomaly",
+   "tier": 8,
+   "level": 2,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Blood Hidden Hub",
+   "sdeDungeonIds": [],
+   "order": 219
+  },
+  {
+   "id": "blood-forsaken-hub",
+   "name": "Blood Forsaken Hub",
+   "faction": "blood",
+   "kind": "anomaly",
+   "tier": 8,
+   "level": 3,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Blood Forsaken Hub",
+   "sdeDungeonIds": [],
+   "order": 224
+  },
+  {
+   "id": "blood-forlorn-hub",
+   "name": "Blood Forlorn Hub",
+   "faction": "blood",
+   "kind": "anomaly",
+   "tier": 8,
+   "level": 4,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Blood Forlorn Hub",
+   "sdeDungeonIds": [],
+   "order": 229
+  },
+  {
+   "id": "blood-haven",
+   "name": "Blood Haven",
+   "faction": "blood",
+   "kind": "anomaly",
+   "tier": 9,
+   "space": [
+    "null"
+   ],
+   "page": "Blood Haven",
+   "sdeDungeonIds": [
+    2282
+   ],
+   "order": 234
+  },
+  {
+   "id": "blood-sanctum",
+   "name": "Blood Sanctum",
+   "faction": "blood",
+   "kind": "anomaly",
+   "tier": 10,
+   "level": 1,
+   "space": [
+    "null"
+   ],
+   "page": "Blood Sanctum",
+   "sdeDungeonIds": [
+    2319
+   ],
+   "order": 240
+  },
+  {
+   "id": "blood-forsaken-sanctum",
+   "name": "Blood Forsaken Sanctum",
+   "faction": "blood",
+   "kind": "anomaly",
+   "tier": 10,
+   "level": 2,
+   "space": [
+    "null"
+   ],
+   "page": "Blood Forsaken Sanctum",
+   "sdeDungeonIds": [
+    11058
+   ],
+   "order": 246
+  },
+  {
+   "id": "blood-hideout",
+   "name": "Blood Hideout",
+   "faction": "blood",
+   "kind": "unrated",
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Blood Hideout",
+   "sdeDungeonIds": [
+    1224
+   ],
+   "order": 51
+  },
+  {
+   "id": "blood-lookout",
+   "name": "Blood Lookout",
+   "faction": "blood",
+   "kind": "unrated",
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Blood Lookout",
+   "sdeDungeonIds": [
+    1239
+   ],
+   "order": 57
+  },
+  {
+   "id": "blood-watch",
+   "name": "Blood Watch",
+   "faction": "blood",
+   "kind": "unrated",
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Blood Watch",
+   "sdeDungeonIds": [
+    1218
+   ],
+   "order": 63
+  },
+  {
+   "id": "blood-vigil",
+   "name": "Blood Vigil",
+   "faction": "blood",
+   "kind": "unrated",
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Blood Vigil",
+   "sdeDungeonIds": [
+    1229
+   ],
+   "order": 69
+  },
+  {
+   "id": "provisional-blood-outpost",
+   "name": "Provisional Blood Outpost",
+   "faction": "blood",
+   "kind": "unrated",
+   "space": [
+    "low"
+   ],
+   "page": "Provisional Blood Outpost",
+   "sdeDungeonIds": [
+    1410
+   ],
+   "order": 74
+  },
+  {
+   "id": "blood-raider-outpost",
+   "name": "Blood Raider Outpost",
+   "faction": "blood",
+   "kind": "unrated",
+   "space": [
+    "low"
+   ],
+   "page": "Blood Raider Outpost",
+   "sdeDungeonIds": [
+    1254
+   ],
+   "order": 80
+  },
+  {
+   "id": "minor-blood-annex",
+   "name": "Minor Blood Annex",
+   "faction": "blood",
+   "kind": "unrated",
+   "space": [
+    "low"
+   ],
+   "page": "Minor Blood Annex",
+   "sdeDungeonIds": [
+    1573
+   ],
+   "order": 86
+  },
+  {
+   "id": "blood-annex",
+   "name": "Blood Annex",
+   "faction": "blood",
+   "kind": "unrated",
+   "space": [
+    "low"
+   ],
+   "page": "Blood Annex",
+   "sdeDungeonIds": [
+    1602
+   ],
+   "order": 92
+  },
+  {
+   "id": "blood-raider-base",
+   "name": "Blood Raider Base",
+   "faction": "blood",
+   "kind": "unrated",
+   "space": [
+    "null"
+   ],
+   "page": "Blood Raider Base",
+   "sdeDungeonIds": [
+    1462
+   ],
+   "order": 97
+  },
+  {
+   "id": "blood-raider-fortress",
+   "name": "Blood Raider Fortress",
+   "faction": "blood",
+   "kind": "unrated",
+   "space": [
+    "null"
+   ],
+   "page": "Blood Raider Fortress",
+   "sdeDungeonIds": [
+    1260
+   ],
+   "order": 103
+  },
+  {
+   "id": "blood-military-complex",
+   "name": "Blood Military Complex",
+   "faction": "blood",
+   "kind": "unrated",
+   "space": [
+    "null"
+   ],
+   "page": "Blood Military Complex",
+   "sdeDungeonIds": [
+    1662
+   ],
+   "order": 109
+  },
+  {
+   "id": "blood-provincial-hq",
+   "name": "Blood Provincial HQ",
+   "faction": "blood",
+   "kind": "unrated",
+   "space": [
+    "null"
+   ],
+   "page": "Blood Provincial HQ",
+   "sdeDungeonIds": [
+    1663
+   ],
+   "order": 115
+  },
+  {
+   "id": "dark-blood-fleet-staging-point",
+   "name": "Dark Blood Fleet Staging Point",
+   "faction": "blood",
+   "kind": "unrated",
+   "space": [
+    "null"
+   ],
+   "page": "Dark Blood Fleet Staging Point",
+   "sdeDungeonIds": [
+    5209
+   ],
+   "order": 120
+  },
+  {
+   "id": "old-meanie-cultivation-center",
+   "name": "Old Meanie - Cultivation Center",
+   "faction": "blood",
+   "kind": "ded",
+   "ded": 1,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Old Meanie - Cultivation Center",
+   "sdeDungeonIds": [
+    179
+   ],
+   "order": 1
+  },
+  {
+   "id": "blood-raider-human-farm",
+   "name": "Blood Raider Human Farm",
+   "faction": "blood",
+   "kind": "ded",
+   "ded": 2,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Blood Raider Human Farm",
+   "sdeDungeonIds": [
+    5317
+   ],
+   "order": 6
+  },
+  {
+   "id": "blood-raider-intelligence-collection-point",
+   "name": "Blood Raider Intelligence Collection Point",
+   "faction": "blood",
+   "kind": "ded",
+   "ded": 3,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Blood Raider Intelligence Collection Point",
+   "sdeDungeonIds": [
+    5279
+   ],
+   "order": 12
+  },
+  {
+   "id": "mul-zatah-monastery",
+   "name": "Mul-Zatah Monastery",
+   "faction": "blood",
+   "kind": "ded",
+   "ded": 4,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Mul-Zatah Monastery",
+   "sdeDungeonIds": [
+    2254
+   ],
+   "order": 18
+  },
+  {
+   "id": "blood-raider-psychotropics-depot",
+   "name": "Blood Raider Psychotropics Depot",
+   "faction": "blood",
+   "kind": "ded",
+   "ded": 5,
+   "notes": [
+    "DED 5/10s cannot naturally spawn in high security systems, however they can be received as an escalation that spawns in a high security system."
+   ],
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Blood Raider Psychotropics Depot",
+   "sdeDungeonIds": [
+    5240
+   ],
+   "order": 24
+  },
+  {
+   "id": "crimson-hand-supply-depot",
+   "name": "Crimson Hand Supply Depot",
+   "faction": "blood",
+   "kind": "ded",
+   "ded": 6,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Crimson Hand Supply Depot",
+   "sdeDungeonIds": [
+    2245
+   ],
+   "order": 30
+  },
+  {
+   "id": "blood-raider-coordination-center",
+   "name": "Blood Raider Coordination Center",
+   "faction": "blood",
+   "kind": "ded",
+   "ded": 7,
+   "space": [
+    "null"
+   ],
+   "page": "Blood Raider Coordination Center",
+   "sdeDungeonIds": [
+    5237
+   ],
+   "order": 35
+  },
+  {
+   "id": "blood-raider-prison-camp",
+   "name": "Blood Raider Prison Camp",
+   "faction": "blood",
+   "kind": "ded",
+   "ded": 8,
+   "space": [
+    "null"
+   ],
+   "page": "Blood raider prison camp",
+   "sdeDungeonIds": [
+    5221
+   ],
+   "order": 40
+  },
+  {
+   "id": "blood-raider-naval-shipyard",
+   "name": "Blood Raider Naval Shipyard",
+   "faction": "blood",
+   "kind": "ded",
+   "ded": 10,
+   "space": [
+    "null"
+   ],
+   "page": "Blood Raider Naval Shipyard",
+   "sdeDungeonIds": [
+    2260
+   ],
+   "order": 45
+  },
+  {
+   "id": "frentex",
+   "name": "Frentex",
+   "faction": "blood",
+   "kind": "expedition",
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Frentex",
+   "sdeDungeonIds": [
+    1544
+   ],
+   "order": 252
+  },
+  {
+   "id": "following-the-blood",
+   "name": "Following the Blood",
+   "faction": "blood",
+   "kind": "expedition",
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Following the Blood",
+   "sdeDungeonIds": [
+    1426
+   ],
+   "order": 258
+  },
+  {
+   "id": "medical-twilight",
+   "name": "Medical Twilight",
+   "faction": "blood",
+   "kind": "expedition",
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Medical Twilight",
+   "sdeDungeonIds": [
+    1751
+   ],
+   "order": 264
+  },
+  {
+   "id": "the-rewards-of-devotion",
+   "name": "The Rewards of Devotion",
+   "faction": "blood",
+   "kind": "expedition",
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "The Rewards of Devotion",
+   "sdeDungeonIds": [
+    1713
+   ],
+   "order": 270
+  },
+  {
+   "id": "blood-surveillance-squad",
+   "name": "Blood Surveillance Squad",
+   "faction": "blood",
+   "kind": "expedition",
+   "space": [
+    "low"
+   ],
+   "page": "Blood Surveillance Squad",
+   "sdeDungeonIds": [
+    1709
+   ],
+   "order": 275
+  },
+  {
+   "id": "save-the-slaves",
+   "name": "Save The Slaves",
+   "faction": "blood",
+   "kind": "expedition",
+   "space": [
+    "low"
+   ],
+   "page": "Save The Slaves",
+   "sdeDungeonIds": [
+    1432
+   ],
+   "order": 281
+  },
+  {
+   "id": "blood-owned-station",
+   "name": "Blood Owned Station",
+   "faction": "blood",
+   "kind": "expedition",
+   "space": [
+    "low"
+   ],
+   "page": "Blood Owned Station",
+   "sdeDungeonIds": [
+    1813
+   ],
+   "order": 287
+  },
+  {
+   "id": "blood-raider-powergrid",
+   "name": "Blood Raider Powergrid",
+   "faction": "blood",
+   "kind": "expedition",
+   "space": [
+    "low"
+   ],
+   "page": "Blood Raider Powergrid",
+   "sdeDungeonIds": [
+    1883
+   ],
+   "order": 293
+  },
+  {
+   "id": "religious-fury",
+   "name": "Religious Fury",
+   "faction": "blood",
+   "kind": "expedition",
+   "space": [
+    "null"
+   ],
+   "page": "Religious Fury",
+   "sdeDungeonIds": [
+    1782
+   ],
+   "order": 300
+  },
+  {
+   "id": "dubious-assignment",
+   "name": "Dubious Assignment",
+   "faction": "blood",
+   "kind": "expedition",
+   "space": [
+    "null"
+   ],
+   "page": "Dubious Assignment",
+   "sdeDungeonIds": [
+    1433
+   ],
+   "order": 306
+  },
+  {
+   "id": "frontier-in-flames",
+   "name": "Frontier in Flames",
+   "faction": "blood",
+   "kind": "expedition",
+   "space": [
+    "null"
+   ],
+   "page": "Frontier in Flames",
+   "sdeDungeonIds": [
+    1931
+   ],
+   "order": 312
+  },
+  {
+   "id": "fountain-of-youth",
+   "name": "Fountain of Youth",
+   "faction": "blood",
+   "kind": "expedition",
+   "space": [
+    "null"
+   ],
+   "page": "Fountain of Youth",
+   "sdeDungeonIds": [
+    1863
+   ],
+   "order": 318
+  },
+  {
+   "id": "dark-blood-fleet-staging-point-2",
+   "name": "Dark Blood Fleet Staging Point 2",
+   "faction": "blood",
+   "kind": "expedition",
+   "space": [
+    "null"
+   ],
+   "page": "Dark Blood Fleet Staging Point 2",
+   "sdeDungeonIds": [],
+   "order": 324
+  },
+  {
+   "id": "dark-blood-fleet-staging-point-3",
+   "name": "Dark Blood Fleet Staging Point 3",
+   "faction": "blood",
+   "kind": "expedition",
+   "space": [
+    "null"
+   ],
+   "page": "Dark Blood Fleet Staging Point 3",
+   "sdeDungeonIds": [],
+   "order": 325
+  },
+  {
+   "id": "guristas-hideaway",
+   "name": "Guristas Hideaway",
+   "faction": "guristas",
+   "kind": "anomaly",
+   "tier": 1,
+   "level": 1,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Guristas Hideaway",
+   "sdeDungeonIds": [
+    2134
+   ],
+   "order": 126
+  },
+  {
+   "id": "guristas-hidden-hideaway",
+   "name": "Guristas Hidden Hideaway",
+   "faction": "guristas",
+   "kind": "anomaly",
+   "tier": 1,
+   "level": 2,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Guristas Hidden Hideaway",
+   "sdeDungeonIds": [
+    3433
+   ],
+   "order": 132
+  },
+  {
+   "id": "guristas-forsaken-hideaway",
+   "name": "Guristas Forsaken Hideaway",
+   "faction": "guristas",
+   "kind": "anomaly",
+   "tier": 1,
+   "level": 3,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Guristas Forsaken Hideaway",
+   "sdeDungeonIds": [
+    3423
+   ],
+   "order": 137
+  },
+  {
+   "id": "guristas-forlorn-hideaway",
+   "name": "Guristas Forlorn Hideaway",
+   "faction": "guristas",
+   "kind": "anomaly",
+   "tier": 1,
+   "level": 4,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Guristas Forlorn Hideaway",
+   "sdeDungeonIds": [
+    3416
+   ],
+   "order": 142
+  },
+  {
+   "id": "guristas-burrow",
+   "name": "Guristas Burrow",
+   "faction": "guristas",
+   "kind": "anomaly",
+   "tier": 2,
+   "space": [
+    "high"
+   ],
+   "page": "Guristas Burrow",
+   "sdeDungeonIds": [
+    2217
+   ],
+   "order": 147
+  },
+  {
+   "id": "guristas-refuge",
+   "name": "Guristas Refuge",
+   "faction": "guristas",
+   "kind": "anomaly",
+   "tier": 3,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Guristas Refuge",
+   "sdeDungeonIds": [
+    2312
+   ],
+   "order": 153
+  },
+  {
+   "id": "guristas-den",
+   "name": "Guristas Den",
+   "faction": "guristas",
+   "kind": "anomaly",
+   "tier": 4,
+   "level": 1,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Guristas Den",
+   "sdeDungeonIds": [
+    2203
+   ],
+   "order": 159
+  },
+  {
+   "id": "guristas-hidden-den",
+   "name": "Guristas Hidden Den",
+   "faction": "guristas",
+   "kind": "anomaly",
+   "tier": 4,
+   "level": 2,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Guristas Hidden Den",
+   "sdeDungeonIds": [
+    3458
+   ],
+   "order": 165
+  },
+  {
+   "id": "guristas-forsaken-den",
+   "name": "Guristas Forsaken Den",
+   "faction": "guristas",
+   "kind": "anomaly",
+   "tier": 4,
+   "level": 3,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Guristas Forsaken Den",
+   "sdeDungeonIds": [
+    3437
+   ],
+   "order": 170
+  },
+  {
+   "id": "guristas-forlorn-den",
+   "name": "Guristas Forlorn Den",
+   "faction": "guristas",
+   "kind": "anomaly",
+   "tier": 4,
+   "level": 4,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Guristas Forlorn Den",
+   "sdeDungeonIds": [
+    3428
+   ],
+   "order": 175
+  },
+  {
+   "id": "guristas-yard",
+   "name": "Guristas Yard",
+   "faction": "guristas",
+   "kind": "anomaly",
+   "tier": 5,
+   "space": [
+    "low"
+   ],
+   "page": "Guristas Yard",
+   "sdeDungeonIds": [
+    2274
+   ],
+   "order": 180
+  },
+  {
+   "id": "guristas-rally-point",
+   "name": "Guristas Rally Point",
+   "faction": "guristas",
+   "kind": "anomaly",
+   "tier": 6,
+   "level": 1,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Guristas Rally Point",
+   "sdeDungeonIds": [
+    2121
+   ],
+   "order": 186
+  },
+  {
+   "id": "guristas-hidden-rally-point",
+   "name": "Guristas Hidden Rally Point",
+   "faction": "guristas",
+   "kind": "anomaly",
+   "tier": 6,
+   "level": 2,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Guristas Hidden Rally Point",
+   "sdeDungeonIds": [
+    3513
+   ],
+   "order": 192
+  },
+  {
+   "id": "guristas-forsaken-rally-point",
+   "name": "Guristas Forsaken Rally Point",
+   "faction": "guristas",
+   "kind": "anomaly",
+   "tier": 6,
+   "level": 3,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Guristas Forsaken Rally Point",
+   "sdeDungeonIds": [
+    3443
+   ],
+   "order": 198
+  },
+  {
+   "id": "guristas-forlorn-rally-point",
+   "name": "Guristas Forlorn Rally Point",
+   "faction": "guristas",
+   "kind": "anomaly",
+   "tier": 6,
+   "level": 4,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Guristas Forlorn Rally Point",
+   "sdeDungeonIds": [
+    3448
+   ],
+   "order": 203
+  },
+  {
+   "id": "guristas-port",
+   "name": "Guristas Port",
+   "faction": "guristas",
+   "kind": "anomaly",
+   "tier": 7,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Guristas Port",
+   "sdeDungeonIds": [
+    2128
+   ],
+   "order": 208
+  },
+  {
+   "id": "guristas-hub",
+   "name": "Guristas Hub",
+   "faction": "guristas",
+   "kind": "anomaly",
+   "tier": 8,
+   "level": 1,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Guristas Hub",
+   "sdeDungeonIds": [
+    2148
+   ],
+   "order": 214
+  },
+  {
+   "id": "guristas-hidden-hub",
+   "name": "Guristas Hidden Hub",
+   "faction": "guristas",
+   "kind": "anomaly",
+   "tier": 8,
+   "level": 2,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Guristas Hidden Hub",
+   "sdeDungeonIds": [
+    3472
+   ],
+   "order": 220
+  },
+  {
+   "id": "guristas-forsaken-hub",
+   "name": "Guristas Forsaken Hub",
+   "faction": "guristas",
+   "kind": "anomaly",
+   "tier": 8,
+   "level": 3,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Guristas Forsaken Hub",
+   "sdeDungeonIds": [
+    3465
+   ],
+   "order": 225
+  },
+  {
+   "id": "guristas-forlorn-hub",
+   "name": "Guristas Forlorn Hub",
+   "faction": "guristas",
+   "kind": "anomaly",
+   "tier": 8,
+   "level": 4,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Guristas Forlorn Hub",
+   "sdeDungeonIds": [
+    3454
+   ],
+   "order": 230
+  },
+  {
+   "id": "guristas-haven",
+   "name": "Guristas Haven",
+   "faction": "guristas",
+   "kind": "anomaly",
+   "tier": 9,
+   "space": [
+    "null"
+   ],
+   "page": "Guristas Haven",
+   "sdeDungeonIds": [
+    2283
+   ],
+   "order": 235
+  },
+  {
+   "id": "guristas-sanctum",
+   "name": "Guristas Sanctum",
+   "faction": "guristas",
+   "kind": "anomaly",
+   "tier": 10,
+   "level": 1,
+   "space": [
+    "null"
+   ],
+   "page": "Guristas Sanctum",
+   "sdeDungeonIds": [
+    2321
+   ],
+   "order": 241
+  },
+  {
+   "id": "guristas-forsaken-sanctum",
+   "name": "Guristas Forsaken Sanctum",
+   "faction": "guristas",
+   "kind": "anomaly",
+   "tier": 10,
+   "level": 2,
+   "space": [
+    "null"
+   ],
+   "page": "Guristas Forsaken Sanctum",
+   "sdeDungeonIds": [
+    11062
+   ],
+   "order": 247
+  },
+  {
+   "id": "gurista-hideout",
+   "name": "Gurista Hideout",
+   "faction": "guristas",
+   "kind": "unrated",
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Gurista Hideout",
+   "sdeDungeonIds": [
+    1222
+   ],
+   "order": 52
+  },
+  {
+   "id": "gurista-lookout",
+   "name": "Gurista Lookout",
+   "faction": "guristas",
+   "kind": "unrated",
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Gurista Lookout",
+   "sdeDungeonIds": [
+    1236
+   ],
+   "order": 58
+  },
+  {
+   "id": "guristas-watch",
+   "name": "Guristas Watch",
+   "faction": "guristas",
+   "kind": "unrated",
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Guristas Watch",
+   "sdeDungeonIds": [
+    1215
+   ],
+   "order": 64
+  },
+  {
+   "id": "guristas-vigil",
+   "name": "Guristas Vigil",
+   "faction": "guristas",
+   "kind": "unrated",
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Guristas Vigil",
+   "sdeDungeonIds": [
+    1232
+   ],
+   "order": 70
+  },
+  {
+   "id": "provisional-gurista-outpost",
+   "name": "Provisional Gurista Outpost",
+   "faction": "guristas",
+   "kind": "unrated",
+   "space": [
+    "low"
+   ],
+   "page": "Provisional Gurista Outpost",
+   "sdeDungeonIds": [
+    1408
+   ],
+   "order": 75
+  },
+  {
+   "id": "gurista-outpost",
+   "name": "Gurista Outpost",
+   "faction": "guristas",
+   "kind": "unrated",
+   "space": [
+    "low"
+   ],
+   "page": "Gurista Outpost",
+   "sdeDungeonIds": [
+    1251
+   ],
+   "order": 81
+  },
+  {
+   "id": "minor-guristas-annex",
+   "name": "Minor Guristas Annex",
+   "faction": "guristas",
+   "kind": "unrated",
+   "space": [
+    "low"
+   ],
+   "page": "Minor Guristas Annex",
+   "sdeDungeonIds": [
+    1568
+   ],
+   "order": 87
+  },
+  {
+   "id": "guristas-annex",
+   "name": "Guristas Annex",
+   "faction": "guristas",
+   "kind": "unrated",
+   "space": [
+    "low"
+   ],
+   "page": "Guristas Annex",
+   "sdeDungeonIds": [
+    1570
+   ],
+   "order": 93
+  },
+  {
+   "id": "gurista-base",
+   "name": "Gurista Base",
+   "faction": "guristas",
+   "kind": "unrated",
+   "space": [
+    "null"
+   ],
+   "page": "Gurista Base",
+   "sdeDungeonIds": [
+    1460
+   ],
+   "order": 98
+  },
+  {
+   "id": "gurista-fortress",
+   "name": "Gurista Fortress",
+   "faction": "guristas",
+   "kind": "unrated",
+   "space": [
+    "null"
+   ],
+   "page": "Gurista Fortress",
+   "sdeDungeonIds": [
+    1257
+   ],
+   "order": 104
+  },
+  {
+   "id": "guristas-military-complex",
+   "name": "Gurista Military Complex",
+   "faction": "guristas",
+   "kind": "unrated",
+   "space": [
+    "null"
+   ],
+   "page": "Guristas Military Complex",
+   "sdeDungeonIds": [
+    1655
+   ],
+   "order": 110
+  },
+  {
+   "id": "gurista-provincial-hq",
+   "name": "Gurista Provincial HQ",
+   "faction": "guristas",
+   "kind": "unrated",
+   "space": [
+    "null"
+   ],
+   "page": "Gurista Provincial HQ",
+   "sdeDungeonIds": [],
+   "order": 116
+  },
+  {
+   "id": "dread-guristas-fleet-staging-point",
+   "name": "Dread Guristas Fleet Staging Point",
+   "faction": "guristas",
+   "kind": "unrated",
+   "space": [
+    "null"
+   ],
+   "page": "Dread Guristas Fleet Staging Point",
+   "sdeDungeonIds": [
+    2575
+   ],
+   "order": 121
+  },
+  {
+   "id": "pith-robux-asteroid-mining-co",
+   "name": "Pith Robux Asteroid Mining & Co.",
+   "faction": "guristas",
+   "kind": "ded",
+   "ded": 1,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Pith Robux Asteroid Mining & Co.",
+   "sdeDungeonIds": [],
+   "order": 2
+  },
+  {
+   "id": "pith-merchant-depot",
+   "name": "Pith Merchant Depot",
+   "faction": "guristas",
+   "kind": "ded",
+   "ded": 2,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Pith Merchant Depot",
+   "sdeDungeonIds": [
+    43
+   ],
+   "order": 7
+  },
+  {
+   "id": "guristas-guerilla-grounds",
+   "name": "Guristas Guerilla Grounds",
+   "faction": "guristas",
+   "kind": "ded",
+   "ded": 3,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Guristas Guerilla Grounds",
+   "sdeDungeonIds": [
+    5302
+   ],
+   "order": 13
+  },
+  {
+   "id": "guristas-scout-outpost",
+   "name": "Guristas Scout Outpost",
+   "faction": "guristas",
+   "kind": "ded",
+   "ded": 4,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Guristas Scout Outpost",
+   "sdeDungeonIds": [
+    2249
+   ],
+   "order": 19
+  },
+  {
+   "id": "guristas-hallucinogen-supply-waypoint",
+   "name": "Guristas Hallucinogen Supply Waypoint",
+   "faction": "guristas",
+   "kind": "ded",
+   "ded": 5,
+   "notes": [
+    "DED 5/10s cannot naturally spawn in high security systems, however they can be received as an escalation that spawns in a high security system."
+   ],
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Guristas Hallucinogen Supply Waypoint",
+   "sdeDungeonIds": [
+    5242
+   ],
+   "order": 25
+  },
+  {
+   "id": "guristas-troop-reinvigoration-camp",
+   "name": "Guristas Troop Reinvigoration Camp",
+   "faction": "guristas",
+   "kind": "ded",
+   "ded": 6,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Guristas Troop Reinvigoration Camp",
+   "sdeDungeonIds": [
+    2265
+   ],
+   "order": 31
+  },
+  {
+   "id": "gurista-military-operations-complex",
+   "name": "Gurista Military Operations Complex",
+   "faction": "guristas",
+   "kind": "ded",
+   "ded": 7,
+   "space": [
+    "null"
+   ],
+   "page": "Gurista Military Operations Complex",
+   "sdeDungeonIds": [
+    5233
+   ],
+   "order": 36
+  },
+  {
+   "id": "piths-penal-complex",
+   "name": "Pith's Penal Complex",
+   "faction": "guristas",
+   "kind": "ded",
+   "ded": 8,
+   "space": [
+    "null"
+   ],
+   "page": "Pith's Penal Complex",
+   "sdeDungeonIds": [
+    2262
+   ],
+   "order": 41
+  },
+  {
+   "id": "the-maze",
+   "name": "The Maze",
+   "faction": "guristas",
+   "kind": "ded",
+   "ded": 10,
+   "space": [
+    "null"
+   ],
+   "page": "The Maze",
+   "sdeDungeonIds": [
+    2257
+   ],
+   "order": 46
+  },
+  {
+   "id": "sooth-sayer",
+   "name": "Sooth Sayer",
+   "faction": "guristas",
+   "kind": "expedition",
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Sooth Sayer",
+   "sdeDungeonIds": [
+    1545
+   ],
+   "order": 253
+  },
+  {
+   "id": "trap",
+   "name": "Trap?",
+   "faction": "guristas",
+   "kind": "expedition",
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Trap?",
+   "sdeDungeonIds": [],
+   "order": 259
+  },
+  {
+   "id": "terrorist-plot",
+   "name": "Terrorist Plot!",
+   "faction": "guristas",
+   "kind": "expedition",
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Terrorist Plot!",
+   "sdeDungeonIds": [
+    1318
+   ],
+   "order": 265
+  },
+  {
+   "id": "kidnapped",
+   "name": "Kidnapped!",
+   "faction": "guristas",
+   "kind": "expedition",
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Kidnapped!",
+   "sdeDungeonIds": [
+    1715
+   ],
+   "order": 271
+  },
+  {
+   "id": "gurista-surveillance-squad",
+   "name": "Gurista Surveillance Squad",
+   "faction": "guristas",
+   "kind": "expedition",
+   "space": [
+    "low"
+   ],
+   "page": "Gurista Surveillance Squad",
+   "sdeDungeonIds": [
+    1742
+   ],
+   "order": 276
+  },
+  {
+   "id": "gurista-productions-shipment",
+   "name": "Gurista Productions Shipment",
+   "faction": "guristas",
+   "kind": "expedition",
+   "space": [
+    "low"
+   ],
+   "page": "Gurista Productions Shipment",
+   "sdeDungeonIds": [
+    1431
+   ],
+   "order": 282
+  },
+  {
+   "id": "guristas-owned-station",
+   "name": "Guristas Owned Station",
+   "faction": "guristas",
+   "kind": "expedition",
+   "space": [
+    "low"
+   ],
+   "page": "Guristas Owned Station",
+   "sdeDungeonIds": [
+    1831
+   ],
+   "order": 288
+  },
+  {
+   "id": "guristas-powergrid",
+   "name": "Guristas Powergrid",
+   "faction": "guristas",
+   "kind": "expedition",
+   "space": [
+    "low"
+   ],
+   "page": "Guristas Powergrid",
+   "sdeDungeonIds": [
+    1881
+   ],
+   "order": 294
+  },
+  {
+   "id": "consequences-smonsequences",
+   "name": "Consequences Smonsequences",
+   "faction": "guristas",
+   "kind": "expedition",
+   "space": [
+    "null"
+   ],
+   "page": "Consequences Smonsequences",
+   "sdeDungeonIds": [],
+   "order": 301
+  },
+  {
+   "id": "hired-gun",
+   "name": "Hired Gun",
+   "faction": "guristas",
+   "kind": "expedition",
+   "space": [
+    "null"
+   ],
+   "page": "Hired Gun",
+   "sdeDungeonIds": [
+    1436
+   ],
+   "order": 307
+  },
+  {
+   "id": "pirates-path",
+   "name": "Pirate's Path",
+   "faction": "guristas",
+   "kind": "expedition",
+   "space": [
+    "null"
+   ],
+   "page": "Pirate's Path",
+   "sdeDungeonIds": [
+    1925
+   ],
+   "order": 313
+  },
+  {
+   "id": "no-quarter",
+   "name": "No Quarter",
+   "faction": "guristas",
+   "kind": "expedition",
+   "space": [
+    "null"
+   ],
+   "page": "No Quarter",
+   "sdeDungeonIds": [
+    1873
+   ],
+   "order": 319
+  },
+  {
+   "id": "dread-guristas-fleet-staging-point-2",
+   "name": "Dread Guristas Fleet Staging Point 2",
+   "faction": "guristas",
+   "kind": "expedition",
+   "space": [
+    "null"
+   ],
+   "page": "Dread Guristas Fleet Staging Point 2",
+   "sdeDungeonIds": [],
+   "order": 326
+  },
+  {
+   "id": "dread-guristas-fleet-staging-point-3",
+   "name": "Dread Guristas Fleet Staging Point 3",
+   "faction": "guristas",
+   "kind": "expedition",
+   "space": [
+    "null"
+   ],
+   "page": "Dread Guristas Fleet Staging Point 3",
+   "sdeDungeonIds": [
+    2577
+   ],
+   "order": 327
+  },
+  {
+   "id": "sansha-hideaway",
+   "name": "Sansha Hideaway",
+   "faction": "sansha",
+   "kind": "anomaly",
+   "tier": 1,
+   "level": 1,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Sansha Hideaway",
+   "sdeDungeonIds": [
+    2135
+   ],
+   "order": 127
+  },
+  {
+   "id": "sansha-hidden-hideaway",
+   "name": "Sansha Hidden Hideaway",
+   "faction": "sansha",
+   "kind": "anomaly",
+   "tier": 1,
+   "level": 2,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Sansha Hidden Hideaway",
+   "sdeDungeonIds": [
+    3434
+   ],
+   "order": 133
+  },
+  {
+   "id": "sansha-forsaken-hideaway",
+   "name": "Sansha Forsaken Hideaway",
+   "faction": "sansha",
+   "kind": "anomaly",
+   "tier": 1,
+   "level": 3,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Sansha Forsaken Hideaway",
+   "sdeDungeonIds": [
+    3424
+   ],
+   "order": 138
+  },
+  {
+   "id": "sansha-forlorn-hideaway",
+   "name": "Sansha Forlorn Hideaway",
+   "faction": "sansha",
+   "kind": "anomaly",
+   "tier": 1,
+   "level": 4,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Sansha Forlorn Hideaway",
+   "sdeDungeonIds": [
+    3418
+   ],
+   "order": 143
+  },
+  {
+   "id": "sansha-burrow",
+   "name": "Sansha Burrow",
+   "faction": "sansha",
+   "kind": "anomaly",
+   "tier": 2,
+   "space": [
+    "high"
+   ],
+   "page": "Sansha Burrow",
+   "sdeDungeonIds": [
+    2220
+   ],
+   "order": 148
+  },
+  {
+   "id": "sansha-refuge",
+   "name": "Sansha Refuge",
+   "faction": "sansha",
+   "kind": "anomaly",
+   "tier": 3,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Sansha Refuge",
+   "sdeDungeonIds": [
+    2313
+   ],
+   "order": 154
+  },
+  {
+   "id": "sansha-den",
+   "name": "Sansha Den",
+   "faction": "sansha",
+   "kind": "anomaly",
+   "tier": 4,
+   "level": 1,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Sansha Den",
+   "sdeDungeonIds": [
+    2206
+   ],
+   "order": 160
+  },
+  {
+   "id": "sansha-hidden-den",
+   "name": "Sansha Hidden Den",
+   "faction": "sansha",
+   "kind": "anomaly",
+   "tier": 4,
+   "level": 2,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Sansha Hidden Den",
+   "sdeDungeonIds": [
+    3459
+   ],
+   "order": 166
+  },
+  {
+   "id": "sansha-forsaken-den",
+   "name": "Sansha Forsaken Den",
+   "faction": "sansha",
+   "kind": "anomaly",
+   "tier": 4,
+   "level": 3,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Sansha Forsaken Den",
+   "sdeDungeonIds": [
+    3438
+   ],
+   "order": 171
+  },
+  {
+   "id": "sansha-forlorn-den",
+   "name": "Sansha Forlorn Den",
+   "faction": "sansha",
+   "kind": "anomaly",
+   "tier": 4,
+   "level": 4,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Sansha Forlorn Den",
+   "sdeDungeonIds": [
+    3429
+   ],
+   "order": 176
+  },
+  {
+   "id": "sansha-yard",
+   "name": "Sansha Yard",
+   "faction": "sansha",
+   "kind": "anomaly",
+   "tier": 5,
+   "space": [
+    "low"
+   ],
+   "page": "Sansha Yard",
+   "sdeDungeonIds": [
+    2279
+   ],
+   "order": 181
+  },
+  {
+   "id": "sansha-rally-point",
+   "name": "Sansha Rally Point",
+   "faction": "sansha",
+   "kind": "anomaly",
+   "tier": 6,
+   "level": 1,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Sansha Rally Point",
+   "sdeDungeonIds": [
+    2125
+   ],
+   "order": 187
+  },
+  {
+   "id": "sansha-hidden-rally-point",
+   "name": "Sansha Hidden Rally Point",
+   "faction": "sansha",
+   "kind": "anomaly",
+   "tier": 6,
+   "level": 2,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Sansha Hidden Rally Point",
+   "sdeDungeonIds": [
+    3514
+   ],
+   "order": 193
+  },
+  {
+   "id": "sansha-forsaken-rally-point",
+   "name": "Sansha Forsaken Rally Point",
+   "faction": "sansha",
+   "kind": "anomaly",
+   "tier": 6,
+   "level": 3,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Sansha Forsaken Rally Point",
+   "sdeDungeonIds": [
+    3444
+   ],
+   "order": 199
+  },
+  {
+   "id": "sansha-forlorn-rally-point",
+   "name": "Sansha Forlorn Rally Point",
+   "faction": "sansha",
+   "kind": "anomaly",
+   "tier": 6,
+   "level": 4,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Sansha Forlorn Rally Point",
+   "sdeDungeonIds": [
+    3449
+   ],
+   "order": 204
+  },
+  {
+   "id": "sansha-port",
+   "name": "Sansha Port",
+   "faction": "sansha",
+   "kind": "anomaly",
+   "tier": 7,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Sansha Port",
+   "sdeDungeonIds": [
+    2131
+   ],
+   "order": 209
+  },
+  {
+   "id": "sansha-hub",
+   "name": "Sansha Hub",
+   "faction": "sansha",
+   "kind": "anomaly",
+   "tier": 8,
+   "level": 1,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Sansha Hub",
+   "sdeDungeonIds": [
+    2149
+   ],
+   "order": 215
+  },
+  {
+   "id": "sansha-hidden-hub",
+   "name": "Sansha Hidden Hub",
+   "faction": "sansha",
+   "kind": "anomaly",
+   "tier": 8,
+   "level": 2,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Sansha Hidden Hub",
+   "sdeDungeonIds": [
+    3473
+   ],
+   "order": 221
+  },
+  {
+   "id": "sansha-forsaken-hub",
+   "name": "Sansha Forsaken Hub",
+   "faction": "sansha",
+   "kind": "anomaly",
+   "tier": 8,
+   "level": 3,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Sansha Forsaken Hub",
+   "sdeDungeonIds": [
+    3466
+   ],
+   "order": 226
+  },
+  {
+   "id": "sansha-forlorn-hub",
+   "name": "Sansha Forlorn Hub",
+   "faction": "sansha",
+   "kind": "anomaly",
+   "tier": 8,
+   "level": 4,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Sansha Forlorn Hub",
+   "sdeDungeonIds": [
+    3455
+   ],
+   "order": 231
+  },
+  {
+   "id": "sansha-haven",
+   "name": "Sansha Haven",
+   "faction": "sansha",
+   "kind": "anomaly",
+   "tier": 9,
+   "space": [
+    "null"
+   ],
+   "page": "Sansha Haven",
+   "sdeDungeonIds": [
+    2290
+   ],
+   "order": 236
+  },
+  {
+   "id": "sansha-sanctum",
+   "name": "Sansha Sanctum",
+   "faction": "sansha",
+   "kind": "anomaly",
+   "tier": 10,
+   "level": 1,
+   "space": [
+    "null"
+   ],
+   "page": "Sansha Sanctum",
+   "sdeDungeonIds": [
+    2327
+   ],
+   "order": 242
+  },
+  {
+   "id": "sansha-forsaken-sanctum",
+   "name": "Sansha Forsaken Sanctum",
+   "faction": "sansha",
+   "kind": "anomaly",
+   "tier": 10,
+   "level": 2,
+   "space": [
+    "null"
+   ],
+   "page": "Sansha Forsaken Sanctum",
+   "sdeDungeonIds": [
+    11063
+   ],
+   "order": 248
+  },
+  {
+   "id": "sansha-hideout",
+   "name": "Sansha Hideout",
+   "faction": "sansha",
+   "kind": "unrated",
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Sansha Hideout",
+   "sdeDungeonIds": [
+    1225
+   ],
+   "order": 53
+  },
+  {
+   "id": "sansha-lookout",
+   "name": "Sansha Lookout",
+   "faction": "sansha",
+   "kind": "unrated",
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Sansha Lookout",
+   "sdeDungeonIds": [
+    1237
+   ],
+   "order": 59
+  },
+  {
+   "id": "sansha-watch",
+   "name": "Sansha Watch",
+   "faction": "sansha",
+   "kind": "unrated",
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Sansha Watch",
+   "sdeDungeonIds": [
+    1216
+   ],
+   "order": 65
+  },
+  {
+   "id": "sansha-vigil",
+   "name": "Sansha Vigil",
+   "faction": "sansha",
+   "kind": "unrated",
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Sansha Vigil",
+   "sdeDungeonIds": [
+    1230
+   ],
+   "order": 71
+  },
+  {
+   "id": "provisional-sansha-outpost",
+   "name": "Provisional Sansha Outpost",
+   "faction": "sansha",
+   "kind": "unrated",
+   "space": [
+    "low"
+   ],
+   "page": "Provisional Sansha Outpost",
+   "sdeDungeonIds": [
+    1411
+   ],
+   "order": 76
+  },
+  {
+   "id": "sansha-outpost",
+   "name": "Sansha Outpost",
+   "faction": "sansha",
+   "kind": "unrated",
+   "space": [
+    "low"
+   ],
+   "page": "Sansha Outpost",
+   "sdeDungeonIds": [
+    1252
+   ],
+   "order": 82
+  },
+  {
+   "id": "minor-sansha-annex",
+   "name": "Minor Sansha Annex",
+   "faction": "sansha",
+   "kind": "unrated",
+   "space": [
+    "low"
+   ],
+   "page": "Minor Sansha Annex",
+   "sdeDungeonIds": [
+    1633
+   ],
+   "order": 88
+  },
+  {
+   "id": "sansha-annex",
+   "name": "Sansha Annex",
+   "faction": "sansha",
+   "kind": "unrated",
+   "space": [
+    "low"
+   ],
+   "page": "Sansha Annex",
+   "sdeDungeonIds": [
+    1634
+   ],
+   "order": 94
+  },
+  {
+   "id": "sansha-base",
+   "name": "Sansha Base",
+   "faction": "sansha",
+   "kind": "unrated",
+   "space": [
+    "null"
+   ],
+   "page": "Sansha Base",
+   "sdeDungeonIds": [
+    1463
+   ],
+   "order": 99
+  },
+  {
+   "id": "sansha-fortress",
+   "name": "Sansha Fortress",
+   "faction": "sansha",
+   "kind": "unrated",
+   "space": [
+    "null"
+   ],
+   "page": "Sansha Fortress",
+   "sdeDungeonIds": [
+    1258
+   ],
+   "order": 105
+  },
+  {
+   "id": "sansha-military-complex",
+   "name": "Sansha Military Complex",
+   "faction": "sansha",
+   "kind": "unrated",
+   "space": [
+    "null"
+   ],
+   "page": "Sansha Military Complex",
+   "sdeDungeonIds": [
+    1669
+   ],
+   "order": 111
+  },
+  {
+   "id": "sansha-provincial-hq",
+   "name": "Sansha Provincial HQ",
+   "faction": "sansha",
+   "kind": "unrated",
+   "space": [
+    "null"
+   ],
+   "page": "Sansha Provincial HQ",
+   "sdeDungeonIds": [
+    1672
+   ],
+   "order": 117
+  },
+  {
+   "id": "true-sansha-fleet-staging-point",
+   "name": "True Sansha Fleet Staging Point",
+   "faction": "sansha",
+   "kind": "unrated",
+   "space": [
+    "null"
+   ],
+   "page": "True Sansha Fleet Staging Point",
+   "sdeDungeonIds": [
+    5210
+   ],
+   "order": 122
+  },
+  {
+   "id": "sansha-military-outpost",
+   "name": "Sansha Military Outpost",
+   "faction": "sansha",
+   "kind": "ded",
+   "ded": 1,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Sansha Military Outpost",
+   "sdeDungeonIds": [
+    111
+   ],
+   "order": 3
+  },
+  {
+   "id": "sansha-acclimatization-facility",
+   "name": "Sansha Acclimatization Facility",
+   "faction": "sansha",
+   "kind": "ded",
+   "ded": 2,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Sansha Acclimatization Facility",
+   "sdeDungeonIds": [
+    5469
+   ],
+   "order": 8
+  },
+  {
+   "id": "sanshas-command-relay-outpost",
+   "name": "Sansha's Command Relay Outpost",
+   "faction": "sansha",
+   "kind": "ded",
+   "ded": 3,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Sansha's Command Relay Outpost",
+   "sdeDungeonIds": [
+    2251
+   ],
+   "order": 14
+  },
+  {
+   "id": "sanshas-nation-occupied-mining-colony",
+   "name": "Sansha's Nation Occupied Mining Colony",
+   "faction": "sansha",
+   "kind": "ded",
+   "ded": 4,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Sansha's Nation Occupied Mining Colony",
+   "sdeDungeonIds": [
+    5276
+   ],
+   "order": 20
+  },
+  {
+   "id": "sanshas-nation-neural-paralytic-facility",
+   "name": "Sansha's Nation Neural Paralytic Facility",
+   "faction": "sansha",
+   "kind": "ded",
+   "ded": 5,
+   "notes": [
+    "DED 5/10s cannot naturally spawn in high security systems, however they can be received as an escalation that spawns in a high security system."
+   ],
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Sansha's Nation Neural Paralytic Facility",
+   "sdeDungeonIds": [
+    5261
+   ],
+   "order": 26
+  },
+  {
+   "id": "sansha-war-supply-complex",
+   "name": "Sansha War Supply Complex",
+   "faction": "sansha",
+   "kind": "ded",
+   "ded": 6,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Sansha War Supply Complex",
+   "sdeDungeonIds": [
+    2243
+   ],
+   "order": 32
+  },
+  {
+   "id": "sansha-military-operations-complex",
+   "name": "Sansha Military Operations Complex",
+   "faction": "sansha",
+   "kind": "ded",
+   "ded": 7,
+   "space": [
+    "null"
+   ],
+   "page": "Sansha Military Operations Complex",
+   "sdeDungeonIds": [
+    5239
+   ],
+   "order": 37
+  },
+  {
+   "id": "sansha-prison-camp",
+   "name": "Sansha Prison Camp",
+   "faction": "sansha",
+   "kind": "ded",
+   "ded": 8,
+   "space": [
+    "null"
+   ],
+   "page": "Sansha Prison Camp",
+   "sdeDungeonIds": [
+    5235
+   ],
+   "order": 42
+  },
+  {
+   "id": "centus-assembly-t-p-co",
+   "name": "Centus Assembly T.P. Co.",
+   "faction": "sansha",
+   "kind": "ded",
+   "ded": 10,
+   "space": [
+    "null"
+   ],
+   "page": "Centus Assembly T.P. Co.",
+   "sdeDungeonIds": [
+    2258
+   ],
+   "order": 47
+  },
+  {
+   "id": "drop",
+   "name": "Drop",
+   "faction": "sansha",
+   "kind": "expedition",
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Drop",
+   "sdeDungeonIds": [
+    1574
+   ],
+   "order": 254
+  },
+  {
+   "id": "slave-breeding-plants",
+   "name": "Slave Breeding Plants",
+   "faction": "sansha",
+   "kind": "expedition",
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Slave Breeding Plants",
+   "sdeDungeonIds": [
+    1424
+   ],
+   "order": 260
+  },
+  {
+   "id": "nation-on-the-rise",
+   "name": "Nation on the Rise",
+   "faction": "sansha",
+   "kind": "expedition",
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Nation on the Rise",
+   "sdeDungeonIds": [
+    1320
+   ],
+   "order": 266
+  },
+  {
+   "id": "true-power-shipyards",
+   "name": "True Power Shipyards",
+   "faction": "sansha",
+   "kind": "expedition",
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "True Power Shipyards",
+   "sdeDungeonIds": [
+    1716
+   ],
+   "order": 272
+  },
+  {
+   "id": "sansha-surveillance-squad",
+   "name": "Sansha Surveillance Squad",
+   "faction": "sansha",
+   "kind": "expedition",
+   "space": [
+    "low"
+   ],
+   "page": "Sansha Surveillance Squad",
+   "sdeDungeonIds": [
+    1754
+   ],
+   "order": 277
+  },
+  {
+   "id": "hidden-riches",
+   "name": "Hidden Riches",
+   "faction": "sansha",
+   "kind": "expedition",
+   "space": [
+    "low"
+   ],
+   "page": "Hidden Riches",
+   "sdeDungeonIds": [
+    1429
+   ],
+   "order": 283
+  },
+  {
+   "id": "sansha-owned-station",
+   "name": "Sansha Owned Station",
+   "faction": "sansha",
+   "kind": "expedition",
+   "space": [
+    "low"
+   ],
+   "page": "Sansha Owned Station",
+   "sdeDungeonIds": [
+    1836
+   ],
+   "order": 289
+  },
+  {
+   "id": "sansha-powergrid",
+   "name": "Sansha Powergrid",
+   "faction": "sansha",
+   "kind": "expedition",
+   "space": [
+    "low"
+   ],
+   "page": "Sansha Powergrid",
+   "sdeDungeonIds": [],
+   "order": 295
+  },
+  {
+   "id": "true-power-hq",
+   "name": "True Power HQ",
+   "faction": "sansha",
+   "kind": "expedition",
+   "space": [
+    "null"
+   ],
+   "page": "True Power HQ",
+   "sdeDungeonIds": [
+    1876
+   ],
+   "order": 302
+  },
+  {
+   "id": "shady-operation",
+   "name": "Shady Operation",
+   "faction": "sansha",
+   "kind": "expedition",
+   "space": [
+    "null"
+   ],
+   "page": "Shady Operation",
+   "sdeDungeonIds": [
+    1435
+   ],
+   "order": 308
+  },
+  {
+   "id": "david-v-goliath",
+   "name": "David V Goliath",
+   "faction": "sansha",
+   "kind": "expedition",
+   "space": [
+    "null"
+   ],
+   "page": "David V Goliath",
+   "sdeDungeonIds": [
+    1921
+   ],
+   "order": 314
+  },
+  {
+   "id": "the-ancient-city",
+   "name": "The Ancient City",
+   "faction": "sansha",
+   "kind": "expedition",
+   "space": [
+    "null"
+   ],
+   "page": "The Ancient City",
+   "sdeDungeonIds": [
+    1903
+   ],
+   "order": 320
+  },
+  {
+   "id": "true-sansha-fleet-staging-point-2",
+   "name": "True Sansha Fleet Staging Point 2",
+   "faction": "sansha",
+   "kind": "expedition",
+   "space": [
+    "null"
+   ],
+   "page": "True Sansha Fleet Staging Point 2",
+   "sdeDungeonIds": [],
+   "order": 328
+  },
+  {
+   "id": "true-sansha-fleet-staging-point-3",
+   "name": "True Sansha Fleet Staging Point 3",
+   "faction": "sansha",
+   "kind": "expedition",
+   "space": [
+    "null"
+   ],
+   "page": "True Sansha Fleet Staging Point 3",
+   "sdeDungeonIds": [],
+   "order": 329
+  },
+  {
+   "id": "serpentis-hideaway",
+   "name": "Serpentis Hideaway",
+   "faction": "serpentis",
+   "kind": "anomaly",
+   "tier": 1,
+   "level": 1,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Serpentis Hideaway",
+   "sdeDungeonIds": [
+    2140
+   ],
+   "order": 128
+  },
+  {
+   "id": "serpentis-hidden-hideaway",
+   "name": "Serpentis Hidden Hideaway",
+   "faction": "serpentis",
+   "kind": "anomaly",
+   "tier": 1,
+   "level": 2,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Serpentis Hidden Hideaway",
+   "sdeDungeonIds": [
+    3435
+   ],
+   "order": 134
+  },
+  {
+   "id": "serpentis-forsaken-hideaway",
+   "name": "Serpentis Forsaken Hideaway",
+   "faction": "serpentis",
+   "kind": "anomaly",
+   "tier": 1,
+   "level": 3,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Serpentis Forsaken Hideaway",
+   "sdeDungeonIds": [
+    3425
+   ],
+   "order": 139
+  },
+  {
+   "id": "serpentis-forlorn-hideaway",
+   "name": "Serpentis Forlorn Hideaway",
+   "faction": "serpentis",
+   "kind": "anomaly",
+   "tier": 1,
+   "level": 4,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Serpentis Forlorn Hideaway",
+   "sdeDungeonIds": [
+    3419
+   ],
+   "order": 144
+  },
+  {
+   "id": "serpentis-burrow",
+   "name": "Serpentis Burrow",
+   "faction": "serpentis",
+   "kind": "anomaly",
+   "tier": 2,
+   "space": [
+    "high"
+   ],
+   "page": "Serpentis Burrow",
+   "sdeDungeonIds": [
+    2218
+   ],
+   "order": 149
+  },
+  {
+   "id": "serpentis-refuge",
+   "name": "Serpentis Refuge",
+   "faction": "serpentis",
+   "kind": "anomaly",
+   "tier": 3,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Serpentis Refuge",
+   "sdeDungeonIds": [
+    2315
+   ],
+   "order": 155
+  },
+  {
+   "id": "serpentis-den",
+   "name": "Serpentis Den",
+   "faction": "serpentis",
+   "kind": "anomaly",
+   "tier": 4,
+   "level": 1,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Serpentis Den",
+   "sdeDungeonIds": [
+    2204
+   ],
+   "order": 161
+  },
+  {
+   "id": "serpentis-hidden-den",
+   "name": "Serpentis Hidden Den",
+   "faction": "serpentis",
+   "kind": "anomaly",
+   "tier": 4,
+   "level": 2,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Serpentis Hidden Den",
+   "sdeDungeonIds": [
+    3460
+   ],
+   "order": 167
+  },
+  {
+   "id": "serpentis-forsaken-den",
+   "name": "Serpentis Forsaken Den",
+   "faction": "serpentis",
+   "kind": "anomaly",
+   "tier": 4,
+   "level": 3,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Serpentis Forsaken Den",
+   "sdeDungeonIds": [
+    3439
+   ],
+   "order": 172
+  },
+  {
+   "id": "serpentis-forlorn-den",
+   "name": "Serpentis Forlorn Den",
+   "faction": "serpentis",
+   "kind": "anomaly",
+   "tier": 4,
+   "level": 4,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Serpentis Forlorn Den",
+   "sdeDungeonIds": [
+    3430
+   ],
+   "order": 177
+  },
+  {
+   "id": "serpentis-yard",
+   "name": "Serpentis Yard",
+   "faction": "serpentis",
+   "kind": "anomaly",
+   "tier": 5,
+   "space": [
+    "low"
+   ],
+   "page": "Serpentis Yard",
+   "sdeDungeonIds": [
+    2276
+   ],
+   "order": 182
+  },
+  {
+   "id": "serpentis-rally-point",
+   "name": "Serpentis Rally Point",
+   "faction": "serpentis",
+   "kind": "anomaly",
+   "tier": 6,
+   "level": 1,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Serpentis Rally Point",
+   "sdeDungeonIds": [
+    2123
+   ],
+   "order": 188
+  },
+  {
+   "id": "serpentis-hidden-rally-point",
+   "name": "Serpentis Hidden Rally Point",
+   "faction": "serpentis",
+   "kind": "anomaly",
+   "tier": 6,
+   "level": 2,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Serpentis Hidden Rally Point",
+   "sdeDungeonIds": [
+    3515
+   ],
+   "order": 194
+  },
+  {
+   "id": "serpentis-forsaken-rally-point",
+   "name": "Serpentis Forsaken Rally Point",
+   "faction": "serpentis",
+   "kind": "anomaly",
+   "tier": 6,
+   "level": 3,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Serpentis Forsaken Rally Point",
+   "sdeDungeonIds": [
+    3445
+   ],
+   "order": 200
+  },
+  {
+   "id": "serpentis-forlorn-rally-point",
+   "name": "Serpentis Forlorn Rally Point",
+   "faction": "serpentis",
+   "kind": "anomaly",
+   "tier": 6,
+   "level": 4,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Serpentis Forlorn Rally Point",
+   "sdeDungeonIds": [
+    3450
+   ],
+   "order": 205
+  },
+  {
+   "id": "serpentis-port",
+   "name": "Serpentis Port",
+   "faction": "serpentis",
+   "kind": "anomaly",
+   "tier": 7,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Serpentis Port",
+   "sdeDungeonIds": [
+    2129
+   ],
+   "order": 210
+  },
+  {
+   "id": "serpentis-hub",
+   "name": "Serpentis Hub",
+   "faction": "serpentis",
+   "kind": "anomaly",
+   "tier": 8,
+   "level": 1,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Serpentis Hub",
+   "sdeDungeonIds": [
+    2150
+   ],
+   "order": 216
+  },
+  {
+   "id": "serpentis-hidden-hub",
+   "name": "Serpentis Hidden Hub",
+   "faction": "serpentis",
+   "kind": "anomaly",
+   "tier": 8,
+   "level": 2,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Serpentis Hidden Hub",
+   "sdeDungeonIds": [
+    3474
+   ],
+   "order": 222
+  },
+  {
+   "id": "serpentis-forsaken-hub",
+   "name": "Serpentis Forsaken Hub",
+   "faction": "serpentis",
+   "kind": "anomaly",
+   "tier": 8,
+   "level": 3,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Serpentis Forsaken Hub",
+   "sdeDungeonIds": [
+    3467
+   ],
+   "order": 227
+  },
+  {
+   "id": "serpentis-forlorn-hub",
+   "name": "Serpentis Forlorn Hub",
+   "faction": "serpentis",
+   "kind": "anomaly",
+   "tier": 8,
+   "level": 4,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Serpentis Forlorn Hub",
+   "sdeDungeonIds": [
+    3456
+   ],
+   "order": 232
+  },
+  {
+   "id": "serpentis-haven",
+   "name": "Serpentis Haven",
+   "faction": "serpentis",
+   "kind": "anomaly",
+   "tier": 9,
+   "space": [
+    "null"
+   ],
+   "page": "Serpentis Haven",
+   "sdeDungeonIds": [
+    2300
+   ],
+   "order": 237
+  },
+  {
+   "id": "serpentis-sanctum",
+   "name": "Serpentis Sanctum",
+   "faction": "serpentis",
+   "kind": "anomaly",
+   "tier": 10,
+   "level": 1,
+   "space": [
+    "null"
+   ],
+   "page": "Serpentis Sanctum",
+   "sdeDungeonIds": [
+    2330
+   ],
+   "order": 243
+  },
+  {
+   "id": "serpentis-forsaken-sanctum",
+   "name": "Serpentis Forsaken Sanctum",
+   "faction": "serpentis",
+   "kind": "anomaly",
+   "tier": 10,
+   "level": 2,
+   "space": [
+    "null"
+   ],
+   "page": "Serpentis Forsaken Sanctum",
+   "sdeDungeonIds": [
+    11065
+   ],
+   "order": 249
+  },
+  {
+   "id": "serpentis-hideout",
+   "name": "Serpentis Hideout",
+   "faction": "serpentis",
+   "kind": "unrated",
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Serpentis Hideout",
+   "sdeDungeonIds": [
+    1223
+   ],
+   "order": 54
+  },
+  {
+   "id": "serpentis-lookout",
+   "name": "Serpentis Lookout",
+   "faction": "serpentis",
+   "kind": "unrated",
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Serpentis Lookout",
+   "sdeDungeonIds": [
+    1238
+   ],
+   "order": 60
+  },
+  {
+   "id": "serpentis-watch",
+   "name": "Serpentis Watch",
+   "faction": "serpentis",
+   "kind": "unrated",
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Serpentis Watch",
+   "sdeDungeonIds": [
+    1217
+   ],
+   "order": 66
+  },
+  {
+   "id": "serpentis-vigil",
+   "name": "Serpentis Vigil",
+   "faction": "serpentis",
+   "kind": "unrated",
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Serpentis Vigil",
+   "sdeDungeonIds": [
+    1231
+   ],
+   "order": 72
+  },
+  {
+   "id": "provisional-serpentis-outpost",
+   "name": "Provisional Serpentis Outpost",
+   "faction": "serpentis",
+   "kind": "unrated",
+   "space": [
+    "low"
+   ],
+   "page": "Provisional Serpentis Outpost",
+   "sdeDungeonIds": [
+    1409
+   ],
+   "order": 77
+  },
+  {
+   "id": "serpentis-outpost",
+   "name": "Serpentis Outpost",
+   "faction": "serpentis",
+   "kind": "unrated",
+   "space": [
+    "low"
+   ],
+   "page": "Serpentis Outpost",
+   "sdeDungeonIds": [
+    1253
+   ],
+   "order": 83
+  },
+  {
+   "id": "minor-serpentis-annex",
+   "name": "Minor Serpentis Annex",
+   "faction": "serpentis",
+   "kind": "unrated",
+   "space": [
+    "low"
+   ],
+   "page": "Minor Serpentis Annex",
+   "sdeDungeonIds": [
+    1635
+   ],
+   "order": 89
+  },
+  {
+   "id": "serpentis-annex",
+   "name": "Serpentis Annex",
+   "faction": "serpentis",
+   "kind": "unrated",
+   "space": [
+    "low"
+   ],
+   "page": "Serpentis Annex",
+   "sdeDungeonIds": [
+    1561
+   ],
+   "order": 95
+  },
+  {
+   "id": "serpentis-base",
+   "name": "Serpentis Base",
+   "faction": "serpentis",
+   "kind": "unrated",
+   "space": [
+    "null"
+   ],
+   "page": "Serpentis Base",
+   "sdeDungeonIds": [
+    1461
+   ],
+   "order": 100
+  },
+  {
+   "id": "serpentis-fortress",
+   "name": "Serpentis Fortress",
+   "faction": "serpentis",
+   "kind": "unrated",
+   "space": [
+    "null"
+   ],
+   "page": "Serpentis Fortress",
+   "sdeDungeonIds": [
+    1259
+   ],
+   "order": 106
+  },
+  {
+   "id": "serpentis-military-complex",
+   "name": "Serpentis Military Complex",
+   "faction": "serpentis",
+   "kind": "unrated",
+   "space": [
+    "null"
+   ],
+   "page": "Serpentis Military Complex",
+   "sdeDungeonIds": [
+    1664
+   ],
+   "order": 112
+  },
+  {
+   "id": "serpentis-provincial-hq",
+   "name": "Serpentis Provincial HQ",
+   "faction": "serpentis",
+   "kind": "unrated",
+   "space": [
+    "null"
+   ],
+   "page": "Serpentis Provincial HQ",
+   "sdeDungeonIds": [
+    1666
+   ],
+   "order": 118
+  },
+  {
+   "id": "shadow-serpentis-fleet-staging-point",
+   "name": "Shadow Serpentis Fleet Staging Point",
+   "faction": "serpentis",
+   "kind": "unrated",
+   "space": [
+    "null"
+   ],
+   "page": "Shadow Serpentis Fleet Staging Point",
+   "sdeDungeonIds": [
+    2578
+   ],
+   "order": 123
+  },
+  {
+   "id": "serpentis-drug-outlet",
+   "name": "Serpentis Drug Outlet",
+   "faction": "serpentis",
+   "kind": "ded",
+   "ded": 1,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Serpentis Drug Outlet",
+   "sdeDungeonIds": [
+    116
+   ],
+   "order": 4
+  },
+  {
+   "id": "serpentis-live-cargo-distribution-facilities",
+   "name": "Serpentis Live Cargo Distribution Facilities",
+   "faction": "serpentis",
+   "kind": "ded",
+   "ded": 2,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Serpentis Live Cargo Distribution Facilities",
+   "sdeDungeonIds": [
+    5470
+   ],
+   "order": 9
+  },
+  {
+   "id": "serpentis-narcotic-warehouses",
+   "name": "Serpentis Narcotic Warehouses",
+   "faction": "serpentis",
+   "kind": "ded",
+   "ded": 3,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Serpentis Narcotic Warehouses",
+   "sdeDungeonIds": [
+    2244
+   ],
+   "order": 15
+  },
+  {
+   "id": "serpentis-phi-outpost",
+   "name": "Serpentis Phi-Outpost",
+   "faction": "serpentis",
+   "kind": "ded",
+   "ded": 4,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Serpentis Phi-Outpost",
+   "sdeDungeonIds": [
+    2253
+   ],
+   "order": 21
+  },
+  {
+   "id": "serpentis-corporation-hydroponics-site",
+   "name": "Serpentis Corporation Hydroponics Site",
+   "faction": "serpentis",
+   "kind": "ded",
+   "ded": 5,
+   "notes": [
+    "DED 5/10s cannot naturally spawn in high security systems, however they can be received as an escalation that spawns in a high security system."
+   ],
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Serpentis Corporation Hydroponics Site",
+   "sdeDungeonIds": [
+    5269
+   ],
+   "order": 27
+  },
+  {
+   "id": "serpentis-logistical-outpost",
+   "name": "Serpentis Logistical Outpost",
+   "faction": "serpentis",
+   "kind": "ded",
+   "ded": 6,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Serpentis Logistical Outpost",
+   "sdeDungeonIds": [
+    2455
+   ],
+   "order": 33
+  },
+  {
+   "id": "serpentis-paramilitary-complex",
+   "name": "Serpentis Paramilitary Complex",
+   "faction": "serpentis",
+   "kind": "ded",
+   "ded": 7,
+   "space": [
+    "null"
+   ],
+   "page": "Serpentis Paramilitary Complex",
+   "sdeDungeonIds": [
+    5238
+   ],
+   "order": 38
+  },
+  {
+   "id": "serpentis-prison-camp",
+   "name": "Serpentis Prison Camp",
+   "faction": "serpentis",
+   "kind": "ded",
+   "ded": 8,
+   "space": [
+    "null"
+   ],
+   "page": "Serpentis Prison Camp",
+   "sdeDungeonIds": [
+    5236
+   ],
+   "order": 43
+  },
+  {
+   "id": "serpentis-fleet-shipyard",
+   "name": "Serpentis Fleet Shipyard",
+   "faction": "serpentis",
+   "kind": "ded",
+   "ded": 10,
+   "space": [
+    "null"
+   ],
+   "page": "Serpentis Fleet Shipyard",
+   "sdeDungeonIds": [
+    2259
+   ],
+   "order": 48
+  },
+  {
+   "id": "serpentis-capital-staging",
+   "name": "Serpentis Capital Staging",
+   "faction": "serpentis",
+   "kind": "ded",
+   "space": [],
+   "page": "Serpentis Capital Staging",
+   "sdeDungeonIds": [
+    11072
+   ],
+   "order": 195
+  },
+  {
+   "id": "mindflood",
+   "name": "Mindflood",
+   "faction": "serpentis",
+   "kind": "expedition",
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Mindflood",
+   "sdeDungeonIds": [
+    1578
+   ],
+   "order": 255
+  },
+  {
+   "id": "angel-kickbacks",
+   "name": "Angel Kickbacks",
+   "faction": "serpentis",
+   "kind": "expedition",
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Angel Kickbacks",
+   "sdeDungeonIds": [
+    1425
+   ],
+   "order": 261
+  },
+  {
+   "id": "jet-set-hooligans",
+   "name": "Jet-Set Hooligans",
+   "faction": "serpentis",
+   "kind": "expedition",
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Jet-Set Hooligans",
+   "sdeDungeonIds": [
+    1778
+   ],
+   "order": 267
+  },
+  {
+   "id": "booster-r-d",
+   "name": "Booster R&D",
+   "faction": "serpentis",
+   "kind": "expedition",
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Booster R&D",
+   "sdeDungeonIds": [
+    1717
+   ],
+   "order": 273
+  },
+  {
+   "id": "guardian-angels-surveillance-squad",
+   "name": "Guardian Angels Surveillance Squad",
+   "faction": "serpentis",
+   "kind": "expedition",
+   "space": [
+    "low"
+   ],
+   "page": "Guardian Angels Surveillance Squad",
+   "sdeDungeonIds": [
+    1760
+   ],
+   "order": 278
+  },
+  {
+   "id": "elite-playground",
+   "name": "Elite Playground",
+   "faction": "serpentis",
+   "kind": "expedition",
+   "space": [
+    "low"
+   ],
+   "page": "Elite Playground",
+   "sdeDungeonIds": [
+    1430
+   ],
+   "order": 284
+  },
+  {
+   "id": "serpentis-owned-station",
+   "name": "Serpentis Owned Station",
+   "faction": "serpentis",
+   "kind": "expedition",
+   "space": [
+    "low"
+   ],
+   "page": "Serpentis Owned Station",
+   "sdeDungeonIds": [
+    1846
+   ],
+   "order": 290
+  },
+  {
+   "id": "serpentis-powergrid",
+   "name": "Serpentis Powergrid",
+   "faction": "serpentis",
+   "kind": "expedition",
+   "space": [
+    "low"
+   ],
+   "page": "Serpentis Powergrid",
+   "sdeDungeonIds": [
+    1884
+   ],
+   "order": 296
+  },
+  {
+   "id": "serpentis-logistical-outpost-part-2",
+   "name": "Serpentis Logistical Outpost Part 2",
+   "faction": "serpentis",
+   "kind": "expedition",
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Serpentis Logistical Outpost Part 2",
+   "sdeDungeonIds": [],
+   "order": 298
+  },
+  {
+   "id": "contract-killers",
+   "name": "Contract Killers",
+   "faction": "serpentis",
+   "kind": "expedition",
+   "space": [
+    "null"
+   ],
+   "page": "Contract Killers",
+   "sdeDungeonIds": [
+    1898
+   ],
+   "order": 303
+  },
+  {
+   "id": "suspicious-job",
+   "name": "Suspicious Job",
+   "faction": "serpentis",
+   "kind": "expedition",
+   "space": [
+    "null"
+   ],
+   "page": "Suspicious Job",
+   "sdeDungeonIds": [
+    1437
+   ],
+   "order": 309
+  },
+  {
+   "id": "colony-under-fire",
+   "name": "Colony Under Fire",
+   "faction": "serpentis",
+   "kind": "expedition",
+   "space": [
+    "null"
+   ],
+   "page": "Colony Under Fire",
+   "sdeDungeonIds": [
+    1916
+   ],
+   "order": 315
+  },
+  {
+   "id": "serpentis-secrets",
+   "name": "Serpentis Secrets",
+   "faction": "serpentis",
+   "kind": "expedition",
+   "space": [
+    "null"
+   ],
+   "page": "Serpentis Secrets",
+   "sdeDungeonIds": [
+    1910
+   ],
+   "order": 321
+  },
+  {
+   "id": "shadow-serpentis-fleet-staging-point-2-and-part-3",
+   "name": "Shadow Serpentis Fleet Staging Point 2 and part 3",
+   "faction": "serpentis",
+   "kind": "expedition",
+   "space": [
+    "null"
+   ],
+   "page": "Shadow Serpentis Fleet Staging Point 2 and part 3",
+   "sdeDungeonIds": [],
+   "order": 330
+  },
+  {
+   "id": "drone-cluster",
+   "name": "Drone Cluster",
+   "faction": "drones",
+   "kind": "anomaly",
+   "tier": 1,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Drone Cluster",
+   "sdeDungeonIds": [
+    2188
+   ],
+   "order": 129
+  },
+  {
+   "id": "drone-collection",
+   "name": "Drone Collection",
+   "faction": "drones",
+   "kind": "anomaly",
+   "tier": 2,
+   "space": [
+    "high"
+   ],
+   "page": "Drone Collection",
+   "sdeDungeonIds": [
+    2339
+   ],
+   "order": 150
+  },
+  {
+   "id": "drone-assembly",
+   "name": "Drone Assembly",
+   "faction": "drones",
+   "kind": "anomaly",
+   "tier": 3,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Drone Assembly",
+   "sdeDungeonIds": [
+    2341
+   ],
+   "order": 156
+  },
+  {
+   "id": "drone-gathering",
+   "name": "Drone Gathering",
+   "faction": "drones",
+   "kind": "anomaly",
+   "tier": 4,
+   "space": [
+    "high",
+    "low",
+    "null"
+   ],
+   "page": "Drone Gathering",
+   "sdeDungeonIds": [
+    2345
+   ],
+   "order": 162
+  },
+  {
+   "id": "drone-surveillance",
+   "name": "Drone Surveillance",
+   "faction": "drones",
+   "kind": "anomaly",
+   "tier": 5,
+   "space": [
+    "low"
+   ],
+   "page": "Drone Surveillance",
+   "sdeDungeonIds": [
+    2355
+   ],
+   "order": 183
+  },
+  {
+   "id": "drone-menagerie",
+   "name": "Drone Menagerie",
+   "faction": "drones",
+   "kind": "anomaly",
+   "tier": 6,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Drone Menagerie",
+   "sdeDungeonIds": [
+    2193
+   ],
+   "order": 189
+  },
+  {
+   "id": "drone-herd",
+   "name": "Drone Herd",
+   "faction": "drones",
+   "kind": "anomaly",
+   "tier": 7,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Drone Herd",
+   "sdeDungeonIds": [
+    2198
+   ],
+   "order": 211
+  },
+  {
+   "id": "drone-squad",
+   "name": "Drone Squad",
+   "faction": "drones",
+   "kind": "anomaly",
+   "tier": 8,
+   "space": [
+    "low",
+    "null"
+   ],
+   "page": "Drone Squad",
+   "sdeDungeonIds": [
+    2201
+   ],
+   "order": 217
+  },
+  {
+   "id": "drone-patrol",
+   "name": "Drone Patrol",
+   "faction": "drones",
+   "kind": "anomaly",
+   "tier": 9,
+   "space": [
+    "null"
+   ],
+   "page": "Drone Patrol",
+   "sdeDungeonIds": [
+    2347
+   ],
+   "order": 238
+  },
+  {
+   "id": "drone-horde",
+   "name": "Drone Horde",
+   "faction": "drones",
+   "kind": "anomaly",
+   "tier": 10,
+   "level": 1,
+   "space": [
+    "null"
+   ],
+   "page": "Drone Horde",
+   "sdeDungeonIds": [
+    2351
+   ],
+   "order": 244
+  },
+  {
+   "id": "teeming-drone-horde",
+   "name": "Teeming Drone Horde",
+   "faction": "drones",
+   "kind": "anomaly",
+   "tier": 10,
+   "level": 2,
+   "space": [
+    "null"
+   ],
+   "page": "Teeming Drone Horde",
+   "sdeDungeonIds": [
+    11067
+   ],
+   "order": 250
+  },
+  {
+   "id": "haunted-yard",
+   "name": "Haunted Yard",
+   "faction": "drones",
+   "kind": "unrated",
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Haunted Yard",
+   "sdeDungeonIds": [
+    1263
+   ],
+   "order": 55
+  },
+  {
+   "id": "desolate-site",
+   "name": "Desolate Site",
+   "faction": "drones",
+   "kind": "unrated",
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Desolate Site",
+   "sdeDungeonIds": [
+    1265
+   ],
+   "order": 61
+  },
+  {
+   "id": "chemical-yard",
+   "name": "Chemical Yard",
+   "faction": "drones",
+   "kind": "unrated",
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Chemical Yard",
+   "sdeDungeonIds": [
+    1266
+   ],
+   "order": 67
+  },
+  {
+   "id": "rogue-trial-yard",
+   "name": "Rogue Trial Yard",
+   "faction": "drones",
+   "kind": "unrated",
+   "space": [
+    "low"
+   ],
+   "page": "Rogue Trial Yard",
+   "sdeDungeonIds": [
+    1249
+   ],
+   "order": 78
+  },
+  {
+   "id": "dirty-site",
+   "name": "Dirty Site",
+   "faction": "drones",
+   "kind": "unrated",
+   "space": [
+    "low"
+   ],
+   "page": "Dirty Site",
+   "sdeDungeonIds": [
+    1256
+   ],
+   "order": 84
+  },
+  {
+   "id": "ruins",
+   "name": "Ruins",
+   "faction": "drones",
+   "kind": "unrated",
+   "space": [
+    "low"
+   ],
+   "page": "Ruins",
+   "sdeDungeonIds": [
+    1262
+   ],
+   "order": 90
+  },
+  {
+   "id": "independence",
+   "name": "Independence",
+   "faction": "drones",
+   "kind": "unrated",
+   "space": [
+    "null"
+   ],
+   "page": "Independence",
+   "sdeDungeonIds": [
+    1267
+   ],
+   "order": 101
+  },
+  {
+   "id": "radiance",
+   "name": "Radiance",
+   "faction": "drones",
+   "kind": "unrated",
+   "space": [
+    "null"
+   ],
+   "page": "Radiance",
+   "sdeDungeonIds": [
+    1268
+   ],
+   "order": 107
+  },
+  {
+   "id": "hierarchy",
+   "name": "Hierarchy",
+   "faction": "drones",
+   "kind": "unrated",
+   "space": [
+    "null"
+   ],
+   "page": "Hierarchy",
+   "sdeDungeonIds": [
+    1269
+   ],
+   "order": 113
+  },
+  {
+   "id": "rogue-drone-infestation-sprout",
+   "name": "Rogue Drone Infestation Sprout",
+   "faction": "drones",
+   "kind": "ded",
+   "ded": 2,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Rogue Drone Infestation Sprout",
+   "sdeDungeonIds": [
+    120
+   ],
+   "order": 10
+  },
+  {
+   "id": "rogue-drone-asteroid-infestation",
+   "name": "Rogue Drone Asteroid Infestation",
+   "faction": "drones",
+   "kind": "ded",
+   "ded": 3,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Rogue Drone Asteroid Infestation",
+   "sdeDungeonIds": [
+    2255
+   ],
+   "order": 16
+  },
+  {
+   "id": "drone-infested-mine",
+   "name": "Drone Infested Mine",
+   "faction": "drones",
+   "kind": "ded",
+   "ded": 4,
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Drone Infested Mine",
+   "sdeDungeonIds": [
+    10977
+   ],
+   "order": 22
+  },
+  {
+   "id": "outgrowth-rogue-drone-hive-5-10",
+   "name": "Outgrowth Rogue Drone Hive (5/10)",
+   "faction": "drones",
+   "kind": "ded",
+   "ded": 5,
+   "notes": [
+    "DED 5/10s cannot naturally spawn in high security systems, however they can be received as an escalation that spawns in a high security system."
+   ],
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Outgrowth Rogue Drone Hive (5/10)",
+   "sdeDungeonIds": [],
+   "order": 28
+  },
+  {
+   "id": "outgrowth-rogue-drone-hive-10-10",
+   "name": "Outgrowth Rogue Drone Hive (10/10)",
+   "faction": "drones",
+   "kind": "ded",
+   "ded": 10,
+   "space": [
+    "null"
+   ],
+   "page": "Outgrowth Rogue Drone Hive (10/10)",
+   "sdeDungeonIds": [],
+   "order": 49
+  },
+  {
+   "id": "pulverize-the-pioneers",
+   "name": "Pulverize The Pioneers",
+   "faction": "drones",
+   "kind": "expedition",
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Pulverize The Pioneers",
+   "sdeDungeonIds": [
+    1511
+   ],
+   "order": 256
+  },
+  {
+   "id": "mare-sargassum",
+   "name": "Mare Sargassum",
+   "faction": "drones",
+   "kind": "expedition",
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Mare Sargassum",
+   "sdeDungeonIds": [
+    1512
+   ],
+   "order": 262
+  },
+  {
+   "id": "hunting-the-drudge-factory",
+   "name": "Hunting the Drudge Factory",
+   "faction": "drones",
+   "kind": "expedition",
+   "space": [
+    "high",
+    "low"
+   ],
+   "page": "Hunting the Drudge Factory",
+   "sdeDungeonIds": [
+    1478
+   ],
+   "order": 268
+  },
+  {
+   "id": "moving-day",
+   "name": "Moving Day",
+   "faction": "drones",
+   "kind": "expedition",
+   "space": [
+    "low"
+   ],
+   "page": "Moving Day",
+   "sdeDungeonIds": [
+    1514
+   ],
+   "order": 279
+  },
+  {
+   "id": "loose-ends",
+   "name": "Loose Ends",
+   "faction": "drones",
+   "kind": "expedition",
+   "space": [
+    "low"
+   ],
+   "page": "Loose Ends",
+   "sdeDungeonIds": [
+    1515
+   ],
+   "order": 285
+  },
+  {
+   "id": "menacing-mechanics",
+   "name": "Menacing Mechanics",
+   "faction": "drones",
+   "kind": "expedition",
+   "space": [
+    "low"
+   ],
+   "page": "Menacing Mechanics",
+   "sdeDungeonIds": [
+    1582
+   ],
+   "order": 291
+  },
+  {
+   "id": "the-drone-roulette",
+   "name": "The Drone Roulette",
+   "faction": "drones",
+   "kind": "expedition",
+   "space": [
+    "null"
+   ],
+   "page": "The Drone Roulette",
+   "sdeDungeonIds": [
+    1583
+   ],
+   "order": 304
+  },
+  {
+   "id": "molting-season",
+   "name": "Molting Season",
+   "faction": "drones",
+   "kind": "expedition",
+   "space": [
+    "null"
+   ],
+   "page": "Molting Season",
+   "sdeDungeonIds": [
+    1584
+   ],
+   "order": 310
+  },
+  {
+   "id": "trouble-in-paradise",
+   "name": "Trouble in Paradise",
+   "faction": "drones",
+   "kind": "expedition",
+   "space": [
+    "null"
+   ],
+   "page": "Trouble in Paradise",
+   "sdeDungeonIds": [
+    1585
+   ],
+   "order": 316
+  }
+ ],
+ "links": [
+  {
+   "from": "guristas-hideaway",
+   "to": "guristas-scout-outpost",
+   "kind": "escalation"
+  },
+  {
+   "from": "sansha-hideaway",
+   "to": "sanshas-command-relay-outpost",
+   "kind": "escalation"
+  },
+  {
+   "from": "serpentis-hideaway",
+   "to": "serpentis-narcotic-warehouses",
+   "kind": "escalation"
+  },
+  {
+   "from": "angel-forsaken-hideaway",
+   "to": "angel-repurposed-outpost",
+   "kind": "escalation"
+  },
+  {
+   "from": "angel-refuge",
+   "to": "angels-red-light-district",
+   "kind": "escalation"
+  },
+  {
+   "from": "blood-refuge",
+   "to": "mul-zatah-monastery",
+   "kind": "escalation"
+  },
+  {
+   "from": "guristas-refuge",
+   "to": "guristas-scout-outpost",
+   "kind": "escalation"
+  },
+  {
+   "from": "sansha-refuge",
+   "to": "sanshas-command-relay-outpost",
+   "kind": "escalation"
+  },
+  {
+   "from": "serpentis-refuge",
+   "to": "serpentis-narcotic-warehouses",
+   "kind": "escalation"
+  },
+  {
+   "from": "drone-assembly",
+   "to": "rogue-drone-asteroid-infestation",
+   "kind": "escalation"
+  },
+  {
+   "from": "angel-den",
+   "to": "angels-red-light-district",
+   "kind": "escalation"
+  },
+  {
+   "from": "blood-den",
+   "to": "blood-raider-psychotropics-depot",
+   "kind": "escalation"
+  },
+  {
+   "from": "guristas-den",
+   "to": "guristas-hallucinogen-supply-waypoint",
+   "kind": "escalation"
+  },
+  {
+   "from": "sansha-den",
+   "to": "sanshas-nation-neural-paralytic-facility",
+   "kind": "escalation"
+  },
+  {
+   "from": "serpentis-den",
+   "to": "serpentis-corporation-hydroponics-site",
+   "kind": "escalation"
+  },
+  {
+   "from": "drone-gathering",
+   "to": "rogue-drone-asteroid-infestation",
+   "kind": "escalation"
+  },
+  {
+   "from": "guristas-hidden-den",
+   "to": "guristas-troop-reinvigoration-camp",
+   "kind": "escalation"
+  },
+  {
+   "from": "angel-forsaken-den",
+   "to": "angel-military-operations-complex",
+   "kind": "escalation"
+  },
+  {
+   "from": "guristas-forsaken-den",
+   "to": "gurista-military-operations-complex",
+   "kind": "escalation"
+  },
+  {
+   "from": "serpentis-forsaken-den",
+   "to": "serpentis-paramilitary-complex",
+   "kind": "escalation"
+  },
+  {
+   "from": "angel-forlorn-den",
+   "to": "angel-military-operations-complex",
+   "kind": "escalation"
+  },
+  {
+   "from": "guristas-forlorn-den",
+   "to": "gurista-military-operations-complex",
+   "kind": "escalation"
+  },
+  {
+   "from": "angel-yard",
+   "to": "angels-red-light-district",
+   "kind": "escalation"
+  },
+  {
+   "from": "blood-yard",
+   "to": "crimson-hand-supply-depot",
+   "kind": "escalation"
+  },
+  {
+   "from": "guristas-yard",
+   "to": "guristas-hallucinogen-supply-waypoint",
+   "kind": "escalation"
+  },
+  {
+   "from": "sansha-yard",
+   "to": "sansha-war-supply-complex",
+   "kind": "escalation"
+  },
+  {
+   "from": "serpentis-yard",
+   "to": "serpentis-logistical-outpost",
+   "kind": "escalation"
+  },
+  {
+   "from": "drone-surveillance",
+   "to": "rogue-drone-asteroid-infestation",
+   "kind": "escalation"
+  },
+  {
+   "from": "angel-rally-point",
+   "to": "angel-mineral-acquisition-outpost",
+   "kind": "escalation"
+  },
+  {
+   "from": "blood-rally-point",
+   "to": "crimson-hand-supply-depot",
+   "kind": "escalation"
+  },
+  {
+   "from": "guristas-rally-point",
+   "to": "guristas-troop-reinvigoration-camp",
+   "kind": "escalation"
+  },
+  {
+   "from": "sansha-rally-point",
+   "to": "sansha-war-supply-complex",
+   "kind": "escalation"
+  },
+  {
+   "from": "serpentis-rally-point",
+   "to": "serpentis-logistical-outpost",
+   "kind": "escalation"
+  },
+  {
+   "from": "drone-menagerie",
+   "to": "outgrowth-rogue-drone-hive-5-10",
+   "kind": "escalation"
+  },
+  {
+   "from": "angel-hidden-rally-point",
+   "to": "angel-mineral-acquisition-outpost",
+   "kind": "escalation"
+  },
+  {
+   "from": "guristas-hidden-rally-point",
+   "to": "dread-guristas-fleet-staging-point",
+   "kind": "escalation"
+  },
+  {
+   "from": "sansha-hidden-rally-point",
+   "to": "true-sansha-fleet-staging-point",
+   "kind": "escalation"
+  },
+  {
+   "from": "serpentis-hidden-rally-point",
+   "to": "serpentis-capital-staging",
+   "kind": "escalation"
+  },
+  {
+   "from": "angel-forsaken-rally-point",
+   "to": "cartel-prisoner-retention",
+   "kind": "escalation"
+  },
+  {
+   "from": "blood-forsaken-rally-point",
+   "to": "blood-raider-prison-camp",
+   "kind": "escalation"
+  },
+  {
+   "from": "guristas-forsaken-rally-point",
+   "to": "piths-penal-complex",
+   "kind": "escalation"
+  },
+  {
+   "from": "sansha-forsaken-rally-point",
+   "to": "sansha-prison-camp",
+   "kind": "escalation"
+  },
+  {
+   "from": "serpentis-forsaken-rally-point",
+   "to": "serpentis-prison-camp",
+   "kind": "escalation"
+  },
+  {
+   "from": "blood-forlorn-rally-point",
+   "to": "blood-raider-prison-camp",
+   "kind": "escalation"
+  },
+  {
+   "from": "guristas-forlorn-rally-point",
+   "to": "piths-penal-complex",
+   "kind": "escalation"
+  },
+  {
+   "from": "sansha-forlorn-rally-point",
+   "to": "sansha-prison-camp",
+   "kind": "escalation"
+  },
+  {
+   "from": "serpentis-forlorn-rally-point",
+   "to": "serpentis-prison-camp",
+   "kind": "escalation"
+  },
+  {
+   "from": "angel-port",
+   "to": "angel-military-operations-complex",
+   "kind": "escalation"
+  },
+  {
+   "from": "blood-port",
+   "to": "blood-raider-coordination-center",
+   "kind": "escalation"
+  },
+  {
+   "from": "guristas-port",
+   "to": "gurista-military-operations-complex",
+   "kind": "escalation"
+  },
+  {
+   "from": "sansha-port",
+   "to": "sansha-military-operations-complex",
+   "kind": "escalation"
+  },
+  {
+   "from": "serpentis-port",
+   "to": "serpentis-paramilitary-complex",
+   "kind": "escalation"
+  },
+  {
+   "from": "drone-herd",
+   "to": "outgrowth-rogue-drone-hive-5-10",
+   "kind": "escalation"
+  },
+  {
+   "from": "angel-hub",
+   "to": "cartel-prisoner-retention",
+   "kind": "escalation"
+  },
+  {
+   "from": "blood-hub",
+   "to": "blood-raider-prison-camp",
+   "kind": "escalation"
+  },
+  {
+   "from": "guristas-hub",
+   "to": "piths-penal-complex",
+   "kind": "escalation"
+  },
+  {
+   "from": "sansha-hub",
+   "to": "sansha-prison-camp",
+   "kind": "escalation"
+  },
+  {
+   "from": "serpentis-hub",
+   "to": "serpentis-prison-camp",
+   "kind": "escalation"
+  },
+  {
+   "from": "drone-squad",
+   "to": "outgrowth-rogue-drone-hive-10-10",
+   "kind": "escalation"
+  },
+  {
+   "from": "angel-hidden-hub",
+   "to": "angel-domination-fleet-staging-point",
+   "kind": "escalation"
+  },
+  {
+   "from": "guristas-hidden-hub",
+   "to": "dread-guristas-fleet-staging-point",
+   "kind": "escalation"
+  },
+  {
+   "from": "angel-forsaken-hub",
+   "to": "angel-domination-fleet-staging-point",
+   "kind": "escalation"
+  },
+  {
+   "from": "guristas-forsaken-hub",
+   "to": "dread-guristas-fleet-staging-point",
+   "kind": "escalation"
+  },
+  {
+   "from": "sansha-forsaken-hub",
+   "to": "true-sansha-fleet-staging-point",
+   "kind": "escalation"
+  },
+  {
+   "from": "serpentis-forsaken-hub",
+   "to": "shadow-serpentis-fleet-staging-point",
+   "kind": "escalation"
+  },
+  {
+   "from": "angel-forlorn-hub",
+   "to": "angel-domination-fleet-staging-point",
+   "kind": "escalation"
+  },
+  {
+   "from": "guristas-forlorn-hub",
+   "to": "dread-guristas-fleet-staging-point",
+   "kind": "escalation"
+  },
+  {
+   "from": "sansha-forlorn-hub",
+   "to": "true-sansha-fleet-staging-point",
+   "kind": "escalation"
+  },
+  {
+   "from": "serpentis-forlorn-hub",
+   "to": "shadow-serpentis-fleet-staging-point",
+   "kind": "escalation"
+  },
+  {
+   "from": "angel-haven",
+   "to": "angel-cartel-naval-shipyard",
+   "kind": "escalation"
+  },
+  {
+   "from": "blood-haven",
+   "to": "blood-raider-naval-shipyard",
+   "kind": "escalation"
+  },
+  {
+   "from": "guristas-haven",
+   "to": "the-maze",
+   "kind": "escalation"
+  },
+  {
+   "from": "sansha-haven",
+   "to": "centus-assembly-t-p-co",
+   "kind": "escalation"
+  },
+  {
+   "from": "serpentis-haven",
+   "to": "serpentis-fleet-shipyard",
+   "kind": "escalation"
+  },
+  {
+   "from": "drone-patrol",
+   "to": "outgrowth-rogue-drone-hive-10-10",
+   "kind": "escalation"
+  },
+  {
+   "from": "blood-sanctum",
+   "to": "blood-raider-naval-shipyard",
+   "kind": "escalation"
+  },
+  {
+   "from": "guristas-sanctum",
+   "to": "the-maze",
+   "kind": "escalation"
+  },
+  {
+   "from": "sansha-sanctum",
+   "to": "centus-assembly-t-p-co",
+   "kind": "escalation"
+  },
+  {
+   "from": "serpentis-sanctum",
+   "to": "serpentis-fleet-shipyard",
+   "kind": "escalation"
+  },
+  {
+   "from": "drone-horde",
+   "to": "outgrowth-rogue-drone-hive-10-10",
+   "kind": "escalation"
+  },
+  {
+   "from": "serpentis-forsaken-sanctum",
+   "to": "serpentis-fleet-shipyard",
+   "kind": "escalation"
+  },
+  {
+   "from": "angel-hideout",
+   "to": "blue-pill",
+   "kind": "escalation"
+  },
+  {
+   "from": "blood-hideout",
+   "to": "frentex",
+   "kind": "escalation"
+  },
+  {
+   "from": "gurista-hideout",
+   "to": "sooth-sayer",
+   "kind": "escalation"
+  },
+  {
+   "from": "sansha-hideout",
+   "to": "drop",
+   "kind": "escalation"
+  },
+  {
+   "from": "serpentis-hideout",
+   "to": "mindflood",
+   "kind": "escalation"
+  },
+  {
+   "from": "haunted-yard",
+   "to": "pulverize-the-pioneers",
+   "kind": "escalation"
+  },
+  {
+   "from": "angel-lookout",
+   "to": "chasing-the-dragon",
+   "kind": "escalation"
+  },
+  {
+   "from": "blood-lookout",
+   "to": "following-the-blood",
+   "kind": "escalation"
+  },
+  {
+   "from": "gurista-lookout",
+   "to": "trap",
+   "kind": "escalation"
+  },
+  {
+   "from": "sansha-lookout",
+   "to": "slave-breeding-plants",
+   "kind": "escalation"
+  },
+  {
+   "from": "serpentis-lookout",
+   "to": "angel-kickbacks",
+   "kind": "escalation"
+  },
+  {
+   "from": "desolate-site",
+   "to": "mare-sargassum",
+   "kind": "escalation"
+  },
+  {
+   "from": "angel-watch",
+   "to": "the-nuclear-small-arms-project",
+   "kind": "escalation"
+  },
+  {
+   "from": "blood-watch",
+   "to": "medical-twilight",
+   "kind": "escalation"
+  },
+  {
+   "from": "guristas-watch",
+   "to": "terrorist-plot",
+   "kind": "escalation"
+  },
+  {
+   "from": "sansha-watch",
+   "to": "nation-on-the-rise",
+   "kind": "escalation"
+  },
+  {
+   "from": "serpentis-watch",
+   "to": "jet-set-hooligans",
+   "kind": "escalation"
+  },
+  {
+   "from": "chemical-yard",
+   "to": "hunting-the-drudge-factory",
+   "kind": "escalation"
+  },
+  {
+   "from": "angel-vigil",
+   "to": "the-big-blue-expedition",
+   "kind": "escalation"
+  },
+  {
+   "from": "blood-vigil",
+   "to": "the-rewards-of-devotion",
+   "kind": "escalation"
+  },
+  {
+   "from": "guristas-vigil",
+   "to": "kidnapped",
+   "kind": "escalation"
+  },
+  {
+   "from": "sansha-vigil",
+   "to": "true-power-shipyards",
+   "kind": "escalation"
+  },
+  {
+   "from": "serpentis-vigil",
+   "to": "booster-r-d",
+   "kind": "escalation"
+  },
+  {
+   "from": "provisional-angel-outpost",
+   "to": "domination-surveillance-squad",
+   "kind": "escalation"
+  },
+  {
+   "from": "provisional-blood-outpost",
+   "to": "blood-surveillance-squad",
+   "kind": "escalation"
+  },
+  {
+   "from": "provisional-gurista-outpost",
+   "to": "gurista-surveillance-squad",
+   "kind": "escalation"
+  },
+  {
+   "from": "provisional-sansha-outpost",
+   "to": "sansha-surveillance-squad",
+   "kind": "escalation"
+  },
+  {
+   "from": "provisional-serpentis-outpost",
+   "to": "guardian-angels-surveillance-squad",
+   "kind": "escalation"
+  },
+  {
+   "from": "rogue-trial-yard",
+   "to": "moving-day",
+   "kind": "escalation"
+  },
+  {
+   "from": "angel-outpost",
+   "to": "salvation-angels-shipment",
+   "kind": "escalation"
+  },
+  {
+   "from": "blood-raider-outpost",
+   "to": "save-the-slaves",
+   "kind": "escalation"
+  },
+  {
+   "from": "gurista-outpost",
+   "to": "gurista-productions-shipment",
+   "kind": "escalation"
+  },
+  {
+   "from": "sansha-outpost",
+   "to": "hidden-riches",
+   "kind": "escalation"
+  },
+  {
+   "from": "serpentis-outpost",
+   "to": "elite-playground",
+   "kind": "escalation"
+  },
+  {
+   "from": "dirty-site",
+   "to": "loose-ends",
+   "kind": "escalation"
+  },
+  {
+   "from": "minor-angel-annex",
+   "to": "angel-owned-station",
+   "kind": "escalation"
+  },
+  {
+   "from": "minor-blood-annex",
+   "to": "blood-owned-station",
+   "kind": "escalation"
+  },
+  {
+   "from": "minor-guristas-annex",
+   "to": "guristas-owned-station",
+   "kind": "escalation"
+  },
+  {
+   "from": "minor-sansha-annex",
+   "to": "sansha-owned-station",
+   "kind": "escalation"
+  },
+  {
+   "from": "minor-serpentis-annex",
+   "to": "serpentis-owned-station",
+   "kind": "escalation"
+  },
+  {
+   "from": "ruins",
+   "to": "menacing-mechanics",
+   "kind": "escalation"
+  },
+  {
+   "from": "angel-annex",
+   "to": "angel-powergrid",
+   "kind": "escalation"
+  },
+  {
+   "from": "blood-annex",
+   "to": "blood-raider-powergrid",
+   "kind": "escalation"
+  },
+  {
+   "from": "guristas-annex",
+   "to": "guristas-powergrid",
+   "kind": "escalation"
+  },
+  {
+   "from": "sansha-annex",
+   "to": "sansha-powergrid",
+   "kind": "escalation"
+  },
+  {
+   "from": "serpentis-annex",
+   "to": "serpentis-powergrid",
+   "kind": "escalation"
+  },
+  {
+   "from": "angel-mineral-acquisition-outpost",
+   "to": "angel-mineral-acquisition-outpost-2nd-part",
+   "kind": "next-part"
+  },
+  {
+   "from": "serpentis-logistical-outpost",
+   "to": "serpentis-logistical-outpost-part-2",
+   "kind": "next-part"
+  },
+  {
+   "from": "angel-base",
+   "to": "toxic-waste-scandal",
+   "kind": "escalation"
+  },
+  {
+   "from": "blood-raider-base",
+   "to": "religious-fury",
+   "kind": "escalation"
+  },
+  {
+   "from": "gurista-base",
+   "to": "consequences-smonsequences",
+   "kind": "escalation"
+  },
+  {
+   "from": "sansha-base",
+   "to": "true-power-hq",
+   "kind": "escalation"
+  },
+  {
+   "from": "serpentis-base",
+   "to": "contract-killers",
+   "kind": "escalation"
+  },
+  {
+   "from": "independence",
+   "to": "the-drone-roulette",
+   "kind": "escalation"
+  },
+  {
+   "from": "angel-fortress",
+   "to": "operation-spring-cleaning",
+   "kind": "escalation"
+  },
+  {
+   "from": "blood-raider-fortress",
+   "to": "dubious-assignment",
+   "kind": "escalation"
+  },
+  {
+   "from": "gurista-fortress",
+   "to": "hired-gun",
+   "kind": "escalation"
+  },
+  {
+   "from": "sansha-fortress",
+   "to": "shady-operation",
+   "kind": "escalation"
+  },
+  {
+   "from": "serpentis-fortress",
+   "to": "suspicious-job",
+   "kind": "escalation"
+  },
+  {
+   "from": "radiance",
+   "to": "molting-season",
+   "kind": "escalation"
+  },
+  {
+   "from": "angel-military-complex",
+   "to": "pioneers-peril",
+   "kind": "escalation"
+  },
+  {
+   "from": "blood-military-complex",
+   "to": "frontier-in-flames",
+   "kind": "escalation"
+  },
+  {
+   "from": "guristas-military-complex",
+   "to": "pirates-path",
+   "kind": "escalation"
+  },
+  {
+   "from": "sansha-military-complex",
+   "to": "david-v-goliath",
+   "kind": "escalation"
+  },
+  {
+   "from": "serpentis-military-complex",
+   "to": "colony-under-fire",
+   "kind": "escalation"
+  },
+  {
+   "from": "hierarchy",
+   "to": "trouble-in-paradise",
+   "kind": "escalation"
+  },
+  {
+   "from": "angel-provincial-hq",
+   "to": "special-forces",
+   "kind": "escalation"
+  },
+  {
+   "from": "blood-provincial-hq",
+   "to": "fountain-of-youth",
+   "kind": "escalation"
+  },
+  {
+   "from": "gurista-provincial-hq",
+   "to": "no-quarter",
+   "kind": "escalation"
+  },
+  {
+   "from": "sansha-provincial-hq",
+   "to": "the-ancient-city",
+   "kind": "escalation"
+  },
+  {
+   "from": "serpentis-provincial-hq",
+   "to": "serpentis-secrets",
+   "kind": "escalation"
+  },
+  {
+   "from": "angel-domination-fleet-staging-point",
+   "to": "angel-domination-fleet-staging-point-2",
+   "kind": "escalation"
+  },
+  {
+   "from": "angel-domination-fleet-staging-point-2",
+   "to": "angel-domination-fleet-staging-point-3",
+   "kind": "next-part"
+  },
+  {
+   "from": "dark-blood-fleet-staging-point",
+   "to": "dark-blood-fleet-staging-point-2",
+   "kind": "escalation"
+  },
+  {
+   "from": "dark-blood-fleet-staging-point-2",
+   "to": "dark-blood-fleet-staging-point-3",
+   "kind": "next-part"
+  },
+  {
+   "from": "dread-guristas-fleet-staging-point",
+   "to": "dread-guristas-fleet-staging-point-2",
+   "kind": "escalation"
+  },
+  {
+   "from": "dread-guristas-fleet-staging-point-2",
+   "to": "dread-guristas-fleet-staging-point-3",
+   "kind": "next-part"
+  },
+  {
+   "from": "true-sansha-fleet-staging-point",
+   "to": "true-sansha-fleet-staging-point-2",
+   "kind": "escalation"
+  },
+  {
+   "from": "true-sansha-fleet-staging-point-2",
+   "to": "true-sansha-fleet-staging-point-3",
+   "kind": "next-part"
+  },
+  {
+   "from": "shadow-serpentis-fleet-staging-point",
+   "to": "shadow-serpentis-fleet-staging-point-2-and-part-3",
+   "kind": "escalation"
+  }
+ ]
+}

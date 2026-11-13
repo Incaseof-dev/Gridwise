@@ -1,0 +1,68 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: intercept-the-pirate-smugglers-serpentis
+kind: mission
+name: Intercept The Pirate Smugglers
+level: 3
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Intercept The Pirate Smugglers (Serpentis)
+    url: https://wiki.eveuniversity.org/Intercept_The_Pirate_Smugglers_(Serpentis)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191753"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal:
+    - thermal
+    - kinetic
+  resist:
+    - thermal
+    - kinetic
+objectives:
+  - text: Fly to the Space-Port, ambush the convoy when it arrives, and then report back to your agent.
+ewar:
+  - kind: web
+notes:
+  - text: "Blitz: Not possible."
+  - text: "Notes: Space-Port is destructible, has an incredible amounts of EHP, and drops nothing."
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Sentry Gun
+            group: Group 1 (40km)
+            drop: Ammo
+          - count: "2"
+            class: Frigate
+            names:
+              - Space-Port Guardian
+            group: Group 1 (40km)
+          - count: "3"
+            class: Frigate
+            names:
+              - Convoy Guard Wingman
+            group: Group 2 (Arrives several minutes, may warp in on top of you)
+            ewar:
+              - kind: web
+          - count: "4"
+            class: Cruiser
+            names:
+              - Serpentis Transport Ship
+            group: Group 2 (Arrives several minutes, may warp in on top of you)
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Convoy Guard
+            group: Group 2 (Arrives several minutes, may warp in on top of you)

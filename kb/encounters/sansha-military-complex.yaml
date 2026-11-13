@@ -1,0 +1,224 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: sansha-military-complex
+kind: complex
+name: Sansha Military Complex
+dedRating: null
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Sansha Military Complex
+    url: https://wiki.eveuniversity.org/Sansha_Military_Complex
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "213340"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Battleships"
+notes:
+  - text: Upon warping to the site you will land at an acceleration gate.
+  - text: "Escalation: Destroying the True Sansha Beast/Plague Lord may trigger an escalation to David V Goliath."
+  - text: "Escalation: David V Goliath: Going through the logs from one of the command ships you blasted, you come across a recent memo containing a draft for a plan where forces from this Military Complex and another similar to this one were to gang up and raid a space trucker station somewhere in the region. Where this space trucker station is, is not included in the logs, but the location of the rally point is there. It is supposed to be by a small asteroid belt, not too far away."
+loot:
+  - item: + Commander and other valuable loot
+  - item: True Sansha faction modules
+    note: est. Varies wildly (wiki) · From True Sansha Beast Lord/Plague Lord
+  - item: Nightmare BPC
+    note: est. Unknown (wiki) · From True Sansha Beast Lord/Plague Lord
+  - item: Mid/High-Grade implants and faction ammo/tags
+    note: est. Varies (wiki) · From True Sansha Beast Lord/Plague Lord
+pockets:
+  - name: First Pocket
+    notes:
+      - text: Attacking any battleship triggers wave 2.
+      - text: "Timed wave spawn: Centus ships have arrived!"
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "8"
+            class: Sentry
+            names:
+              - Tower Sentry Sansha III
+          - count: "2"
+            class: Sentry
+            names:
+              - Sansha Stasis Tower
+            ewar:
+              - kind: web
+          - count: 2-3
+            class: Frigate
+            names:
+              - Centii Butcher
+              - Centii Manslayer
+          - count: "2"
+            class: Cruiser
+            names:
+              - Centum Fiend
+              - Centum Hellhound
+          - count: 6-7
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Dread Lord
+            triggers: Attacking triggers wave 2
+      - id: timed-wave
+        trigger:
+          on: other
+          text: Timed wave
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Centii Loyal Butcher
+              - Centii Loyal Manslayer
+          - count: 2-3
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Fiend
+              - Centum Loyal Hellhound
+          - count: 4-6
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Dread Lord
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Centii Loyal Butcher
+              - Centii Loyal Manslayer
+          - count: 2-3
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Fiend
+              - Centum Loyal Hellhound
+          - count: 4-6
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Dread Lord
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Gate Scrambler
+            triggers: Destroy to unlock the acceleration gate
+            note: Triggers massive smartbomb wave upon destruction
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+            note: Locked until Gate Scrambler is destroyed
+    onWarpIn: Your ship detects distress signals coming from inside this deadspace area. Perhaps the inhabitants are calling for reinforcements.
+  - name: Second Pocket
+    notes:
+      - text: No defenders are initially present. Shooting the Sansha Military Barracks triggers several successive waves of defenders.
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Sansha Military Barracks
+            triggers: Triggers several reinforcement waves. May trigger escalation
+            drop: Meta modules
+      - id: reinforcements-barracks-attacked
+        trigger:
+          on: other
+          text: Reinforcements (Barracks attacked)
+          confidence: inferred
+        spawns:
+          - count: 7-8
+            class: Elite Frigate
+            names:
+              - Centii Loyal Ravener
+              - Centii Loyal Scavenger
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 9-10
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Dread Lord
+      - id: reinforcements-barracks-90-shield
+        trigger:
+          on: other
+          text: Reinforcements (Barracks 90% shield)
+          confidence: inferred
+        spawns:
+          - count: 4-5
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Fiend
+              - Centum Loyal Hellhound
+          - count: 5-6
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Dread Lord
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - True Sansha's Beast Lord
+              - True Sansha's Plague Lord
+            ewar:
+              - kind: trackingDisruption
+            triggers: Escalation trigger
+            drop: Possible True Sansha faction modules/ammo/tags
+            note: May not always spawn, can spawn with delay 3-4 minutes
+      - id: reinforcements-barracks-50-structure
+        trigger:
+          on: other
+          text: Reinforcements (Barracks 50% structure)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Sansha Siege Pulse Laser Sentry
+          - count: "2"
+            class: Sentry
+            names:
+              - Tower Sentry Sansha III
+          - count: "8"
+            class: Drone
+            names:
+              - Spider Drone II
+            ewar:
+              - kind: web
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Centii Loyal Savage
+              - Centii Loyal Slavehunter
+            ewar:
+              - kind: trackingDisruption
+          - count: 2-4
+            class: Battleship
+            names:
+              - Centus Dark Lord
+              - Centus Overlord
+    onWarpIn: The Sansha Military Barracks area seems eerily quiet and empty. It seems the inhabitants did not expect any intruders to make it this far in.
+sde:
+  dungeonIds:
+    - 1669

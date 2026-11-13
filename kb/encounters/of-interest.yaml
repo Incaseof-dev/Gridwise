@@ -1,0 +1,64 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: of-interest
+kind: mission
+name: Of Interest
+level: null
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Of Interest
+    url: https://wiki.eveuniversity.org/Of_Interest
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "228277"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Eliminate any pirates present at the wreck site. Retrieve Strange Datacore (0.1)
+notes:
+  - text: Destroy all the ships present. There is now a "Strange Datacore" in your cargo hold, so return to Tevis Jak in Tar and start a conversation with him to complete the mission.
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: "On destroying the last wave:: My sensors are picking up a strange bit of tech in your cargo. Bring it to me."
+      - text: "Next Mission: Retrieving Red"
+    waves:
+      - id: warp-in
+        trigger:
+          on: other
+          text: Warp-in
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Corpii Follower
+              - Corpii Worshipper
+            triggers: Last ship triggers reinforcement 1
+      - id: reinforcement-1
+        trigger:
+          on: other
+          text: Reinforcement 1
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Corpii Herald
+              - Corpii Upholder
+            triggers: Last ship triggers reinforcement 2
+      - id: reinforcement-2
+        trigger:
+          on: other
+          text: Reinforcement 2
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Corpii Follower
+              - Corpii Worshipper
+            triggers: Mission Completion

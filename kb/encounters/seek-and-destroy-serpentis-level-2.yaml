@@ -1,0 +1,51 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: seek-and-destroy-serpentis-level-2
+kind: mission
+name: Seek and Destroy
+level: 2
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Seek and Destroy (Serpentis) (Level 2)
+    url: https://wiki.eveuniversity.org/Seek_and_Destroy_(Serpentis)_(Level_2)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191920"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Eliminate the pirates which have been harassing innocent passersby.
+notes:
+  - text: "Suggested ships: Destroyer, Cruiser"
+  - text: Prop mod may be useful
+  - text: "Blitz: Kill Group 2."
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: group-1-25km-auto-aggro
+        trigger:
+          on: other
+          text: Group 1, 25km (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Coreli Guard
+              - Coreli Safeguard
+      - id: group-2-75km
+        trigger:
+          on: other
+          text: Group 2, 75km
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Coreli Guard
+              - Coreli Safeguard
+              - Coreli Protector
+              - Coreli Defender

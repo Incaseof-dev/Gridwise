@@ -1,0 +1,65 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-score-ammatar-mandate-level-3
+kind: mission
+name: The Score
+level: 3
+enemyFaction: Ammatar Mandate
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Score (Ammatar Mandate) (Level 3)
+    url: https://wiki.eveuniversity.org/The_Score_(Ammatar_Mandate)_(Level_3)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "192042"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Suggested ships: Cruiser, Battlecruiser"
+pockets:
+  - name: 1st Pocket
+    waves:
+      - id: 1st-group
+        trigger:
+          on: other
+          text: 1st Group
+          confidence: inferred
+        spawns:
+          - count: "15"
+            class: Frigate
+            names:
+              - Ammatar Navy Soldier
+              - Ammatar Navy Inquisitor
+              - Ammatar Navy Detective
+          - count: "2"
+            class: Cruiser
+            names:
+              - Ammatar Navy Maller
+              - Ammatar Navy Augoror
+  - name: 2nd Pocket
+    waves:
+      - id: 1st-group
+        trigger:
+          on: other
+          text: 1st Group
+          confidence: inferred
+        spawns:
+          - count: "12"
+            class: Frigate
+            names:
+              - Ammatar Navy Soldier
+              - Ammatar Navy Scout
+              - Ammatar Navy Detective
+          - count: "5"
+            class: Cruiser
+            names:
+              - Ammatar Navy Maller
+              - Ammatar Navy Augoror
+          - count: "4"
+            class: Frigate
+            names:
+              - Ammatar Navy Scout
+              - Ammatar Navy Officer
+            group: 2nd Group

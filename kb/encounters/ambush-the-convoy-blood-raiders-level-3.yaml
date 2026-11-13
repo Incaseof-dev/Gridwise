@@ -1,0 +1,46 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: ambush-the-convoy-blood-raiders-level-3
+kind: mission
+name: Ambush the Convoy
+level: 3
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Ambush the Convoy (Blood Raiders) (Level 3)
+    url: https://wiki.eveuniversity.org/Ambush_the_Convoy_(Blood_Raiders)_(Level_3)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231766"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: neut
+notes:
+  - text: "Suggested ships: Destroyer/Cruiser"
+  - text: Ambush the Convoy is a combat mission with multiple racial and level variants. The Blood Raiders variant can be Level 3 or 4.
+  - text: Objective item drops from the last hostile NPC destroyed. The 10 prisoners take up 75 cargo space.
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Industrial
+            names:
+              - Blood Raider Transport
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corpior Friar
+              - Blood Raider Escort
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Corpatis Seer
+              - Blood Raider Escort

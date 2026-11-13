@@ -1,0 +1,337 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: sansha-owned-station
+kind: escalation
+name: Sansha Owned Station
+dedRating: null
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Sansha Owned Station
+    url: https://wiki.eveuniversity.org/Sansha_Owned_Station
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "168092"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Escalation start: To your surprise, the Overseer seems to have spent the last moments of his life sending some message to your ship on a private channel, a fact you learn from a blinking entry on your communication panel a few seconds after his innards slid across your windshield, bounced along your fuselage and were sucked into your thrusters. It appears he wanted to save his life by telling you the whereabouts of some place you could load your cargohold with riches, but before he could get very far with his offer, his journey ended. All you have is some hysteric babble about a hidden mining station at a certain location."
+loot:
+  - item: + Overseer structure and other loot
+  - item: Centum A-Type Cruiser module
+    from: Sansha Research Outpost
+    note: est. 10-500M ISK (wiki)
+  - item: True Sansha Cruiser modules
+    from: True Sansha commander battlecruisers
+    note: May also drop from the Research Outpost
+  - item: Phantasm BPC
+    from: Sansha Research Outpost
+    note: Rare drop
+lootNotes:
+  - text: Typical loot from the True Sansha commanders include criminal dog tags, faction ammunition and meta modules. They also have a chance to drop True Sansha faction modules. The Sansha Research Outpost can drop Centum A-Type cruiser modules, True Sansha modules and possibly a rare 1-run Phantasm BPC.
+npcs:
+  Starbase Tower Sentry:
+    sdeTypes:
+      - Tower Sentry Sansha II
+    class: Sentry
+  Starbase Drone Defender:
+    sdeTypes:
+      - Hunter
+      - Silverfish Alvi
+      - Strain Render
+      - Strain Decimator Alvi
+      - Hunter Alvi
+      - Strain Raider
+      - Strain Hunter Alvi
+    class: Elite Frigate
+  Starbase Drone Protector:
+    sdeTypes:
+      - Bomber
+      - Disintegrator Alvum
+      - Defeater
+      - Enforcer Alvatis
+    class: Battlecruiser
+  Starbase Drone Guardian:
+    sdeTypes:
+      - Alvus Controller
+      - Swarm Preserver Alvus
+      - Elite Drone Parasite
+    class: Battleship
+pockets:
+  - name: First Location
+    notes:
+      - text: Ungated pocket. None of the structures drop loot.
+      - text: Destroying all ships or the True Sansha commander can trigger escalation.
+      - text: "Escalation trigger: Among the things you find are a few drones. Running a scan on their control units reveals they have been used not long ago, at another place not far away from here."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "10"
+            class: Sentry
+            names:
+              - Starbase Cruise Missile Battery
+          - count: "1"
+            class: Sentry
+            names:
+              - Starbase Stasis Tower
+            ewar:
+              - kind: web
+            triggers: Destroying triggers reinforcements
+          - count: "2"
+            class: Cruiser
+            names:
+              - Mercenary Watcher
+          - count: 0-1
+            class: Commander Battlecruiser
+            names:
+              - True Sansha Specter
+            triggers: Destroying can trigger escalation
+            drop: may drop True Sansha faction modules; wreck may produce Tech 2 salvage
+      - id: reinforcement-spawn
+        trigger:
+          on: other
+          text: Reinforcement spawn
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Minion
+              - Centii Loyal Servant
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Fiend
+              - Centum Loyal Hellhound
+          - count: "6"
+            class: Battleship
+            names:
+              - Centus Beast Lord
+              - Centus Plague Lord
+            ewar:
+              - kind: trackingDisruption
+  - name: Second Location
+    notes:
+      - text: You land at an acceleration gate.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Mutilator
+              - Centum Loyal Torturer
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centatis Daemon
+          - count: 0-1
+            class: Commander Battlecruiser
+            names:
+              - True Sansha's Devil
+            triggers: Escalation trigger
+            drop: may contain True Sansha faction modules; wreck can produce Tech 2 salvage
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Newly Constructed Acceleration Gate
+            note: Not locked
+  - name: First Pocket
+    notes:
+      - text: There are no escalation triggers; only go in if you want bounties/salvage.
+      - text: "Escalation dead-end: All these moon mining stations suggest there must be a station or outpost somewhere in the region servicing them and refining the raw materials they produce. Again you look for clues from the drones, but the data you extract suggests no new locations, only the two you have been at already. If the Sansha have any more stations in the area, this is not where you will find them."
+      - text: "Escalation trigger: All these moon mining starbases suggest there must be a station or outpost somewhere in the region servicing them and refining the raw materials they produce. Again you look for clues from the drones and again the data you extract suggest a new location not too far away."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "3"
+            class: Sentry
+            names:
+              - Starbase Tower Sentry
+          - count: "2"
+            class: Sentry
+            names:
+              - Starbase Stasis Tower
+            ewar:
+              - kind: web
+            triggers: Triggers reinforcements
+          - count: 3-5
+            class: Frigate
+            names:
+              - Starbase Drone Defender
+          - count: 3-5
+            class: Elite Frigate
+            names:
+              - Starbase Drone Defender
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 3-4
+            class: Cruiser
+            names:
+              - Starbase Drone Protector
+          - count: 4-5
+            class: Battlecruiser
+            names:
+              - Starbase Drone Protector
+          - count: "3"
+            class: Battleship
+            names:
+              - Starbase Drone Guardian
+      - id: reinforcements
+        trigger:
+          on: other
+          text: Reinforcements
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Starbase Drone Defender
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Starbase Drone Defender
+          - count: "5"
+            class: Battleship
+            names:
+              - Starbase Drone Guardian
+  - name: Third Location
+    notes:
+      - text: 'Escalation trigger: Going through data scanned during the destruction of the station itself, you notice reports from a place called "R&D division Gray", containing information on blueprint research and booster production and even the location of this base "Gray".'
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Tower
+            names:
+              - Starbase Control Tower
+            triggers: Attacking triggers tower wave
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Starbase Cruise Missile Battery
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Minion
+              - Centii Loyal Servant
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "5"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Beast
+              - Centum Loyal Juggernaut
+              - Centum Loyal Execrator
+              - Centum Loyal Slaughterer
+            ewar:
+              - kind: trackingDisruption
+          - count: 0-1
+            class: Commander Battlecruiser
+            names:
+              - True Sansha's Behemoth
+            triggers: Destroying may trigger escalation
+            drop: may drop True Sansha faction modules; wreck can produce Tech 2 salvage
+          - count: "9"
+            class: Battleship
+            names:
+              - Centus Dark Lord
+              - Centus Overlord
+            note: type list incomplete on the source page
+      - id: tower-wave-triggered-by-attacking-the-starbase-control-tower
+        trigger:
+          on: other
+          text: Tower wave (triggered by attacking the Starbase Control Tower)
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Centatis Phantasm
+              - Centatis Specter
+          - count: "9"
+            class: Battleship
+            names:
+              - Centus Lord
+              - Centus Slave Lord
+              - Centus Dark Lord
+            note: type list incomplete on the source page
+    onWarpIn: You see a large Starbase near the beacon you just warped to. It seems to be guarded by the Sansha's Nation. Perhaps you are closer to finding something of value ....
+  - name: Fourth Location
+    notes:
+      - text: The Sansha Research Outpost has a smartbomb that triggers when it is attacked. It does not have that many hitpoints (4000 in shield, 4000 in armor and 400 in structure), so taking it out is actually fairly easy.
+      - text: "Expedition end: Now, you kind of regret killing the Overseer back there, it is always useful to know corrupt leaders who are ready to sell out things like this outpost in exchange for something as cheap as their own petty lives."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Hangar Array
+            names:
+              - Sansha Research Outpost
+            triggers: Attacking triggers massive smartbomb waves that damage all ships within 50 km. Destroying ends expedition
+            drop: May contain True Sansha or Centum A-Type modules and a possible Phantasm BPC
+      - id: defenders
+        trigger:
+          on: warpIn
+          text: Defenders
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Starbase Cruise Missile Battery
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Minion
+              - Centii Loyal Servant
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "4"
+            class: Destroyer
+            names:
+              - Centior Abomination
+              - Centior Horror
+          - count: "7"
+            class: Battleship
+            names:
+              - Centus Dark Lord
+              - Centus Overlord
+    onWarpIn: You see a large Starbase near the beacon you just warped to. It seems to be guarded by the Sansha's Nation. Perhaps you are closer to finding something of value ....
+sde:
+  dungeonIds:
+    - 1836

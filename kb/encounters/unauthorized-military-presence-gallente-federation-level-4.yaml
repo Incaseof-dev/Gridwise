@@ -1,0 +1,136 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: unauthorized-military-presence-gallente-federation-level-4
+kind: mission
+name: Unauthorized Military Presence
+level: 4
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Unauthorized Military Presence (Gallente Federation) (Level 4)
+    url: https://wiki.eveuniversity.org/Unauthorized_Military_Presence_(Gallente_Federation)_(Level_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "198221"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Space type: Deadspace"
+pockets:
+  - name: Warp-In
+    notes:
+      - text: No automatic aggro.
+      - text: Drones might cause aggro.
+      - text: 2x Destroyer (Federation Arcus)
+      - text: 3x Cruiser (Federation Praktor Ouragos / Optioon)
+      - text: 2x Battlecruiser (Federation Pezos / Praeco)
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Federation Arcus
+          - count: "3"
+            class: Cruiser
+            names:
+              - Federation Praktor Ouragos
+              - Federation Praktor Optioon
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Federation Pezos
+              - Federation Praeco
+  - name: Pocket 1
+    notes:
+      - text: No automatic aggro.
+      - text: Drones might cause aggro.
+      - text: "Blitz: only kill group 3, militants comes from transport ship once everything in the group is killed."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Federation Praktor Harpago
+              - Federation Praktor Belos
+            group: Group 1 (80km)
+          - count: "3"
+            class: Cruiser
+            names:
+              - Federation Praktor Ouragos
+              - Federation Praktor Optioon
+            group: Group 1 (80km)
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Federation Pezos
+              - Federation Praeco
+            group: Group 1 (80km)
+          - count: "1"
+            class: Frigate
+            names:
+              - Federation Libertus
+            group: Group 2 (80km)
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Elite Federation Phalarica
+            group: Group 2 (80km)
+          - count: "8"
+            class: Cruiser
+            names:
+              - Federation Misthios
+              - Federation Hastatus
+              - Federation Praktor Optioon
+              - Federation Praktor Ouragos
+            group: Group 2 (80km)
+          - count: "4"
+            class: Battleship
+            names:
+              - Federation Triariys
+              - Federation Xenan
+            group: Group 2 (80km)
+          - count: "3"
+            class: Frigate
+            names:
+              - Federation Praktor Belos
+              - Federation Praktor Harpago
+            group: Group 3 (100km)
+          - count: "1"
+            class: Destroyer
+            names:
+              - Federation Pelekus
+            group: Group 3 (100km)
+          - count: "6"
+            class: Cruiser
+            names:
+              - Federation Nauclarius
+              - Federation Praktor Legionarius
+              - Federation Praktor Centurion
+              - Federation Praktor Hippeus
+            group: Group 3 (100km)
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Federation Arcus
+            group: Group 3 (100km)
+          - count: "1"
+            class: Battleship
+            names:
+              - Federation Vocinus
+            group: Group 3 (100km)
+          - count: "1"
+            class: Hauler
+            names:
+              - Gallente Personnel Transport
+            group: Group 3 (100km)
+            drop: Militants

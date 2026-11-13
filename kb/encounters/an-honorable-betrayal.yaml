@@ -1,0 +1,24 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: an-honorable-betrayal
+kind: mission
+name: An Honorable Betrayal
+level: 4
+enemyFaction: null
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – An Honorable Betrayal
+    url: https://wiki.eveuniversity.org/An_Honorable_Betrayal
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "212058"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Report to Arikio Kuretsu
+notes:
+  - text: "Suggested ships: Shuttle or fast frigate"
+  - text: Report to Arikio Kuretsu five jumps away in Wuos V - Moon 1 - Hyasyoda Corporation Mining Outpost.
+  - text: "Tips: Remember to take the S.I Formula Sheet (0.1 m3) from the Item Hangar"

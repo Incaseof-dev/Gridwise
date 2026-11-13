@@ -1,0 +1,61 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: ambush-the-personnel-transport-minmatar-republic
+kind: mission
+name: Ambush the Personnel Transport
+level: 3
+enemyFaction: Minmatar Republic
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Ambush the Personnel Transport (Minmatar Republic)
+    url: https://wiki.eveuniversity.org/Ambush_the_Personnel_Transport_(Minmatar_Republic)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223308"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal: []
+  resist:
+    - explosive
+    - kinetic
+    - em
+objectives:
+  - text: Destroy the personnel transports and retrieve the VIPs.
+notes:
+  - text: "Note: The last Minmatar Personnel Transport dropped the VIPs. It is enough to kill only the haulers to complete the mission. The only standings loss is from killing the 'Republic Fleet Officer', and it is quite a large loss (over 0.25). Otherwise all enemies can be killed without standings impact."
+pockets:
+  - name: Single pocket
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Republic Fleet Officer
+            group: Group 1 (20 km)
+          - count: "1"
+            class: Sentry
+            names:
+              - Minmatar Light Missile Battery
+            group: Group 1 (20 km)
+          - count: "3"
+            class: Frigate
+            names:
+              - Republic Fleet Slasher
+            group: Group 2 (45 km)
+          - count: "1"
+            class: Cruiser
+            names:
+              - Republic Fleet Rupture
+            group: Group 2 (45 km)
+          - count: "3"
+            class: Cruiser
+            names:
+              - Minmatar Personnel Transport
+            group: Group 3 (75 km)

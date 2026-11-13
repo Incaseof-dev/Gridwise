@@ -1,0 +1,144 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-blockade-blood-raiders-level-1
+kind: mission
+name: The Blockade
+level: 1
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Blockade (Blood Raiders) (Level 1)
+    url: https://wiki.eveuniversity.org/The_Blockade_(Blood_Raiders)_(Level_1)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "209080"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Eliminate the leader of the pirates blockading the stargate. You will be informed when he has been dispatched, his demise should disperse the pirate gang eventually.
+ewar:
+  - kind: web
+notes:
+  - text: "Suggested ships: Fast ship recommended due to distances of NPC spawns"
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: Single non-gated pocket (warping at range and in-pocket warping are possible).
+      - text: Reinforcements spawn at about 100-120km from the warp-in point in several groups, so it's recommended to use a Microwarpdrive or Afterburner.
+    waves:
+      - id: initial-group-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group, Auto-aggro
+        spawns:
+          - count: "1"
+            class: Sentry
+            names:
+              - Starbase Stasis Tower
+            ewar:
+              - kind: web
+          - count: "3"
+            class: Frigate
+            names:
+              - Corpii Follower
+              - Corpii Worshipper
+          - count: "1"
+            class: Frigate
+            names:
+              - Corpii Diviner
+            triggers: Triggers next Reinforcement
+      - id: reinforcement-1-auto-aggro
+        trigger:
+          on: other
+          text: Reinforcement 1, Auto-aggro
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Corpii Upholder
+              - Corpii Follower
+            group: Group A
+          - count: "4"
+            class: Frigate
+            names:
+              - Corpii Worshipper
+            group: Group B
+          - count: "2"
+            class: Frigate
+            names:
+              - Corpii Upholder
+              - Corpii Follower
+            group: Group C
+            triggers: Triggers next Reinforcement, possibly whichever NPC is eliminated last
+      - id: reinforcement-2-auto-aggro
+        trigger:
+          on: other
+          text: Reinforcement 2, Auto-aggro
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Corpii Follower
+              - Corpii Worshipper
+            group: Group A
+          - count: "4"
+            class: Frigate
+            names:
+              - Corpii Follower
+              - Corpii Worshipper
+            group: Group B
+          - count: "1"
+            class: Frigate
+            names:
+              - Corpii Collector
+            group: Group B
+            ewar:
+              - kind: trackingDisruption
+            triggers: Triggers next Reinforcement
+      - id: reinforcement-3-auto-aggro
+        trigger:
+          on: other
+          text: Reinforcement 3, Auto-aggro
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Corpii Follower
+            group: Group A
+          - count: "4"
+            class: Frigate
+            names:
+              - Corpii Follower
+              - Corpii Worshipper
+            group: Group B
+          - count: "1"
+            class: Frigate
+            names:
+              - Corpii Seeker
+            group: Group B
+            ewar:
+              - kind: trackingDisruption
+            triggers: Triggers next Reinforcement
+      - id: reinforcement-4-auto-aggro
+        trigger:
+          on: other
+          text: Reinforcement 4, Auto-aggro
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Corpii Seeker
+              - Corpii Collector
+            ewar:
+              - kind: trackingDisruption
+          - count: "1"
+            class: Frigate
+            names:
+              - Corpii Raider
+            triggers: Mission Target

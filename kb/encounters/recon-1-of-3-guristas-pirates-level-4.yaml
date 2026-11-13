@@ -1,0 +1,152 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: recon-1-of-3-guristas-pirates-level-4
+kind: mission
+name: Recon (1 of 3)
+level: 4
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Recon (1 of 3) (Guristas Pirates) (Level 4)
+    url: https://wiki.eveuniversity.org/Recon_(1_of_3)_(Guristas_Pirates)_(Level_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223391"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: ecm
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite frigates"
+  - text: "Suggested ships: Frigate (Blitz), Battleship (clear)"
+  - text: "Parts: 1 of 3 (Guristas Pirates), 2 of 3, 3 of 3"
+  - text: Recon is a three part mission. Part 2 and part 3 are the same for all factions.
+  - text: "Blitz: Use fast frigate to quickly take the acceleration gate in first room. Mission is completed when you land in second room."
+pockets:
+  - name: 1st pocket
+    notes:
+      - text: The gates are not locked, so you can blitz this mission without a single kill. Go to warp gate, activate it, when you reach the next pocket you are done!
+      - text: "If you stay and fight: Groups spawn approximately 1 minute apart, starting just after warp-in."
+      - text: "If you stay and fight: Rats will spawn approximately 30-45 km away and big ships orbit around 32km."
+      - text: "If you stay and fight: All groups aggro on spawn, though they will aggro drones that are out as well."
+      - text: "If you stay and fight: Bunker can drop commodities."
+    waves:
+      - id: spawns
+        trigger:
+          on: other
+          text: Spawns
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Abolisher
+              - Dire Pithum Eraser
+            group: 1 minute spawn
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Pithatis Death Dealer
+            group: 1 minute spawn
+          - count: "1"
+            class: Battleship
+            names:
+              - Pith Usurper
+              - Pith Massacrer
+            group: 1 minute spawn
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - (Dire Pithi Infiltrator
+              - (Dire Pithi Invader)
+            group: 2 minutes spawn
+            ewar:
+              - kind: warpDisruption
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - (Dire Pithum Nullifier
+              - (Dire Pithum Annihilator
+            group: 2 minutes spawn
+            ewar:
+              - kind: ecm
+          - count: "1"
+            class: Battleship
+            names:
+              - Pith Usurper
+              - Pith Massacrer
+            group: 2 minutes spawn
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - (Dire Pithi Infiltrator
+              - (Dire Pithi Invader)
+            group: 3 minutes spawn
+            ewar:
+              - kind: warpDisruption
+          - count: "2"
+            class: Battleship
+            names:
+              - Pith Usurper
+              - Pith Massacrer
+            group: 3 minutes spawn
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - (Dire Pithum Nullifier
+              - (Dire Pithum Annihilator)
+            group: 4 minutes spawn
+            ewar:
+              - kind: ecm
+          - count: "2"
+            class: Battleship
+            names:
+              - Pith Usurper
+              - Pith Massacrer
+            group: 4 minutes spawn
+  - name: 2nd pocket
+    notes:
+      - text: The mission is completed as soon as you land in the second pocket. There is no need to fight the rats.
+      - text: Aggro on Warp-in, warp in at about 30km, big ships orbit at around 30-35k.
+      - text: Second group did not aggro on drones.
+      - text: ± 6.6 Mil ISK
+      - text: ± 0.9 Mil ISK
+      - text: ± 11.8 Mil ISK
+    waves:
+      - id: spawn-1
+        trigger:
+          on: other
+          text: Spawn 1
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Battleship
+            names:
+              - Pith Conquistador
+              - Pith Destroyer
+          - count: 2-3
+            class: Destroyer
+            names:
+              - Pithior Guerilla
+      - id: spawn-2
+        trigger:
+          on: other
+          text: Spawn 2
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - (Dire Pithi Invader
+              - (Dire Pithi Arrogator)
+            ewar:
+              - kind: warpDisruption
+          - count: 3-4
+            class: Elite Cruiser
+            names:
+              - Dire Pithium Inferno
+              - Dire Pithium Mortifier

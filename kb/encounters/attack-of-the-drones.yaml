@@ -1,0 +1,126 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: attack-of-the-drones
+kind: mission
+name: Attack of the Drones
+level: 4
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Attack of the Drones
+    url: https://wiki.eveuniversity.org/Attack_of_the_Drones
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223905"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal: []
+  resist:
+    - thermal
+    - kinetic
+    - em
+ewar:
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite frigates"
+  - text: Single ungated pocket. When you warp in it turns out the convoy you were supposed to escort is no more. Your task is to destroy the rogue drones that killed the convoy. No blitzing, you must kill all drones to complete the mission.
+  - text: "Tips: To manage aggro, do not kill the trigger ships all at once. Eliminate the incoming reinforcement spawn first, before you trigger the next spawn."
+  - text: "Tips: You can snipe or out run the Supreme Alvus Battleships. Their max attack distance is around 35 km, and they move very slowly."
+  - text: "Tips: You may [Fleet] warp at a preferred range and snipe."
+  - text: "Spawns and rats: Initial group appears and auto aggro after a delay."
+  - text: "Spawns and rats: Each ship killed from the initial group triggers one of the spawns."
+  - text: "Spawns and rats: All spawns auto aggro and may aggro Drones and Fleet Members, keep an eye on your drones."
+  - text: "Spawns and rats: The order, ship amount and names of the spawns will vary."
+  - text: In total you will be facing 10 battleships. All at once if you so trigger. It is very much recommended to not trigger all at once.
+lootNotes:
+  - text: "Salvage: 1.7M ISK"
+  - text: "Bounties: 8M ISK"
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-defenders-23-34-km
+        trigger:
+          on: warpIn
+          text: Initial defenders (23-34 km)
+        spawns:
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Bomber Alvum
+            triggers: Each one triggers reinforcement wave
+          - count: 1-3
+            class: Battlecruiser
+            names:
+              - Defeater
+              - Bomber Alvatis
+            triggers: Each one triggers a reinforcement wave
+      - id: frigate-reinforcement-spawn-25-km
+        trigger:
+          on: other
+          text: Frigate reinforcement spawn (25 km)
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Strain Infester
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: type list incomplete on the source page
+          - count: 2-3
+            class: Battleship
+            names:
+              - Supreme Alvus Parasite
+              - Alvus Ruler
+      - id: destroyer-reinforcement-spawn-25-km
+        trigger:
+          on: other
+          text: Destroyer reinforcement spawn (25 km)
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Destroyer
+            names:
+              - Predator Alvior
+              - Predator Marauder
+          - count: 2-3
+            class: Battleship
+            names:
+              - Supreme Alvus Parasite
+              - Alvus Ruler
+      - id: cruiser-reinforcement-spawn-25-km
+        trigger:
+          on: other
+          text: Cruiser reinforcement spawn (25 km)
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Nuker Alvum
+          - count: 2-3
+            class: Battleship
+            names:
+              - Supreme Alvus Parasite
+              - Alvus Ruler
+      - id: battlecruiser-reinforcement-spawn-25-km
+        trigger:
+          on: other
+          text: Battlecruiser reinforcement spawn (25 km)
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Battlecruiser
+            names:
+              - Striker Alvatis
+              - Enforcer Alvatis
+          - count: 2-3
+            class: Battleship
+            names:
+              - Supreme Alvus Parasite
+              - Alvus Ruler

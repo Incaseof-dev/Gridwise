@@ -1,0 +1,180 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: provisional-angel-outpost
+kind: complex
+name: Provisional Angel Outpost
+dedRating: null
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Provisional Angel Outpost
+    url: https://wiki.eveuniversity.org/Provisional_Angel_Outpost
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "173368"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Battlecruiser"
+notes:
+  - text: Provisional Angel Outpost is a low security unrated site found through exploration.
+  - text: The site will require you to fly long +100 km distances. A fast ship is recommended. Gistum Defeater cruisers can rarely web.
+  - text: "Escalation: Escalation message:: It seemed for a while you would manage to get all of the Angels, but evidently one ship from the Dominion Angels has slipped away. Luckily your scanners seem to have gathered enough information to give you its approximate destination."
+  - text: "Escalation: This site can escalate to Domination Surveillance Squad."
+pockets:
+  - name: 1st pocket
+    notes:
+      - text: The timed wave will appear after few minutes. Approaching the acceleration gate will trigger gate wave.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Gistum Crusher
+              - Gistum Smasher
+            ewar:
+              - kind: targetPaint
+          - count: "2"
+            class: Cruiser
+            names:
+              - Gistum Breaker
+              - Gistum Defeater
+            ewar:
+              - kind: web
+      - id: timed-wave
+        trigger:
+          on: other
+          text: Timed wave
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Destroyer
+            names:
+              - Gistior Defacer
+          - count: "3"
+            class: Cruiser
+            names:
+              - Gistum Crusher
+              - Gistum Smasher
+      - id: gate-wave
+        trigger:
+          on: other
+          text: Gate wave
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Arch Gistii Hunter
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Gistum Defeater
+            ewar:
+              - kind: web
+  - name: 2nd pocket
+    notes:
+      - text: Timed wave 1 appears after about a minute. Timed wave 2 appears few minutes later.
+      - text: Attacking the lab triggers lab wave. Lab wave can trigger commander wave.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Gistii Hunter
+              - Gistii Impaler
+          - count: 2-4
+            class: Elite Frigate
+            names:
+              - Arch Gistii Hijacker
+              - Arch Gistii Rogue
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 3-4
+            class: Cruiser
+            names:
+              - Gistum Breaker
+              - Gistum Defeater
+            ewar:
+              - kind: web
+      - id: timed-wave-1
+        trigger:
+          on: other
+          text: Timed wave 1
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Gistii Nomad
+              - Gistii Ruffian
+            ewar:
+              - kind: targetPaint
+      - id: timed-wave-2
+        trigger:
+          on: other
+          text: Timed wave 2
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Arch Gistii Hijacker
+              - Arch Gistii Rogue
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 3-4
+            class: Cruiser
+            names:
+              - Gistum Crusher
+              - Gistum Smasher
+            ewar:
+              - kind: targetPaint
+      - id: lab-wave
+        trigger:
+          on: other
+          text: Lab wave
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Gistatis Tribuni
+            triggers: Commander wave trigger
+      - id: commander-wave
+        trigger:
+          on: other
+          text: Commander wave
+          confidence: inferred
+        spawns:
+          - count: 0-1
+            class: Commander Cruiser
+            names:
+              - Domination Crusher
+            triggers: Escalation trigger
+            drop: Can drop faction items
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Angel Drug Lab
+            triggers: Escalation trigger and lab wave
+sde:
+  dungeonIds:
+    - 1407

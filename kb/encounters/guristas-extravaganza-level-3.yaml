@@ -1,0 +1,299 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: guristas-extravaganza-level-3
+kind: mission
+name: Guristas Extravaganza
+level: 3
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Guristas Extravaganza (Level 3)
+    url: https://wiki.eveuniversity.org/Guristas_Extravaganza_(Level_3)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "228389"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: web
+notes:
+  - text: "Web/warp disruption: Webs from Guristas Kyoukan/Webifier and Spider Drone I"
+  - text: "Suggested ships: Battlecruiser, HAC"
+  - text: "Pocket 1: Not Possible"
+  - text: "Pocket 2: Kill the Cruiser, no need to destroy Sentries."
+  - text: "Pocket 3: Destroy all ships, no need to destroy the missile battery, then destroy the EM ForceField."
+  - text: "Pocket 4: Not possible."
+  - text: "Pocket 5: Kill Satori Kardun, and the Spider Drone."
+pockets:
+  - name: 1st Pocket
+    waves:
+      - id: group-1-near-acceleration-gate
+        trigger:
+          on: other
+          text: Group 1, near acceleration gate
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Cruiser
+            names:
+              - Pithum Inferno
+              - Pithum Mortifier
+      - id: group-2-near-radio-telescope
+        trigger:
+          on: other
+          text: Group 2, near Radio Telescope
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Guristas Kyoukan
+              - Guristas Webifier
+            ewar:
+              - kind: web
+          - count: "1"
+            class: Cruiser
+            names:
+              - Pithium Inferno
+              - Pithium Mortifier
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Pithatis Assaulter
+              - Pithatis Enforcer
+              - Pithatis Executor
+      - id: group-3-near-gas-silo
+        trigger:
+          on: other
+          text: Group 3, near Gas Silo
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Guristas Kyoukan
+              - Guristas Webifier
+            ewar:
+              - kind: web
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Pithatis Enforcer
+              - Pithatis Executor
+      - id: group-4-near-guristas-lookout
+        trigger:
+          on: other
+          text: Group 4, near Guristas Lookout
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Guristas Kyoukan
+              - Guristas Webifier
+            ewar:
+              - kind: web
+          - count: "3"
+            class: Destroyer
+            names:
+              - Pithior Anarchist
+              - Pithior Renegade
+          - count: "1"
+            class: Cruiser
+            names:
+              - Pithatis Enforcer
+              - Pithatis Executor
+  - name: 2nd Pocket
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Sentry
+            names:
+              - Tower Sentry Guristas I
+              - Tower Sentry Guristas II
+          - count: "3"
+            class: Sentry
+            names:
+              - Guristas Light Missile Battery
+          - count: "1"
+            class: Cruiser
+            names:
+              - Pithum Silencer
+              - Pithum Ascriber
+  - name: 3rd Pocket
+    notes:
+      - text: "Tip: To kill the forcefield, you will need to shoot it directly. (Requires adding Collidable Structures to your overview.)"
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - EM Forcefield
+          - count: "2"
+            class: Sentry
+            names:
+              - Guristas Heavy Missile Battery
+          - count: "2"
+            class: Industrial
+            names:
+              - Guristas Transport
+          - count: "2"
+            class: Destroyer
+            names:
+              - Pithior Anarchist
+              - Pithior Renegade
+          - count: "5"
+            class: Cruiser
+            names:
+              - Pithum Abolisher
+              - Pithum Ascriber
+              - Pithum Eraser
+              - Pithum Silencer
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Pithatis Executor
+  - name: 4th Pocket
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Industrial
+            names:
+              - Guristas Personnel Transport
+          - count: "3"
+            class: Frigate
+            names:
+              - Guristas Kyoukan
+              - Guristas Webifier
+            ewar:
+              - kind: web
+          - count: "4"
+            class: Frigate
+            names:
+              - Pithi Demolisher
+              - Pithi Destructor
+          - count: "7"
+            class: Cruiser
+            names:
+              - Pithum Ascriber
+              - Pithum Inferno
+              - Pithum Mortifier
+              - Pithum Silencer
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Pithatis Enforcer
+              - Pithatis Executor
+      - id: structures-with-loot
+        trigger:
+          on: other
+          text: Structures with loot
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Guristas Outpost Residential Hub
+          - count: "1"
+            class: Structure
+            names:
+              - Narcotics Warehouse
+          - count: "1"
+            class: Structure
+            names:
+              - Major Assembly Array
+  - name: 5th Pocket
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Drone
+            names:
+              - Spider Drone I
+            ewar:
+              - kind: web
+          - count: "5"
+            class: Frigate
+            names:
+              - Pithi Demolisher
+              - Pithi Destructor
+          - count: "6"
+            class: Cruiser
+            names:
+              - Pithum Abolisher
+              - Pithum Eraser
+              - Pithum Inferno
+              - Pithum Mortifier
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Satori Kardun
+            note: Pithatis Assaulter/Assasin type
+      - id: structures-with-loot
+        trigger:
+          on: other
+          text: Structures with loot
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Storage Silo
+            drop: May drop an implant
+  - name: 6th Pocket (Bonus Room)
+    notes:
+      - text: Requires Guristas Palladium Tag (not consumed).
+      - text: "Difficulty: Hard (Requires full tanking abilities)"
+      - text: "Note: Guristas War Installation loot may not be valuable and not worth the time."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Sentry
+            names:
+              - Tower Sentry Guristas II
+          - count: "2"
+            class: Sentry
+            names:
+              - Guristas Heavy Missile Battery
+          - count: "4"
+            class: Frigate
+            names:
+              - Pithi Destructor
+              - Pithi Demolisher
+              - Guristas Kyoukan
+            note: Guristas Kyoukan may Web
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Pithatis Assassin
+              - Pithatis Death Dealer
+          - count: "1"
+            class: Battleship
+            names:
+              - Pith Dismantler
+          - count: "1"
+            class: Structure
+            names:
+              - Satori's Storage Facility
+            note: No Loot

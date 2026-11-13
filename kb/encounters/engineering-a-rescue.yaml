@@ -1,0 +1,62 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: engineering-a-rescue
+kind: mission
+name: Engineering a Rescue
+level: null
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Engineering a Rescue
+    url: https://wiki.eveuniversity.org/Engineering_a_Rescue
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231153"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Rescue Engineer Tahaki Karin (1) from her ship, The Heartbreak.
+notes:
+  - text: Rescue Engineer Tahaki Karin (1.0 m³) from her ship, The Heartbreak - Located in Arnon.
+  - text: "Note: You do not need to destroy any of the rogue drones to complete this mission."
+  - text: You will warp in about 20km from The Heartbreak, and Tahaki Karin will transmit a panicked distress call. 4 x rogue drone frigates will be closing in, at 25km range.
+  - text: Approach The Heartbreak to loot it and bring Karin into your cargo hold. If you destroy the first set of rogue drones, a second wave will appear at 5-10km ranges consisting of 4 x Decimator Alvi rogue drone frigates.
+  - text: "On arrival - Tahaki Karin: Get me out of here! This thing might explode any second now!"
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: "Next Mission: Going Gallente"
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "?"
+            class: Container
+            names:
+              - the heartbreak
+            drop: Tahaki Karin
+      - id: initial
+        trigger:
+          on: warpIn
+          text: Initial
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Splinter
+              - Infester Alvi
+            triggers: reinforcement
+      - id: reinforcement
+        trigger:
+          on: other
+          text: reinforcement
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Decimator Alvi

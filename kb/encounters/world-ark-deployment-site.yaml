@@ -1,0 +1,22 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: world-ark-deployment-site
+kind: anomaly
+name: World Ark Deployment Site
+dedRating: null
+enemyFaction: Triglavian Collective
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – World Ark Deployment Site
+    url: https://wiki.eveuniversity.org/World_Ark_Deployment_Site
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "163324"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: The world ark deployment site appears during escalating liminality phases.
+  - text: The site contains the world ark and some Triglavian ships.
+  - text: Capsuleers on EDENCOM side can attack the site. Capsuleers on Triglavian side can mine Bezdnacine.

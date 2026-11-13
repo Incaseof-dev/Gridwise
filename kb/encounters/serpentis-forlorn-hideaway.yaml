@@ -1,0 +1,92 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: serpentis-forlorn-hideaway
+kind: anomaly
+name: Serpentis Forlorn Hideaway
+dedRating: null
+anomalyClass: 1
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Serpentis Forlorn Hideaway
+    url: https://wiki.eveuniversity.org/Serpentis_Forlorn_Hideaway
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225140"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Ungated pocket with multiple waves of rats.
+  - text: "Escalation: This anomaly can escalate to Serpentis Narcotic Warehouses."
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Coreli Watchman
+              - Coreli Patroller
+            ewar:
+              - kind: sensorDamp
+      - id: first-spawn
+        trigger:
+          on: other
+          text: First Spawn
+          confidence: inferred
+        spawns:
+          - count: 4-5
+            class: Frigate
+            names:
+              - Coreli Watchman
+              - Coreli Patroller
+            ewar:
+              - kind: sensorDamp
+          - count: "1"
+            class: Cruiser
+            names:
+              - Corelum Chief Scout
+              - Corelum Chief Spy
+            triggers: Triggers second spawn
+      - id: second-spawn
+        trigger:
+          on: other
+          text: Second Spawn
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Corelior Soldier
+              - Corelior Trooper
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corelum Chief Spy
+            triggers: Triggers third spawn
+      - id: third-spawn
+        trigger:
+          on: other
+          text: Third Spawn
+          confidence: inferred
+        spawns:
+          - count: 0-1
+            class: Frigate
+            names:
+              - Shadow Serpentis
+            drop: drops
+            note: Rare spawn
+          - count: "5"
+            class: Cruiser
+            names:
+              - Corelum Chief Spy
+              - Corelum Chief scout
+sde:
+  dungeonIds:
+    - 3419

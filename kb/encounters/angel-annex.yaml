@@ -1,0 +1,168 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: angel-annex
+kind: complex
+name: Angel Annex
+dedRating: null
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Angel Annex
+    url: https://wiki.eveuniversity.org/Angel_Annex
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "166067"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: This site's acceleration gate allows only Battleship class ships or lower and their Tech 2 equivalents to enter the site.
+  - text: "Escalation: Destroying Crokan, the Domination Commander, in this signature may cause an escalation to an expedition known as the Angel Powergrid."
+lootNotes:
+  - text: TBD
+pockets:
+  - name: First room
+    notes:
+      - text: Attacking Smuggler's Gate trigger's second wave.
+      - text: Acceleration gate unlocks on kill of Smuggler Commander or by using Angel Platinum Tag
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "7"
+            class: Sentry
+            names:
+              - Tower Sentry II
+          - count: "3"
+            class: Sentry
+            names:
+              - Tower Sentry III
+          - count: "3"
+            class: Cruiser
+            names:
+              - Gist Cruiser
+          - count: "1"
+            class: Battleship
+            names:
+              - Gist Warlord
+          - count: "2"
+            class: Battleship
+            names:
+              - Gist War General
+          - count: "1"
+            class: Battleship
+            names:
+              - Smuggler Commander
+      - id: second-wave
+        trigger:
+          on: other
+          text: Second Wave
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Arch Gistii Cruiser
+          - count: "1"
+            class: Battleship
+            names:
+              - Gist Cherubim
+          - count: "2"
+            class: Battleship
+            names:
+              - Gist Malkim
+          - count: "1"
+            class: Battleship
+            names:
+              - Smuggler Commander
+            triggers: Unlocks the acceleration gate
+    onWarpIn: ???????
+  - name: Second room
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Angel Stasis Tower
+            ewar:
+              - kind: web
+          - count: "4"
+            class: Sentry
+            names:
+              - Angel Cruise Missile Launcher
+          - count: "3"
+            class: Frigate
+            names:
+              - Gist Frigate
+          - count: "10"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Frigate
+            ewar:
+              - kind: targetPaint
+          - count: "7"
+            class: Destroyer
+            names:
+              - Gist Destroyer
+            ewar:
+              - kind: targetPaint
+          - count: "11"
+            class: Battlecruiser
+            names:
+              - Gist Battle Cruiser
+          - count: "4"
+            class: Battleship
+            names:
+              - Gist Warlord
+          - count: "6"
+            class: Battleship
+            names:
+              - Gist War General
+          - count: "4"
+            class: Battleship
+            names:
+              - Gist Thorne
+          - count: "4"
+            class: Battleship
+            names:
+              - Gist Malkim
+      - id: shipyard-wave
+        trigger:
+          on: other
+          text: Shipyard Wave
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Crokan's Gighters
+          - count: "4"
+            class: Cruiser
+            names:
+              - Crokan's Guardians
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Crokan
+            triggers: possible escalation
+            drop: wreck may contain Domination Battleship Modules
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: unlocks with Angel Platinum Tag
+sde:
+  dungeonIds:
+    - 1567

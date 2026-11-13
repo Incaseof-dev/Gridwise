@@ -1,0 +1,168 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: blood-raider-naval-shipyard
+kind: complex
+name: Blood Raider Naval Shipyard
+dedRating: 10
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Blood Raider Naval Shipyard
+    url: https://wiki.eveuniversity.org/Blood_Raider_Naval_Shipyard
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "156299"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: T2 Battleship"
+notes:
+  - text: Blood Raider Naval Shipyard is a null security DED rated site found through exploration.
+  - text: The Complex consists of three rooms. All these rooms have serious numbers of battleships, cruisers and frigates inside them. The third room contains an overseer structure, which when destroyed has a chance of dropping Corpus X-Type or Dark Blood modules and a Bhaalgorn BPC. The structure also always drops 23rd Tier Overseer's Personal Effects.
+  - text: The complex contains many normal battleship NPCs Renamed as "Dark Corpus", however they are not faction and drop nothing of value.
+loot:
+  - item: 23rd Tier Overseer's Effects
+    from: Blood Raider Fleet Stronghold
+    note: est. 133M ISK (wiki) · 100% drop rate
+  - item: Corpus X-Type module
+    from: Blood Raider Fleet Stronghold
+  - item: Bhaalgorn BPC
+    from: Blood Raider Fleet Stronghold
+  - item: Dark Blood module
+    from: Blood Raider Fleet Stronghold
+pockets:
+  - name: 1st pocket
+    notes:
+      - text: Activating the acceleration gate to next room requires skill Warp Drive Operation.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "11"
+            class: Elite Frigate
+            names:
+              - Elder Corpior Upholder
+              - Elder Corpior Herald
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "5"
+            class: Destroyer
+            names:
+              - Corpior Devoter
+          - count: "2"
+            class: Elite Battlecruiser
+            names:
+              - Elder Corpus Bishop
+            ewar:
+              - kind: trackingDisruption
+              - kind: neut
+          - count: "12"
+            class: Battleship
+            names:
+              - Corpus Oracle
+              - Corpus Monsignor
+              - Corpus Apostle
+          - count: "8"
+            class: Sentry
+            names:
+              - Blood Cruise Missile Batteries
+          - count: "9"
+            class: Sentry
+            names:
+              - Blood Stasis Tower
+            ewar:
+              - kind: web
+    onWarpIn: Incoming Transmission You are entering the Blood Raider Covenant's Naval Shipyard. Despite its relatively small size, many consider it to be the single most heavily guarded illegal military outpost in existence, and definitely the largest ever built by the Blood Raiders.
+  - name: 2nd pocket
+    notes:
+      - text: Activating the acceleration gate to next room requires skill Warp Drive Operation.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "10"
+            class: Elite Frigate
+            names:
+              - Elder Corpior Upholder
+              - Elder Corpior Herald
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Elite Battlecruiser
+            names:
+              - Elder Corpus Bishop
+            ewar:
+              - kind: trackingDisruption
+              - kind: neut
+          - count: "9"
+            class: Battleship
+            names:
+              - Corpus Patriarch
+              - Corpus Monsignor
+              - Corpus Pope
+          - count: "2"
+            class: Sentry
+            names:
+              - Blood Stasis Tower
+            ewar:
+              - kind: web
+  - name: 3rd pocket
+    notes:
+      - text: Rat info here is not exact. Only some of the frigates and battleships use EWAR.
+      - text: The final room deals incredible amounts of EM and Thermal damage and should not be taken lightly.
+      - text: Destroy the Blood Raider Fleet Stronghold for the loot, other NPCs can be ignored if you can tank them for long enough and then escape.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "10"
+            class: Cruiser
+            names:
+              - Elder Corpus Bishop
+            ewar:
+              - kind: trackingDisruption
+              - kind: neut
+          - count: "20"
+            class: Battleship
+            names:
+              - Corpus Archbishop
+              - Corpus Harbinger
+            ewar:
+              - kind: neut
+          - count: "8"
+            class: Sentry
+            names:
+              - Point Defence Battery
+          - count: "6"
+            class: Sentry
+            names:
+              - Cruise Missile Battery
+          - count: "8"
+            class: Sentry
+            names:
+              - Blood Stasis Tower
+            ewar:
+              - kind: web
+      - id: structure
+        trigger:
+          on: warpIn
+          text: Structure
+        spawns:
+          - count: "1"
+            class: Tower
+            names:
+              - Blood Raider Fleet Stronghold
+            drop: 23rd Tier Overseer's Personal Effects, Corpus X-type modules, Bhaalgorn BPC and Dark Blood faction modules.
+sde:
+  dungeonIds:
+    - 2260

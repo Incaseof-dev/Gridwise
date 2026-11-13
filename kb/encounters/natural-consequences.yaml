@@ -1,0 +1,111 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: natural-consequences
+kind: mission
+name: Natural Consequences
+level: null
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Natural Consequences
+    url: https://wiki.eveuniversity.org/Natural_Consequences
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "229746"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Eliminate the Sansha's Nation blockade
+restrictions:
+  - text: "Ship size limit: T3 destroyers and below"
+ewar:
+  - kind: web
+  - kind: trackingDisruption
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Yes"
+  - text: Single gated deadspace pocket.
+  - text: The next wave may not spawn instantly after previous one has been destroyed. All subsequent waves after wave 4 seem to spawn on timers and will often appear while the previous wave is still alive.
+  - text: The mission can be completed and the next mission accepted remotely.
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: wave-1
+        trigger:
+          on: warpIn
+          text: Wave 1
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Centii Plague
+            triggers: Triggers wave 2
+          - count: "1"
+            class: Frigate
+            names:
+              - Centii Enslaver
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Cruiser
+            names:
+              - Centum Slaughterer
+            ewar:
+              - kind: trackingDisruption
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Centii Butcher
+              - Centii Manslayer
+      - id: wave-4
+        trigger:
+          on: other
+          text: Wave 4
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Cruiser
+            names:
+              - Centum Execrator
+              - Centum Slaughterer
+      - id: wave-5
+        trigger:
+          on: other
+          text: Wave 5
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Servant
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Sansha Supervisor
+            triggers: Mission completion trigger
+      - id: wave-6
+        trigger:
+          on: other
+          text: Wave 6
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Enslaver
+              - Centii Loyal Plague

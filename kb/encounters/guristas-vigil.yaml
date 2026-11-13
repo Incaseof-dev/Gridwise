@@ -1,0 +1,193 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: guristas-vigil
+kind: complex
+name: Guristas Vigil
+dedRating: null
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Guristas Vigil
+    url: https://wiki.eveuniversity.org/Guristas_Vigil
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "203036"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Battlecruiser"
+notes:
+  - text: This site's acceleration gate allows only Battlecruiser class ships or lower and their Tech 2 equivalents to enter the site.
+  - text: The site consists of three deadspace pockets with an acceleration gates, various structures and their defending pirates. Using the gate allows access to other areas within the site. The names and amount of ships listed may vary slightly.
+  - text: 'Escalation: Kidnapped!: "As you enter the room, you receive a weak transmission; a hushed voice sneaks through your audio system, hastily whispering some words. All you can understand is something about kidnapping, pirates and a group of people. You play it back a several times, trying to make sense of it, but you can not discern who is kidnapped or how this group of people is involved and you cant actually hear what part the Guristas play in this, even though you take it for granted that they are the kidnappers in question. This message was sent on a general channel and your instruments have no problem pinpointing its origin. They have actually done so already in case you would like to investigate this further. Cant beat these new auto-personalizing AI systems, you have had this one for only a few days and it already feels like it has known you all your life."'
+  - text: "Escalation: This site can escalate to Kidnapped!"
+npcs:
+  Port Authority Officer:
+    sdeTypes:
+      - Pith Eradicator
+    class: Battleship
+pockets:
+  - name: Room 1
+    notes:
+      - text: Approach Smuggler Gate to trigger gate wave.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Pithi Demolisher
+              - Pithi Destructor
+              - Pithi Plunderer
+              - Pithi Wrecker
+          - count: "1"
+            class: Destroyer
+            names:
+              - Pithior Terrorist
+          - count: "2"
+            class: Cruiser
+            names:
+              - Pithum Mortifier
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Pithatis Assassin
+              - Pithatis Assaulter
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: Locked until Port Authority Officer is killed or by consuming a Guristas Gold Tag
+          - count: "1"
+            class: Structure
+            names:
+              - Smuggler Gate
+            triggers: Approach this to trigger Gate Wave
+      - id: gate-wave
+        trigger:
+          on: other
+          text: Gate wave
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Battleship
+            names:
+              - Port Authority Officer
+            triggers: Destroying this will unlock the acceleration gate
+            note: 'Message on death in Local: "The port authorities ship must have somehow been connected with the acceleration gate below. Once it is destroyed, a strange sound is heard coming out of the gate."'
+    onWarpIn: "Database Information: Previous explorers have commented that one of the gates requires a passkey. Alternatively, it can be bypassed by convincing the commander to unlock it."
+  - name: Room 2
+    notes:
+      - text: Wave 2 arrives after about 3 minutes.
+      - text: Wave 3 arrives after about 4 minutes.
+      - text: Wave 4 arrives after about 5 minutes.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Guristas Stasis Towers
+            ewar:
+              - kind: web
+          - count: "3"
+            class: Frigate
+            names:
+              - Pithi Demolisher
+              - Pithi Plunderer
+              - Pithi Wrecker
+          - count: "1"
+            class: Destroyer
+            names:
+              - Pithior Anarchist
+              - Pithior Terrorist
+              - Pithior Guerilla
+          - count: "1"
+            class: Cruiser
+            names:
+              - Pithum Eraser
+              - Pithum Abolisher
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Pithatis Death Dealer
+              - Pithatis Revolter
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Destroyer
+            names:
+              - Pithior Anarchist
+              - Pithior Terrorist
+              - Pithior Guerilla
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Pithum Eraser
+              - Pithum Abolisher
+      - id: wave
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Saboteur
+              - Dire Pithi Despoiler
+            ewar:
+              - kind: ecm
+          - count: 1–2
+            class: Destroyer
+            names:
+              - Pithior Renegade
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Pithatis Death Dealer
+              - Pithatis Revolter
+      - id: wave-4
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Cruiser
+            names:
+              - Pithum Eraser
+              - Pithum Abolisher
+          - count: "1"
+            class: Cruiser
+            names:
+              - Dread Guristas Silencer
+              - Dread Guristas Ascriber
+              - Dread Guristas Killer
+            ewar:
+              - kind: ecm
+            triggers: Trigger for possible Escalation
+            drop: May contain Dread Guristas Cruiser Modules, Gila BPC and T2 Implants
+  - name: Room 3
+    notes:
+      - text: The room is empty except for a warp beacon. This room is an alternate trigger for possible Expedition.
+sde:
+  dungeonIds:
+    - 1232

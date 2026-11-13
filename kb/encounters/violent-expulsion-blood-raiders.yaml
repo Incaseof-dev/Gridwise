@@ -1,0 +1,46 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: violent-expulsion-blood-raiders
+kind: mission
+name: Violent Expulsion
+level: 1
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Violent Expulsion (Blood Raiders)
+    url: https://wiki.eveuniversity.org/Violent_Expulsion_(Blood_Raiders)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "220760"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Suggested ships: Destroyer"
+  - text: "Blood Raider Armaments: Between our records and CONCORD's, we have a ton of data on the Blood Raiders. They're about what you'd expect from one of the only religious pirate organizations in existence. But what we're most interested in, of course, is how to destroy them, should we need to: They seem to favor Electromagnetic and Thermal weapons; their ships are tough, but vulnerable to EM-based attacks… so EMP ammo would be a good choice for guns, Mjolnir if you are using missiles"
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: initial-group-30km-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group, 30km (auto-aggro)
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Corpii Follower
+            triggers: Reinforcement
+      - id: reinforcement
+        trigger:
+          on: other
+          text: Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Corpii Upholder
+              - Corpii Herald
+              - Corpii Worshipper

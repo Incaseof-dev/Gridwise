@@ -1,0 +1,105 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: goading-the-leader
+kind: mission
+name: Goading the Leader
+level: 1
+enemyFaction: Guristas Pirates & Serpentis & Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Goading the Leader
+    url: https://wiki.eveuniversity.org/Goading_the_Leader
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "228272"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Take out the Auxiliary Power Array
+notes:
+  - text: thumb|128px|Tarak Erand
+  - text: "Smuggling: Smuggling is one of the larger illegal industries in New Eden. Each nation in the cluster has numerous underground distribution cartels sourcing all sorts of illicit goods. Tracking the movement of ships and their cargo across borders is a monumental task that often spreads customs agents thin. For this reason, it isn’t hard for a determined smuggler to find loopholes that they can exploit in the busy shipping schedules."
+  - text: Objective
+  - text: Take out the Auxiliary Power Array. Location is within the system, follow the warp link.
+  - text: Notes
+  - text: Don't worry about the number of pirates on your overview - the smugglers and the Nidhogger will warp out as you fly towards the Array, leaving 4 watchmen remaining. These will aggress you when you get close to the array.
+  - text: Mission is completed once the power array is destroyed. The pirate ships do not need to be destroyed.
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: If the Power array is destroyed before the trigger the reinforcements will not arrive.
+      - text: "Agent hand-in message: My men finished cleaning up the remaining hostiles just a few moments ago. You'll be pleased to hear this though, . We caught someone trying to flee the scene; we think he knows something about the guys running this whole operation. He's been taken into questioning. If he does know anything, we'll have the information ourselves very shortly."
+      - text: "Next Mission: Hunting the Lieutenants"
+    waves:
+      - id: structures-50km
+        trigger:
+          on: other
+          text: Structures (~50km)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Auxiliary Power Array
+            triggers: Destruction completes mission
+          - count: "4"
+            class: Structure
+            names:
+              - Smuggling Hub
+      - id: initial
+        trigger:
+          on: warpIn
+          text: Initial
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Smuggler
+            group: Smugglers (Depart the scene)
+          - count: "3"
+            class: Cruiser
+            names:
+              - Smuggler
+            group: Smugglers (Depart the scene)
+          - count: "7"
+            class: Battlecruiser
+            names:
+              - Smuggler
+            group: Smugglers (Depart the scene)
+          - count: "8"
+            class: Battleship
+            names:
+              - Smuggler
+            group: Smugglers (Depart the scene)
+          - count: "1"
+            class: Carrier
+            names:
+              - Stolen Nidhogger
+            group: Smugglers (Depart the scene)
+            note: Renamed Republic harkal
+          - count: "3"
+            class: Frigate
+            names:
+              - Watchman
+            group: Watchmen (Guristas and Serpentis ships)
+            triggers: Last frigate triggers reinforcements
+            note: Renamed Pithi Plunderer/Wrecker
+          - count: "1"
+            class: Cruiser
+            names:
+              - Watchman
+            group: Watchmen (Guristas and Serpentis ships)
+            note: Renamed Corelum Chief Spy/Scout
+      - id: reinforcements-angel-cartel-ships
+        trigger:
+          on: other
+          text: Reinforcements (Angel Cartel ships)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Watchman
+            note: Renamed Gistii Thug/Outlaw

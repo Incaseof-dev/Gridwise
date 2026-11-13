@@ -1,0 +1,214 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: blood-raider-rally-point
+kind: anomaly
+name: Blood Raider Rally Point
+dedRating: null
+anomalyClass: 6
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Blood Raider Rally Point
+    url: https://wiki.eveuniversity.org/Blood_Raider_Rally_Point
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225171"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: The site consists of single ungated pocket. Reinforcement spawns are triggered by the last hostile ship destroyed. All enemy ships spawn around the Blood Raider Lookout structure.
+  - text: With the initial defending fleet and 7 triggered spawns, a total of 37- 39 ships.
+  - text: text-top|300px|thumb|.
+  - text: "Escalation: This site can escalate to Crimson Hand Supply Depot."
+lootNotes:
+  - text: "Bounty: ≈2.7 Mil"
+  - text: "Loot/salvage: ≈5 Mil"
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Fuel Depot
+            drop: Random charges
+          - count: "1"
+            class: Structure
+            names:
+              - Blood Raider Lookout
+      - id: initial-defending-fleet
+        trigger:
+          on: warpIn
+          text: Initial Defending Fleet
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Corpii Collector
+              - Corpii Deviner
+              - Corpii Herald
+              - Corpii Follower
+              - Corpii Seeker
+              - Corpii Upholder
+              - Corpii Worshiper
+          - count: 3-4
+            class: Destroyer
+            names:
+              - Corpior Cleric
+              - Corpior Converter
+              - Corpior Friar
+              - Corpior Visionary
+          - count: "2"
+            class: Sentry
+            names:
+              - Tower Sentry Bloodraider I
+          - count: "2"
+            class: Sentry
+            names:
+              - Blood Heavy Missile Battery
+      - id: 1st-reinforcement-spawn
+        trigger:
+          on: other
+          text: 1st Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Corpii Collector
+              - Corpii Deviner
+              - Corpii Herald
+              - Corpii Follower
+              - Corpii Seeker
+              - Corpii Upholder
+              - Corpii Worshiper
+          - count: 2-4
+            class: Cruiser
+            names:
+              - Corpum Dark Priest
+              - Corpum Shadow Sage
+      - id: 2nd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 2nd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Collector
+              - Elder Corpii Deviner
+              - Elder Corpii Herald
+              - Elder Corpii Follower
+              - Elder Corpii Seeker
+              - Elder Corpii Upholder
+              - Elder Corpii Worshiper
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Corpum Dark Priest
+              - Corpum Shadow Sage
+      - id: 3rd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 3rd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Corpii Collector
+              - Corpii Deviner
+              - Corpii Herald
+              - Corpii Follower
+              - Corpii Seeker
+              - Corpii Upholder
+              - Corpii Worshiper
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corpatis Exorcist
+              - Corpatis Phantom
+      - id: 4th-reinforcement-spawn
+        trigger:
+          on: other
+          text: 4th Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Collector
+              - Elder Corpii Deviner
+              - Elder Corpii Herald
+              - Elder Corpii Follower
+              - Elder Corpii Seeker
+              - Elder Corpii Upholder
+              - Elder Corpii Worshiper
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Corpatis Exorcist
+              - Corpatis Phantom
+      - id: 5th-reinforcement-spawn
+        trigger:
+          on: other
+          text: 5th Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Corpatis Exorcist
+              - Corpatis Phantom
+      - id: 6th-reinforcement-spawn
+        trigger:
+          on: other
+          text: 6th Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Dark Priest
+          - count: 2-3
+            class: Battlecruiser
+            names:
+              - Corpatis Exorcist
+              - Corpatis Phantom
+      - id: 7th-reinforcement-spawn
+        trigger:
+          on: other
+          text: 7th Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Battlecruiser
+            names:
+              - Corpatis Bishop
+              - Corpatis Fanatic
+              - Corpatis Seer
+              - Corpatis Shade
+              - Corpatis Phantom
+          - count: 1-2
+            class: Battleship
+            names:
+              - Corpus Archbishop
+              - Corpus Harbinger
+            ewar:
+              - kind: neut
+sde:
+  dungeonIds:
+    - 2124

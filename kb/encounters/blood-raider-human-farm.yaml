@@ -1,0 +1,146 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: blood-raider-human-farm
+kind: complex
+name: Blood Raider Human Farm
+dedRating: 2
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Blood Raider Human Farm
+    url: https://wiki.eveuniversity.org/Blood_Raider_Human_Farm
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "226713"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Destroyer"
+notes:
+  - text: Blood Raider Human Farm is a DED rated complex that can be found by scanning cosmic signatures in high and low security space.
+loot:
+  - item: 6th Tier Overseer's Effects
+    from: Overseer Frigate
+    note: est. 358k ISK (wiki) · 100% drop rate
+  - item: Corpii B-Type modules
+    from: Overseer Frigate
+    note: Up to 3x
+  - item: + Exploration logs
+  - item: Nov 2014
+    note: est. 60,1M ISK (wiki) · From Overseer Frigate
+  - item: Corpii B-Type Explosive Plating
+  - item: May 2024
+    note: est. 59M ISK (wiki) · From Overseer Frigate
+pockets:
+  - name: First Pocket
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "24"
+            class: Frigate
+            names:
+              - Corpii Follower
+              - Corpii Herald
+              - Corpii Upholder
+            note: type list incomplete on the source page
+          - count: "6"
+            class: Sentry
+            names:
+              - Blood Raider Sentry Gun
+    onWarpIn: "For many people, the so-named \"human farm\" is the single most terrifying aspect of the Covenant's legend: an extensive facility, often spanning several pockets of deadspace, where captured human beings are harvested for their blood, sustained in a weakened state on endless treadmills of excruciating torment. While some choose to disbelieve that such places exist, the facts of the matter unfortunately speak for themselves."
+  - name: Second Pocket
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "10"
+            class: Frigate
+            names:
+              - Corpii Follower
+              - Corpii Herald
+              - Corpii Upholder
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Sentry
+            names:
+              - Blood Raider Sentry Gun
+          - count: "3"
+            class: Sentry
+            names:
+              - Blood Stasis Tower
+            ewar:
+              - kind: web
+  - name: Third Pocket
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "13"
+            class: Frigate
+            names:
+              - Corpii Herald
+              - Corpii Upholder
+          - count: "4"
+            class: Cruiser
+            names:
+              - Corpum Arch Engraver
+              - Corpum Arch Reaver
+          - count: "1"
+            class: Cruiser
+            names:
+              - Corpum Priest
+              - Corpum Sage
+            ewar:
+              - kind: neut
+  - name: Fourth Pocket
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Corpii Collector
+              - Corpii Seeker
+            ewar:
+              - kind: trackingDisruption
+          - count: "4"
+            class: Frigate
+            names:
+              - Corpii Herald
+              - Corpii Upholder
+          - count: "1"
+            class: Cruiser
+            names:
+              - Corpum Arch Engraver
+          - count: 4-5
+            class: Cruiser
+            names:
+              - Corpum Arch Templar
+            ewar:
+              - kind: trackingDisruption
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Corpum Revenant
+            ewar:
+              - kind: trackingDisruption
+          - count: "1"
+            class: Overseer Frigate
+            names:
+              - Dark Blood Keeper
+            drop: 6th Tier Overseer's Personal Effects and possibly Corpii B-Type modules, faction modules
+sde:
+  dungeonIds:
+    - 5317

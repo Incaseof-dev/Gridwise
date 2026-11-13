@@ -1,0 +1,98 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: data-retrieval
+kind: mission
+name: Data Retrieval
+level: null
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Data Retrieval
+    url: https://wiki.eveuniversity.org/Data_Retrieval
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "228255"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Retrieve the CreoDron data core from the Destroyed Ship and bring it to Agent Delphine.
+ewar:
+  - kind: targetPaint
+notes:
+  - text: "Guardian Angels: The Guardian Angels are a division of the Angel Cartel occupied with guarding Serpentis space stations. The Angel Cartel is the largest and best organized of the space-based criminal factions. The Angels are divided into several groups, each with a distinct function. The Angels recruit members from all the races and are thus not bound to any one zone of operation."
+  - text: --You can accept this mission remotely.--
+  - text: Objective
+  - text: Retrieve the CreoDron data core from the Destroyed Ship and bring it to Agent Delphine.
+  - text: Notes
+  - text: The container is not locked. So you can just grab the item and return to agent without firing a single shot.
+  - text: You will warp in at about 25-40 km from the Destroyed Ship container. It will be guarded by 5 Angel Cartel frigates all at about 35-50 km range.
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: "Next Mission: Crossing Enemy Lines"
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "?"
+            class: Structure
+            names:
+              - Destroyed ship
+            drop: Dr Castille’s Data Core (Property of CreoDron)
+      - id: initial
+        trigger:
+          on: warpIn
+          text: Initial
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Gistii Ruffian
+              - Gistii Nomad
+              - Gistii Hunter
+              - Gistii Impaler
+            ewar:
+              - kind: targetPaint
+            triggers: Reinforcement 1
+            note: Ruffian does EWAR
+      - id: reinforcement-1-10-km
+        trigger:
+          on: other
+          text: Reinforcement 1 (10 km)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Gistii Ruffian
+              - Gistii Nomad
+              - Gistii Hunter
+            ewar:
+              - kind: targetPaint
+            note: Ruffian does EWAR
+          - count: 1-2
+            class: Destroyer
+            names:
+              - Gistior Defacer
+              - Gistior Defiler
+            triggers: Reinforcement 2
+      - id: reinforcement-2-10-km
+        trigger:
+          on: other
+          text: Reinforcement 2 (10 km)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Gistii Outlaw
+              - Gistii Thug
+          - count: "1"
+            class: Cruiser
+            names:
+              - Angel Forward Scout
+            note: Renamed Gistum Depredator/Predator

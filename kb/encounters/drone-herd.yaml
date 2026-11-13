@@ -1,0 +1,105 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: drone-herd
+kind: anomaly
+name: Drone Herd
+dedRating: null
+anomalyClass: 7
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Drone Herd
+    url: https://wiki.eveuniversity.org/Drone_Herd
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "228940"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Drone Herd is an unrated combat site belonging to the Rogue Drones faction. It can be found via exploration as a cosmic anomaly in low-security and null-security systems across New Eden. As an ungated complex, the limitations as to which ships can complete this site are tied to the security rating of the system where the anomaly spawns (T2 Battleships for high-security systems, and up to Titans in low-security and null-security systems). This combat site has a chance to spawn a Sentient commander rogue drone, which drops rogue components and may drop faction drone modules and items. There are two minor variations with slightly different wave compositions.
+  - text: This variant contains a prominent Ancient Ruins object.
+  - text: "Escalation: There is a chance of getting the Outgrowth Rogue Drone Hive (5/10) or Drone Infested Starbase escalations."
+pockets:
+  - name: Ancient Ruin
+    waves:
+      - id: initial-spawn
+        trigger:
+          on: warpIn
+          text: Initial spawn
+        spawns:
+          - count: 1-3
+            class: Destroyer
+            names:
+              - Predator
+              - Ripper Alvior
+          - count: 2-3
+            class: Battlecruiser
+            names:
+              - Crippler
+              - Striker Alvatis
+      - id: first-spawn
+        trigger:
+          on: other
+          text: First spawn
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Bomber
+              - Atomizer
+              - Disintegrator Alvum
+          - count: 1-3
+            class: Battlecruiser
+            names:
+              - Siege
+              - Exterminator Alvatis
+      - id: second-spawn
+        trigger:
+          on: other
+          text: Second spawn
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Destroyer
+            names:
+              - Dismantler Alvi
+          - count: 1-3
+            class: Battleship
+            names:
+              - Domination Alvus
+              - Spearhead Alvus
+      - id: third-spawn
+        trigger:
+          on: other
+          text: Third spawn
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Battlecruiser
+            names:
+              - Enforcer
+              - Exterminator
+              - Striker Alvatis
+          - count: 1-3
+            class: Battleship
+            names:
+              - Domination
+              - Spearhead Alvus
+      - id: commander-spawn
+        trigger:
+          on: other
+          text: Commander spawn
+          confidence: inferred
+        spawns:
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - Sentient Domination Alvus
+              - Sentient Spearhead Alvus
+            drop: Drops drone components and possibly faction modules.
+sde:
+  dungeonIds:
+    - 2198

@@ -1,0 +1,207 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: hidden-riches
+kind: escalation
+name: Hidden Riches
+dedRating: null
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Hidden Riches
+    url: https://wiki.eveuniversity.org/Hidden_Riches
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "157441"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: If True Sansha cruiser does not spawn take acceleration gate. The first three locations are usually in lowsec and the last one in nullsec but this can vary.
+loot:
+  - item: + Commander and other valuable loot
+  - item: Centum A-Type modules
+    note: From True Centum General
+  - item: Phantasm BPC
+    note: From True Centum General
+  - item: Mid-Grade implants and faction ammo/tags/modules
+    note: From True Sansha commander cruisers
+pockets:
+  - name: First Location(lowsec)
+    notes:
+      - text: You land at 0 on rats and an acceleration gate.
+    waves:
+      - id: defenders
+        trigger:
+          on: warpIn
+          text: Defenders
+        spawns:
+          - count: 3-4
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Fiend
+              - Centum Loyal Hellhound
+          - count: "1"
+            class: Commander Cruiser
+            names:
+              - True Sansha's Mutilator
+              - True Sansha's Torturer
+            triggers: Escalation trigger
+            drop: Possible True Sansha modules/implants
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Centatis Phantasm
+              - Centatis Specter
+    onWarpIn: You pick up a signal containing co-ordinates to a mysterious location. Surely, True Creations are up to something.
+  - name: First Pocket
+    notes:
+      - text: You land among some rocks and a ghost ship. There are no enemies present.
+      - text: "Escalation end: All you find are a few bits and pieces of ancient machinery and a couple of hollow structures. Marks on the floating objects and some of the debris floating around, hints to this place having recently been excavated. You have however no means of finding out by whom or where they might be by now."
+      - text: 'Escalation continuing: All you find are a few bits and pieces of ancient machinery and a couple of hollow structures. However, your instruments identify this place as one of two locations specially registered as "digs" in a database picked up from one of the ship wrecks. You set destination for the other location.'
+  - name: Second Location(lowsec)
+    notes:
+      - text: Again you land at an acceleration gate at 0 on rats.
+      - text: "Escalation message: Despite the Sansha's heroic effort to throw you off track, your instruments manage to gather enough information before the main force escapes too far away. They left before you got there, but you still know where they're heading."
+    waves:
+      - id: rats
+        trigger:
+          on: other
+          text: Rats
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Savage
+              - Centii Loyal Slavehunter
+            ewar:
+              - kind: trackingDisruption
+          - count: "1"
+            class: Commander Cruiser
+            names:
+              - True Sansha's Torturer
+            triggers: Escalation trigger
+            drop: Possible True Sansha modules/implants
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centatis Daemon
+  - name: First Pocket
+    notes:
+      - text: You land among the ruins of an Amarr station. No rats are present.
+  - name: Third Location(lowsec)
+    notes:
+      - text: You land again at 0 on the rats and another acceleration gate.
+      - text: "Escalation message: The fleeing ships are long gone and at first this seems to be a dead end. The place you have found here is yet another depleted dig of an ancient Sansha settlement and it seems like work was finished here not long ago and that whoever was digging here has left behind quite a lot of old equipment. While snooping around a bit, you find delivery records for food and household items stating they were sent to here from another nearby location."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Centior Horror
+              - Centior Monster
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Hellhound
+              - Centum Loyal Torturer
+              - Centum Loyal Fiend
+          - count: "1"
+            class: Commander Cruiser
+            names:
+              - True Sansha's Fiend
+            triggers: Escalation trigger
+            drop: Possible True Sansha faction modules/implants
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centatis Daemon
+  - name: Fourth Location(nullsec)
+    notes:
+      - text: Warping to the location lands you at an acceleration gate.
+  - name: First Pocket
+    notes:
+      - text: Acceleration gate is ~45 km away.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Minion
+              - Centii Loyal Servant
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Cruiser
+            names:
+              - Centum Fiend
+              - Centum Torturer
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Beast
+              - Centum Loyal Juggernaut
+            ewar:
+              - kind: trackingDisruption
+          - count: "4"
+            class: Battleship
+            names:
+              - Centus Mutant Lord
+              - Centus Savage Lord
+  - name: Second Pocket
+    notes:
+      - text: "Expedition end: You have stopped one group of Sanshas engaged in bolstering the revival of their Nation by digging up what is left of their old fame and riches. But you are sure there are many groups like them digging in hundreds of dark corners in the galaxy, all awaiting the triumphant return of the Sansha Nation among the empires."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 5-6
+            class: Elite Frigate
+            names:
+              - Centii Loyal Butcher
+              - Centii Loyal Manslayer
+              - Centii Loyal Plague
+          - count: "4"
+            class: Destroyer
+            names:
+              - Centior Cannibal
+              - Centior Misshape
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Fiend
+          - count: "1"
+            class: Overseer Cruiser
+            names:
+              - True Centum General
+            ewar:
+              - kind: trackingDisruption
+            triggers: Trigger for expedition end
+            drop: Centum A-Type modules and possible BPC
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Centatis Phantasm
+              - Centatis Specter
+          - count: "3"
+            class: Battleship
+            names:
+              - Centus Lord
+              - Centus Slave Lord
+sde:
+  dungeonIds:
+    - 1429

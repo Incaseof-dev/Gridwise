@@ -1,0 +1,78 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-damsel-in-distress-level-2
+kind: mission
+name: The Damsel in Distress
+level: 2
+enemyFaction: Mercenaries
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Damsel in Distress (Level 2)
+    url: https://wiki.eveuniversity.org/The_Damsel_in_Distress_(Level_2)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223633"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal: []
+  resist:
+    - thermal
+    - kinetic
+objectives:
+  - text: Infiltrate Kruul's hideout and rescue the damsel. She is currently being held inside Kruul's Pleasure Hub.
+notes:
+  - text: "Suggested ships: Cruiser"
+  - text: Pleasure Hub deals area of effect damage when blown up
+  - text: "Blitz: Destroy the Pleasure Hub, loot The Damsel, and warp out."
+pockets:
+  - name: Warp-in
+    notes:
+      - text: Triggered by aggression on Kruul
+      - text: Destroying Pleasure Hub may prevent Reinforcement from spawning
+    waves:
+      - id: initial-group-10-20km-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group, 10-20km (auto-aggro)
+        spawns:
+          - count: "8"
+            class: Frigate
+            names:
+              - Kruul's Henchman
+          - count: "1"
+            class: Cruiser
+            names:
+              - Kruul
+            triggers: Atacking Kruul triggers reinforcement
+            drop: Kruul's DNA
+      - id: reinforcement
+        trigger:
+          on: other
+          text: Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "10"
+            class: Elite Frigate
+            names:
+              - Mercenary Elite Fighter
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Kruul's Pleasure Hub
+            drop: 1x The Damsel, 10x Marines/Exotic Dancers/Tourists
+          - count: 2-3
+            class: Structure
+            names:
+              - Kruul's Slave Pens
+          - count: "4"
+            class: Structure
+            names:
+              - Communicatios Tower

@@ -1,0 +1,149 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: guristas-forsaken-hub
+kind: anomaly
+name: Guristas Forsaken Hub
+dedRating: null
+anomalyClass: 8
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Guristas Forsaken Hub
+    url: https://wiki.eveuniversity.org/Guristas_Forsaken_Hub
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "215305"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Rating: Class 8 Level 3"
+  - text: Guristas Forsaken Hub is an unrated combat site belonging to the Guristas Pirates pirate faction. It can be found via exploration as a cosmic anomaly within systems owned by the Caldari State or occupied by the Guristas Pirates. As an ungated complex, there are no limitations so up to Titans are allowed. Completing this complex may award the player with valuable Dread Guristas faction modules and ammunition.
+  - text: "This combat site consists of a single ungated pocket of space containing a variety of Frigate-, Cruiser-, Battlecruiser- and Battleship-sized enemy ships. Destroying all hostile ships does not trigger an escalation. Three other variations of this combat anomaly exist: Guristas Hub, Guristas Hidden Hub and Guristas Forlorn Hub."
+  - text: Ungated single pocket with multiple waves of rats.
+  - text: "Escalation: This site can escalate to a Dread Guristas Fleet Staging Point."
+lootNotes:
+  - text: "Bounty: 30.000.000 ISK"
+  - text: "Loot: Dread Guristas faction modules (rare) and ammunition, implants"
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-defenders-20km-away-last-kill-triggers-next-spawn
+        trigger:
+          on: warpIn
+          text: Initial defenders (20km away) (Last kill triggers next spawn)
+        spawns:
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Pithatis Death Dealer
+              - Pithatis Revolter
+              - Pithatis Assaulter
+              - Pithatis Death Executer
+          - count: 3-4
+            class: Battleship
+            names:
+              - Pith Massacrer
+              - Pith Ursurper
+      - id: first-spawn-last-kill-triggers-next-spawn
+        trigger:
+          on: other
+          text: First spawn (Last kill triggers next spawn)
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Pithatis Death Dealer
+              - Pithatis Assaulter
+              - Pithatis Death Executer
+              - Pithatis Assassin
+          - count: 3-4
+            class: Battleship
+            names:
+              - Pith Massacrer
+              - Pith Ursurper
+      - id: second-spawn-last-kill-triggers-next-spawn
+        trigger:
+          on: other
+          text: Second spawn (Last kill triggers next spawn)
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Abolisher
+              - Dire Pithum Eraser
+              - Dire Pithum Inferno
+          - count: 3-4
+            class: Battleship
+            names:
+              - Pith Massacrer
+              - Pith Ursurper
+      - id: third-spawn-last-kill-triggers-next-spawn
+        trigger:
+          on: other
+          text: Third spawn (Last kill triggers next spawn)
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Dire Pithi Imputor
+              - Dire Pithi Invader
+              - Dire Pithi Arrogator
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 3-4
+            class: Battleship
+            names:
+              - Pith Ursurper
+      - id: forth-spawn-last-kill-triggers-next-spawn
+        trigger:
+          on: other
+          text: Forth spawn (Last kill triggers next spawn)
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Eraser
+              - Dire Pithum Inferno
+              - Dire Pithum Mortifier
+          - count: 3-4
+            class: Battleship
+            names:
+              - Pith Massacrer
+              - Pith Ursurper
+      - id: fifth-spawn
+        trigger:
+          on: other
+          text: Fifth spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Dire Pithi Arrogator
+              - Dire Pithi Imputor
+              - Dire Pithi Invader
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 3-4
+            class: Battleship
+            names:
+              - Pith Massacrer
+              - Pith Ursurper
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - Dread Guristas Commander
+            group: Possible commander
+            drop: may drop Dread Guristas faction modules or an implant
+    onWarpIn: Formed by two former members of the Caldari Navy who go by the names "Fatal" and "the Rabbit," the Guristas are a constant thorn in the side of the Caldari State. Traditional pirates in the sense that their operation is not based around some creed or ideology, the Guristas are motivated by plain and simple greed. They have bases close to Caldari space, and from them they embark on daring raids, often into the State itself. Though the Guristas are considered more honorable than many of their piratical counterparts, they are still extremely dangerous and not to be trifled with.
+sde:
+  dungeonIds:
+    - 3465

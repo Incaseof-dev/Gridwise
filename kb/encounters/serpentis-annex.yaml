@@ -1,0 +1,182 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: serpentis-annex
+kind: complex
+name: Serpentis Annex
+dedRating: null
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Serpentis Annex
+    url: https://wiki.eveuniversity.org/Serpentis_Annex
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231889"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: This complex is similar to Serpentis Vigil.
+  - text: The complex is accessed by activating the acceleration gate on warp-in.
+  - text: A battleship or above is recommended for this site.
+  - text: "Escalation: This site can escalate to Serpentis Powergrid."
+loot:
+  - item: + Commander and other valuable loot
+  - item: Shadow Serpentis Battleship modules
+    note: From Mireille Pureux
+  - item: + Exploration logs
+  - item: Feb 2015
+    note: est. 40M ISK (wiki) · From Mireille Pureux
+pockets:
+  - name: First Room
+    notes:
+      - text: Destroy 2 Serpentis Bunkers and Core Drug Dealer will probably spawn. Kill him, then clear the pocket.
+      - text: "Upon killing 2 Serpentis Bunkers:: As the Serpentis hangar was destroyed, a lone ship that was docked inside barely managed to escape it's destruction."
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+            note: Serpentis Gold Tag must be provided or unknown trigger should happen.
+          - count: 2-?
+            class: Structure
+            names:
+              - Serpentis Bunker
+            triggers: Destroying 2 triggers Core Drug Dealer
+      - id: initial-forces
+        trigger:
+          on: warpIn
+          text: Initial forces
+        spawns:
+          - count: 4-6
+            class: Frigate
+            names:
+              - Coreli Guardian Protector
+              - Coreli Guardian Watchman
+              - Coreli Guardian Patroller
+              - Coreli Guardian Guard
+              - Coreli Guardian Defender
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 1-5
+            class: Destroyer
+            names:
+              - Corelior Soldier
+              - Corelior Infantry
+              - Corelior Trooper
+              - Corelior Cannoneer
+              - Corelior Sentinel
+              - Corelior Artillery
+          - count: 1-2
+            class: Battlecruiser
+            names:
+              - Corelatis Captain
+              - Corelatis Platoon Leader
+          - count: "5"
+            class: Battleship
+            names:
+              - Core Port Admiral
+          - count: 2-3
+            class: Battleship
+            names:
+              - Core Rear Admiral
+            note: Core Port/Rear Admiral use 1 x Defender Rocket.
+          - count: 2-3
+            class: Battleship
+            names:
+              - Core Flotilla
+              - Core Grand Admiral
+      - id: core-drug-dealer-wave
+        trigger:
+          on: other
+          text: Core Drug Dealer wave
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Battleship
+            names:
+              - Core Drug Dealer
+            triggers: yes (What is triggered?)
+  - name: Second Room
+    notes:
+      - text: 400px|thumb|Screenshot of initial defenders.
+    waves:
+      - id: initial-forces
+        trigger:
+          on: warpIn
+          text: Initial forces
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Coreli Guardian Protector
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 4-5
+            class: Cruiser
+            names:
+              - Corelum Guardian Chief Watchman
+              - Corelum Guardian Chief SafeGuard
+              - Corelum Guardian Chief Infantry
+              - Corelum Guardian Chief Sentinel
+              - Corelum Guardian Chief Protector
+          - count: 1-2
+            class: Battlecruiser
+            names:
+              - Corelatis Captain
+              - Corelatis Captain Sentry
+              - Wing Commander
+          - count: 7-9
+            class: Battleship
+            names:
+              - Core -
+              - Core Port
+              - Core High
+              - Core Rear
+              - Core Vice
+              - Core Flotilla Admiral
+          - count: "4"
+            class: Sentry
+            names:
+              - Tower Sentry Serpentis II
+          - count: "4"
+            class: Sentry
+            names:
+              - Tower Sentry Serpentis III
+            triggers: Agressing triggers commander wave
+          - count: "2"
+            class: Sentry
+            names:
+              - Serpentis Stasis Tower
+            ewar:
+              - kind: web
+            note: Serpentis Stasis Tower webs on 42km, probably even to 250km.
+      - id: commander-wave
+        trigger:
+          on: other
+          text: Commander Wave
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Mireille's Escort
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Mireille Pureux
+            drop: Shadow Serpentis modules
+sde:
+  dungeonIds:
+    - 1561

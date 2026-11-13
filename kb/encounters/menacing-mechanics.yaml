@@ -1,0 +1,297 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: menacing-mechanics
+kind: escalation
+name: Menacing Mechanics
+dedRating: null
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Menacing Mechanics
+    url: https://wiki.eveuniversity.org/Menacing_Mechanics
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "227534"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Unlike many escalations, rats from different pirate factions are present here.
+  - text: 'Escalation start: This drone operation was so small that it could hardly be called a "hive", there were no substantial assembly plants or other major factories here. It looked more like a maintenance station, something that does not rhyme with what you have heard about drones and how they operate, as they usually are confined to self sufficient hives and perhaps operating small resource gathering satellite ops. But a drone maintenance station, servicing several other hives or passersby is almost unheard of. After scanning through the remaining debris, your instruments gather some service logs, further supporting the idea this was an open maintenance station. Most of the serviced ships seem to have been standard drone vessels, but you can also see some entries naming ships used by humans, even though it does not say anything about who was flying them. Some of the log entries contain extra notes on these customers and among them you find something that looks like coordinates in a system not too far away.'
+pockets:
+  - name: First Location
+    notes:
+      - text: ----
+      - text: Single pocket containing drone and Guristas ships.
+      - text: Second wave is triggered without killing anything. Either timed spawn or after agressing.
+      - text: Wave 3 is triggeres by killing the commander battlecruiser.
+      - text: 'Escalation message:: This was probably the smallest Gurista hideout you ever saw and no wonder they were forced from time to time to get their ships serviced elsewhere, even though it was by rogue drones. The mystery is how they managed to get in there and out again in one piece. Usually rogue drones have only one standard response to the sighting of a carbon based life form and that is to run the "murderous rampage" script, or whatever it is that makes them go bonkers in a company where not all members are not purely held together by nuts and bolts. While this has been happening, your instruments have been analyzing the drone logs and the next location which shows any promise is already flashing on one of the panels.'
+      - text: 'Dead end message:: This was probably the smallest Gurista hideout you ever saw and no wonder they were forced from time to time to get their ships serviced elsewhere, even though it was by rogue drones. The mystery is how they managed to get in there and out again in one piece. Usually rogue drones have only one standard response to the sighting of a carbon based life form and that is to run the "murderous rampage" script, or whatever it is that makes them go bonkers in a company where not all members are not purely held together by nuts and bolts. Your systems can not find any further information of value in the drone logs.'
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Dire Pith Infilitrator
+            ewar:
+              - kind: ecm
+          - count: "1"
+            class: Commander Battlecruiser
+            names:
+              - Sentient Defeater Alvatis
+            triggers: escalation trigger. Triggers wave 3
+            drop: Rogue Drone 43-X Nexus Chip, Rogue Drone Components
+          - count: "1"
+            class: Battleship
+            names:
+              - Pith Eliminator
+            ewar:
+              - kind: ecm
+          - count: "6"
+            class: Sentry
+            names:
+              - Tower Sentry Drone III
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Strain Barracuda Alvi
+          - count: "6"
+            class: Frigate
+            names:
+              - Silverfish
+            note: type list incomplete on the source page
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Strain Raider Alvi
+          - count: "3"
+            class: Battleship
+            names:
+              - Spearhead
+              - Domination Alvus
+  - name: Second Location
+    notes:
+      - text: ----
+      - text: Single pocket.
+      - text: "Escalation message:: Another small pirate camp, this time the Sansha. The next location is lined up, who knows what you will find there..."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Striker
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Commander Battlecruiser
+            names:
+              - Sentient striker Alvatis
+            triggers: escalation trigger. Triggers wave 3
+            drop: Rogue Drone 43-X Nexus Chip (Some Times drops)
+          - count: "2"
+            class: Battleship
+            names:
+              - Domination
+              - Spearhead Alvus
+      - id: additional-defenders-very-short-timer
+        trigger:
+          on: timer
+          text: Additional defenders (very short timer)
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Hunter
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Strain Render Alvi
+            ewar:
+              - kind: web
+      - id: second-wave
+        trigger:
+          on: other
+          text: Second wave
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Strain Devilfish
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Strain Devastator Alvatis
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Siege
+            note: type list incomplete on the source page
+  - name: Third Location
+    notes:
+      - text: ----
+      - text: Single pocket.
+      - text: Wave 2 is triggered by killing all ships from initial defenders.
+      - text: "Escalation message:: Again pirates and this time Angels. It looks like the drones little operation has allowed evil doers from several different factions to reach further away from home than usual. There is one more location available from the drone logs..."
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "3"
+            class: Structure
+            names:
+              - Drone Bunker
+            triggers: Escalation trigger. Triggers wave 3
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Gistior Seizer
+              - Gistior Trasher
+          - count: "2"
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Seraphim
+          - count: "5"
+            class: Sentry
+            names:
+              - Drone Light Missile Battery
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Barracuda
+              - Devilfish Alvi
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Strain Infester
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: type list incomplete on the source page
+      - id: wave-3-commander
+        trigger:
+          on: other
+          text: Wave 3 (commander)
+          confidence: inferred
+        spawns:
+          - count: 4-7
+            class: Elite Frigate
+            names:
+              - Strain Splinter
+              - Strain Render
+              - Strain Decimator
+              - Strain Infester
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Destroyer
+            names:
+              - Marauder
+              - Dismantler Alvior
+          - count: 0-1
+            class: Commander Battlecruiser
+            names:
+              - Sentient Siege Alvatis
+            triggers: Alternate escalation trigger
+            drop: Rogue drone components, possible Sentient faction module/s or Rogue Drone 43-X Nexus Chip
+          - count: 3-4
+            class: Battleship
+            names:
+              - Alvus Ruler
+              - Supreme Alvus Parasite
+    onWarpIn: Heuristic analysis of this location indicates that destroying the Bunker would greatly improve your odds of uncovering further illicit activity.
+  - name: Fourth Location
+    notes:
+      - text: ----
+      - text: Single pocket with drone and mercenary ships. None of the destructible structures seem to trigger or drop anything.
+      - text: Initial defender information incomplete
+      - text: "Escalation end message:: Off all the evident customers, a rogue mercenary band was perhaps the least surprising consumers of the drone's services, but still, it is troubling to see any outlaw group being able to cooperate like this with a rogue drone colony."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Rogue Defender
+          - count: "1"
+            class: Frigate
+            names:
+              - Barracuda Alvi
+          - count: "5"
+            class: Frigate
+            names:
+              - Mercenary Wingman
+            ewar:
+              - kind: web
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Strain Sunder Alvi
+          - count: "1"
+            class: Destroyer
+            names:
+              - Rogue Defender
+          - count: "2"
+            class: Battleship
+            names:
+              - Mercenary Overlord
+          - count: "6"
+            class: Sentry
+            names:
+              - Drone Light Missile Battery
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Overseer Battleship
+            names:
+              - Rogue Drone Liaisons Captain
+            triggers: Escalation end
+            drop: T2 salvage
+sde:
+  dungeonIds:
+    - 1582

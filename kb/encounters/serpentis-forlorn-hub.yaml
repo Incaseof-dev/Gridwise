@@ -1,0 +1,174 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: serpentis-forlorn-hub
+kind: anomaly
+name: Serpentis Forlorn Hub
+dedRating: null
+anomalyClass: 8
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Serpentis Forlorn Hub
+    url: https://wiki.eveuniversity.org/Serpentis_Forlorn_Hub
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225108"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Serpentis Forlorn Hub is an unrated combat site belonging to the Serpentis pirate faction. It can be found via exploration as a cosmic anomaly. As an ungated complex, the limitations as to which ships can complete this site are tied to the security rating of the system where the anomaly spawns (up to Titans in low-security and null-security systems). Completing this complex may award the player with valuable True Serpentis faction modules and ammunition. This combat site consists of a single ungated pocket of space containing a variety of Frigate to Battleship-sized enemy ships.
+  - text: This site can be done in any drone boat, such as the Vexor, Vexor Navy Issue or the Gila.
+  - text: "A quick guide: When you enter the site, turn on your modules and drop drones. Then you want to move a bit away from the warp-in, drop down your Mobile Tractor Unit, start orbiting it while you attack the rats."
+  - text: You want to kill frigates first, then cruisers, battlecruiser then battleships, BUT keep an eye on what rat triggers the next wave, and leave 1 of those for last.
+  - text: "Escalation: Can escalate to the Shadow Serpentis Fleet Staging Point."
+lootNotes:
+  - text: Around 22.500.000 ISK can be collected as bounty for the pirates, with more if the Shadow Serpentis spawn.
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-spawn
+        trigger:
+          on: warpIn
+          text: Initial spawn
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Scout
+              - Coreli Guardian Spy
+              - Coreli Guardian Initiate
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "4"
+            class: Cruiser
+            names:
+              - Corelum Chief Sentinel
+              - Corelum Chief Infantry
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Corelatis Captain Sentry
+              - Corelatis High Captain
+            triggers: Last Battlecruiser triggers next wave
+          - count: 3 - 4
+            class: Battleship
+            names:
+              - Core Lord Admiral
+              - Core Grand Admiral
+      - id: 1st-reinforcement-spawn
+        trigger:
+          on: other
+          text: 1st Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 2 - 3
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Sentinel
+              - Corelum Guardian Chief Infantry
+            triggers: Last cruiser triggers next wave
+          - count: "7"
+            class: Battlecruiser
+            names:
+              - Corelatis Wing Leader
+              - Corelatis Captain
+              - Corelatis High Captain
+              - Corelatis Captain Sentry
+              - Corelatis Platoon Leader
+          - count: 3 - 4
+            class: Battleship
+            names:
+              - Core Grand Admiral
+      - id: 2nd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 2nd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Defender
+              - Coreli Guardian Protecter
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corelatis Platoon Leader
+              - Corelatis Captain Sentry
+              - Corelatis Captain
+          - count: 4 - 6
+            class: Battleship
+            names:
+              - Core Lord Admiral
+              - Core Grand Admiral
+              - Core Rear Admiral
+            triggers: Last Core Rear Admiral triggers next wave
+          - count: "2"
+            class: Battleship
+            names:
+              - Core Flotilla Admiral
+            ewar:
+              - kind: sensorDamp
+      - id: 3rd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 3rd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Spy
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Infantry
+              - Corelum Guardian Chief Sentinel
+            ewar:
+              - kind: sensorDamp
+          - count: "6"
+            class: Battleship
+            names:
+              - Core Lord Admiral
+      - id: reinforcement-spawn
+        trigger:
+          on: other
+          text: "? Reinforcement Spawn"
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Spy
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Infantry
+              - Corelum Guardian Chief Sentinel
+            ewar:
+              - kind: sensorDamp
+          - count: "6"
+            class: Battleship
+            names:
+              - Core Lord Admiral
+          - count: 0 - 1
+            class: Battleship
+            names:
+              - Shadow Serpentis Port Admiral
+            drop: Faction modules.
+    onWarpIn: The Serpentis Corporation was founded a few decades ago by V. Salvador Sarpati. At first it was engaged in hi-tech research, but with time its ties to the underworld grew, and Serpentis research stations scattered around in remote areas became notorious pirate havens. Sarpati made a deal with the Angel Cartel early on to provide protection for his stations, and this duty was eventually taken on by the Guardian Angels. Both sides have prospered enormously from this deal. - Serpentis can operate in peace, and the Angel Cartel gets access to the illegal research efforts of the Serpentis conglomerate. It is strongly believed that Serpentis is the main developer and manufacturer of illegal neural boosters, especially since Sarpati's farther was a renowned specialist in that field. The home of the Serpentis is in the Phoenix constellation in the Fountain region.
+sde:
+  dungeonIds:
+    - 3456

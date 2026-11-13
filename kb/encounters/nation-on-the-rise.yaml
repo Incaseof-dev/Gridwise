@@ -1,0 +1,452 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: nation-on-the-rise
+kind: escalation
+name: Nation on the Rise
+dedRating: null
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Nation on the Rise
+    url: https://wiki.eveuniversity.org/Nation_on_the_Rise
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "229659"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Warning: Elite NPC's do medium lite EWAR - Tracking Disruption, Web and Warp Scram."
+pockets:
+  - name: Location 1
+    notes:
+      - text: The initial ships will not auto-aggro on warp-in. You may have to fly some distance away from them to get within warp-in range of the Sansha ships.
+      - text: Warping into the site appears to sometimes prematurely trigger the second spawn, possibly due to proximity to the Sansha Control Outpost.
+      - text: Structures on site
+      - text: "Please note: No loot dropped from structures"
+    waves:
+      - id: initial-defenders-100km
+        trigger:
+          on: warpIn
+          text: Initial Defenders @ 100km
+        spawns:
+          - count: "6"
+            class: Sentry
+            names:
+              - Sansha Heavy Missile Battery (Proximity Trigger 60 km)
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Plague
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Sansha's Scout
+          - count: 0-1
+            class: Commander Frigate
+            names:
+              - True Sansha's Manslayer
+              - True Sansha's Enslaver
+            drop: Meta modules, True Sansha ammo and True Sansha tags
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Centatis Phantasm
+              - Centatis Specter
+      - id: 2nd-spawn
+        trigger:
+          on: other
+          text: 2nd Spawn
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Servant
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Cruiser
+            names:
+              - Centum Mutilator
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Hellhound
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Centatis Daemon
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "8"
+            class: Structure
+            names:
+              - Frozen Corpse
+          - count: "1"
+            class: Structure
+            names:
+              - Sansha Control Outpost
+          - count: "1"
+            class: Structure
+            names:
+              - Sansha's Eye
+          - count: "1"
+            class: Structure
+            names:
+              - Sansha's Slave Camp
+          - count: "1"
+            class: Structure
+            names:
+              - Asteroid Deadspace Slave Colony
+          - count: "1"
+            class: Structure
+            names:
+              - Asteroid Construct
+          - count: "1"
+            class: Structure
+            names:
+              - Asteroid Installation
+          - count: "1"
+            class: Structure
+            names:
+              - Asteroid Prime Colony
+          - count: "6"
+            class: Structure
+            names:
+              - Storage Facility
+          - count: "9"
+            class: Structure
+            names:
+              - Sansha Wall
+          - count: "3"
+            class: Structure
+            names:
+              - Sansha Junction
+          - count: "4"
+            class: Structure
+            names:
+              - Ruins
+    onWarpIn: All you see here are military installations and surveillance equipment, nothing that suggests this is a self sufficient base. As you warp in, a couple of ships are departing and you manage to get an approximate lock on their destination.
+  - name: Location 2
+    notes:
+      - text: "Please note: Warping out may cause the site to disappear from your Expeditions list. Bookmark the beacon to allow you to return."
+      - text: Sansha Tower Sentry III can shoot up to 250km and can deal about 200~250 dps at max range. True Sansha commander is considerably faster than the other ships and will quickly approach you.
+      - text: Structures on site
+    waves:
+      - id: initial-defenders-185km
+        trigger:
+          on: warpIn
+          text: Initial defenders @ 185km
+        spawns:
+          - count: 0-5
+            class: Sentry
+            names:
+              - Sansha Tower Sentry III
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Sansha's Scout
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Scavenger
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Minion
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Servant
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "1"
+            class: Commander Frigate
+            names:
+              - True Sansha's Manslayer
+            drop: Meta modules, True Sansha ammo and True Sansha tags
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Centatis Specter
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Centatis Phantasm
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "8"
+            class: Structure
+            names:
+              - Frozen Corpse
+          - count: "6"
+            class: Structure
+            names:
+              - Shield Generator
+          - count: "6"
+            class: Structure
+            names:
+              - Auxiliary Power Array
+          - count: "5"
+            class: Structure
+            names:
+              - Reactor Array
+          - count: "4"
+            class: Structure
+            names:
+              - Ruins
+          - count: "1"
+            class: Structure
+            names:
+              - Sansha Outpost
+          - count: "1"
+            class: Structure
+            names:
+              - Sansha's Eye
+          - count: "1"
+            class: Structure
+            names:
+              - Sansha Slave Camp
+          - count: "1"
+            class: Structure
+            names:
+              - Medium Refinery
+          - count: "1"
+            class: Structure
+            names:
+              - Asteroid Installation
+          - count: "1"
+            class: Structure
+            names:
+              - Asteroid Structure
+          - count: "1"
+            class: Structure
+            names:
+              - Asteroid Construct
+          - count: "1"
+            class: Structure
+            names:
+              - Asteroid Deadspace Slave Colony
+          - count: "1"
+            class: Structure
+            names:
+              - Asteroid Prime Colony
+          - count: "36"
+            class: Structure
+            names:
+              - Storage Facility
+    onWarpIn: This looks to be the same sort of outpost, but this time the watchers are more awake and you see a Sansha armada storm towards you. One of the ships turns away immediately though and jumps. It looks like your choices are to chase it or stay and fight.
+  - name: Location 3
+    notes:
+      - text: "Hint: If you are only interested in the Faction npc, he is considerably faster then the other ships. It is possible to simply tank the Sentry Towers and wait for him to get close."
+      - text: Warp to site
+      - text: "\"You have stumbled upon the enemy ship's scouting party. Prepare for a fight!\""
+      - text: "Please note: The Tachyon Towers have a very long range and do a decent amount of dps, even with 80%+ resists."
+      - text: Structures on site
+      - text: "Escalation message: Just before the Sansha ship blew apart, it sent out a distress call. Not that it would have helped you any, except that this call got almost an immediate reply. Your instruments have pinpointed the origins of this transmission and the resulting location glows in small, warm, orange letters on your otherwise dull looking navigation panel."
+    waves:
+      - id: initial-defenders-100km
+        trigger:
+          on: warpIn
+          text: Initial defenders @ 100km
+        spawns:
+          - count: "5"
+            class: Elite Frigate
+            names:
+              - Sansha's Scout
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Savage
+          - count: "1"
+            class: Commander Frigate
+            names:
+              - True Sansha's Devourer
+            triggers: Escalation trigger
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Centatis Specter
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Centatis Phantasm
+          - count: 0-5
+            class: Sentry
+            names:
+              - Sansha Tachyon Tower (250km Range)
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "8"
+            class: Structure
+            names:
+              - Frozen Corpse
+          - count: "4"
+            class: Structure
+            names:
+              - Ruins
+  - name: Location (Low Security)
+    notes:
+      - text: "Warning: Your ship can be freely attacked by others - NO CONCORD INTERVENTION - in Low Security Systems (0.1 to 0.4) and Null Security Systems (0.0)"
+      - text: "Hint: Always check Star Map statistics (Active ships, Ship kills, Pod kills, etc) of Low Security and Null Security systems first before entering. Fitting a Cloaking Device module on your ship and making more than one Safe spot will provide more safety."
+      - text: "Repair Drones active: The Repair Drones busily repair nearby Centus ships."
+      - text: "Repair Drones inactive: The Repair Drones busily repair nearby Centus ships, but seem to have run out of power for the time being."
+      - text: The Repair Drone cruisers will periodically remote rep all hostile NPCs in this pocket for about 50-75 DPS worth while they are active.
+      - text: "Upon attacking the Repair Drones: Centus ships have undocked from a nearby Starbase Hangar! Centus Colony General: You dare attack my repair drones! Do you know how many slaves went into building those beauties? I'll have your head on a platter delivered straight to my Master for this barbaric attack!"
+      - text: Centus Colony General will use MWD to catch up to you if you are over 40km away, so it can be kited away from the other rats with good piloting. Speed-tanking T1 cruiser with AB and 60+ km range weapons can comfortably snipe it. It does ~100 DPS EM/Th with its turrets at ranges under 20km.
+      - text: "Please note: Centus Colony General has a 9,375,000.00 ISK Bounty and can drop True Sansha and Centii A-Type modules."
+      - text: "Upon attacking the Centus Colony General: More Centus ships undock from a nearby Starbase Hangar to defend their leader!"
+      - text: Structures on site (may drop loot)
+      - text: "Upon destroying the Centus Colony General: If the Sansha outposts you passed earlier were part of some sort of a complex with this place extended as a future centerpiece, their operation in the area seems have taken on a manner more large and ambitious than you have ever seen before."
+    waves:
+      - id: initial-defenders-20-to-60km
+        trigger:
+          on: warpIn
+          text: Initial defenders @ 20 to 60km
+        spawns:
+          - count: "1"
+            class: Sentry
+            names:
+              - Sansha Stasis Tower
+            ewar:
+              - kind: web
+          - count: "6"
+            class: Sentry
+            names:
+              - Sansha Tower Sentry II
+          - count: "4"
+            class: Destroyer
+            names:
+              - Centior Devourer
+          - count: "3"
+            class: Cruiser
+            names:
+              - Centum Fiend
+          - count: "2"
+            class: Cruiser
+            names:
+              - Repair Drone
+            triggers: Attacking triggers 2nd Wave
+            note: Renamed Elite Repair Drone. Does no damage
+      - id: 2nd-wave
+        trigger:
+          on: other
+          text: 2nd Wave
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Sansha's Berserker
+              - Sansha's Demon
+            ewar:
+              - kind: web
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Mutilator
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Slaughterer
+            ewar:
+              - kind: trackingDisruption
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Torturer
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Execrator
+            ewar:
+              - kind: trackingDisruption
+          - count: "1"
+            class: Overseer Battleship
+            names:
+              - Centus Colony General
+            ewar:
+              - kind: trackingDisruption
+            triggers: Attacking triggers 3rd Wave. Destroy to end expedition
+            drop: True Sansha and Centii A-Type modules
+      - id: 3rd-wave
+        trigger:
+          on: other
+          text: 3rd Wave
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Savage
+              - Centii Loyal Slavehunter
+            ewar:
+              - kind: trackingDisruption
+          - count: "4"
+            class: Destroyer
+            names:
+              - Centior Misshape
+          - count: "4"
+            class: Cruiser
+            names:
+              - Centum Fiend
+              - Centum Hellhound
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Centatis Devil
+              - Centatis Behemoth
+              - Centatis Daemon
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "8"
+            class: Structure
+            names:
+              - Frozen Corpse
+          - count: "6"
+            class: Structure
+            names:
+              - Refining Outpost
+          - count: "5"
+            class: Structure
+            names:
+              - Repair Outpost
+          - count: "4"
+            class: Structure
+            names:
+              - Ruins
+          - count: "2"
+            class: Structure
+            names:
+              - Starbase Hangar
+          - count: "46"
+            class: Structure
+            names:
+              - Starbase Power Generator
+          - count: "36"
+            class: Structure
+            names:
+              - Sansha Wall
+          - count: "12"
+            class: Structure
+            names:
+              - Junction Asteroids
+sde:
+  dungeonIds:
+    - 1320

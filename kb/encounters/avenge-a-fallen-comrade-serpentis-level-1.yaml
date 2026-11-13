@@ -1,0 +1,70 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: avenge-a-fallen-comrade-serpentis-level-1
+kind: mission
+name: Avenge a Fallen Comrade
+level: 1
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Avenge a Fallen Comrade (Serpentis) (Level 1)
+    url: https://wiki.eveuniversity.org/Avenge_a_Fallen_Comrade_(Serpentis)_(Level_1)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "230483"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the habitat of the pirate leaders then report back to your agent.
+notes:
+  - text: "Suggested ships: Frigate"
+  - text: "Blitz: Destroy Habitat."
+  - text: No hostiles at initial gate.
+  - text: Structures drop no loot.
+pockets:
+  - name: Single pocket
+    notes:
+      - text: Group 2 aggros shortly after warp-in.
+      - text: Attacking the Habitat aggros all enemies.
+    waves:
+      - id: initial
+        trigger:
+          on: warpIn
+          text: Initial
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Coreli Agent
+              - Coreli Spy
+            group: Group 1, 60km
+          - count: "3"
+            class: Frigate
+            names:
+              - Coreli Initiate
+              - Coreli Scout
+            group: Group 2, 50km
+      - id: reinforcement-60km
+        trigger:
+          on: other
+          text: Reinforcement, 60km
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Coreli Initiate
+      - id: structures-75km-away
+        trigger:
+          on: other
+          text: Structures, 75km away
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Hangar Array
+            names:
+              - Habitat
+            triggers: Complete mission on destruction
+            note: Mission completed on destruction

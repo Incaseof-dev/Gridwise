@@ -1,0 +1,118 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: right-tool-for-the-job
+kind: mission
+name: Right Tool for the Job
+level: 4
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Right Tool for the Job
+    url: https://wiki.eveuniversity.org/Right_Tool_for_the_Job
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "230932"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Retrieve 1x FedNav F.O.F. Identifier Tag AC-106V:FNSBR
+ewar:
+  - kind: sensorDamp
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite frigates"
+  - text: 0.001 Gallente Federation Faction Standing loss; Requires a Data Analyzer
+  - text: "New Region connected to Stargate Networks by Caldari State, Scope Article, June 11th, YC 110: In yet another twist in the recent events, multiple reports are coming in of new stargates appearing in systems on the fringes of Caldari and Gallente space. It would appear that the volume of space known as Black Rise - previously thought to be completely impenetrable - has been secretly colonized by Caldari forces. Initial reports from capsuleers indicate that the new region contains a wealth of virgin systems, full of resources unexploited thus far by the four empires. Additionally, early cartography has revealed that the region opens an additional border between Caldari and Gallente sovereign space, something officials on both sides are scrambling to prepare for as they readjust strategies. Even as they do so, pod pilots both loyalist and independent are rushing into the area to stake a claim of their own. It remains unclear exactly how the phenomena shrouding this area were penetrated, or indeed how the Caldari State has managed to colonize the area in complete secrecy. State officials have so far remained tight-lipped on any details, providing no explanations. After such startling events in recent times however, and with officials from all three Empires as well as CONCORD pushing for answers on the matter, it is something they will likely have to address in the nearby future."
+  - text: Ungated deadspace pocket one jump away. Do not forget to equip a Data Analyzer.
+  - text: "Blitz: Warp at range and bounce to the Federation Navy Shipyard, destroy all the frigates guarding it, and loot the FedNav F.O.F Identifier Tag AC-106V:FNSBR (The shipyard needs to be hacked through the Data Analyzer & Hacking minigame before you can loot)."
+  - text: "Tips: You can warp in at range and land closer (or farther) from the Federation Navy Shipyard. If more than 150km away, you can warp directly to it; create a bookmark before you land so you can quickly bounce to it"
+  - text: "Tips: The Broadcast Tower Group will not shoot at you unless you get close (they will if you warp to 0)"
+  - text: "Tips: Broadcast Tower Group receives reinforcements every 2 minutes three times"
+  - text: "Tips: All ships will drop Gallente Navy Tags"
+  - text: "Tips: If you plan on tanking, destroy the Cruisers first"
+  - text: "Tips: Negligible standing loss to the Gallente Federation for destroying enemy ships"
+  - text: "Tips: Buy Caldari Prisoners of War and bring them with you so you can instantly complete the next mission"
+lootNotes:
+  - text: 12x Federation Navy Fleet Captain Insignia I
+  - text: 1x Federation Navy Fleet Colonel Insignia I
+  - text: 17x Federation Navy Fleet Colonel Insignia II
+  - text: 30x Federation Navy Fleet Major Insignia I
+  - text: 9x Federation Navy Midshipman Insignia III
+  - text: 3x Federation Navy Sergeant Insignia I
+  - text: 3x Federation Navy Sergeant Insignia II
+  - text: 14x Federation Navy Sergeant Insignia III
+pockets:
+  - name: Warp-in
+    notes:
+      - text: "Gallente Navy Forward Operations Base: Hidden away in a deadspace pocket riddled with heavy electrostatic interference, this facility doesn't seem to have been around for very long. As the compound draws nearer and the static begins to dissipate, the scanner fills with the signatures of Federation Navy ships, suggesting they are using it as a staging point for incursions deeper into State space. All of the targets Sinas mentioned appear to be present. This is definitely the place."
+    waves:
+      - id: broadcast-tower-group-full-spawn-32km
+        trigger:
+          on: other
+          text: Broadcast Tower Group (full spawn, 32km)
+          confidence: inferred
+        spawns:
+          - count: "8"
+            class: Frigate
+            names:
+              - Federation Praktor Belos
+          - count: "7"
+            class: Elite Frigate
+            names:
+              - Elite Federation Machina
+            note: type list incomplete on the source page
+          - count: "5"
+            class: Destroyer
+            names:
+              - Federation Arcus
+            note: type list incomplete on the source page
+          - count: "9"
+            class: Elite Cruiser
+            names:
+              - Elite Federation Arx
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Federation Praktor Bearcus
+            note: type list incomplete on the source page
+          - count: "13"
+            class: Battleship
+            names:
+              - Federation Covinus
+            note: type list incomplete on the source page
+      - id: federation-navy-shipyard-group-63km
+        trigger:
+          on: other
+          text: Federation Navy Shipyard Group (63km)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Elite Federation Manica
+            ewar:
+              - kind: warpDisruption
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Elite Federation Matara
+            ewar:
+              - kind: sensorDamp
+          - count: "5"
+            class: Elite Frigate
+            names:
+              - Elite Federation Arcus
+      - id: structures-70-km
+        trigger:
+          on: other
+          text: Structures (70 km)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Container
+            names:
+              - Federation Navy Shipyard
+            drop: FedNav F.O.F Identifier Tag AC-106V:FNSBR

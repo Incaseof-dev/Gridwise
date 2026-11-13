@@ -1,0 +1,41 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: fair-play-now-bite
+kind: mission
+name: Fair Play - Now Bite
+level: 1
+enemyFaction: Mercenaries
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Fair Play - Now Bite
+    url: https://wiki.eveuniversity.org/Fair_Play_-_Now_Bite
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223311"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Steal 10x Bandinite (1.0 m3)
+notes:
+  - text: This mission is part 3 of the mission chain Fair Play
+  - text: "Walkthrough: When you warp in there will be three miners mining with a cargo container containing 10 units of Bandine"
+  - text: "Walkthrough: Approach the cargo container and take the contents, upon which the miners will start to aggress you"
+  - text: "Walkthrough: Destroy the miners if you want to and return to your agent with the ore"
+  - text: "Blitz: Take the contents of the cargo container and return to your agent"
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: "Agent's comments on completion of mission:"
+      - text: '"Hah! I wish I could have seen their faces!"'
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Mercenary Rookie Miner

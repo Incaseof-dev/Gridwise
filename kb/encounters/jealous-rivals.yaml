@@ -1,0 +1,95 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: jealous-rivals
+kind: mission
+name: Jealous Rivals
+level: 4
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Jealous Rivals
+    url: https://wiki.eveuniversity.org/Jealous_Rivals
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231755"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: "Eliminate any and all Guristas. Find proof of Amarr involvement in the attack, if there is any. Acquire these goods: Damning Evidence (1,0)"
+notes:
+  - text: Single ungated pocket.
+  - text: "Notes: If no container drops from the last NPC killed, the objective will appear in your ship's cargohold."
+  - text: "Notes: Drones get aggro."
+lootNotes:
+  - text: "Loot: ± 10 Mil ISK"
+  - text: "Salvage: ± 1.7 Mil ISK"
+  - text: "Bounty: ± 18.5 Mil ISK"
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-spawn
+        trigger:
+          on: warpIn
+          text: Initial Spawn
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Dire Pithi Demolisher
+              - Dire Pithi Wrecker
+          - count: 3-4
+            class: Battleship
+            names:
+              - Pith Massacrer
+              - Pith Usurper
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Dire Pithum Abolisher
+              - Dire Pithum Mortifier
+              - Dire Pithum Inferno
+          - count: "3"
+            class: Battleship
+            names:
+              - Pith Massacrer
+              - Pith Usurper
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Pithatis Assassin
+              - Pithatis Revolter
+          - count: 3-4
+            class: Battleship
+            names:
+              - Pith Usurper
+              - Pith Massacrer
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Pithatis Executor
+              - Pithatis Revolter
+          - count: 3-4
+            class: Battleship
+            names:
+              - Pith Usurper
+              - Pith Massacrer

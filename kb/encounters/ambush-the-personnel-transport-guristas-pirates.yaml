@@ -1,0 +1,41 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: ambush-the-personnel-transport-guristas-pirates
+kind: mission
+name: Ambush the Personnel Transport
+level: 3
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Ambush the Personnel Transport (Guristas Pirates)
+    url: https://wiki.eveuniversity.org/Ambush_the_Personnel_Transport_(Guristas_Pirates)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191557"
+defaults:
+  confidence: verified
+  source: uni
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: Cargo Container appears after last rat is killed. Battleships contain other livestock class items which have little value but can be fun sometimes.
+    waves:
+      - id: single-pocket
+        trigger:
+          on: other
+          text: Single pocket
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Name not reported
+          - count: "3"
+            class: Cruiser
+            names:
+              - Name not reported
+          - count: "3"
+            class: Battleship
+            names:
+              - Khanid Personnel Transport

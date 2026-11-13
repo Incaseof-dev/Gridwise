@@ -1,0 +1,143 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: guristas-forlorn-rally-point
+kind: anomaly
+name: Guristas Forlorn Rally Point
+dedRating: null
+anomalyClass: 6
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Guristas Forlorn Rally Point
+    url: https://wiki.eveuniversity.org/Guristas_Forlorn_Rally_Point
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "157599"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Rating: Class 6 Level 4"
+  - text: Ungated pocket with multiple waves of rats.
+  - text: "Escalation: This site can escalate to Pith's Penal Complex."
+  - text: "Escalation: Pith's Penal Complex: Your scanner has picked up a transmission originating from a nearby system. It would be wise to investigate this mysterious signal further."
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "6"
+            class: Destroyer
+            names:
+              - Pithior Guerilla
+              - Pithior Renegade
+              - Pithior Supremacist
+              - Pithior Terrorist
+          - count: "4"
+            class: Cruiser
+            names:
+              - Pithum Inferno
+              - Pithum Mortifier
+            triggers: Last one killed triggers first spawn
+      - id: first-spawn
+        trigger:
+          on: other
+          text: First spawn
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Cruiser
+            names:
+              - Pithum Inferno
+              - Pithum Mortifier
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Pithatis Enforcer
+              - Pithatis Assaulter
+            triggers: Last one killed triggers second spawn
+          - count: 3-4
+            class: Battleship
+            names:
+              - Pith Dismantler
+              - Pith Exterminator
+              - Pith Extinguisher
+      - id: second-spawn
+        trigger:
+          on: other
+          text: Second spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Cruiser
+            names:
+              - Pithum Abolisher
+              - Pithum Eraser
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Pithatis Revolter
+              - Pithatis Death Dealer
+            triggers: Last one killed triggers third spawn
+          - count: "3"
+            class: Battleship
+            names:
+              - Pith Eliminator
+              - Pith Exterminator
+            ewar:
+              - kind: ecm
+      - id: third-spawn
+        trigger:
+          on: other
+          text: Third spawn
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Abolisher
+              - Dire Pithum Eraser
+              - Dire Pithum Inferno
+              - Dire Pithum Mortifier
+            triggers: Last one killed triggers fourth spawn
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Pithatis Revolter
+              - Pithatis Death Dealer
+          - count: "4"
+            class: Battleship
+            names:
+              - Pith Conquistador
+              - Pith Destroyer
+      - id: fourth-spawn
+        trigger:
+          on: other
+          text: Fourth spawn
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Abolisher
+              - Dire Pithum Eraser
+          - count: "4"
+            class: Battleship
+            names:
+              - Pith Conquistador
+              - Pith Destroyer
+          - count: 0-1
+            class: Commander Cruiser
+            names:
+              - Dread Guristas Inferno
+              - Dread Guristas Mortifier
+            group: Possible commander
+            drop: may contain Dread Guristas faction modules or an implant
+    onWarpIn: Formed by two former members of the Caldari Navy who go by the names "Fatal" and "the Rabbit," the Guristas are a constant thorn in the side of the Caldari State. Traditional pirates in the sense that their operation is not based around some creed or ideology, the Guristas are motivated by plain and simple greed. They have bases close to Caldari space, and from them they embark on daring raids, often into the State itself. Though the Guristas are considered more honorable than many of their piratical counterparts, they are still extremely dangerous and not to be trifled with.
+sde:
+  dungeonIds:
+    - 3448

@@ -1,0 +1,189 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-blockade-angel-cartel-level-3
+kind: mission
+name: The Blockade
+level: 3
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Blockade (Angel Cartel) (Level 3)
+    url: https://wiki.eveuniversity.org/The_Blockade_(Angel_Cartel)_(Level_3)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "205299"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal: []
+  resist:
+    - explosive
+    - kinetic
+objectives:
+  - text: Eliminate the leader of the pirates blockading the stargate. You will be informed when he has been dispatched, his demise should disperse the pirate gang eventually.
+ewar:
+  - kind: web
+  - kind: targetPaint
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Arch Gistii Elite Frigates"
+  - text: "Suggested ships: Drake (400+ explosive tank and/or 50k+ combat range required)"
+  - text: "Blitz: Kill all the triggers, then the final BC. Make sure your tank can take the DPS."
+  - text: "Tip: There is a confirmed chance of a spawning Domination Breaker."
+  - text: Structures drop no loot
+  - text: "Asteroids: Veldspar - 120 asteroids (15,000 - 65,000 units each closely packed) Warning: There are reports that the asteroids are trapped with smartbombs."
+pockets:
+  - name: Warp-in
+    waves:
+      - id: initial-spawn-auto-aggro-15-20km
+        trigger:
+          on: warpIn
+          text: Initial Spawn (Auto Aggro, 15-20km)
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Arch Gistii Nomad
+              - Arch Gistii Ruffian
+            ewar:
+              - kind: web
+              - kind: targetPaint
+              - kind: warpDisruption
+          - count: "4"
+            class: Destroyer
+            names:
+              - Gistior Defiler
+              - Gistior Haunter
+            triggers: A random ship of this group is the trigger
+          - count: "1"
+            class: Sentry
+            names:
+              - Stasis Tower
+            ewar:
+              - kind: web
+      - id: 1st-wave-spawns-as-3-groups-95-135km
+        trigger:
+          on: other
+          text: 1st Wave (Spawns as 3 groups, 95-135km)
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Battlecruiser
+            names:
+              - Gistatis Praefectus
+              - Gistatis Tribuni
+            group: Group 1
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Gistum Centurion
+              - Gistum Phalanx
+            group: Group 2
+          - count: 2-3
+            class: Destroyer
+            names:
+              - Gistior Defacer
+              - Gistior Haunter
+              - Gistior Trasher
+              - Gistior Defiler
+            group: Group 3
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Gistatis Legionnaire
+              - Gistatis Praefectus
+              - Gistatis Primus
+              - Gistatis Tribuni
+            group: Group 3
+            triggers: Singleton is trigger
+      - id: 2nd-wave-spawns-as-2-groups-90-125km
+        trigger:
+          on: other
+          text: 2nd Wave (Spawns as 2 groups, 90-125km)
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Liquidator
+              - Arch Gistum Marauder
+            group: Group 1
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Gistatis Legionnaire
+              - Gistatis Primus
+            group: Group 1
+          - count: 3-4
+            class: Destroyer
+            names:
+              - Gistior Defacer
+              - Gistior Defiler
+              - Gistior Haunter
+              - Gistior Shatterer
+            group: Group 2
+          - count: 4-5
+            class: Battlecruiser
+            names:
+              - Gistatis Legionnaire
+              - Gistatis Primus
+              - Gistatis Praefectus
+              - Gistatis Seizer
+              - Gistatis Tribunus
+            group: Group 2
+            triggers: Singleton is trigger
+      - id: 3rd-wave-spawns-as-2-groups-110-130km
+        trigger:
+          on: other
+          text: 3rd Wave (Spawns as 2 groups, 110-130km)
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Gistum Centurion
+              - Gistum Marauder
+              - Gistum Phalanx
+            group: Group 1
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Gistatis Praefectus
+            group: Group 1
+          - count: 3-4
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Breaker
+              - Arch Gistum Crusher
+            group: Group 2
+          - count: 4-5
+            class: Battlecruiser
+            names:
+              - Gistatis Legionnaire
+              - Gistatis Primus
+              - Gistatis Tribuni
+            group: Group 2
+            triggers: Singleton is trigger, if no singleton a Gistatis Primus is the trigger
+      - id: 4th-wave-spawns-as-a-single-group-30-40km
+        trigger:
+          on: other
+          text: 4th Wave (Spawns as a single group, 30-40km)
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Arch Gistii Nomad
+              - Arch Gistii Ruffian
+            ewar:
+              - kind: web
+              - kind: targetPaint
+              - kind: warpDisruption
+          - count: 4-5
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+              - Gistatis Tribunus
+            triggers: Tribunus is the mission objective

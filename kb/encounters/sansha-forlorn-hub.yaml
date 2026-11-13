@@ -1,0 +1,145 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: sansha-forlorn-hub
+kind: anomaly
+name: Sansha Forlorn Hub
+dedRating: null
+anomalyClass: 8
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Sansha Forlorn Hub
+    url: https://wiki.eveuniversity.org/Sansha_Forlorn_Hub
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225126"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Sansha Forlorn Hub is an unrated combat site belonging to the Sansha's Nation pirate faction. It can be found via exploration as a cosmic anomaly within systems owned by the Amarr Empire or occupied by the Sansha's Nation. As an ungated complex, the limitations as to which ships can complete this site are tied to the security rating of the system where the anomaly spawns (up to Titans in low-security and null-security systems). Completing this complex may award the player with valuable True Sansha faction modules and ammunition. This combat site consists of a single ungated pocket of space containing a variety of Frigate to Battleship-sized enemy ships.
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Centii Loyal Servant
+              - Centii Loyal Scavenger
+              - Centii Loyal Minion
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "4"
+            class: Cruiser
+            names:
+              - Centum Fiend
+              - Centum Hellhound
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centatis Daemon
+            triggers: "Triggers Wave #1"
+          - count: "4"
+            class: Battleship
+            names:
+              - Centus Dread Lord
+              - Centus Tyrant
+      - id: wave-1
+        trigger:
+          on: other
+          text: "Wave #1"
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Cruiser
+            names:
+              - Centum Hellhound
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Fiend
+              - Centum Loyal Hellhound
+            triggers: "Triggers Wave #2"
+          - count: "7"
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centatis Phantasm
+              - Centatis Daemon
+              - Centatis Wraith
+          - count: 3-6
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Dread Lord
+      - id: wave-2
+        trigger:
+          on: other
+          text: "Wave #2"
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Manslayer
+            ewar:
+              - kind: trackingDisruption
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Centatis Devil
+              - Centatis Daemon
+              - Centatis Behemoth
+              - Centatis Wraith
+          - count: 4-5
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Dread Lord
+              - Centus Beast Lord
+          - count: "1"
+            class: Battleship
+            names:
+              - Centus Plague Lord
+            ewar:
+              - kind: trackingDisruption
+          - count: 2-3
+            class: Battleship
+            names:
+              - Centus Savage Lord
+            ewar:
+              - kind: trackingDisruption
+            triggers: "Triggers Wave #3"
+      - id: wave-3
+        trigger:
+          on: other
+          text: "Wave #3"
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Ravener
+              - Centii Scavenger
+            ewar:
+              - kind: web
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Fiend
+              - Centum Loyal Hellhound
+          - count: "6"
+            class: Battleship
+            names:
+              - Centus Tyrant
+sde:
+  dungeonIds:
+    - 3455

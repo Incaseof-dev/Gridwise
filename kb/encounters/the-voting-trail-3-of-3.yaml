@@ -1,0 +1,68 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-voting-trail-3-of-3
+kind: mission
+name: The Voting Trail (3 of 3)
+level: 2
+enemyFaction: Caldari State
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Voting Trail (3 of 3)
+    url: https://wiki.eveuniversity.org/The_Voting_Trail_(3_of_3)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223201"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Suggested ships: Destroyer"
+  - text: Ships here are Caldari, killing them will result in a standing loss.
+  - text: "Blitz: Destroy the Caldari Tower."
+  - text: Destroying the Caldari Tower does not appear to incur a Faction Standing loss to the Caldari State. (Confirmed 2021-08-26)
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - State Katana
+              - State Nagasa
+              - State Shinai
+            triggers: Reinforcement 1
+          - count: "1"
+            class: Structure
+            names:
+              - Caldari Starbase Control Tower
+            note: Mission objective
+      - id: reinforcement-1
+        trigger:
+          on: other
+          text: Reinforcement 1
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - State Katana
+              - State Nagasa
+              - State Shinai
+            triggers: Reinforcement 2
+      - id: reinforcement-2
+        trigger:
+          on: other
+          text: Reinforcement 2
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - State Katana
+              - State Nagasa
+              - State Shinai

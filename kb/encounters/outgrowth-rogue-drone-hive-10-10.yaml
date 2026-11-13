@@ -1,0 +1,506 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: outgrowth-rogue-drone-hive-10-10
+kind: complex
+name: Outgrowth Rogue Drone Hive
+dedRating: 10
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Outgrowth Rogue Drone Hive (10/10)
+    url: https://wiki.eveuniversity.org/Outgrowth_Rogue_Drone_Hive_(10/10)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "229386"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: T2 Battleship"
+notes:
+  - text: Outgrowth Rogue Drone Hive is a DED 10/10 rated combat site that is found in null security space.
+  - text: This site can be found by scanning cosmic signatures or as an escalation from Drone Squad, Drone Patrol, or Drone Horde.
+  - text: Note that the DED 5/10 Rogue Drone site found in low is also called Outgrowth Rogue Drone Hive. See Outgrowth Rogue Drone Hive (5/10) for details on that. The two sites are very similar.
+loot:
+  - item: 9th Tier Overseer's Effects
+    from: Deserted Starbase Storage Facility
+    note: est. 2.1M ISK (wiki) · 100% drop rate
+  - item: 11th Tier Overseer's Effects
+    from: Industrial Derelict
+    note: est. 6.3M ISK (wiki) · 100% drop rate
+  - item: 19th Tier Overseer's Effects
+    from: Kuari Drone Swarm Defense Battery
+    note: est. 51.6M ISK (wiki) · 100% drop rate
+  - item: 19th Tier Overseer's Effects
+    from: Kuari Drone Surpreme Hive Defender
+    note: est. 51.6M ISK (wiki) · 100% drop rate
+  - item: 23rd Tier Overseer's Effects
+    from: Kuari Strain Mother
+    note: est. 133M ISK (wiki) · 100% drop rate
+lootNotes:
+  - text: You will get Overseer's Personal Effects, mineral alloys and T2 salvage.
+  - text: The loot value ranges from 280M to 450M ISK on average. However, the reward is always guaranteed.
+pockets:
+  - name: First Pocket
+    notes:
+      - text: ----
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Barracuda Alvi
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Strain Decimator Alvi
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "7"
+            class: Cruiser
+            names:
+              - Disintegrator
+              - Violator Alvum
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Enforcer Alvatis
+          - count: "3"
+            class: Battleship
+            names:
+              - Elite Drone Parasite
+            drop: Elite Drone AI
+          - count: "7"
+            class: Battleship
+            names:
+              - Patriarch
+              - Matriarch Alvus
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Ancient Acceleration Gate
+          - count: "1"
+            class: Container
+            names:
+              - Deserted Starbase Storage Facility
+            drop: 9th Overseer's Personal Effects and bunch of mineral alloys
+    onWarpIn: "This deadspace complex once held a great naval installation, but after a strain of rogue drones attacked and seized the complex, little remains from any human inhabitation. The sector has now been taken over for an outgrowth hive of the strain, though it is not developed enough to count as a true mother hive. DED Threat Assessment: Dangerous (10 of 10)"
+  - name: Second Pocket
+    notes:
+      - text: ----
+      - text: The room contains two acceleration gates. Ancient acceleration gate will take you to the third room while the surging acceleration gate will take you straight to fourth room but requires Plasma Physics to use. It also requires Zbikoki's Hacker Card (consumed on use) found in The Right Hand of Zazzmatazz. In a fleet only one member needs to have the hacker card. Once opened the gate will stay open for 10 seconds an allow passage to everyone with the required skill without requiring new hacker card.
+      - text: The Surging Acceleration Gate can be used to blitz the site by skipping the fourth and fifth pockets, but you will miss out on some of the site's loot. If you want the full loot from the site, take the Ancient Acceleration Gate.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "10"
+            class: Battlecruiser
+            names:
+              - Striker Alvatis
+          - count: "9"
+            class: Battleship
+            names:
+              - Alvus Queen
+              - Matriarch Alvus
+              - Patriarch Alvus
+          - count: "6"
+            class: Battleship
+            names:
+              - Elite Drone Parasite
+            drop: Elite Drone AI
+          - count: "1"
+            class: Overseer Battleship
+            names:
+              - Infested Kuavi Overseer
+            drop: Wreck can contain drone compounds and may produce Tech 2 salvage
+          - count: "8"
+            class: Sentry
+            names:
+              - Drone Wall Sentry Gun
+          - count: "3"
+            class: Sentry
+            names:
+              - Drone Point Defense Battery
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Ancient Acceleration Gate
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Surging Acceleration Gate
+            note: Requires Plasma Physics IV
+          - count: "3"
+            class: Container
+            names:
+              - Rogue Drone Mineral Storage
+            drop: Minerals and drone alloys
+          - count: "3"
+            class: Container
+            names:
+              - Abandoned Container
+            drop: T1 ammo
+    onWarpIn: This outer section of the complex shows stark signs of the rogue drone infestation. The few human station structures that used to occupy this pocket have been reduced to debris, safe for a single storage facility. Odd drone-built constructions dominate the scene, serving as maintenance platforms for the resident automated machinery. Scouts have reported the acceleration gate being actively scrambled by the local defense force, requiring total elimination of drones before it is possible to continue deeper into the complex.
+  - name: Third Pocket (Ancient Acceleration Gate)
+    notes:
+      - text: ----
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Barracuda
+              - Devilfish Alvi
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Strain Decimator Alvi
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "7"
+            class: Battlecruiser
+            names:
+              - Striker Alvatis
+          - count: "6"
+            class: Battleship
+            names:
+              - Alvus Queen
+              - Matriarch Alvus
+              - Patriarch Alvus
+          - count: "1"
+            class: Sentry
+            names:
+              - Drone Energy Neutralizer
+            ewar:
+              - kind: neut
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+          - count: "1"
+            class: Container
+            names:
+              - Industrial Derelict
+            drop: 11th Tier Overseer's Personal Effects and bunch of mineral alloys.
+    onWarpIn: This pocket appears to serve as the main defense gauntlet into the complex. The primary acceleration gate is locked by an encrypted passcode, normally stored by one of the resident master drones. Another gate lies at the pocket's border, this one with a serious plasma leak that renders it all but useless for anyone not knowledgeable in the field of plasma physics. It has been speculated that this other gate may provide a shortcut to another pocket deep inside the sprawling complex.
+  - name: Third Pocket (Surging Acceleration Gate)
+    notes:
+      - text: ----
+      - text: The acceleration gate in this room leads to sixth room.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Barracuda
+              - Devilfish Alvi
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Strain Decimator Alvi
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Striker Alvatis
+          - count: "6"
+            class: Battleship
+            names:
+              - Alvus Queen
+              - Matriarch Alvus
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Sentient Alvus Queen
+            drop: Rogue Drone components and possibly Elite Drone AI
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+          - count: "10"
+            class: Container
+            names:
+              - Drone Collected Flotsam
+            drop: may contain meta modules
+    onWarpIn: "This section used to be a small navy base specializing in plasma weapon research. The station's torn superstructure still floats around the swarming new inhabitants, emitting hazardous plasma leaks. The pocket's acceleration gate is frequently scrambled by the local drone force. Appendix: Old reports from the time the complex is thought to have been overtaken by the rogue drone strain say that at the time an infamous band of pirates were seen docking at the station, loading a secret cargo into their industrial ships. Some have speculated that the pirates summoned the drones here, intending to wipe out the complex after they had stolen all of its valuable equipment. Whether that's truly the case remains uncertain, but what is certain is that a few derelict industrial ships remain within the pocket, cluttered with the frozen bodies of known criminals."
+  - name: Fourth Pocket
+    notes:
+      - text: ----
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Barracuda
+              - Devilfish Alvi
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Strain Decimator
+              - Strain Render Alvi
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Striker Alvatis
+          - count: "13"
+            class: Battleship
+            names:
+              - Alvus Queen
+              - Matriarch Alvus
+              - Patriarch Alvus
+          - count: "1"
+            class: Battleship
+            names:
+              - Elite Drone Parasite
+            drop: Elite Drone AI
+          - count: "1"
+            class: Overseer Battleship
+            names:
+              - Kuari Swarm Parasite Worker Drone
+            drop: Mineral alloys.
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+          - count: "3"
+            class: Container
+            names:
+              - Abandoned Container
+            drop: T1 Ammo and Drones.
+          - count: "3"
+            class: Container
+            names:
+              - Rogue Drone Container
+            drop: 800x Pyerite & 800x Isogen.
+          - count: "1"
+            class: Container
+            names:
+              - Old Supply Stockpile
+            drop: T1 Ammo.
+          - count: "2"
+            class: Container
+            names:
+              - Cache Container
+            drop: T1 Ammo and Drones.
+    onWarpIn: No data is available concerning this pocket of the complex. Sensors have detected massive radiation emanating from this part of space.
+  - name: Fifth Pocket
+    notes:
+      - text: ----
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Barracuda
+              - Devilfish Alvi
+          - count: 0-1
+            class: Elite Frigate
+            names:
+              - Strain Decimator
+              - Strain Render Alvi
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Striker Alvatis
+          - count: "14"
+            class: Battleship
+            names:
+              - Alvus Queen
+              - Matriarch Alvus
+          - count: "1"
+            class: Battleship
+            names:
+              - Elite Drone Parasite
+            drop: Elite Drone AI
+          - count: "1"
+            class: Sentry
+            names:
+              - Kuari Drone Swarm Defense Battery
+            drop: 19th Overseer's Personal Effect and drone alloys.
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+    onWarpIn: According to DED reconnaissance officer Jen Maynor, this pocket functions as a storage area for captured equipment and construction minerals for the drone hive.
+  - name: Sixth Pocket
+    notes:
+      - text: ----
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Barracuda
+              - Devilfish Alvi
+          - count: 0-1
+            class: Elite Frigate
+            names:
+              - Strain Decimator
+              - Strain Render Alvi
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "8"
+            class: Battlecruiser
+            names:
+              - Striker Alvatis
+          - count: "6"
+            class: Battleship
+            names:
+              - Alvus Queen
+          - count: "1"
+            class: Overseer Battleship
+            names:
+              - Kuari Drone Surpreme Hive Defender
+            drop: 19th Tier Overseer's Personal Effects and bunch of mineral alloys.
+          - count: "4"
+            class: Sentry
+            names:
+              - Drone Point Defense Battery
+          - count: "4"
+            class: Sentry
+            names:
+              - Drone Heavy Missile Battery
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+          - count: "4"
+            class: Container
+            names:
+              - Rogue Drone Container
+            drop: Minerals and drone alloys.
+    onWarpIn: This area has been reported to be heavily defended by a large force of rogue drones. Although many of the automated machines are light and do not carry much heavy weaponry, DED advises pilots to be on high alert. It appears to be a pre-departure rendezvous point for excursion swarms and raiding forces. The acceleration gate is actively scrambled by the resident forces, denying anyone entrance while there's at least a single drone left with an open scrambling frequency.
+  - name: Seventh Pocket
+    notes:
+      - text: ----
+      - text: The Kuari Strain Mother has very strong active shield repairers and large amount of hull HP. Also note that it has very long range webs that reach to 50 km.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 2-6
+            class: Frigate
+            names:
+              - Raider
+              - Hunter Alvi
+          - count: 0-4
+            class: Elite Frigate
+            names:
+              - Strain Splinter Alvi
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 4-6
+            class: Cruiser
+            names:
+              - Bomber Alvum
+          - count: "10"
+            class: Battlecruiser
+            names:
+              - Striker Alvatis
+          - count: "6"
+            class: Battleship
+            names:
+              - Alvus Queen
+          - count: "4"
+            class: Battleship
+            names:
+              - Hive Defender
+            drop: Elite Drone AI
+          - count: "3"
+            class: Sentry
+            names:
+              - Drone Cruise Missile Battery
+          - count: "1"
+            class: Sentry
+            names:
+              - Drone Energy Neutralizer Sentry
+            ewar:
+              - kind: neut
+          - count: "1"
+            class: Sentry
+            names:
+              - Kuari Strain Mother
+            ewar:
+              - kind: web
+            drop: 23th Tier Overseer's Personal Effects and T2 salvage.
+    onWarpIn: This pocket contains the final acceleration gate leading into the mother hive itself. Reports speak of multiple sentry guns and cruise missile batteries installed in this heavily guarded security pocket.
+sde:
+  dungeonIds:
+    - 2247

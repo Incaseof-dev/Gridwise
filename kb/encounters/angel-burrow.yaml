@@ -1,0 +1,91 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: angel-burrow
+kind: anomaly
+name: Angel Burrow
+dedRating: null
+anomalyClass: 2
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Angel Burrow
+    url: https://wiki.eveuniversity.org/Angel_Burrow
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225133"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Single normal space pocket. Auto-aggression from each wave. The last ship killed triggers the next wave. Waves spawn at 30 to 60km from warp-in.
+  - text: "Escalation: Needs information"
+lootNotes:
+  - text: Needs information
+  - text: Edit by Someone001
+  - text: The loot would be in range of 10k to 20k ISK and the bounty would be 50k to 60k ISK.
+  - text: "Warning: these information is not official, this is counted by me."
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Gistii Ambusher
+            note: type list incomplete on the source page
+      - id: 1st-reinforcement-spawn
+        trigger:
+          on: other
+          text: 1st Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 3- 4
+            class: Frigate
+            names:
+              - Gistii Ambusher
+            note: type list incomplete on the source page
+      - id: 2nd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 2nd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Gistii Ambusher
+            note: type list incomplete on the source page
+      - id: 3rd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 3rd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Gistii Ambusher
+            note: type list incomplete on the source page
+      - id: 4th-reinforcement-spawn
+        trigger:
+          on: other
+          text: 4th Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Gistii Ambusher
+            note: type list incomplete on the source page
+          - count: 0-1
+            class: Commander Frigate
+            names:
+              - Domination Outlaw
+sde:
+  dungeonIds:
+    - 2209

@@ -1,0 +1,123 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: their-loss-our-profit
+kind: mission
+name: Their Loss, Our Profit
+level: 4
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Their Loss, Our Profit
+    url: https://wiki.eveuniversity.org/Their_Loss%2C_Our_Profit
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "206305"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the Hyasyoda Research Facility and recover 1x S.I Formula Sheet (0.1 m3).
+notes:
+  - text: 3% Serpentis Faction Standing loss; 15M ISK in Bounties
+  - text: "Bad Habits: Rivalry among the corporations of the Caldari State is a daily reality, even today. The breakdown of relations with the Federation, opportunistic Guristas invasions and countless other problems facing the Caldari people have done little to ease inter-corporate tensions, some of which predate the existence of the State itself. In other situations, rather than unifying the Caldari people, external threats only cause further divisiveness, and it is not uncommon for such issues to be leapt upon and twisted towards serving the agenda of one corporation or another. Survival within the harsh political arenas of the State requires a mastery of political cunning. To succeed requires even more – not only the ability to deeply understand events, but the capacity to shape them as well."
+  - text: Accept the Mission remotely.
+  - text: Ungated semi-deadspace pocket one jump away in Obanen (or Liekuri?).
+  - text: "Blitz: destroy the Hyasyoda Research Facility and pick up the S.I Formula Sheet."
+  - text: "Tips: You do not need to destroy any ship"
+  - text: "Tips: If you can't survive the incoming damage destroy a few Battleships, but make sure to leave one Core High Admiral alive"
+  - text: "Tips: Hyasyoda Research Facility has about 150 000 Hitpoints and 0% resistance"
+  - text: "Tips: You will lose 3% Serpentis Faction Standing when you destroy the Hyasyoda Research Facility"
+  - text: "Tips: You can freely warp inside the rooms"
+pockets:
+  - name: Warp-in
+    notes:
+      - text: "Hyasyoda Research Facility: You are entering a private facility owned and operated by Hyasyoda Corporation. Unauthorized visitors will be forcibly removed from the premises. This is your only warning."
+      - text: "Malfunctioning Security Warning: … entering … facility owned and operated by Hyasyoda … will be forcibly … is your only … unknown breach in … deploying countermeasures … unknown breach in … deploying countermeasures …"
+    waves:
+      - id: initial-defenders-100-km
+        trigger:
+          on: warpIn
+          text: Initial defenders (100 km)
+        spawns:
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Infantry
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Battleship
+            names:
+              - Core Admiral
+              - Core Rear Admiral
+          - count: "2"
+            class: Battleship
+            names:
+              - Core High Admiral
+            triggers: Last one triggers wave 1
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Protector
+            group: Wave 1
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Battleship
+            names:
+              - Core Admiral
+            group: Wave 1
+          - count: "3"
+            class: Battleship
+            names:
+              - Core High Admiral
+            group: Wave 1
+            triggers: Last one triggers wave 2
+          - count: "5"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Protector
+            group: Wave 2
+            ewar:
+              - kind: warpDisruption
+            note: type list incomplete on the source page
+          - count: "5"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Infantry
+            group: Wave 2
+            note: type list incomplete on the source page
+          - count: "4"
+            class: Battleship
+            names:
+              - Core Rear Admiral
+            group: Wave 2
+            ewar:
+              - kind: sensorDamp
+            note: type list incomplete on the source page
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Container
+            names:
+              - Hyasyoda Security Compound
+            drop: 1x Hyasyoda Captain corpse
+          - count: "1"
+            class: Structure
+            names:
+              - Hyasyoda Research Facility
+            triggers: 50% shield spawns Guards
+            drop: Drops mission objective 1x S.I Formula Sheet
+      - id: guards
+        trigger:
+          on: other
+          text: Guards
+          confidence: inferred
+        spawns:
+          - count: "8"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Protector
+            note: type list incomplete on the source page

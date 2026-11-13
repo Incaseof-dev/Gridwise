@@ -1,0 +1,38 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: serpentis-fill-in
+kind: mission
+name: Serpentis Fill-In
+level: 3
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Serpentis Fill-In
+    url: https://wiki.eveuniversity.org/Serpentis_Fill-In
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231746"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Deliver 1x Sealed Research Cache (2 m3)
+notes:
+  - text: "Bedfellows: The partnership between the Angel Cartel and the Serpentis is a perfect match. The Cartel has all the things the Serpentis lack: massive manpower, a gigantic network of dealers and thugs, a cold vicious enthusiasm for crime, and the organizational skills needed to help spread the Serpentis supply of boosters to new markets. Without the Cartel, the Serpentis would never have expanded to become as powerful and pervasive as it is today, and many say, the reverse is also true. Despite all the success the partnership has brought the Serpentis, it may be the Cartel who got the better end of the bargain. Not only do the Serpentis supply the Cartel with the most-addictive and highest quality boosters in the cluster, they also provide unparalleled research. The Cartel has long had access to dozens of ancient Jovian ruins, but previously lacked the expertise to truly take advantage of them. The Serpentis changed all that, and many think the Cartel's latest ship designs – and many other secret breakthroughs – come straight from Serpentis minds."
+  - text: Ungated pocket up to 4 jumps away. Pick up the Sealed Research Cache from the Station and deliver it to the Serpentis Transport Hub Container.
+  - text: "Tips: don't forget to pick up the Sealed Research Cache! It is not automatically placed in your cargohold and the agent will not notify you if you undock without it."
+  - text: Complete the Mission remotely.
+pockets:
+  - name: Warp-in
+    waves:
+      - id: structures-90-km
+        trigger:
+          on: other
+          text: Structures (90 km)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Container
+            names:
+              - Serpentis Transport Hub

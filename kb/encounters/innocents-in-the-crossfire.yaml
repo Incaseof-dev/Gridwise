@@ -1,0 +1,119 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: innocents-in-the-crossfire
+kind: mission
+name: Innocents In The Crossfire
+level: 4
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Innocents In The Crossfire
+    url: https://wiki.eveuniversity.org/Innocents_In_The_Crossfire
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "215852"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Assault the Federation Detention Facility and retrieve Captured CEO (3.0 m3)
+ewar:
+  - kind: web
+  - kind: neut
+notes:
+  - text: Single gated pocket.
+  - text: "Reinforcements are as follows: Reinforcement 1 spawns after all ships in Initial Group are destroyed."
+  - text: "Reinforcements are as follows: Reinforcement 2 is possibly triggered by killing frigs from initial group."
+  - text: "Reinforcements are as follows: Reinforcement 3 spawns after Reinforcement 2 is destroyed."
+  - text: Each Prisoner Holding Cell drops either Janitors or Prisoners.
+  - text: On the last group only the mission objective battleship auto-aggroes, and can be kited away from the rest of the group
+  - text: The storyline mission provides a very significant corp standings increase
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: As of Sept 2023
+      - text: "Bounties : 18.7M"
+      - text: "Loot : 5.2M"
+      - text: "Salvage : 1.45M"
+    waves:
+      - id: initial-group-30km-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group, 30km (auto-aggro)
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Demolisher
+          - count: "3"
+            class: Battleship
+            names:
+              - Pith Usurper
+              - Pith Massacrer
+          - count: "1"
+            class: Sentry
+            names:
+              - Guristas Stasis Tower
+            ewar:
+              - kind: web
+          - count: "2"
+            class: Sentry
+            names:
+              - Guristas Energy Neutralizer Sentry I
+            ewar:
+              - kind: neut
+      - id: reinforcement-1-30km-auto-aggro
+        trigger:
+          on: other
+          text: Reinforcement 1, 30km (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Mortifier
+              - Dire Pithum Eraser
+          - count: "6"
+            class: Battleship
+            names:
+              - Pith Usurper
+              - Pith Massacrer
+      - id: reinforcement-2-30km-auto-aggro
+        trigger:
+          on: other
+          text: Reinforcement 2, 30km (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Pithatis Assassin
+              - Pithatis Executor
+          - count: "5"
+            class: Battleship
+            names:
+              - Pith Usurper
+              - Pith Massacrer
+      - id: reinforcement-3-60km
+        trigger:
+          on: other
+          text: Reinforcement 3, 60km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Pithatis Assassin
+              - Pithatis Executor
+          - count: "4"
+            class: Battleship
+            names:
+              - Pith Usurper
+              - Pith Massacrer
+          - count: "1"
+            class: Battleship
+            names:
+              - Prison Warden
+            drop: Captured CEO (3.0 m3)
+            note: Mission Objective

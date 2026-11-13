@@ -1,0 +1,58 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-serpentis-spies-level-1
+kind: mission
+name: The Serpentis Spies
+level: 1
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Serpentis Spies (Level 1)
+    url: https://wiki.eveuniversity.org/The_Serpentis_Spies_(Level_1)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "230214"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Kill Serpentis Spies
+notes:
+  - text: "Blitz: Kill Serpentis Spies, warp out."
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: The structures drop no loot.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Serpentis Spy
+            group: Group 1 (50km, no auto aggro)
+            triggers: Triggers reinforcements when destroyed
+          - count: "1"
+            class: Frigate
+            names:
+              - Coreli Initiate
+            group: Group 2, arrive after about 10 seconds (20-30km, auto aggro)
+          - count: "1"
+            class: Frigate
+            names:
+              - Corelie Scout
+            group: Group 2, arrive after about 10 seconds (20-30km, auto aggro)
+      - id: reinforcements-20km-auto-aggro
+        trigger:
+          on: other
+          text: Reinforcements (20km, auto aggro)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Coreli Scout

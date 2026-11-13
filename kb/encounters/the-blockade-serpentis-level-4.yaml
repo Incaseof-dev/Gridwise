@@ -1,0 +1,185 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-blockade-serpentis-level-4
+kind: mission
+name: The Blockade
+level: 4
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Blockade (Serpentis) (Level 4)
+    url: https://wiki.eveuniversity.org/The_Blockade_(Serpentis)_(Level_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "200178"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy Core Lord Admiral in last wave
+ewar:
+  - kind: web
+  - kind: sensorDamp
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite frigates"
+  - text: "Blitz: Mission is completed when the Core Lord Admiral is killed. Shooting the triggers first to blitz the mission is possible, but not recommended due to very high incoming damage and dampening."
+  - text: Large number of damping elite cruisers. Fitting an (extra) Sensor Booster or Signal Amplifier is recommended to counteract the dampening. Avoid triggering additional spawns before previous elite cruisers are dealt with.
+  - text: Spawns and triggers vary, usually the odd-one-out Battleship is the trigger but not always (below are some examples). Auto and Drone aggro from initial group and all spawns.
+  - text: "Tip: Auto-targeting missiles and drones work even when you are not able to target anything."
+  - text: Single ungated pocket. you can (Fleet) warp at preferred distance.
+lootNotes:
+  - text: "Loot + Salvage: 16.6 mil"
+  - text: "Bounty: 19.5 mil"
+pockets:
+  - name: Single pocket
+    notes:
+      - text: Although rare, there can be a Shadow Serpentis Battleship along with the final spawn, with the usual chance for faction items drop and higher bounty.
+    waves:
+      - id: initial-defenders-28-30-km
+        trigger:
+          on: warpIn
+          text: Initial defenders (28-30 km)
+        spawns:
+          - count: 3-4
+            class: Destroyer
+            names:
+              - Corelior Sentinel
+              - Corelior Cannoneer
+          - count: 4-5
+            class: Battleship
+            names:
+              - Core Admiral
+            ewar:
+              - kind: sensorDamp
+            triggers: triggers wave 1
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Sentry
+            names:
+              - Stasis Tower
+            ewar:
+              - kind: web
+      - id: wave-1-45-85-km
+        trigger:
+          on: other
+          text: Wave 1 (45-85 km)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corelior Trooper
+              - Corelior Cannoneer
+          - count: 9-10
+            class: Elite Cruiser
+            names:
+              - Core Corelium Guardian Chief
+            ewar:
+              - kind: sensorDamp
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corelatis Platoon Leader
+              - Corelatis Captain
+          - count: "5"
+            class: Battleship
+            names:
+              - Core Admiral
+            ewar:
+              - kind: sensorDamp
+            triggers: triggers wave 2
+            note: type list incomplete on the source page
+      - id: wave-2-50-90-km
+        trigger:
+          on: other
+          text: Wave 2 (50-90 km)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Patroller
+          - count: "1"
+            class: Destroyer
+            names:
+              - Corelior Sentinel
+          - count: 3-5
+            class: Battleship
+            names:
+              - Core Admiral
+              - Core Vice Admiral
+            ewar:
+              - kind: sensorDamp
+            triggers: triggers wave 3
+      - id: wave-3-70-90-km
+        trigger:
+          on: other
+          text: Wave 3 (70-90 km)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Patroller
+          - count: "2"
+            class: Destroyer
+            names:
+              - Corelior Sentinel
+          - count: 4-5
+            class: Battleship
+            names:
+              - Core Admiral
+            triggers: triggers wave 4
+            note: type list incomplete on the source page
+      - id: wave-4-70-90-km
+        trigger:
+          on: other
+          text: Wave 4 (70-90 km)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Patroller
+            ewar:
+              - kind: sensorDamp
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Sentinel
+              - Corelum Guardian Chief Guard
+            ewar:
+              - kind: sensorDamp
+          - count: "5"
+            class: Battleship
+            names:
+              - Core Rear
+              - Core High Admiral
+            triggers: triggers wave 5
+      - id: wave-5-70-90-km
+        trigger:
+          on: other
+          text: Wave 5 (70-90 km)
+          confidence: inferred
+        spawns:
+          - count: 2-4
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Watchman
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: type list incomplete on the source page
+          - count: "4"
+            class: Battleship
+            names:
+              - Core Lord Admiral
+            note: type list incomplete on the source page
+          - count: 0-1
+            class: Battleship
+            names:
+              - Shadow Serpentis
+            drop: Can drop faction module or implant

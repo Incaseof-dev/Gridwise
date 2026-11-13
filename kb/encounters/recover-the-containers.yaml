@@ -1,0 +1,348 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: recover-the-containers
+kind: mission
+name: Recover the Containers
+level: 5
+enemyFaction: Caldari State
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Recover the Containers
+    url: https://wiki.eveuniversity.org/Recover_the_Containers
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "217438"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Bring 3x Sealed Containers to your agent
+ewar:
+  - kind: web
+  - kind: neut
+  - kind: ecm
+  - kind: warpScramble
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Warp Disrupt (Elite Frigates}, Scram (Taibu State Nagasa)"
+  - text: "Suggested ships: Passive Battleship + Logistics Battleship, Hauler (for hauling)"
+  - text: Data Analyzer required
+  - text: Using Auto-Targeting missiles and setting drones to "aggressive" may help with target jammers.
+  - text: Each room's databanks contain 1 of the 3 Sealed Containers.
+  - text: Databanks are trapped and can explode if you fail a hack attempt. (Each explosion will cause 350 HP of proximity damage!)
+  - text: The 2nd Pocket's maximum damage dealing of all ships is 2,130 HP/s (82% Kin, 17% Therm).
+pockets:
+  - name: 1st Pocket
+    notes:
+      - text: Full room aggro after 5 seconds.
+      - text: "* Each of the 4 closest Stasis Towers spawns 1 Energy Neutralizer when destroyed."
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Tower Sentry Caldari III
+          - count: "4"
+            class: Sentry
+            names:
+              - Caldari Cruise Missile Battery
+          - count: "7"
+            class: Sentry
+            names:
+              - Caldari Stasis Tower
+            ewar:
+              - kind: web
+            triggers: Tower Reinforcement*
+            note: Each of the 4 closest Stasis Towers spawns 1 Energy Neutralizer when destroyed.
+      - id: tower-reinforcement
+        trigger:
+          on: other
+          text: Tower Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Sentry
+            names:
+              - Caldari Energy Neutralizer Sentry III
+            ewar:
+              - kind: neut
+  - name: 2nd Pocket
+    notes:
+      - text: Initial Group and databanks.
+      - text: Reinforcement spawns appear to be timed and appear in the Debris Field.
+      - text: Most of the databanks, upon hacking, will spawn reinforcements.
+    waves:
+      - id: initial-group-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group (auto-aggro)
+        spawns:
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Taibu State Samurai
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - State Shukuro Bajo
+          - count: "5"
+            class: Battleship
+            names:
+              - State Shukuro Shogun
+          - count: "2"
+            class: Sentry
+            names:
+              - Tower Sentry Caldari III
+          - count: "6"
+            class: Sentry
+            names:
+              - Caldari Cruise Missile Battery
+      - id: timed-reinforcements
+        trigger:
+          on: other
+          text: Timed Reinforcements
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Taibu State Katana
+              - Taibu State Wakizashi
+            group: 3 minutes after warp-in
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Cruiser
+            names:
+              - State Oni
+              - State Kanpaku
+            group: 3 minutes after warp-in
+          - count: "2"
+            class: Battleship
+            names:
+              - State Zen
+            group: 3 minutes after warp-in
+          - count: "7"
+            class: Elite Frigate
+            names:
+              - Taibu State Katana
+              - Taibu State Nagasa
+              - Taibu State Shinai
+              - Taibu State Tachi
+            group: Some time after warp-in
+            ewar:
+              - kind: web
+              - kind: ecm
+              - kind: warpDisruption
+          - count: "3"
+            class: Cruiser
+            names:
+              - State Oni
+              - State Kanpaku
+            group: Some time after warp-in
+          - count: "2"
+            class: Battleship
+            names:
+              - State Zen
+            group: Some time after warp-in
+      - id: hacking-reinforcements
+        trigger:
+          on: other
+          text: Hacking Reinforcements
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Taibu State Wakizashi
+              - Taibu State Nagasa
+            ewar:
+              - kind: web
+              - kind: warpScramble
+  - name: 3rd Pocket
+    notes:
+      - text: Hacking the correct databank spawns a reinforcement.
+    waves:
+      - id: initial-group-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group (auto-aggro)
+        spawns:
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - State Shukuro Bajo
+          - count: "5"
+            class: Battleship
+            names:
+              - State Oshiro
+              - State Shukuro Bishamon
+              - State Daijo
+              - State Tenno
+            ewar:
+              - kind: ecm
+          - count: "3"
+            class: Sentry
+            names:
+              - Tower Sentry Caldari III
+          - count: "2"
+            class: Sentry
+            names:
+              - Caldari Cruise Missile Battery
+            triggers: Tower Reinforcement
+          - count: "2"
+            class: Sentry
+            names:
+              - Caldari Energy Neutralizer Sentry III
+            ewar:
+              - kind: neut
+            triggers: Tower Reinforcement
+      - id: tower-reinforcement
+        trigger:
+          on: other
+          text: Tower Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Sentry
+            names:
+              - Tower Sentry Caldari III
+      - id: hacking-reinforcement
+        trigger:
+          on: other
+          text: Hacking Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Taibu State Wakizashi
+              - Taibu State Nagasa
+              - Taibu State Shinai
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "5"
+            class: Elite Cruiser
+            names:
+              - Taibu State Bajo
+              - Taibu State Samurai
+  - name: 4th Pocket
+    notes:
+      - text: Initial Group at Warp-In
+    waves:
+      - id: initial-group-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group (auto-aggro)
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Taibu State Tachi
+            ewar:
+              - kind: web
+              - kind: ecm
+              - kind: warpDisruption
+            triggers: 1st Reinforcement
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Taibu State Kanpaku
+              - Taibu State Oni
+            triggers: 2nd Reinforcement
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - State Shukuro Bajo
+            triggers: 3rd Reinforcement
+          - count: "6"
+            class: Battleship
+            names:
+              - State Shukuro Bishamon
+              - State Shukuro Daijo
+              - State Shukuro Shogun
+            triggers: 4th Reinforcement
+          - count: "4"
+            class: Sentry
+            names:
+              - Caldari Cruise Missile Battery
+            triggers: Sentry Reinforcement
+          - count: "4"
+            class: Sentry
+            names:
+              - Caldari Energy Neutralizer Sentry III
+            ewar:
+              - kind: neut
+      - id: sentry-reinforcement
+        trigger:
+          on: other
+          text: Sentry Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Sentry
+            names:
+              - Caldari Cruise Missile Battery
+      - id: 1st-reinforcement
+        trigger:
+          on: other
+          text: 1st Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Taibu State Nagasa
+              - Taibu State Shinai
+            ewar:
+              - kind: web
+              - kind: warpScramble
+      - id: 2nd-reinforcement
+        trigger:
+          on: other
+          text: 2nd Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Taibu State Bajo
+              - Taibu State Samurai
+      - id: 3rd-reinforcement
+        trigger:
+          on: other
+          text: 3rd Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Taibu State Bajo
+              - Taibu State Samurai
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - State Shukuro Bajo
+              - State Shukuro Samurai
+      - id: 4th-reinforcement
+        trigger:
+          on: other
+          text: 4th Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Cruiser
+            names:
+              - State Shukuro Bajo
+              - State Shukuro Samurai
+          - count: "3"
+            class: Battleship
+            names:
+              - State Shukuro Shogun

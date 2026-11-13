@@ -1,0 +1,79 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: surprise-surprise-minmatar-republic-gallente-federation
+kind: mission
+name: Surprise Surprise
+level: 4
+enemyFaction: Minmatar Republic
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Surprise Surprise (Minmatar Republic & Gallente Federation)
+    url: https://wiki.eveuniversity.org/Surprise_Surprise_(Minmatar_Republic_%26_Gallente_Federation)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223404"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Blitz: Trigger wave 3 by killing the battleship Republic Sigur 100ish KM away from warp in. In wave 3 kill the battleship Federation Xenan that is not part of the main group on spawn ie. the one not next to the web battery."
+  - text: "Notes: The pocket is semi-deadspace. You can use this to ping to an on grid bookmark to get in range of the final battleship. If blitzed the standing loss seems to be limited to -0.002% towards Minmatar for destroying the Republic Sigur."
+lootNotes:
+  - text: "Loot: ± 1.5 Mil ISK"
+  - text: "Besides normal loot, the NPCs also drop Insignia ('tags'):"
+  - text: 5 Federation Navy Fleet Colonel Insignia I
+  - text: 3 Republic Fleet Commander Insignia I
+  - text: 7 Republic Fleet High Captain Insignia I
+  - text: "Insignia: Current Jita sell value is 32 million isk and buy value 30 million isk."
+  - text: "Salvage: ± 1 Mil ISK"
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: single-ungated-pocket
+        trigger:
+          on: other
+          text: Single ungated pocket
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Cruiser
+            names:
+              - Minmatar Transport Ship
+            group: Initial Spawn (65 km)
+            triggers: fire on it triggers wave 1
+          - count: "6"
+            class: Cruiser
+            names:
+              - Republic Tribal Manadis
+              - Republic Tribal Jarpur
+            group: Wave 1 three groups 50-110 km
+          - count: "3"
+            class: Battleship
+            names:
+              - Republic Jotun
+              - Republic Sigur
+            group: Wave 1 three groups 50-110 km
+            triggers: killing two triggers wave 2, killing the one at 100km triggers wave 3
+          - count: "1"
+            class: Sentry
+            names:
+              - Gallente Stasis Tower
+            group: Wave 2 (spawns after two battleships are destroyed)
+          - count: "2"
+            class: Battleship
+            names:
+              - Federation Triarius
+              - Federation Xenan
+            group: Wave 2 (spawns after two battleships are destroyed)
+          - count: "1"
+            class: Sentry
+            names:
+              - Gallente Stasis Tower
+            group: Wave 3 (spawns after the battleship at 100km is destroyed)
+          - count: "3"
+            class: Battleship
+            names:
+              - Federation Triarius
+              - Federation Xenan
+            group: Wave 3 (spawns after the battleship at 100km is destroyed)

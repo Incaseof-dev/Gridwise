@@ -1,0 +1,53 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: ambushed-ally
+kind: mission
+name: Ambushed Ally
+level: 2
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Ambushed Ally
+    url: https://wiki.eveuniversity.org/Ambushed_Ally
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "208780"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy Gallente battlecruiser
+notes:
+  - text: 2M ISK in tags
+pockets:
+  - name: Warp-in
+    notes:
+      - text: At warp-in the four sentries will not attack unless fired upon.
+    waves:
+      - id: initial-hostiles
+        trigger:
+          on: warpIn
+          text: Initial Hostiles
+        spawns:
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Federation Praktor Arx
+              - Federation Praktor Bearcus
+            group: Group 1
+          - count: "4"
+            class: Sentry
+            names:
+              - Laser Sentry
+            group: Group 2 (Non-aggressive)
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Sisters of EVE Aid Station
+            drop: 5x Caldari Light Marines

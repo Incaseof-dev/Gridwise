@@ -1,0 +1,150 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: drone-surveillance
+kind: anomaly
+name: Drone Surveillance
+dedRating: null
+anomalyClass: 5
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Drone Surveillance
+    url: https://wiki.eveuniversity.org/Drone_Surveillance
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225110"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Drone Surveillance is an unrated combat site belonging to the Rogue Drones faction. It can be found via exploration as a cosmic anomaly in low-security and null-security systems across New Eden. As an ungated complex, the limitations as to which ships can complete this site are tied to the security rating of the system where the anomaly spawns (T2 Battleships for high-security systems, and up to Titans in low-security and null-security systems).
+  - text: There are two variations of this combat site. The first variation takes place in the ruins of a megastructure and includes Light Missile Batteries in the initial wave. The second variation takes place inside an asteroid-filled cloud and includes Defense Vampire (nosferatu) batteries instead. Both variations have a chance to spawn a Sentient commander rogue drone, which drops drogue components and may drop faction drone modules and items. This site has a chance to escalate to Rogue Drone Asteroid Infestation.
+  - text: "Escalation: This site can escalate to Rogue Drone Asteroid Infestation."
+  - text: "Escalation: Rogue Drone Asteroid Infestation: Your scanner has picked up a transmission originating from a nearby system. It would be wise to investigate this mysterious signal further."
+pockets:
+  - name: Megastructure type
+    waves:
+      - id: first-spawn
+        trigger:
+          on: other
+          text: First spawn
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Sentry
+            names:
+              - Drone Light Missile Battery
+          - count: 1-2
+            class: Cruiser
+            names:
+              - Annihilator Alvum
+      - id: second-spawn
+        trigger:
+          on: other
+          text: Second spawn
+          confidence: inferred
+        spawns:
+          - count: 2-4
+            class: Frigate
+            names:
+              - Hunter
+              - Barracuda Alvi
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Atomizer
+              - Nuker Alvum
+      - id: third-spawn
+        trigger:
+          on: other
+          text: Third spawn
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Predator
+              - Shatterer
+              - Ripper Alvior
+          - count: 3-4
+            class: Cruiser
+            names:
+              - Atomizer
+              - Nuker Alvum
+      - id: fourth-spawn
+        trigger:
+          on: other
+          text: Fourth spawn
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Strain Render
+              - Strain Infestor
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Atomizer
+              - Nuker Alvum
+      - id: fifth-spawn
+        trigger:
+          on: other
+          text: Fifth spawn
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Strain Hunter
+              - Devilish Alvi
+              - Strain Barracuda Alvi
+          - count: "4"
+            class: Cruiser
+            names:
+              - Atomizer
+              - Nuker Alvum
+      - id: sixth-spawn
+        trigger:
+          on: other
+          text: Sixth spawn
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Strain Silverfish Alvi
+              - Devilish Alvi
+          - count: 3-4
+            class: Cruiser
+            names:
+              - Atomizer
+              - Nuker Alvum
+      - id: seventh-spawn
+        trigger:
+          on: other
+          text: Seventh spawn
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Nuker Alvum
+          - count: 2-5
+            class: Battlecruiser
+            names:
+              - Exterminator Alvatis
+              - Siege Alvatis
+          - count: 0-1
+            class: Overseer Cruiser
+            names:
+              - Sentient Viral Infector Alvum
+            drop: May drop Sentient faction modules, items and drone components
+    onWarpIn: I have detected the presence of an asteroid station nearby. I cannot decipher the transmission signals coming from within, they appear to be of an unknown origin. Perhaps if you interacted with it in some way, we would get a response.
+sde:
+  dungeonIds:
+    - 2355

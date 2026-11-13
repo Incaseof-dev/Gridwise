@@ -1,0 +1,77 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: seek-and-destroy-angel-cartel-level-3
+kind: mission
+name: Seek and Destroy
+level: 3
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Seek and Destroy (Angel Cartel) (Level 3)
+    url: https://wiki.eveuniversity.org/Seek_and_Destroy_(Angel_Cartel)_(Level_3)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "201875"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Eliminate the pirates which have been harrassing innocent passersby.
+ewar:
+  - kind: web
+notes:
+  - text: "Web/warp disruption: Angel Viper/Webifier"
+  - text: "Suggested ships: Battlecruiser"
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Hangar Array
+            names:
+              - Radiating Telescope
+            note: May drop loot
+      - id: group-1-18-25km-auto-aggro
+        trigger:
+          on: other
+          text: Group 1, 18-25km (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Angel Viper
+              - Angel Webifier
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Destroyer
+            names:
+              - Gistior Defacer
+              - Gistior Haunter
+          - count: "1"
+            class: Cruiser
+            names:
+              - Gistum Liquidator
+              - Gistum Marauder
+      - id: group-2-at-the-radiating-telescope-45-55km
+        trigger:
+          on: other
+          text: Group 2 at the Radiating Telescope, 45-55km
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Gistii Ambusher
+              - Gistii Raider
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Gistatis Primus

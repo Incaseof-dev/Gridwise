@@ -1,0 +1,238 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: loose-ends
+kind: escalation
+name: Loose Ends
+dedRating: null
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Loose Ends
+    url: https://wiki.eveuniversity.org/Loose_Ends
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "171661"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Loose Ends is an expedition that can escalate from Dirty Site.
+pockets:
+  - name: First Location (Low Sec)
+    notes:
+      - text: ----
+      - text: No gate. Single pocket. A sentient cruiser at close range on warpin, all auto-aggress. Killing the strain frigate spawns 3 new ones (no further spawns from these). Killing the sentient cruiser may give you the next chapter of the escalation.
+      - text: "Escalation Message:: All you find here are bits and pieces of something that has once been a mining and refining station. The debris along with a few frozen bodies still floating around suggests that the drones have invaded and destroyed a once thriving colony."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: 2-4
+            class: Frigate
+            names:
+              - Hunter
+              - Raider Alvi
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Strain Splinter
+              - Strain Render Alvi
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            triggers: triggers reinforcements
+          - count: "5"
+            class: Cruiser
+            names:
+              - Annihilator Alvum
+          - count: "1"
+            class: Commander Cruiser
+            names:
+              - Sentient Bomber Alvum
+            triggers: escalation trigger
+            drop: drone components
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Crippler
+              - Striker Alvatis
+      - id: spawn-triggered-by-elite-frigate-destruction
+        trigger:
+          on: other
+          text: Spawn (triggered by elite frigate destruction)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Strain Decimator
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Strain Atomizer Alvum
+          - count: "4"
+            class: Battleship
+            names:
+              - Alvus Ruler
+              - Supreme Alvus Parasite
+            group: Alternate spawn
+  - name: Second Location (Low sec)
+    notes:
+      - text: ----
+      - text: Single pocket. A sentient cruiser on warpin, approx. 20k away.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Hunter
+              - Raider Alvi
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Strain Splinter Alvi
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "1"
+            class: Commander Cruiser
+            names:
+              - Sentient Atomizer Alvum
+            triggers: escalation trigger
+            drop: drone components
+    onWarpIn: It looks as if you have surprised the drones while pillaging the remains of this asteroid colony. Again you can see bodies floating around, even some children toys... You don't know who these people were, but no one deserves this tragic and violent end from the "hands" of the machines. You can only hope you have found the rest of the drones connected to this hive so the people in the region may be safe from the drone menace for a while at least...
+  - name: Third Location (Low sec)
+    notes:
+      - text: ----
+      - text: No gate. The sentient cruiser is present on warpin, approx. 10k away.
+      - text: Second wave spawns if you destroy enough ships from initial wave. The trigger is unknown.
+      - text: "Escalation Message:: Another pillaged colony, but these drones you warped in on keep the chase alive, your instruments have already come up with an approximation of their destination."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "18"
+            class: Frigate
+            names:
+              - Barracuda
+              - Hunter
+              - Sunder
+              - Raider
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Strain Barracuda
+              - Strain Hunter
+              - Strain Silverfish
+              - Strain Devilfish Alvi
+          - count: "4"
+            class: Destroyer
+            names:
+              - Ripper
+              - Shatter Alvior
+          - count: "2"
+            class: Cruiser
+            names:
+              - Bomber Alvum
+          - count: "1"
+            class: Commander Cruiser
+            names:
+              - Sentient Nuker Alvum
+            triggers: Escalation trigger
+            drop: Drone components, possible Sentient faction modules or a Rogue Drone 43-X Nexus Chip
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Defeater
+              - Exterminator
+              - Siege Alvatis
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Strain Sunder
+              - Strain Raider Alvi
+          - count: "4"
+            class: Destroyer
+            names:
+              - Dismantler
+              - Marauder Alvior
+  - name: Fourth Location (Null sec)
+    notes:
+      - text: ----
+      - text: No gate. 1 Battleship and 1 frigate upon warpin. 6 Battleships and 2 strain cruisers spawned 1 minute in. 4 Battleships were 200km out and despawned after ~30 seconds. 4 Battlecruisers and 3 strain cruisers spawned after another minute. 6 Frigates spawned after one more minute, no further spawns. All drones auto-aggress upon spawning or warpin, except for the 4 battleships 200km away which never aggressed. Killing the frigate (Colony Captain Overseer) gives the end message. A commander cruiser spawned a minute afterward (not sure if related to the frigate kill or simply another time based spawn, please confirm), wreck contained ~27m worth of tech II salvage.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns: []
+      - id: despawning-group-200-km-away
+        trigger:
+          on: other
+          text: Despawning group (200 km away)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battleship
+            names:
+              - Alvus Controller
+              - Supreme Alvus Parasite
+      - id: spawn
+        trigger:
+          on: other
+          text: spawn
+          confidence: inferred
+        spawns: []
+      - id: spawn-4
+        trigger:
+          on: other
+          text: spawn
+          confidence: inferred
+        spawns: []
+      - id: spawn-5
+        trigger:
+          on: other
+          text: spawn
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Colony Captain Overseer
+            triggers: triggers Commander wave
+            note: type list incomplete on the source page
+      - id: overseer-triggered-by-6-frigate-wipe
+        trigger:
+          on: other
+          text: Overseer (triggered by 6 frigate wipe)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Overseer Cruiser
+            names:
+              - Rogue Overseer
+            triggers: Destroying ends expedition
+            drop: T2 salvage
+sde:
+  dungeonIds:
+    - 1515

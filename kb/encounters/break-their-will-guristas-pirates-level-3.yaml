@@ -1,0 +1,94 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: break-their-will-guristas-pirates-level-3
+kind: mission
+name: Break Their Will
+level: 3
+enemyFaction: Guristas Pirates & Mercenaries
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Break Their Will (Guristas Pirates) (Level 3)
+    url: https://wiki.eveuniversity.org/Break_Their_Will_(Guristas_Pirates)_(Level_3)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191593"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the Repair Station
+ewar:
+  - kind: web
+  - kind: ecm
+notes:
+  - text: Repair Station repairs itself and rats. Destroying the Aux Power Arrays disables the Repair Station's repair function.
+  - text: "Blitz: Destroy Repair Station, warp out."
+pockets:
+  - name: Warp-in
+    notes:
+      - text: At warp-in there are no rats. Wave 1 spawns when the repair station is hit. Wave 2 is spawned when the Repair Station is destroyed. Auto-aggro on waves spawning.
+      - text: "Mining: 21 Scordite and 40 Veldspar"
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Repair Station
+            triggers: Triggers Wave 1
+          - count: "3"
+            class: Structure
+            names:
+              - Aux Power Array
+      - id: wave-1-on-attacking-repair-station
+        trigger:
+          on: other
+          text: Wave 1 (On attacking Repair Station)
+          confidence: inferred
+        spawns:
+          - count: 6-7
+            class: Destroyer
+            names:
+              - Pithior Nihilst
+              - Pithior Renegade
+              - Pithior Terrorist
+          - count: 5-6
+            class: Cruiser
+            names:
+              - Pithum Annihilator
+              - Pithum Killer
+              - Pithum Nullifier
+              - Pithum Silencer
+            ewar:
+              - kind: ecm
+            note: Annihilator/Nullifier have target jamming
+          - count: "1"
+            class: Sentry
+            names:
+              - Stasis Tower
+            ewar:
+              - kind: web
+          - count: "3"
+            class: Sentry
+            names:
+              - Heavy Missile Battery
+      - id: wave-2-on-destroying-repair-station
+        trigger:
+          on: other
+          text: Wave 2 (On destroying Repair Station)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Mercenary Fighter
+          - count: "4"
+            class: Cruiser
+            names:
+              - Mercenary Commander
+              - Mercenary Corporal
+              - Mercenary Lieutenant

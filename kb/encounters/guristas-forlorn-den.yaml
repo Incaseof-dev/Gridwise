@@ -1,0 +1,159 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: guristas-forlorn-den
+kind: anomaly
+name: Guristas Forlorn Den
+dedRating: null
+anomalyClass: 4
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Guristas Forlorn Den
+    url: https://wiki.eveuniversity.org/Guristas_Forlorn_Den
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225102"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Rating: Class 4 Level 4"
+  - text: Guristas Forlorn Den is an unrated combat site belonging to the Guristas Pirates pirate faction. It can be found via exploration as a cosmic anomaly within systems owned by the Caldari State or occupied by the Guristas Pirates. As an ungated complex, there are no limitations so up to Titans are allowed. Completing this complex may award the player with valuable Dread Guristas faction modules and ammunition.
+  - text: "This combat site consists of a single ungated pocket of space containing a variety of Frigate-, Cruiser-, Battlecruiser- and Battleship-sized enemy ships. Destroying all hostile ships does not trigger an escalation. Three other variations of this combat anomaly exist: Guristas Den, Guristas Hidden Den and Guristas Forsaken Den."
+  - text: Ungated single pocket with multiple waves of rats.
+  - text: "Escalation: None"
+lootNotes:
+  - text: "Bounty: 10.500.000 ISK"
+  - text: "Loot: Dread Guristas faction modules (rare) and ammunition, implants"
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-defenders-50km-60km-away-last-kill-triggers-next-spawn
+        trigger:
+          on: warpIn
+          text: Initial defenders (50km-60km away) (Last kill triggers next spawn)
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Pithi Destructor
+              - Pithi Demolisher
+      - id: first-spawn
+        trigger:
+          on: other
+          text: First spawn
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Pithi Destructor
+              - Pithi Demolisher
+            triggers: next wave
+          - count: "5"
+            class: Cruiser
+            names:
+              - Pithum Inferno
+              - Pithum Mortifier
+          - count: "2"
+            class: Battleship
+            names:
+              - Pith Obliterator
+              - Pith Eradicator
+      - id: second-spawn
+        trigger:
+          on: other
+          text: Second spawn
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Destroyer
+            names:
+              - Pithior Guerilla
+          - count: "4"
+            class: Cruiser
+            names:
+              - Pithum Abolisher
+              - Pithum Eraser
+            triggers: next wave
+          - count: "2"
+            class: Battleship
+            names:
+              - Pith Obliterator
+      - id: third-spawn
+        trigger:
+          on: other
+          text: Third spawn
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Cruiser
+            names:
+              - Pithum Abolisher
+              - Pithum Eraser
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Pithatis Death Dealer
+              - Pithatis Revolter
+            triggers: next wave
+          - count: "2"
+            class: Battleship
+            names:
+              - Pith Dismantler
+      - id: forth-spawn
+        trigger:
+          on: other
+          text: Forth spawn
+          confidence: inferred
+        spawns:
+          - count: "10"
+            class: Battlecruiser
+            names:
+              - Pithatis Death Dealer
+              - Pithatis Revolter
+              - Pithatis Assaulter
+      - id: fifth-spawn-spawns-1-minute-after-forth-spawn
+        trigger:
+          on: other
+          text: Fifth spawn (Spawns 1 minute after forth spawn)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Arrogator
+              - Dire Pithi Imputor
+              - Dire Pithi Invader
+              - Dire Pithi Infiltrator
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Nullifier
+              - Dire Pithum Annihilator
+            ewar:
+              - kind: ecm
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Pithatis Assaulter
+              - Pithatis Assassin
+          - count: "4"
+            class: Battleship
+            names:
+              - Pith Destroyer
+              - Pith Conquistador
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - Dread Guristas Commander
+            group: Possible commander
+            drop: may drop Dread Guristas faction modules or an implant
+    onWarpIn: Formed by two former members of the Caldari Navy who go by the names "Fatal" and "the Rabbit," the Guristas are a constant thorn in the side of the Caldari State. Traditional pirates in the sense that their operation is not based around some creed or ideology, the Guristas are motivated by plain and simple greed. They have bases close to Caldari space, and from them they embark on daring raids, often into the State itself. Though the Guristas are considered more honorable than many of their piratical counterparts, they are still extremely dangerous and not to be trifled with.
+sde:
+  dungeonIds:
+    - 3428

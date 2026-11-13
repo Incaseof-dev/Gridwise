@@ -1,0 +1,232 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: blood-hidden-den
+kind: complex
+name: Blood Hidden Den
+dedRating: null
+enemyFaction: Blood
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Blood Hidden Den
+    url: https://wiki.eveuniversity.org/Blood_Hidden_Den
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "200556"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Escalation: This site may escalate into Crimson Hand Supply Depot. The trigger for this escalation is unknown."
+lootNotes:
+  - text: "Bounty: ≈5.6 Mil"
+  - text: "Loot/salvage: 10 Mil"
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "1"
+            class: Sentry
+            names:
+              - Blood Heavy Missile Battery
+          - count: 8-10
+            class: Frigate
+            names:
+              - Corpii Diviner
+              - Corpii Engraver
+            note: type list incomplete on the source page
+          - count: 8-11
+            class: Destroyer
+            names:
+              - Corpior Cleric
+              - Corpior Friar
+          - count: 3-4
+            class: Cruiser
+            names:
+              - Corpus Arch Priest
+              - Corpus Arch Sage
+            note: type list incomplete on the source page
+          - count: 4-5
+            class: Battlecruiser
+            names:
+              - Corpatis Exorcist
+              - Corpatis Fanatic
+            triggers: Triggers wave 2
+            note: type list incomplete on the source page
+      - id: wave-2
+        trigger:
+          on: other
+          text: "Wave #2"
+          confidence: inferred
+        spawns:
+          - count: 2-4
+            class: Frigate
+            names:
+              - Corpii Diviner
+              - Corpii Raider
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Corpum Arch Engraver
+              - Corpum Arch Reaver
+            triggers: Triggers wave 3
+      - id: wave-3
+        trigger:
+          on: other
+          text: "Wave #3"
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Corpii Diviner
+              - Corpii Raider
+          - count: 2-3
+            class: Destroyer
+            names:
+              - Corpior Cleric
+              - Corpior Friar
+            triggers: Triggers wave 4
+      - id: wave-4
+        trigger:
+          on: other
+          text: "Wave #4"
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Corpii Collector
+              - Corpii Seeker
+            ewar:
+              - kind: trackingDisruption
+          - count: 1-3
+            class: Cruiser
+            names:
+              - Corpum Arch Priest
+              - Corpum Arch Sage
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corpatis Exorcist
+              - Corpatis Phantom
+            triggers: Triggers wave 5
+      - id: wave-5
+        trigger:
+          on: other
+          text: "Wave #5"
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Corpii Collector
+              - Corpii Seeker
+            ewar:
+              - kind: trackingDisruption
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Corpatis Exorcist
+              - Corpatis Fanatic
+            triggers: Triggers wave 6
+          - count: 1-2
+            class: Battleship
+            names:
+              - Corpus Archon
+              - Corpus Prophet
+      - id: wave-6
+        trigger:
+          on: other
+          text: "Wave #6"
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Corpii Collector
+              - Corpii Seeker
+            ewar:
+              - kind: trackingDisruption
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Corpum Arch Priest
+              - Corpum Arch Sage
+            triggers: Triggers wave 7
+      - id: wave-7
+        trigger:
+          on: other
+          text: "Wave #7"
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Elite Frigate
+            names:
+              - Elder Corpii Herald
+              - Elder Corpii Upholder
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: type list incomplete on the source page
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Corpum Arch Engraver
+              - Corpum Arch Reaver
+          - count: 4-5
+            class: Battlecruiser
+            names:
+              - Corpatis Exorcist
+              - Corpatis Phantom
+            triggers: Triggers wave 8
+      - id: wave-8
+        trigger:
+          on: other
+          text: "Wave #8"
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Corpii Diviner
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corpum Arch Engraver
+              - Corpum Arch Reaver
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corpatis Exorcist
+              - Corpatis Phantom
+            triggers: Triggers wave 9
+      - id: wave-9
+        trigger:
+          on: other
+          text: "Wave #9"
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Herald
+              - Elder Corpii Upholder
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Cruiser
+            names:
+              - Corpum Arch Engraver
+              - Corpum Arch Reaver
+          - count: 6-7
+            class: Battlecruiser
+            names:
+              - Corpatis Exorcist
+              - Corpatis Phantom

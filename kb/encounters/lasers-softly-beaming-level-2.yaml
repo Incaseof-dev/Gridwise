@@ -1,0 +1,65 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: lasers-softly-beaming-level-2
+kind: mission
+name: Lasers Softly Beaming
+level: 2
+enemyFaction: Gallente Federation & Amarr Empire
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Lasers Softly Beaming (Level 2)
+    url: https://wiki.eveuniversity.org/Lasers_Softly_Beaming_(Level_2)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "224956"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy Geeral Tash-Murkon's ship and capture him.
+ewar:
+  - kind: sensorDamp
+notes:
+  - text: "Suggested ships: Frigate, Destroyer"
+  - text: "Blitz: Kill Geeral Tash-Murkon, loot the the wreck, and warp out."
+  - text: "Video: Arbitrator (until 6:20)"
+  - text: Mainly tank for Gallente rats, as there is only 1 Amarr rat.
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: initial-group-8km-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group, 8km (auto-aggro)
+        spawns:
+          - count: "1"
+            class: Cruiser
+            names:
+              - Geeral Tash-Murkon
+            triggers: spawns Reinforcement
+            drop: Geeral Tash-Murkon (1.5 m3)
+            note: Mission objective
+      - id: reinforcement
+        trigger:
+          on: other
+          text: Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Federation Libertus
+              - Federation Manica
+            ewar:
+              - kind: sensorDamp
+          - count: "2"
+            class: Destroyer
+            names:
+              - Federation Matara
+          - count: "1"
+            class: Cruiser
+            names:
+              - Federation Nauclarius
+            ewar:
+              - kind: sensorDamp

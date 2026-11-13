@@ -1,0 +1,89 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: panic-response
+kind: mission
+name: Panic Response
+level: null
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Panic Response
+    url: https://wiki.eveuniversity.org/Panic_Response
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231024"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal:
+    - em
+    - thermal
+  resist:
+    - em
+    - thermal
+objectives:
+  - text: Destroy all Sansha ships
+ewar:
+  - kind: neut
+  - kind: web
+notes:
+  - text: "Web/warp disruption: Stasis tower"
+  - text: "Loose Ends: Lady Jariza is under investigation for her role in all of this, but the only charge we could actually bring is conspiracy. And accusing a noble of conspiracy is about as useful as charging a Slaverhound with indecent exposure. It's the nature of the beast. Lord Darabi has been cleared of any wrong doing. His daughter Mina has returned to their estate and is taking a larger role in family affairs. Lord Manik and Lord Miyan reached a gentleman's agreement after the destruction of Manik's mercenary fleet. A number of Manik's agricultural worlds have been given as a gift to House Miyan. Lord Miyan accepted the gift, and has declared a clean slate between them."
+  - text: Single ungated pocket.
+  - text: The Sentry Group has 100km range and spawns several seconds after warp in.
+  - text: The Amarr Energy Neutralizer Sentry III is very tough to destroy. Be forewarned - it has a massive tank.
+  - text: Last ship destroyed in each Hull Group will spawn a duplicate group.
+  - text: "Mission is flagged as complete and all remaining ships despawn when any one of the following occurs:"
+  - text: Battleship destroyed
+  - text: Energy Neutralizer Sentry III destroyed
+  - text: Either of the Chain Groups destroyed
+  - text: The sentry group will not despawn and will continue to attack you after the mission is flagged complete.
+  - text: "Blitz: Kill the battleship, warp out once mission is marked completed."
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Centii Servant
+              - Centii Minion
+            triggers: Chain trigger (5x)
+          - count: 3-4
+            class: Cruiser
+            names:
+              - Centum Ravisher
+              - Centum Ravager
+            triggers: Chain trigger (5x)
+          - count: "1"
+            class: Battleship
+            names:
+              - Centus Tyrant
+      - id: sentry-group
+        trigger:
+          on: other
+          text: Sentry group
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Sentry
+            names:
+              - Amarr Cruise Missile Battery
+          - count: "1"
+            class: Sentry
+            names:
+              - Amarr Stasis Tower
+            ewar:
+              - kind: web
+          - count: "1"
+            class: Sentry
+            names:
+              - Amarr Energy Neutralizer Sentry III
+            ewar:
+              - kind: neut

@@ -1,0 +1,149 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: rogue-drone-infestation-sprout
+kind: complex
+name: Rogue Drone Infestation Sprout
+dedRating: 2
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Rogue Drone Infestation Sprout
+    url: https://wiki.eveuniversity.org/Rogue_Drone_Infestation_Sprout
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "228842"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Destroyer"
+notes:
+  - text: Rogue Drone Infestation Sprout is DED rated combat site. It can be found by scanning cosmic signatures in high and low security space.
+  - text: Music that plays in site
+loot:
+  - item: 5th Tier Overseer's Personal Effects
+    from: Assembled container
+    note: est. 180k ISK (wiki) · 100% drop rate
+  - item: Shadow Serpentis Adaptive Nano Plating
+    from: Assembled container
+    note: est. 500k ISK (wiki)
+  - item: Shadow Serpentis Inertial Stabilizers
+    from: Assembled Container
+    note: est. 89m ISK (wiki)
+  - item: Shadow Serpentis Small Armor Repairer
+    from: Assembled container
+    note: est. 6m ISK (wiki)
+  - item: Zydrine x100
+    from: Rogue Drone Container
+    note: est. ~200k ISK (wiki)
+lootNotes:
+  - text: This combat site does not drop much of anything valuable. Most of the time the 5th tier overseer's personal effects are the only item of value. The faction module in final room is very rare.
+  - text: "Bounties (full clear): 200k ISK"
+pockets:
+  - name: First room
+    notes:
+      - text: ----
+      - text: "On gate activation: DED Database Information: This deadspace complex pocket is under Rogue Drone domination. According to information gathered by explorers, it appears they have begun construction of a small hive deep inside the warp disruption field. The first sector contains an old acceleration gate leading towards the outskirts of the drone operation."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Drone
+            names:
+              - Moth
+              - Firefly
+              - Termite Apis
+    onWarpIn: 'This deadspace field appears to have been infested with a strain of Rogue Drones. Rogue Drones are a self-replicating "lifeform" controlled by artificial intelligence, often in the form of a lucid communication hivemind or centered inside one of their dreaded Rogue Drone Mothers. This particular complex is the construction site of a new hive, far away from its maternal headquarters. DED Threat Assessment: Minor (2 of 10)'
+  - name: Second Room
+    notes:
+      - text: ----
+      - text: "Blitz: This pocket can be completely ignored. The acceleration gate is unlocked."
+      - text: "On gate activation: DED Database Information: The outskirt pocket of the complex seems to serve as a some kind of a defence perimeter. We have picked up multiple signals of drone activity from within the pocket, leading us to believe it is populated with weak and easily replaceable worker drones."
+      - text: The ships in this pocket spawn gradually. The Strain Operation Bunker may look like an overseer structure but drops nothing valuable.
+      - text: In the past destroying it might have given heavy standing hits from Rogue Drones, but this is no longer true (Verified lack of standings loss May 2025).
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Structure
+            names:
+              - Strain Operation Bunker
+            note: Destruction causes standing loss towards Rogue Drones (No loot)
+          - count: "?"
+            class: Acceleration Gate
+            names:
+              - Ancient Acceleration Gate
+            note: Not locked
+      - id: wave
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: 6-7
+            class: Drone
+            names:
+              - Arachula
+              - Termite
+            note: type list incomplete on the source page
+          - count: "8"
+            class: Frigate
+            names:
+              - Infester
+              - Render
+              - Splinter Alvi
+  - name: Third Room
+    notes:
+      - text: ----
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Red Container
+            names:
+              - Assembled container
+            drop: 5th Tier Overseer's Personal Effects, may contain a faction module
+          - count: "1"
+            class: Container
+            names:
+              - Rogue Drone Container
+            drop: Minerals/Refinables, may contain a faction module
+          - count: "1"
+            class: Hangar Array
+            names:
+              - Hive Under Construction
+      - id: defenders-40-50-km-off
+        trigger:
+          on: warpIn
+          text: Defenders(~40-50 km off)
+        spawns:
+          - count: "5"
+            class: Drone
+            names:
+              - Belphegor
+              - Mamon
+            note: type list incomplete on the source page
+          - count: 9-10
+            class: Frigate
+            names:
+              - Infester
+              - Render
+              - Splinter Alvi
+          - count: "1"
+            class: Cruiser
+            names:
+              - Wrecker Alvum
+    onWarpIn: This central pocket of the complex is the construction site of a rogue drone hive. If left uninterrupted, the complex might soon become the home of a rogue drone mother which would seriously jeopardize security within the system. The construction supply containers have been reported to be defended by heavier types of rogue drones, thought to serve as overseers of the construction process.
+sde:
+  dungeonIds:
+    - 120

@@ -1,0 +1,148 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: unauthorized-military-presence-caldari
+kind: mission
+name: Unauthorized Military Presence
+level: 4
+enemyFaction: Caldari State
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Unauthorized Military Presence (Caldari)
+    url: https://wiki.eveuniversity.org/Unauthorized_Military_Presence_(Caldari)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "198472"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Suggested ships: Ishtar"
+  - text: "Space type: Deadspace"
+pockets:
+  - name: Warp-in
+    notes:
+      - text: No automatic aggro.
+      - text: Drones might cause aggro.
+      - text: Gate is unlocked, you can ignore this group if you want to.
+    waves:
+      - id: initial-forces
+        trigger:
+          on: warpIn
+          text: Initial forces
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - State Wakizashi
+          - count: "3"
+            class: Frigate
+            names:
+              - State Daito
+          - count: "3"
+            class: Frigate
+            names:
+              - State Shuriken
+          - count: "1"
+            class: Destroyer
+            names:
+              - State Kissaki
+          - count: "1"
+            class: Destroyer
+            names:
+              - State Tsuba
+          - count: "1"
+            class: Cruiser
+            names:
+              - State Shukuro Chugen
+  - name: Pocket 1
+    notes:
+      - text: No automatic aggro.
+      - text: Drones might cause aggro.
+      - text: "Blitz: You only have to kill the group with the Transport Ship. Once the group with the Transport Ship is dead, take 10 Marines from the Transport wreck to complete the mission. Killing the other group is not necessary."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Taibu State Wakizashi
+          - count: "6"
+            class: Cruiser
+            names:
+              - State Shukuro Ashigaru
+          - count: "2"
+            class: Cruiser
+            names:
+              - State Ashigaru
+          - count: "2"
+            class: Cruiser
+            names:
+              - State Fudai
+          - count: "9"
+            class: Frigate
+            names:
+              - State Shuriken
+          - count: "2"
+            class: Battleship
+            names:
+              - State Tenkyu
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Taibu State Katana
+          - count: "3"
+            class: Frigate
+            names:
+              - State Shukuro Shuriken
+          - count: "2"
+            class: Frigate
+            names:
+              - State Shukuro Shinai
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - State Ronin
+          - count: "1"
+            class: Cruiser
+            names:
+              - State Shukuro Chugen
+          - count: "2"
+            class: Destroyer
+            names:
+              - State Kissaki
+          - count: "1"
+            class: Destroyer
+            names:
+              - State Tsuba
+          - count: "2"
+            class: Cruiser
+            names:
+              - State Buke
+          - count: "1"
+            class: Destroyer
+            names:
+              - State Kissaki
+          - count: "2"
+            class: "?"
+            names:
+              - Caldari Personnel Transport
+          - count: "1"
+            class: Cruiser
+            names:
+              - State Shukuro Buke
+          - count: "1"
+            class: Cruiser
+            names:
+              - State Shukuro Ashura
+          - count: "2"
+            class: Cruiser
+            names:
+              - State Chugen
+          - count: "1"
+            class: Battleship
+            names:
+              - State Yojimbo

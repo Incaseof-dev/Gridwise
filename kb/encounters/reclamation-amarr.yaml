@@ -1,0 +1,113 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: reclamation-amarr
+kind: mission
+name: Reclamation
+level: 5
+enemyFaction: Amarr Empire
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Reclamation (Amarr)
+    url: https://wiki.eveuniversity.org/Reclamation_(Amarr)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191867"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: neut
+  - kind: web
+  - kind: warpScramble
+notes:
+  - text: "Web/warp disruption: Divine Imperial Imran (Web, Scram)"
+  - text: "Suggested ships: Passive Battleship + Logistics"
+  - text: Use a Passive Tank or plan a capacitor that receives an additional 120 units/s.
+  - text: Maximum damage dealing of initial group if it gets into range is 2222 hp/s (EM 54%, Therm 46%).
+  - text: Set drones to Passive if you don't want them triggering the Neutralizer Spawns.
+  - text: Destroying closest Asteroid Micro-Colony (62,000 hp) and the Imperial Templar Diviner triggers Objective Complete.
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "10"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Imran
+            ewar:
+              - kind: web
+              - kind: warpScramble
+            note: Orbits at 4km
+          - count: "10"
+            class: Destroyer
+            names:
+              - Imperial Templar Caius
+              - Imperial Templar Crusader
+            note: Orbits at 8-16km
+          - count: "6"
+            class: Cruiser
+            names:
+              - Divine Imperial Champion
+              - Divine Imperial Justicar
+            note: Orbits at 14-32km
+          - count: "9"
+            class: Battlecruiser
+            names:
+              - Imperial Templar Champion
+              - Imperial Templar Justicar
+            note: Orbits at 10-22km
+          - count: "7"
+            class: Battleship
+            names:
+              - Imperial Templar Martyr
+            note: Orbits at 49km
+          - count: "1"
+            class: Sentry
+            names:
+              - Tower Sentry Amarr III
+          - count: "3"
+            class: Sentry
+            names:
+              - Amarr Energy Neutralizer Sentry III
+            ewar:
+              - kind: neut
+            triggers: Shooting triggers additional spawns, see below
+      - id: timed-spawns
+        trigger:
+          on: other
+          text: Timed Spawns
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Sentry
+            names:
+              - Tower Sentry Amarr III
+            group: Ships spawn steadily over 8 minutes. Ships 50-100km from warp-in
+          - count: 4-6
+            class: Cruiser
+            names:
+              - Divine Imperial Ambrose
+              - Divine Imperial Basil
+            group: Ships spawn steadily over 8 minutes. Ships 50-100km from warp-in
+            ewar:
+              - kind: neut
+            note: Orbits at 7-19k
+      - id: neutralizer-spawns
+        trigger:
+          on: other
+          text: Neutralizer Spawns
+          confidence: inferred
+        spawns:
+          - count: 4-6
+            class: Cruiser
+            names:
+              - Divine Imperial Ambrose
+              - Divine Imperial Basil
+            ewar:
+              - kind: neut
+            note: Orbits at 7-19k

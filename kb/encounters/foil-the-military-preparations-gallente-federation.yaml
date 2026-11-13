@@ -1,0 +1,67 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: foil-the-military-preparations-gallente-federation
+kind: mission
+name: Foil The Military Preparations
+level: 4
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Foil The Military Preparations (Gallente Federation)
+    url: https://wiki.eveuniversity.org/Foil_The_Military_Preparations_(Gallente_Federation)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191700"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Federation Navy Officer deals em damage
+  - text: "Blitz: Wait for the Construction Freight ships to spawn, kill them ignoring the rest of the spawn and warp out."
+  - text: Structures may drop trade goods
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: Reinforcement is a timed spawn, about 3 minutes.
+    waves:
+      - id: group-1-50km-auto-aggro
+        trigger:
+          on: other
+          text: Group 1, 50km (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Federation Navy Officer
+            note: Fires EM Heavy Missiles
+          - count: "1"
+            class: Battleship
+            names:
+              - Federation Navy Megathron
+            drop: May drop faction ammo
+      - id: reinforcement-auto-aggro
+        trigger:
+          on: other
+          text: Reinforcement (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Federation Navy Delta II Support Frigate
+            ewar:
+              - kind: web
+          - count: "3"
+            class: Cruiser
+            names:
+              - Federation Navy Thorax
+          - count: "2"
+            class: Battleship
+            names:
+              - Federation Navy Dominix
+          - count: "4"
+            class: Battleship
+            names:
+              - Construction Freight

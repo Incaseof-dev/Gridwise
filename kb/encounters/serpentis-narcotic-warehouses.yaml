@@ -1,0 +1,430 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: serpentis-narcotic-warehouses
+kind: complex
+name: Serpentis Narcotic Warehouses
+dedRating: 3
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Serpentis Narcotic Warehouses
+    url: https://wiki.eveuniversity.org/Serpentis_Narcotic_Warehouses
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "229618"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Cruisers"
+notes:
+  - text: The Serpentis Narcotic warehouse consists of total of five deadspace pockets. Due to branched nature only four of them need to be entered to get the final reward.
+  - text: "Escalation: This complex has a chance to escalate to another instance of itself. It is believed that this can happen only in narcotic warehouses scanned down as a Cosmic Signature."
+  - text: "Escalation: No Escalation message: The trail seems to run cold at this point."
+  - text: "Escalation: If the Narcotic Warehouse was an escalation, the failed escalation message is:"
+  - text: "Escalation: Failed Escalation message: The Serpentis Supply Stronghold is a smoking wreckage, and its administrators are dead, cloned or on the run. There is now little left in the area except the quiet ruins of past criminal activity."
+loot:
+  - item: 5th Tier Overseer's Effects
+    from: Supply Traffic Management
+    note: est. 190k ISK (wiki) · 100% drop rate
+  - item: 6th Tier Overseer's Effects
+    from: Staff Quarters
+    note: est. 360k ISK (wiki) · 100% drop rate
+  - item: 7th Tier Overseer's Effects
+    from: Serpentis Chief of Security
+    note: est. 600k ISK (wiki) · 100% drop rate
+  - item: 8th Tier Overseer's Effects
+    from: Serpentis Refinery Headmaster
+    note: est. 1.2M ISK (wiki) · 100% drop rate
+  - item: 9th Tier Overseer's Effects
+    from: Serpentis Supply Stronghold
+    note: est. 2.1M ISK (wiki) · 100% drop rate
+  - item: Coreli A-Type module
+    from: Serpentis Supply Stronghold
+    note: Up to 6x
+  - item: Daredevil BPC
+    from: Serpentis Supply Stronghold
+    note: est. 40M ISK (wiki) · 12.5% drop rate
+  - item: Shadow Serpentis module
+    from: Serpentis Supply Stronghold
+  - item: Shadow Serpentis module
+    from: Supply Traffic Management
+  - item: Shadow Serpentis module
+    from: Staff Quarters
+  - item: Shadow Serpentis module
+    from: Serpentis Chief of Security
+  - item: Shadow Serpentis module
+    from: Serpentis Refinery Headmaster
+  - item: + Exploration logs
+  - item: Oct 2014
+    note: est. 1,5M ISK (wiki)
+  - item: Oct 2014
+    note: est. 100k ISK (wiki)
+  - item: Oct 2014
+    note: est. 75M ISK (wiki)
+  - item: Oct 2014
+    note: est. 1M ISK (wiki)
+  - item: Oct 2014
+    note: est. 30M ISK (wiki)
+  - item: Nov 2014
+    note: est. 8M ISK (wiki)
+  - item: Nov 2014
+    note: est. 38M ISK (wiki)
+  - item: Nov 2014
+    note: est. 70M ISK (wiki) · From Serpentis Supply Stronghold
+  - item: Oct 2015
+    note: est. 623k ISK (wiki) · From Serpentis Supply Stronghold
+  - item: Mar 2016
+    note: est. 167M ISK (wiki) · From Supply Traffic Management
+  - item: Mar 2016
+    note: est. 81M ISK (wiki) · From Serpentis Supply Stronghold
+  - item: Mar 2016
+    note: est. 12M ISK (wiki) · From Serpentis Supply Stronghold
+  - item: June 2016
+    note: est. 850k ISK (wiki) · From Serpentis Supply Stronghold
+  - item: June 2016
+    note: est. 850k ISK (wiki) · From Serpentis Supply Stronghold
+  - item: June 2016
+    note: est. 700k ISK (wiki) · From Serpentis Supply Stronghold
+  - item: June 2016
+    note: est. 11M ISK (wiki) · From Serpentis Supply Stronghold
+  - item: January 2017
+    note: est. 22M ISK (wiki) · From Serpentis Supply Stronghold
+  - item: January 2017
+    note: est. 440k ISK (wiki) · From Serpentis Supply Stronghold
+  - item: March 2017
+    note: est. 600k ISK (wiki) · From Serpentis Supply Stronghold
+  - item: March 2017
+    note: est. 60M ISK (wiki) · From Serpentis Supply Stronghold
+  - item: July 2017
+    note: est. 59M ISK (wiki) · From Serpentis Supply Stronghold
+  - item: July 2017
+    note: est. 60M ISK (wiki) · From Serpentis Supply Stronghold
+  - item: July 2017
+    note: est. 6.23M ISK (wiki) · From Serpentis Supply Stronghold
+  - item: July 2017
+    note: est. 841k ISK (wiki) · From Serpentis Supply Stronghold
+  - item: August 2017
+    note: est. 67.3M ISK (wiki) · From Serpentis Supply Stronghold
+  - item: August 2017
+    note: est. 841k ISK (wiki) · From Serpentis Supply Stronghold
+  - item: September 2017
+    note: est. 25M ISK (wiki) · From Serpentis Supply Stronghold
+  - item: September 2017
+    note: est. 30M ISK (wiki) · From Serpentis Supply Stronghold
+  - item: September 2017
+    note: est. 5M ISK (wiki) · From Serpentis Supply Stronghold
+  - item: September 2017
+    note: est. 28M ISK (wiki) · From Serpentis Supply Stronghold
+  - item: September 2017
+    note: est. 23M ISK (wiki) · From Serpentis Supply Stronghold
+  - item: September 2017
+    note: est. 23M ISK (wiki) · From Serpentis Supply Stronghold
+  - item: September 2017
+    note: est. 99M ISK (wiki) · From Serpentis Chief of Security
+  - item: May 2018
+    note: est. 61M ISK (wiki) · From Serpentis Supply Stronghold
+  - item: May 2018
+    note: est. 39.4M ISK (wiki) · From Serpentis Supply Stronghold
+  - item: May 2018
+    note: est. 91M ISK (wiki) · From Serpentis Supply Stronghold
+  - item: Aug 2018
+    note: est. 87M ISK (wiki) · From Serpentis Supply Stronghold
+  - item: May 2018
+    note: est. 700k ISK (wiki) · From Serpentis Supply Stronghold
+  - item: May 2018
+    note: est. 48M ISK (wiki) · From Serpentis Supply Stronghold
+  - item: November 2020
+    note: est. 12.3M ISK (wiki) · From Serpentis Supply Stronghold
+  - item: Coreli A-Type Kinetic Coating
+  - item: Coreli A-Type EM Coating
+  - item: Other Loot
+  - item: November 2020
+    note: est. 19.3M ISK (wiki) · From Serpentis Supply Stronghold
+  - item: Coreli A-Type Small Remote Armor Repairer
+  - item: Coreli A-Type EM Coating
+  - item: Other Loot
+  - item: May 2021
+    note: est. 15.4M ISK (wiki) · From Serpentis Supply Stronghold
+  - item: Coreli A-Type EM Armor Coating
+  - item: Other Loot
+  - item: June 2021
+    note: est. 17.9M ISK (wiki) · From Serpentis Supply Stronghold
+  - item: Coreli A-Type Small Remote Armor Repairer
+  - item: Coreli A-Type Kinetic Coating
+  - item: Coreli A-Type Explosive Coating
+  - item: Other Loot
+  - item: January 2022
+    note: est. 18.5M ISK (wiki) · From Serpentis Supply Stronghold
+  - item: Other Loot
+  - item: January 2022
+    note: est. 30.4M ISK (wiki) · From Serpentis Supply Stronghold
+  - item: Coreli A-Type EM Coating
+  - item: Coreli A-Type Multispectrum Coating
+  - item: Other Loot
+  - item: February 2022 (200M+ ISK!)
+    note: est. 37.5M ISK (wiki) · From Serpentis Supply Stronghold
+  - item: Coreli A-Type 5MN Microwarpdrive
+  - item: Coreli A-Type Multispectrum Coating
+  - item: Coreli A-Type Small Remote Armor Repairer
+  - item: Other Loot
+  - item: May 2022
+    note: est. 34.0M ISK (wiki) · From Serpentis Supply Stronghold
+  - item: May 2022
+    note: est. 128.3M ISK (wiki) · From Serpentis Supply Stronghold
+  - item: August 2023 (200M+ ISK)
+    note: est. 176.8M ISK (wiki) · From Serpentis Supply Stronghold
+  - item: Coreli A-Type Small Armor Repairer
+  - item: Coreli A-Type Thermal Coating
+  - item: Coreli A-Type Kinetic Coating
+  - item: Shadow Serpentis Thermal Coating
+    note: est. From Serpentis Refinery Headmaster (wiki)
+  - item: Other Loot
+lootNotes:
+  - text: The main attraction of this site is the Coreli A-Type modules. The Small Armor Repairer and Small Remote Armor Repairer aren't as strong as corresponding deadspace modules from other factions due to widespread farming and cheaper prices. The Multispectrum Coating and prop mods are just as strong as corresponding deadspace modules from other factions.
+  - text: It is also possible to get faction modules from the overseers but this is very rare.
+  - text: "Bounty: ± 1.1 Mil ISK (All five pockets)"
+  - text: More loot data
+pockets:
+  - name: First Pocket
+    notes:
+      - text: ----
+      - text: 300px|thumb|First Pocket
+      - text: Fastest way through this room is to jump into security corridor ignoring all the rats in the room.
+    waves:
+      - id: initial-defenders-gradual-spawn
+        trigger:
+          on: warpIn
+          text: Initial defenders(gradual spawn)
+        spawns:
+          - count: "15"
+            class: Frigate
+            names:
+              - Coreli Guard
+              - Coreli Patroller
+              - Coreli Watchman
+            ewar:
+              - kind: sensorDamp
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Supply Traffic Management
+            drop: Contains Traffic Management Passkey, 5th Tier Overseers Effects and possibly Shadow Serpentis Modules
+          - count: "2"
+            class: Container
+            names:
+              - Minor Supply Container
+            drop: Metal scraps, T1 ammo
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate to Security Corridor
+            note: Can be entered without clearing pocket with having Traffic Management Passkey in drop.
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate to Check-In Tunnel
+            note: Locked until pocket is cleared
+    onWarpIn: "This deadspace complex was built by the Serpentis Corporation to protect and store narcotic and military supplies for their members. The complex also acts as a temporary storage area for the corporation's traffic of illicit substances. While the entrance check-in sectors of the complex are not known to be heavily guarded, certain sections house experienced security staff using top-of-the-line equipment funded by the Serpentis Corporation's income from illegal activity. DED Threat Assessment: Unsafe (3 of 10)"
+  - name: Second Pocket - Check-In Tunnel
+    notes:
+      - text: ----
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "18"
+            class: Frigate
+            names:
+              - Coreli Agent
+              - Coreli Patroller
+              - Coreli Spy
+            ewar:
+              - kind: sensorDamp
+            note: type list incomplete on the source page
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Staff Quarters
+            drop: Contains 6th Tier Overseers Effects and possibly Shadow Serpentis Modules
+          - count: "2"
+            class: Container
+            names:
+              - Serpentis Container
+            drop: T1 ammo
+          - count: "2"
+            class: Container
+            names:
+              - Charge Ammunition Storage
+            drop: T1 ammo
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate to Central Warehouses
+            note: Locked until all NPC ships are destroyed
+    onWarpIn: The entrance pocket of this complex contains light peripheral security around the advent ware storages. Two acceleration gates give way to two different routes inside the complex, one leading to the check-in tunnel and the other to the more heavily defended security corridor. Visitors are cleared by security at the Traffic Management office, allowing members of the Serpentis Corporation access to the Check-in Tunnel.
+  - name: Second Pocket - Security Corridor
+    notes:
+      - text: ----
+      - text: Gate to 3rd room is 55km from warp in.
+      - text: 300px|thumb|Second Pocket - Security Coridor
+      - text: "Information: Database Information:: The security corridor is the main defense barrier before continuing through the acceleration gate towards the main refinery and central warehouses. All guest passes and operation handling is made by the Chief of Security on duty."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "28"
+            class: Frigate
+            names:
+              - Coreli Agent
+              - Coreli Patroller
+              - Coreli Spy
+            ewar:
+              - kind: sensorDamp
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Sentry
+            names:
+              - Serpentis Point Defense Battery
+          - count: "1"
+            class: Overseer Cruiser
+            names:
+              - Serpentis Chief of Security
+            drop: Drops 7th Tier Overseers Effects and up to two Shadow Serpentis Modules
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate to Central Warehouses
+            note: Locked until all NPC ships are destroyed
+          - count: "1"
+            class: Container
+            names:
+              - Charge Ammunition Storage
+            drop: T1 ammo
+    onWarpIn: Check-in tunnel contains warehouses and storage's for equipment and drugs ready for categorization and registration. Incoming vessels are required to check in at the Staff Quarters before continuing to the main drug refinery and central warehouses.
+  - name: Third Pocket - Central Warehouses
+    notes:
+      - text: ----
+      - text: 300px|thumb|Third Pocket
+      - text: Gate to 4th room 45km from warp in.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "16"
+            class: Frigate
+            names:
+              - Coreli Guard
+              - Coreli Patroller
+              - Coreli Safeguard
+            ewar:
+              - kind: sensorDamp
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Overseer Cruiser
+            names:
+              - Serpentis Refinery Headmaster
+            drop: Drops 8th Tier Overseers Effects and possibly Shadow Serpentis modules
+            note: Range of about 55 km
+          - count: "4"
+            class: Sentry
+            names:
+              - Serpentis Sentry Gun
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "3"
+            class: Container
+            names:
+              - Charge Ammunition Storage
+            drop: T1 ammo
+          - count: "1"
+            class: Container
+            names:
+              - Military Supply Container
+            drop: Metal scraps, T1 ammo, drones
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate to Administration Sector
+            note: Locked until all NPC ships are destroyed
+    onWarpIn: The central pocket of the complex houses the drug refinery, narcotics storages and military supply warehouses. The headmaster of the drug refinery must clear all visitors before allowing entry to the acceleration gate towards the administration sector.
+  - name: Fourth Pocket - Administration Sector
+    notes:
+      - text: ----
+      - text: 300px|thumb|Fourth Pocket
+      - text: The Serpentis Supply Stronghold has a lot of hit points, so it is recommended to bring a high DPS ship. It does not, however, repair itself. Shooting it will aggro all ships.
+      - text: "After destruction of Supply Stronghold:: The Serpentis Supply Stronghold is a smoking wreckage, and its administrators are dead, cloned, or on the run. There is now little left in the area except the quiet ruins of past criminal activity."
+    waves:
+      - id: initial-defenders-no-aggro-until-attacked
+        trigger:
+          on: warpIn
+          text: Initial defenders(no aggro until attacked)
+        spawns:
+          - count: "31"
+            class: Frigate
+            names:
+              - Coreli Agent
+              - Coreli Patroller
+              - Coreli Spy
+            ewar:
+              - kind: sensorDamp
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Overseer Cruiser
+            names:
+              - Serpentis Supplystation Overseer
+          - count: "3"
+            class: Sentry
+            names:
+              - Serpentis Sentry Gun
+            note: Will target drones if they get in range
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "2"
+            class: Container
+            names:
+              - Charge Ammunition Storage
+            drop: T1 ammo
+          - count: "1"
+            class: Container
+            names:
+              - Military Supply Container
+            drop: Metal scraps, T1 ammo, drones
+          - count: "1"
+            class: Structure
+            names:
+              - Serpentis Supply Stronghold
+            drop: Contains 9th Tier Overseers Effects and possibly Coreli Frigate A-Type, Shadow Serpentis Modules and/or Daredevil BPC
+            note: Very high passive tank
+    onWarpIn: The final sector contains the Supply Stronghold which houses the administration staff for the entire complex. No further information is available.
+sde:
+  dungeonIds:
+    - 2244

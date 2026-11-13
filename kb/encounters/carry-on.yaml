@@ -1,0 +1,201 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: carry-on
+kind: mission
+name: Carry On
+level: 4
+enemyFaction: Mercenaries
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Carry On
+    url: https://wiki.eveuniversity.org/Carry_On
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "230823"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Find the Carry On Hub and approach it.
+ewar:
+  - kind: neut
+  - kind: sensorDamp
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Veteran 'Carry On Guard' Frigate"
+  - text: "Suggested ships: Battleship (Fast frigate for Blitz)"
+  - text: Minor Syndicate faction standing loss for ship kills if not blitzing
+  - text: "Carry On Token: If you found the Carry On token, you may find it useful at their illicit location. Even smugglers charge admission."
+  - text: Gated semi-deadspace pocket two jumps away in Osmeden.
+  - text: "Blitz: place your Carry On Token from the previous Mission on a Microwarpdrive equipped Frigate, take the Toll Booth Gate and approach the Carry On Hub Structure."
+  - text: "Tips: Bookmark the final Room after either going through the Alley or using the Carry On Token, so you can warp away"
+  - text: "Tips: The Carry On Token is consumed"
+  - text: "Tips: The Toll Booth Gate stays open for 60 seconds after activating"
+  - text: "Tips: The last room is not deadspaced"
+  - text: "Tips: Group 1 in the last room warp away when you get close to the Carry On Crow's Nest"
+  - text: "Tips: Veteran Carry On Guard Battleships deal heavy Kinetic/Thermal damage out to 40 km."
+pockets:
+  - name: Warp-in
+    notes:
+      - text: "Pay the toll: Are you lost, stranger? Pay the toll to carry on. Otherwise, you gotta use the side gate and take the “alley.”"
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+            note: Leads to the final Room. Requires the Carry On Token.
+          - count: "1"
+            class: Structure
+            names:
+              - Toll Booth
+      - id: structures-2
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+            note: Unlocked. Leads to the next Room
+  - name: Room 1 - The Alley
+    notes:
+      - text: The Acceleration Gate will not appear until at least one cruise missile battery is destroyed.
+    waves:
+      - id: initial-defenders-20-40-km
+        trigger:
+          on: warpIn
+          text: Initial defenders (20-40 km)
+        spawns:
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Veteran Carry On Guard
+            ewar:
+              - kind: neut
+              - kind: sensorDamp
+          - count: "8"
+            class: Battleship
+            names:
+              - Amateur
+              - Veteran Carry On Guard
+          - count: "6"
+            class: Sentry
+            names:
+              - Syndicate Cruise Missile Battery
+      - id: structures-36-km
+        trigger:
+          on: other
+          text: Structures (36 km)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+            note: Leads to "The Alley (2)". Gate will appear when at least one cruise missile battery is destroyed.
+  - name: Room 2 - The Alley
+    waves:
+      - id: initial-defenders-60-km
+        trigger:
+          on: warpIn
+          text: Initial defenders (60+ km)
+        spawns:
+          - count: "8"
+            class: Cruiser
+            names:
+              - Carry On Guard
+          - count: "6"
+            class: Battleship
+            names:
+              - Carry On Guard
+          - count: "2"
+            class: Sentry
+            names:
+              - Syndicate Cruise Missile Battery
+          - count: "2"
+            class: Sentry
+            names:
+              - Syndicate Heavy Missile Battery
+      - id: structures-22-km
+        trigger:
+          on: other
+          text: Structures (22 km)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+            note: Leads to "The Hub". Gate unlocks when all enemy ships are destroyed. Missile batteries do not need to be destroyed.
+  - name: Room 3 - The Hub
+    notes:
+      - text: "Agent Conversation on landing: You've made it in. Good. Haha! They banned me from this place long ago, but I found a way to get back. Start shootin'. When you're done with their stooges, approach the Carry On hub. They'll relent once you get near. Make sure you tell them who sent you."
+      - text: NPCs do not aggro on landing and will only attack once you approach within ~30 km.
+      - text: Freighters have ~150k EHP.
+      - text: All enemy ships except industrials will warp away when mission is complete.
+      - text: Minor standing loss to the Syndicate for destroying enemy ships, even just the haulers.
+      - text: "Stop shooting: Studio I. The kid's at Studio I."
+    waves:
+      - id: group-1-50-80-km
+        trigger:
+          on: other
+          text: Group 1 (50-80 km)
+          confidence: inferred
+        spawns:
+          - count: "8"
+            class: Elite Frigate
+            names:
+              - Veteran Carry On Guard
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "8"
+            class: Elite Cruiser
+            names:
+              - Veteran Carry On Guard
+            ewar:
+              - kind: neut
+              - kind: sensorDamp
+          - count: "6"
+            class: Battleship
+            names:
+              - Amateur Carry On Guard
+          - count: "2"
+            class: Elite Battleship
+            names:
+              - Veteran Carry On Guard
+      - id: group-2
+        trigger:
+          on: other
+          text: Group 2
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Industrial
+            names:
+              - Carry On Industrial
+              - Courier
+          - count: "3"
+            class: Freighter
+            names:
+              - Carry On Freighter
+            drop: "Commodities: oxygen, civilians, scientist and exotic dancers, etc (1.5m ISK in total). Lots of HP."
+      - id: structures-30-km
+        trigger:
+          on: other
+          text: Structures (30 km)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Carry On Crow's Nest
+            triggers: Approach to complete the Mission

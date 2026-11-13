@@ -1,0 +1,135 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: serpent-and-the-slaves
+kind: mission
+name: The Serpent and the Slaves
+level: 4
+enemyFaction: Serpentis & Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Serpent And The Slaves
+    url: https://wiki.eveuniversity.org/Serpent_And_The_Slaves
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191921"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Investigate a possible slave trading outpost and deal with any possible slavers.
+ewar:
+  - kind: trackingDisruption
+notes:
+  - text: "Suggested ships: Battlecruiser, Battleship"
+  - text: Gated single pocket.
+pockets:
+  - name: Warp-in
+    notes:
+      - text: "Pirate Broadcast: Ah, you're here for the pick-up? Wait a minute – you're not with the Nation!"
+    waves:
+      - id: initial-defender-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Defender (Auto-aggro)
+        spawns:
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Serpentis Lookout
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+            note: Locked
+  - name: Single Pocket
+    notes:
+      - text: "Serpentis Broadcast: We're done with these live bodies for our experimentation. The project is nearly complete. You're free to use these specimens for your own devices. Don't bother explaining: We don't want to know what the Nation does with them. There's an intruder! You've set us up, haven't you?"
+      - text: Reinforcemement waves are triggered by killing the last ship of the entire group.
+      - text: "Sansha's Nation Message: Nation does not want us to waste our time with these slaves. Leave them to rot in freedom."
+    waves:
+      - id: initial-defenders-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Defenders (Auto-aggro)
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Corelli Guard
+              - Corelli Safeguard
+            group: Group 1 (50km)
+          - count: "2"
+            class: Battleship
+            names:
+              - Core Rear Admiral
+            group: Group 1 (50km)
+          - count: "3"
+            class: Frigate
+            names:
+              - Centii Loyal Savage
+              - Centii Loyal Slavehunter
+            group: Group 2 (60km)
+            ewar:
+              - kind: trackingDisruption
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Execrator
+              - Centum Loyal Slaughter
+            group: Group 2 (60km)
+            ewar:
+              - kind: trackingDisruption
+          - count: "3"
+            class: Battleship
+            names:
+              - Centus Mutant
+              - Centus Savage Lord
+            group: Group 2 (60km)
+      - id: reinforcement-wave-1
+        trigger:
+          on: other
+          text: Reinforcement Wave 1
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corelum Chief Protector
+          - count: "2"
+            class: Battleship
+            names:
+              - Core Rear Admiral
+      - id: reinforcement-wave-2
+        trigger:
+          on: other
+          text: Reinforcement Wave 2
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Corelli Guard
+          - count: "3"
+            class: Battleship
+            names:
+              - Core Port Admiral
+      - id: reinforcement-wave-3
+        trigger:
+          on: other
+          text: Reinforcement Wave 3
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corelatis Squad Leader
+          - count: "2"
+            class: Battleship
+            names:
+              - Core Port Admiral

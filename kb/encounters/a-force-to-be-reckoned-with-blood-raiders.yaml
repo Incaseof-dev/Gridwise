@@ -1,0 +1,57 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: a-force-to-be-reckoned-with-blood-raiders
+kind: mission
+name: A Force to be Reckoned with
+level: 3
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – A Force to be Reckoned with (Blood Raiders)
+    url: https://wiki.eveuniversity.org/A_Force_to_be_Reckoned_with_(Blood_Raiders)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "205157"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Take out Uleen Bloodsworn and then report back to your agent.
+ewar:
+  - kind: web
+  - kind: trackingDisruption
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Uleen Bloodsworn"
+  - text: Despite the mission objective telling you to take out Uleen Bloodsworn and return, you have to destroy all enemies.
+pockets:
+  - name: Warp-in
+    notes:
+      - text: All ships aggro on warp-in.
+    waves:
+      - id: initial-hostiles-50km-from-warp-in
+        trigger:
+          on: warpIn
+          text: Initial Hostiles (~50km from warp-in)
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Uleen Bloodsworn
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            drop: Uleen Bloodsworn's tag, possible faction loot
+          - count: "4"
+            class: Frigate
+            names:
+              - Bloodsworn Disciple
+            ewar:
+              - kind: trackingDisruption
+            note: Renamed Corpii Collector
+          - count: "2"
+            class: Cruiser
+            names:
+              - Bloodsworn Bodyguard
+            note: Renamed Corpum Dark Priest

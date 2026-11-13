@@ -1,0 +1,35 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: eliminate-the-pirate-campers-sanshas-nation
+kind: mission
+name: Eliminate the Pirate Campers
+level: 1
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Eliminate the Pirate Campers (Sansha's Nation)
+    url: https://wiki.eveuniversity.org/Eliminate_the_Pirate_Campers_(Sansha's_Nation)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "203023"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Eliminate the Sansha ships roaming around the stargate near the coordinates of your bookmark.
+notes:
+  - text: "Suggested ships: Frigate"
+pockets:
+  - name: Warp-in
+    waves:
+      - id: initial-group-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group (auto-aggro)
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Centii Servant
+              - Centii Minion

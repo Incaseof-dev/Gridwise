@@ -1,0 +1,173 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: blood-vigil
+kind: complex
+name: Blood Vigil
+dedRating: null
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Blood Vigil
+    url: https://wiki.eveuniversity.org/Blood_Vigil
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231195"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Battlecruiser"
+notes:
+  - text: This is a difficult site. Battlecruisers, or faction/pirate cruisers are recommended
+  - text: "Escalation: Killing the Corpus Station Manager may trigger the escalation The Rewards of Devotion."
+loot:
+  - item: + Commander and other valuable loot
+  - item: Dark Blood modules
+    note: From Corpus Station Manager
+  - item: T2 implants
+    note: From Corpus Station Manager
+  - item: Ashimmu blueprint
+    note: From Corpus Station Manager
+  - item: + Exploration logs
+  - item: Nov 2014
+  - item: Mar 2022
+    note: est. 128M ISK (wiki) · Mid-grade Amulet Delta
+  - item: Dark Blood Modules
+  - item: random Loot
+    note: est. incl. Salvage (wiki)
+npcs:
+  Dark Blood Arch Templar:
+    sdeTypes:
+      - Corpus Station Manager
+    class: Commander Cruiser
+pockets:
+  - name: First Pocket
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Blood Stasis Tower
+            ewar:
+              - kind: web
+          - count: "3"
+            class: Sentry
+            names:
+              - Blood Heavy Missile Battery
+          - count: "3"
+            class: Sentry
+            names:
+              - Blood Light Missile Battery
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corpatis Bishop
+              - Corpatis Seer
+              - Corpatis Shade
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+            note: unlocks when Blood Raider Chapel is destroyed or if you have a Blood Raider Gold tag in your cargo
+          - count: "1"
+            class: Station
+            names:
+              - Blood Raider Chapel
+            triggers: Trigger for aggression wave
+      - id: blood-raider-chapel-aggression-wave
+        trigger:
+          on: other
+          text: Blood Raider Chapel Aggression Wave
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Elder Corpii Diviner
+              - Elder Corpii Engraver
+              - Elder Corpii Raider
+          - count: 2-3
+            class: Battlecruiser
+            names:
+              - Corpatis Exorcist
+              - Corpatis Phantom
+    onWarpIn: Previous explorers have commented that one of the gates requires a passkey. Alternatively, it can be bypassed by meddling with the security system controls inside the Chapel. The overseer guards the Battlestation vigorously.
+  - name: Second Pocket
+    notes:
+      - text: The Powerful EM Forcefields will fully repair all hostile NPCs and sentries every couple of seconds while they are still present. Destroy them as quickly as you can before the NPCs get close to you, incoming DPS will build up quickly.
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "4"
+            class: Force Field
+            names:
+              - Powerful EM Forcefield
+            note: Until destroyed all complex receive insane reps
+          - count: "1"
+            class: Station
+            names:
+              - Blood Raider Battlestation
+            triggers: Trigger for commander wave
+      - id: wave
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Blood Stasis Tower
+            ewar:
+              - kind: web
+          - count: 5-6
+            class: Destroyer
+            names:
+              - Corpior Cleric
+              - Corpior Converter
+              - Corpior Devoter
+            note: type list incomplete on the source page
+          - count: 5-6
+            class: Battlecruiser
+            names:
+              - Corpatis Exorcist
+              - Corpatis Fanatic
+              - Corpatis Phantom
+            note: type list incomplete on the source page
+      - id: battlestation-aggression-wave
+        trigger:
+          on: other
+          text: Battlestation Aggression Wave
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Commander Cruiser
+            names:
+              - Dark Blood Arch Templar
+            drop: May drop Dark Blood modules, Ashimmu blueprint and/or T2 implants
+          - count: "3"
+            class: Frigate
+            names:
+              - Corpii Raider
+              - Corpii Reaver
+          - count: 3-4
+            class: Destroyer
+            names:
+              - Corpior Cleric
+              - Corpior Friar
+sde:
+  dungeonIds:
+    - 1229

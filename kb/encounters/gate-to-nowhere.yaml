@@ -1,0 +1,111 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: gate-to-nowhere
+kind: mission
+name: Gate to Nowhere
+level: 4
+enemyFaction: Minmatar Republic
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Gate to Nowhere
+    url: https://wiki.eveuniversity.org/Gate_to_Nowhere
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "196474"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Standing loss: 0.02% standing per tick (10 minutes)"
+  - text: "Tags may include: 4x Republic Fleet Captain I, 26x Republic Fleet Commander II, 9x Republic Fleet High Captain I, 6x Republic Fleet Private I"
+pockets:
+  - name: 1st pocket
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Republic Faxi
+              - Republic Austri
+          - count: "3"
+            class: Battleship
+            names:
+              - Republic Sigur
+              - Republic Jotun
+            triggers: Last battleship killed spawns Reinforcement Wave
+      - id: reinforcement-wave-100km-from-pocket-2-gate
+        trigger:
+          on: other
+          text: Reinforcement Wave, 100km from Pocket 2 gate
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Republic Austri
+              - Republic Tribal Bormin
+          - count: "4"
+            class: Battleship
+            names:
+              - Republic Sigur
+              - Republic Jotun
+  - name: 2nd pocket
+    waves:
+      - id: initial-group-10km-away
+        trigger:
+          on: warpIn
+          text: Initial Group, 10km away
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Republic Tribal Japur
+              - Republic Tribal Manadis
+          - count: "3"
+            class: Battleship
+            names:
+              - Republic Tribal Jarl
+          - count: "1"
+            class: Battleship
+            names:
+              - Republic Tribal Jotun
+            triggers: Spawns Reinforcement 1
+      - id: reinforcement-1
+        trigger:
+          on: other
+          text: Reinforcement 1
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Cruiser
+            names:
+              - Republic Tribal Rodul
+              - Republic Tribal Ormur
+              - Republic Tribal Manadis
+            triggers: Last Republic Tribal Ormur spawns Reinforcement 2
+          - count: "3"
+            class: Battleship
+            names:
+              - Republic Tribal Sigur
+              - Republic Tribal Jotun
+      - id: reinforcement-2
+        trigger:
+          on: other
+          text: Reinforcement 2
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Battlecruiser
+            names:
+              - Republic Tribal Norm
+              - Republic Tribal Nutia
+          - count: 3-5
+            class: Battleship
+            names:
+              - Republic Tribal Sigur
+              - Republic Tribal Jotun

@@ -1,0 +1,24 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: return-to-isha
+kind: mission
+name: Return to Isha
+level: 4
+enemyFaction: null
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Return to Isha
+    url: https://wiki.eveuniversity.org/Return_to_Isha
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "212062"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Report back to Katsen Isha
+notes:
+  - text: "Masks of Authority: Internal Security, the Nugoeihuvi Corporation's force, poses a curious irony in this regard. Though the Nugoeihuvi conglomerate's main preoccupation is the entertainment industry, they have consistently failed to change the prevalent cultural image of their troops as a pack of rough-and-tumble thugs culled from the Caldari underworld, given to the grossest abuses and atrocities. It's very rare for elements of the Caldari State to find the rumor mill outgrinding them in their efforts at propaganda, but that's what's happening to Nugoeihuvi. (In reality, for the record, Nugoeihuvi's soldiers are not any more or less savage than those of the other corporate forces, though broadly speaking they have been noted to harbor a slightly greater proclivity toward drink and drugs.)"
+  - text: Report to Katsen Isha five jumps away in Poinen IV - Moon 13 - Nugoeihuvi Corporation Development Studio.
+  - text: "Tips: Remember to take the S.I Formula Sheet (0.1 m3) from the Item Hangar"

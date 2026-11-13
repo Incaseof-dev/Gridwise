@@ -1,0 +1,223 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: centus-assembly-t-p-co
+kind: complex
+name: Centus Assembly T.P. Co.
+dedRating: 10
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Centus Assembly T.P. Co.
+    url: https://wiki.eveuniversity.org/Centus_Assembly_T.P._Co.
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "229141"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: T2 Battleship"
+notes:
+  - text: Centus Assembly T.P. Co. is a DED rated combat site found in null security space.
+  - text: Anybody who want to use the gate and complete the site need Leadership himself, which excludes alpha characters.
+loot:
+  - item: 23rd Tier Overseer's Effects
+    from: Station Ultima
+    note: est. 133M ISK (wiki) · 100% drop rate
+  - item: Centus X-Type module
+    from: Station Ultima
+  - item: True Sansha module
+    from: Station Ultima
+  - item: Nightmare BPC
+    from: Station Ultima
+  - item: True Sansha module
+    from: Special Products
+pockets:
+  - name: 1st pocket
+    notes:
+      - text: True Power' Assembly Security HQ has very strong tank and does not need to be killed. Should be within 30 KM in order to effectively kill it.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "8"
+            class: Destroyer
+            names:
+              - True Power Battalion Scout
+            note: type list incomplete on the source page
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - True Power Battalion Leader
+            note: type list incomplete on the source page
+          - count: "7"
+            class: Battleship
+            names:
+              - True Power Battalion Commander
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Sentry
+            names:
+              - True Power' Assembly Security HQ
+            ewar:
+              - kind: web
+    onWarpIn: "The Centus Assembly T.P. Co. deadspace complex is run by Sansha's True Power corporation. Mineral storage facilities and naval shipyards are hidden behind powerful defenses in the outer pockets. Commander Chelm Soran is responsible for security in the Assembly, although he is rarely present himself. DED Threat Assessment: 10 of 10"
+  - name: 2nd pocket
+    notes:
+      - text: Again Centus Reprocessing Station has very strong tank and does not need to be killed. Should be within 30 KM in order to effectively kill it.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Destroyer
+            names:
+              - Power Auxiliary Scout
+            note: type list incomplete on the source page
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - True Power Battalion Leader
+            note: type list incomplete on the source page
+          - count: "11"
+            class: Battleship
+            names:
+              - True Power Battalion Commander
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Sentry
+            names:
+              - True Power Automated Defense Turrets
+          - count: "2"
+            class: Sentry
+            names:
+              - True Power Sentry
+          - count: "2"
+            class: Structure
+            names:
+              - Centus Reprocessing Station
+            note: Repairs shields at around 1500 DPS
+    onWarpIn: This is the first guarded deadspace pocket of a total of 5 reported in this complex. Commander Chelm Soran's top enforcers organize deadspace security from the command HQ.
+  - name: 3rd pocket
+    notes:
+      - text: Again True Power Assembly Management HQ has very strong tank and does not need to be killed. Should be within 30 KM in order to effectively kill it.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "15"
+            class: Destroyer
+            names:
+              - True Power Battalion Scout
+            note: type list incomplete on the source page
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - HQ Patrol Captain
+            note: type list incomplete on the source page
+          - count: "8"
+            class: Battleship
+            names:
+              - HQ Patrol General
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Sentry
+            names:
+              - Accerleration Gate Control Tower
+          - count: "2"
+            class: Sentry
+            names:
+              - True Power Assembly Management HQ
+            note: Repairs shields at around 1600 DPS
+    onWarpIn: Centus Assembly's Reprocessing Station is located within the 2nd deadspace pocket. The precious minerals are heavily guarded by elite units that ferry them to the assembly line when needed.
+  - name: 4th pocket
+    notes:
+      - text: The Special Products container may contain faction modules. The defenders need to be killed before it can be opened.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "26"
+            class: Destroyer
+            names:
+              - Product Patrol
+            note: type list incomplete on the source page
+          - count: "9"
+            class: Battlecruiser
+            names:
+              - Planet Craft
+            note: type list incomplete on the source page
+          - count: "9"
+            class: Battleship
+            names:
+              - Manufacture Coordinator
+            note: type list incomplete on the source page
+          - count: "8"
+            class: Sentry
+            names:
+              - Sansha Heavy Missile Batteries
+          - count: "4"
+            class: Sentry
+            names:
+              - Sansha Sentry Guns
+          - count: "4"
+            class: Sentry
+            names:
+              - Sansha Stasis Tower
+            ewar:
+              - kind: web
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Red Container
+            names:
+              - Special Products
+            drop: 5x Soran's passkeys and rarely faction modules.
+    onWarpIn: Sansha's Nation assembles its ships in the factories in this deadspace pocket. Operations are controlled from the Assembly Management HQ. The most advanced modules and ship parts are not produced here, but within the fourth deadspace pocket.
+  - name: 5th pocket
+    notes:
+      - text: Station Ultima fires EM citadel torpedoes that hit extremely hard but does not have very significant tank. 60k shield HP with 0 EM resist, 300 HP/s active shield reps. 10k armor and 50k structure. As long as you immediately begin moving quickly upon landing in the pocket its damage is survivable. Theoretically it deals upwards of 500,000 EM damage with each shot but the torpedoes have capital-ship sized damage application (10,000m), and they are fired extremely slowly (every 120 seconds).
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "10"
+            class: Destroyer
+            names:
+              - Centior Horror
+              - Centior Monster
+          - count: "10"
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centatis Daemon
+          - count: "12"
+            class: Battleship
+            names:
+              - Outer Perimeter Patrol
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Sentry
+            names:
+              - Station Ultima
+            ewar:
+              - kind: web
+            drop: 23rd Overseer's Personal Effects, Centus X-Type modules, faction modules and Nightmare BPC.
+    onWarpIn: In the Centus Manufacturing Plant, the True Power corporation manufactures Tech II-level components for its vessels. Dedicated engineering squads are guarded by elite Centus Sansha pilots and experienced crews. The most advanced modules and ship parts are not produced here, but within the fourth deadspace pocket.
+sde:
+  dungeonIds:
+    - 2258

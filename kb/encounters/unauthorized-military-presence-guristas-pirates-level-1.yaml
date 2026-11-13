@@ -1,0 +1,90 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: unauthorized-military-presence-guristas-pirates-level-1
+kind: mission
+name: Unauthorized Military Presence
+level: 1
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Unauthorized Military Presence (Guristas Pirates) (Level 1)
+    url: https://wiki.eveuniversity.org/Unauthorized_Military_Presence_(Guristas_Pirates)_(Level_1)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "192175"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Intercept the personnel transport ship, destroy its guards, and bring the militants to your agent.
+ewar:
+  - kind: ecm
+notes:
+  - text: "Suggested ships: Destroyer"
+pockets:
+  - name: 1st Pocket
+    waves:
+      - id: initial-group-20km
+        trigger:
+          on: warpIn
+          text: Initial Group, 20km
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Pithi Arrogator
+              - Pithi Imputor
+          - count: "1"
+            class: Frigate
+            names:
+              - Pithi Invader
+      - id: reinforcement-20km
+        trigger:
+          on: other
+          text: Reinforcement, 20km
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Pithi Arrogator
+              - Pithi Imputor
+  - name: 2nd Pocket
+    waves:
+      - id: initial-group-2-ships-25km
+        trigger:
+          on: warpIn
+          text: Initial Group (2 ships), 25km
+        spawns:
+          - count: 0-2
+            class: Frigate
+            names:
+              - Pithi Saboteur
+              - Pithi Despoiler
+            ewar:
+              - kind: ecm
+            triggers: Last ship triggers personnel transport convoy
+          - count: 0-2
+            class: Frigate
+            names:
+              - Pithi Wrecker
+            triggers: Last ship triggers personnel transport convoy
+      - id: personnel-transport-convoy-50km
+        trigger:
+          on: other
+          text: Personnel transport convoy, 50km
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Pithi Arrogator
+              - Pithi Imputor
+              - Pithi Infiltrator
+              - Pithi Invader
+          - count: "1"
+            class: Cruiser
+            names:
+              - Guristas Personnel Transport
+            drop: Drops 10x Militants (Mission objective)

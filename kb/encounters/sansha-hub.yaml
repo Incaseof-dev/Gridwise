@@ -1,0 +1,114 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: sansha-hub
+kind: anomaly
+name: Sansha Hub
+dedRating: null
+anomalyClass: 8
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Sansha Hub
+    url: https://wiki.eveuniversity.org/Sansha_Hub
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "227493"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Sansha Hub is an unrated combat site belonging to the Sansha's Nation pirate faction. It can be found via exploration as a cosmic anomaly within systems owned by the Amarr Empire or occupied by the Sansha's Nation. As an ungated complex, the limitations as to which ships can complete this site are tied to the security rating of the system where the anomaly spawns (up to Titans in low-security and null-security systems). Completing this complex may award the player with valuable True Sansha faction modules and ammunition. This combat site consists of a single ungated pocket of space containing a variety of Frigate to Battleship-sized enemy ships, as well as some batteries.
+  - text: "Escalation: This site can escalate to Sansha Capital Staging."
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Tower Sentry Sansha II
+          - count: "1"
+            class: Sentry
+            names:
+              - Sansha Cruise Missile Battery
+          - count: "1"
+            class: Sentry
+            names:
+              - Sansha Heavy Missile Battery
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Centii Loyal Plague
+              - Centii Loyal Butcher
+          - count: 2-3
+            class: Battleship
+            names:
+              - Centus Dark Lord
+              - Centus Overlord
+      - id: wave-1
+        trigger:
+          on: other
+          text: "Wave #1"
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centatis Daemon
+              - Centatis Devil
+              - Centatis Specter
+              - Centatis Wraith
+              - Centatis Phantasm
+          - count: "3"
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Dread Lord
+      - id: wave-2
+        trigger:
+          on: other
+          text: "Wave #2"
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Centior Misshape
+              - Centior Abomination
+              - Centior Devourer
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Centatis Daemon
+              - Centatis Behemoth
+          - count: "3"
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Dread Lord
+      - id: wave-3
+        trigger:
+          on: other
+          text: "Wave #3"
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Cruiser
+            names:
+              - Centrum Loyal Torturer
+              - Centrum Loyal Fiend
+              - Centrum Loyal Mutilator
+          - count: 3-4
+            class: Battleship
+            names:
+              - Centus Lord
+              - Centus Slave Lord
+sde:
+  dungeonIds:
+    - 2149

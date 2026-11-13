@@ -1,0 +1,100 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: convocation-watchpost
+kind: anomaly
+name: Convocation Watchpost
+dedRating: null
+enemyFaction: Triglavian Collective
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Convocation Watchpost
+    url: https://wiki.eveuniversity.org/Convocation_Watchpost
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "197002"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal:
+    - explosive
+    - thermal
+  resist:
+    - explosive
+    - thermal
+notes:
+  - text: The following information has been confirmed as incorrect. There are more than 2 waves, and each wave includes a greater number of rats.
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: 4,500,000 ISK payout upon completion of site, and 300 DED LP, To get reward you need to be fleeted.
+      - text: 2nd Wave can warp out without being completely killed,
+    waves:
+      - id: spawn-1
+        trigger:
+          on: other
+          text: Spawn 1
+          confidence: inferred
+        spawns: []
+      - id: spawn-2
+        trigger:
+          on: other
+          text: Spawn 2
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Raznaborg
+              - Renewing Damavik
+          - count: "1"
+            class: Cruiser
+            names:
+              - Raznaborg Starving Rodiva
+          - count: "1"
+            class: Cruiser
+            names:
+              - Raznaborg Vedmak
+          - count: "1"
+            class: Battleship
+            names:
+              - Raznaborg Renewing Leshak
+      - id: spawn-3
+        trigger:
+          on: other
+          text: Spawn 3
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Raznaborg
+              - Renewing Damavik
+          - count: "3"
+            class: Frigate
+            names:
+              - Raznaborg
+              - Renewing
+              - Liminal
+              - Anchoring
+              - Harrowing Kikimora
+          - count: "1"
+            class: Cruiser
+            names:
+              - Raznaborg Starving Rodiva
+          - count: "1"
+            class: Cruiser
+            names:
+              - Raznaborg Vedmak
+          - count: 0-1
+            class: Cruiser
+            names:
+              - Raznaborg Blinding Drekavac
+          - count: 0-3
+            class: Battleship
+            names:
+              - Raznaborg Renewing Leshak
+sde:
+  dungeonIds:
+    - 9010

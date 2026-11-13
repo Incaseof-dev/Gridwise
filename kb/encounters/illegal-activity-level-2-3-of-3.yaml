@@ -1,0 +1,110 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: illegal-activity-level-2-3-of-3
+kind: mission
+name: Illegal Activity (3 of 3)
+level: 2
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Illegal Activity (Level 2) (3 of 3)
+    url: https://wiki.eveuniversity.org/Illegal_Activity_(Level_2)_(3_of_3)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "193206"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Find a way to get through the acceleration gate. When you are at the other side wait until the Roden Shipyard convoy arrives, then destroy it.
+notes:
+  - text: "Blitz: Kill the R.S. Officer and loot his passcard, then kill the Roden Shipyard couriers."
+lootNotes:
+  - text: "Reward: ~138-150k ISK"
+  - text: "Time bonus: ~135-154k ISK"
+  - text: "Federal Navy Insignia's: ~500k ISK"
+  - text: "Other loot (Modules, etc): ~100k ISK"
+pockets:
+  - name: Warp-in
+    notes:
+      - text: "Pop-up: Incomming Transmission: Who are you?! Where are the guards? You’ll tell me exactly what happened here this instant!"
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Cruiser
+            names:
+              - R.S. Officer [Federation Navy Officer Vexor]
+            drop: R.S. Officer's Passcard (required for activating the acceleration gate)
+  - name: Pocket
+    notes:
+      - text: Groups A, B and C are in a "circle" around the warp-in point about 90 degrees separated. Groups D and E are in the fourth direction, separated from each other. The convoy warps in at about the middle of groups D and E but closer to the warp-in point.
+    waves:
+      - id: on-grid
+        trigger:
+          on: other
+          text: On grid
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Sentry
+            names:
+              - Gallente Sentry Gun
+            group: Group A (10-30km)
+          - count: "1"
+            class: Frigate
+            names:
+              - Federation Navy Soldier
+            group: Group A (10-30km)
+          - count: "1"
+            class: Sentry
+            names:
+              - Gallente Sentry Gun
+            group: Group B (10km-30)
+          - count: "1"
+            class: Frigate
+            names:
+              - Federation Navy Soldier
+            group: Group B (10km-30)
+          - count: "1"
+            class: Sentry
+            names:
+              - Gallente Sentry Gun
+            group: Group C (10-30km)
+          - count: "1"
+            class: Frigate
+            names:
+              - Federation Navy Soldier
+            group: Group C (10-30km)
+          - count: "9"
+            class: Frigate
+            names:
+              - Federation Navy Atron
+              - Federation Navy Maulus
+            group: Group D (90-100km)
+          - count: "9"
+            class: Frigate
+            names:
+              - Federation Navy Atron
+              - Federation Navy Maulus
+            group: Group E (90-100km)
+      - id: roden-shipyard-convoy-warps-in-after-a-couple-of-minutes
+        trigger:
+          on: other
+          text: Roden Shipyard convoy (Warps in after a couple of minutes)
+          confidence: inferred
+        spawns:
+          - count: "8"
+            class: Frigate
+            names:
+              - Convoy Escort Soldier
+              - Convoy Escort Maulus
+          - count: "2"
+            class: Industrial
+            names:
+              - Roden Shipyard Courier [Gallente Transport]
+            note: Mission objective

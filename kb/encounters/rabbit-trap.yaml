@@ -1,0 +1,81 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: rabbit-trap
+kind: mission
+name: Rabbit Trap
+level: null
+enemyFaction: Sansha's Nation & Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Rabbit Trap
+    url: https://wiki.eveuniversity.org/Rabbit_Trap
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "229786"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Kill all
+restrictions:
+  - text: "Ship size limit: T3 destroyers and below"
+ewar:
+  - kind: ecm
+notes:
+  - text: Single gated deadspace pocket. If you are running this mission in a Tech I destroyer with moderate skills (for example a Thrasher), it might be quite challenging to break Yukiros' shield. Use kinetic ammo.
+  - text: The mission can be accepted remotely but you need to return to the agent to complete.
+  - text: The pocket will be initially empty for about 20 seconds. Wave 1 spawns about 60 km off the warp-in.
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: The despoilers will use ECM.
+      - text: Yukiro Demense uses rail guns and will try to stay far from you. He has -75% web at 10 km and warp disrupts out to 24 km. He has strong buffer shield tank with little regen, weakest resist to Kinetic at 64%.
+    waves:
+      - id: wave-1
+        trigger:
+          on: warpIn
+          text: Wave 1
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Centii Enslaver
+              - Centii Manslayer
+          - count: "4"
+            class: Destroyer
+            names:
+              - Centior Horror
+              - Centior Monster
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Pithi Despoiler
+              - Pithi Wrecker
+            ewar:
+              - kind: ecm
+          - count: "3"
+            class: Destroyer
+            names:
+              - Pithior Supremacist
+              - Pithior Terrorist
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Yukiro Demense
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+    onWarpIn: It's good to see you, pilot. Abdiel informed us about your arrival. We've only got a few minutes until we depart. Looks like this will go off without incident.

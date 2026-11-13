@@ -1,0 +1,41 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: interstellar-railroad-4-of-4
+kind: mission
+name: Interstellar Railroad (4 of 4)
+level: 1
+enemyFaction: Amarr Empire & Minmatar Republic
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Interstellar Railroad (4 of 4)
+    url: https://wiki.eveuniversity.org/Interstellar_Railroad_(4_of_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223295"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Kill the Amarrian traitor and her bodyguards
+notes:
+  - text: "Suggested ships: Destroyer"
+  - text: "Video: Corax"
+  - text: All 3 frigates must be destroyed to complete mission
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: initial-group-50km
+        trigger:
+          on: warpIn
+          text: Initial Group, 50km
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - The Traitor
+          - count: "2"
+            class: Frigate
+            names:
+              - Bodyguard
+            note: Minmatar damage/resists

@@ -1,0 +1,166 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: sansha-forsaken-hub
+kind: anomaly
+name: Sansha Forsaken Hub
+dedRating: null
+anomalyClass: 8
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Sansha Forsaken Hub
+    url: https://wiki.eveuniversity.org/Sansha_Forsaken_Hub
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "222377"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Rating: Class 8 Level 3"
+  - text: "Escalation: This site may escalate into the expedition True Sansha Fleet Staging Point, an unrated DED expedition. The trigger for this escalation is unknown."
+  - text: "Escalation: May also escalate to Sansha Shielded Starbase"
+lootNotes:
+  - text: "Bounty: unknown"
+  - text: "Loot/salvage: ca. 16M ISK"
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centatis Daemon
+              - Centatis Devil
+          - count: 3-4
+            class: Battleship
+            names:
+              - Centus Dread Lord
+              - Centus Tyrant
+      - id: wave-1
+        trigger:
+          on: other
+          text: "Wave #1"
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centatis Daemon
+              - Centatis Devil
+              - Centatis Phantasm
+          - count: "4"
+            class: Battleship
+            names:
+              - Centus Dread Lord
+              - Centus Tyrant
+      - id: wave-2
+        trigger:
+          on: other
+          text: "Wave #2"
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Fiend
+              - Centum Loyal Hellhound
+              - Centum Loyal Hellhound
+          - count: 3-4
+            class: Battleship
+            names:
+              - Centus Dread Lord
+              - Centus Tyrant
+      - id: wave-3
+        trigger:
+          on: other
+          text: "Wave #3"
+          confidence: inferred
+        spawns:
+          - count: 0-4
+            class: Elite Frigate
+            names:
+              - Centii Loyal Ravener
+              - Centii Loyal Scavenger
+            ewar:
+              - kind: web
+          - count: 0-4
+            class: Elite Frigate
+            names:
+              - Centii Loyal Servant
+              - Centii Loyal Minion
+            ewar:
+              - kind: warpDisruption
+          - count: 3-4
+            class: Battleship
+            names:
+              - Centus Dread Lord
+              - Centus Tyrant
+      - id: wave-4
+        trigger:
+          on: other
+          text: "Wave #4"
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Centum loyal Torturer
+              - Centum Loyal Mutilator
+          - count: 3-4
+            class: Battleship
+            names:
+              - Centus Dread Lord
+              - Centus Tyrant
+      - id: wave-5
+        trigger:
+          on: other
+          text: "Wave #5"
+          confidence: inferred
+        spawns:
+          - count: 0-4
+            class: Elite Frigate
+            names:
+              - Centii Loyal Minion
+              - Centii Loyal Ravener
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Centii Loyal Manslayer
+              - Centii Loyal Enslaver
+              - Centii Loyal Plague
+              - Centii Local Butcher
+          - count: 3-4
+            class: Battleship
+            names:
+              - Centus Dread Lord
+              - Centus Tyrant
+      - id: bonus-wave-rare
+        trigger:
+          on: other
+          text: Bonus Wave (rare?)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battleship
+            names:
+              - Centus Overlord
+          - count: "1"
+            class: Battleship
+            names:
+              - True Sansha Ship
+            drop: Possible to contain faction ammo, tags, modules
+            note: Rare spawn
+sde:
+  dungeonIds:
+    - 3466

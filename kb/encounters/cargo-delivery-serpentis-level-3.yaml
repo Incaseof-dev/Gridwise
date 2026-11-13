@@ -1,0 +1,102 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: cargo-delivery-serpentis-level-3
+kind: mission
+name: Cargo Delivery
+level: 3
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Cargo Delivery (Serpentis) (Level 3)
+    url: https://wiki.eveuniversity.org/Cargo_Delivery_(Serpentis)_(Level_3)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "204017"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Retrieve the cargo (10x Spiced Wine 5) from the warehouse, and bring it to your agent.
+ewar:
+  - kind: sensorDamp
+notes:
+  - text: "Blitz: Warp-in, grab the goods, warp out."
+pockets:
+  - name: Warp-in
+    notes:
+      - text: The goods are in the container named Warehouse.
+      - text: On warp-in, no rats are present. Wave one appears when picking up the goods from the container.
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Container
+            names:
+              - Warehouse
+            drop: 10x Spiced Wine (Mission objective)
+      - id: wave-1-on-picking-up-the-goods
+        trigger:
+          on: other
+          text: Wave 1 (On picking up the goods)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Watchman
+              - Coreli Guardian Patroller
+            ewar:
+              - kind: sensorDamp
+          - count: "1"
+            class: Destroyer
+            names:
+              - Corelior Infantry
+              - Corelior Artillery
+            triggers: triggers wave 2
+          - count: 1-2
+            class: Cruiser
+            names:
+              - Corelum Chief Infantry
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Guard
+              - Corelum Guardian Chief Safeguard
+            ewar:
+              - kind: sensorDamp
+          - count: 1-2
+            class: Battlecruiser
+            names:
+              - Corelatis Platoon Leader
+              - Corelatis Captain
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Destroyer
+            names:
+              - Corelior Infantry
+              - Corelior Sentinel
+          - count: "5"
+            class: Cruiser
+            names:
+              - Corelum Chief Infantry
+              - Corelum Chief Sentinel
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Amore Veal
+            note: Renamed Corelum guardian Chief infantry
+      - id: mining
+        trigger:
+          on: other
+          text: Mining
+          confidence: inferred
+        spawns: []

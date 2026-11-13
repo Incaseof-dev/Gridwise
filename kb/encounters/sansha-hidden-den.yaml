@@ -1,0 +1,217 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: sansha-hidden-den
+kind: anomaly
+name: Sansha's Hidden Den
+dedRating: null
+anomalyClass: 4
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Sansha Hidden Den
+    url: https://wiki.eveuniversity.org/Sansha_Hidden_Den
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225176"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Single ungated normal space pocket. Warping to beacon for close range would require a very good tank to handle the swarm’s incoming damage. Using a propulsion module or a Micro Jump Drive is recommended.
+  - text: "Escalation: This site can escalate to Sansha War Supply Complex."
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: 8-11
+            class: Frigate
+            names:
+              - Centii Butcher
+              - Centii Enslaver
+              - Centii Plague
+          - count: "9"
+            class: Destroyer
+            names:
+              - Centior Horror
+              - Centior Monster
+          - count: "5"
+            class: Cruiser
+            names:
+              - Centum Torturer
+              - Centum Mutilator
+          - count: 2-3
+            class: Battlecruiser
+            names:
+              - Centatis Devil
+              - Centatis Wraith
+          - count: "1"
+            class: Sentry
+            names:
+              - Sansha Heavy Missile Turret
+      - id: wave-1
+        trigger:
+          on: other
+          text: "Wave #1"
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Centii Enslaver
+              - Centii Plague
+          - count: "2"
+            class: Cruiser
+            names:
+              - Centum Ravager
+      - id: wave-2-44-49km
+        trigger:
+          on: other
+          text: "Wave #2 (44- 49km)"
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Centii Plague
+              - Centii Enslaver
+          - count: "2"
+            class: Destroyer
+            names:
+              - Centior Monster
+              - Centior Horror
+            triggers: "Triggers Wave #3"
+      - id: wave-3
+        trigger:
+          on: other
+          text: "Wave #3"
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Centii Savage
+              - Centii Slavehunter
+            ewar:
+              - kind: trackingDisruption
+          - count: "2"
+            class: Cruiser
+            names:
+              - Centum Torturer
+              - Centum Mutilator
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Centatis Daemon
+            triggers: "Triggers Wave #4"
+      - id: wave-4
+        trigger:
+          on: other
+          text: "Wave #4"
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Centii Savage
+              - Centii Slavehunter
+            ewar:
+              - kind: trackingDisruption
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Centatis Daemon
+              - Centatis Phantasm
+          - count: 1-2
+            class: Battleship
+            names:
+              - Centus Slave Lord
+      - id: wave-5
+        trigger:
+          on: other
+          text: "Wave #5"
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Centii Slavehunter
+              - Centii Savage
+            ewar:
+              - kind: trackingDisruption
+          - count: "3"
+            class: Cruiser
+            names:
+              - Centum Torturer
+      - id: wave-6
+        trigger:
+          on: other
+          text: "Wave #6"
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Elite Frigate
+            names:
+              - Centii Loyal Minion
+            ewar:
+              - kind: web
+          - count: "2"
+            class: Cruiser
+            names:
+              - Centum Ravisher
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centatis Daemon
+      - id: wave-7
+        trigger:
+          on: other
+          text: "Wave #7"
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Centii Enslaver
+          - count: 3-4
+            class: Cruiser
+            names:
+              - Centum Torturer
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+      - id: wave-8
+        trigger:
+          on: other
+          text: "Wave #8"
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Scavenger
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Minion
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Cruiser
+            names:
+              - Centum Ravager
+          - count: 3-7
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centatis Daemon

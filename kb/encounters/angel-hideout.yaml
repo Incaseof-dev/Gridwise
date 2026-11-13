@@ -1,0 +1,237 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: angel-hideout
+kind: complex
+name: Angel Hideout
+dedRating: null
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Angel Hideout
+    url: https://wiki.eveuniversity.org/Angel_Hideout
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225139"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Destroyer"
+notes:
+  - text: "Escalation: This site can escalate to Blue Pill"
+lootNotes:
+  - text: Commander Frigate wreck may contain Faction Ammo, Tech 2 salvage items, Modules, and/or Tags. Bounty for site is approximately 600,000 ISK
+  - text: Information included in this wiki was taken from actual EVE University player experience and extensive web research.
+  - text: (Wiki updated 10 May 2018)
+npcs:
+  Angel Drug Lab:
+    sdeTypes:
+      - SEE WARNING
+    class: Structure
+pockets:
+  - name: First pocket
+    waves:
+      - id: stuctures-and-asteroids
+        trigger:
+          on: other
+          text: Stuctures and Asteroids
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+            note: Locked
+          - count: "1"
+            class: Structure
+            names:
+              - Abandoned Shipyard
+          - count: "2"
+            class: Structure
+            names:
+              - Angel Bunker
+          - count: "2"
+            class: Structure
+            names:
+              - Angel Lookout
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Gistii Outlaw
+              - Gistii Thug
+            triggers: Wave 2
+            note: "Range: 45-55 km."
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Gistii Ambusher
+              - Gistii Hunter
+              - Gistii Impaler
+              - Gistii Raider
+            triggers: Wave 3
+            note: "Range: 55-65 km."
+          - count: "2"
+            class: Destroyer
+            names:
+              - Gistior Defiler
+              - Gistior Haunter
+            note: "Range: 45-55 km."
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Gistii Ambusher
+              - Gistii Hunter
+              - Gistii Impaler
+              - Gistii Raider
+            triggers: Final Wave
+          - count: "2"
+            class: Cruiser
+            names:
+              - Gistum Breaker
+              - Gistum Defender
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            triggers: Unlocks acceleration gate to second pocket
+      - id: upon-approach-to-acceleration-gate
+        trigger:
+          on: other
+          text: Upon Approach to Acceleration Gate
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Gistii Nomad
+              - Gistii Ruffian
+  - name: Second pocket
+    waves:
+      - id: structures-and-asteroids
+        trigger:
+          on: other
+          text: Structures and Asteroids
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Angel Drug Lab
+            triggers: Armor damage spawns Drug Lab Defense spawn; destruction has a chance for escalation
+          - count: "1"
+            class: Structure
+            names:
+              - Abandoned Shipyard
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Ambusher
+              - Hunter
+              - Impaler
+              - Raider
+            triggers: Wave 2
+            note: "Range: 10 km."
+          - count: "2"
+            class: Cruiser
+            names:
+              - Gistum Breaker
+              - Gistum Defeater
+            ewar:
+              - kind: web
+            triggers: Wave 2
+            note: "Range: 10 km."
+          - count: "3"
+            class: Frigate
+            names:
+              - Ambusher
+              - Hunter
+              - Impaler
+              - Raider
+            group: Initial Defenders Reinforcements
+            triggers: Wave 2
+            note: "Range: 55 km."
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Gistii Ambusher
+              - Gistii Raider
+            ewar:
+              - kind: targetPaint
+            triggers: Wave 3
+            note: "Range: 55-65 km."
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Gistii Ambusher
+              - Gistii Hunter
+              - Gistii Impaler
+              - Gistii Raider
+          - count: "2"
+            class: Cruiser
+            names:
+              - Gistium Liquidator
+              - Gistium Impaler
+              - Gistium Marauder)
+  - name: Angel Drug Lab
+    waves:
+      - id: lab-defense-spawn
+        trigger:
+          on: other
+          text: Lab Defense Spawn
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Gistii Nomad
+              - Gistii Ruffian
+            ewar:
+              - kind: targetPaint
+            triggers: Commander spawn
+      - id: commander-spawn-optional
+        trigger:
+          on: other
+          text: Commander spawn (Optional)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Commander Frigate
+            names:
+              - Domination Hijacker
+sde:
+  dungeonIds:
+    - 1221

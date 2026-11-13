@@ -1,0 +1,65 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: corporate-records
+kind: mission
+name: Corporate Records
+level: 1
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Corporate Records
+    url: https://wiki.eveuniversity.org/Corporate_Records
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "222399"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Cruiser or smaller"
+notes:
+  - text: "Suggested ships: Frigate, Destroyer"
+  - text: "Blitz: Warp into Pocket 2, fly to and loot the cargo container, then warp out."
+  - text: Sometimes Group 1 from Pocket 2 spawns in Pocket 1 instead.
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: First gate is 38km away.
+      - text: No spawns, asteroids, or structures.
+  - name: Pocket 2
+    waves:
+      - id: group-1-20km-auto-aggro
+        trigger:
+          on: other
+          text: Group 1, 20km, auto-aggro
+          confidence: inferred
+        spawns:
+          - count: "7"
+            class: Frigate
+            names:
+              - Pithi Invader
+              - Pithi Infiltrator
+              - Pithi Arrogator
+      - id: group-2
+        trigger:
+          on: other
+          text: Group 2
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Pithi Invader
+              - Pithi Infiltrator
+              - Pithi Arrogator
+          - count: "2"
+            class: Destroyer
+            names:
+              - Pithior ?
+      - id: asteroids
+        trigger:
+          on: other
+          text: Asteroids
+          confidence: inferred
+        spawns: []

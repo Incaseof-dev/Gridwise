@@ -1,0 +1,284 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: minor-guristas-annex
+kind: complex
+name: Minor Guristas Annex
+dedRating: null
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Minor Guristas Annex
+    url: https://wiki.eveuniversity.org/Minor_Guristas_Annex
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "222652"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: This site is very similar to Guristas Watch. Recommended high resists for kinetic and thermal damage.
+  - text: Upon warping to the signature you will land at an acceleration gate.
+  - text: Large amount of ECM in this room.
+  - text: "Escalation: Guristas Owned Station: To your surprise, the Overseer seems to have spent the last moments of his life sending some message to your ship on a private channel, a fact you learn from a blinking entry on your communication panel a few seconds after his innards slid across your windshield, bounced along your fuselage and were sucked into your thrusters. It appears he wanted to save his life by telling you the whereabouts of some place you could load your cargohold with riches, but before he could get very far with his offer, his journey ended. All you have is some hysteric babble about a hidden mining station at a certain location."
+  - text: "Escalation: Can escalate to Guristas Owned Station"
+loot:
+  - item: + Commander and other valuable loot
+  - item: Dread Guristas Gold Tag, faction ammo
+    note: est. 1.5M (wiki) · From Dread Guristas Executor
+  - item: + Exploration logs
+  - item: Feb 2014
+    note: est. ~95M ISK (wiki) · Doable in a passive-tanked HAM Tengu, though there is very high DPS on the supervisor wave.
+npcs:
+  Supervisor's Henchman:
+    sdeTypes:
+      - Dire Pithi Demolisher
+    class: Elite Frigate
+  Supervisor's Guardian:
+    sdeTypes:
+      - Pithatis Assassin
+      - Pithatis Death Dealer
+    class: Battlecruiser
+  Pith Militant Supervisor:
+    sdeTypes:
+      - Pith Massacrer
+    class: Battleship
+pockets:
+  - name: First Pocket
+    notes:
+      - text: Either kill the Pith Militant Commander to unlock the acceleration gate or use a Guristas Crystal Tag to proceed into the second room.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Pith Cruise Missile Battery
+          - count: "1"
+            class: Destroyer
+            names:
+              - Pithior Renegade
+          - count: 4-5
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Inferno
+              - Dire Pithum Mortifier
+            ewar:
+              - kind: ecm
+          - count: "4"
+            class: Battleship
+            names:
+              - Pith Dismantler
+              - Pith Extinguisher
+          - count: "1"
+            class: Battleship
+            names:
+              - Pith Communications Officer
+            triggers: Triggers wave 2 when attacked
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Dire Pithi Plunderer
+              - Dire Pithi Destructor
+            ewar:
+              - kind: ecm
+          - count: "2"
+            class: Destroyer
+            names:
+              - Pithior Guerilla
+              - Pithior Terrorist
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Inferno
+            ewar:
+              - kind: ecm
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Pithatis Revolter
+              - Pithatis Death Dealer
+          - count: "1"
+            class: Battleship
+            names:
+              - Pith Communications Officer
+            triggers: Triggers wave 3 when attacked
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Dire Pithi Plunderer
+              - Dire Pithi Destructor
+            ewar:
+              - kind: ecm
+          - count: "2"
+            class: Destroyer
+            names:
+              - Pithior Guerilla
+              - Pithior Terrorist
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Mortifier
+            ewar:
+              - kind: ecm
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Pithatis Revolter
+              - Pithatis Death Dealer
+          - count: "1"
+            class: Battleship
+            names:
+              - Pith Communications Officer
+            triggers: Triggers wave 4 when attacked
+      - id: wave-4
+        trigger:
+          on: other
+          text: Wave 4
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Pith Commander's Henchman
+            ewar:
+              - kind: ecm
+          - count: "3"
+            class: Battleship
+            names:
+              - Pith Commander's Guardian
+          - count: "1"
+            class: Battleship
+            names:
+              - Pith Militant Commander
+            triggers: Unlocks the gate when destroyed
+      - id: notable-structures
+        trigger:
+          on: warpIn
+          text: Notable structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+            note: Unlocks upon Militant Commander destruction
+  - name: Second Pocke t
+    waves:
+      - id: notable-structures
+        trigger:
+          on: warpIn
+          text: Notable structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Weapons Manufacturing Plant
+            triggers: Attacking aggros all ships. Triggers Supervisor wave when attacked.
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Pith Cruise Missile Battery
+          - count: "3"
+            class: Destroyer
+            names:
+              - Pithior Supremacist
+              - Pithior Terrorist
+          - count: "12"
+            class: Battleship
+            names:
+              - Pith Conquistador
+              - Pith Destroyer
+              - Pith Dismantler
+            ewar:
+              - kind: ecm
+            note: type list incomplete on the source page
+      - id: supervisor-wave
+        trigger:
+          on: other
+          text: Supervisor wave
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Elite Frigate
+            names:
+              - Supervisor's Henchman
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Supervisor's Guardian
+          - count: "1"
+            class: Battleship
+            names:
+              - Pith Militant Supervisor
+            triggers: Destruction completes site, and triggers commander wave
+            note: Higher active shield tank than other NPCs
+      - id: timed-spawn
+        trigger:
+          on: other
+          text: Timed spawn
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Pithior Guerilla
+              - Pithior Renegade
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Pithatis Assaulter
+              - Pithatis Assassin
+          - count: "3"
+            class: Battleship
+            names:
+              - Pith Conquistador
+              - Pith Destroyer
+      - id: commander-wave
+        trigger:
+          on: other
+          text: Commander wave
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Arrogator
+              - Dire Pithi Imputor
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "1"
+            class: Commander Battlecruiser
+            names:
+              - Dread Guristas Executor
+            triggers: Escalation trigger
+            drop: Possible Dread Guristas faction modules or implants
+          - count: "2"
+            class: Battleship
+            names:
+              - Pith Dismantler
+            ewar:
+              - kind: ecm
+sde:
+  dungeonIds:
+    - 1568

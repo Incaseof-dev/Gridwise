@@ -1,0 +1,114 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: unauthorized-military-presence-serpentis
+kind: mission
+name: Unauthorized Military Presence
+level: 3
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Unauthorized Military Presence (Serpentis)
+    url: https://wiki.eveuniversity.org/Unauthorized_Military_Presence_(Serpentis)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231945"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Intercept the personnel transport ship, destroy its guards, and bring the militants to your agent.
+ewar:
+  - kind: sensorDamp
+notes:
+  - text: "Suggested ships: Battlecruiser, HAC"
+  - text: "Blitz: Warp-in gate unlocked, then snipe the Serpentis Personnel Transport and hand in the additional Militants you looted from the Smuggler Interception missions."
+pockets:
+  - name: Warp-in
+    waves:
+      - id: initial-group-30-40km-aggro-on-approach-to-gate
+        trigger:
+          on: warpIn
+          text: Initial Group, 30-40km (aggro on approach to gate)
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Coreli Patroller
+              - Coreli Watchman
+            ewar:
+              - kind: sensorDamp
+  - name: Single pocket
+    notes:
+      - text: Attacking Group 1 aggros Group 3.
+    waves:
+      - id: 1st-group-30-40km
+        trigger:
+          on: other
+          text: 1st Group, 30-40km
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Coreli Patroller
+              - Coreli Watchman
+            ewar:
+              - kind: sensorDamp
+          - count: "4"
+            class: Cruiser
+            names:
+              - Corelum Chief Guard
+              - Corelum Chief Safeguard
+              - Corelum Chief Scout
+              - Corelum Chief Spy
+            ewar:
+              - kind: sensorDamp
+      - id: 2nd-group-70-80km
+        trigger:
+          on: other
+          text: 2nd Group, 70-80km
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Coreli Patroller
+              - Coreli Watchman
+            ewar:
+              - kind: sensorDamp
+          - count: "4"
+            class: Cruiser
+            names:
+              - Corelum Chief Defender
+              - Corelum Chief Patroller
+              - Corelum Chief Protector
+              - Corelum Chief Watchman
+            ewar:
+              - kind: sensorDamp
+          - count: "1"
+            class: Industrial
+            names:
+              - Serpentis Personnel Transport
+            drop: 10x Militants
+      - id: 3rd-group-80-100km
+        trigger:
+          on: other
+          text: 3rd Group, 80-100km
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Coreli Patroller
+              - Coreli Watchman
+            ewar:
+              - kind: sensorDamp
+          - count: "4"
+            class: Cruiser
+            names:
+              - Corelum Chief Guard
+              - Corelum Chief Scout
+              - Corelum Chief Spy
+            ewar:
+              - kind: sensorDamp

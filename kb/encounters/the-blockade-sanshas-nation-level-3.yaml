@@ -1,0 +1,160 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-blockade-sanshas-nation-level-3
+kind: mission
+name: The Blockade
+level: 4
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Blockade (Sansha's Nation) (Level 3)
+    url: https://wiki.eveuniversity.org/The_Blockade_(Sansha's_Nation)_(Level_3)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "216784"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Kill their high-ranking officers
+ewar:
+  - kind: trackingDisruption
+  - kind: web
+  - kind: warpScramble
+notes:
+  - text: "Web/warp disruption: Starbase Stasis Tower (Web), Centii Loyal Scavenger (Scram & Web)"
+  - text: "Suggested ships: Battleship"
+  - text: "Blitz: Destroy Stasis Tower, every trigger, then final group of battlecruisers."
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: All groups aggro on spawn. The differently named ship in each group is usually the trigger for the next wave.
+    waves:
+      - id: initial-group-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group, Auto-aggro
+        spawns:
+          - count: "1"
+            class: Tower
+            names:
+              - Starbase Stasis Tower
+            ewar:
+              - kind: web
+          - count: "1"
+            class: Destroyer
+            names:
+              - Destroyers
+            triggers: Spawns reinforcement 1
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Hellhound
+              - Centum Loyal Mutilator
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Centatis Phantasm
+      - id: reinforcement-1-two-groups-100-and-140km
+        trigger:
+          on: other
+          text: Reinforcement 1, Two Groups 100 and 140km
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Centii Plague
+          - count: "4"
+            class: Destroyer
+            names:
+              - Centior Monster
+              - Centior Misshape
+          - count: "7"
+            class: Battlecruiser
+            names:
+              - Centatis Specter
+              - Centatis Phantasm
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Centatis Devil
+              - Centatis Wraith
+            triggers: Spawns reinforcement 2
+      - id: reinforcement-2-two-groups-100-and-140km
+        trigger:
+          on: other
+          text: Reinforcement 2, Two Groups 100 and 140km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Centior Cannibal
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Mutilator
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Centatis Specter
+              - Centatis Phantasm
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Centatis Daemon
+              - Centatis Wraith
+            triggers: Spawns reinforcement 3
+      - id: reinforcement-3-two-groups-115-and-130km
+        trigger:
+          on: other
+          text: Reinforcement 3, Two Groups 115 and 130km
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Centii Loyal Enslaver
+          - count: 4-5
+            class: Battlecruiser
+            names:
+              - Centatis Fiend
+              - Centatis Phantasm
+          - count: 2-4
+            class: Battlecruiser
+            names:
+              - Centatis Specter
+            triggers: Spawns reinforcement 4
+          - count: 0-1
+            class: Commander Cruiser
+            names:
+              - True Sansha's Ravager
+            group: Rare spawn
+            drop: Faction items
+      - id: reinforcement-4-one-group-30km
+        trigger:
+          on: other
+          text: Reinforcement 4, One Group 30km
+          confidence: inferred
+        spawns:
+          - count: 0-4
+            class: Elite Frigate
+            names:
+              - Centii Loyal Savage
+            ewar:
+              - kind: trackingDisruption
+          - count: 0-4
+            class: Elite Frigate
+            names:
+              - Centii Loyal Scavenger
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Centatis Daemon
+              - Centatis Behemoth
+            note: Mission objective

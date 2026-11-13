@@ -1,0 +1,135 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: illegal-activity-level-4
+kind: mission
+name: Illegal Activity
+level: 4
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Illegal Activity (Level 4)
+    url: https://wiki.eveuniversity.org/Illegal_Activity_(Level_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223439"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy hostiles
+notes:
+  - text: Illegal Activity is a 3 part mission mission chain, consisting of 3 encounter missions involving combat with Gallente Federation.
+  - text: Warp to location and kill the waves, ignore the miners. Large Smartbombs would be handy.
+  - text: Wave 1 appears after the miners at around 50 km.
+  - text: Wave 2 appears Shortly after the first at around 30 km.
+  - text: You'll find the same faction trespassing at the anomaly; Kill them, Kill them all!
+pockets:
+  - name: Illegal Activity (1 of 3)
+    waves:
+      - id: wave-1
+        trigger:
+          on: warpIn
+          text: Wave 1
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Navy Delta Support
+            ewar:
+              - kind: web
+          - count: "3"
+            class: Frigate
+            names:
+              - Navy Officers
+      - id: wave-1-2
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Navy Delta Support
+          - count: "1"
+            class: Cruiser
+            names:
+              - Navy thorax
+  - name: Illegal Activity (2 of 3)
+    waves:
+      - id: wave-1
+        trigger:
+          on: warpIn
+          text: Wave 1
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Navy Delta Support
+            ewar:
+              - kind: web
+          - count: "3"
+            class: Frigate
+            names:
+              - Navy Detective
+  - name: Warp-in
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: "?"
+            names:
+              - R.S Officer
+  - name: 1st pocket
+    notes:
+      - text: Initial defenders at 20-30k.
+      - text: Wave 1 arrives shortly after.
+      - text: Other group.
+      - text: Frigates are optional kills.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "4"
+            class: Cruiser
+            names:
+              - Navy vexor
+          - count: "4"
+            class: Sentry
+            names:
+              - Sentry Guns
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: "?"
+            names:
+              - Courier
+          - count: "5"
+            class: "?"
+            names:
+              - Escort
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Gamma I Support
+          - count: "5"
+            class: Cruiser
+            names:
+              - Vexor
+              - Thorax

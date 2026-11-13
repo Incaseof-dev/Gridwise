@@ -1,0 +1,79 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: an-ancient-roster
+kind: mission
+name: An Ancient Roster
+level: 1
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – An Ancient Roster
+    url: https://wiki.eveuniversity.org/An_Ancient_Roster
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231036"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Retrieve the Brutor Tribe Roster (0.2) from the jettisoned cargo container.
+restrictions:
+  - text: "Ship size limit: T1 and Faction Cruisers and smaller"
+notes:
+  - text: "Suggested ships: Breacher, Rifter"
+  - text: An Ancient Roster is a mission to retrieve an item from the Angel Cartel.
+  - text: There are two variants of the mission.
+  - text: Initially there is only the acceleration gate. When approaching the gate at about 30 km the enemy shows up.
+  - text: No ships
+pockets:
+  - name: Variant A
+    waves:
+      - id: hostile-npcs-45-60km
+        trigger:
+          on: other
+          text: Hostile NPCs, 45-60km
+          confidence: inferred
+        spawns:
+          - count: "7"
+            class: Frigate
+            names:
+              - Gistii Hijacker
+              - Gistii Rogue
+  - name: Deadspace Pocket
+    notes:
+      - text: Mission objective item (Brutor Tribe Roster) is in the container.
+      - text: "Blitz: Approach the container, get the Roster and warp out."
+  - name: Variant A
+    waves:
+      - id: hostile-forces-45km
+        trigger:
+          on: other
+          text: Hostile Forces, 45km
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Gistii Outlaw
+              - Gistii Thug
+  - name: Variant B
+    waves:
+      - id: hostile-forces-45km
+        trigger:
+          on: other
+          text: Hostile Forces, 45km
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Gistii Outlaw
+              - Gistii Thug
+            group: Group A, 45km
+          - count: "2"
+            class: Destroyer
+            names:
+              - Gistior Shatterer
+              - Gistior Defacer
+            group: Groep B

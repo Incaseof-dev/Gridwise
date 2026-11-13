@@ -1,0 +1,120 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: surfacing
+kind: mission
+name: Surfacing
+level: 4
+enemyFaction: Mercenaries
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Surfacing
+    url: https://wiki.eveuniversity.org/Surfacing
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "208097"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Retrieve 1x Encrypted Transmission (0.1 m3)
+ewar:
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Mercenary Wingmen"
+  - text: "Suggested ships: Battleship (sniper)"
+  - text: thumb|right|192px
+  - text: Ungated semi-deadspace pocket 11 jumps away in Jark. All warps will land you at the same point, but you can warp around freely.
+  - text: "Blitz: loot the Encrypted Transmission from Tili's Brothel with a fast ship (or ping to it in your combat ship). Warp out and bring in a combat ship. Kill all Battleships."
+  - text: "Tips: Mercenary ships spawn at 25 km range several seconds after Encrypted Transmission is removed from Tili's Brothel"
+  - text: "Tips: Mercenary Cruisers deal EM/TH while the Battleships deal KIN/TH"
+  - text: "Tips: Mercenary Wingmen rarely use Warp Disruptors, but always Web"
+  - text: "Tips: You will be traveling another 11 jumps back to Aldrat to complete the mission, but the remaining missions there can be blitzed in a frigate (with a Data Analyzer), so you might want to leave your combat ship near Jark, since you'll be coming back through there next."
+pockets:
+  - name: Warp-in
+    waves:
+      - id: structures-40km
+        trigger:
+          on: other
+          text: Structures (40km)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Container
+            names:
+              - Tili's Brothel
+            triggers: Spawns Wave 1 after Encrypted Transmission is removed
+            drop: Encrypted Transmission
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Mercenary Wingman
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "4"
+            class: Cruiser
+            names:
+              - Mercenary Commander
+          - count: "5"
+            class: Battleship
+            names:
+              - Mercenary Overlord
+            triggers: Last one killed triggers wave 2
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Mercenary Wingman
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "5"
+            class: Cruiser
+            names:
+              - Mercenary Commander
+          - count: "4"
+            class: Battleship
+            names:
+              - Mercenary Overlord
+            triggers: Last one killed triggers wave 3
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Drone
+            names:
+              - Spider Drone I
+            ewar:
+              - kind: web
+          - count: "5"
+            class: Frigate
+            names:
+              - Mercenary Elite Fighter
+          - count: "2"
+            class: Frigate
+            names:
+              - Mercenary Wingman
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "4"
+            class: Battleship
+            names:
+              - Mercenary Overlord
+            triggers: Destroy to complete the Mission

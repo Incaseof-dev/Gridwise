@@ -1,0 +1,36 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: gallente-scouts-spotted
+kind: mission
+name: Gallente Scouts Spotted
+level: 2
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Gallente Scouts Spotted
+    url: https://wiki.eveuniversity.org/Gallente_Scouts_Spotted
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191714"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Suggested ships: Frigate, Destroyer"
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: initial-group-35km-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group, 35km (auto-aggro)
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Federation Navy Scout
+          - count: Gallente Point Defense Battery
+            class: Sentry
+            names:
+              - "3"

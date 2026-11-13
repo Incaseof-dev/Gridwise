@@ -1,0 +1,83 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: clearing-a-path
+kind: mission
+name: Clearing a Path
+level: 2
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Clearing a Path
+    url: https://wiki.eveuniversity.org/Clearing_a_Path
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "220542"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy all enemy ships
+restrictions:
+  - text: "Ship size limit: You must use one of the following types of ship: * Assault Frigate * Command Destroyer * Corvette * Covert Ops * Cruiser * Destroyer * Electronic Attack Ship * Expedition Frigate * Frigate * Hauler * Interceptor * Interdictor * Logistics Frigate * Shuttle * Stealth Bomber * Tactical Destroyer"
+pockets:
+  - name: Warp-in
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+  - name: Room 1
+    notes:
+      - text: All hostile ships aggro on warp-in.
+    waves:
+      - id: initial-hostiles-25-30km
+        trigger:
+          on: warpIn
+          text: Initial Hostiles (25-30km)
+        spawns:
+          - count: "8"
+            class: Frigate
+            names:
+              - Federation Praktor Belos
+              - Federation Praktor Harpago
+            triggers: Wave 1
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: "8"
+            class: Destroyer
+            names:
+              - Federation Praktor Machina
+              - Federation Praktor Phalarica
+            triggers: Wave 2
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Cruiser
+            names:
+              - Federation Praktor Optioon
+              - Federation Praktor Ouragos
+            triggers: Destroy to complete the Mission
+      - id: friendly-wave
+        trigger:
+          on: other
+          text: Friendly wave
+          confidence: inferred
+        spawns:
+          - count: "8"
+            class: Friendly Cruiser
+            names:
+              - Caldari Cruiser

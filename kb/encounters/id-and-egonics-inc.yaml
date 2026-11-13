@@ -1,0 +1,129 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: id-and-egonics-inc
+kind: mission
+name: Id and Egonics, Inc.
+level: 3
+enemyFaction: Amarr Empire & Caldari State
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Id and Egonics, Inc.
+    url: https://wiki.eveuniversity.org/Id_and_Egonics%2C_Inc.
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223438"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Kill the Amarr Slaver and retrieve the captives (1,093)
+ewar:
+  - kind: ecm
+  - kind: trackingDisruption
+notes:
+  - text: "Suggested ships: Battlecruiser, Hauler (to pick up the captives)"
+  - text: The mission contains 2 pockets. The first pocket must be cleared of NPCs before the acceleration gate can be taken. The NPCs are around 20 km away.
+  - text: Both pockets contain a few battleships; they have poor tracking and can be speed-tanked in a cruiser.
+  - text: "Possible Blitz:"
+  - text: Kill the first pocket with a standard combat ship and then destroy the slaver in the second pocket.
+  - text: Change ships to a T1 hauler. The fitting should include a tractor beam, medium prop mod, and passive/buffer shield tank of large shield extenders and hardeners.
+  - text: Return to the second pocket, tractoring the mission objective can while aligning out, loot it and warp out.
+pockets:
+  - name: Warp-in
+    notes:
+      - text: Initially, the Amarr Slaver is present in the pocket next to the acceleration gate. He will taunt you in local, then warp off quickly.
+      - text: No standings loss from killing the Amarr ships. Gate is locked until they are destroyed.
+    waves:
+      - id: initial-forces-10-20km-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial forces, 10-20km (auto aggro)
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Mercenary Frigate [Imperial Forian
+              - Mercenary Frigate [Imperial Paladin]
+            ewar:
+              - kind: trackingDisruption
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Mercenary Cruiser [Imperial Agatho
+              - Mercenary Cruiser [Imperial Donus]
+            ewar:
+              - kind: trackingDisruption
+          - count: "1"
+            class: Battleship
+            names:
+              - Mercenary Battleship [Imperial Origen
+              - Mercenary Battleship [Imperial Tanakh]
+            drop: 1x Imperial Navy General Insignia I
+  - name: Pocket
+    notes:
+      - text: There are two industrials present on entry, an Amarr Slaver (your mission objective) and a State Transport. The Caldari industrial does not need to be killed to complete the mission.
+      - text: No standings loss from killing Caldari combat ships. There is a -0.002 standings loss from killing the Amarr battleship, but this is negligible compared to the Derived Modification.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Imperial Matendi
+              - Imperial Forian
+            group: Amarr group, 10-20km (auto aggro)
+          - count: "2"
+            class: Cruiser
+            names:
+              - Imperial Agatho
+              - Imperial Donus
+            group: Amarr group, 10-20km (auto aggro)
+            ewar:
+              - kind: trackingDisruption
+          - count: "1"
+            class: Battleship
+            names:
+              - Imperial Bataivah
+              - Imperial Origen
+            group: Amarr group, 10-20km (auto aggro)
+            drop: 1x Imperial Navy General Insignia I
+          - count: "2"
+            class: Frigate
+            names:
+              - State Nagasa
+              - State Shinai
+            group: Caldari group, 10-20km (auto aggro)
+          - count: "2"
+            class: Cruiser
+            names:
+              - State Bushi
+              - State Dogo
+              - State Fudai
+            group: Caldari group, 10-20km (auto aggro)
+            ewar:
+              - kind: ecm
+            note: Cruisers may not jam
+          - count: "1"
+            class: Battleship
+            names:
+              - State Tenkyu
+            group: Caldari group, 10-20km (auto aggro)
+            drop: Caldari Navy Vice Admiral Insignia I
+          - count: "1"
+            class: Industrial
+            names:
+              - Amarr Slaver
+            group: Group 3, 25km
+            drop: 1093 Captives
+            note: Mission objective
+          - count: "1"
+            class: Industrial
+            names:
+              - State Transport
+            group: Group 3, 25km
+            drop: Livestock
+            note: Incurs 2.4% standing loss with Caldari State when destroyed

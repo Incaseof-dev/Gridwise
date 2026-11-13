@@ -1,0 +1,173 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: gurista-lookout
+kind: complex
+name: Gurista Lookout
+dedRating: null
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Gurista Lookout
+    url: https://wiki.eveuniversity.org/Gurista_Lookout
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "224907"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: T3 Destroyer"
+notes:
+  - text: Gurista Lookout is an unrated combat site belonging to the Guristas Pirates faction. It can be found via exploration by scanning signatures in high security systems.
+  - text: No NPCs at initial warp in.
+  - text: Initial gate will not allow cruisers or bigger to pass.
+  - text: "Escalation: The Gurista Lookout can escalate to Trap?."
+pockets:
+  - name: First Room
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Pithi Wrecker
+            group: Group 1
+          - count: "1"
+            class: Frigate
+            names:
+              - Pithi Demolisher
+            group: Group 1
+          - count: "3"
+            class: Destroyer
+            names:
+              - Pithior Guerilla
+            group: Group 1
+          - count: "1"
+            class: Frigate
+            names:
+              - Pithi Plunderer
+            group: Group 2
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Imputor
+            group: Group 2
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "1"
+            class: Destroyer
+            names:
+              - Pithior Nihilist
+            group: Group 2
+          - count: "4"
+            class: Frigate
+            names:
+              - Pithi Imputor
+            group: Group 3
+          - count: "1"
+            class: Destroyer
+            names:
+              - Pithior Renegade
+            group: Group 3
+          - count: "1"
+            class: Sentry
+            names:
+              - Guristas Light Missile Battery
+            group: Group 3
+  - name: Second Room
+    notes:
+      - text: To trigger commander spawn destroy the Guristas Control Center. Escalation can probably be triggered by destroying the Guristas Control Center.
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Guristas Control Center
+            triggers: Possible escalation trigger, commander wave trigger
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Pithi Infiltrator
+            group: Group 1
+          - count: "1"
+            class: Frigate
+            names:
+              - Pithi Invader
+            group: Group 1
+          - count: "1"
+            class: Frigate
+            names:
+              - Pithi Infiltrator
+            group: Group 2
+          - count: "3"
+            class: Frigate
+            names:
+              - Pithi Invader
+            group: Group 2
+          - count: "1"
+            class: Frigate
+            names:
+              - Pithi Demolisher
+            group: Group 2
+          - count: "1"
+            class: Destroyer
+            names:
+              - Pithior Renegade
+            group: Group 2
+          - count: "1"
+            class: Frigate
+            names:
+              - Pithi Arogator
+            group: Group 3
+          - count: "1"
+            class: Frigate
+            names:
+              - Pithi Plunderer
+            group: Group 3
+          - count: "1"
+            class: Frigate
+            names:
+              - Pithi Demolisher
+            group: Group 3
+          - count: "1"
+            class: Destroyer
+            names:
+              - Pithior Nihilist
+            group: Group 3
+      - id: after-destroying-the-control-center
+        trigger:
+          on: other
+          text: After destroying the Control Center
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Destroyer
+            names:
+              - Pithior Anarchist
+          - count: 1-2
+            class: Destroyer
+            names:
+              - Pithior Renegade
+          - count: 0-1
+            class: Commander Frigate
+            names:
+              - Dread Guristas Infiltrator
+            triggers: Escalation trigger
+            drop: Can drop faction modules and ammo, may contain Dread Gurista modules (unconfirmed)
+sde:
+  dungeonIds:
+    - 1236

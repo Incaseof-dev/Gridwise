@@ -1,0 +1,301 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: serpentis-powergrid
+kind: escalation
+name: Serpentis Powergrid
+dedRating: null
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Serpentis Powergrid
+    url: https://wiki.eveuniversity.org/Serpentis_Powergrid
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225807"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Escalates from Serpentis Annex.
+loot:
+  - item: Core C-Type battleship modules
+    from: Shadow Serpentis Colonel
+  - item: Shadow Serpentis Battleship modules
+    from: Shadow Serpentis battleships
+    note: Fairly rare
+  - item: Vigilant BPC
+    from: Shadow Serpentis Colonel
+    note: Rare drop
+lootNotes:
+  - text: The Shadow Serpentis commanders drop faction ammo and tags, and may drop Shadow Serpentis or meta modules. The Shadow Serpentis Colonel in final location can drop Core C-Type battleship modules and possibly a rare Vigilant BPC.
+pockets:
+  - name: First Location
+    notes:
+      - text: "Escalation trigger: The amount of energy harvested and stored here is phenomenal. Exploiting these facilities for your own use might sound tempting, if it weren't for the fact that the entire place is in complete lockdown and only the highest-level Serpentis security codes will grant access. You did however manage to gain access to an open channel in their communication network, and two energy storage locations were revealed to you."
+    waves:
+      - id: one-ungated-room
+        trigger:
+          on: other
+          text: One ungated room
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Coreli Defender
+              - Coreli Protector
+          - count: 1-2
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Agent
+              - Coreli Guardian Scout
+              - Coreli Guardian Initiate
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 1-2
+            class: Cruiser
+            names:
+              - Corelum Chief Infantry
+              - Corelum Chief Sentinel
+          - count: 3-4
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Sentinel
+              - Corelum Guardian Chief Infantry
+              - Corelum Guardian Chief Defender
+              - Corelum Guardian Chief Protector
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corelatis High Captain
+              - Corelatis Captain Sentry
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - Shadow Serpentis Commodore
+              - Shadow Serpentis Rear Admiral
+            triggers: Escalation trigger
+            drop: May drop Shadow Serpentis faction modules, tags and ammo. Wreck may produce T2 salvage
+  - name: Second Location
+    notes:
+      - text: "Escalation trigger: This facility was not just used for energy storage. Ships, modules and other supplies were stored in those containers, and sadly every single one was destroyed when the Serpentis commanders gave the order. They knew you were coming, and there was little they could do about it on such short notice. The slaughter continues as you prepare to visit the second energy storage facility."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Coreli Guard
+              - Coreli Safeguard
+              - Coreli Protector
+              - Coreli Defender
+          - count: "7"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Agent
+              - Coreli Guardian Initiate
+              - Coreli Guardian Scout
+              - Coreli Guardian Spy
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 3-4
+            class: Cruiser
+            names:
+              - Corelum Chief Patroller
+              - Corelum Chief Watchman
+            ewar:
+              - kind: sensorDamp
+          - count: 3-4
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Infantry
+              - Corelum Guardian Chief Sentinel
+          - count: "3"
+            class: Battleship
+            names:
+              - Core Admiral
+              - Core High Admiral
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Shadow Serpentis Port Admiral
+              - Shadow Serpentis Flotilla Admiral
+            ewar:
+              - kind: sensorDamp
+            triggers: Escalation trigger
+            drop: Faction ammo/tags. Possible Shadow Serpentis faction modules or a rare implant; wreck may produce T2 salvage
+  - name: Third Location
+    notes:
+      - text: You land on an acceleration gate. Take it if there is no Shadow Serpentis spawn or if killing the commander does not trigger escalation.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corelatis Captain
+              - Corelatis Captain Sentry
+              - Corelatis Wing Leader
+              - Corelatis High Captain
+          - count: 3-4
+            class: Battleship
+            names:
+              - Core Flotilla Admiral
+              - Core Vice Admiral
+            ewar:
+              - kind: sensorDamp
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Shadow Serpentis Flotilla Admiral
+              - Shadow Serpentis Rear Admiral
+            ewar:
+              - kind: sensorDamp
+            triggers: Escalation trigger
+            drop: Faction ammo/tags. Possible Shadow Serpentis faction modules or rarely and implant
+      - id: structure
+        trigger:
+          on: warpIn
+          text: Structure
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Newly Constructed Acceleration Gate
+            note: Not locked
+  - name: First Pocket
+    notes:
+      - text: Simple warp-in can trigger escalation. There are no enemy ships at warp-in, only 8 passive batteries.
+      - text: "Escalation trigger: You arrive at the second energy storage facility to find it completely deserted. It looks like the party ended before you even arrived. Luckily for you, your computers pick up several signals in the nearby area, one of which seems to have unusually high amounts of combat ships."
+    waves:
+      - id: passive-structures
+        trigger:
+          on: warpIn
+          text: Passive structures
+        spawns:
+          - count: "8"
+            class: Tower
+            names:
+              - Serpentis Battery
+            note: Passive
+  - name: Fourth Location
+    notes:
+      - text: No enemy ships at initial warp-in. You land on an acceleration gate.
+  - name: First Pocket
+    notes:
+      - text: Large amount of sensor damping in this room.
+      - text: The acceleration gate is 40 km from the warp-in point.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 7-8
+            class: Frigate
+            names:
+              - Coreli Defender
+              - Coreli Protector
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Patroller
+              - Coreli Guardian Watchman
+            ewar:
+              - kind: sensorDamp
+          - count: "6"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Guard
+              - Corelum Guardian Chief Safeguard
+              - Corelum Guardian Chief Patroller
+              - Corelum Guardian Chief Watchman
+            ewar:
+              - kind: sensorDamp
+          - count: 2-3
+            class: Battleship
+            names:
+              - Core Flotilla Admiral
+              - Core Vice Admiral
+            ewar:
+              - kind: sensorDamp
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: Locked until room is cleared
+  - name: Second Pocket
+    notes:
+      - text: "Expedition end: You have destroyed four strategically vital locations for the Serpentis. Their expansion in the area has been halted severely, and it would surprise you a lot if you saw even a single one of them in the near future. Whether to continue this journey is up to you, though you have no more clues which could lead you further."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Agent
+              - Coreli Guardian Initiate
+              - Coreli Guardian Scout
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Patroller
+              - Coreli Guardian Watchman
+            ewar:
+              - kind: sensorDamp
+          - count: 3-4
+            class: Destroyer
+            names:
+              - Corelior Infantry
+              - Corelior Sentinel
+          - count: 6-7
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Guard
+              - Corelum Guardian Chief Safeguard
+              - Corelum Guardian Chief Patroller
+              - Corelum Guardian Chief Watchman
+            ewar:
+              - kind: sensorDamp
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Corelatis High Captain
+              - Corelatis Captain Sentry
+          - count: 3-4
+            class: Battleship
+            names:
+              - Core Flotilla Admiral
+              - Core Vice Admiral
+            ewar:
+              - kind: sensorDamp
+          - count: "1"
+            class: Overseer Battleship
+            names:
+              - Shadow Serpentis Colonel
+            triggers: Destroying ends expedition
+            drop: Core C-Type modules, possible Vigilant BPC. Wreck may produce T2 salvage
+            note: Has an active armor tank that requires about 800 DPS to break
+sde:
+  dungeonIds:
+    - 1884

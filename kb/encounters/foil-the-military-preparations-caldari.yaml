@@ -1,0 +1,74 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: foil-the-military-preparations-caldari
+kind: mission
+name: Foil The Military Preparations
+level: 4
+enemyFaction: Caldari State
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Foil The Military Preparations (Caldari)
+    url: https://wiki.eveuniversity.org/Foil_The_Military_Preparations_(Caldari)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "224955"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: web
+notes:
+  - text: "Web/warp disruption: Caldari Navy Delta II Support Frigate (Web)"
+  - text: "Blitz: Wait for the Construction Freight ships to spawn, kill them (ignoring the rest of the spawn) and warp out."
+  - text: Completing the mission changes your Caldary faction standing by -0.24.
+  - text: Structures may drop trade goods
+lootNotes:
+  - text: "Insingnias: 8.95m ISK"
+  - text: "Normal loot: ~3m ISK"
+  - text: "Salvage: ~700k ISK"
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: Reinforcement is a timed spawn, about 3 minutes.
+    waves:
+      - id: group-1-50km-auto-aggro
+        trigger:
+          on: other
+          text: Group 1, 50km (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Caldari Navy Officer
+          - count: "1"
+            class: Battleship
+            names:
+              - Caldari Navy Raven
+            drop: May drop faction missiles
+      - id: reinforcement-auto-aggro
+        trigger:
+          on: other
+          text: Reinforcement (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Caldari Navy Delta II Support Frigate
+            ewar:
+              - kind: web
+          - count: "3"
+            class: Cruiser
+            names:
+              - Caldari Navy Moa
+          - count: "2"
+            class: Battleship
+            names:
+              - Caldari Navy Scorpion
+            note: Despite the name, ship does not ECM
+          - count: "4"
+            class: Battleship
+            names:
+              - Construction Freight

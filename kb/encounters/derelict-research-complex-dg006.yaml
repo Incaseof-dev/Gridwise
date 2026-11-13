@@ -1,0 +1,35 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: derelict-research-complex-dg006
+kind: escalation
+name: Derelict Research Complex DG006
+dedRating: null
+enemyFaction: null
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Derelict Research Complex DG006
+    url: https://wiki.eveuniversity.org/Derelict_Research_Complex_DG006
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "232186"
+defaults:
+  confidence: verified
+  source: uni
+lootNotes:
+  - text: High chance for 30/60/120 run 'Augmented' BPC's
+  - text: Try to cargo scan the cans and pick only the valuable cans. Then return after downtime and hack the cans again. This will give you twice the loot as the site's loot respawns at downtime
+  - text: One of the High-Security Containment Facility has Firewall with 50 coherence, the other one with 40, the difference can be used to tell which is more likely to hold higher value. Both facility are fairly easy with few nodes and low difficulty.
+  - text: The Research and Development Laboratories can contain 'Augmented' BPC too, its Firewall has the stronger type of 90 coherence, difficulty is as same as other nullsec data sites containers with a similiar Firewall coherence.
+pockets:
+  - name: Location and Difficulty
+    notes:
+      - text: This site is an escalation of data sites found in the Etherium Reach and Perrigen Falls and Insmother regions.
+      - text: Abandoned Research Complex DG003
+      - text: Abandoned Research Complex DG018
+      - text: Escalation message
+      - text: '"Amongst the research material you managed to retrieve, you find the coordinates to a nearby high-security research center."'
+      - text: The site follows many of the same mechanics as normal drone data sites, being impossible to fail hacks and spawning weak rats. This site cannot escalate further. The site has a total of 3 cans with increasing difficulty and higher chances of 'Augmented' BPC dropping.
+sde:
+  dungeonIds:
+    - 2617

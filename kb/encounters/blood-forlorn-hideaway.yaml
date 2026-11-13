@@ -1,0 +1,103 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: blood-forlorn-hideaway
+kind: anomaly
+name: Blood Rider Forlorn Hideaway
+dedRating: null
+anomalyClass: 1
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Blood Forlorn Hideaway
+    url: https://wiki.eveuniversity.org/Blood_Forlorn_Hideaway
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225116"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Rating: Class 1 Level 4"
+  - text: Blood Rider Forlorn Hideaway is an unrated combat site belonging to the Blood Raiders pirate faction. It can be found via exploration as a cosmic anomaly within systems owned by the Amarr Empire and Ammatar Mandate. As an ungated complex, the limitations as to which ships can complete this site are tied to the security rating of the system where the anomaly spawns (T2 Battleships for high-security systems, and up to Titans in low-security and null-security systems). Completing this complex may award the player with valuable Dark Blood faction modules and ammunition.
+  - text: "This combat site consists of a single ungated pocket of space containing a variety of Frigate-, Destroyer- and Cruiser-sized enemy ships. Three variations of this combat anomaly exist: Blood Hideaway, Blood Hidden Hideaway and Blood Forsaken Hideaway."
+  - text: Single ungated normal space pocket.
+  - text: "Escalation: This site does not appear to escalate."
+loot:
+  - item: Dark Blood Copper Tag
+    from: Dark Blood Collector
+    note: est. 10k ISK (wiki) · 100% drop rate
+  - item: (Dark) Blood Ammo
+    from: Dark Blood Collector
+    note: est. 6k - 58M ISK (wiki) · 100% drop rate
+  - item: Dark Blood module
+    from: Dark Blood Collector
+    note: est. 10k - 130M ISK (wiki) · rare
+  - item: Mid-grade Amulet Implant
+    from: Dark Blood Collector
+    note: est. 6M - 50M ISK (wiki) · rare
+lootNotes:
+  - text: 500.000 ISK
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-defending-fleet
+        trigger:
+          on: warpIn
+          text: Initial Defending Fleet
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Corpii Collector
+            note: type list incomplete on the source page
+      - id: 1st-reinforcement-spawn
+        trigger:
+          on: other
+          text: 1st Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Corpii Collector
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Cruiser
+            names:
+              - Corpum Engraver
+            note: type list incomplete on the source page
+      - id: 2nd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 2nd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Destroyer
+            names:
+              - Corpior Cleric
+            note: type list incomplete on the source page
+          - count: 3-4
+            class: Cruiser
+            names:
+              - Corpum Engraver
+            note: type list incomplete on the source page
+      - id: 3rd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 3rd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Cruiser
+            names:
+              - Corpum Engraver
+            note: type list incomplete on the source page
+          - count: 0-1
+            class: Commander Frigate
+            names:
+              - Dark Blood Collector
+            group: Rare Spawn
+            drop: faction charges, modules, tags
+    onWarpIn: The Amarr Empire has had its share of religious cults and fanatics in the past, but few have been as successful, or as highly feared, as the Blood Raiders. The Blood Raiders are a sect of an ancient cult called Sani Sabik, who use blood in their rituals. The Blood Raiders believe that cloned bodies have "purer" blood than other bodies, and this explains while they operate mainly in space, attacking unwary spacefarers and draining their bodies of blood. The Blood Raiders are led by the fearsome Omir Sarikusa, who has remained on top of the DED's most wanted list for many years now. Under Sarikusa's leadership, the Blood Raiders have become more organized, establishing several bases in the Bleak Lands region.

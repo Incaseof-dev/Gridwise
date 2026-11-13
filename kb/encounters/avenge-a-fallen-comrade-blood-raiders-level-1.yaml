@@ -1,0 +1,86 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: avenge-a-fallen-comrade-blood-raiders-level-1
+kind: mission
+name: Avenge a Fallen Comrade
+level: 1
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Avenge a Fallen Comrade (Blood Raiders) (Level 1)
+    url: https://wiki.eveuniversity.org/Avenge_a_Fallen_Comrade_(Blood_Raiders)_(Level_1)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "193283"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the habitat of the pirate leaders then report back to your agent.
+notes:
+  - text: No hostiles at initial gate.
+  - text: "Blitz: Destroy Habitat, warp out."
+pockets:
+  - name: Pocket
+    waves:
+      - id: initial-hostiles
+        trigger:
+          on: warpIn
+          text: Initial Hostiles
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Corpii Follower
+              - Corpii Worshipper
+            group: Group A (48km) N
+            triggers: 1st ship destroyed, Reinforcement A1
+          - count: "4"
+            class: Frigate
+            names:
+              - Corpii Follower
+            group: Group B (60km) W
+            triggers: Reinforcement B
+      - id: reinforcement-a1
+        trigger:
+          on: other
+          text: Reinforcement A1
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Corpii Follower
+            triggers: 1st damage, Reinforcement A2
+      - id: reinforcement-a2-about-100km-away-from-a1
+        trigger:
+          on: other
+          text: Reinforcement A2 (About 100km away from A1)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Corpii Raider
+              - Corpii Diviner
+      - id: reinforcement-b
+        trigger:
+          on: other
+          text: Reinforcement B
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Corpii Follower
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Habitat
+            triggers: Mission completed on destruction

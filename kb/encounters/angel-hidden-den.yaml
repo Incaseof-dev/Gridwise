@@ -1,0 +1,231 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: angel-hidden-den
+kind: anomaly
+name: Angel Hidden Den
+dedRating: null
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Angel Hidden Den
+    url: https://wiki.eveuniversity.org/Angel_Hidden_Den
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225157"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Single ungated normal space pocket.
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-defenders-23-38km
+        trigger:
+          on: warpIn
+          text: Initial Defenders (23- 38km)
+        spawns:
+          - count: "8"
+            class: Frigate
+            names:
+              - Gistii Ambusher
+              - Gistii Hunter
+              - Gistii Impaler
+              - Gistii Raider
+          - count: "11"
+            class: Destroyer
+            names:
+              - Gistior Seizer
+              - Gistior Trasher
+          - count: "5"
+            class: Cruiser
+            names:
+              - Gistum Liquidator
+              - Gistum Marauder
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+              - Gistatis Praefectus
+              - Gistatis Tribuni
+          - count: "1"
+            class: Sentry
+            names:
+              - Angel Heavy Missile Battery
+      - id: 1st-reinforcement-spawn-44-49km
+        trigger:
+          on: other
+          text: 1st Reinforcement Spawn (44- 49km)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Gistii Ambusher
+              - Gistii Raider
+          - count: "3"
+            class: Cruiser
+            names:
+              - Gistum Depredator
+              - Gistum Predator
+      - id: 2nd-reinforcement-spawn-38-43km
+        trigger:
+          on: other
+          text: 2nd Reinforcement Spawn (38- 43km)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Gistii Ambusher
+              - Gistii Raider
+          - count: "3"
+            class: Destroyer
+            names:
+              - Gistior Defiler
+              - Gistior Seizer
+              - Gistior Trasher
+      - id: 3rd-reinforcement-spawn-30-40km
+        trigger:
+          on: other
+          text: 3rd Reinforcement Spawn (30- 40km)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Gistii Raider
+          - count: "3"
+            class: Destroyer
+            names:
+              - Gistior Seizer
+              - Gistior Trasher
+      - id: 4th-reinforcement-spawn-17-22km
+        trigger:
+          on: other
+          text: 4th Reinforcement Spawn (17- 22km)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Gistii Nomad
+          - count: "2"
+            class: Cruiser
+            names:
+              - Gistum Liquidator
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+              - Gistatis Tribunus
+            triggers: Last killed of ship class
+      - id: 5th-reinforcement-spawn-23-31km
+        trigger:
+          on: other
+          text: 5th Reinforcement Spawn (23- 31km)
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Gistii Nomad
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+              - Gistatis Primus
+              - Gistatis Tribunus
+            triggers: Last killed of ship class
+          - count: "2"
+            class: Battleship
+            names:
+              - Gist Commander
+            note: type list incomplete on the source page
+      - id: 6th-reinforcement-spawn-44-48km
+        trigger:
+          on: other
+          text: 6th Reinforcement Spawn (44- 48km)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Gistii Nomad
+            ewar:
+              - kind: targetPaint
+          - count: "2"
+            class: Cruiser
+            names:
+              - Gistum Liquidator
+              - Gistum Marauder
+      - id: 7th-reinforcement-spawn-32-39km
+        trigger:
+          on: other
+          text: 7th Reinforcement Spawn (32- 39km)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Hijacker
+              - Arch Gistii Outlaw
+            triggers: Last killed of ship class
+          - count: "2"
+            class: Cruiser
+            names:
+              - Gistum Depredator
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+              - Gistatis Tribunus
+      - id: 8th-reinforcement-spawn-19-68km
+        trigger:
+          on: other
+          text: 8th Reinforcement Spawn (19- 68km)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Gistii Ambusher
+              - Gistii Raider
+          - count: "3"
+            class: Cruiser
+            names:
+              - Gistum Depredator
+              - Gistum Liquidator
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+              - Gistatis Tribunus
+      - id: 9th-reinforcement-spawn-34-41km
+        trigger:
+          on: other
+          text: 9th Reinforcement Spawn (34- 41km)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Hijacker
+              - Arch Gistii Outlaw
+              - Arch Gistii Thug
+          - count: "4"
+            class: Cruiser
+            names:
+              - Gistum Depredator
+              - Gistum Liquidator
+              - Gistum Predator
+          - count: "7"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+              - Gistatis Tribunus
+    onWarpIn: Operating from the heart of the Curse region, the Angel Cartel is today the largest and best organized of the space-based criminal factions. The Angels are divided into several groups, each with a very special function; it is commanded by the Dominations. In the century they've been lurking in deep space, they have stolen, plundered, or sabotaged countless number of ships and kidnapped, assaulted, or murdered thousands of people. The Angels recruit members from all the races, and are thus not bound to any one zone of operation; instead, their reach spans almost the entire known universe. Many believe that the Angels got their power by uncovering Jovian technologies hidden in their ancient homeworlds, now infested by the Angel Cartel.
+sde:
+  dungeonIds:
+    - 3446

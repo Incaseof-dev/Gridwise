@@ -1,0 +1,43 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: some-light-theatrics
+kind: mission
+name: Some Light Theatrics
+level: 4
+enemyFaction: null
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Some Light Theatrics
+    url: https://wiki.eveuniversity.org/Some_Light_Theatrics
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "206316"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Evacuate CPF Security Personnel (15 m3) from the CPF Investigation Team HQ
+notes:
+  - text: "Suggested ships: Exploration frigate"
+  - text: Requires a Data Analyzer
+  - text: "Masks of Authority: Altercations between the corporate forces exist on record, but in almost every case they have been small incidents based on misunderstanding, with warning shots the only ordnance released. A notable exception is an incident known as the Ingalles incident, where soldiers belonging to the Wiyrkomi Peace Corps opened fire on a Hyasyoda convoy being escorted by the Hyasyoda's agency, the Corporate Police Force."
+  - text: Ungated deadspace pocket one jumps away in the same System.
+  - text: Hack the CPF Habitation Module with a Data Analyzer and grab the CPF Security Personnel (15 m3). CPF Habitation Module will explode thirty seconds after you've hacked it. The explosion damages ships in 10 km range.
+  - text: "Tips: Do not warp out before the CPF Habitation Module explodes"
+  - text: "Tips: If you let the CPF Security Personnel explode inside the CPF Habitation Module you will fail the Epic Arc"
+pockets:
+  - name: Warp-in
+    notes:
+      - text: "Agent Conversation: The moment you safely disable the bug, we'll send out a short-range ECM pulse. This should stop the device from restarting immediately – just long enough for you to do your work. Don't be surprised if you lose a lock, though. The moment you have disabled NOH's surveillance taps, get our people out of the facility and clear the area. You will need to be at least 10km away to avoid any explosive kickback. It is important that you don't waste time after the hack, pilot. You will only have around thirty seconds to act after that point. If we wait any longer it will look suspicious."
+    waves:
+      - id: structures-60-km
+        trigger:
+          on: other
+          text: Structures (60 km)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Container
+            names:
+              - CPF Habitation Module

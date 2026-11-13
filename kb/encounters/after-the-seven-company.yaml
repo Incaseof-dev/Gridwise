@@ -1,0 +1,86 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: after-the-seven-company
+kind: mission
+name: After The Seven - "Company"
+level: 1
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – After The Seven - "Company"
+    url: https://wiki.eveuniversity.org/After_The_Seven_-_%22Company%22
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "230794"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Rescue 10x kidnapped civilians (10)
+ewar:
+  - kind: sensorDamp
+notes:
+  - text: This mission is issued by a Security division agent and is part 2 of the 5 part mission chain After The Seven
+  - text: Single ungated pocket. Initial defenders aggro instantly upon warp-in.
+  - text: A cargo container will be dropped when Surenna's frigate is destroyed, which contains the goods the mission requires.
+  - text: "Message from Surenna: How the hell did you find this place? Never mind, it doesn't really matter."
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: Previous mission - Next mission
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Seven Recruit [Coreli Watchman
+              - Seven Recruit [Coreli Patroller]
+            ewar:
+              - kind: sensorDamp
+            triggers: Last one triggers wave 1
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Seven Plebe [Coreli Spy
+              - Seven Plebe [Coreli Agent]
+            triggers: Last one triggers wave 2
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Seven Plebe [Coreli Initiate
+              - Seven Plebe [Coreli Scout]
+            triggers: Last one triggers wave 3
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Surenna's Frigate [Coreli Guard
+              - Surenna's Frigate [Coreli Safeguard]
+          - count: "?"
+            class: Container
+            names:
+              - Cargo container
+            group: On destruction drops
+            drop: 10 Kidnapped Citizen

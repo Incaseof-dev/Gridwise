@@ -1,0 +1,430 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: david-v-goliath
+kind: escalation
+name: David v Goliath
+dedRating: null
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – David V Goliath
+    url: https://wiki.eveuniversity.org/David_V_Goliath
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "171562"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: This expedition is in nullsec, with all four parts in Sansha infested nullsec. A high DPS ship is recommended to take out Naberius Marquis in the final location.
+  - text: "Escalation from Sansha Military Complex: Going through the logs from one of the command ships you blasted, you come across a recent memo containing a draft for a plan where forces from this Military Complex and another similar to this one were to gang up and raid a space trucker station somewhere in the region. Where this space trucker station is, is not included in the logs, but the location of the rally point is there. It is supposed to be by a small asteroid belt, not too far away."
+loot:
+  - item: + Overseer and other valuable loot
+  - item: Centus A-Type modules
+    note: est. Varies widely (wiki) · From Naberius Marquis
+  - item: Nightmare BPC
+    note: est. Unknown value (wiki) · From Naberius Marquis
+  - item: Mid/High-Grade implants and faction ammo/tags
+    note: est. Varies (wiki) · From True Sansha Commander Battleships
+  - item: True Sansha faction modules
+    note: est. Varies widely (wiki) · From True Sansha Commander Battleships
+npcs:
+  Sansha Relay Scout:
+    sdeTypes:
+      - Centus Tyrant
+    class: Elite Battleship
+  Naberius's Imp:
+    sdeTypes:
+      - Centii Loyal Ravener
+      - Centii Loyal Scavenger
+    class: Elite Frigate
+  Naberius's Warhound:
+    sdeTypes:
+      - Centum Loyal Beast
+      - Centum Loyal Juggernaut
+    class: Elite Cruiser
+  Naberius's Nightmare:
+    sdeTypes:
+      - Centus Tyrant
+      - Centus Dread Lord
+    class: Battleship
+  Space Trucker Outpost Defender:
+    sdeTypes:
+      - Mercenary Wingman
+    class: Elite Frigate
+  Space Trucker Outpost Guardian:
+    sdeTypes:
+      - Mercenary Overlord
+    class: Battleship
+pockets:
+  - name: First Location
+    notes:
+      - text: If the True Sansha ship does not trigger escalation or does not spawn, take the acceleration gate.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 1-2
+            class: Destroyer
+            names:
+              - Centior Cannibal
+              - Centior Misshape
+          - count: 4-5
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centatis Daemon
+          - count: 3-4
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Dread Lord
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - True Sansha's Dark Lord
+            triggers: Escalation trigger
+            drop: Possible True Sansha faction modules
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Newly Constructed Acceleration Gate
+            note: Not locked
+  - name: First Pocket
+    notes:
+      - text: "Escalation trigger: From the wreckage of this ship, you get info on where it is from, it is another Sansha station. Well, more an outpost than a station perhaps, but it is a pure military outfit, not a regular colony."
+      - text: "Escalation dead end: You scan the wreck for further info, examine the location and listen for a while on all channels ... but nothing. It seems you have lost the trail of this raiding party."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Sansha Minion Scout
+            triggers: Spawn of this ship triggers escalation
+    onWarpIn: "Sansha Minion Scout: Send me the secret password NOW. I'm warning you ..."
+  - name: Second Location
+    notes:
+      - text: The Sansha Military Outpost does not drop anything worthwhile, so it is not worth the time and ammunition to destroy it unless to trigger the escalation.
+      - text: "Escalation dead end: Again you let your scanners comb the remains of the station and the ships, looking for clues on this alleged raid, but alas .. nothing, not a word anywhere."
+      - text: "Escalation trigger: Again you let your scanners comb the remains of the station and the ships, looking for clues on this alleged raid, and before long you are holding a log listing the second rally spot and as far as you can see, the raiding parties have already departed from here and two other stations and are supposed to convene within the hour. If one of the raiding parties was supposed to come from the Sansha station you destroyed originally, you have already managed to diminish their forces somewhat."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Sansha Military Outpost
+            triggers: Triggers wave 2 when attacked, Escalation trigger
+            drop: Worthless loot
+          - count: 3-4
+            class: Destroyer
+            names:
+              - Centior Horror
+              - Centior Monster
+          - count: 3-4
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Dread Lord
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "8"
+            class: Sentry
+            names:
+              - Stronghold Cruise Missile Battery
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Centii Loyal Savage
+              - Centii Loyal Slavehunter
+              - Centii Loyal Minion
+            ewar:
+              - kind: trackingDisruption
+              - kind: warpDisruption
+          - count: 1-2
+            class: Destroyer
+            names:
+              - Centior Abomination
+              - Centior Monster
+          - count: 5-6
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Dread Lord
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - True Sansha's Overlord
+              - True Sansha's Dread Lord
+            triggers: Escalation trigger
+            drop: Possible True Sansha modules, faction ammo/tags
+            note: May not always spawn
+  - name: Third Location
+    notes:
+      - text: If True Sansha ship does not trigger escalation or spawn, take the acceleration gate.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Ravener
+              - Centii Loyal Scavenger
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Fiend
+              - Centum Loyal Hellhound
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centatis Daemon
+          - count: "3"
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Dread Lord
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - True Sansha's Dread Lord
+            triggers: Escalation trigger
+            drop: Possible True Sansha faction modules, ammo, tags, implants
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Newly Constructed Acceleration Gate
+            note: Not locked
+  - name: First Pocket
+    notes:
+      - text: No rats are present here. Approach the beacon to trigger the escalation.
+      - text: "Escalation trigger: A fixed guidance beacon sitting here all alone .. you examine the thing and discover its guidance system points to a place not too far away. Perhaps that is the space trucker station? In any case, that is the only clue you have to follow, if the pirates have ever been here, they have gone already."
+    waves:
+      - id: 100-km-away
+        trigger:
+          on: other
+          text: 100 km away
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Beacon
+            names:
+              - Guidance Beacon
+            triggers: Approach to trigger escalation
+  - name: Fourth Location
+    notes:
+      - text: Single open pocket. No gate at warpin. This section can be easily mastered with a carrier.
+      - text: The haulers present will warp off when you warp in.
+      - text: Attacking the Trucker Gate spawns an optional defensive wave. This is only worth doing for the extra bounties/salvage.
+      - text: "Expedition end: The trail appears to run cold at this point."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Industrial
+            names:
+              - Space Trucker Convoy
+            drop: Unknown loot
+      - id: wave-1-after-industrials-warp-off
+        trigger:
+          on: other
+          text: Wave 1(after Industrials warp off)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Centior Horror
+              - Centior Abomination
+          - count: 3-4
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Fiend
+              - Centum Loyal Hellhound
+              - Centum Loyal Mutilator
+          - count: "7"
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Dread Lord
+      - id: timed-wave-1
+        trigger:
+          on: other
+          text: Timed wave 1
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Ravener
+              - Centii Loyal Scavenger
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Centatis Daemon
+              - Centatis Specter
+              - Centatis Wraith
+          - count: "8"
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Dread Lord
+          - count: "1"
+            class: Elite Battleship
+            names:
+              - Sansha Relay Scout
+            triggers: Triggers wave 4a/4b
+      - id: timed-wave-2
+        trigger:
+          on: other
+          text: Timed wave 2
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Centii Loyal Savage
+              - Centii Loyal Slavehunter
+            ewar:
+              - kind: trackingDisruption
+          - count: 3-4
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Beast
+              - Centum Loyal Juggernaut
+              - Centum Loyal Slaughterer
+            ewar:
+              - kind: trackingDisruption
+          - count: "6"
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Dread Lord
+          - count: "1"
+            class: Elite Battleship
+            names:
+              - Sansha Relay Scout
+            triggers: Triggers wave 4a/4b
+      - id: wave-4a-overseer
+        trigger:
+          on: other
+          text: Wave 4a(overseer)
+          confidence: inferred
+        spawns:
+          - count: 5-6
+            class: Elite Frigate
+            names:
+              - Naberius's Imp
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "5"
+            class: Elite Cruiser
+            names:
+              - Naberius's Warhound
+            ewar:
+              - kind: trackingDisruption
+          - count: "5"
+            class: Battleship
+            names:
+              - Naberius's Nightmare
+          - count: "1"
+            class: Overseer Battleship
+            names:
+              - Naberius Marquis
+            triggers: Trigger for expedition end
+            drop: Possible True Sansha and Centus A-Type modules; possible Nightmare BPC
+            note: Has a very strong passive armor tank and slight active tank, requires ~600 DPS to break
+      - id: wave-4b
+        trigger:
+          on: other
+          text: Wave 4b
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Centii Loyal Minion
+              - Centii Loyal Servant
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 3-4
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Beast
+              - Centum Loyal Juggernaut
+            ewar:
+              - kind: trackingDisruption
+          - count: "7"
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Dread Lord
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Trucker Gate
+            triggers: Triggers mercenary wave when attacked
+      - id: mercenary-wave-triggered-by-attacking-the-trucker-gate
+        trigger:
+          on: other
+          text: Mercenary wave(triggered by attacking the Trucker Gate)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Space Trucker Outpost Defender
+            ewar:
+              - kind: web
+          - count: "10"
+            class: Battleship
+            names:
+              - Space Trucker Outpost Guardian
+    onWarpIn: A peaceful station, where transport ships get refitted and refueled. Almost too peaceful ...
+sde:
+  dungeonIds:
+    - 1921

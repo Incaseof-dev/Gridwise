@@ -1,0 +1,23 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: untouchable
+kind: mission
+name: Untouchable
+level: 4
+enemyFaction: null
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Untouchable
+    url: https://wiki.eveuniversity.org/Untouchable
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "206317"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Report to Katsen Isha
+notes:
+  - text: "Hyasyoda Returns to Bargaining Table after Reppola Intervenes, Scope Article, February 23rd, YC111: Hyasyoda negotiators resumed talks with Zainou today after Ishukone Watch CEO Mens Reppola intervened personally over the weekend. The close friend of the late Otro Gariushi spoke extensively with Hyasyoda CEO Ahtonen Osmon both Saturday and Sunday. Though Ishukone did not disclose the details of the conversation, a press release from Osmon's office called the discussions with Reppola \"productive and reassuring,\" and apologized to Zainou for the delay in resuming negotiations. Political analysts, such as Taya Otnen, a corporate strategist with the Mercantile Club on this week's Games of State, have called this a shrewd move by the Ishukone Watch CEO. \"He's used his authority over corporate security matters to take ownership of the negotiations, whether they succeed or fail,\" she told host Shiomiken Savalenta. \"This may have actually been what Hyasyoda was hoping for; it's no secret that they support Reppola for the CEO seat. It was a very dangerous move, though; if Okalala wins the CEO fight, he'll remember what they did. Next time those contracts are up for review, Hyasyoda may find themselves passed over for another vendor like Sukuuvestaa or Kaalakiota.\""
+  - text: Report to Katsen Isha five jumps away in Poinen IV - Moon 13 - Nugoeihuvi Corporation Development Studio.

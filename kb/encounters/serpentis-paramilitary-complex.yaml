@@ -1,0 +1,251 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: serpentis-paramilitary-complex
+kind: complex
+name: Serpentis Paramilitary Complex
+dedRating: 7
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Serpentis Paramilitary Complex
+    url: https://wiki.eveuniversity.org/Serpentis_Paramilitary_Complex
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "222431"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Battleships"
+notes:
+  - text: The site consists of a volume of space with an acceleration gate and contains various structures and their defending pirates. Using the gate allows access to other areas within the site. When attacked, the defenders may send multiple waves of reinforcements. Each group's appearance is triggered by the destruction of members of the previous group. The names and amount of ships listed may vary slightly, but will always be of Battleship class or smaller.
+  - text: This site's acceleration gate allows only Battleship class ships or lower and their Tech 2 equivalents to enter the site.
+loot:
+  - item: 20th Tier Overseers Effects
+    from: Shadow Serpentis Big Boss
+    note: est. 61.2M Isk (wiki) · 100% drop rate
+  - item: Core C-type Battleship Modules
+    from: Shadow Serpentis Big Boss
+    note: est. 20M (wiki)
+  - item: Vindicator BPC
+    from: Shadow Serpentis Big Boss
+  - item: Shadow Serpentis Battleship Modules
+    from: Shadow Serpentis Big Boss/Shadow Serpentis Lord admiral/Grand Admiral(room 4)
+  - item: Shadow Serpentis Cruiser Modules
+    from: Shadow Serpentis Chief Guard/Patroller (room 3)
+  - item: Vigilant BPC
+    from: Shadow Serpentis Chief Guard/Patroller (room 3)
+  - item: Mid-grade Snake\Asklepian implants
+    from: Shadow Serpentis Chief Guard/Patroller (room 3)
+    note: est. 70M (wiki)
+lootNotes:
+  - text: Bounties approx 80M
+pockets:
+  - name: Room 1
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+            note: Unlocks when all defenders are destroyed
+      - id: defenders
+        trigger:
+          on: warpIn
+          text: Defenders
+        spawns:
+          - count: "13"
+            class: Destroyer
+            names:
+              - Corelior Infantry
+              - Corelior Soldier
+              - Corelior Trooper
+          - count: "9"
+            class: Battlecruiser
+            names:
+              - Corelatis Platoon Leader
+              - Corelatis Squad Leader
+          - count: "8"
+            class: Battleship
+            names:
+              - Core Admiral
+              - Core High Admiral
+    onWarpIn: "Though considered little more than Angel Cartel lackeys, in recent years the Serpentis have built up their own paramilitary force, far from Curse, who specialize in guerilla strikes. Their strategy is to harass Federation and CONCORD forces so that Serpentis booster manufacturing programs remain a low-priority target. In general this strategy has worked very well. Eliminating the leadership of these Serpentis guerilla teams is a top priority for any security forces. DED Threat Assessment: 7 of 10."
+  - name: Room 2
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+            note: Unlocks when all defenders are destroyed
+      - id: defenders
+        trigger:
+          on: warpIn
+          text: Defenders
+        spawns:
+          - count: "11"
+            class: Destroyer
+            names:
+              - Corelior Infantry
+              - Corelior Soldier
+              - Corelior Trooper
+          - count: "10"
+            class: Battlecruiser
+            names:
+              - Corelatis Platoon Leader
+              - Corelatis Squad Leader
+          - count: "10"
+            class: Battleship
+            names:
+              - Core Admiral
+              - Core High admiral
+  - name: Room 3
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+            note: Unlocks when all defenders are destroyed
+      - id: defenders
+        trigger:
+          on: warpIn
+          text: Defenders
+        spawns:
+          - count: "12"
+            class: Destroyer
+            names:
+              - Corelior Infantry
+              - Corelior Soldier
+              - Corelior Trooper
+          - count: "11"
+            class: Battlecruiser
+            names:
+              - Corelatis Platoon Leader
+              - Corelatis Squad Leader
+          - count: "9"
+            class: Battleship
+            names:
+              - Core Admiral
+              - Core High Admiral
+          - count: "1"
+            class: Overseer Cruiser
+            names:
+              - Shadow Serpentis Chief Guard
+              - Shadow Serpentis Chief Patroller
+            ewar:
+              - kind: sensorDamp
+            drop: May contain Shadow Serpentis Cruiser modules, Vigilant BPC, or Mid-grade Snake implants. May also produce Tech 2 Salvage
+    onWarpIn: Sensor readings confirm and 89 percent probability of this being a Serpentis paramilitary complex. Be on the lookout for the Big Boss. Destroying it should cripple their command structure.
+  - name: Room 4
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+            note: Unlocks when all defenders are destroyed
+      - id: defenders
+        trigger:
+          on: warpIn
+          text: Defenders
+        spawns:
+          - count: "12"
+            class: Destroyer
+            names:
+              - Corelior Infantry
+              - Corelior Sentinel
+              - Corelior Soldier
+              - Corelior Trooper
+          - count: "13"
+            class: Battlecruiser
+            names:
+              - Corelatis Platoon Leader
+              - Corelatis Squad Leader
+              - Corelatis Wing Leader
+          - count: "6"
+            class: Battleship
+            names:
+              - Core Admiral
+              - Core High Admiral
+              - Core Rear Admiral
+          - count: "1"
+            class: Battleship
+            names:
+              - Core Vice Admiral
+            ewar:
+              - kind: sensorDamp
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Shadow Serpentis Lord Admiral
+              - Shadow Serpentis Grand Admiral
+            drop: May contain Shadow Serpentis Battleship modules and may produce Tech 2 Salvage
+    onWarpIn: The next pocket is a busy place. I'm reading the engine wash signatures of Serpentis ships, but also private industrial and hauler firms. One trail has a 12 percent likelihood of belonging to a Federation Senator's liner. Luckily for the senator, we aren't the Scope.
+  - name: Room 5
+    notes:
+      - text: The Shadow Serpentis Big Boss deals high damage at relatively short range, and has an armor tank that can withstand about 400-500 DPS.
+      - text: "On Big Boss destruction:: The Big Boss is down. The snakes are going to have a hard time keeping anyone busy without that bruiser of a ship. Don't forget to check the wreckage for any goodies."
+    waves:
+      - id: defenders
+        trigger:
+          on: warpIn
+          text: Defenders
+        spawns:
+          - count: "16"
+            class: Destroyer
+            names:
+              - Corelior Infantry
+              - Corelior Soldier
+              - Corelior Trooper
+          - count: "1"
+            class: Cruiser
+            names:
+              - Corelum Chief Infantry
+          - count: "10"
+            class: Battlecruiser
+            names:
+              - Corelatis Platoon Leader
+              - Corelatis Squad Leader
+          - count: "11"
+            class: Battleship
+            names:
+              - Core Admiral
+              - Core High admiral
+          - count: "1"
+            class: Overseer Battleship
+            names:
+              - Shadow Serpentis Big Boss
+            ewar:
+              - kind: web
+              - kind: sensorDamp
+            drop: Contains 20th Tier Overseers Personal Effects. May contain Core C-type Modules, Shadow Serpentis Battleship Modules or a Vindicator BPC
+            note: Immune to webs
+          - count: "1"
+            class: Sentry
+            names:
+              - Serpentis Stasis Tower
+            ewar:
+              - kind: web
+    onWarpIn: Big Boss presence confirmed. Remember, everyone here either is or works for a drug dealer, so we don't have to feel bad for popping them like technology-filled piñatas.
+sde:
+  dungeonIds:
+    - 5238

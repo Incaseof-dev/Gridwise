@@ -1,0 +1,160 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: blood-owned-station
+kind: escalation
+name: Blood Owned Station
+dedRating: null
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Blood Owned Station
+    url: https://wiki.eveuniversity.org/Blood_Owned_Station
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "221440"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Blood Owned Station is an expedition that can be obtained by running Minor Blood Annex sites. It will take you to several new systems, each about 4 jumps from the previous one. Only the escalation trigger ship needs to be killed to continue the escalation.
+  - text: "Escalation start: To your surprise, the Overseer seems to have spent the last moments of his life sending some message to your ship on a private channel, a fact you learn from a blinking entry on your communication panel a few seconds after his innards slid across your windshield, bounced along your fuselage and were sucked into your thrusters. It appears he wanted to save his life by telling you the whereabouts of some place you could load your cargohold with riches, but before he could get very far with his offer, his journey ended. All you have is some hysteric babble about a hidden mining station at a certain location."
+pockets:
+  - name: First Location
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "5"
+            class: Elite Frigate
+            names:
+              - Mercenary Wingman
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "1"
+            class: Commander Battlecruiser
+            names:
+              - Mercenary Supervisor
+          - count: "4"
+            class: Battleship
+            names:
+              - Mercenary Overlord
+          - count: "7"
+            class: Sentry
+            names:
+              - Blood Heavy Missile Battery
+  - name: Second Location
+    notes:
+      - text: "Blood Owned Station: Among the things you find are a few drones. Running a scan on their control units reveals they have been used not long ago, at another place not far away from here."
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Arch Sage
+              - Elder Corpum Arch Priest
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corpatis Phantom
+              - Corpatis Exorcist
+          - count: "1"
+            class: Commander Battlecruiser
+            names:
+              - Dark Blood Fanatic
+            drop: Faction modules
+  - name: Third Location
+    notes:
+      - text: "Blood Owned Station: All these moon mining stations suggest there must be a station or outpost somewhere in the region servicing them and refining the raw materials they produce. Again you look for clues from the drones and again the data you extract suggest a new location not too far away."
+      - text: The Starbase Major Maintenance Facility can be destroyed, but it has a massive hull tank. It drops nothing.
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Seeker
+              - Elder Corpii Collector
+            ewar:
+              - kind: trackingDisruption
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Corpatis Phantom
+              - Corpatis Exorcist
+          - count: "1"
+            class: Commander Battlecruiser
+            names:
+              - Dark Blood Exorcist
+            drop: Faction modules
+          - count: "5"
+            class: Battleship
+            names:
+              - Corpus Archbishop
+              - Corpus Harbinger
+            ewar:
+              - kind: neut
+          - count: "6"
+            class: Sentry
+            names:
+              - Cruise Missile Battery
+          - count: "1"
+            class: Sentry
+            names:
+              - Stasis Tower
+            ewar:
+              - kind: web
+  - name: Fourth Location
+    notes:
+      - text: ': Going through data scanned during the destruction of the station itself, you notice reports from a place called "R&D division Red", containing information on blueprint research and booster production and even the location of this base "Red".'
+      - text: Attacking the Blood Research Outpost causes it to emit blast waves, destroying drones and doing significant damage to any ships within 90-100 km (Damage is omni, hard for cruiser and deadly for destroyers and smaller).
+      - text: "On completion:: Now, you kind of regret killing the Overseer back there, it is always useful to know corrupt leaders who are ready to sell out things like this outpost in exchange for something as cheap as their own petty lives."
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Blood Research Outpost
+            drop: Ashimmu BPC or Corpum A-Type module, faction modules
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Seeker
+              - Elder Corpii Collector
+            ewar:
+              - kind: trackingDisruption
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Arch Sage
+              - Elder Corpum Arch Priest
+          - count: "6"
+            class: Battleship
+            names:
+              - Corpus Cardinal
+          - count: "2"
+            class: Sentry
+            names:
+              - Cruise Missile Battery
+sde:
+  dungeonIds:
+    - 1813

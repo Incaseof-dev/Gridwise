@@ -1,0 +1,103 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: salvage-heist
+kind: mission
+name: Salvage Heist
+level: null
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Salvage Heist
+    url: https://wiki.eveuniversity.org/Salvage_Heist
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "229748"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Kill Gath Renton
+restrictions:
+  - text: "Ship size limit: T3 destroyers and below"
+ewar:
+  - kind: web
+  - kind: ecm
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite frigates"
+  - text: "The Sleeper Civilization: Although there are many theories, few know what happened to the Sleepers. Their ruins were already old when the Amarr reached space. For most, the Sleepers were little more than a curiosity; an ancient civilization lost and forgotten. Then wormholes opened across the cluster. Explorers that ventured into the strange space beyond were met with highly-advanced drones protecting relics that we now know once belonged to the Sleepers. Apart from the drones themselves, the only structures found are lifeless ruins. But the Sleeper drones themselves function all too well, despite what must be centuries of neglect."
+  - text: Single gated deadspace pocket.
+  - text: Wave 1 is triggered when Gath Renton is first damaged, Wave 2 when Gath Renton's armor is damaged, and Wave 3 shortly after Gath Renton's hull is damaged.
+  - text: "Blitz: Kill Gath Renton while tanking the other spawns."
+  - text: The mission can be completed and the next mission accepted remotely.
+  - text: No standing loss for destroying Angel sentries. Initial defender spawn is 60 km from warp-in and does not auto-aggro. Sentries have limited aggro range out to ~25 km.
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: "Renton Defeated: As the fireball dies down, Renton's pod is already warping out. He is unlikely to return anytime soon."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Pithi Plunderer
+              - Pithi Wrecker
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Gath Renton
+            triggers: Triggers waves 1 on shield damage, 2 on armor damage and 3 on hull damage. Mission completion trigger.
+            note: Scourge heavy missiles every 5s
+          - count: "1"
+            class: Sentry
+            names:
+              - Angel Stasis Tower
+            ewar:
+              - kind: web
+          - count: "2"
+            class: Sentry
+            names:
+              - Angel Cruise Missile Battery
+      - id: wave-1-attacking-gath-renton
+        trigger:
+          on: other
+          text: Wave 1 (Attacking Gath Renton)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Arrogator
+              - Dire Pithi Imputor
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+      - id: wave-2-gath-renton-armor-damage
+        trigger:
+          on: other
+          text: Wave 2 (Gath Renton armor damage)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Pithi Saboteur
+            ewar:
+              - kind: ecm
+      - id: wave-3-timed-after-renton-structure-damage
+        trigger:
+          on: other
+          text: Wave 3 (timed, after Renton structure damage)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Pithi Demolisher
+              - Pithi Destructor
+    onWarpIn: Whoever you are, leave. If you aren't blue, then you're target practice.

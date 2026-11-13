@@ -1,0 +1,76 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: avenge-a-fallen-comrade-ded-level-2
+kind: mission
+name: Avenge a Fallen Comrade
+level: 2
+enemyFaction: DED
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Avenge a Fallen Comrade (DED) (Level 2)
+    url: https://wiki.eveuniversity.org/Avenge_a_Fallen_Comrade_(DED)_(Level_2)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191581"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal:
+    - em
+    - thermal
+    - kinetic
+    - explosive
+  resist:
+    - em
+    - thermal
+    - kinetic
+    - explosive
+objectives:
+  - text: Destroy the habitat
+notes:
+  - text: No hostiles at initial gate.
+  - text: "Blitz: Destroy the Habitat, warp-out."
+  - text: "Blitz: Avoids MOST standing loss. Will lose -0.24 for destroying the Habitat."
+pockets:
+  - name: 1st Pocket
+    notes:
+      - text: No aggro on warp-in. All groups aggro on attacking the Habitat.
+    waves:
+      - id: initial-hostiles
+        trigger:
+          on: warpIn
+          text: Initial Hostiles
+        spawns:
+          - count: "7"
+            class: Frigate
+            names:
+              - DED Soldier 1st
+              - DED Soldier 3rd Class
+            group: Group 1 (45km)
+          - count: "4"
+            class: Frigate
+            names:
+              - DED Special Ops Piranha
+            group: Group 2 (55km)
+          - count: "4"
+            class: Frigate
+            names:
+              - DED Soldier 2nd Class
+            group: Group 3 (55km)
+          - count: "1"
+            class: Cruiser
+            names:
+              - DED Officer 1st Class
+            group: Group 3 (55km)
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Habitat
+            triggers: Mission completed on destruction

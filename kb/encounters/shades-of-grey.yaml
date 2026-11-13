@@ -1,0 +1,68 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: shades-of-grey
+kind: mission
+name: Shades of Grey
+level: 4
+enemyFaction: Minmatar Republic
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Shades of Grey
+    url: https://wiki.eveuniversity.org/Shades_of_Grey
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "198321"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: web
+  - kind: targetPaint
+notes:
+  - text: "Suggested ships: Speedtanker + Stealthbomber, Pilgrim"
+  - text: th vs industrials
+  - text: "Space type: Normal with gates. MWD works. Bookmark will bring you to the gate."
+  - text: "Blitz: Kill the Industrials"
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: Aggro from all ships except Industrials on warp in.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Republic Tribal Baldur
+              - Republic Tribal Takan
+            ewar:
+              - kind: targetPaint
+          - count: "4"
+            class: Cruiser
+            names:
+              - Republic Tribal Jarpur
+              - Republic Tribal Manadis
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Chief Republic Klaki
+              - Chief Republic Orsin
+            ewar:
+              - kind: targetPaint
+          - count: "4"
+            class: Battleship
+            names:
+              - (Republic Sigur
+              - (Republic Jotun
+              - (Republic Ymir
+            ewar:
+              - kind: targetPaint
+            note: Ymir does target painting
+          - count: "6"
+            class: Industrial
+            names:
+              - Republic Industrial

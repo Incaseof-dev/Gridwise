@@ -1,0 +1,497 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-big-sting-amarr-empire
+kind: mission
+name: The Big Sting
+level: 5
+enemyFaction: Amarr Empire
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Big Sting (Amarr Empire)
+    url: https://wiki.eveuniversity.org/The_Big_Sting_(Amarr_Empire)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "199295"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: neut
+  - kind: nos
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: All Frigates"
+  - text: "Suggested ships: (1) Maelstrom w/ passive tank and (1) Maelstrom w/ Shield Transporters"
+pockets:
+  - name: Part 1 of 3
+    notes:
+      - text: "Faction: Amarr"
+      - text: "Mission type: Deadspace - No Gate"
+      - text: "Web/Scramble: All Frigates"
+      - text: "Extras: Energy Neutralizer Sentry IIIs, NOS"
+      - text: "Damage dealt: EM 55% / Therm 45%"
+      - text: "Recommended damage dealing: EM/Thermal"
+      - text: "Recommended ships: (1) Maelstrom w/ passive tank and (1) Maelstrom w/ Shield Transporters"
+      - text: Direct warp into Deadspace. No gate.
+  - name: Warp-In
+    notes:
+      - text: "Note: Only the Special Forces Squadron that appears at 8 minutes after warp-in needs to be destroyed to complete this mission. However, if you approach to under 10km from the Ghost Ship, it will trigger numerous additional spawns that are optional to destroy. Realize that sometimes this accidentally occurs at warp-in. The Warp-In Beacon is 12km from the Ghost Ship, and your exact warp-in spot can be + or – 2.5km from this beacon. If your warp-in does not land you within the 10km proximity, and if you don’t want to trigger these spawns, then be sure to head away from the Ghost Ship after warp-in."
+      - text: Positions of all spawn groups and the Ghost Ship
+      - text: Tips:*
+      - text: "Special Forces Squadron deals 1355hp/s (EM: 57%, Therm: 43%)*"
+      - text: "If triggered, initial Ghost Ship spawns will deal an additional 1484 hp/s (EM: 54%, Therm: 46%)"
+      - text: Have the “Types” column available in your overview if you want to separately identify each Special Forces tower type and ship
+      - text: "Proximity Triggered: When you approach to under 10km from the Ghost Ship, there spawns:"
+    waves:
+      - id: special-forces-squadron-35-45km-away-at-8-minutes-after-warp-in
+        trigger:
+          on: other
+          text: Special Forces Squadron (35–45km away at 8 minutes after warp-in)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Imran
+              - Divine Imperial Sixtus
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: Orbits at 4km
+          - count: "6"
+            class: Elite Cruiser
+            names:
+              - Divine Imperial Justicar
+              - Divine Imperial Champion
+              - Divine Imperial Ambrose*
+            ewar:
+              - kind: neut
+            note: Orbits at 7-32km, Ambrose does EWAR
+          - count: "6"
+            class: Battleship
+            names:
+              - Imperial Templar Martyr
+            note: Orbits at 49km
+          - count: "4"
+            class: Sentry
+            names:
+              - Tower Sentry Amarr III
+          - count: "2"
+            class: Sentry
+            names:
+              - Amarr Cruise Missile Battery
+          - count: "2"
+            class: Sentry
+            names:
+              - Amarr Energy Neutralizer Sentry III
+            ewar:
+              - kind: neut
+      - id: ghost-ship-spawn
+        trigger:
+          on: other
+          text: Ghost Ship Spawn
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Imran
+              - Divine Imperial Paladin
+              - Divine Imperial Valok
+            triggers: Shooting one triggers Reinforcement A1
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Divine Imperial Champion
+              - Divine Imperial Justicar
+            triggers: Shooting one triggers Reinforcement B1
+      - id: ghost-ship-reinforcement-a1
+        trigger:
+          on: other
+          text: Ghost Ship Reinforcement A1
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Battleship
+            names:
+              - Imperial Templar Martyr
+            triggers: Triggers reinforcement A2
+            note: Orbits at 49km
+      - id: ghost-ship-reinforcement-a2
+        trigger:
+          on: other
+          text: Ghost Ship Reinforcement A2
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Paladin
+              - Divine Imperial Nabih
+              - Divine Imperial Sixtus
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: Orbits at 4-16km
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Imperial Templar Justicar
+              - Imperial Templar Champion
+            note: Orbits at 110-22km
+          - count: "4"
+            class: Battleship
+            names:
+              - Imperial Templar Martyr
+              - Imperial Templar Ultara
+            note: Orbits at 49km
+      - id: ghost-ship-reinforcement-b1
+        trigger:
+          on: other
+          text: Ghost Ship Reinforcement B1
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battleship
+            names:
+              - Imperial Templar Martyr
+            triggers: Triggers reinforcement B2
+            note: Orbits at 49km
+      - id: ghost-ship-reinforcement-b2
+        trigger:
+          on: other
+          text: Ghost Ship Reinforcement B2
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Divine Imperial Justicar
+            note: Orbits at 14km
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Imperial Templar Justicar
+              - Imperial Templar Champion
+            note: Orbits at 10-22km
+          - count: "4"
+            class: Battleship
+            names:
+              - Imperial Templar Martyr
+              - Imperial Templar Ultara
+            note: orbits at 49km
+  - name: Part 2 of 3
+    notes:
+      - text: Direct warp into Deadspace. No initial gate.
+      - text: "Tips: No Energy Neutralizer Towers means this mission is Active Tank friendly (some cruiser NOS)"
+      - text: "Tips: Pocket 1’s max damage dealing of all ships: 2440hp/s (EM: 53%, Therm: 47%)"
+      - text: "Tips: Pocket 2’s max damage dealing of all ships: 2635hp/s (EM: 54%, Therm: 46%)"
+      - text: "Tips: Pocket 3’s max damage dealing of all ships: 1948hp/s (EM: 55%, Therm: 45%)"
+      - text: "Tips: Logistics ship will be aggroed if it enters a pocket before all groups have spawned (i.e. first 8 minutes)"
+  - name: Warp-In
+    notes:
+      - text: "Timed spawns of 40 ships (15 Frigates, 3 Destroyers, 10 Cruisers, 12 Battleships) - 2440hp/s (EM: 53%, Therm: 47%)"
+      - text: Groups spawn at 2 minute intervals. Instant Aggro.
+      - text: Positions of 2 minute Timed Spawns
+      - text: After 2 minutes
+      - text: After 2 minutes
+      - text: After 2 minutes
+    waves:
+      - id: group-1-50km-initial
+        trigger:
+          on: warpIn
+          text: Group 1 (50km Initial)
+        spawns:
+          - count: "5"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Imran
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: Orbits at 4km
+      - id: group-2-25km
+        trigger:
+          on: other
+          text: Group 2 (25km)
+          confidence: inferred
+        spawns:
+          - count: "7"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Valok
+              - Divine Imperial Forian
+              - Divine Imperial Imran
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: Orbits at 4-16km
+          - count: "7"
+            class: Elite Cruiser
+            names:
+              - Divine Imperial Avenger
+              - Divine Imperial Equalizer
+              - Divine Imperial Justicar
+            note: Orbits at 14-32km
+      - id: group-3-40km
+        trigger:
+          on: other
+          text: Group 3 (40km)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Imperial Templar Caius
+              - Imperial Templar Crusader
+            note: Orbits at 8-16 km
+          - count: "7"
+            class: Battleship
+            names:
+              - Imperial Templar Martyr
+              - Imperial Templar Ultara
+              - Imperial Templar Dominator
+            note: Orbits at 17-49km
+      - id: group-4-55km
+        trigger:
+          on: other
+          text: Group 4 (55km)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Sixtus
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: Orbits at 4km
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Divine Imperial Ambrose
+              - Divine Imperial Basil
+            ewar:
+              - kind: neut
+            note: Orbits at 7-19km
+          - count: "5"
+            class: Battleship
+            names:
+              - Imperial Templar Martyr
+            note: Orbits at 49km
+  - name: Right Hand Gate Pocket
+    notes:
+      - text: "Average 2 minute spawns totaling 35 ships (6 Frigates, 8 Cruisers, 6 Battlecruisers, 15 Battleships) - 2635hp/s (EM: 54%, Therm: 46%)"
+      - text: Retrieve 3 units of Citizens from the 3 Citizen Quarters at 30km
+      - text: Position of Timed Spawns
+      - text: 2 Minutes after warp-in
+      - text: After 1 minute
+      - text: After 3 minutes
+      - text: After 1.5 minutes
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "3"
+            class: Structure
+            names:
+              - Citizen Quarter
+            drop: Citizens
+      - id: group-1-15km
+        trigger:
+          on: other
+          text: group 1 (15km)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Imran
+              - Divine Imperial Sixtus
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: Orbits at 4km
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Divine Imperial Champion
+            note: Orbits at 32km
+          - count: "5"
+            class: Battleship
+            names:
+              - Imperial Templar Dominator
+              - Imperial Templar Ultara
+              - Imperial Dominator
+            note: Orbits at 17-49km
+      - id: group-2-15km
+        trigger:
+          on: other
+          text: Group 2 (15km)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Imperial Champion
+            note: Orbits at 22km
+          - count: "5"
+            class: Battleship
+            names:
+              - Imperial Templar Dominator
+              - Imperial Templar Martyr
+            note: Orbits at 17-49km
+      - id: group-3-30km
+        trigger:
+          on: other
+          text: Group 3 (30km)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Felix
+              - Divine Imperial Nabih
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: Orbits at 4km
+          - count: "6"
+            class: Elite Cruiser
+            names:
+              - Divine Imperial Justicar
+              - Divine Imperial Ambrose*
+              - Divine Imperial Basil*
+            ewar:
+              - kind: neut
+            note: Orbits at 7-19km, Ambrose and Basil do EWAR
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Imperial Templar Justicar
+            note: Orbits at 10km
+      - id: group-4-35km
+        trigger:
+          on: other
+          text: Group 4 (35km)
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Battleship
+            names:
+              - Imperial Templar Martyr
+            note: Orbits at 49km
+  - name: Left Hand Gate Pocket
+    notes:
+      - text: "Average 2 minute spawns totaling 38 ships (14 Frigates, 11 Cruisers, 13 Battleships) - 1948hp/s (EM: 55%, Therm: 45%)"
+      - text: Retrieve 3 units of Citizens from the 3 Citizen Quarters at 25km (1000 m3 each)
+      - text: Position of Timed Spawns
+      - text: 2 minutes after warp-in
+      - text: After 1 minute
+      - text: After 3 minutes
+      - text: After 1 minute
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "3"
+            class: Structure
+            names:
+              - Citizen Quarter
+            drop: Citizens
+      - id: group-1-10km
+        trigger:
+          on: other
+          text: Group 1 (10km)
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Felix
+              - Divine Imperial Sixtus
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: Orbits at 4km
+          - count: "7"
+            class: Elite Cruiser
+            names:
+              - Divine Imperial Champion
+              - Divine Imperial Justicar
+              - Divine Imperial Ambrose
+              - Divine Imperial Basil
+            note: Orbits at 32km
+      - id: group-2-20km
+        trigger:
+          on: other
+          text: Group 2 (20km)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - (Divine Imperial Napat
+            ewar:
+              - kind: web
+              - kind: trackingDisruption
+              - kind: warpDisruption
+            note: Orbits at 4km
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Divine Imperial Ambrose
+            ewar:
+              - kind: neut
+            note: Orbits at 7km
+          - count: "5"
+            class: Battleship
+            names:
+              - Imperial Dominator
+              - Imperial Martyr
+            note: Orbits at 17-44km
+      - id: group-3-15km
+        trigger:
+          on: other
+          text: Group 3 (15km)
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Battleship
+            names:
+              - Imperial Templar Martyr
+            note: Orbits at 49km
+      - id: group-4-35km
+        trigger:
+          on: other
+          text: Group 4 (35km)
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Imran
+              - Divine Imperial Paladin
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: Orbits at 4-16km
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Divine Imperial Justicar
+            note: Orbits at 14km
+          - count: "2"
+            class: Battleship
+            names:
+              - Imperial Templar Martyr
+            note: Orbits at 49km
+  - name: Part 3 of 3
+    notes:
+      - text: TBD

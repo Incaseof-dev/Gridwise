@@ -1,0 +1,161 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: background-check
+kind: mission
+name: Background Check
+level: null
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Background Check
+    url: https://wiki.eveuniversity.org/Background_Check
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "219269"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy enemy ships
+ewar:
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite frigates"
+  - text: thumb|right
+  - text: "Lord Miyan: Even though many Holder titles extend back thousands of years, the position is a precarious one. Families waxed and waned over the centuries. Most families realize the rule of fools is inevitable; all they can do is hope too much damage isn't done before a proper ruler can ascend again. House Miyan has ruled much of the Jatari constellation for centuries. Miyan grew to be one of the top Holder houses, rivaling Kor-Azor in local influence. In 109, Lord Miyan died and passed his title to his only son, Touraj Miyan. Touraj is considered a dolt, accused of being more likely to make a pass at subordinate Holders' wives than realize his chief advisor is dipping into senility. Lord Iraj Darabi, a minor but well-respected neighboring Holder, used Touraj's unpopularity and foolishness to his own advantage. In 110, he annexed two of the systems under House Miyan control for himself, sparking a minor conflict between the two Houses. In the end, Darabi's superior commanders and advisors forced Miyan to surrender. So far, Miyan has managed to hold on to his remaining lands."
+  - text: "Blitz: Destroy all battleships and cruisers."
+  - text: "Tips: Waves are triggered by either attacking or killing previous wave, varies by wave. Attacking the Cruiser+Battleship waves spawns a Battlecruiser wave, clearing a CR+BS wave spawns the next CR+BS wave."
+  - text: "Tips: It will help to destroy the waves in the order they spawn. If you form a fleet with yourself, you can tag waves of ships as they appear to keep track of them, but beware that the tags are cleared if you warp out."
+  - text: "Tips: Set drones to passive to avoid accidental triggers."
+  - text: "Tips: Single ungated deadspace pocket. Can warp in at range (if using fleet warp), but cannot warp within the pocket."
+  - text: "Tips: Enemies typically spawn 30-50km from you."
+  - text: Destroying last ship in wave 6 completes the mission.
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: The last ship destroyed in Wave 6 completes the mission objective.
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Mutilator
+              - Centum Loyal Hellhound
+          - count: "2"
+            class: Battleship
+            names:
+              - Centus Dread Lord
+              - Centus Tyrant
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Battlecruiser
+            names:
+              - Centatis Devil
+              - Centatis Wraith
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Minion
+              - Centii Loyal Servant
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Mutilator
+              - Centum Loyal Hellhound
+          - count: "3"
+            class: Battleship
+            names:
+              - Centus Tyrant
+      - id: wave-4
+        trigger:
+          on: other
+          text: Wave 4
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Centatis Devil
+              - Centatis Wraith
+      - id: wave-5
+        trigger:
+          on: other
+          text: Wave 5
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Servant
+              - Centii Loyal Minion
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+      - id: wave-6
+        trigger:
+          on: other
+          text: Wave 6
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Torturer
+              - Centum Loyal Mutilator
+              - Centum Loyal Fiend
+          - count: "3"
+            class: Battleship
+            names:
+              - Centus Dread Lord
+              - Centus Tyrant
+      - id: wave-7
+        trigger:
+          on: other
+          text: Wave 7
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Centatis Wraith
+              - Centatis Devil
+      - id: wave-8
+        trigger:
+          on: other
+          text: Wave 8
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Minion
+              - Centii Loyal Servant
+            ewar:
+              - kind: web
+              - kind: warpDisruption

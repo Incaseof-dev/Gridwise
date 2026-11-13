@@ -1,0 +1,137 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: blood-forlorn-rally-point
+kind: anomaly
+name: Blood Forlorn Rally Point
+dedRating: null
+anomalyClass: 6
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Blood Forlorn Rally Point
+    url: https://wiki.eveuniversity.org/Blood_Forlorn_Rally_Point
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225175"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Ungated pocket with multiple waves of rats.
+  - text: "Escalation: This site has a chance to escalate to Blood Raider Prison Camp."
+  - text: "Escalation: Escalation: Your scanner has picked up a transmission originating from a nearby system. It would be wise to investigate this mysterious signal further."
+lootNotes:
+  - text: ~15,000,000 ISK bounty
+  - text: T1-T2 salvage
+  - text: Possible rare drop
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "6"
+            class: Destroyer
+            names:
+              - Corpior Devoter
+              - Corpior Friar
+          - count: "4"
+            class: Cruiser
+            names:
+              - Corpum Arch Priest
+              - Corpum Arch Sage
+            triggers: Triggers wave 2
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Cruiser
+            names:
+              - Corpum Dark Priest
+              - Corpum Shadow Sage
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Corpatis Fanatic
+              - Corpatis Shade
+            triggers: Triggers wave 3
+          - count: "4"
+            class: Battleship
+            names:
+              - Corpus Apostle
+              - Corpus Oracle
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Cruiser
+            names:
+              - Corpum Dark Priest
+              - Corpum Shadow Sage
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Corpatis Exorcist
+              - Corpatis Phantom
+            triggers: Triggers wave 4
+          - count: 3-4
+            class: Battleship
+            names:
+              - Corpus Archbishop
+              - Corpus Harbinger
+            ewar:
+              - kind: neut
+      - id: wave-4
+        trigger:
+          on: other
+          text: Wave 4
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Arch Priest
+              - Elder Corpum Arch Sage
+            triggers: Triggers wave 5
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Corpatis Exorcist
+              - Corpatis Phantom
+          - count: "4"
+            class: Battleship
+            names:
+              - Corpus Cardinal
+              - Corpus Monsignor
+      - id: wave-5
+        trigger:
+          on: other
+          text: Wave 5
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Dark Priest
+              - Elder Corpum Shadow Sage
+          - count: "4"
+            class: Battleship
+            names:
+              - Corpus Cardinal
+              - Corpus Monsignor
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Dark Blood Cardinal
+              - Dark Blood Monsignor
+            drop: Possible Dark Blood faction modules
+            note: Rare spawn

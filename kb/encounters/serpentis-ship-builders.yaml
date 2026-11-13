@@ -1,0 +1,64 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: serpentis-ship-builders
+kind: mission
+name: Serpentis Ship Builders
+level: 4
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Serpentis Ship Builders
+    url: https://wiki.eveuniversity.org/Serpentis_Ship_Builders
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "213659"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy all Serpentis ships and structures.
+lootNotes:
+  - text: "Example bounty payout: 3,483,375 ISK."
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: Kill all the Serpentis ships and the "Partially constructed Megathron" to complete the mission.
+      - text: Everything is disguised as "Serpentis Looter" except the Lord Admiral which is disguised as "Colonel 'Bat' Guano".
+      - text: Everything aggroes at jump-in. Easier than most standard missions.
+      - text: "Standings loss: Serpentis: -0.3% (Partially constructed Megathron)"
+    waves:
+      - id: single-group-25-km
+        trigger:
+          on: other
+          text: Single Group (25 km)
+          confidence: inferred
+        spawns:
+          - count: 4-5
+            class: Destroyer
+            names:
+              - Serpentis Looter
+            note: Renamed Corelior Cannoneer/Artillery
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Serpentis Looter
+            note: Renamed Corelatis Platoon Leader
+          - count: "2"
+            class: Battleship
+            names:
+              - Serpentis Looter
+            note: Renamed Core Admiral
+          - count: "1"
+            class: Battleship
+            names:
+              - Colonel 'Bat' Guano
+            note: Renamed Core Lord Admiral
+          - count: "2"
+            class: Sentry
+            names:
+              - Serpentis Cruise Missile Battery
+          - count: "1"
+            class: Structure
+            names:
+              - Partially constructed Megathron

@@ -1,0 +1,59 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-score-khanid-kingdom
+kind: mission
+name: The Score
+level: 2
+enemyFaction: Khanid Kingdom
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Score (Khanid Kingdom)
+    url: https://wiki.eveuniversity.org/The_Score_(Khanid_Kingdom)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "192050"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Single gated deadspace pocket.
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Khanid Rookie
+            group: Group 1 (40km)
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Khanid Elite Fighter
+            group: Group 1 (40km)
+          - count: "7"
+            class: Frigate
+            names:
+              - Khanid Rookie
+              - Khanid Scout
+            group: Group 2 (40km)
+          - count: "3"
+            class: Frigate
+            names:
+              - Khanid Rookie
+            group: Group 3 (45km)
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Khanid Elite Fighter
+            group: Group 3 (45km)
+          - count: "1"
+            class: Cruiser
+            names:
+              - Khanid Officer
+            group: Group 3 (45km)

@@ -1,0 +1,163 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: shipyard-theft-serpentis
+kind: mission
+name: Shipyard Theft
+level: 4
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Shipyard Theft (Serpentis)
+    url: https://wiki.eveuniversity.org/Shipyard_Theft_(Serpentis)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223925"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: sensorDamp
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Guardian Veteran (Web, Warp disrupt)"
+  - text: MJD recommended for first room
+  - text: Shipyard Theft is a L4 storyline mission involving combat against the Serpentis.
+  - text: "Notes: This mission will give you an astronomic +23% corp standings and the folowing standings increase, to name a few. Plan wisely. All numbers considering Social Skill Lvl 5: +9.375% with Gallente Federation / +7.57% with Sisters of EVE / +6.57% with Minmatar Republic / +8.13% with ORE faction / -6,5% with Caldari State / -2.8% with Amarr Empire / -4.9% with Ammatar Mandate / -6.5% with Mordu's Legion"
+  - text: "Notes: No Hostiles at initial gate."
+pockets:
+  - name: 1st Pocket
+    notes:
+      - text: Gate is at 10km from warpin.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corelatis Squad Leader
+            group: Group 1 (15 km)
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Corelatis Platoon Leader
+            group: Group 1 (15 km)
+          - count: "1"
+            class: Battleship
+            names:
+              - Core Grand Admiral
+            group: Group 1 (15 km)
+          - count: "5"
+            class: Elite Frigate
+            names:
+              - Guardian Veteran
+            group: Group 2 (20 km)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corelatis Platoon Leader
+            group: Group 2 (20 km)
+          - count: "1"
+            class: Battleship
+            names:
+              - Core High Admiral
+            group: Group 2 (20 km)
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corelior Soldier
+              - Corelior Trooper
+            group: Group 3 (30 km)
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corelatis Wing Leader
+            group: Group 3 (30 km)
+          - count: "1"
+            class: Battleship
+            names:
+              - Core High Admiral
+            group: Group 3 (30 km)
+          - count: "1"
+            class: Battleship
+            names:
+              - Core Admiral
+            group: Group 3 (30 km)
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corelatis Captain Sentry
+            group: Group 4 (40 km)
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Corelatis Captain
+            group: Group 4 (40 km)
+          - count: "2"
+            class: Cruiser
+            names:
+              - Corelum Chief Guard
+            group: Group 5 (50 km)
+          - count: "2"
+            class: Cruiser
+            names:
+              - Corelum Chief Safeguard
+            group: Group 5 (50 km)
+            ewar:
+              - kind: sensorDamp
+          - count: "3"
+            class: Battleship
+            names:
+              - Core Port Admiral
+            group: Group 5 (50 km)
+  - name: 2nd Pocket
+    notes:
+      - text: Last ship destroyed drops mission objective.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "5"
+            class: Destroyer
+            names:
+              - Corelior Soldier
+              - Corelior Infantry
+            group: 24km
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Corelatis Platoon
+              - Corelatis Squad Leader
+            group: 24km
+          - count: "1"
+            class: Battleship
+            names:
+              - Core High Admiral
+            group: 24km
+          - count: "2"
+            class: Battleship
+            names:
+              - Core Admiral
+            group: 24km
+          - count: "1"
+            class: Structure
+            names:
+              - Storage Silo
+            group: 24km
+            drop: 50x High Tech Data Chips, Gallente Alpha/Beta/Gamma Nexus Chip (~35mil ISK total)
+          - count: "4"
+            class: Structure
+            names:
+              - Habitation Module
+            group: 24km
+            drop: Trade Goods
+            note: only 1 drops anything

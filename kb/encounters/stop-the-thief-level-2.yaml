@@ -1,0 +1,60 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: stop-the-thief-level-2
+kind: mission
+name: Stop the Thief
+level: 2
+enemyFaction: Rogue Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Stop the Thief (Level 2)
+    url: https://wiki.eveuniversity.org/Stop_the_Thief_(Level_2)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191949"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal:
+    - thermal
+  resist:
+    - thermal
+    - kinetic
+objectives:
+  - text: Destroy the thief, loot the reports(0.1), and report back to your agent.
+notes:
+  - text: "Suggested ships: Cruiser"
+  - text: "Roadhouses: Small, independent trade hubs throughout New Eden are sometimes referred to by a most peculiar and archaic term: “Roadhouses.” Though no one quite remembers why they're called that, it's common knowledge that roadhouses are ideal locations for moving stolen goods, making underworld contacts, or getting hurt. Needless to say, these establishments are frequented by unscrupulous roughnecks for whom pain doesn't hurt."
+  - text: "Blitz: Kill The Thief, warp out. Reports spawn in your cargo hold."
+pockets:
+  - name: Warp-in
+    notes:
+      - text: "Notes: Mercenaries exclusively use Light Inferno Missiles (which do a base 75 thermal damage each.)"
+      - text: "Notes: They hit hard and fast. It is advisable to kill the Mercenary Fighters (because they have less HP Than the elite mercenary fighters) ASAP if not Blitzing."
+      - text: "Notes: Once you have killed The Thief, the reports automatically go into your cargo hold."
+      - text: "Structures: Cargo Rig - Drops 3-4x Random Ammo"
+      - text: "Structures: Narcotics Supermarket - Dropped nothing"
+      - text: "Structures: Information Exchange Booth - Dropped nothing"
+      - text: "Structures: 3x Solar Harvester - Dropped nothing"
+      - text: "Agent's comments on completion of mission: It was just as we all suspected. Please accept our thanks and all the rewards that come from loyal service to Roden Shipyards. Keep this up and you‘ll have more ISK than you know what to do with – I promise you that."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - The Thief
+            drop: The Reports
+          - count: 4-6
+            class: Frigate
+            names:
+              - Mercenary Fighter
+          - count: 4-6
+            class: Elite Frigate
+            names:
+              - Mercenary Elite Fighter

@@ -1,0 +1,149 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: operation-wyrmsbane
+kind: mission
+name: Operation Wyrmsbane
+level: 5
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Operation Wyrmsbane
+    url: https://wiki.eveuniversity.org/Operation_Wyrmsbane
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "221481"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: sensorDamp
+  - kind: web
+notes:
+  - text: "Web/warp disruption: Stasis Tower (Web)"
+  - text: "Suggested ships: Marauder, Passive Battleship + Logistics, Carrier"
+  - text: "Blitz: Destroy the Serpentis Stronghold."
+  - text: It is strongly suggested that you use Logistics support to keep your tank alive.
+  - text: "Video: Carrier Blitz"
+  - text: 3rd Reinforcement must be eliminated to be able to access the can, after it is hacked successfully.
+  - text: "Structure Loot:"
+  - text: Cruise Missles from the Bunkers
+  - text: Serpentis Info Shard will drop regular data site loot (e.g. datacore, decryptors or decryptor parts)
+  - text: Serpentis Stronghold drops nothing of interest
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: The First and Second reinforcement spawns are at 4 minute intervals.
+      - text: The Third reinforcement spawn is triggered by hacking the Info Shard, and spawns at a distance of 2,000 - 2,500 m from Shard. (The Info Shard does not always appear.)
+    waves:
+      - id: initial-spawn-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Spawn (auto-aggro)
+        spawns:
+          - count: "5"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Guard
+              - Coreli Guardian Safeguard
+          - count: "6"
+            class: Cruiser
+            names:
+              - Corelum Chief Sentinel
+          - count: "8"
+            class: Battlecruiser
+            names:
+              - Corelatis Captain
+              - Corelatis Wing Leader
+          - count: "6"
+            class: Battleship
+            names:
+              - Core Grand Admiral
+              - Core Lord Admiral
+          - count: "8"
+            class: Sentry
+            names:
+              - Serpentis Heavy Missile Battery
+          - count: "2"
+            class: Sentry
+            names:
+              - Serpentis Stasis Tower
+            ewar:
+              - kind: web
+      - id: 1st-reinforcement
+        trigger:
+          on: other
+          text: 1st Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Coreli Protector
+              - Coreli Guard
+              - Coreli Defender
+          - count: "5"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Guard
+              - Coreli Guardian Watchman
+            ewar:
+              - kind: sensorDamp
+            note: Watchman dampens
+          - count: "4"
+            class: Cruiser
+            names:
+              - Corelum Chief Safeguard
+              - Corelum Chief Infantry
+      - id: 2nd-reinforcement
+        trigger:
+          on: other
+          text: 2nd Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Serpentis Stasis Tower
+            ewar:
+              - kind: web
+          - count: "8"
+            class: Sentry
+            names:
+              - Serpentis Cruise Missile Battery
+      - id: hacking-the-info-shard-2km-from-info-shard
+        trigger:
+          on: other
+          text: Hacking the Info Shard, 2km from Info Shard
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Cruiser
+            names:
+              - Corelum Chief Sentinel
+          - count: "4"
+            class: Battleship
+            names:
+              - Core Lord Admiral
+      - id: serpentis-stronghold-at-5-10-armor
+        trigger:
+          on: other
+          text: Serpentis Stronghold at 5-10% armor
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corelior Infantry
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corelum Chief Sentinel
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corelatis Captain
+          - count: "3"
+            class: Battleship
+            names:
+              - Core Grand Admiral

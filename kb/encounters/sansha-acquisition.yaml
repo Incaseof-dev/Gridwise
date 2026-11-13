@@ -1,0 +1,120 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: sansha-acquisition
+kind: mission
+name: Sansha Acquisition
+level: 5
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Sansha Acquisition
+    url: https://wiki.eveuniversity.org/Sansha_Acquisition
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "221430"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: trackingDisruption
+  - kind: web
+  - kind: warpScramble
+notes:
+  - text: "Web/warp disruption: Centii Loyal Minion (Web, Scram)"
+  - text: "Suggested ships: Active Battleship + Logistics Battleship, Capital (no gates), Sentry HAC"
+  - text: "Blitz: Buy 100x Prisoners via contracts. Destroy Sansha's Battletower (280,000 HP). Collect the next set of prisoners after turning in the mission."
+  - text: "Image: Battletower after all ships have spawned."
+  - text: Reinforcements spawn every 30 seconds for 5 minutes. The amount/combination listed is the total.
+  - text: Maximum damage dealing of all ships is 2,204 HP/s (64% EM, 36% Therm)
+  - text: Mission is flagged complete when the Battletower is destroyed. The Prisoners are dropped in a Container.
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: initial-group-50km-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group, 50km (auto-aggro)
+        spawns:
+          - count: "1"
+            class: Sentry
+            names:
+              - Sansha Stasis Tower
+            ewar:
+              - kind: web
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Centatis Wraith
+              - Centatis Behemoth
+              - Centatis Phantasm
+              - Centatis Devil
+          - count: "4"
+            class: Battleship
+            names:
+              - Centus Dread Lord
+              - Centus Tyrant
+          - count: "1"
+            class: Structure
+            names:
+              - Sansha's Battletower
+      - id: reinforcements
+        trigger:
+          on: other
+          text: Reinforcements
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Sentry
+            names:
+              - Sansha Cruise Missile Battery
+            triggers: Battery Reinforcement
+          - count: "12"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Minion
+              - Centii Loyal Savage
+              - Centii Loyal Slavehunter
+            ewar:
+              - kind: trackingDisruption
+              - kind: web
+              - kind: warpScramble
+          - count: "9"
+            class: Destroyer
+            names:
+              - Centior Abomination
+              - Centior Devourer
+              - Centior Misshape
+              - Centior Monster
+          - count: "13"
+            class: Elite Cruiser
+            names:
+              - Centum Fiend
+              - Centum Hellhound
+              - Centum Loyal Mutilator
+              - Centum Loyal Torturer
+            note: Only Loyal Mutilator/Loyal Torturer are elite
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centatis Daemon
+              - Centatis Specter
+          - count: "7"
+            class: Battleship
+            names:
+              - Centus Dread Lord
+              - Centus Tyrant
+      - id: battery-reinforcement
+        trigger:
+          on: other
+          text: Battery Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Slaughterer
+              - Centum Loyal Execrator
+            ewar:
+              - kind: trackingDisruption

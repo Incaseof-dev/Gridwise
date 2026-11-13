@@ -1,0 +1,70 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-sevens-brothel
+kind: mission
+name: The Seven's Brothel
+level: 2
+enemyFaction: Mercenaries
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Seven's Brothel
+    url: https://wiki.eveuniversity.org/The_Seven's_Brothel
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "201919"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Find and eliminate the leader of the 'Seven's' forces within their compound, then report back to your agent.
+ewar:
+  - kind: web
+notes:
+  - text: "Web/warp disruption: Rogue Mercenary Thorn (Web)"
+  - text: "Suggested ships: Frigate, Destroyer"
+  - text: "Blitz: Destroy Group 3, then warp out."
+  - text: The Brothel is the only building that drops loot. It's possible that it will drop random 3% Hardwiring Implant.
+pockets:
+  - name: Warp-in
+    notes:
+      - text: "Mission hand-in: You took out their leader? That should be enough, their members are nothing but freelance mercs in it for the gold. Without the Seven's commanders their forces will wither up and die."
+    waves:
+      - id: on-grid
+        trigger:
+          on: other
+          text: On-grid
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Sentry
+            names:
+              - Tower Sentry Drone I
+            group: Group 1, 30km (auto-aggro)
+          - count: "2"
+            class: Frigate
+            names:
+              - Seven Grunt
+              - Seven Death Dealer
+            group: Group 2, 40km
+          - count: "1"
+            class: Cruiser
+            names:
+              - Rogue Mercenary Thorn
+              - Rogue Mercenary Escort
+            group: Group 3, 60km
+            ewar:
+              - kind: web
+          - count: "1"
+            class: Cruiser
+            names:
+              - Kruul
+              - Sarrah
+            group: Group 3, 60km
+          - count: "2"
+            class: Frigate
+            names:
+              - Seven Grunt
+              - Seven Death Dealer
+            group: Group 4, 70km
+    onWarpIn: This is the location of one of Jakerion Pahydan's brothels. Jakerion is an infamous outlaw who controls a loose-knit criminal organization which split itself from the Serpentis a few years ago. 'The Seven' it is called, named after the small group of comrades within the Serpentis who founded the organization. Jakerion's popular nickname, Zazzmatazz, is known by most Gallente Federation citizens from the hit movie 'Into The Deep', which portrays a few Gallente heroes who brave the 'Seven's' stronghold and rescue a damsel in distress.

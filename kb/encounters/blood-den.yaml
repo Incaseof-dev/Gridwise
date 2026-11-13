@@ -1,0 +1,236 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: blood-den
+kind: anomaly
+name: Blood Den
+dedRating: null
+anomalyClass: 4
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Blood Den
+    url: https://wiki.eveuniversity.org/Blood_Den
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225122"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Rating: Class 4 Level 1"
+  - text: Blood Den is an unrated combat site belonging to the Blood Raider Covenant pirate faction. It can be found via exploration as a cosmic anomaly within systems owned by the Amarr Empire and Ammatar Mandate. As an ungated complex, the limitations as to which ships can complete this site are tied to the security rating of the system where the anomaly spawns (T2 Battleships for high-security systems, and up to Titans in low-security and null-security systems). Completing this complex may award the player with valuable Dark Blood faction modules and ammunition.
+  - text: "This combat site consists of a single ungated pocket of space containing a variety of Frigate-, Destroyer- and Cruiser-sized enemy ships. Destroying all hostile ships may escalate into the DED rated Blood Raider Psychotropics Depot complex. Three variations of this combat anomaly exist: Blood Hidden Den, Blood Forsaken Den and Blood Forlorn Den."
+  - text: Single pocket, the last ship kill triggers next spawn.
+  - text: Single pocket, the last kill triggers next spawn.
+  - text: "Escalation: This site can escalate to Blood Raider Psychotropics Depot."
+loot:
+  - item: Dark Blood Silver Tag
+    from: Corpum Commander
+    note: est. 10k ISK (wiki) · 100% drop rate
+  - item: (Dark) Blood Ammo
+    from: Corpum Commander
+    note: est. 6k - 58M ISK (wiki) · 100% drop rate
+  - item: Dark Blood module
+    from: Corpum Commander
+    note: est. 10k - 130M ISK (wiki) · rare
+  - item: Mid-grade Amulet Implant
+    from: Corpum Commander
+    note: est. 6M - 50M ISK (wiki) · rare
+lootNotes:
+  - text: 275.000 - 600.000 ISK
+pockets:
+  - name: Light Missile Battery layout
+    notes:
+      - text: ----
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: 3-5
+            class: Frigate
+            names:
+              - Corpii Engraver
+              - Corpii Collector
+            ewar:
+              - kind: trackingDisruption
+            note: Collector uses Tracking Disrupter; type list incomplete on the source page
+          - count: 3-4
+            class: Destroyer
+            names:
+              - Corpior Friar
+              - Corpior Cleric
+          - count: "2"
+            class: Sentry
+            names:
+              - Blood Light Missile Battery
+            triggers: Triggers 1st Battery spawn
+            drop: T1 Ammo
+      - id: timed-reinforcement-spawn-10-seconds
+        trigger:
+          on: other
+          text: Timed Reinforcement Spawn (10 seconds)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Centii Reaver
+              - Centii Seeker
+            ewar:
+              - kind: trackingDisruption
+            note: Seeker uses Tracking Disrupter
+      - id: 1st-reinforcement-spawn
+        trigger:
+          on: other
+          text: 1st Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Centii Follower
+              - Centii Worshipper
+      - id: 1st-battery-spawn
+        trigger:
+          on: other
+          text: 1st Battery spawn
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Blood Light Missile Battery
+            triggers: Triggers 2nd Battery spawn
+      - id: 2nd-battery-spawn
+        trigger:
+          on: other
+          text: 2nd Battery Spawn
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Corpii Raider
+              - Corpii Reaver
+          - count: 2-3
+            class: Destroyer
+            names:
+              - Corpior Friar
+              - Corpior Cleric
+      - id: 3rd-battery-spawn
+        trigger:
+          on: other
+          text: 3rd Battery Spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Destroyer
+            names:
+              - Corpii Seeker
+              - Corpii Collector
+          - count: 0-1
+            class: Commander Cruiser
+            names:
+              - Corpum Commander
+            group: Possible Rare Spawn
+            drop: Possible Faction charges, modules or tags
+  - name: Heavy Missile Battery layout
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Corpii Reaver
+              - Corpii Diviner
+          - count: 3-5
+            class: Destroyer
+            names:
+              - Corpior Friar
+              - Corpior Cleric
+          - count: "2"
+            class: Sentry
+            names:
+              - Blood Heavy Missile Battery
+            drop: T1 Ammo
+      - id: 1st-reinforcement-spawn
+        trigger:
+          on: other
+          text: 1st Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Destroyer
+            names:
+              - Corpior Templar
+          - count: "2"
+            class: Cruiser
+            names:
+              - Corpum Arch Reaver
+      - id: 2nd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 2nd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Corpii Diviner
+          - count: 1-2
+            class: Cruiser
+            names:
+              - Corpum Arch Reaver
+      - id: 3rd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 3rd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corpior Cleric
+              - Corpior Converter
+          - count: 0-1
+            class: Cruiser
+            names:
+              - Corpum Arch Templar
+          - count: "2"
+            class: Cruiser
+            names:
+              - Corpum Revenant
+            ewar:
+              - kind: trackingDisruption
+      - id: 4th-reinforcement-spawn
+        trigger:
+          on: other
+          text: 4th Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Destroyer
+            names:
+              - Corpii Friar
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Corpum Priest
+              - Corpum Sage
+            ewar:
+              - kind: neut
+          - count: 0-1
+            class: Commander Cruiser
+            names:
+              - Corpum Commander
+            group: Possible Rare Spawn
+            drop: Possible Faction charges, modules or tags
+sde:
+  dungeonIds:
+    - 2205

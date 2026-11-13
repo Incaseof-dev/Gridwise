@@ -1,0 +1,46 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: a-digital-soul
+kind: mission
+name: A Digital Soul
+level: null
+enemyFaction: Amarr Empire
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – A Digital Soul
+    url: https://wiki.eveuniversity.org/A_Digital_Soul
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "206562"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Hack communications array
+ewar:
+  - kind: trackingDisruption
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite frigates"
+  - text: Requires data hacking. No standing loss
+  - text: "'Harkan's Plan': My associate is a man named Terrus Harkan. He was once the head of Lord Miyan's security forces and later an activist for slavery reform. After years of watching the Holders bicker and drag the Empire into pettiness and unrighteousness, he came to us with a fascinating plan. We are going to replace Lord Miyan with himself. Or something close. Sansha's Nation has a solid lead in mind-body cybernetics. Using the appropriate combination of implants the Sansha can create an effective verisimilitude of a human intelligence, and that can receive directives from the Nation. With this replacement Harkan wishes to turn the Kor-Azor political landscape around and restore the honor Harkan believes it once had."
+  - text: Single ungated pocket. Communications array holds no items, it simply must be successfully hacked to complete the mission.
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Hackable
+            names:
+              - Communications Array
+            triggers: Hack to complete mission
+          - count: "4"
+            class: Frigate
+            names:
+              - Armed Amarr Repair Ship

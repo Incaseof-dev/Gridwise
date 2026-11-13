@@ -1,0 +1,65 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: guristas-strike-defend-the-civilian-convoy
+kind: mission
+name: Guristas Strike - Defend the Civilian Convoy
+level: 3
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Guristas Strike - Defend the Civilian Convoy
+    url: https://wiki.eveuniversity.org/Guristas_Strike_-_Defend_the_Civilian_Convoy
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "214289"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Eliminate the Serpentis ships that attacked and destroyed the civilian convoy and then report back to your agent.
+notes:
+  - text: Guristas Strike - Defend the Civilian Convoy is mission 8 of the mission chain Guristas Strike. Unlike most storyline missions this mission gives no faction standing, but it does give agent standing. The faction standing is awarded for the final mission in the chain.
+  - text: Deadspace with gates. No hostiles at initial gate.
+  - text: "Blitz: Kill group 3."
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: "Pop-up - Mission Info: As you approach the convoy, you notice the charred wreckage left behind. None of the transport ships survived. However the Serpentis ships are still at the scene, and attack you immediately. At least you can extract some revenge for the brutal slaying of the civilian crew on board the industrials."
+      - text: Kill group 3 to complete the mission. The Storage Facility can drop general goods.
+      - text: "Previous: Guristas Strike - The Secret Meeting Next: Guristas Strike - Retrieve the Prisoners"
+      - text: </noinclude.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Corelum Chief Guard
+              - Corelum Chief Safeguard
+            group: Group 1 (30 km)
+            ewar:
+              - kind: sensorDamp
+          - count: "5"
+            class: Destroyer
+            names:
+              - Corelior Trooper
+              - Corelior Soldier
+            group: Group 2 (40 km)
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Corelatis Squad Leader
+              - Corelatis Wing Leader
+            group: Group 2 (40 km)
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Corelatis Captain
+              - Corelatis Captain Sentry
+              - Corelatis Platoon Leader
+            group: Group 3 (60 km)
+            triggers: Destroying completes mission

@@ -1,0 +1,92 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-crimson-decoy
+kind: mission
+name: The Crimson Decoy
+level: null
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Crimson Decoy
+    url: https://wiki.eveuniversity.org/The_Crimson_Decoy
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "206319"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Deliver NOH Signal Operators
+ewar:
+  - kind: neut
+  - kind: trackingDisruption
+notes:
+  - text: "A place to rest: It is not unheard of for Blood Raider vessels to stray into State space. Having something of a relationship with the Guristas in the north, the Covenant has erected various safe havens for members who make the long journey up to Venal through Caldari space."
+  - text: Ungated normal space.
+  - text: "Blitz: Put the NOH Signal Operator into the container and return to the agent. For fast delivery you can create a bounce BM as you land, warp to the bounce BM and then warp to an asteroid near the container."
+  - text: "Tip: Warp to 100km and lead the initial group out to 150 to 175km range. Keep at least 30km range from the 7 Corpus battleships (Neut). Destroy the 2 Dark Corpus Harbinger Battleships last to trigger spawn."
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-group-40km
+        trigger:
+          on: warpIn
+          text: Initial Group (40km)
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Diviner
+            note: type list incomplete on the source page
+          - count: "4"
+            class: Cruiser
+            names:
+              - Corpum Dark Priest
+              - Corpum Shadow Sage
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Dark Corpum Arch Templar
+            ewar:
+              - kind: trackingDisruption
+            note: type list incomplete on the source page
+          - count: "7"
+            class: Battleship
+            names:
+              - Corpus Patriarch
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Battleship
+            names:
+              - Corpus Harbringer
+            ewar:
+              - kind: neut
+          - count: "2"
+            class: Battleship
+            names:
+              - Dark Corpus Archbishop
+            ewar:
+              - kind: neut
+            triggers: Last ship triggers wave 1
+      - id: wave-1-30km
+        trigger:
+          on: other
+          text: Wave 1 (30km)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Herald
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Corpatis Phantom
+          - count: "2"
+            class: Battleship
+            names:
+              - Corpus Pope

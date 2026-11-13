@@ -1,0 +1,134 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: shipyard-theft-blood-raiders
+kind: mission
+name: Shipyard Theft
+level: 4
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Shipyard Theft (Blood Raiders)
+    url: https://wiki.eveuniversity.org/Shipyard_Theft_(Blood_Raiders)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223923"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Retrieve 5x Small Sealed Cargo Containers
+ewar:
+  - kind: web
+pockets:
+  - name: 1st pocket
+    notes:
+      - text: Group 1 is the hardest hitting group. No webifiers, so turn around and move away from the blob while tanking the group. At a safe distance (100km from next rat) blow them up. Drones didn't aggro the rest of the pocket at 50km from the next group.
+      - text: While the mission does not have drone aggro or stage aggro, the second person to warp in will get aggro from the group with the webifiers, unless that group is already aggressed.
+      - text: "Effective Jan. 2009, there are two versions of this mission:"
+      - text: Version A, Group 1 will auto-aggro but Group 2 will ignore you until it is attacked.
+      - text: Version B, there will be no auto-aggro, but Group 2 will aggro as soon as you fire on Group 1 --> HOWEVER, Group 2 can be attacked without causing aggro by Group 1. So, if you aren't attacked by Group 1 within 20 seconds or so of warping in, move out to sniping range and attack Group 2 first.
+      - text: After blowing group 1 up, take out the group with the webifiers (Group 2). No other group will be aggroed.
+      - text: The groups 3-5 are consisting of short range, low damage battleships. No webbing rats.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corpatis Phantom
+            group: Group 1 (20 km
+          - count: "1"
+            class: Battleship
+            names:
+              - Corpus Cardinal
+            group: Group 1 (20 km
+          - count: "5"
+            class: Frigate
+            names:
+              - Blood Disciple
+              - Blood Wraith
+            group: Group 2 (25 km
+            ewar:
+              - kind: web
+          - count: "5"
+            class: Cruiser
+            names:
+              - Corpum Dark Priest
+              - Corpum Shadow Sage
+            group: Group 2 (25 km
+          - count: "1"
+            class: Battleship
+            names:
+              - Corpus Monsignor
+            group: Group 2 (25 km
+          - count: "4"
+            class: Battleship
+            names:
+              - Corpus Prophet
+              - Corpus Archon
+            group: Group 3 (30 km
+          - count: "5"
+            class: Destroyer
+            names:
+              - Corpior Templar
+              - Corpior Devoter
+            group: Group 4 (40 km
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Corpatis Shade
+              - Corpatis Seer
+            group: Group 4 (40 km
+          - count: "3"
+            class: Battleship
+            names:
+              - Corpus Oracle
+              - Corpus Apostle
+            group: Group 5 (40 km
+  - name: 2nd pocket
+    notes:
+      - text: No webifiers or points.
+      - text: Storage Silo drops an Amarr Nexus chip (type varies...view comments below) and 50x High tech data chips. The habitat modules can also drop trade commodities such as milk.
+      - text: Mission Objective drops from last ship killed.
+      - text: "Tip: If you have a short range setup and enough to tank them easily, go for the BS first as they like to move out to over 40k range. Everything else stays nice and close."
+    waves:
+      - id: warpin-10km
+        trigger:
+          on: other
+          text: Warpin (10km)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Destroyer
+            names:
+              - Corpior Templar
+              - Corpior Devoter
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Corpatis Shade
+              - Corpatis Seer
+          - count: "3"
+            class: Battleship
+            names:
+              - Corpus Apostle
+              - Corpus Monsignor
+          - count: "2"
+            class: Sentry
+            names:
+              - Bloodraider Sentry Gun
+          - count: "1"
+            class: Structure
+            names:
+              - Storage Silo
+            drop: 50x High Tech Data Chips, Amarr KUI/MIY/TIL-1 Nexus Chip (~35mil ISK total)
+          - count: "4"
+            class: Structure
+            names:
+              - Habitation Module
+            drop: Trade Goods
+            note: only 1 drops anything

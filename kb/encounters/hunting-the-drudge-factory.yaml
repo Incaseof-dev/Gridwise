@@ -1,0 +1,244 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: hunting-the-drudge-factory
+kind: escalation
+name: Hunting the Drudge Factory
+dedRating: null
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Hunting the Drudge Factory
+    url: https://wiki.eveuniversity.org/Hunting_the_Drudge_Factory
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "215088"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: No limit"
+notes:
+  - text: Hunting the Drudge Factory is an expedition that escalates from Chemical Yard.
+  - text: "Expedition start message: As you decimate the last remnants of this rogue drone base, your sensors come across some old transportation data; lists of materials, modules, ships and locations. The only reason this is a kind of odd is that rogue drones usually are very self sufficient, making in situ what they need for their colonies. Perhaps this is nothing..."
+  - text: "Escalation: This site can escalate to Hunting the Drudge Factory again."
+pockets:
+  - name: "Location #1 (ungated)"
+    notes:
+      - text: Sansha ships have been confirmed to spawn as of 7 Sep YC124. They spawn after the Rogue Drone cruisers are destroyed (not on timer).
+      - text: "Note: Tackler frigates (WD) in this and next locations have lowest resistance EM of 60%+ so proceed with caution. They also attack drones. (as of Sept. YC124)"
+      - text: "Escalation message: Arriving at the most recent location in the files, you come across a blown out rogue drone hive, someone must have been here before you. Thankfully there are a couple of other locations in those files that make any sense to your navigation systems, the closer one being..."
+      - text: "Expedition dead-end message: Arriving at the only recognizable location in the files you found, you come across a blown out rogue drone hive. Whatever this once was, it obviously is no more...."
+      - text: "Bounty: ± 681K ISK"
+    waves:
+      - id: initial-defenders-4-8km
+        trigger:
+          on: warpIn
+          text: Initial defenders (4-8km)
+        spawns:
+          - count: 5-8
+            class: Frigate
+            names:
+              - Devilfish
+            note: type list incomplete on the source page
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Strain Decimator
+              - Strain Infestor
+              - Strain Render
+              - Strain Splinter Alvi
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "4"
+            class: Cruiser
+            names:
+              - Annihilator Alvum
+            triggers: Sansha wave trigger
+          - count: "1"
+            class: Commander Destroyer
+            names:
+              - Sentient Marauder
+            triggers: Escalation trigger
+            drop: Drone components and possible Rogue chip, faction modules
+            note: type list incomplete on the source page
+      - id: wave-2-22-25km
+        trigger:
+          on: other
+          text: "Wave #2 (22-25km)"
+          confidence: inferred
+        spawns:
+          - count: 2-4
+            class: Destroyer
+            names:
+              - Centior Cannibal
+              - Centior Misshape
+          - count: "4"
+            class: Cruiser
+            names:
+              - Centum Beast
+              - Centum Juggernaut
+            ewar:
+              - kind: trackingDisruption
+  - name: "Location #2 (ungated)"
+    notes:
+      - text: Simple warp-in triggers escalation.
+      - text: ----
+      - text: "Escalation message: Arriving at one of the remaining locations in the files, you come across a blown out rogue drone hive, someone must have been here before you. There is one other location here that makes any sense to your navigation systems."
+      - text: "Bounty: ± 1.1 Mil ISK"
+    waves:
+      - id: initial-defenders-5km
+        trigger:
+          on: warpIn
+          text: Initial defenders (5km)
+        spawns:
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Defeater
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Commander Cruiser
+            names:
+              - Sentient Destructor
+            drop: Drone components and possible Rogue chip, faction modules
+            note: type list incomplete on the source page
+  - name: "Location #3 (ungated)"
+    notes:
+      - text: ----
+      - text: Simple warp-in and moving a bit can trigger an escalation. The pocket is empty on warpin; the commander group must be manually spawned by approaching the Ruined Drone Post structures.
+      - text: "Escalation message: Well, that was a surprise. Rogue drones, turned carebears and mining their cogs off! Why? Perhaps this navigational beacon will lead you to some answers."
+      - text: "Expedition dead-end message: Well, that was a surprise. Rogue drones, turned carebears and mining their cogs off! Why? Perhaps this navigational beacon could have lead you to some answers, but it seems to have been damaged in the heat of battle."
+      - text: "Bounty: ± 970K ISK"
+    waves:
+      - id: commander-spawn-20-25km-triggered-by-approaching-ruined-drone-post-structures
+        trigger:
+          on: other
+          text: Commander spawn (20-25km, triggered by approaching Ruined Drone Post structures)
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Devilfish
+            note: type list incomplete on the source page
+          - count: 0-3
+            class: Elite Frigate
+            names:
+              - Strain Barracuda
+              - Strain Hunter
+            note: type list incomplete on the source page
+          - count: 0-3
+            class: Elite Frigate
+            names:
+              - Strain Decimator
+              - Strain Infestor
+              - Strain Render
+              - Strain Splinter Alvi
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Destroyer
+            names:
+              - Dismantler
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Commander Cruiser
+            names:
+              - Sentient Destructor
+            triggers: Escalation trigger
+            drop: Drone components and possible Rogue chip, faction modules
+            note: type list incomplete on the source page
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "4"
+            class: Structure
+            names:
+              - Ruined Drone Post
+            triggers: Approaching triggers commander spawn
+  - name: "Location #4 (lowsec, possibly highsec, observed 6/5/2018, ungated)"
+    notes:
+      - text: ----
+      - text: "Note: Hive Overseer drops ONLY T2 salvage parts as loot. Genius !"
+      - text: "Footnote: Without going into too much details, that whole expedition SUCKS ! Much travel (32+ jumps), small rewards, Empty containers, have fun. Read [possible reward] as [next to nothing]."
+      - text: 'Expedition complete message: Rogue drones mining and gathering resources far and wide to supply a huge drone factory! This scale of operations does not seem to fit anything you have seen or heard about them before and this level of organization kind of takes the "rogue" out of "rogue drones". You are pretty sure that somewhere, some authority would love to get a report on this. But on second thought... all the paperwork involved would probably be enough to exhaust a black hole.'
+      - text: "Bounty: ± 1.4 Mil ISK"
+      - text: "Total Bounty for all four sites: ± 4.1 Mil ISK"
+    waves:
+      - id: initial-defenders-5-10km
+        trigger:
+          on: warpIn
+          text: Initial defenders (5-10km)
+        spawns:
+          - count: 0-3
+            class: Elite Frigate
+            names:
+              - Strain Barracude
+            note: type list incomplete on the source page
+          - count: 0-3
+            class: Elite Frigate
+            names:
+              - Strain Decimator
+              - Strain Infestor
+              - Strain Render
+              - Strain Splinter Alvi
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "5"
+            class: Cruiser
+            names:
+              - Violator
+            note: type list incomplete on the source page
+      - id: wave-1-20-25km
+        trigger:
+          on: other
+          text: "Wave #1 (20-25km)"
+          confidence: inferred
+        spawns:
+          - count: 0-2
+            class: Elite Frigate
+            names:
+              - Strain Barracude
+            note: type list incomplete on the source page
+          - count: 0-2
+            class: Elite Frigate
+            names:
+              - Strain Decimator
+              - Strain Infestor
+              - Strain Render
+              - Strain Splinter Alvi
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Cruiser
+            names:
+              - Violator
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Viral Infector
+            note: type list incomplete on the source page
+          - count: 1+
+            class: Cruiser
+            names:
+              - Drone Guards
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Drone Guards
+          - count: "1"
+            class: Overseer Cruiser
+            names:
+              - Hive Overseer
+            drop: T2 salvage and possible Rogue chip, faction modules
+sde:
+  dungeonIds:
+    - 1478

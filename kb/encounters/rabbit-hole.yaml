@@ -1,0 +1,101 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: rabbit-hole
+kind: mission
+name: Rabbit Hole
+level: null
+enemyFaction: Guristas Pirates & Caldari State
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Rabbit Hole
+    url: https://wiki.eveuniversity.org/Rabbit_Hole
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231186"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Retrieve 1x Lieutenant Kipo “Foxfire” Tekira (1.0 m3)
+restrictions:
+  - text: "Ship size limit: T1 destroyers, T1/T2 frigates"
+ewar:
+  - kind: web
+notes:
+  - text: 2.4% Caldari State Faction Standing loss
+  - text: This mission can be accepted remotely.
+pockets:
+  - name: Room 1
+    notes:
+      - text: Shortly after entering the pocket, the acceleration gate to the next stage will disappear.
+      - text: The sentries have proximity aggro of 65 km and are spread out far apart. Destroying roughly 9 of them reveals the acceleration gate and causes -0.24 standing penalty to the Caldari State.
+    waves:
+      - id: initial-defender
+        trigger:
+          on: warpIn
+          text: Initial defender
+        spawns:
+          - count: "12"
+            class: Sentry
+            names:
+              - Guristas Sentry Gun
+  - name: Room 2
+    notes:
+      - text: Reinforcements 1 will spawn shortly after you enter the room.
+      - text: Reinforcements 2 will spawn upon destruction of the Caldari Navy Destroyer from reinforcements 1.
+      - text: Destroying one of the Point Defense Batteries (possibly the one on the right from warp-in) will make the Large EM Forcefield structure disappear and you can attack the Caldari Navy Storage Bunker structure directly instead.
+      - text: Destroying the storage bunker will make it drop Lieutenant Kipo “Foxfire” Tekira. Note that it will drop two cargo containers and only one has the mission objective.
+      - text: Destroying Caldari Bunker causes -0.24 standing loss to the Caldari State.
+      - text: Reinforcements will arrive soon after entering the pocket.
+      - text: Bring back Kipo Tekira to Irichi Tsunikabda to complete the mission.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Caldari Light Missile Battery
+          - count: "2"
+            class: Sentry
+            names:
+              - Caldari Point Defense Battery
+            triggers: Destroying deactivates Forcefield
+          - count: "1"
+            class: Sentry
+            names:
+              - Caldari Stasis Tower
+            ewar:
+              - kind: web
+      - id: reinforcements-1
+        trigger:
+          on: other
+          text: Reinforcements 1
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Caldari Navy Frigate
+          - count: "1"
+            class: Destroyer
+            names:
+              - Caldari Navy Destroyer
+            triggers: Destroying triggers reinforcements 2
+      - id: reinforcements-2
+        trigger:
+          on: other
+          text: Reinforcements 2
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Caldari Navy Frigate
+          - count: "2"
+            class: Cruiser
+            names:
+              - Caldari Navy Cruiser

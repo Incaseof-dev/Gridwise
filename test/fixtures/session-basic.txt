@@ -1,0 +1,31 @@
+------------------------------------------------------------
+  Gamelog
+  Listener: Test Pilot
+  Session Started: 2026.10.19 20:12:42
+------------------------------------------------------------
+[ 2026.10.19 20:13:35 ] (None) Undocking from Maurasi IX - Moon 12 - Caldari Navy Assembly Plant to Maurasi solar system.
+[ 2026.10.19 20:16:59 ] (None) Jumping from Maurasi to Perimeter
+[ 2026.10.19 20:17:13 ] (notify) Loading the Advanced Heavy Assault Missile into the Missile Launcher Heavy Assault; this will take approximately 10 seconds.
+[ 2026.10.19 20:18:39 ] (combat) <color=0xffcc0000><b>13</b> <color=0x77ffffff><font size=10>from</font> <b><color=0xffffffff>Devastator Alvum</b><font size=10><color=0x77ffffff> - Hits
+[ 2026.10.19 20:18:41 ] (combat) <color=0xff00ffff><b>285</b> <color=0x77ffffff><font size=10>to</font> <b><color=0xffffffff>Delainen-Solar Cinder entity</b><font size=10><color=0x77ffffff> - Mjolnir Javelin Heavy Assault Missile - Hits
+[ 2026.10.19 20:18:42 ] (combat) <color=0xffcc0000><b>1,204</b> <color=0x77ffffff><font size=12>from</font> <b><color=0xffffffff>Pithum Silencer</b><font size=12><color=0x77ffffff> - Scourge Heavy Missile - Smashes
+[ 2026.10.19 20:18:43 ] (combat) <color=0xff00ffff><b>51</b> <color=0x77ffffff><font size=10>to</font> <b><color=0xffffffff>Maurasi IX - Moon 12 - Fake Structure</b><font size=10><color=0x77ffffff> - Hobgoblin II - Glances Off
+[ 2026.10.19 20:18:44 ] (combat) Devastator Alvum misses you completely
+[ 2026.10.19 20:18:44 ] (combat) Some Pilot misses you completely - Light Neutron Blaster II
+[ 2026.10.19 20:18:45 ] (combat) Your Imperial Navy Praetor misses Pithior Supremacist completely - Imperial Navy Praetor
+[ 2026.10.19 20:18:45 ] (combat) Your group of 200mm Railgun II misses Pithi Imputor completely - 200mm Railgun II
+[ 2026.10.19 20:18:46 ] (combat) <color=0xffffffff><b>Warp scramble attempt</b> <color=0x77ffffff><font size=10>from</font> <color=0xffffffff><b>Hypnosian Watcher</b> <color=0x77ffffff><font size=10>to <b><color=0xffffffff></font>you!
+[ 2026.10.19 20:18:47 ] (combat) <color=0xffffffff><b>Warp disruption attempt</b> <color=0x77ffffff><font size=10>from</font> <color=0xffffffff><b>Harvest Prophet</b> <color=0x77ffffff><font size=10>to <b><color=0xffffffff></font><font size=12><color=0xFFFFFFFF><b>Fleet Mate</b> </color></font> <font size=12><color=0xFFFFFFFF><b>Gila</b></color></font>
+[ 2026.10.19 20:18:48 ] (combat) <color=0x77ffffff><font size=10>You're</font> <color=0xffffffff><b>jammed</b> <color=0x77ffffff><font size=10>by</font> <color=0xffffffff><b>Pithi Saboteur</b><color=0x77ffffff><font size=10> - Pithi Saboteur</font>
+[ 2026.10.19 20:18:49 ] (combat) <color=0xffe57f7f><b>18 GJ</b><color=0x77ffffff><font size=10> energy neutralized </font><b><color=0xffffffff>Hypnosian Watcher</b><color=0x77ffffff><font size=10> - Hypnosian Watcher</font>
+[ 2026.10.19 20:18:50 ] (combat) <color=0xff7fffff><b>+12 GJ</b><color=0x77ffffff><font size=12> energy drained from </font><b><color=0xffffffff>Pithi Saboteur</b><color=0x77ffffff><font size=12> - Small Ghoul Compact Energy Nosferatu</font>
+[ 2026.10.19 20:18:51 ] (notify) Mjolnir Javelin Heavy Assault Missile deactivates as the item it was targeted at is no longer present.
+[ 2026.10.19 20:18:51 ] (notify) Targeting attempt failed as the designated object is no longer present.
+[ 2026.10.19 20:18:52 ] (bounty) <font size=12><b><color=0xff00aa00>3,750 ISK</b><color=0x77ffffff> added to next bounty payout
+[ 2026.10.19 20:18:53 ] (notify) Heavy Missile Launcher II has run out of charges
+[ 2026.10.19 20:18:54 ] (notify) Light Missile Launcher II has no suitable targets within range.
+[ 2026.10.19 20:18:55 ] (info) This gate is locked! There are synchronized gate scramblers on all hostile entities in this area. Unless you are physically inside one of them to unscramble the signal, you must simply clear the vicinity of enemy ships. So grab your guns.
+[ 2026.10.19 20:18:56 ] (notify) Calibrating sensor equipment.
+Please try again in 58s
+[ 2026.10.19 20:18:57 ] (mining) You mined 1,250 units of Veldspar
+[ 2026.10.19 20:18:58 ] (notify) Cargo is too far away. Ship is on automatic approach to cargo.

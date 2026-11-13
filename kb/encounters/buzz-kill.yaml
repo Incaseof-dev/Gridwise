@@ -1,0 +1,189 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: buzz-kill
+kind: mission
+name: Buzz Kill
+level: 4
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Buzz Kill
+    url: https://wiki.eveuniversity.org/Buzz_Kill
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "227994"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: web
+  - kind: targetPaint
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite frigates"
+  - text: Single ungated pocket.
+  - text: "Important Note: All rats in this mission have 60%+ (often 70%+) lowest resistance (explosive) and resistance is same for shield and armor!"
+  - text: "Tips: Snipers can warp [fleet] at range. All groups and spawns will auto-aggro."
+  - text: "Tips: Set your drones to passive to keep them from taking out trigger ships that could cause swarming, and watch them for frequent aggro."
+  - text: "Tips: The last Hostile killed of a ship class triggers the next spawn unless marked otherwise."
+  - text: "Tips: Following the trigger sequence is advisable for a sniper too, since even the Battleships move in fast."
+  - text: "Tips: The Frigate spawn may not show up."
+  - text: "Tips: Mission is flagged completed after you have killed the last Battleship."
+  - text: "Tips: As usual divert Drone aggro by pulling them in for a second. Remote Shield Booster is an option for Sentries."
+  - text: "Tips: The naming convention under the Overview for Type and Name are swapped. This results in Angel Destroyer being seen as the default name, instead of Gistior Seizer."
+  - text: "Optional Approach: Use Micro Jump Drive as it's much easier to take everything out from a distance."
+  - text: "Blitz: Kill the initial group, ignore the elite frigates, and focus on the reinforcement wave (triggered by the frigate)."
+  - text: "Blitz: You may want to kill some or all of the elite cruisers and battlecruisers to reduce incoming damage."
+  - text: "Blitz: Kill the disruptor frigates and all the battleships, done."
+lootNotes:
+  - text: "Loot: 1-14 million"
+  - text: "Note: Loot for this mission is highly luck dependent. You can get several Clutch Restrained/ Pitfall Compact Warp Field Disruption Generators, worth around 2.7-2.8 million each. On one run I got 4 of these in total and ended up with 13.9 million ISK in loot as a result."
+  - text: "Salvage: ~1.4 mil"
+  - text: "Bounty: ~10 mil"
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: "Confirm trigger accuracy?? 5 December 2025: Destroying elite cruisers triggered destroyer wave."
+    waves:
+      - id: initial-defenders-25-km
+        trigger:
+          on: warpIn
+          text: Initial defenders (25 km)
+        spawns:
+          - count: "5"
+            class: Elite Cruiser
+            names:
+              - Angel Assault Cruiser
+            triggers: Last one triggers wave 1 on death
+      - id: wave-1-5-50-km
+        trigger:
+          on: other
+          text: Wave 1 (5-50 km)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Angel Frigate
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            triggers: Triggers frigate wave
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Angel Assault Frigate
+            ewar:
+              - kind: targetPaint
+            triggers: Triggers backup wave
+      - id: backup-wave-10-km
+        trigger:
+          on: other
+          text: Backup wave (10 km)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Angel Assault Frigate
+            triggers: Triggers assault frigate wave 1
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Angel Cruiser
+      - id: assault-frigate-wave-1-5-km
+        trigger:
+          on: other
+          text: Assault frigate wave 1 (5 km)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Angel Assault Frigate
+            triggers: Triggers assault frigate wave 2
+      - id: assault-frigate-wave-2-30-km
+        trigger:
+          on: other
+          text: Assault frigate wave 2 (30 km)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Rufian
+              - Arch Gistii Nomad
+      - id: frigate-wave-45-km
+        trigger:
+          on: other
+          text: Frigate wave (45 km)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Angel Frigate
+            triggers: Triggers assault cruiser wave
+      - id: assault-cruiser-wave-30-km
+        trigger:
+          on: other
+          text: Assault cruiser wave (30 km)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Centurion
+              - Arch Gistum Phalanx
+            triggers: Triggers battlecruiser wave
+      - id: battlecruiser-wave-15-km
+        trigger:
+          on: other
+          text: Battlecruiser wave (15 km)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Angel Assault Cruiser
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Angel Battlecruiser
+            triggers: Triggers destroyer wave
+      - id: destroyer-wave-80-km
+        trigger:
+          on: other
+          text: Destroyer wave (80 km)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Angel Frigate
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Destroyer
+            names:
+              - Angel Destroyer
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Angel Cruiser
+            triggers: Triggers the battleship wave
+      - id: battleship-wave-6-km
+        trigger:
+          on: other
+          text: Battleship wave (6 km)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battleship
+            names:
+              - Angel Battleship
+            ewar:
+              - kind: targetPaint
+            triggers: Mission target

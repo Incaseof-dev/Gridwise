@@ -1,0 +1,62 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: down-with-the-legion
+kind: mission
+name: Down with the Legion
+level: 3
+enemyFaction: Mordu's Legion Command
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Down with the Legion
+    url: https://wiki.eveuniversity.org/Down_with_the_Legion
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223042"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Suggested ships: Battlecruiser"
+  - text: "Blitz: Kill Wave 1, then Mordus Phanti, then warp out."
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: There are 4 Gallente Tower Sentries present when you first warp into the pocket, but they quickly explode. They don't aggress you, anyway.
+      - text: Wave 2 might spawn on a 3 or 4 minute delay. Depending on how quickly you kill Wave 1, you might be waiting a while for Wave 2.
+    waves:
+      - id: wave-1-40-60km
+        trigger:
+          on: other
+          text: Wave 1, 40-60km
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Mordus Katana
+          - count: "4"
+            class: Cruiser
+            names:
+              - Mordus Cheetah
+              - Mordus Puma
+              - Mordus Bobcat
+      - id: wave-2-48km
+        trigger:
+          on: other
+          text: Wave 2, 48km
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Mordus Gladius
+          - count: "4"
+            class: Cruiser
+            names:
+              - Mordus Lion
+              - Mordus Puma
+          - count: "1"
+            class: Battleship
+            names:
+              - Mordus Phanti

@@ -1,0 +1,25 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: places-to-hide
+kind: mission
+name: Places to Hide
+level: 4
+enemyFaction: null
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Places to Hide
+    url: https://wiki.eveuniversity.org/Places_to_Hide
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "206484"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Choose your path
+notes:
+  - text: "Choose between: the High Security path, slow and difficult, Little Fingers"
+  - text: "Choose between: the Low Security path, fast and risky, Oldest Profession"
+  - text: "Choose between: the random Security path, quick and risky, Octomet Plantation"
+  - text: Your choice has no lasting impact on the Epic Arc.

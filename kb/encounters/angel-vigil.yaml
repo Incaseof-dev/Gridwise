@@ -1,0 +1,267 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: angel-vigil
+kind: complex
+name: Angel Vigil
+dedRating: null
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Angel Vigil
+    url: https://wiki.eveuniversity.org/Angel_Vigil
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225093"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Battlecruiser"
+notes:
+  - text: "Angel Vigil is a unrated combat site that can be found via exploration by scanning down signatures with scanner probes in high-security systems. Its gate allows Battlecruisers or smaller to enter, and a (well equipped) Battlecruiser or HAC is suggested to bring into the site. (Addition: after completing in a Hurricane Dooobles notes that resists over 60% exp/kinetic, robust T2 tank with substantial buffer, exp/kinetic dmg dealing, web, and tracking gear are ESSENTIAL; the incoming damage is very high and the mobs kite.) The largest ship allowed to enter is a Command Ship (T2 Battlecruiser)."
+  - text: Before shooting any tower, focus on lowering the number of enemies in the pocket. The incoming damage is quite substantial so something with a decent tank, or warp-outs are necessary. You will be webbed down to ~10% velocity or less (14.0 m/s in a BC), so speed tanking isn't possible. After the area is cleared of most of the enemies, shoot one of the stasis towers. This pocket can easily become tank-melting if you target the turrets before clearing the initial ships. After all the turrets are gone and everything's dead, shoot 'Pat's Shipyard' for the final spawn and kill him off. There are multiple cargo containers in the pocket (containing a small amount of ammo, one had faction ammo). A large number of Veldspar asteroids are in this pocket.
+  - text: Pat Wead dropped a Low-Grade Halo Beta when I ran this. (*Pat Wead drop for Dooobles Sept 22, 2010 - Domination 220mm autocannon, Domination Copper tag, 1000 Angel faction ammo)
+  - text: -Update 15 Feb 23 - Pat Wead dropped Mid-grade Halo Omega (valued at 329M isk, 220M isk Jita).
+  - text: Blitzing this pocket is possible but fairly impractical. Shoot Pat's Shipyard and kill Pat. You will probably want to kill all initial ships as you will be moving at the snail's pace of 14 m/s and the damage will be significant. Then kill stasis towers and Wave B. Ignoring missile turrets and Wave A will still allow you to complete the site and qualify for a potential escalation.
+  - text: As stated above you only need to shoot the smugglers gate in the first pocket once to spawn gate keeper (smuggler commander) and the gate is open once he is destroyed. Do it quickly as his DPS is quite high.
+  - text: In second room I suggest heading towards Pat's shipyard (obviously slowly due to webs) and take out the dessies and cruisers first (remove the dps). Once they are gone, shoot the shipyard to spawn Pat's wave as the bc's and Pat's wave don't have enough DPS to break a decent tank. Destroy the weed frigates and bc's while you wait for Pat to get closer. Once Pat is close, take him out and scoop wreck, and hopefully receive escalation. While slow boating to wreck (which is usually only 5000m away if done correctly) shoot other ships at your discretion - but never the towers. I find this easy to do in a Loki with a DC2, Anti-Explosive Shield Hardener 2, shield boost amp 2 and med shield booster running. Even though it seems a slow way to do the mission, it is still faster than shooting everything.
+  - text: "Escalation: This site can escalate to The Big Blue (expedition)."
+  - text: "Escalation: Expeditions: The Big Blue (expedition): Scanning through Pat Wead´s logs reveals that this druglord was surprisingly well connected, long lists of buyers and sellers throughout the neighboring regions would make this document a dream read of any law enforcement agent in the galaxy, if only all the vital parts were not in some completely alien code. No matter how much you let your central computer chew on this stuff, you get no feedback on any names or places, except perhaps one... this seems to be a hasty entry from almost a year back, not in code. At least the coordinates do reflect a true point in space."
+lootNotes:
+  - text: For the initial exploration site (two pockets)
+  - text: 5M isk in bounties + loot, salvage, possible implant.
+  - text: Asteroids for mining listed in each pocket.
+  - text: Commander can drop Domination faction modules or implants.
+npcs:
+  Wead Fighter:
+    sdeTypes:
+      - Arch Gistii Ambusher
+      - Arch Gistii Raider
+    class: Frigate
+  Wead Guardian:
+    sdeTypes:
+      - Gistatis Primus
+      - Gistatis Tribuni
+    class: Battlecruiser
+  Pat Wead:
+    sdeTypes:
+      - Domination Depredator
+    class: Commander Cruiser
+pockets:
+  - name: First Room
+    notes:
+      - text: The gate in the first room can be unlocked either by using an Angel Gold Tag or by killing the Gistatis Smuggler Commander in the Gate Spawn. It is possible to trigger the Gate Spawn preemptively by shooting the smuggler gate.
+      - text: "Message on Gate Spawn:: Gist ships have just come through the gate. Smuggler Commander: Must I do EVERYTHING myself around here? I'll have all you maggots thrown into the slave pens after this is over."
+      - text: "Message on Smuggler Commander death:: The acceleration gate is now open for all to use."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Gistum Liquidator
+              - Gistum Marauder
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Gistatis Primus
+          - count: "1"
+            class: Commander Battlecruiser
+            names:
+              - Gistatis Smuggler Guard
+            triggers: Reinforcements
+          - count: "10"
+            class: Sentry
+            names:
+              - Angel Tower Sentry
+      - id: reinforcements
+        trigger:
+          on: other
+          text: Reinforcements
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Gistior Shatterer
+          - count: "2"
+            class: Cruiser
+            names:
+              - Gistum Crusher
+            ewar:
+              - kind: targetPaint
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Gistatis Tribuni
+              - Gistatis Praefectus
+      - id: gate-spawn
+        trigger:
+          on: other
+          text: Gate Spawn
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Gistii Impaler
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Gistatis Tribuni
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Gistatis Smuggler Commander
+            triggers: Unlocks Acceleration Gate upon death
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+          - count: "1"
+            class: Structure
+            names:
+              - Smuggler Gate
+            triggers: Attacking triggers the Gate Spawn
+          - count: "6"
+            class: Structure
+            names:
+              - Cargo Container
+            drop: T1 Ammo
+    onWarpIn: Previous Explorers have commented that one of the gates requires a passkey. Alternatively, it can be bypassed by convincing the commander to unlock it. The overseer guards his shipyard vigorously.
+  - name: Second Room
+    notes:
+      - text: ----
+      - text: "On Stasis Tower destruction:: Pat Wead: You allowed them to destroy one of our Stasis towers, you numbskulls! Second division, get your asses in here NOW!"
+      - text: "On Battery Tower destruction:: Pat Wead: And now you let them destroy one of our missile batteries! Inconceivable!"
+      - text: "On Stasis Spawn and Battery Spawn:: More Gist ships have warped in!"
+      - text: "On Overseer Spawn:: Pat Wead: Alright, that's it. You barge in here uninvited, mess with my subordinates, and now you have the nerve to attack my shipyard! I see I'll have to take care of our little problem myself ... Pat Wead and his cohorts have exited the shipyard, ready for action."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: 6-7
+            class: Destroyer
+            names:
+              - Gistior Defiler
+              - Gistior Haunter
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Gistum Centurion
+              - Gistum Phalanx
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Gistatis Legionnaire
+              - Gistatis Primus
+          - count: "2"
+            class: Sentry
+            names:
+              - Angel Stasis Tower
+            ewar:
+              - kind: web
+            triggers: Attacking triggers Stasis Spawn
+          - count: "2"
+            class: Sentry
+            names:
+              - Angel Light Missile Battery
+            triggers: Attacking triggers Battery Spawn
+          - count: "2"
+            class: Sentry
+            names:
+              - Angel Heavy Missile Battery
+            triggers: Attacking triggers Battery Spawn
+      - id: stasis-spawn
+        trigger:
+          on: other
+          text: Stasis Spawn
+          confidence: inferred
+        spawns:
+          - count: 6-7
+            class: Elite Frigate
+            names:
+              - Arch Gistii Nomad
+              - Arch Gistii Ruffian
+            ewar:
+              - kind: targetPaint
+          - count: 4-6
+            class: Cruiser
+            names:
+              - Gistum Centurion
+              - Gistum Liquididator
+              - Gistum Marauder
+              - Gistum Phalanx
+          - count: 4-6
+            class: Battlecruiser
+            names:
+              - Gistatis Legionnaire
+              - Gistatis Primus
+      - id: battery-spawn
+        trigger:
+          on: other
+          text: Battery Spawn
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Ambusher
+              - Arch Gistii Raider
+          - count: 4-6
+            class: Destroyer
+            names:
+              - Gistor Defacer
+              - Gistor Defiler
+              - Gistor Seizer
+              - Gistor Shatterer
+              - Gistor Trasher
+          - count: 5-6
+            class: Battlecruiser
+            names:
+              - Gistatis Legionnaire
+              - Gistatis Primus
+      - id: gate-spawn
+        trigger:
+          on: other
+          text: Gate Spawn
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Wead Fighter
+          - count: 2-3
+            class: Battlecruiser
+            names:
+              - Wead Guardian
+          - count: "1"
+            class: Commander Cruiser
+            names:
+              - Pat Wead
+            drop: Faction modules and T2 salvage, possible implants
+            note: Escalation Trigger
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Pat's Shipyard
+            note: Attacking triggers Overseer Spawn
+sde:
+  dungeonIds:
+    - 1228

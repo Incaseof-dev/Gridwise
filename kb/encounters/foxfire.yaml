@@ -1,0 +1,132 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: foxfire
+kind: mission
+name: Foxfire
+level: 3
+enemyFaction: Caldari State
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Foxfire
+    url: https://wiki.eveuniversity.org/Foxfire
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "232564"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Retrieve 1x Lieutenant Kipo “Foxfire” Tekira (1.0 m3)
+restrictions:
+  - text: "Ship size limit: T1 Destroyer, Frigate"
+ewar:
+  - kind: web
+notes:
+  - text: 4.8% Caldari State Faction Standing loss
+  - text: Accept the Mission remotely.
+  - text: Gated deadspace pocket one jump away in AJCJ-1.
+  - text: "Blitz: take the Acceleration Gate, then destroy Guristas Sentry Guns. Destroy the Caldari Point Defense Batteries, then destroy the Caldari Navy Storage Bunker and pick up Lieutenant Kipo “Foxfire” Tekira."
+  - text: "Tips: Decloak the Acceleration Gate by destroying all the Guristas Sentry Guns"
+  - text: "Tips: You will lose 2.4% Caldari State Faction Standing when you destroy the Guristas Sentry Guns"
+  - text: "Tips: You will lose 2.4% Caldari State Faction Standing if you destroy the Caldari Stasis Tower or Caldari Point Defense Battery"
+  - text: "Tips: If you don't kill the Caldari Navy Destroyer, reinforcements won't spawn"
+pockets:
+  - name: Warp-in
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+  - name: Room 1
+    notes:
+      - text: Sentries have aggro range of 65 km.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "11"
+            class: Sentry
+            names:
+              - Guristas Sentry Gun
+            triggers: Last one destroyed decloaks the acceleration gate
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+            note: Cloaked by the Guristas Sentry Guns
+  - name: Room 2
+    notes:
+      - text: "Transmission from Irichi (on entering): Hello Cilis. It's been a long time. I hope you don't mind, but Kori and I borrowed your lieutenant. Don't worry, he's still alive. I just made some modifications to him, much like how you modified me all those years ago. Consider this my payback to you. And you, egger. I hope you had fun flying with Cilis. It's unfortunate that you got dragged into the middle of this. But you've been a good errand boy. That's what you capsuleers are good for."
+      - text: "Transmission from Irichi (On approaching the bunker): The Navy? What the hell were they doing there? Kori didn't say anything about them. Unless... He was using us. That bastard, that traitor. He's been a spy for the Navy! Oh well. I have my revenge. Treat your lieutenant well, Cilis. I know I have. This isn't over between us, though. Watch your back."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Caldari Navy Frigate
+          - count: "1"
+            class: Destroyer
+            names:
+              - Caldari Navy Destroyer
+            triggers: Triggers next wave
+          - count: "2"
+            class: Sentry
+            names:
+              - Caldari Light Missile Battery
+          - count: "2"
+            class: Sentry
+            names:
+              - Caldari Point Defense Battery
+            triggers: Destroy to deactivate the forcefield
+          - count: "1"
+            class: Sentry
+            names:
+              - Caldari Stasis Tower
+            ewar:
+              - kind: web
+      - id: reinforcement-wave
+        trigger:
+          on: other
+          text: Reinforcement wave
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Caldari Navy Frigate
+          - count: "2"
+            class: Cruiser
+            names:
+              - Caldari Navy Cruiser
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Forcefield
+            note: Deactivates when you destroy the Caldari Point Defense Batteries
+          - count: "1"
+            class: Structure
+            names:
+              - Caldari Navy Storage Bunker
+            drop: Lieutenant Kipo “Foxfire” Tekira

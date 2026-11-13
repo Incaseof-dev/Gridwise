@@ -1,0 +1,199 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: serpentis-live-cargo-distribution-facilities
+kind: complex
+name: Serpentis Live Cargo Distribution Facilities
+dedRating: null
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Serpentis Live Cargo Distribution Facilities
+    url: https://wiki.eveuniversity.org/Serpentis_Live_Cargo_Distribution_Facilities
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "221969"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: T3 Destroyer"
+notes:
+  - text: "Rating: DED 2 / 10"
+loot:
+  - item: 6th Tier Overseer's Effects
+    from: Overseer Frigate
+    note: est. 360k ISK (wiki) · 100% drop rate
+  - item: Coreli B-Type modules
+    from: Overseer Frigate
+    note: Up to 3x
+  - item: Shadow Serpentis modules
+    from: Overseer Frigate
+  - item: + Exploration logs
+  - item: Nov 2014
+    note: est. 35M ISK (wiki) · From Overseer Frigate
+  - item: Shadow Serpentis Energized Thermal Membrane
+    note: est. From Overseer Frigate (wiki)
+  - item: Mar 2016
+    note: est. 600k ISK (wiki) · From Overseer Frigate
+  - item: Shadow Serpentis Remote Sensor Booster
+    note: est. From Overseer Frigate (wiki)
+  - item: Apr 2016
+    note: est. 18M ISK (wiki) · From Overseer Frigate
+  - item: Coreli B-Type Adaptive Nano Plating
+    note: est. From Overseer Frigate (wiki)
+  - item: Jun 2016
+    note: est. 250M ISK (wiki) · From Overseer Frigate
+  - item: Feb 2017
+    note: est. 0.8M ISK (wiki) · From Overseer Frigate
+  - item: March 2017
+    note: est. 43.5M ISK (wiki) · From Overseer Frigate
+  - item: Coreli B-Type Thermal Plating
+    note: est. From Overseer Frigate (wiki)
+  - item: April 2017
+    note: est. 11.9M ISK (wiki) · From Overseer Frigate
+  - item: Coreli B-Type Thermal Plating
+    note: est. From Overseer Frigate (wiki)
+  - item: May 2017
+    note: est. 29M ISK (wiki) · From Overseer Frigate
+  - item: Shadow Serpentis Energized Thermal Membrane
+    note: est. From Overseer Frigate (wiki)
+  - item: August 2017
+    note: est. 26M ISK (wiki) · From Overseer Frigate
+  - item: Shadow Serpentis Adaptive Nano Plating
+    note: est. From Overseer Frigate (wiki)
+  - item: Shadow Serpentis Inertial Stabilizers
+    note: est. From Overseer Frigate (wiki)
+  - item: May 2020
+    note: est. 62M ISK (wiki) · From Overseer Frigate
+  - item: June 2020
+    note: est. 0.5M ISK (wiki) · From Overseer Frigate
+  - item: July 2020
+    note: est. 55M ISK (wiki) · From Overseer Frigate
+  - item: Shadow Serpentis Magnetic Field Stabilizer
+    note: est. From Overseer Frigate (wiki)
+  - item: November 2020
+    note: est. 35M ISK (wiki) · From Overseer Frigate
+  - item: Coreli B-Type EM coating
+    note: est. From Overseer Frigate (wiki)
+  - item: December 2020
+    note: est. 50M ISK (wiki) · From Overseer Frigate
+  - item: Januari 2021
+    note: est. 19.2M ISK (wiki) · From Overseer Frigate
+  - item: Shadow Serpentis Stasis Webifier
+    note: est. From Overseer Frigate (wiki)
+  - item: February 2024
+    note: est. 31.4M ISK (wiki) · From Overseer Frigate
+  - item: Coreli B-Type Kinetic Coating
+    note: est. From Overseer Frigate (wiki)
+  - item: May 2024
+    note: est. 90M ISK (wiki) · From Overseer Frigate
+  - item: March 2025
+    note: est. 32M ISK (wiki) · From Overseer Frigate
+pockets:
+  - name: First room
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "25"
+            class: Frigate
+            names:
+              - Coreli Agent
+              - Coreli Initiate
+              - Coreli Scout
+            note: type list incomplete on the source page
+          - count: "6"
+            class: Sentry
+            names:
+              - Serpentis Sentry Gun
+    onWarpIn: Despite their persistent claims to the contrary, the criminal organization known as the Serpentis has extensive ties in the underworld of human trafficking, and it is an open secret among their more above-the-board business associates that facilities such as this one exist all over Serpentis territories. Serving as a center for sorting, evaluation and distribution, this place represents at once the beginning and the end for those unfortunate souls who through fate or folly find themselves in the hands of the Serpentis.
+  - name: Second room
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "11"
+            class: Frigate
+            names:
+              - Coreli Agent
+              - Coreli Initiate
+              - Coreli Scout
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Sentry
+            names:
+              - Coreli Sentry Gun
+          - count: "3"
+            class: Sentry
+            names:
+              - Coreli Stasis Tower
+            ewar:
+              - kind: web
+  - name: Third room
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "26"
+            class: Frigate
+            names:
+              - Coreli Agent
+              - Coreli Initiate
+              - Coreli Scout
+            note: type list incomplete on the source page
+          - count: 5-6
+            class: Cruiser
+            names:
+              - Corelum Chief Scout
+              - Corelum Chief Spy
+          - count: "1"
+            class: Cruiser
+            names:
+              - Corelum Chief Guard
+              - Corelum Chief Safeguard
+            ewar:
+              - kind: sensorDamp
+  - name: Fourth room
+    notes:
+      - text: Due to the large number of ships and potentially high DPS, it is advised to destroy only the Shadow Serpentis Warden, bookmark the wreck, and warp out.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "16"
+            class: Frigate
+            names:
+              - Coreli Spy
+              - Coreli Agent
+              - Coreli Patroller
+              - Coreli Watchman...
+            ewar:
+              - kind: sensorDamp
+          - count: "1"
+            class: Overseer Frigate
+            names:
+              - Shadow Serpentis Warden
+            drop: Can drop Coreli B-type or Shadow Serpentis modules
+          - count: "1"
+            class: Cruiser
+            names:
+              - Corelum Chief Spy
+          - count: "8"
+            class: Cruiser
+            names:
+              - Corelum Chief Patroller
+              - Corelum Chief Watchman
+            ewar:
+              - kind: sensorDamp
+sde:
+  dungeonIds:
+    - 5470

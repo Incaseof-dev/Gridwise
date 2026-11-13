@@ -1,0 +1,229 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: hidden-enemy-base-caldari
+kind: mission
+name: Hidden Enemy Base
+level: 5
+enemyFaction: Caldari State
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Hidden Enemy Base (Caldari)
+    url: https://wiki.eveuniversity.org/Hidden_Enemy_Base_(Caldari)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223366"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: neut
+  - kind: ecm
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: All Frigates 25-35% chance each"
+  - text: "Suggested ships: Ishtar with Osprey Shield Repping. Osprey was only needed for last room."
+  - text: "Space type: Deadspace, multiple pockets with gates"
+  - text: Two Remote Cloaking Array's must be destroyed before a hidden gate that leads to the Enemy Base will appear
+  - text: Use a Passive Tank and save time by not having to destroy Energy Neutralizer Sentries.
+  - text: Set drones to aggressive for any jamming ships (especially Room 2).
+  - text: For Pockets 5 & 6, wait until all ships have spawned before bringing in a logistics ship.
+  - text: Suggest using a Drake instead of logistics if not needed. Really speeds up the process.
+  - text: Thanks to JohnnyMnemonic. I borrowed a good portion of his page and changed what I needed to for the Caldari version.
+pockets:
+  - name: Pocket 1 - Entry Point
+    notes:
+      - text: "Empty pocket with 3 gates that lead to the combat pockets:"
+      - text: Top Gate - Gate to Remote Cloaking Array Pocket 2
+      - text: Bottom Gate - Gate to Remote Cloaking Array Pocket 3
+      - text: Middle Gate - Gate to Pocket 4
+      - text: Entry Point - Pocket 1, 3 Gates lead to the action
+  - name: Pocket 2
+    notes:
+      - text: via Top Gate (Heavy Web, Scramble)
+      - text: Destroy the Remote Cloaking Array (50,000 HP) and take the Gate to return to the Entry Point Pocket
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "9"
+            class: Elite Frigate
+            names:
+              - Taibu State Tachi
+              - Taibu State Shuriken
+            ewar:
+              - kind: web
+              - kind: ecm
+              - kind: warpScramble
+            note: 25-27.5% Jamming for 20 seconds. Shuriken Scram and Web
+          - count: "5"
+            class: Elite Cruiser
+            names:
+              - Taibu State Shugo
+              - Taibu State Tendai
+            ewar:
+              - kind: ecm
+            note: 30-35% Jamming for 20 seconds
+          - count: "8"
+            class: Sentry
+            names:
+              - Caldari Stasis Tower
+            ewar:
+              - kind: web
+            note: Web speed multiplier of 0.665 each
+  - name: Pocket 3
+    notes:
+      - text: via Bottom Gate
+      - text: Destroy the Remote Cloaking Array (50,000 HP) and take the Gate to return to the Entry Point Pocket
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "10"
+            class: Elite Frigate
+            names:
+              - Taibu State State Nagasa
+              - Taibu State Shinai
+              - Taibu State Shirasaya
+              - Taibu State Suriage
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "2"
+            class: Battleship
+            names:
+              - State Shukuro Daijo
+              - State Shukuro Taisho
+          - count: "3"
+            class: Sentry
+            names:
+              - Caldari Energy Neutralizer Sentry I
+            ewar:
+              - kind: neut
+          - count: "5"
+            class: Sentry
+            names:
+              - Caldari Energy Neutralizer Sentry II
+            ewar:
+              - kind: neut
+  - name: Pocket 4
+    notes:
+      - text: via Middle Gate
+      - text: A gate to pocket 5 will be visible here if you destroyed the two Remote Cloaking Arrays in pocket 2 and 3.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - State Shukuro Bajo
+          - count: "6"
+            class: Battleship
+            names:
+              - State Shukuro Shogun
+          - count: "1"
+            class: Sentry
+            names:
+              - Caldari Energy Neutralizer III
+            ewar:
+              - kind: neut
+  - name: Pocket 5
+    notes:
+      - text: Takes 30 seconds for all 10 cruisers to spawn
+      - text: A gate will take you to the final pocket 6
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "10"
+            class: Elite Cruiser
+            names:
+              - Taibu State Bajo
+              - Taibu State Samurai
+          - count: "5"
+            class: Sentry
+            names:
+              - Caldari Heavy Missile Battery
+  - name: Pocket 6 - Enemy Base
+    notes:
+      - text: Destroy the Caldari Station (150,000 hp). Mission is flagged complete when the station is destroyed.
+      - text: The station drops a T1 named turret or launcher.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Taibu State Nagasa
+            ewar:
+              - kind: web
+              - kind: warpScramble
+            triggers: Reinforcements
+            note: This doesn't happen if the towers are all destroyed
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Taibu State Tachi
+            ewar:
+              - kind: ecm
+            note: 27.5% Jam for 20 seconds
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Taibu State Sohei
+              - Taibu State Tendai
+            ewar:
+              - kind: ecm
+            note: 32.5% Jam for 20 seconds
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - State Shukuro Bajo
+              - State Shukuro Samurai
+          - count: "10"
+            class: Battleship
+            names:
+              - State Shukuro Shogun
+              - State Shukuro Bishamon
+          - count: "4"
+            class: Sentry
+            names:
+              - Caldari Heavy Missile Battery
+          - count: "2"
+            class: Sentry
+            names:
+              - Caldari Energy Neutralizer II
+            ewar:
+              - kind: neut
+          - count: "2"
+            class: Sentry
+            names:
+              - Caldari Energy Neutralizer III
+            ewar:
+              - kind: neut
+      - id: reinforcements
+        trigger:
+          on: other
+          text: Reinforcements
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigates
+            names:
+              - Taibu State Tachi
+            ewar:
+              - kind: ecm
+            note: 27.5 Jam for 20 seconds. This doesn't happen if the towers are all destroyed

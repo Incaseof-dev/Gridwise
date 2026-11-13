@@ -1,0 +1,87 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: serpentis-hideaway
+kind: anomaly
+name: Serpentis Hideaway
+dedRating: null
+anomalyClass: 1
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Serpentis Hideaway
+    url: https://wiki.eveuniversity.org/Serpentis_Hideaway
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225117"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Serpentis Hideaway is an unrated combat site belonging to the Serpentis Corporation pirate faction. It can be found via exploration as a cosmic anomaly within systems owned by the Gallente Federation or occupied by the Serpentis Corporation. As an ungated complex, the limitations as to which ships can complete this site are tied to the security rating of the system where the anomaly spawns (T2 Battleships for high-security systems, and up to Titans in low-security and null-security systems). Completing this complex may award the player with valuable Shadow Serpentis faction modules and ammunition.
+  - text: "This combat site consists of a single ungated pocket of space containing a variety of Frigate-sized enemy ships. Destroying all hostile ships may escalate into the DED rated Serpentis Narcotic Warehouses complex. Three variations of this combat anomaly exist: Serpentis Hidden Hideaway, Serpentis Forsaken Hideaway and Serpentis Forlorn Hideaway."
+  - text: Total cargo loot amount to around 20k ISK.
+  - text: "Escalation: This anomaly can escalate to Serpentis Narcotic Warehouses."
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: "Possible Bonus Spawn message: The Serpentis Commander himself undocks to resolve the matter!"
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 1-2
+            class: Frigate
+            names:
+              - Corei Scout
+              - Corei Initiate
+      - id: first-spawn
+        trigger:
+          on: other
+          text: First Spawn
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Frigate
+            names:
+              - Coreli Agent
+              - Coreli Spy
+      - id: second-spawn
+        trigger:
+          on: other
+          text: Second Spawn
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Coreli Initiate
+              - Coreli Scout
+      - id: third-spawn
+        trigger:
+          on: other
+          text: Third Spawn
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Frigate
+            names:
+              - Coreli Guard
+              - Coreli Safeguard
+      - id: bonus-spawn
+        trigger:
+          on: other
+          text: Bonus Spawn
+          confidence: inferred
+        spawns:
+          - count: 0-1
+            class: Commander Frigate
+            names:
+              - Shadow Serpentis Watchman
+            drop: Drops faction ammo and tags. May drop faction modules, Mid-grade implants, Daredevil BPC.
+    onWarpIn: The Serpentis Corporation was founded a few decades ago by V. Salvador Sarpati. At first, it was engaged in hi-tech research, but with time its ties to the underworld grew, and Serpentis research stations scattered around in remote areas became notorious pirate havens. Sarpati made a deal with the Angel Cartel early on to provide protection for his stations, and this duty was eventually taken on by the Guardian Angels. Both sides have prospered enormously from this deal - Serpentis can operate in peace, and the Angel Cartel gets access to the illegal research efforts of the Serpentis conglomerate. It is strongly believed that Serpentis is the main developer and manufacturer of illegal neural boosters, especially since Sarpati's father was a renowned specialist in that field. The home of Serpentis is in the Phoenix constellation in the Fountain region.
+sde:
+  dungeonIds:
+    - 2140

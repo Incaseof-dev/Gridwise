@@ -1,0 +1,213 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-blockade-sanshas-nation-level-4
+kind: mission
+name: The Blockade
+level: 4
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Blockade (Sansha's Nation) (Level 4)
+    url: https://wiki.eveuniversity.org/The_Blockade_(Sansha's_Nation)_(Level_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "222508"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Eliminate the leader of the pirates blockading the stargate
+ewar:
+  - kind: web
+  - kind: trackingDisruption
+  - kind: warpScramble
+notes:
+  - text: "Web/warp disruption: Centii Loyal Scavenger/Minion/Ravener (Scram)"
+  - text: "Suggested ships: Battleship, HAC"
+  - text: "Blitz: Kill all the trigger Battleships. You will need to snipe, or have a perma-tank with dual reppers as the spawns deal an high amount of damage. Kill the final Centus Tryrant Battleship. Do not try to blitz in a turret battleship: the maximum TD range of the elite cruisers is 60km, so ensure you are beyond that."
+lootNotes:
+  - text: "Bounty: 19.53M (2025-04-20)"
+  - text: "Loot: 7.69M (2025-04-20)"
+  - text: "Salvage: 8.52M (2025-04-20)"
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: All groups aggro on spawn.
+      - text: May (Fleet) warp to preferred distance.
+    waves:
+      - id: initial-group-25-44km
+        trigger:
+          on: warpIn
+          text: Initial Group, 25-44km
+        spawns:
+          - count: 3-4
+            class: Destroyer
+            names:
+              - Centior Abomination
+              - Centior Monster
+          - count: 4-5
+            class: Battleship
+            names:
+              - Centus Mutant Lord
+              - Centus Savage Lord
+              - Centus Beast Lord
+            triggers: Spawns Reinforcement 1
+          - count: "1"
+            class: Sentry
+            names:
+              - Starbase Stasis Tower
+            ewar:
+              - kind: web
+      - id: reinforcement-1-3-groups
+        trigger:
+          on: other
+          text: Reinforcement 1 (3 groups)
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Beast
+              - Centum Loyal Juggernaut
+              - Centum Loyal Execrator
+            group: Front, 40-45km
+            ewar:
+              - kind: trackingDisruption
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Centatis Wraith
+              - Centatis Devil
+            group: Front, 40-45km
+          - count: 2-3
+            class: Destroyer
+            names:
+              - Centior Cannibal
+              - Centior Misshape
+            group: Bottom, 65-75km
+          - count: 2-3
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Fiend
+              - Centum Loyal Hellhound
+            group: Bottom, 65-75km
+            ewar:
+              - kind: trackingDisruption
+          - count: 3-4
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Beast
+              - Centum Loyal Juggernaut
+              - Centum Loyal Slaughter
+            group: Rear, 70-80km
+            ewar:
+              - kind: trackingDisruption
+          - count: 4-5
+            class: Battleship
+            names:
+              - Centus Savage Lord
+              - Centus Savage Lord
+              - Centus Beast Lord
+            group: Rear, 70-80km
+            triggers: Spawns Reinforcement 2
+      - id: reinforcement-2-2-groups
+        trigger:
+          on: other
+          text: Reinforcement 2 (2 Groups)
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Destroyer
+            names:
+              - Centior Horror
+              - Centior Abomination
+            group: Front, 50-55km
+          - count: 2-3
+            class: Battleship
+            names:
+              - Centus Mutant Lord
+              - Centus Savage Lord
+            group: Front, 50-55km
+          - count: 1-2
+            class: Elite Frigate
+            names:
+              - Centii Loyal Slavehunter
+              - Centii Loyal Savage
+            group: Rear, 85-90km
+            ewar:
+              - kind: trackingDisruption
+          - count: 2-3
+            class: Battleship
+            names:
+              - Centus Mutant Lord
+              - Centus Overlord
+              - Centus Savage Lord
+            group: Rear, 85-90km
+            ewar:
+              - kind: trackingDisruption
+            triggers: Spawns Reinforcement 3
+      - id: reinforcement-3-2-groups
+        trigger:
+          on: other
+          text: Reinforcement 3 (2 Groups)
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Centii Loyal Slavehunter
+              - Centii Loyal Savage
+            ewar:
+              - kind: trackingDisruption
+          - count: 2-3
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Execrator
+              - Centum Loyal Slaughterer
+            ewar:
+              - kind: trackingDisruption
+          - count: "1"
+            class: Battleship
+            names:
+              - Centus Beast Lord
+              - Centus Savage Lord
+              - Centus Overlord
+            triggers: Spawns Reinforcement 4
+          - count: 3-4
+            class: Battleship
+            names:
+              - Centus Dark Lord
+              - Centus Overlord
+            group: Bottom, 85km
+      - id: reinforcement-4
+        trigger:
+          on: other
+          text: Reinforcement 4
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Centii Loyal Scavenger
+              - Centii Loyal Minion
+              - Centii Loyal Ravener
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: 3-4
+            class: Battleship
+            names:
+              - Centus Overlord
+              - Centus Dark Lord
+          - count: "1"
+            class: Battleship
+            names:
+              - Centus Tyrant
+            note: Mission objective
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - True Sansha Battleship
+            drop: may drop Faction module
+            note: Very rare spawn

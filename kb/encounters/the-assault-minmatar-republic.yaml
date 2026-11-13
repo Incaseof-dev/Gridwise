@@ -1,0 +1,220 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-assault-minmatar-republic
+kind: mission
+name: The Assault
+level: 4
+enemyFaction: Minmatar Republic
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Assault (Minmatar Republic)
+    url: https://wiki.eveuniversity.org/The_Assault_(Minmatar_Republic)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223387"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal:
+    - explosive
+  resist:
+    - explosive
+    - kinetic
+ewar:
+  - kind: targetPaint
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Yes (Chief Republic Magni)"
+  - text: "Blitz: In the first pocket, use the following kill order:"
+  - text: 4x Battlecruisers
+  - text: 2x Elite Frigates
+  - text: 3x Elite Cruisers
+  - text: 2x Elite Frigates
+  - text: It is necessary to one-shot each of the elite frigates in Group 3 in order to avoid immediately spawning reinforcements. The acceleration will be unlocked as long as there are no remaining hostile targets. If reinforcements spawn (whether due to not one-shotting the frigates, or taking too long to activate the gate), the gate will be locked until all hostile targets are destroyed.
+  - text: In the second pocket, approach the Dysfunctional Solar Harvester. The mission is flagged as completed once the first three spawns have been destroyed.
+lootNotes:
+  - text: "Loot: ± 3 Mil ISK"
+  - text: "Besides normal loot, the NPCs also drop Republic Fleet Insignia ('tags'):"
+  - text: 9 Republic Fleet Captain Insignia I
+  - text: 10 Republic Fleet Commander Insignia I
+  - text: 14 Republic Fleet Commander Insignia II
+  - text: 37 Republic Fleet High Captain Insignia I
+  - text: 9 Republic Fleet Private Insignia II
+  - text: 6 Republic Fleet Private Insignia III
+  - text: "Republic Fleet Insignia: Current Jita sell value is 89 million isk and buy value 85 million isk."
+  - text: "Salvage: ± 2 Mil ISK"
+pockets:
+  - name: 1st Pocket
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Chief Republic Gleeda
+            ewar:
+              - kind: targetPaint
+            triggers: Triggers Reinforcements Wave 1
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Chief Republic Rodul
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Republic Nutia
+              - Republic Tribal Venis
+      - id: reinforcements
+        trigger:
+          on: other
+          text: Reinforcements
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Chief Republic Gleeda
+            group: Wave 1
+            ewar:
+              - kind: targetPaint
+          - count: "3"
+            class: Battleship
+            names:
+              - Republic Sigar
+              - Republic Tribal Pytara
+              - Tribal Jarkl
+            group: Wave 2
+            ewar:
+              - kind: targetPaint
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Chief Republic Kvarm
+            group: Wave 3
+            ewar:
+              - kind: targetPaint
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Republic Nutia
+              - Republic Norn
+            group: Wave 4
+          - count: "3"
+            class: Battleship
+            names:
+              - Republic Sigur
+              - Republic Ymir
+            group: Wave 5
+            ewar:
+              - kind: targetPaint
+          - count: "1"
+            class: Battleship
+            names:
+              - Republic Sigur
+              - Republic Ymir
+            group: Wave 6
+            ewar:
+              - kind: targetPaint
+  - name: 2nd Pocket
+    notes:
+      - text: Reinforcements spawns will appear near the noted object in space.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Republic Tribal Venis
+              - Republic Tribal Norn
+          - count: "1"
+            class: Battleship
+            names:
+              - Republic Sigur
+              - Republic Ymir
+            ewar:
+              - kind: targetPaint
+      - id: reinforcements
+        trigger:
+          on: other
+          text: Reinforcements
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Battleship
+            names:
+              - Republic Tribal Sigur
+              - Republic Tribal Jotun
+              - Republic Tribal Pytara
+            group: Wave 1 (Asteroid Colony)
+          - count: "1"
+            class: Battleship
+            names:
+              - Republic Tribal Sigur
+              - Republic Tribal Jotun
+              - Republic Tribal Pytara
+            group: Wave 2 (Asteroid Colony)
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Chief Republic Ivan
+            group: Wave 3 (Dysfunctional Solar Harvester)
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Chief Republic Magni
+            group: Wave 3 (Dysfunctional Solar Harvester)
+            ewar:
+              - kind: warpDisruption
+          - count: "2"
+            class: Battleship
+            names:
+              - Republic Tribal Jarl
+            group: Wave 3 (Dysfunctional Solar Harvester)
+          - count: "2"
+            class: Battleship
+            names:
+              - Republic Tribal Jotun
+            group: Wave 4 (Asteroid Colony)
+          - count: "2"
+            class: Battleship
+            names:
+              - Republic Tribal Sigur
+            group: Wave 5 (Big Asteroid)
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Chief Republic Magni
+            group: Wave 6 (Asteroid Colony)
+            ewar:
+              - kind: warpDisruption
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Chief Republic Orka
+            group: Wave 7 (Big Asteroid)
+      - id: notable-structures
+        trigger:
+          on: warpIn
+          text: Notable Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Asteroid Colony
+          - count: "1"
+            class: Structure
+            names:
+              - Dysfunctional Solar Harvester
+          - count: "1"
+            class: Structure
+            names:
+              - Big Asteroid

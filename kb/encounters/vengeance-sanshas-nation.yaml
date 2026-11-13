@@ -1,0 +1,224 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: vengeance-sanshas-nation
+kind: mission
+name: Vengeance, Level 4
+level: 4
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Vengeance (Sansha's Nation)
+    url: https://wiki.eveuniversity.org/Vengeance_(Sansha's_Nation)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "192098"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: trackingDisruption
+  - kind: web
+  - kind: warpScramble
+notes:
+  - text: "Web/warp disruption: Elite Frigates (Web/Scram)"
+  - text: "Suggested ships: Battleship, Command Ship, HAC, Strategic Cruiser"
+  - text: Sentry Dominix
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: All groups in this pocket have proximity aggro bubbles between 10-15km.
+      - text: You may get aggroed by Group 1 at warp-in as its proximity aggro triggers.
+      - text: DO NOT deploy drones to attack Group 1 as it will be targetted by Group 5.
+      - text: Group 3 & 4 forms an aggro pair. Both will aggro if either one is attacked. Drones can be safely deployed as long as both groups have been aggroed.
+      - text: Group 2 & 5 can be independently attacked in any order without drawing pocket aggro. You may deploy drones as per normal.
+      - text: "- The warp gate is locked until all ships have been eliminated."
+      - text: "- Recommended order of elimination: Group 1 & 5, Group 2 and Group 3 & 4."
+      - text: "- Pocket 1 has a sizeable Veldspar deposits."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Sansha's Berserker
+              - Sansha's Demon
+            group: Group 1 Asteroid Mining Outpost (15-30km)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Battleship
+            names:
+              - Centus Mutant Lord
+              - Centus Savage Lord
+            group: Group 1 Asteroid Mining Outpost (15-30km)
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Centatis Phantasm
+              - Centatis Specter
+            group: Group 2 Veldspar Asteroid (18-20km)
+          - count: "1"
+            class: Battleship
+            names:
+              - Centus Overlord
+              - Centus Savage Lord
+              - Centus Beast Lord
+            group: Group 2 Veldspar Asteroid (18-20km)
+            ewar:
+              - kind: trackingDisruption
+          - count: "7"
+            class: Cruiser
+            names:
+              - Centum Execrator
+              - Centum Slaughterer
+            group: Group 3 Asteroid Construct (18-30km)
+            ewar:
+              - kind: trackingDisruption
+          - count: "1"
+            class: Battleship
+            names:
+              - Centus Mutant Lord
+            group: Group 3 Asteroid Construct (18-30km)
+          - count: "5"
+            class: Destroyer
+            names:
+              - Centior Cannibal
+              - Centior Devourer
+            group: Group 4 Asteroid Colony (16-25km)
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Centatis Phantasm
+              - Centatis Specter
+            group: Group 4 Asteroid Colony (16-25km)
+          - count: "3"
+            class: Battleship
+            names:
+              - Centus Savage Lord
+            group: Group 5 Asteroid Factory (18-22km)
+  - name: Pocket 2
+    notes:
+      - text: Auto aggro from Group 1 at warp-in. All other groups remain neutral.
+      - text: Each group can be taken out independently and drones can be deployed as per normal.
+      - text: "- The warp gate is locked until all ships have been eliminated."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Destroyer
+            names:
+              - Centior Monster
+              - Centior Horror
+            group: Group 1 Beacon (2-4km) (auto-aggro)
+          - count: "2"
+            class: Cruiser
+            names:
+              - Centum Mutilator
+              - Centum Torturer
+            group: Group 1 Beacon (2-4km) (auto-aggro)
+          - count: "1"
+            class: Battleship
+            names:
+              - Centus Savage Lord
+              - Centus Plague Lord
+            group: Group 1 Beacon (2-4km) (auto-aggro)
+            ewar:
+              - kind: trackingDisruption
+          - count: "3"
+            class: Battleship
+            names:
+              - Centus Beast Lord
+              - Centus Plague Lord
+              - Centus Savage Lord
+            group: Group 2 Ruined Monument (25-30km)
+            ewar:
+              - kind: trackingDisruption
+          - count: "7"
+            class: Cruiser
+            names:
+              - Centum Hellhound
+              - Centum Fiend
+            group: Group 3 Sansha Outpost (30-35km)
+          - count: "3"
+            class: Cruiser
+            names:
+              - Centum Hellhound
+              - Centum Fiend
+            group: Group 4 Veldspar Asteroid (26-28km)
+          - count: "2"
+            class: Battleship
+            names:
+              - Centus Mutant Lord
+              - Centus Savage Lord
+            group: Group 4 Veldspar Asteroid (26-28km)
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Sansha Storage Facility
+            drop: dairy products, livestock, enriched uranium
+  - name: Pocket 3
+    notes:
+      - text: No aggro at warp-in. You warp in to approximately 65-75 KM from NPCs and sentry towers.
+      - text: Sentry towers proximity aggro will be triggered if your ship moves to within 50km. (This includes your drones, too!)
+      - text: "- As of 20 June 2011 This room changed, there are 3-4 spawns and triggers. Fit hard tank."
+      - text: "- As of Crucible, no new spawns. Tower sentries don't even aggro until you're within 50km."
+      - text: "- There are new spawns, 2 waves 12/11/2016"
+      - text: "- It is recommended that your ship carry at least 2-3 weapon upgrade modules (e.g. Ballistic Control System, Heat Sink, etc.) when attacking Draben Kuvakei."
+      - text: "- If you stay slightly more than 50KM away from all sentry towers, do no use drones and your guns or missiles have a range slightly higher than 50 KM (i.e. 55KM Heavy Missiles), the NPCs can be killed without receiving fire from the sentry towers as they will not agro at greater than 50 KM."
+      - text: "- Mission is flagged completed once you have eliminated ALL ships(tower sentries are not required) in Pocket 3."
+      - text: "- There is no quick way. Pocket 1 & 2 warp gates are locked until all ships have been eliminated. The last pocket must be cleared of ships to complete the mission."
+      - text: "- You can mine 1.995.000 Veldspar, 180.000 Scordite and 150.000 in all 3 stages."
+      - text: "- As of 12/2/2020 there is no ore to mine in this site. This is likely associated with EVE ore rebalancing."
+      - text: "- 14,694,118.05 ISK"
+      - text: "- 15,600,000.00 ISK Loot & Salvage"
+    waves:
+      - id: single-group-55-70km
+        trigger:
+          on: other
+          text: Single Group (55-70km)
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Sentry
+            names:
+              - Tower Sentry Sansha III
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Sansha's Berserker
+              - Sansha's Demon
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "1"
+            class: Battleship
+            names:
+              - Centus Overlord
+              - Centus Dark Lord
+          - count: "1"
+            class: Battleship
+            names:
+              - Draben Kuvakei
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Sansha's Battletower
+            drop: T1 modules

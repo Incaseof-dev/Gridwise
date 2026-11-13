@@ -1,0 +1,177 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: serpentis-vigil
+kind: complex
+name: Serpentis Vigil
+dedRating: null
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Serpentis Vigil
+    url: https://wiki.eveuniversity.org/Serpentis_Vigil
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "226994"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Battlecruiser"
+notes:
+  - text: Serpentis Vigil is an unrated combat site belonging to the Serpentis Corporation pirate faction. It can be found via exploration by scanning anomalies in high security and low security systems. It is presumed that Battlecruisers (and their Tech 2 equivalents) are the maximum ship class allowed to enter the site. Completing this complex may award the player with valuable Shadow Serpentis faction modules, as well as Tech 2 implants.
+  - text: This combat site consists of two deadspace complexes, the second of which hosts Tago Uriken, the site's overseer. Access to the second complex is given by destroying all remaining hostile ships at the first complex. Defeating Tago Uriken may escalate into the Booster R&D expedition.
+  - text: "Escalation: This site can escalate to Booster R&D."
+  - text: 'Escalation: Expeditions: Booster R&D: Going through the items found in the Serpentis outpost, you notice some unused boosters still in their original packs complete with documentation and bear the seal of the Serpentis Corporation. The documentation notes further that these boosters as "Field Test" material and not for common consumption and at the bottom there is ordering info, stating item number and the makers electronic address. Feeling it is worth a shot, you set your communication instruments to emulate those of the Serpentis facility you just laid to waste, feed in the booster factory addy and hit send. And lo and behold, you get an instant reply, a sleepy sounding female voice says "SC medical research 504, good day. How may I help you? Oh! It is Vigil 15? I have a message for you from the supply office, they say you are late. Get to G5, pick up the materials and get here as soon as possible" She adds information on the location and tells you to talk to Nadir, also at G5 if there is anything. And with that she is off the air.'
+lootNotes:
+  - text: ± 4.5 Mil ISK
+npcs:
+  Tago's Escorter:
+    sdeTypes:
+      - Coreli Guardian Scout
+    class: Elite Frigate
+pockets:
+  - name: First Room
+    notes:
+      - text: The gate in first room can be unlocked by killing all ships. Note that even though the message after Drug Trader is killed suggests that the gate unlocks you still need to kill all remaining ships. There are three spawns that appear to be timed.
+      - text: First group immediately aggresses on warpin.
+      - text: "Message on Drug Trader death:: Strange sounds emit from the acceleration gate as soon as the Core Drug Trader vessel is destroyed. Perhaps the locking mechanism was in some way connected with the ship's computer."
+      - text: "Message on fourth spawn:: Core ships have undocked from the nearby Serpentis Hangars, with guns flaring."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 1-3
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Safeguard
+              - Coreli Guardian Protector
+            ewar:
+              - kind: sensorDamp
+          - count: 5-6
+            class: Battlecruiser
+            names:
+              - Corelatis Captain
+              - Corelatis Platoon Leader
+      - id: spawn-2
+        trigger:
+          on: other
+          text: "Spawn #2"
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Patroller
+              - Coreli Guardian Watchman
+            ewar:
+              - kind: sensorDamp
+          - count: 1-2
+            class: Destroyer
+            names:
+              - Coreli Cannoner
+      - id: spawn-3
+        trigger:
+          on: other
+          text: "Spawn #3"
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Core Drug Trader
+      - id: spawn-4
+        trigger:
+          on: other
+          text: "Spawn #4"
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Patroller
+              - Coreli Guardian Watchman
+            ewar:
+              - kind: sensorDamp
+          - count: "2"
+            class: Destroyer
+            names:
+              - Coreli Cannoner
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: Locked
+          - count: "1"
+            class: Structure
+            names:
+              - Serpentis Hangar
+            drop: t1 ammo and drones
+    onWarpIn: Previous explorers have commented that one of the gates requires a passkey. Alternatively, it can be bypassed by convincing the commander to unlock it.
+  - name: Second room
+    notes:
+      - text: ----
+      - text: Overseer Spawn appears after destroying one of the sentry towers.
+      - text: "Message after destroying one of the sentries:: Tago Uriken: Arg, do you know how expensive those sentry guns are? You just cost me a fortune! I'll have your head mounted on a pig-pole for that, scumbag."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 5-7
+            class: Battlecruiser
+            names:
+              - Corelatis High Captain
+              - Corelatis Captain Sentry
+          - count: "3"
+            class: Sentry
+            names:
+              - Tower Sentry Serpentis III
+            triggers: Destroying any one triggers overseer spawn
+      - id: overseer-spawn
+        trigger:
+          on: other
+          text: Overseer Spawn
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Tago's Escorter
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 2-3
+            class: Destroyer
+            names:
+              - Corelior Infantry
+              - Corelior Soldier
+              - Corelior Sentinel
+              - Corelior Cannoneer
+          - count: "1"
+            class: Commander Cruiser
+            names:
+              - Tago Uriken
+            triggers: escalation trigger
+            drop: May drop Shadow Serpentis faction modules, T2 implants or a Vigilant BPC
+          - count: 2-3
+            class: Battlecruiser
+            names:
+              - Corelatis High Captain
+              - Corelatis Captain Sentry
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns: []
+sde:
+  dungeonIds:
+    - 1231

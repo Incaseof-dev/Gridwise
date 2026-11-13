@@ -1,0 +1,136 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: in-the-midst-of-deadspace-5-of-5
+kind: mission
+name: In The Midst of Deadspace (5 of 5)
+level: 4
+enemyFaction: Khanid Kingdom & Caldari State
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – In The Midst of Deadspace (5 of 5)
+    url: https://wiki.eveuniversity.org/In_The_Midst_of_Deadspace_(5_of_5)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223433"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the Caldari Manufacturing Plant
+ewar:
+  - kind: ecm
+  - kind: web
+  - kind: warpScramble
+notes:
+  - text: "Web/warp disruption: Spider Drone I (Web), Taibu State Shinai (Web, Scram)"
+  - text: "Suggested ships: Battleship, Marauder, T3C"
+  - text: Khanid Mashtori may use Defender Missiles
+  - text: '"Imperial Navy Gate Permit" is required to activate the gate.'
+  - text: No hostiles at initial gate.
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: Empty.
+  - name: Pocket 2
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "2"
+            class: Drone
+            names:
+              - Spider Drone I
+            ewar:
+              - kind: web
+          - count: "1"
+            class: Battleship
+            names:
+              - Khanid Mashtori
+            note: 40% chance of using Defender Missiles
+  - name: Pocket 3
+    waves:
+      - id: left-group
+        trigger:
+          on: other
+          text: Left Group
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Taibu State Daito
+              - Taibu State Yari
+            ewar:
+              - kind: ecm
+          - count: "2"
+            class: Cruiser
+            names:
+              - Taibu State Sohei
+              - Taibu State Tendai
+            ewar:
+              - kind: ecm
+          - count: "3"
+            class: Battleship
+            names:
+              - State Oshiro
+              - State Zen
+            ewar:
+              - kind: ecm
+      - id: right-group
+        trigger:
+          on: other
+          text: Right Group
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Taibu State Samurai
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - State Oni
+              - State Kanpaku
+      - id: middle-group
+        trigger:
+          on: other
+          text: Middle Group
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Sentry
+            names:
+              - Caldari Cruise Missile Battery
+            drop: 100x Ammunition
+          - count: "3"
+            class: Frigate
+            names:
+              - Taibu State Nagasa
+              - Taibu State Shinai
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "4"
+            class: Cruiser
+            names:
+              - State Shukuro Chugen
+              - State Shukuro Ashigaru
+          - count: "3"
+            class: Battleship
+            names:
+              - Caldari Navy Temura
+      - id: wave
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Caldari Manufacturing Plant
+            drop: 100x Trade Goods
+            note: Mission Objective

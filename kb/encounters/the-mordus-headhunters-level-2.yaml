@@ -1,0 +1,72 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-mordus-headhunters-level-2
+kind: mission
+name: The Mordus Headhunters
+level: 2
+enemyFaction: Mordu's Legion Command
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Mordus Headhunters (Level 2)
+    url: https://wiki.eveuniversity.org/The_Mordus_Headhunters_(Level_2)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "230468"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy them all and make sure no one survives.
+notes:
+  - text: "Blitz: In the pocket take out the cruiser and the two frigates that appear first."
+pockets:
+  - name: Warp-in
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Mordus Rookie
+  - name: Single pocket
+    notes:
+      - text: The enemy ships arrive in four waves close to each other. It is not possible to take out a wave before the next arrives. Most likely all waves will be on grid before any enemy can be taken out.
+    waves:
+      - id: order-of-arrival
+        trigger:
+          on: other
+          text: Order of arrival
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Mordus Katana
+            group: Wave 1
+          - count: "1"
+            class: Cruiser
+            names:
+              - Mordus Cheetah
+            group: Wave 1
+          - count: "4"
+            class: Frigate
+            names:
+              - Mordus Sabre
+              - Mordus Gladius
+            group: Wave 2
+          - count: "6"
+            class: Frigate
+            names:
+              - Mordus Sabre
+              - Mordus Katana
+            group: Wave 3
+          - count: "6"
+            class: Frigate
+            names:
+              - Mordus Sabre
+              - Mordus Gladius
+            group: Wave 4

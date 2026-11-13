@@ -1,0 +1,260 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: cleansing-fire
+kind: mission
+name: Cleansing Fire
+level: 5
+enemyFaction: Amarr Empire
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Cleansing Fire
+    url: https://wiki.eveuniversity.org/Cleansing_Fire
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191613"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy Amarr Cathedral
+ewar:
+  - kind: web
+  - kind: neut
+  - kind: trackingDisruption
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Divine Imperial Imran/Sixtus"
+  - text: "Blitz: Destroy the Amarr Cathedral, warp out."
+  - text: "Notes: Mission is in deadspace, you will always be warping to the entry point(at range is allowed) and cannot warp to fleet members/bookmarks directly."
+pockets:
+  - name: Warp-in
+    notes:
+      - text: Between all the spawns, if not controlled properly, there can be over 200 gj/s of neuting.
+    waves:
+      - id: initial-hostiles-30-60km
+        trigger:
+          on: warpIn
+          text: Initial Hostiles (30-60km)
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Amarr Stasis Tower
+            ewar:
+              - kind: web
+            triggers: Wave 2
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Divine Imperial Ambrose
+              - Divine Imperial Champion
+              - Divine Imperial Justicar
+            ewar:
+              - kind: neut
+            note: Justicar is the only variant that neuts
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Imperial Templar Champion
+              - Imperial Templar Justicar
+          - count: "1"
+            class: Battleship
+            names:
+              - Imperial Templar Martyr
+            triggers: Wave 9, 10, and 11
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Amarr Cathedral
+            triggers: Wave 8
+      - id: wave-1-three-minutes-after-warping-in
+        trigger:
+          on: other
+          text: Wave 1 (Three minutes after warping in)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Amarr Energy Neutalizer Sentry III
+            triggers: Wave 6 and 7
+      - id: wave-2-on-attacking-either-amarr-stasis-tower
+        trigger:
+          on: other
+          text: Wave 2 (On attacking either Amarr Stasis Tower)
+          confidence: inferred
+        spawns:
+          - count: "13"
+            class: Sentry
+            names:
+              - Amarr Heavy Missile Battery
+          - count: "8"
+            class: Sentry
+            names:
+              - Amarr Cruise Missile Battery
+            triggers: Wave 3, 4, and 5
+      - id: wave-3-on-random-amarr-cruise-missile-battery-destruction
+        trigger:
+          on: other
+          text: Wave 3 (On random Amarr Cruise Missile Battery destruction)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Sixtus
+              - Divine Imperial Paladin
+              - Divine Imperial Valok
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: Sixtus is only variant with scram/web
+      - id: wave-4-on-random-amarr-cruise-missile-battery-destruction
+        trigger:
+          on: other
+          text: Wave 4 (On random Amarr Cruise Missile Battery destruction)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Imran
+              - Divine Imperial Napat
+            ewar:
+              - kind: web
+              - kind: trackingDisruption
+              - kind: warpDisruption
+            note: Napat tracking disrupts
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Divine Imperial Ambrose
+            ewar:
+              - kind: neut
+      - id: wave-5-on-random-amarr-cruise-missile-battery-destruction
+        trigger:
+          on: other
+          text: Wave 5 (On random Amarr Cruise Missile Battery destruction)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Imran
+              - Divine Imperial Sixtus
+              - Gamma I...
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+      - id: wave-6-on-attacking-right-energy-neutralizer-sentry
+        trigger:
+          on: other
+          text: Wave 6 (On attacking right Energy Neutralizer Sentry)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Imran
+              - Divine Imperial Sixtus
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Divine Imperial Ambrose
+              - Divine Imperial Basil
+              - Divine Imperial Justicar
+            ewar:
+              - kind: neut
+            note: Justicar has no neut
+          - count: "2"
+            class: Battleship
+            names:
+              - Imperial Templar Martyr
+      - id: wave-7-on-attacking-left-energy-neutralizer-sentry
+        trigger:
+          on: other
+          text: Wave 7 (On attacking left Energy Neutralizer Sentry)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Divine Imperial Champion
+              - Divine Imperial Justicar
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Imperial Templar Champion
+              - Imperial Templar Justicar
+          - count: "2"
+            class: Battleship
+            names:
+              - Imperial Templar Martyr
+              - Imperial Templar Torah
+      - id: wave-8-on-attacking-amarr-cathedral
+        trigger:
+          on: other
+          text: Wave 8 (On attacking Amarr Cathedral)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Battleship
+            names:
+              - Imperial Navy Apocalypse
+      - id: wave-9-on-original-battleship-reaching-70-shields
+        trigger:
+          on: other
+          text: Wave 9 (On original battleship reaching 70% shields)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Sentry
+            names:
+              - Amarr Cruise Missile Battery
+          - count: "1"
+            class: Sentry
+            names:
+              - Amarr Energy Neutralizer Sentry II
+      - id: wave-10-on-original-battleship-reaching-90-armor
+        trigger:
+          on: other
+          text: Wave 10 (On original battleship reaching 90% armor)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Sentry
+            names:
+              - Amarr Cruise Missile Battery
+          - count: "1"
+            class: Sentry
+            names:
+              - Amarr Energy Neutralizer Sentry II
+      - id: wave-11-on-destroying-original-battleship
+        trigger:
+          on: other
+          text: Wave 11 (On destroying original battleship)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battleship
+            names:
+              - Imperial Templar Martyr
+      - id: wave-12-a-short-while-after-wave-11-spawns
+        trigger:
+          on: other
+          text: Wave 12 (A short while after Wave 11 spawns)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battleship
+            names:
+              - Imperial Templar Martyr

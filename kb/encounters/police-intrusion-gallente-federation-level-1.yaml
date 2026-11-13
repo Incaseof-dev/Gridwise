@@ -1,0 +1,161 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: police-intrusion-gallente-federation-level-1
+kind: mission
+name: Police Intrusion
+level: 1
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Police Intrusion (Gallente Federation) (Level 1)
+    url: https://wiki.eveuniversity.org/Police_Intrusion_(Gallente_Federation)_(Level_1)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191851"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Kill enemies
+ewar:
+  - kind: sensorDamp
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: No aggro on warp-in.
+    waves:
+      - id: group-1-25-35km
+        trigger:
+          on: other
+          text: Group 1, 25-35km
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Federation Clavis
+              - Federation Hastile
+      - id: group-2-30-40km
+        trigger:
+          on: other
+          text: Group 2, 30-40km
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Federation Hoplon
+              - Federation Kontos
+          - count: "2"
+            class: Frigate
+            names:
+              - Federation Manica
+              - Federation Libertus
+            ewar:
+              - kind: sensorDamp
+      - id: group-3-50-55km
+        trigger:
+          on: other
+          text: Group 3, 50-55km
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Federation Hoplon
+              - Federation Kontos
+          - count: "3"
+            class: Frigate
+            names:
+              - Federation Hastile
+              - Federation Clavis
+      - id: group-4-50-60km
+        trigger:
+          on: other
+          text: Group 4, 50-60km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Federation Hoplon
+              - Federation Kontos
+          - count: "2"
+            class: Frigate
+            names:
+              - Federation Praktor Belos
+              - Federation Praktor Harpago
+  - name: Pocket 2
+    notes:
+      - text: No aggro on warp-in.
+      - text: Killing the group with cruisers will complete mission objectives.
+    waves:
+      - id: group-1-30-40km
+        trigger:
+          on: other
+          text: Group 1, 30-40km
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Federation Clavis
+              - Federation Hastile
+      - id: group-2-25-35km
+        trigger:
+          on: other
+          text: Group 2, 25-35km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Federation Hoplon
+              - Federation Kontos
+          - count: "3"
+            class: Frigate
+            names:
+              - Federation Manica
+              - Federation Libertus
+            ewar:
+              - kind: sensorDamp
+      - id: group-3-50-55km
+        trigger:
+          on: other
+          text: Group 3, 50-55km
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Federation Hoplon
+              - Federation Kontos
+          - count: "1"
+            class: Frigate
+            names:
+              - Federation Insidiator
+              - Federation Praktor Belos
+          - count: "1"
+            class: Frigate
+            names:
+              - Federation Praktor Harpago
+              - Federation Praktor Balra
+      - id: group-4-30-50km
+        trigger:
+          on: other
+          text: Group 4, 30-50km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Federation Hoplon
+              - Federation Kontos
+          - count: "2"
+            class: Cruiser
+            names:
+              - Federation Misthios
+              - Federation Hastatus
+            ewar:
+              - kind: sensorDamp

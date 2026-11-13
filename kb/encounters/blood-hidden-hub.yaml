@@ -1,0 +1,274 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: blood-hidden-hub
+kind: anomaly
+name: Blood Hidden Hub
+dedRating: null
+anomalyClass: 8
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Blood Hidden Hub
+    url: https://wiki.eveuniversity.org/Blood_Hidden_Hub
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "171364"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Ungated pocket with 9 waves of rats. The site consists of an asteroid field and two shipyards.
+lootNotes:
+  - text: "Bounty : ~20M ISK"
+  - text: "Loot+Salvage: ~20M ISK"
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "1"
+            class: Sentry
+            names:
+              - Blood Cruise Missile Battery
+          - count: 5-7
+            class: Frigate
+            names:
+              - Corpii Raider
+              - Corpii Diviner
+          - count: 4-5
+            class: Destroyer
+            names:
+              - Corpior Devoter
+              - Corpior Cleric
+          - count: 5-7
+            class: Cruiser
+            names:
+              - Corpum Arch Priest
+              - Corpum Arch Sage
+              - Corpum Arch Priest
+            ewar:
+              - kind: neut
+            note: type list incomplete on the source page
+          - count: 7-8
+            class: Battlecruiser
+            names:
+              - Corpatis Exorcist
+              - Corpatis Phantom
+          - count: 2-3
+            class: Battleship
+            names:
+              - Corpus Patriarch
+              - Corpus Pope
+            triggers: Triggers first spawn
+      - id: first-spawn
+        trigger:
+          on: other
+          text: First spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Corpii Reaver
+              - Corpii Engraver
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Elder Corpii Raider
+              - Elder Corpii Diviner
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Corpum Dark Priest
+              - Corpum Shadow Sage
+            triggers: Triggers second spawn
+      - id: second-spawn
+        trigger:
+          on: other
+          text: Second spawn
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Corpii Raider
+              - Corpii Diviner
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Elder Corpii Collector
+              - Elder Corpii Seeker
+            ewar:
+              - kind: trackingDisruption
+          - count: 2-3
+            class: Destroyer
+            names:
+              - Corpior Cleric
+              - Corpior Devoter
+              - Corpior Friar
+          - count: 2-3
+            class: Battleship
+            names:
+              - Corpus Archbishop
+              - Corpus Harbinger
+            ewar:
+              - kind: neut
+            triggers: Triggers third spawn
+      - id: third-spawn
+        trigger:
+          on: other
+          text: Third spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Corpii Raider
+              - Corpii Diviner
+              - Corpii Engraver
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Elder Corpii Collector
+              - Elder Corpii Seeker
+            ewar:
+              - kind: trackingDisruption
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Corpum Shadow Sage
+              - Corpum Dark Priest
+          - count: 3-4
+            class: Battleship
+            names:
+              - Corpus Apostle
+              - Corpus Oracle
+            triggers: Triggers fourth spawn
+      - id: fourth-spawn
+        trigger:
+          on: other
+          text: Fourth spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Corpii Reaver
+              - Corpii Diviner
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Elder Corpii Collector
+              - Elder Corpii Seeker
+            ewar:
+              - kind: trackingDisruption
+          - count: 1-2
+            class: Cruiser
+            names:
+              - Corpum Shadow Sage
+          - count: 1-2
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Dark Priest
+          - count: 3-4
+            class: Battleship
+            names:
+              - Corpus Monsignor
+            triggers: Triggers fith spawn
+      - id: fith-spawn
+        trigger:
+          on: other
+          text: Fith spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Corpii Raider
+              - Corpii Diviner
+          - count: 3-4
+            class: Cruiser
+            names:
+              - Corpum Shadow Sage
+              - Corpum Dark Priest
+          - count: 3-4
+            class: Battleship
+            names:
+              - Corpus Monsignor
+              - Corpus Harbinger
+              - Corpus Oracle
+            triggers: Triggers sixth spawn
+      - id: sixth-spawn
+        trigger:
+          on: other
+          text: Sixth spawn
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Corpii Raider
+              - Corpii Reaver
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Elder Corpii Raider
+            ewar:
+              - kind: trackingDisruption
+          - count: 2-3
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Sage
+            ewar:
+              - kind: neut
+              - kind: trackingDisruption
+          - count: 2-3
+            class: Battlecruiser
+            names:
+              - Corpatis Exorcist
+              - Corpatis Phantom
+          - count: 3-4
+            class: Battleship
+            names:
+              - Corpus Patriarch
+              - Corpus Cardinal
+            triggers: Triggers seventh spawn
+      - id: seventh-spawn
+        trigger:
+          on: other
+          text: Seventh spawn
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Corpii Raider
+              - Corpii Diviner
+          - count: 1-2
+            class: Cruiser
+            names:
+              - Corpum Arch Sage
+            triggers: Triggers eigth spawn
+          - count: 4-5
+            class: Battlecruiser
+            names:
+              - Corpatis Phantom
+      - id: eigth-spawn
+        trigger:
+          on: other
+          text: Eigth spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Corpii Reaver
+              - Corpii Engraver
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Corpum Shadow Sage

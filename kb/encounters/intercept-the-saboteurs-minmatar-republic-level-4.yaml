@@ -1,0 +1,51 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: intercept-the-saboteurs-minmatar-republic-level-4
+kind: mission
+name: Intercept The Saboteurs
+level: 4
+enemyFaction: Minmatar Republic
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Intercept The Saboteurs (Minmatar Republic) (Level 4)
+    url: https://wiki.eveuniversity.org/Intercept_The_Saboteurs_(Minmatar_Republic)_(Level_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "200344"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Retrieve viral agent
+ewar:
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite frigates"
+  - text: Contains webbers and possibly scramblers.
+  - text: Killing one of the transporters incurs a 2.4% standing loss for Minmatar Republic.
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns: []
+  - name: Pocket 2
+    notes:
+      - text: Rats at roughly 40-70km away. No aggro on warp-in. Attacking anything but a frigate aggros more or less everything. Attacking a frigate only aggros all the frigs. The Chief Republic frigs web you and may scramble according to EVE-info although this did not happen to me. With webbers/scramblers killed, the rest should be easy as the BCs and BSs don't do too much damage unless very close
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "6"
+            class: Elite Frigate
+            names:
+              - Chief Republic
+            ewar:
+              - kind: web
+              - kind: warpDisruption

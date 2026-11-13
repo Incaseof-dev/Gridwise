@@ -1,0 +1,119 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: troop-build-up
+kind: mission
+name: Troop Build Up
+level: 5
+enemyFaction: Caldari State
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Troop Build Up
+    url: https://wiki.eveuniversity.org/Troop_Build_Up
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "192078"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Note: Mission is no longer available, as stated by CCP Jasonitas in post 249 of this thread."
+  - text: "Blitz: Tank the room (approx 2000 dps, standard caldari damage profile); kill the charons."
+  - text: Carrier tanks approxmiately 1500 dps.
+  - text: Some players suggest blitzing this, due to the loot/salvage being terrible.
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "6"
+            class: Fighter
+            names:
+              - Sukuuvestaa Fighter
+            triggers: Triggers Reinforcement 1
+          - count: "1"
+            class: Carrier
+            names:
+              - Sukuuvestaa Carrier
+      - id: timed-group-1-90-seconds-from-warpin
+        trigger:
+          on: other
+          text: Timed Group 1 (90 seconds from warpin)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Battleship
+            names:
+              - Sukuuvestaa Battleship
+          - count: "2"
+            class: Industrial
+            names:
+              - Sukuuvestaa Crane
+          - count: "1"
+            class: Freighter
+            names:
+              - Sukuuvestaa Charon
+            drop: trade goods and/or livestock
+      - id: timed-group-2-180-seconds-from-warpin
+        trigger:
+          on: other
+          text: Timed Group 2 (180 seconds from warpin)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Battleship
+            names:
+              - Sukuuvestaa Battleship
+          - count: "3"
+            class: Industrial
+            names:
+              - Sukuuvestaa Crane
+          - count: "1"
+            class: Freighter
+            names:
+              - Sukuuvestaa Charon
+            drop: trade goods and/or livestock
+      - id: reinforcement-1
+        trigger:
+          on: other
+          text: Reinforcement 1
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Fighter
+            names:
+              - Sukuuvestaa Fighter
+            triggers: Triggers Reinforcement 2
+      - id: reinforcement-2
+        trigger:
+          on: other
+          text: Reinforcement 2
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Fighter
+            names:
+              - Sukuuvestaa Fighter
+            triggers: Triggers Reinforcement 3
+      - id: reinforcement-3
+        trigger:
+          on: other
+          text: Reinforcement 3
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Fighter
+            names:
+              - Sukuuvestaa Fighter
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "4"
+            class: Structure
+            names:
+              - Silo

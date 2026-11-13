@@ -1,0 +1,46 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: ammatar-detective-spotted
+kind: mission
+name: Ammatar Detective Spotted
+level: 3
+enemyFaction: Ammatar Mandate
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Ammatar Detective Spotted
+    url: https://wiki.eveuniversity.org/Ammatar_Detective_Spotted
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "195231"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal:
+    - explosive
+    - kinetic
+  resist: []
+ewar:
+  - kind: web
+notes:
+  - text: Auto-aggro on warp-in. Destroy the Detective to complete mission.
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: Tags and other drops are not very valuable.
+    waves:
+      - id: hostile-npcs-40-45km
+        trigger:
+          on: other
+          text: Hostile NPCs, 40-45km
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Ammatar Navy Detective
+              - Ammatar Navy Officer
+              - Ammatar Navy Delta II Support Frigate
+            ewar:
+              - kind: web

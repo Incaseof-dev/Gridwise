@@ -1,0 +1,58 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: patriotic-measures-3-of-5
+kind: mission
+name: Patriotic Measures (3 of 5)
+level: 1
+enemyFaction: Caldari State
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Patriotic Measures (3 of 5)
+    url: https://wiki.eveuniversity.org/Patriotic_Measures_(3_of_5)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "200650"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the Caldari Research Outpost
+notes:
+  - text: "Blitz: Destroy the Caldari Research Outpost"
+pockets:
+  - name: Warp-in
+    waves:
+      - id: structure
+        trigger:
+          on: warpIn
+          text: Structure
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Caldari Research Outpost
+            triggers: Triggers mission completion once destroyed
+      - id: defenders
+        trigger:
+          on: warpIn
+          text: Defenders
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - State Bowato
+              - State Bo-Hi
+            group: Group 1
+          - count: "4"
+            class: Frigate
+            names:
+              - State Bowato
+              - State Bo-Hi
+            group: Group 2
+          - count: "3"
+            class: Frigate
+            names:
+              - State Bowato
+              - State Bo-Hi
+            group: Group 3

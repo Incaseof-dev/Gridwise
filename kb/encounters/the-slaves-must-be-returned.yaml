@@ -1,0 +1,50 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-slaves-must-be-returned
+kind: mission
+name: The Slaves Must Be Returned
+level: 3
+enemyFaction: Minmatar Republic
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Slaves Must Be Returned
+    url: https://wiki.eveuniversity.org/The_Slaves_Must_Be_Returned
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "204598"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy Freedom Fighters and their commander; bring slaves (50x 250) back to your agent.
+ewar:
+  - kind: web
+notes:
+  - text: "Suggested ships: Battlecruiser, Assault Frigate"
+  - text: Structures drop no loot.
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: initial-group-40km-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group, 40km (auto-aggro)
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Minmatar Freedom Fighter
+          - count: "1"
+            class: Cruiser
+            names:
+              - Freedom Patriot
+          - count: "1"
+            class: Cruiser
+            names:
+              - Akori
+              - Ibrahim
+              - Karothas
+            ewar:
+              - kind: web
+            drop: Mission objective

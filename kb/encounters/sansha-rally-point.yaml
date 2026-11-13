@@ -1,0 +1,139 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: sansha-rally-point
+kind: anomaly
+name: Sansha Rally Point
+dedRating: null
+anomalyClass: 6
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Sansha Rally Point
+    url: https://wiki.eveuniversity.org/Sansha_Rally_Point
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225127"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: There is also a Sansha's Rally Point site.
+  - text: Ungated pocket with multiple waves of rats.
+  - text: "Escalation: Sansha Rallying Point can escalate to Sansha War Supply Complex"
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: inital-group
+        trigger:
+          on: other
+          text: Inital Group
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Centior Monster
+              - Centior Misshape
+              - Centior Horror
+          - count: "3"
+            class: Cruiser
+            names:
+              - Centum Fiend
+              - Centum Hellhound
+          - count: "2"
+            class: Sentry
+            names:
+              - Tower Sentry Sansha I
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Ravener
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Servant
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Cruiser
+            names:
+              - Centum Mutilator
+              - Centum Torturer
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Minion
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Servant
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centatis Daemon
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Centum Hellhound
+              - Centum Mutilator
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centatis Daemon
+      - id: wave-4
+        trigger:
+          on: other
+          text: Wave 4
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Battlecruiser
+            names:
+              - Centatis Daemon
+              - Centatis Devil
+          - count: 1-2
+            class: Battleship
+            names:
+              - Centus Mutant Lord
+              - Centus Savage Lord
+          - count: 0-1
+            class: Commander Battlecruiser
+            names:
+              - True Sansha's Behemoth
+              - True Sansha's Daemon
+            group: Possible Rare Spawn
+            drop: Possible to contain faction ammo, tags, modules
+sde:
+  dungeonIds:
+    - 2125

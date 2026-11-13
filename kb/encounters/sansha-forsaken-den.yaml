@@ -1,0 +1,138 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: sansha-forsaken-den
+kind: anomaly
+name: Sansha Forsaken Den
+dedRating: null
+anomalyClass: 4
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Sansha Forsaken Den
+    url: https://wiki.eveuniversity.org/Sansha_Forsaken_Den
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225184"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: The site is an open Deadspace pocket, one may warp to preferred distance.
+  - text: The anomaly contains a lot of elite frigates and cruisers, which will actively target drones.
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: The frigate EWAR is varied. Some ships will point, some will web, some will do both and some will do none.
+    waves:
+      - id: inital-group
+        trigger:
+          on: other
+          text: Inital Group
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Mutilator
+              - Centum Loyal Torturer
+          - count: 2-3
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centum Daemon
+      - id: wave-1
+        trigger:
+          on: other
+          text: "Wave #1"
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Centii Loyal Butcher
+              - Centii Loyal Enslaver
+              - Centii Loyal Manslayer
+              - Centii Loyal Plague
+          - count: 2-3
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Fiend
+              - Centum Loyal Hellhound
+      - id: wave-2
+        trigger:
+          on: other
+          text: "Wave #2"
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Fiend
+              - Centum Loyal Hellhound
+              - Centum Loyal Torturer
+              - Centum Loyal Mutilator
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centatis Daemon
+      - id: wave-3
+        trigger:
+          on: other
+          text: "Wave #3"
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centatis Daemon
+      - id: wave-4
+        trigger:
+          on: other
+          text: "Wave #4"
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Cruiser
+            names:
+              - Centum Hellhound
+              - Centum Mutilator
+              - Centum Torturer
+              - Centum Fiend
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centatis Daemon
+      - id: wave-5
+        trigger:
+          on: other
+          text: "Wave #5"
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Centii Loyal Scavenger
+              - Centii Loyal Servant
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 0-1
+            class: Elite Frigate
+            names:
+              - Centii Loyal Minion
+              - Centii Loyal Ravener
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 2-3
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centatis Daemon
+sde:
+  dungeonIds:
+    - 3438

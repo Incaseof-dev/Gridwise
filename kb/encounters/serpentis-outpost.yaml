@@ -1,0 +1,171 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: serpentis-outpost
+kind: complex
+name: Serpentis Outpost
+dedRating: null
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Serpentis Outpost
+    url: https://wiki.eveuniversity.org/Serpentis_Outpost
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "232046"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Escalation: Can escalate to Elite Playground, e.g. through popping the Bunkers."
+  - text: "Escalation: Escalation message:: Among the debris of this Serpentis outpost, you come across some warehouse logs containing information on various luxury goods arriving from a supply station at these co-ordinates."
+pockets:
+  - name: First Room
+    notes:
+      - text: ----
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 7-8
+            class: Frigate
+            names:
+              - Coreli Defender
+              - Coreli Protector
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Defender
+              - Coreli Guardian Protector
+          - count: 3-4
+            class: Destroyer
+            names:
+              - Corelior Artillery
+              - Corelior Infantry
+              - Corelior Sentinel
+          - count: 7-8
+            class: Battlecruiser
+            names:
+              - Corelatis Cpatain
+              - Corelatis Platoon Leader
+              - Corelatis Squad Leader
+              - Corelatis Wing Leader
+  - name: Second Room
+    notes:
+      - text: ----
+      - text: There exists two variations of the second room. One with large asteroid and one with a station. Whether the difference is only cosmetic is not known. The shadow serpentis trigger is not completely clear and can be elite cruisers, certain destroyers or their combination.
+      - text: "Note: Stronger than usual damps, at peak -84% targeting range. Some elite frigates have point/web."
+      - text: Notable structures
+    waves:
+      - id: group-1
+        trigger:
+          on: other
+          text: "Group #1"
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Destroyer
+            names:
+              - Corelior Sentinel
+              - Corelior Trooper
+              - Corelior Soldier
+      - id: group-2
+        trigger:
+          on: other
+          text: "Group #2"
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Coreli Protector
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian initiate
+              - Coreli Guardian Spy
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Corelatis Captain
+              - Corelatis Platoon Leader
+      - id: group-3
+        trigger:
+          on: other
+          text: "Group #3"
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Partroler
+              - Coreli Guardian watchman
+            ewar:
+              - kind: sensorDamp
+          - count: "4"
+            class: Destroyer
+            names:
+              - Corelior Cannoneer
+              - Corelior Trooper
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corelium Chief Defender
+              - Corelium Chief Protector
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Corelium Guardian Chief Partroller
+            ewar:
+              - kind: sensorDamp
+            triggers: Triggers commander spawn
+      - id: group-4
+        trigger:
+          on: other
+          text: "Group #4"
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Coreli Defender
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corelior Cannoneer
+              - Corelior Sentinel
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corelatis Captain
+              - Corelatis Platoon Leader
+      - id: commander-spawn
+        trigger:
+          on: other
+          text: Commander Spawn
+          confidence: inferred
+        spawns:
+          - count: 0-1
+            class: Cruiser
+            names:
+              - Shadow Serpentis Chief Defender
+            triggers: Escalation Trigger
+            drop: faction loot
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Structure
+            names:
+              - Serpentis Bunker
+            note: Escalation trigger
+sde:
+  dungeonIds:
+    - 1253

@@ -1,0 +1,140 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-blockade-guristas-pirates-level-2
+kind: mission
+name: The Blockade
+level: 2
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Blockade (Guristas Pirates) (Level 2)
+    url: https://wiki.eveuniversity.org/The_Blockade_(Guristas_Pirates)_(Level_2)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "193403"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Eliminate the leader of the pirates blockading the stargate. You will be informed when he has been dispatched, his demise should disperse the pirate gang eventually.
+ewar:
+  - kind: web
+notes:
+  - text: "Note: The waves are random, this is just an example."
+pockets:
+  - name: 1st pocket
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Sentry
+            names:
+              - Starbase Stasis Tower
+            group: Wave 1
+            ewar:
+              - kind: web
+          - count: "4"
+            class: Frigate
+            names:
+              - Pithi Demolisher
+            group: Wave 1
+          - count: "3"
+            class: Destroyer
+            names:
+              - Pithi Anarchist
+            group: Wave 1
+          - count: "1"
+            class: Destroyer
+            names:
+              - Pithi Nihilist
+            group: Wave 1
+            note: Trigger for next wave
+          - count: "1"
+            class: Frigate
+            names:
+              - Pithi Saboteur
+            group: Wave 2
+          - count: "3"
+            class: Frigate
+            names:
+              - Pithi Demolisher
+            group: Wave 2
+          - count: "6"
+            class: Destroyer
+            names:
+              - Pithi Nihihlist
+            group: Wave 2
+          - count: "3"
+            class: Cruiser
+            names:
+              - Pithiuum Ascriber
+            group: Wave 2
+          - count: "1"
+            class: Cruiser
+            names:
+              - Pithium Silencer
+            group: Wave 2
+            note: Trigger for next wave
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Despoiler
+            group: Wave 3
+            ewar:
+              - kind: ecm
+          - count: "3"
+            class: Destroyer
+            names:
+              - Pithior Renegade
+            group: Wave 3
+          - count: "3"
+            class: Destroyer
+            names:
+              - Pithior Nihilist
+            group: Wave 3
+          - count: "1"
+            class: Cruiser
+            names:
+              - Pithium Silencer
+            group: Wave 3
+            note: Trigger for next wave
+          - count: "3"
+            class: Frigate
+            names:
+              - Pithi Wrecker
+            group: Wave 4
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Demolisher
+            group: Wave 4
+          - count: "2"
+            class: Destroyer
+            names:
+              - Pithior Nihilist
+            group: Wave 4
+          - count: "1"
+            class: Cruiser
+            names:
+              - Pithum Ascriber
+            group: Wave 4
+            note: Trigger for next wave
+          - count: "4"
+            class: Frigate
+            names:
+              - Pithi Destructor
+            group: Wave 5
+          - count: "3"
+            class: Elite Destroyer
+            names:
+              - Dire Pithi Terrorist
+            group: Wave 5
+          - count: "1"
+            class: Cruiser
+            names:
+              - Pithum Eraser
+            group: Wave 5

@@ -1,0 +1,85 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: angel-hideaway
+kind: anomaly
+name: Angel Hideaway
+dedRating: null
+anomalyClass: 1
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Angel Hideaway
+    url: https://wiki.eveuniversity.org/Angel_Hideaway
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "226040"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Angel Hideaway is an unrated combat site belonging to the Angel Cartel pirate faction. It can be found via exploration as a cosmic anomaly within systems owned by the Minmatar Republic or occupied by the Angel Cartel. As an ungated complex, the limitations as to which ships can complete this site are tied to the security rating of the system where the anomaly spawns (T2 Battleships for high-security systems, and up to Titans in low-security and null-security systems). Completing this complex may award the player with valuable Domination faction modules and ammunition.
+  - text: "This combat site consists of a single ungated pocket of space containing a variety of Frigate-sized enemy ships. Destroying all hostile ships may escalate into the DED rated Angel Repurposed Outpost complex. Three variations of this combat anomaly exist: Angel Hidden Hideaway, Angel Forsaken Hideaway and Angel Forlorn Hideaway."
+  - text: Single open normal space pocket.
+  - text: "Escalation: Angel Repurposed Outpost"
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: 1-2
+            class: Frigate
+            names:
+              - Gistii Hijacker
+              - Gistii Rogue
+      - id: 1st-reinforcement-spawn
+        trigger:
+          on: other
+          text: 1st Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Frigate
+            names:
+              - Gistii Thug
+              - Gistii Outlaw
+      - id: 2nd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 2nd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 1-3
+            class: Frigate
+            names:
+              - Gistii Hijacker
+              - Gistii Rogue
+      - id: 3rd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 3rd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 1-3
+            class: Frigate
+            names:
+              - Gistii Thug
+              - Gistii Outlaw
+              - Gistii Raider
+      - id: 4th-reinforcement-spawn
+        trigger:
+          on: other
+          text: 4th Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 0-1
+            class: Commander Frigate
+            names:
+              - Domination ...
+            drop: Drops faction ammo and tags. May drop faction modules.
+sde:
+  dungeonIds:
+    - 2132

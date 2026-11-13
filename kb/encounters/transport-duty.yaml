@@ -1,0 +1,95 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: transport-duty
+kind: mission
+name: Transport Duty
+level: 3
+enemyFaction: Caldari State
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Transport Duty
+    url: https://wiki.eveuniversity.org/Transport_Duty
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "216783"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: ecm
+notes:
+  - text: "Suggested ships: HAC, Battlecruiser"
+pockets:
+  - name: Single Room
+    notes:
+      - text: Initially the pocket will be empty, save for a Gallente Research Station. After roughly 30 seconds the station will explode and the fleet will spawn at 0 on the warp-in.
+      - text: "Message from agent when fleet spawns: Dammit! The cursed Caldari must have caught wind of our plans and bombed the station before we could pull our man out. Deal with any resistance you encounter, then come back and see me."
+    waves:
+      - id: timed-spawn-30secs-auto-aggro
+        trigger:
+          on: other
+          text: Timed Spawn ~30secs, Auto-aggro
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Destroyer
+            names:
+              - State Shukuro Choji
+              - State Shukuro Kamikazi
+            triggers: Spawns Reinforcement A
+          - count: "4"
+            class: Cruiser
+            names:
+              - State Chugen
+              - State Buke
+            ewar:
+              - kind: ecm
+            triggers: Spawns Reinforcement B
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - State Ronin
+              - State Oni
+            triggers: Spawns Reinforcement C
+      - id: reinforcement-a
+        trigger:
+          on: other
+          text: Reinforcement A
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - State Shukuro Shinai
+              - State Shukuro Shuriken
+      - id: reinforcement-b
+        trigger:
+          on: other
+          text: Reinforcement B
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Cruiser
+            names:
+              - State Fudai
+              - State Ashigaru
+            ewar:
+              - kind: ecm
+      - id: reinforcement-c
+        trigger:
+          on: other
+          text: Reinforcement C
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - State Ronin
+              - State Kerai
+      - id: asteroids
+        trigger:
+          on: other
+          text: Asteroids
+          confidence: inferred
+        spawns: []

@@ -1,0 +1,127 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: angel-forsaken-den
+kind: anomaly
+name: Angel Forsaken Den
+dedRating: null
+anomalyClass: 4
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Angel Forsaken Den
+    url: https://wiki.eveuniversity.org/Angel_Forsaken_Den
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225174"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Rating: Tier 4, Level 3"
+  - text: With the initial group and 5 triggered spawns, a total of 34 ships.
+  - text: Single ungated normal space pocket.
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-defenders-14-20km
+        trigger:
+          on: warpIn
+          text: Initial Defenders (14- 20km)
+        spawns:
+          - count: 2-3
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Phalanx
+              - Arch Gistum Liquidator
+              - Arch Gistum Marauder
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Gistatis Tribunus
+              - Gistatis Legatus
+      - id: 1st-reinforcement-spawn-13-17km
+        trigger:
+          on: other
+          text: 1st Reinforcement Spawn (13- 17km)
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Arch Gistii Ambusher
+              - Arch Gistii Hunter
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Phalanx
+      - id: 2nd-reinforcement-spawn-12-17km
+        trigger:
+          on: other
+          text: 2nd Reinforcement Spawn (12- 17km)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Gistum Marauder
+              - Gistum Centurion
+              - Gistum Phalanx
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+              - Gistatis Tribunus
+      - id: 3rd-reinforcement-spawn-15-17km
+        trigger:
+          on: other
+          text: 3rd Reinforcement Spawn (15- 17km)
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+              - Gistatis Tribunus
+      - id: 4th-reinforcement-spawn-14-18km
+        trigger:
+          on: other
+          text: 4th Reinforcement Spawn (14- 18km)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Cruiser
+            names:
+              - Gistum Marauder
+              - Gistum Centurion
+              - Gistum Phalanx
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+              - Gistatis Tribunus
+      - id: 5th-reinforcement-spawn-12-17km
+        trigger:
+          on: other
+          text: 5th Reinforcement Spawn (12- 17km)
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Arch Gistii Rogue
+              - Arch Gistii Thug
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: 2-3
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+              - Gistatis Tribunus
+sde:
+  dungeonIds:
+    - 3426

@@ -1,0 +1,123 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: catching-the-scent
+kind: mission
+name: Catching the Scent
+level: null
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Catching the Scent
+    url: https://wiki.eveuniversity.org/Catching_the_Scent
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223096"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Retrieve 1x Sansha Command Signal Receiver (1.0 m3)
+ewar:
+  - kind: trackingDisruption
+notes:
+  - text: thumb
+  - text: Single ungated pocket that you can warp in at range. The last ship destroyed will drop Sansha Command Signal Receiver (1.0 m3). The initial spawn is around 60 km from warpin.
+  - text: "Tips: To control incoming dps, kill all ships in the initial group except for one cruiser and one battleship, then eliminate all cruiser waves before eliminating the battleship waves."
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: The last ship destroyed flags the mission objective completed. The Sansha Command Signal Receiver will spawn in a container next to the last ship destroyed.
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Savage
+              - Centii Loyal Slavehunter
+            ewar:
+              - kind: trackingDisruption
+          - count: "5"
+            class: Cruiser
+            names:
+              - Centum Mutilator
+              - Centum Torturer
+            triggers: Destroying last cruiser will spawn cruiser wave 1
+          - count: "6"
+            class: Battleship
+            names:
+              - Centus Dark Lord
+              - Centus Overlord
+            triggers: Destroying last battleship will spawn battleship wave 1
+      - id: cruiser-wave-1
+        trigger:
+          on: other
+          text: Cruiser wave 1
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Cruiser
+            names:
+              - Centum Hellhound
+              - Centum Fiend
+            triggers: Destroying last cruiser will spawn cruiser wave 2
+      - id: battleship-wave-1
+        trigger:
+          on: other
+          text: Battleship wave 1
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Battleship
+            names:
+              - Centus Dread Lord
+              - Centus Dark Lord
+            triggers: Destroying last battleship will spawn battleship wave 2
+      - id: cruiser-wave-2
+        trigger:
+          on: other
+          text: Cruiser wave 2
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Torturer
+              - Centum Loyal Mutilator
+            triggers: Destroying last cruiser will spawn cruisers wave 3
+      - id: battleship-wave-2
+        trigger:
+          on: other
+          text: Battleship wave 2
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battleship
+            names:
+              - Centus Dread Lord
+              - Centus Tyrant
+            triggers: Destroying last battleship will spawn battleships wave 3
+      - id: cruiser-wave-3
+        trigger:
+          on: other
+          text: Cruiser wave 3
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Fiend
+      - id: battleship-wave-3
+        trigger:
+          on: other
+          text: Battleship wave 3
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battleship
+            names:
+              - Centus Tyrant

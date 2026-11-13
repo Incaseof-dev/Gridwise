@@ -1,0 +1,114 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-breakout
+kind: mission
+name: The Breakout
+level: null
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Breakout
+    url: https://wiki.eveuniversity.org/The_Breakout
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231540"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Retrieve 1x Caldari Prisoners Of War (0.5m3)
+ewar:
+  - kind: sensorDamp
+notes:
+  - text: Requires probing and data analyzer and 1x FedNav F.O.F. Identifier Tag AC-106V:FNSBR (Gained from Agent). Mission item can be bought instead.
+  - text: "Two Bloodlines, one Race: the Raata spirit in the Deteis and Civire soul: “Look at each other,” Cold Wind told them. “How do you tell one man from the other? How do you know which man to kill?” The men struggled to stand up and looked at their armors; the symbols of their Houses were torn and broken, not visible anymore. “No two men on this field have the same face, but can you tell them apart now?” The men gazed at each other trying to distinguish brothers from enemies, yet the blood covering their faces made all of them alike."
+  - text: "Blitz: Buy the 1x Caldari Prisoners Of War (0.5m3) on Contracts or market and complete the mission. No need to search/probe, hack, or fight anything."
+  - text: The next mission will be low sec hauling mission so you should turn this mission in in an instawarp frigate.
+  - text: The mission site consists of two deadspace pockets.
+pockets:
+  - name: First pocket
+    notes:
+      - text: 1x Newly Constructed Acceleration Gate (95km)
+      - text: "No NPC's most of the time but sometimes it ends up with:"
+      - text: In the case of these spawns, a cloaky frigate or interceptor is best used to just fly past them to the gate. The 1x FedNav F.O.F. Identifier Tag AC-106V:FNSBR will not prevent them from attacking.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Federation Praktor Phalarica
+            group: Group 2
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Elite Federation Lochos
+            group: Group 2
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Destroyer
+            names:
+              - Federation Arcus
+            group: Group 2
+            note: type list incomplete on the source page
+          - count: "6"
+            class: Elite Frigate
+            names:
+              - Elite Federation Phalarica
+            group: Group 2
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Elite Federation Arx
+            group: Group 2
+            ewar:
+              - kind: sensorDamp
+          - count: "7"
+            class: Battleship
+            names:
+              - Federation Praktor Magister
+            group: Group 3
+            ewar:
+              - kind: sensorDamp
+            note: type list incomplete on the source page
+  - name: Second pocket
+    notes:
+      - text: The Gallente Warden Frigates may not attack if the 1x FedNav F.O.F. Identifier Tag AC-106V:FNSBR (Gained from Agent) is in your cargohold (There is a bug where they may still shoot you but they hit for 1 damage). After successfully hacking a Detention Facility to save a prisoner, a 60-second self-destruct timer will start. If you are fast you can hack one or two more containers before the Detention Facilities self-destruct, but only 1x Caldari Prisoners Of War is needed to complete the mission.
+      - text: The Detention Facility structures appear as a white container to hack, and are Easy difficulty (70 HP green System Core). If no Detention Facility structures are present and/or you see 8x blue containers, then that site has been completed by another player. Instead of waiting for respawn, just look for the site in another system.
+    waves:
+      - id: group-1
+        trigger:
+          on: warpIn
+          text: Group 1
+        spawns:
+          - count: "8"
+            class: Frigate
+            names:
+              - Gallente Warden
+            note: Federation Clavis/Hastile
+          - count: 0-3
+            class: Elite Frigate
+            names:
+              - Elite Federation Lochos
+            note: type list incomplete on the source page
+          - count: 0-2
+            class: Destroyer
+            names:
+              - Federation Arcus
+            note: type list incomplete on the source page
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "8"
+            class: Hackable
+            names:
+              - Federation Detention Facility
+            drop: each contains 1x Caldari Prisoner Of War (Mission Objective)

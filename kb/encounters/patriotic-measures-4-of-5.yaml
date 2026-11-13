@@ -1,0 +1,39 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: patriotic-measures-4-of-5
+kind: mission
+name: Patriotic Measures (4 of 5)
+level: 1
+enemyFaction: Caldari State
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Patriotic Measures (4 of 5)
+    url: https://wiki.eveuniversity.org/Patriotic_Measures_(4_of_5)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "200648"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the Caldari ships; bring scientist back to agent's station.
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: warp-in
+        trigger:
+          on: other
+          text: Warp-in
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - State Nagasa
+              - State Shinai
+          - count: "1"
+            class: Shuttle
+            names:
+              - Caldari State Shuttle
+            drop: 1x Scientist

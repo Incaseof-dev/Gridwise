@@ -1,0 +1,182 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: sansha-vigil
+kind: complex
+name: Sansha Vigil
+dedRating: null
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Sansha Vigil
+    url: https://wiki.eveuniversity.org/Sansha_Vigil
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "229478"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Battlecruiser"
+notes:
+  - text: "Escalation: True Power Shipyards: You are about to wrap up this little raid when all of a sudden you have an incoming transmission popping on one of your panels from someone asking where in flaming hell his ship components are. He continues to claim that he had ordered all sorts of stuff ages ago and nothing is getting delivered. This is all sent in Sansha code and comparison with the station logs from the place you just destroyed identify the person on the other end as a foreman from a local branch of the True Power corporation. When he hears some hesitation on your end, this guy gets all patronizing on you, raving back and forth about too many newbs being recruited to the production units, how your single digit IQ must be a shining light for every slug in the universe to follow and fabulates a bit about how he envisions the state your toilet training is in. He then shouts some instructions about how you are to get off your butt right this moment and haul it to a certain place, picking up his order for 300 10MN afterburners. He orders you to buzz him on this same frequency when you are there and that he will then give you further instructions."
+  - text: "Escalation: This site can escalate to True Power Shipyards."
+pockets:
+  - name: First Room
+    notes:
+      - text: The gate is unlocked by destroying the security tower. No other thing needs to be destroyed to proceed.
+      - text: Use caution when attacking or destroying towers to reduce dps- it's easy to unleash the large swarm of defenders.
+      - text: The second gate drops you in to the middle of the initial defenders and towers. Destroying the webbing stasis tower releases the webbing spider drones and additional defenders. Tank on the order of strong T1 cruiser to survive the immediate initial dps in room 1.
+      - text: Structures on site
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Plague
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Centatis Phantasm
+              - Centatis Specter
+          - count: "12"
+            class: Sentry
+            names:
+              - Sansha Light Missile Battery
+      - id: reinforcements-after-attacking-the-security-tower-70-km-away
+        trigger:
+          on: other
+          text: Reinforcements after attacking the security tower. 70 km away
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Plague
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Destroyer
+            names:
+              - Centatior Horror
+              - Centatior Devourer
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Beast
+            note: type list incomplete on the source page
+          - count: "10"
+            class: Battlecruiser
+            names:
+              - Centatis Devil
+            note: type list incomplete on the source page
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Sansha Security Tower
+            triggers: Attacking spawns reinforcements, destroying unlocks gate
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: Locked until Security Tower is destroyed
+  - name: Second Room
+    notes:
+      - text: ----
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "8"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Enslaver
+              - Centii Loyal Manslayer
+              - Centii Loyal Slavehunter...
+            ewar:
+              - kind: trackingDisruption
+          - count: "1"
+            class: Destroyer
+            names:
+              - Centior Horror
+              - Centior Devourer
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centatis Daemon
+          - count: "4"
+            class: Sentry
+            names:
+              - Sansha Light Missile Battery
+            triggers: First one destroyed triggers battery wave
+          - count: "1"
+            class: Sentry
+            names:
+              - Sansha Stasis Tower
+            ewar:
+              - kind: web
+            triggers: Triggers commander wave upon destruction
+      - id: battery-wave-triggers-when-first-missile-battery-is-destroyed
+        trigger:
+          on: other
+          text: Battery Wave. Triggers when first missile battery is destroyed
+          confidence: inferred
+        spawns:
+          - count: "7"
+            class: Frigate
+            names:
+              - Centii Enslaver
+            note: type list incomplete on the source page
+          - count: "7"
+            class: Battlecruiser
+            names:
+              - Centatis Specter
+            note: type list incomplete on the source page
+      - id: tower-wave-1-triggered-when-a-tower-web-is-attacked
+        trigger:
+          on: other
+          text: "Tower Wave #1. Triggered when a tower (web?) is attacked"
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Drone
+            names:
+              - Spider Drone
+            ewar:
+              - kind: web
+          - count: 2-3
+            class: Frigate
+            names:
+              - Centii Plague
+      - id: tower-wave-2-triggered-when-a-web-tower-is-destroyed
+        trigger:
+          on: other
+          text: "Tower Wave #2. Triggered when a web tower is destroyed"
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Destroyer
+            names:
+              - Centatior Devourer
+              - Centatior Abomination
+          - count: "1"
+            class: Commander Cruiser
+            names:
+              - Centus Excavation Supervisor
+            triggers: escalation trigger
+            drop: faction modules, possible Nirvana implant BPC
+sde:
+  dungeonIds:
+    - 1230

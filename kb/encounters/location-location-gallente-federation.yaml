@@ -1,0 +1,179 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: location-location-gallente-federation
+kind: mission
+name: Location Location
+level: 5
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Location Location (Gallente Federation)
+    url: https://wiki.eveuniversity.org/Location_Location_(Gallente_Federation)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "199350"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: web
+  - kind: neut
+  - kind: sensorDamp
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: All Frigates"
+  - text: "Suggested ships: (1) Tengu passive (Done with 2 BallisticCS and 3 ShieldPR)"
+  - text: Ruyman2, the original author, at EVE-Survival
+pockets:
+  - name: Part 1 of 5
+    notes:
+      - text: "Space type: Deadspace with Gate"
+      - text: Acceleration Gate into Deadspace
+  - name: Single pocket
+    notes:
+      - text: "BLITZ: Destroy the frigates"
+      - text: "BLITZ: Destroy the DAMPENING cruisers"
+      - text: "BLITZ: Destroy the Stasis Tower"
+      - text: "BLITZ: Destroy the LEFT Cruise Missile Battery, then the triggered spawns one after the other until objective is completed"
+      - text: "Tips: Use a Passive Tank or plan a capacitor that receives an additional 120 units/s"
+      - text: "Tips: Maximum damage dealing of initial group is about 2000 hp/s (TH 60%, KIN 40%)"
+      - text: "Tips: Do not shoot Missile Batteries first (unless you can tank over 4000 hp/s...)"
+      - text: "Tips: Mission totals 6 Frigates, 3 Cruisers, 16 Battlecruisers and 33 Battleships"
+      - text: 'Tips: Mission flagged complete when all "Battery 2 (Left)" spawns are destroyed'
+      - text: Initial group
+      - text: Contact’s ship is present at Warp-in at 15km away. But 20 seconds later you are notified in Local that, Oh sh--, “It’s a Trap!”
+      - text: The Contact's ship vanishes and instead a Gallente Fleet uncloaks near the same spot. Ships are 25-40km to the right of Warp-In
+      - text: Spawns
+      - text: Your position at warp-in
+      - text: thumb|Cruise Missile Battery positions, as seen from the warp-in beacon
+      - text: Each Cruise Missile Battery is a trigger.
+      - text: Triggered ships spawn at the Warp-In Beacon when the batteries are destroyed.
+    waves:
+      - id: gallente-fleet
+        trigger:
+          on: other
+          text: Gallente fleet
+          confidence: inferred
+        spawns:
+          - count: "12"
+            class: Battleship
+            names:
+              - Federation Praktor Hexeris*
+              - Federation Praktor Phanix
+              - Federation Praktor Magister**
+            triggers: Hexeris triggers reinforcement 2, Magister triggers reinforcement 3
+            note: Orbits of 25-40km
+          - count: "5"
+            class: Sentry
+            names:
+              - Gallente Cruise Missile Battery
+            triggers: Each is a trigger
+          - count: "1"
+            class: Sentry
+            names:
+              - Gallente Stasis Tower
+            ewar:
+              - kind: web
+          - count: "3"
+            class: Sentry
+            names:
+              - Gallente Energy Neutralizer Sentry III
+            ewar:
+              - kind: neut
+      - id: reinforcement-1
+        trigger:
+          on: other
+          text: Reinforcement 1
+          confidence: inferred
+        spawns: []
+      - id: reinforcement-2
+        trigger:
+          on: other
+          text: Reinforcement 2
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Battleship
+            names:
+              - Federation Praktor Hexeris
+            note: Orbits at 17-49km
+      - id: reinforcement-3
+        trigger:
+          on: other
+          text: Reinforcement 3
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battleship
+            names:
+              - Federation Praktor Magister
+            note: Orbits at 49km
+      - id: battery-1-reinforcement-top
+        trigger:
+          on: other
+          text: Battery 1 Reinforcement (Top)
+          confidence: inferred
+        spawns: []
+      - id: battery-2-reinforcement-1-left
+        trigger:
+          on: other
+          text: Battery 2 reinforcement 1 (Left)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battleship
+            names:
+              - Federation Praktor Polemo
+            triggers: Triggers Battery 2 reinforcement 2
+            note: Orbits at 30km
+      - id: battery-2-reinforcement-2
+        trigger:
+          on: other
+          text: Battery 2 reinforcement 2
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Federation Praktor Diablik
+            triggers: Triggers Battery 2 reinforcement 3
+            note: orbits at 30km
+      - id: battery-2-reinforcement-3
+        trigger:
+          on: other
+          text: Battery 2 reinforcement 3
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Battleship
+            names:
+              - Federation Praktor Polemo
+            triggers: Marks objective complete
+            note: Orbits at 30km
+      - id: battery-3-reinforcement-middle
+        trigger:
+          on: other
+          text: Battery 3 reinforcement (Middle)
+          confidence: inferred
+        spawns: []
+      - id: battery-4-reinforcement-right
+        trigger:
+          on: other
+          text: Battery 4 reinforcement (Right)
+          confidence: inferred
+        spawns: []
+      - id: battery-5-reinforcement-bottom
+        trigger:
+          on: other
+          text: Battery 5 reinforcement (Bottom)
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Battlecruisers
+            note: Orbits of 9-22km
+  - name: Part 2 of 5
+    notes:
+      - text: See The Hard Way (Gallente)

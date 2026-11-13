@@ -1,0 +1,158 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-blockade-ded-level-4
+kind: mission
+name: The Blockade
+level: 4
+enemyFaction: CONCORD
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Blockade (DED) (Level 4)
+    url: https://wiki.eveuniversity.org/The_Blockade_(DED)_(Level_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "220554"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Kill their high-ranking officers
+ewar:
+  - kind: web
+  - kind: warpScramble
+notes:
+  - text: "Web/warp disruption: Caldari Stasis Tower (Web), DED Special Ops Panther (Web/Scram)"
+  - text: "Blitz: Kill all DED Army Generals. Expect extremely heavy incoming damage."
+  - text: All Cruisers fire Kinetic Heavy Missiles
+  - text: DED Army Colonels fire EM Cruise Missiles
+  - text: DED Army Generals fire EM Torpedos
+  - text: Drones appear to be targeted by Cruisers only
+lootNotes:
+  - text: "Loot: ± 23 Mil ISK"
+  - text: "Besides normal loot, the NPCs also drop CONCORD Emblem ('tags'):"
+  - text: 5 CONCORD General Emblem
+  - text: 15 CONCORD Colonel Emblem
+  - text: 15 CONCORD Officer Emblem
+  - text: 4 CONCORD Captain Emblem
+  - text: 3 CONCORD Raptor Emblem
+  - text: 8 CONCORD Panther Emblem
+  - text: 5 CONCORD Piranha Emblem
+  - text: "CONCORD Emblem: Sell value is 27.5 million."
+  - text: "Salvage: ± 1 Mil ISK"
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: All groups aggro on spawn.
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "1"
+            class: Tower
+            names:
+              - Caldari Stasis Tower
+            ewar:
+              - kind: web
+          - count: "4"
+            class: Cruiser
+            names:
+              - DED Officer 1st Class
+          - count: "3"
+            class: Battleship
+            names:
+              - DED Army Colonel
+          - count: "1"
+            class: Battleship
+            names:
+              - DED Army General
+            triggers: Spawns Reinforcement 1
+      - id: reinforcement-1
+        trigger:
+          on: other
+          text: Reinforcement 1
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - DED Special Ops Panther
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "3"
+            class: Cruiser
+            names:
+              - DED Special Ops Raptor
+          - count: "3"
+            class: Battleship
+            names:
+              - DED Army Colonel
+          - count: "1"
+            class: Battleship
+            names:
+              - DED Army General
+            triggers: Spawns Reinforcement 2
+      - id: reinforcement-2
+        trigger:
+          on: other
+          text: Reinforcement 2
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - DED Special Ops Piranha
+          - count: "4"
+            class: Cruiser
+            names:
+              - DED Army Captain
+          - count: "3"
+            class: Battleship
+            names:
+              - DED Army Colonel
+          - count: "1"
+            class: Battleship
+            names:
+              - DED Army General
+            triggers: Spawns Reinforcement 3
+      - id: reinforcement-3
+        trigger:
+          on: other
+          text: Reinforcement 3
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - DED Officer 3rd Class
+          - count: "3"
+            class: Battleship
+            names:
+              - DED Army Colonel
+          - count: "1"
+            class: Battleship
+            names:
+              - DED Army General
+            triggers: Spawns Reinforcement 4
+      - id: reinforcement-4
+        trigger:
+          on: other
+          text: Reinforcement 4
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - DED Special Ops Panther
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "4"
+            class: Battleship
+            names:
+              - DED Army Colonel
+              - DED Army General
+            note: Mission objective

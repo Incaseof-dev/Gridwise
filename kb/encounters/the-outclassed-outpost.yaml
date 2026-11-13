@@ -1,0 +1,91 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-outclassed-outpost
+kind: mission
+name: The Outclassed Outpost
+level: null
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Outclassed Outpost
+    url: https://wiki.eveuniversity.org/The_Outclassed_Outpost
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223563"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy all enemy ships
+ewar:
+  - kind: trackingDisruption
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite frigates"
+  - text: thumb|192px
+  - text: Single ungated pocket. The last ship destroyed in each group will trigger a new wave. Destroy all ships to complete mission.
+  - text: After the ships are destroyed the agent will contact you directly. You can then remotely complete this mission and remotely accept the next mission.
+  - text: "The Outclassed Outpost: Just as reported, the Sansha ships have surrounded and are firing on a small outpost. Curiously, the outpost looks to be almost a century old and you aren't reading any life signs from it."
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Centii Loyal Savage
+              - Centii Loyal Slavehunter
+            ewar:
+              - kind: trackingDisruption
+          - count: 3-4
+            class: Battleship
+            names:
+              - Centus Plague Lord
+            ewar:
+              - kind: trackingDisruption
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Centii Loyal Servant
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 3-4
+            class: Battleship
+            names:
+              - Centus Beast Lord
+              - Centus Plague Lord
+            ewar:
+              - kind: trackingDisruption
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Centii Loyal Butcher
+              - Centii Loyal Plague
+              - Centii Loyal Enslaver
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 3-4
+            class: Battleship
+            names:
+              - Centus Dark Lord
+              - Centus Overlord

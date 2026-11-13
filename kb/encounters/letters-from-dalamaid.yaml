@@ -1,0 +1,74 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: letters-from-dalamaid
+kind: mission
+name: Letters from Dalamaid
+level: 1
+enemyFaction: Rogue Drones & Minmatar Republic
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Letters from Dalamaid
+    url: https://wiki.eveuniversity.org/Letters_from_Dalamaid
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223369"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Kill the lead terrorist and recover the stolen letters of Bishop Dalamaid.
+restrictions:
+  - text: "Ship size limit: Destroyer and smaller"
+notes:
+  - text: "Suggested ships: Frigate"
+  - text: "Acceleration Gates: Acceleration gates are not an uncommon sight for most pilots. Like warp gates, each acceleration gate can only be configured for one point in space; unlike warp gates, they can only be used for travel to other points within the same solar system. Acceleration gates can also be locked, preventing pilot from using them. Such locking mechanisms can be based on ship type, on the presence of active guard units in the area, or on appropriate codes/keys."
+  - text: "Letters of Bishop Dalamaid:: The letters of Bishop Dalamaid have been the subject of volumes of intellectual discourse. The primary contention of the letters, that true saintly martyrdom is an impossibility for anyone even aware of the concept of sainthood, has gone through various levels of favor over the generations. Letters XIII through XV include a few juicy morsels about a prostitution ring that was run illegally from a monastery of one of the more prestigious orders in Dalamaid's time."
+pockets:
+  - name: Warp-in
+    notes:
+      - text: The Minmatar Thief is here, talks in local,
+      - text: and leaves trough the gate.
+  - name: Pocket 1
+    notes:
+      - text: On arrival the Minmatar Thief is here, talks in local again,
+      - text: and leaves through the gate.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 5-6
+            class: Drone
+            names:
+              - Minmatar Guard [Incubus
+              - Minmatar Guard Scorpionfly
+            note: type list incomplete on the source page
+  - name: Pocket 2
+    notes:
+      - text: On arrival the Minmatar Thief is here, talks in local,
+      - text: and leaves trough the gate.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 4-9
+            class: Drone
+            names:
+              - Minmatar Guard [Scorpionfly
+              - Minmatar Guard Tarantula
+            note: type list incomplete on the source page
+  - name: Pocket 3
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Cruiser
+            names:
+              - Minmatar Thief [Republic Solon]

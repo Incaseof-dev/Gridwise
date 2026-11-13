@@ -1,0 +1,71 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: passive-observation
+kind: mission
+name: Passive Observation
+level: null
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Passive Observation
+    url: https://wiki.eveuniversity.org/Passive_Observation
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "205942"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Scout out the drone hive and report back on friendly vessels.
+notes:
+  - text: Combat is optional
+  - text: "Battle Scars: The Caldari are very protective of their way of life and tolerate only those foreigners that stick to the rules. Almost any time the Gallente seek to influence events inside the State, the Caldari are swift to label it as nothing less than a violation of their sovereignty. The Caldari paid a huge cost fighting the Federation, losing millions of people between the exodus from Caldari Prime and the war itself."
+  - text: Objective
+  - text: "Scout out the drone hive and report back on friendly vessels - Location: Hatakani"
+  - text: Notes
+  - text: thumb|left|upright= 0.45|Immuri AsakaThere's no danger here if you don't shoot at anything. You'll warp to an acceleration gate. Activate the gate, and you'll emerge into the deadspace room at 75 km from the massive Drone Hive. There are also eight rogue drone ships, but they will not attack if you leave them alone. Fly towards the Drone Hive - the mission objective will be fulfilled when you are about 10 km from it. Return to Asaka's station to complete the mission.
+  - text: "Update: Arriving out of warp it becomes immediately clear that whoever is handling security has little idea how to fight drones. Battleships patrol on the fringe of the swarm, seemingly oblivious to just how vulnerable they are without proper support from smaller vessels."
+  - text: thumb|center|The Drone Hive
+  - text: "If you do decide to attack the Rogue Drones, this is what to expect:"
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: "Next Mission: House of Records"
+    waves:
+      - id: initial
+        trigger:
+          on: warpIn
+          text: Initial
+        spawns:
+          - count: "6"
+            class: Friendly Battleship
+            names:
+              - Caldari Navy Battleship
+            group: Friendly (32-70km in a line)
+          - count: 3-6
+            class: Drone
+            names:
+              - Belphegor
+              - Mammon Apis
+            group: Hostile (8 ships, 18-120km)
+          - count: 2-5
+            class: Frigate
+            names:
+              - Infester Alvi
+            group: Hostile (8 ships, 18-120km)
+      - id: reinforcements-4-ships
+        trigger:
+          on: other
+          text: Reinforcements (4 ships)
+          confidence: inferred
+        spawns:
+          - count: 1-3
+            class: Drone
+            names:
+              - Belphegor
+              - Mammon Apis
+          - count: 1-3
+            class: Frigate
+            names:
+              - Infester Alvi

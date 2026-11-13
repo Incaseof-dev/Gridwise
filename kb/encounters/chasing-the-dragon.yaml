@@ -1,0 +1,183 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: chasing-the-dragon
+kind: escalation
+name: Chasing the Dragon
+dedRating: null
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Chasing the Dragon
+    url: https://wiki.eveuniversity.org/Chasing_the_Dragon
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "224985"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: The high-sec parts are un-gated deadspace. The low-sec part is a two-room gated complex.
+loot:
+  - item: + Exploration logs
+  - item: 2023 October
+    note: est. 16M ISK (wiki) · From Gistii Domination Scavenger in lowsec
+  - item: 2024 January
+    note: est. 19M ISK (wiki) · From Gistii Domination Ambusher in hisec Part 3
+lootNotes:
+  - text: The commander rats may drop Gistii A-type modules and Implants.
+pockets:
+  - name: Part 1
+    notes:
+      - text: thumb|400px
+      - text: "Total: 930K (Bounties: 121K Salvage: 607K Loot: 202K )"
+      - text: "Escalation continuation: Here the pirates have ditched one of their damaged frigates, you manage to enter its navigation systems and retrieve the last entered coordinates."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Gistii Hijacker
+              - Gistii Rogue
+            group: "Group 1: 15km"
+          - count: "4"
+            class: Frigate
+            names:
+              - Gistii Outlaw
+              - Gistii Thug
+            group: "Group 2: 75km"
+          - count: 0-1
+            class: Commander Frigate
+            names:
+              - Domination Ruffian
+            group: "Group 2: 75km"
+            triggers: Site Trigger (?) and Possible Escalation
+            drop: Arch Angel Ammo/Domination Modules
+          - count: "1"
+            class: Cruiser
+            names:
+              - Gistum Depredator
+            group: "Group 2: 75km"
+            triggers: Possible Escalation Trigger
+  - name: Part 2
+    notes:
+      - text: thumb|400px
+      - text: "Total: 700K (Bounties: 165K Salvage: 1.5M Loot: 400K )"
+      - text: "Total: 450K (Bounties: 182K Salvage: 50K Loot: 150K )"
+      - text: "Escalation message: You made a short story of this feeble ambush, but now it is obvious the pirates know you are on their trail! While you are fighting, your scanners analyze and compare the information you receive from the enemy ships to your onboard databanks. It is clear that some of these ships are carrying prisoners."
+      - text: "Dead end message: This distraction maneuver seems to have succeeded. While you were busy expediting this ambush the pirates disappeared, their main force seems to have vanished into thin air."
+    waves:
+      - id: 20km-from-warp-in
+        trigger:
+          on: other
+          text: 20km from warp-in
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Gistii Hijacker
+              - Gistii Rogue
+              - Gistii Outlaw
+              - Gistii Thug
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Commander Frigate
+            names:
+              - Domination Nomad
+            triggers: Site and Escalation Trigger
+            drop: Arch Angel Ammo
+          - count: "2"
+            class: Cruiser
+            names:
+              - Gistum Depredator
+              - Gistum Predator
+  - name: Part 3
+    notes:
+      - text: thumb|400px
+      - text: "Total: 1.5M (Bounties: 200K Salvage: 783K Loot: 567K)"
+      - text: "Total: 20M (Bounties: 207K Salvage: 150K Loot: 20M )"
+      - text: "Escalation message: Enemy analysis report indicates that you are close to a drug distributor conditioning unit, where Angels are known to bring kidnapped persons from neighboring systems, make them addicted to various drugs, brainwash and train them as drug dealers, before sending them back to their home. Your best chance to beat these pirates is to get to the remaining ships before they reach their destination."
+    waves:
+      - id: 65km
+        trigger:
+          on: other
+          text: 65km
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Gistii Outlaw
+              - Gistii Thug
+          - count: "1"
+            class: Commander Frigate
+            names:
+              - Domination Ambusher
+            triggers: Site and Escalation Trigger
+            drop: Arch Angel Ammo/Mid-Grade Halo Beta
+          - count: "3"
+            class: Destroyer
+            names:
+              - Gistior Shatterer
+              - Gistior Haunter
+              - Gistior Defiler
+          - count: "2"
+            class: Cruiser
+            names:
+              - Gistum Predator
+            triggers: Possible Escalation Trigger
+  - name: Part 4 - LOW SEC (Possible High Sec)
+    notes:
+      - text: This stage has an initial gate and 2 pockets.
+      - text: Possible High Sec escalation confirmed (imgur) on 17/01/2017 by Zirio on the Lanngisi system.
+  - name: First pocket
+    notes:
+      - text: thumb|400px
+      - text: I assumed that all the pirates must be dead to use the acceleration gate to the second pocket.
+      - text: There were 44 Veldspar asteroids in this pocket.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "8"
+            class: Frigate
+            names:
+              - Gistii Rogue
+              - Gistii Outlaw
+              - Gistii Nomad
+  - name: Second pocket
+    notes:
+      - text: thumb|400px
+      - text: There were 51 Veldspar asteroids in this pocket.
+      - text: "Total: 270K (Bounties: 118K Salvage: ? - I did not come back to get the salvage Loot: 152K)"
+      - text: "Total: 5.7M (Bounties: 168K Salvage: 400K Loot: 5.1M )"
+      - text: "Expedition complete message: Surprisingly the Angels chose to stay and defend this vile place to their last ship. Even though you didn't manage to rescue any of their captives, this installation will not be of any use to the pirates for a long time and looking at it in a clinical way, this end is probably for the best for everyone as the human wrecks this place produced will not be spreading the pleasures of doom to untold thousands of people throughout this region."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "7"
+            class: Frigate
+            names:
+              - Gistii Outlaw
+              - Gistii Raider
+          - count: "1"
+            class: Commander Frigate
+            names:
+              - Gistii Domination Scavenger
+          - count: "2"
+            class: Destroyer
+            names:
+              - Gistior Shatterer
+sde:
+  dungeonIds:
+    - 1422

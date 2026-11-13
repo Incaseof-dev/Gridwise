@@ -1,0 +1,402 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: wispy-ruins
+kind: other
+name: Wispy Ruins
+dedRating: null
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Wispy Ruins
+    url: https://wiki.eveuniversity.org/Wispy_Ruins
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "217292"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Wispy Ruins is a combat relic site involving both combat and hacking. It appears to Probes as a scannable combat site. Unlike most combat sites, it is only found in the Feythabolis nullsec region, specifically in the I-3ODK constellation. A dedicated combat ship like the Vargur is highly recommended for this site. Avoid taking frigates into the site, as the smartbombs in the third and fourth pockets can easily destroy any frigate. The smartbomb damage can even be high enough to destroy a cruiser. Pirates from the Rogue Drones and Angel Cartel are featured.
+  - text: There are four rooms in this complex but only three need to be completed. The second stage(Portal) can be skipped since the central deadspace pocket can be accessed more quickly by taking the other gate in the first pocket.
+loot:
+  - item: T1 Gas Cloud Harvester, salvage
+    from: Floating Debris
+    note: est. 3-5M ISK (wiki) · 100% drop rate
+  - item: Talocan components
+    from: Talocan Debris Segment
+    note: est. 500K-5M ISK (wiki) · 100% drop rate
+  - item: 20th Tier Overseer's Effects
+    from: Sentinel Chimera Strain Mother
+    note: est. 60M ISK (wiki) · 100% drop rate
+  - item: Drone alloys
+    from: Sentinel Chimera Strain Mother
+    note: est. 500k ISK (wiki) · 100% drop rate
+  - item: Domination modules, ammo, tags
+    from: Orkan Zoken
+    note: est. 50K-50M ISK (wiki) · Higher chance to drop than normal sites
+  - item: T2 Mindlink implant
+    from: Sentinel Chimera Strain Mother
+    note: est. 300M-3B ISK (wiki) · Rare drop, but is highly valuable
+lootNotes:
+  - text: If you are lucky enough to get this site the rewards are very profitable.
+npcs:
+  Angel Raid Commander:
+    sdeTypes:
+      - Gist Seraphim
+    class: Battleship
+  Gist Relay Commander:
+    sdeTypes:
+      - Gist Seraphim
+    class: Battleship
+  Orkan Zoken:
+    sdeTypes:
+      - Domination General
+    class: Commander Battleship
+pockets:
+  - name: Warp-in
+    notes:
+      - text: 3 "Pirate Grave Robber" Angel Battleships are present on warp-in. You will land at a locked acceleration gate to the Terrace.
+  - name: First Pocket - Terrace
+    notes:
+      - text: "Database information: DED deep space scouts briefly explored this strange site and left behind a rather cryptic note. As far as you can tell some ancient ruins lie within, but who built them or what treasures might lie buried there are anyone's guess."
+      - text: The acceleration gates deeper into the complex are guarded by three groups of rats. They can be aggressed separately. The named battleship(Angel Raid Commander) triggers reinforcements. The acceleration gates are not locked, and the room can be skipped.
+      - text: "Reinforcement trigger: More pirates have appeared!"
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Acceleration Gate
+            names:
+              - Gate to Portal
+            note: Not locked
+          - count: "?"
+            class: Acceleration Gate
+            names:
+              - Gate to Hall
+            note: Not locked
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Gistior Seizer
+              - Gistior Trasher
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Liquidator
+              - Arch Gistum Phalanx
+              - Arch Gistum Centurion
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+              - Gistatis Tribunal
+          - count: "8"
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Seraphim
+              - Gist Throne
+          - count: "1"
+            class: Battleship
+            names:
+              - Angel Raid Commander
+            triggers: Triggers reinforcements
+          - count: "1"
+            class: Sentry
+            names:
+              - Angel Stasis Tower
+            ewar:
+              - kind: web
+      - id: reinforcements
+        trigger:
+          on: other
+          text: Reinforcements
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Ambusher
+              - Arch Gistii Raider
+          - count: "7"
+            class: Battlecruiser
+            names:
+              - Gistatis Praefectus
+              - Gistatis Legatus
+          - count: 9-10
+            class: Battleship
+            names:
+              - Gist Malakim
+              - Gist Nephilim
+              - Gist Saint
+            ewar:
+              - kind: targetPaint
+  - name: Second Pocket - Portal
+    notes:
+      - text: "Database information: Charred remains and debris litter the area. A confrontation between the pirate scavengers and rogue drones must have taken place some time in the past, as the empty drone bunkers and ruined pirate ship carcasses would indicate."
+      - text: This room is optional. Gate to next room(Hall) is not locked.
+      - text: "Reinforcements: As the Gist Relay Commander is attacked he calls for backup! More hostile ships are incoming!"
+      - text: "Reinforcements: As the Gist Relay Commander is attacked he calls for backup! More hostile ships are incoming!"
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Acceleration Gate
+            names:
+              - Gate to Hall
+            note: Not locked
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "4"
+            class: Destroyer
+            names:
+              - Gistior Defiler
+              - Gistior Seizer
+              - Gistior Trasher
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Gistatis Primus
+              - Gistatis Tribunal
+          - count: "12"
+            class: Battleship
+            names:
+              - Gist Nephilim
+              - Gist Malakim
+              - Gist Saint
+              - Gist Throne
+            ewar:
+              - kind: targetPaint
+          - count: "1"
+            class: Battleship
+            names:
+              - Gist Relay Commander
+            triggers: Attacking triggers reinforcement 1
+      - id: reinforcement-1
+        trigger:
+          on: other
+          text: Reinforcement 1
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Destroyer
+            names:
+              - Gistior Defiler
+              - Gistior Seizer
+              - Gistior Trasher
+          - count: "8"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Marauder
+              - Arch Gistum Liquidator
+              - Arch Gistum Phalanx
+          - count: "6"
+            class: Battleship
+            names:
+              - Gist Malakim
+              - Gist Throne
+          - count: "1"
+            class: Battleship
+            names:
+              - Gist Relay Commander
+            triggers: Attacking triggers reinforcement 2
+      - id: reinforcement-2
+        trigger:
+          on: other
+          text: Reinforcement 2
+          confidence: inferred
+        spawns:
+          - count: "7"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Hunter
+              - Arch Gistii Impaler
+              - Arch Gistii Outlaw
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "7"
+            class: Battleship
+            names:
+              - Gist Malakim
+              - Gist Throne
+  - name: Third Pocket - Hall
+    notes:
+      - text: "Database information: A large force of drones has taken up residence in this area. They obviously benefit greatly from salvaging the remnants of the former inhabitants, which still litters this patch of space. A drone presence this large could not be formed without an abundance of raw materials."
+      - text: This room has Rogue Drone rats as well as hacking containers.
+      - text: "Reinforcement trigger: Drones have been deployed from the Drone Bunkers in response to the attack on the sentry guns!"
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "5"
+            class: Hackable
+            names:
+              - Floating Debris
+            triggers: May trigger smartbomb wave if all containers are successfully hacked
+            drop: Possible salvage materials, T1 Gas Cloud Harvester
+          - count: "1"
+            class: Hackable
+            names:
+              - Talocan Debris Segment
+            triggers: May trigger smartbomb wave if successfully hacked
+            drop: Talocan components
+          - count: "?"
+            class: Acceleration Gate
+            names:
+              - Gate to Sanctum
+            note: Unlocked
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "8"
+            class: Elite Frigate
+            names:
+              - Strain Barracuda
+              - Strain Devilfish Alvi
+          - count: "10"
+            class: Battleship
+            names:
+              - Alvus Creator
+              - Patriarch Alvus
+          - count: "8"
+            class: Sentry
+            names:
+              - Drone Cruise Missile Battery
+            triggers: Attacking any one triggers reinforcements
+      - id: reinforcements
+        trigger:
+          on: other
+          text: Reinforcements
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Strain Render
+              - Strain Decimator Alvi
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Siege
+              - Exterminator
+              - Striker Alvatis
+          - count: "4"
+            class: Battleship
+            names:
+              - Alvus Queen
+              - Matriarch Alvus
+  - name: Fourth Pocket - Sanctum
+    notes:
+      - text: "Database information: The source of the drone infestation seems to lie in this deadspace pocket, located inside a fiery nebula. The extreme and hostile environment, accompanied by a very heavy drone presence, seems to have kept most of the looters away, as two fully intact ancient ruins would indicate."
+      - text: The Sentinel Chimera Strain Mother has a strong active armor tank and many structure hitpoints, as well as a strong web that reaches out to 50 km. It fires Mjolnir XL Torpedoes that hit rather hard. It is recommended that you bring a friend or two to take it down.
+      - text: "Reinforcements(Hive Mother armor damage): The Drone Hive Mother has deployed Drone Cruise Missile Batteries along with more drone ships!"
+      - text: "Smartbomb trigger: Huge bursts of energy and material spurt from the ancient ruins as someone approaches them. Some kind of ancient technology seems to have been put in place to protect the ruins. Your ship takes damage!"
+      - text: "Commander wave: Orkan Zoken: Looks like they've approached the ancient ruins and have started the excavation process! They'll never know what hit 'em, and the treasure will be OURS! Nyahaha."
+      - text: "Ships appear: A large group of pirate ships has appeared!"
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "12"
+            class: Elite Cruiser
+            names:
+              - Strain Bomber
+              - Strain Atomizer
+              - Strain Nuker
+              - Strain Disintegrator Alvum
+          - count: "15"
+            class: Battleship
+            names:
+              - Alvus Creator
+              - Supreme Alvus Parasite
+              - Patriarch Alvus
+          - count: "1"
+            class: Sentry
+            names:
+              - Sentinel Chimera Strain Mother
+            ewar:
+              - kind: web
+            triggers: Triggers reinforcements
+            drop: 20th Tier Overseer's Personal Effects, drone alloys, and a possible T2 Mindlink implant
+            note: Has a strong armor tank; webs up to 50 km
+          - count: "6"
+            class: Sentry
+            names:
+              - Tower Sentry Drone III
+      - id: reinforcements-armor-damage
+        trigger:
+          on: other
+          text: Reinforcements(armor damage)
+          confidence: inferred
+        spawns:
+          - count: "9"
+            class: Battleship
+            names:
+              - Alvus Queen
+              - Matriarch Alvus
+          - count: "4"
+            class: Sentry
+            names:
+              - Drone Cruise Missile Battery
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "2"
+            class: Hackable
+            names:
+              - Ancient Ruins
+            triggers: Approaching triggers commander wave
+            drop: Possible salvage materials and T1 Gas Cloud Harvester
+            note: Successful hack triggers massive smartbomb wave
+          - count: "?"
+            class: Acceleration Gate
+            names:
+              - Gate to Portal
+      - id: commander-wave
+        trigger:
+          on: other
+          text: Commander wave
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Centurion
+              - Arch Gistum Phalanx
+          - count: "4"
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Seraphim
+          - count: "?"
+            class: Commander Battleship
+            names:
+              - Orkan Zoken
+            drop: Domination tags, ammo, and possibly faction modules. Wreck produces T2 salvage

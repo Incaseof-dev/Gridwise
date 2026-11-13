@@ -1,0 +1,79 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: save-a-mans-career
+kind: mission
+name: Save a Man's Career
+level: 2
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Save a Man's Career
+    url: https://wiki.eveuniversity.org/Save_a_Man's_Career
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "209953"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Find Sangrel Minn, destroy his ship and loot the reports (0.1).
+notes:
+  - text: "Mission: Kill Sangrel Minn and take the reports (0.1). The reports will appear next to his wreck in a cargo container. Take the reports back to the agent."
+  - text: "Blitz: Kill Sangrel Minn, loot the reports from the cargo container dropped next to his wreck, warp out."
+  - text: "Message popup when starting to warp to the location:"
+  - text: "Mission Info: This is Sangrel Minn's hideout, which is located in the midst of an area of space infested by rogue drones. Few consider it a coincidence that whenever Sangrel is chased into this area, the pursuers are immediately set up on by a multitude of drone ships."
+pockets:
+  - name: Warp-In
+    notes:
+      - text: The mission consists of a single ungated pocket.
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Cargo Rig
+            drop: T1 Ammo
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "4"
+            class: Drone
+            names:
+              - Arachula
+              - Asmodeus
+            triggers: Triggers reinforcements
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Frigate
+            names:
+              - Splinter
+              - Render Alvi
+          - count: "1"
+            class: Frigate
+            names:
+              - Sangrel Minn
+            drop: Reports
+      - id: reinforcements
+        trigger:
+          on: other
+          text: Reinforcements
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Frigate
+            names:
+              - Hunter
+              - Devilfish
+              - Barracuda Alvi
+          - count: 1-2
+            class: Destroyer
+            names:
+              - Shatter
+              - Ripper Alvior

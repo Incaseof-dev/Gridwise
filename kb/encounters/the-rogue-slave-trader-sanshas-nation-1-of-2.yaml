@@ -1,0 +1,62 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-rogue-slave-trader-sanshas-nation-1-of-2
+kind: mission
+name: The Rogue Slave Trader (1 of 2)
+level: 4
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Rogue Slave Trader (Sansha's Nation) (1 of 2)
+    url: https://wiki.eveuniversity.org/The_Rogue_Slave_Trader_(Sansha's_Nation)_(1_of_2)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223320"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Rescue 50x prisoners (375 m3)
+ewar:
+  - kind: web
+notes:
+  - text: "Blitz: Warp in to preferred distance. Kill or ignore the initial group and destroy the slave pen. Pickup the prisoners and warp out."
+  - text: Single ungated pocket. The prisoners drop from the slave pen. An additional Sansha Slaver battleship will spawn (near the Beacon) 8 minutes after warp-in.
+  - text: "Tips: Don't forget to destroy the slave pen (40km) and pickup the prisoners, you may want to fit an afterburner or use a tractor beam."
+  - text: "Tips: When the spawn [finally] arrives he will attack the Noctis salvaging, be prepared or just don't bother waiting for it."
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Sansha's Demon
+              - Sansha's Berserker
+            ewar:
+              - kind: web
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Centatis Devil
+          - count: "1"
+            class: Battleship
+            names:
+              - Centus Dark Lord
+              - Centus Dread Lord
+      - id: timed-spawn-10-minutes
+        trigger:
+          on: other
+          text: Timed spawn (10 minutes)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Battleship
+            names:
+              - Sansha Slaver
+              - Centus Tyrant

@@ -1,0 +1,24 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: practical-solutions
+kind: mission
+name: Practical Solutions
+level: 4
+enemyFaction: null
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Practical Solutions
+    url: https://wiki.eveuniversity.org/Practical_Solutions
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "206327"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Retrieve Vira Mikano (3.0 m3)
+notes:
+  - text: "Suggested ships: Travel fit"
+  - text: "Masks of Authority: The glossy tropes of the public relations holoreels and the beige glamour of stylized war worship stand in stark contrast to the reality of these agencies, but most people have only a muddy awareness of the dichotomy. A man can be rudely treated by a brusque and superior Ishukone Watch officer and silently curse him for hours, but as soon as he gets home that evening he is just as likely to prop his feet up and enjoy a rousing serial where the Ishukone Watch's superior technology and cunning allows it to root out Gurista spies and double-cross them into revealing their hideout. So pervasive is the propaganda that it is highly doubtful this man ever draws a parallel between the real thing and the image; the connection he draws, instead, is between the image and the mother corporation it represents."
+  - text: Pick up Vira Mikano five jumps away from Oipo II - Moon 19 - Ishukone Watch Logistic Support.

@@ -1,0 +1,70 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-hidden-stash-blood-raiders-level-2
+kind: mission
+name: The Hidden Stash
+level: 2
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Hidden Stash (Blood Raiders) (Level 2)
+    url: https://wiki.eveuniversity.org/The_Hidden_Stash_(Blood_Raiders)_(Level_2)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "192018"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the Warehouse and return the Sealed Cargo Containers (150.0 m3) to agent
+notes:
+  - text: "Suggested ships: Cruiser"
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Corpii Seeker
+              - Corpii Collector
+          - count: "1"
+            class: Cruiser
+            names:
+              - Corpum Arch Engraver
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Warehouse
+            drop: metal scraps, trade goods; Sealed Cargo Containers
+          - count: "1"
+            class: Structure
+            names:
+              - Habitation Module
+            drop: trade goods
+          - count: "1"
+            class: Structure
+            names:
+              - Pressure Silo
+            drop: ammo
+          - count: "1"
+            class: Structure
+            names:
+              - Cargo Rig
+            drop: ammo
+      - id: asteroids
+        trigger:
+          on: other
+          text: Asteroids
+          confidence: inferred
+        spawns: []

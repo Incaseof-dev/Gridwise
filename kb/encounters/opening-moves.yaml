@@ -1,0 +1,57 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: opening-moves
+kind: mission
+name: Opening Moves
+level: 2
+enemyFaction: Amarr Empire & Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Opening Moves
+    url: https://wiki.eveuniversity.org/Opening_Moves
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "221156"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal:
+    - kinetic
+    - thermal
+  resist: []
+notes:
+  - text: "Suggested ships: Cruiser"
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: Destruction of the fuel depot is not required for completion of the mission, but will spawn a reinforcement wave. None of the structures drop loot.
+      - text: -0.24 standing loss with Amarr Empire, since you need to destroy the Amarr Forward Base.
+      - text: Sometimes, the optional reinforcement is an Angel Cartel Destroyer (Defacer)
+    waves:
+      - id: initial-group-20km
+        trigger:
+          on: warpIn
+          text: Initial Group, 20km
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Imperial Haran
+              - Imperial Felix
+              - Imperial Paladin
+          - count: "1"
+            class: Destroyer
+            names:
+              - Imperial Templar
+      - id: optional-reinforcement-20km
+        trigger:
+          on: other
+          text: Optional Reinforcement, 20km
+          confidence: inferred
+        spawns:
+          - count: 5-7
+            class: Frigate
+            names:
+              - Angel Cartel Frig

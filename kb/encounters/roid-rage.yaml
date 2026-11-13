@@ -1,0 +1,57 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: roid-rage
+kind: mission
+name: Roid Rage
+level: 2
+enemyFaction: Amarr Empire
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Roid Rage
+    url: https://wiki.eveuniversity.org/Roid_Rage
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191896"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Suggested ships: Rifter, Thrasher"
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: initial-group-35km-from-warp-in
+        trigger:
+          on: warpIn
+          text: Initial Group, 35km from warp-in
+        spawns:
+          - count: "3"
+            class: Industrial
+            names:
+              - Imperial Courier
+            triggers: reinforcement groups spawn at 50% armor
+          - count: "3"
+            class: Destroyer
+            names:
+              - Imperial Exarp
+          - count: "1"
+            class: Frigate
+            names:
+              - Imperial Templar Paladin
+            group: First Imperial Courier at 50% Armor
+          - count: "5"
+            class: Destroyer
+            names:
+              - Imperial Exarp
+            group: First Imperial Courier at 50% Armor
+          - count: "1"
+            class: Frigate
+            names:
+              - Imperial Templar Paladin
+            group: Third Imperial Courier at 50% Armor
+          - count: "1"
+            class: Destroyer
+            names:
+              - Imperial Exarp
+            group: Third Imperial Courier at 50% Armor

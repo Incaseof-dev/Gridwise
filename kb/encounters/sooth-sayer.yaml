@@ -1,0 +1,211 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: sooth-sayer
+kind: escalation
+name: Sooth Sayer
+dedRating: null
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Sooth Sayer
+    url: https://wiki.eveuniversity.org/Sooth_Sayer
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "218719"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Cruiser"
+notes:
+  - text: "Summary: All gates are unlocked"
+pockets:
+  - name: First Pocket (Warp-In)
+    notes:
+      - text: "Note: Arriving at the 2nd pocket is the Alternate Escalation Trigger."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Pithi Demolisher
+              - Pithi Destructor
+              - Pithi Plunderer
+              - Pithi Wrecker
+          - count: "4"
+            class: Destroyer
+            names:
+              - Pithior Anarchist
+              - Pithior Nihilist
+          - count: 0-1
+            class: Commander Frigate
+            names:
+              - Dread Guristas Invader
+              - Dread Guristas Infiltrator
+            triggers: Alternate Escalation trigger
+            drop: Wreck may contain Dread Guristas/Guristas Tags and/or Faction Modules.
+  - name: Second Pocket
+    notes:
+      - text: "Note: Warps out after a couple of seconds."
+      - text: "Possible Escalation Success: Your sensors pick up the Guristas trail and provide you with a set of coordinates to their next probable destination."
+      - text: "Possible Escalation Fail: The calculations your instruments performed seem to have been based on incorrect data; the Guristas are nowhere to be seen."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Pithi Invader
+              - Pithi Infiltrator
+          - count: "1"
+            class: Commander Frigate
+            names:
+              - Eha Hidaihi
+  - name: First Pocket
+    notes:
+      - text: "Note: Arriving at the 2nd pocket is the alternate escalation trigger."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Pithi Demolisher
+              - Pithi Plunderer
+              - Pithi Wrecker
+          - count: "3"
+            class: Destroyer
+            names:
+              - Pithior Suprematist
+          - count: 0-1
+            class: Commander Frigate
+            names:
+              - Dread Guristas Invader
+              - Dread Guristas Infiltrator
+            drop: Wreck may contain Dread Guristas/Guristas Tags and/or Faction Modules.
+            note: Alternate Escalation trigger
+  - name: Second Pocket
+    notes:
+      - text: "Possible Escalation Success: Again you warp in too far and the Gurista ships slip away into space. Luckily they leave a predictable path."
+      - text: "Possible Escalation Fail: Again you warp in too far and the Gurista ships slip away into space, this time leaving no trace for you to follow."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Commander Frigate
+            names:
+              - Eha Hidaihi
+  - name: First Pocket
+    notes:
+      - text: "Note: Arriving at the 2nd pocket is the alternate escalation trigger."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Destructor
+              - Dire Pithi Plunderer
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Destroyer
+            names:
+              - Pithior Guerilla
+              - Pithior Renegade
+          - count: 0-1
+            class: Commander Frigate
+            names:
+              - Dread Guristas Saboteur
+              - Dread Guristas Despoiler
+            ewar:
+              - kind: ecm
+            drop: Wreck may contain Dread Guristas/Guristas Tags and/or Faction Modules.
+            note: Alternate Escalation trigger
+  - name: Second Pocket
+    notes:
+      - text: "Possible Escalation Success: While fighting the two ships you managed to catch up with, the third one got away. Your instruments give no clue as to where it was headed, but just before it vanished, you picked up a distress signal from it, containing this location..."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Pithi Infiltrator
+          - count: "1"
+            class: Commander Frigate
+            names:
+              - Era Hidaihi
+  - name: First Wave (Warp-In)
+    notes:
+      - text: "Trigger: Destroying all ships triggers Wave 2."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Pithi Destructor
+              - Pithi Demolisher
+          - count: "6"
+            class: Destroyer
+            names:
+              - Pithior Guerilla
+              - Pithior Terrorist
+  - name: Second Wave
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Pithi Despoiler
+              - Pithi Saboteur
+            ewar:
+              - kind: ecm
+            triggers: Wave 3
+  - name: Third Wave
+    notes:
+      - text: "Expedition Complete: Obviously the distress signal made it through to the intended recipients, this was quite a reception. In any case, there are a bit less drug runners in space after this encounter..."
+      - text: = Loot =
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Eha Hidaiki
+            drop: may rarely contain DED and/or Faction Frigate modules
+sde:
+  dungeonIds:
+    - 1545

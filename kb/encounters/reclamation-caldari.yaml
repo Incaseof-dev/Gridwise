@@ -1,0 +1,134 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: reclamation-caldari
+kind: mission
+name: Reclamation
+level: 5
+enemyFaction: Caldari State
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Reclamation (Caldari)
+    url: https://wiki.eveuniversity.org/Reclamation_(Caldari)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "195508"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal:
+    - kinetic
+  resist: []
+ewar:
+  - kind: neut
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: All Frigates"
+  - text: Use a Passive Tank or plan a capacitor that receives an additional 120 units/s
+  - text: For the Timed Spawns WATCH OUT if you have drones or logistics in the area. The spawns will more than like target them first.
+  - text: Set drones to Passive if you don't want them triggering the Neutralizer Spawns. RECOMMENDED
+  - text: Destroying closest Asteroid Micro-Colony (62,000 hp) and it's spawn (State Shukuro Turishima) triggers Objective Complete
+pockets:
+  - name: Warp-in into Deadspace
+    notes:
+      - text: "Note: Attacking the Caldari Energy Vampire does not cause this spawn."
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "12"
+            class: Frigate
+            names:
+              - Taibu State Nagasa
+              - Taibu State Shinai
+              - Taibu State Wakizashi
+            group: Ships spawn steadily over 8 minutes; 50 -100km from warp-in
+            ewar:
+              - kind: warpDisruption
+          - count: "10"
+            class: Destroyer
+            names:
+              - State Shukuro Choji
+              - State Shukuro Kamikaze
+            group: Ships spawn steadily over 8 minutes; 50 -100km from warp-in
+          - count: "6"
+            class: Cruiser
+            names:
+              - Taibu State Samurai
+              - Taibu State Bajo
+            group: Ships spawn steadily over 8 minutes; 50 -100km from warp-in
+          - count: "9"
+            class: Battlecruiser
+            names:
+              - State Shukuro Samurai
+              - State Shukuro Bajo
+            group: Ships spawn steadily over 8 minutes; 50 -100km from warp-in
+          - count: "5"
+            class: Battleship
+            names:
+              - State Shukuro Shogun
+            group: Ships spawn steadily over 8 minutes; 50 -100km from warp-in
+          - count: "1"
+            class: Sentry
+            names:
+              - Tower Sentry Caldari III
+            group: Ships spawn steadily over 8 minutes; 50 -100km from warp-in
+          - count: "1"
+            class: Sentry
+            names:
+              - Caldari Energy Vampire
+            group: Ships spawn steadily over 8 minutes; 50 -100km from warp-in
+            ewar:
+              - kind: neut
+            note: Renamed Caldari Energy Neutralizer
+          - count: "2"
+            class: Sentry
+            names:
+              - Caldari Energy Neutralizer Sentry III
+            group: Ships spawn steadily over 8 minutes; 50 -100km from warp-in
+            ewar:
+              - kind: neut
+      - id: timed-spawns-appear-over-time-one-at-a-time-in-this-order
+        trigger:
+          on: other
+          text: Timed Spawns - appear over time, one at a time, in this order
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Battleship
+            names:
+              - State Shukuro Nagashin
+          - count: "1"
+            class: Battleship
+            names:
+              - State Shukuro Turushima Jamming
+          - count: "2"
+            class: Battleship
+            names:
+              - State Shukuro Shogun
+          - count: "2"
+            class: Battleship
+            names:
+              - State Shukuro Taisho
+          - count: "3"
+            class: Sentry
+            names:
+              - Caldari Tower Sentry III
+      - id: neutralizer-spawns-shooting-a-neutralizer-will-cause-spawning
+        trigger:
+          on: other
+          text: Neutralizer Spawns - shooting a Neutralizer will cause spawning
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Taibo State Daimyo
+              - Taibo State Shugo
+            ewar:
+              - kind: ecm
+            note: 30-35% Jamming for 20 seconds.

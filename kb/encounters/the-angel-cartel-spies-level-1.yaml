@@ -1,0 +1,51 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-angel-cartel-spies-level-1
+kind: mission
+name: The Angel Cartel Spies
+level: 1
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Angel Cartel Spies (Level 1)
+    url: https://wiki.eveuniversity.org/The_Angel_Cartel_Spies_(Level_1)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "230770"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the Cartel spies at the bookmarked location.
+notes:
+  - text: The Angel Cartel Spies is a mission involving combat against the Angel Cartel. It has multiple level variants.
+pockets:
+  - name: Warp-in
+    notes:
+      - text: Auto-aggro on warp-in. Destroy all hostile NPCs to complete the mission.
+    waves:
+      - id: initial-npcs
+        trigger:
+          on: warpIn
+          text: Initial NPCs
+        spawns:
+          - count: 8-9
+            class: Frigate
+            names:
+              - Gistii Hijacker
+              - Gistii Rogue
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Container
+            names:
+              - Munitions Storage
+            drop: 2x 100 Small Projectile Ammo
+          - count: "1"
+            class: Structure
+            names:
+              - Angel Lookout

@@ -1,0 +1,28 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: rendering-assistance
+kind: mission
+name: Rendering Assistance
+level: null
+enemyFaction: null
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Rendering Assistance
+    url: https://wiki.eveuniversity.org/Rendering_Assistance
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "222589"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Deliver the antibiotics (0.2) to the Colonial Supply Depot.
+notes:
+  - text: "Colonial Supplies: The Gallente Federation emphasizes personal freedoms and accomplishments, but they also believe in providing the tools for personal advancement. Gallente believe in ”investing in the future,” so shipments of supplies for new colonies are almost always supported by lobbyists and the government. History has shown that the returns generated over the years more than repay the initial investment."
+  - text: Objective
+  - text: "Deliver the antibiotics to the Colonial Supply Depot - Location: Harerget ()"
+  - text: Notes
+  - text: --You can complete this mission and accept the next one remotely.--
+  - text: Be sure to load the Antibiotics (0.2 m³) into your ship's cargo bay before leaving the station. This is a very easy mission. You will warp in at 45 km from the Colonial Supply Depot container. Simply approach it, open it, and transfer the Antibiotics to that container.
+  - text: "Next Mission: Lair of the Snakes"

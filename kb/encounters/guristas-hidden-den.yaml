@@ -1,0 +1,261 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: guristas-hidden-den
+kind: anomaly
+name: Guristas Hidden Den
+dedRating: null
+anomalyClass: 4
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Guristas Hidden Den
+    url: https://wiki.eveuniversity.org/Guristas_Hidden_Den
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "213982"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Rating: Class 4 Level 2"
+  - text: Ungated pocket with multiple waves of Gurista rats.
+  - text: "Escalation: This site may escalate to Guristas Troop Reinvigoration Camp."
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "1"
+            class: Sentry
+            names:
+              - Guristas Heavy Missile Battery
+          - count: 8-10
+            class: Frigate
+            names:
+              - Pithi Wrecker
+              - Pithi Demolisher
+          - count: 8-10
+            class: Destroyer
+            names:
+              - Pithior Supremacist
+              - Pithior Terrorist
+          - count: 3-5
+            class: Cruiser
+            names:
+              - Pithum Abolisher
+              - Pithum Eraser
+            triggers: triggers first spawn
+          - count: 3-5
+            class: Battlecruiser
+            names:
+              - Pithatis Assassin
+              - Pithatis Assaulter
+              - Pithatis Death Dealer
+      - id: first-spawn
+        trigger:
+          on: other
+          text: First spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Pithi Wrecker
+              - Pithi Plunderer
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Pithum Ascriber
+              - Pithum Silencer
+            triggers: triggers second spawn
+      - id: second-spawn
+        trigger:
+          on: other
+          text: Second spawn
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Pithi Wrecker
+              - Pithi Plunderer
+          - count: 2-3
+            class: Destroyer
+            names:
+              - Pithior Supremacist
+              - Pithior Terrorist
+            triggers: Triggers third spawn
+      - id: third-spawn
+        trigger:
+          on: other
+          text: Third spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Pithi Despoiler
+              - Pithi Saboteur
+            ewar:
+              - kind: ecm
+          - count: "2"
+            class: Cruiser
+            names:
+              - Pithum Inferno
+              - Pithum Mortifier
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Pithatis Revolter
+              - Pithatis Assaulter
+            triggers: Triggers fourth spawn
+      - id: fourth-spawn
+        trigger:
+          on: other
+          text: Fourth spawn
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Pithi Despoiler
+              - Pithi Saboteur
+            ewar:
+              - kind: ecm
+          - count: 0-2
+            class: Cruiser
+            names:
+              - Pithum Inferno
+              - Pithum Mortifier
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Pithatis Revolter
+              - Pithatis Death Dealer
+            triggers: Triggers fifth spawn
+          - count: 1-2
+            class: Battleship
+            names:
+              - Pith Eradicator
+              - Pith Obliterator
+      - id: fifth-spawn
+        trigger:
+          on: other
+          text: Fifth spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Pithi Despoiler
+              - Pithi Saboteur
+            ewar:
+              - kind: ecm
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Pithum Inferno
+              - Pithum Mortifier
+            triggers: Triggers sixth spawn
+      - id: sixth-spawn
+        trigger:
+          on: other
+          text: Sixth spawn
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Arrogator
+              - Dire Pithi Imputor
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Pithum Ascriber
+              - Pithum Silencer
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Pithatis Revolter
+              - Pithatis Assaulter
+            triggers: Triggers seventh spawn
+      - id: seventh-spawn
+        trigger:
+          on: other
+          text: Seventh spawn
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Pithi Wrecker
+              - Pithi Plunderer
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Pithum Inferno
+              - Pithum Mortifier
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Pithatis Assassin
+              - Pithatis Death Dealer
+            triggers: Triggers eighth spawn
+      - id: eighth-spawn
+        trigger:
+          on: other
+          text: Eighth spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Dire Pithi Arrogator
+              - Dire Pithi Imputor
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Cruiser
+            names:
+              - Pithum Ascriber
+              - Pithum Silencer
+          - count: 6-7
+            class: Battlecruiser
+            names:
+              - Pithatis Assaulter
+              - Pithatis Death Dealer
+      - id: rare-commander-spawn
+        trigger:
+          on: other
+          text: Rare commander spawn
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Commander Cruiser
+            names:
+              - Dread Guristas Inferno
+              - Dread Guristas Mortifier
+            drop: Faction ammo/tags. Possibles Dread Guristas modules or rare implants
+      - id: structures-on-site
+        trigger:
+          on: other
+          text: Structures on site
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Structure
+            names:
+              - Habitation Module
+            drop: Passengers
+    onWarpIn: Formed by two former members of the Caldari Navy who go by the names "Fatal" and "the Rabbit," the Guristas are a constant thorn in the side of the Caldari State. Traditional pirates in the sense that their operation is not based around some creed or ideology, the Guristas are motivated by plain and simple greed. They have bases close to Caldari space, and from them they embark on daring raids, often into the State itself. Though the Guristas are considered more honorable than many of their piratical counterparts, they are still extremely dangerous and not to be trifled with.
+sde:
+  dungeonIds:
+    - 3458

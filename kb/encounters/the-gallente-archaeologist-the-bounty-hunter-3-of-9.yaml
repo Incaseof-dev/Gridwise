@@ -1,0 +1,168 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-gallente-archaeologist-the-bounty-hunter-3-of-9
+kind: mission
+name: The Gallente Archaeologist - The Bounty Hunter (3 of 9)
+level: 4
+enemyFaction: Mordu's Legion Command
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Gallente Archaeologist - The Bounty Hunter (3 of 9)
+    url: https://wiki.eveuniversity.org/The_Gallente_Archaeologist_-_The_Bounty_Hunter_(3_of_9)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223408"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Acquire 25 Prisoners (187.5 m³)
+notes:
+  - text: This mission is a part of the mission chain The Gallente Archaeologist
+  - text: When you warp to the mission you face three acceleration gates. The mission items drop in the room behind the left gate to Taisu.
+pockets:
+  - name: Left gate to Taisu
+    notes:
+      - text: Mission items drop after destroying the central top group.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "7"
+            class: Cruiser
+            names:
+              - Mordus Lion
+            group: "Next to warp in:"
+          - count: "1"
+            class: Battleship
+            names:
+              - Mordus Mammoth
+            group: "Next to warp in:"
+          - count: "4"
+            class: Cruiser
+            names:
+              - Mordus Leopard
+            group: central top (30 km away)
+          - count: "2"
+            class: Battleship
+            names:
+              - Mordus Mammoth
+              - Mordus Sequestor
+            group: central top (30 km away)
+          - count: "1"
+            class: Battleship
+            names:
+              - Taisu Magdesh
+            group: central top (30 km away)
+            drop: Taisu Magdesh's Insignia
+          - count: "10"
+            class: Cruiser
+            names:
+              - Mordus Bobcat
+              - Mordus Lion
+              - Mordus Leopard
+            group: central bottom (40 km away)
+          - count: "1"
+            class: Battleship
+            names:
+              - Mordus Phanti
+            group: central bottom (40 km away)
+          - count: "3"
+            class: Battleship
+            names:
+              - Mordus Gigamar
+            group: left (35 km away)
+          - count: "3"
+            class: Frigate
+            names:
+              - Mordus Bounty Hunter
+            group: right (35 km away)
+          - count: "4"
+            class: Cruiser
+            names:
+              - Mordus Cheetah
+            group: right (35 km away)
+          - count: "2"
+            class: Battleship
+            names:
+              - Mordus Sequestor
+            group: right (35 km away)
+  - name: Middle gate to Korrani
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Mercanary Wingman
+            group: Group 1 (20 km)
+          - count: "5"
+            class: Cruiser
+            names:
+              - Mercenary Corporal
+            group: Group 1 (20 km)
+          - count: "2"
+            class: Battleship
+            names:
+              - Mercenary Overlord
+            group: Group 1 (20 km)
+          - count: "12"
+            class: Cruiser
+            names:
+              - Mercenary Commander
+              - Mercenary Lieutenant
+            group: Group 2 (40 km)
+          - count: "5"
+            class: Frigate
+            names:
+              - Bounty Hunter Rookie
+            group: Group 3 (65 km)
+          - count: "5"
+            class: Cruiser
+            names:
+              - Mercenary Lieutanant
+            group: Group 3 (65 km)
+          - count: "1"
+            class: Cruiser
+            names:
+              - Korrani Salemo
+            group: Group 3 (65 km)
+            drop: Korrani's DNA
+          - count: "1"
+            class: Battleship
+            names:
+              - Mercenary Overlord
+            group: Group 3 (65 km)
+  - name: Right gate to Jared
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Mercanary Wingman
+            group: 20 km
+          - count: "1"
+            class: Battleship
+            names:
+              - Mercenary Overlord
+            group: 20 km
+          - count: "1"
+            class: Battleship
+            names:
+              - Jared Kalem
+            group: 20 km
+          - count: "6"
+            class: Sentry
+            names:
+              - Tower Sentry III
+            group: Sentries (20-36 km

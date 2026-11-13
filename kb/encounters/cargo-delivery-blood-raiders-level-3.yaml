@@ -1,0 +1,106 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: cargo-delivery-blood-raiders-level-3
+kind: mission
+name: Cargo Delivery
+level: 3
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Cargo Delivery (Blood Raiders) (Level 3)
+    url: https://wiki.eveuniversity.org/Cargo_Delivery_(Blood_Raiders)_(Level_3)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "204018"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Retrieve the cargo (10x Spiced Wine 5m3) from the warehouse, and bring it to your agent.
+ewar:
+  - kind: neut
+  - kind: trackingDisruption
+notes:
+  - text: "Blitz: Warp-in, grab the goods, warp out."
+pockets:
+  - name: Warp-in
+    notes:
+      - text: The goods are in the container named Warehouse.
+      - text: On warp-in, no rats are present. Wave one appears when picking up the goods from the container.
+      - text: Wave 2 cruiser neut for 5-8gj/s depending on variant.
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Container
+            names:
+              - Warehouse
+            drop: 10x Spiced Wine (Mission objective)
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Elite Frigate
+            names:
+              - Elder Corpii Collector
+              - Elder Corpii Seeker
+            ewar:
+              - kind: trackingDisruption
+          - count: 1-2
+            class: Destroyer
+            names:
+              - Corpior Cleric
+              - Corpior Friar
+            triggers: Wave 2
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Corpum Arch Priest
+              - Corpum Arch Sage
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Corpatis Fanatic
+              - Corpatis Shade
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Destroyer
+            names:
+              - Corpior Cleric
+              - Corpior Friar
+              - Corpior Templar
+          - count: 1-2
+            class: Cruiser
+            names:
+              - Corpum Priest
+              - Corpum Sage
+            ewar:
+              - kind: neut
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Shecon Pouta
+            note: Renamed Elder Corpum Dark Priest/Shadow Sage
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Corpum Bishop
+              - Corpum Seer
+      - id: mining
+        trigger:
+          on: other
+          text: Mining
+          confidence: inferred
+        spawns: []

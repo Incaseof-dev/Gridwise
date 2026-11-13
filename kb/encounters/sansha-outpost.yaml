@@ -1,0 +1,133 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: sansha-outpost
+kind: complex
+name: Sansha Outpost
+dedRating: null
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Sansha Outpost
+    url: https://wiki.eveuniversity.org/Sansha_Outpost
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "228333"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Escalation: This site can escalate to Hidden Riches"
+pockets:
+  - name: First Room
+    notes:
+      - text: Gate to next room is ~60 km away, locked until all ships are destroyed. No auto-aggro.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Centii Butcherer
+              - Centii Manslayer
+          - count: "4"
+            class: Destroyer
+            names:
+              - Centior Horror
+              - Centior Monster
+          - count: "5"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Fiend
+              - Centum Loyal Hellhound
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Centatis Devil
+              - Centatis Wraith
+  - name: Second Room
+    notes:
+      - text: Ships are spread out in 3 groups between 20-70 km from the warp-in. No auto-aggro and the groups can be fought separately.
+      - text: ----
+      - text: Total bounties ~8M ISK
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Fiend
+              - Centum Loyal Hellhound
+            group: Group 1 (20-30 km)
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Centatis Devil
+              - Centatis Daemon
+              - Centatis Behemoth
+            group: Group 1 (20-30 km)
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Centum Torturer
+              - Centum Mutilator
+            group: Group 2 (40 km)
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Centatis Phantasm
+              - Centatis Specter
+              - Centatis Wraith
+            group: Group 2 (40 km)
+          - count: "4"
+            class: Frigate
+            names:
+              - Centii Butcher
+              - Centii Manslayer
+            group: Group 3 (60-70 km)
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Savage
+              - Centii Loyal Slavehunter
+            group: Group 3 (60-70 km)
+            ewar:
+              - kind: trackingDisruption
+          - count: 1-2
+            class: Destroyer
+            names:
+              - Centior Monster
+            group: Group 3 (60-70 km)
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Centatis Devil
+            group: Group 3 (60-70 km)
+      - id: commander-wave-triggered-by-killing-all-frigates-and-destroyers-from-group-3
+        trigger:
+          on: other
+          text: Commander wave (triggered by killing all frigates and destroyers from group 3)
+          confidence: inferred
+        spawns:
+          - count: 0-1
+            class: Commander Cruiser
+            names:
+              - True Sansha's Slaughterer
+            ewar:
+              - kind: trackingDisruption
+            triggers: Escalation trigger
+            drop: faction modules
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Torturer
+              - Centum Loyal Mutilator
+sde:
+  dungeonIds:
+    - 1252

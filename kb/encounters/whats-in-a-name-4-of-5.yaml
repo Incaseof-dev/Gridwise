@@ -1,0 +1,67 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: whats-in-a-name-4-of-5
+kind: mission
+name: What's In a Name (4 of 5)
+level: 1
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – What's In a Name (4 of 5)
+    url: https://wiki.eveuniversity.org/What's_In_a_Name_(4_of_5)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223290"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Investigate reports of Gallente buildup. Pull out immediately upon contact with the enemy.
+notes:
+  - text: "Suggested ships: Destroyer"
+  - text: If you stay in Pocket 1 for too long, a group of 6 Federation Hastile/Clavis will spawn on you.
+  - text: "Video: Corax"
+  - text: "Next: What's In a Name (5 of 5)"
+pockets:
+  - name: Warp-In
+    notes:
+      - text: Nothing in here but an acceleration gate.
+  - name: Pocket 1
+    notes:
+      - text: Ships do not need to be engaged.
+      - text: Approach the Federation Navy Station and mission will flag complete when you get within 47km.
+    waves:
+      - id: initial-group-56-110km
+        trigger:
+          on: warpIn
+          text: Initial Group, 56-110km
+        spawns:
+          - count: "8"
+            class: Sentry
+            names:
+              - Gallente Cruise Missile Battery
+          - count: "6"
+            class: Frigate
+            names:
+              - Federation Insidiator
+              - Federation Praktor Balra
+          - count: "6"
+            class: Cruiser
+            names:
+              - Federation Praktor Ouragos
+              - Federation Praktor Optioon
+          - count: "10"
+            class: Battleship
+            names:
+              - Federation Praktor Hexeris
+      - id: mission-objective
+        trigger:
+          on: other
+          text: Mission Objective
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Federation Navy Station

@@ -1,0 +1,196 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: guristas-strike-final-battle
+kind: mission
+name: Guristas Strike - Final Battle
+level: 3
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Guristas Strike - Final Battle
+    url: https://wiki.eveuniversity.org/Guristas_Strike_-_Final_Battle
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "214330"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Find the Central Control Hub of this Serpentis outpost, in the final room of the complex. Destroy it before the Serpentis fleet guarding it manages to destroy you. Once you fire at the Central Control Hub, the fleet guarding it WILL attack. You have been warned.
+notes:
+  - text: "Suggested ships: Drake, faction or T2 HAC"
+  - text: Guristas Strike - (The) Final Battle is the 10th and final mission of the mission chain Guristas Strike. This is a "normal" storyline mission unlike the other missions in this chain e.g. it gives faction standing and the usual derived standing for friendly and hostile factions.
+  - text: "Space Type: Deadspace with gates. No hostiles at initial gate."
+pockets:
+  - name: 1st pocket
+    notes:
+      - text: The warp-in point is in the middle between the two lines.
+    waves:
+      - id: auto-aggro
+        trigger:
+          on: other
+          text: Auto aggro
+          confidence: inferred
+        spawns:
+          - count: 3-5
+            class: Frigate
+            names:
+              - Coreli Guard
+              - Coreli Safeguard
+            group: Line A (~40km)
+          - count: "2"
+            class: Sentry
+            names:
+              - Serpentis light missile batteries
+            group: Line A (~40km)
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Corelum Chief Watchman
+              - Corelum Chief Patroller
+            group: Line B (~40km)
+            ewar:
+              - kind: sensorDamp
+          - count: "2"
+            class: Sentry
+            names:
+              - Serpentis light missile batteries
+            group: Line B (~40km)
+  - name: 2nd pocket
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Coreli Defender
+              - Coreli Protector
+            group: Group 1 (~15 km, Auto aggro)
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Corelatis Platoon
+              - Corelatis Squad Leader
+            group: Group 1 (~15 km, Auto aggro)
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Corelum Chief Watchman
+              - Corelum Chief Patroller
+            group: Group 2 (50 km)
+          - count: "4"
+            class: Frigate
+            names:
+              - Coreli Defender
+              - Coreli Protector
+            group: Group 3 (60 km)
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Corelum Chief Infantry
+              - Corelum Chief Sentinel
+            group: Group 3 (60 km)
+          - count: "5"
+            class: Frigate
+            names:
+              - Coreli Defender
+              - Coreli Protector
+            group: Group 4 (60 km)
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Corelatis Platoon Leader
+            group: Group 4 (60 km)
+  - name: 3rd pocket
+    notes:
+      - text: "Blitz: Destroy Groups 1, 2 and the Central Control Hub, warp out."
+      - text: The Central Control Hub may drop a +3 implant.
+      - text: Groups 3 and 4 only aggro when approached, attacked, or when Central Control Hub is destroyed.
+      - text: If you plan on fighting the battleship groups, make sure your ship can tank around 200-300 incoming DPS.
+      - text: Group 3 is more dangerous to tackle; the battleships have significantly longer range than the battleships in Group 4.
+      - text: Despite the mission objective saying that the fleet will attack when firing on the Central Control Hub, groups 3 and 4 will not aggro until the Central Control Hub is destroyed.
+      - text: "Previous: Guristas Strike - Retrieve the Prisoners"
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Hangar Array
+            names:
+              - Central Control Hub
+            triggers: Destruction aggros group 3 and 4.
+            drop: may drop a +3 implant.
+            note: marks mission complete.
+      - id: guard-fleet
+        trigger:
+          on: other
+          text: Guard fleet
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Destroyer
+            names:
+              - Corelior Trooper
+              - Corelior Soldier
+            group: Group 1 (<10 km, Auto aggro)
+          - count: "2"
+            class: Cruiser
+            names:
+              - Corelum Chief Defender
+              - Corelum Chief Protector
+            group: Group 1 (<10 km, Auto aggro)
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Guardian Veteran
+            group: Group 2 (60 km)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Corelatis Platoon Leader
+            group: Group 2 (60 km)
+          - count: "4"
+            class: Destroyer
+            names:
+              - Corelior Trooper
+              - Corelior Soldier
+              - Corelior Infantry
+            group: Group 3 (~100 km)
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Corelatis Platoon Leader
+            group: Group 3 (~100 km)
+          - count: "4"
+            class: Battleship
+            names:
+              - Core High
+              - Core Grand
+              - Core Lord Admiral
+            group: Group 3 (~100 km)
+          - count: "5"
+            class: Destroyer
+            names:
+              - Corelior Soldier
+              - Corelior Infantry
+            group: Group 4 (~110 km)
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corelatis Captain Sentry
+              - Corelatis High Captain
+            group: Group 4 (~110 km)
+          - count: "3"
+            class: Battleship
+            names:
+              - Core Lord Admiral
+            group: Group 4 (~110 km)

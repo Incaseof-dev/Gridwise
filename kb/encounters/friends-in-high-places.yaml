@@ -1,0 +1,55 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: friends-in-high-places
+kind: mission
+name: Friends In High Places
+level: 4
+enemyFaction: null
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Friends In High Places
+    url: https://wiki.eveuniversity.org/Friends_In_High_Places
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "208091"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Investigate the RSS Facility
+restrictions:
+  - text: "Ship size limit: Battleship"
+notes:
+  - text: "Suggested ships: Combat Ship (mission-after-next requires combat, this one is on the way there)"
+  - text: "The Republic Security Services: Perhaps less is known about the Republic Security Services than any other national intelligence agency in the universe of New Eden. Their numbers, their spheres of operation, the scope of their involvement in affairs national and international: all these things are hidden in a fog of silence and misdirection. In the absence of concrete recorded information, the only detectable pattern is composed of reports from those few times the agency has revealed itself. Pieced together, a picture begins to emerge: grim, humorless, determined and fierce, these men and women stalk the underworld and mingle with its demons so their brethren may live in the sunshine."
+  - text: thumb|right|192px
+  - text: Accept the Mission remotely.
+  - text: Go to Alakgur eight jumps away, take the Acceleration Gate, approach the RSS Radio Telescope and take three items from RSS Radio Telescope (0.3 m3).
+  - text: Complete the Mission remotely.
+pockets:
+  - name: Warp-in
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate to Area RRD-XX3
+  - name: Area RRD-XX3
+    notes:
+      - text: "Mission Completion Dialogue: Excellent work out there, . We're making copies of the data you recovered now. It looks like we'll have more than enough here to work from. From first impressions, it looks like this RSS agent was working almost entirely alone on some operation involving a highly-placed Ammatar defector and the Wildfire Khumaak. The RSS people here with me are claiming they've never heard of this matter before. I'm seeing reports here to suggest that this Ammatar “sister” was a source for historical information on the Wildfire. I don't like the name of that RSS operation though, . Stillwater? That's basically the opposite of “Wildfire”. We should be careful not to trust the RSS too much on this one, I think. In fact, I have an idea. I'll speak with you again after I've made a few arrangements with the RSS."
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Container
+            names:
+              - RSS Radio Telescope
+            drop: "Operation Stillwater: Synopsis, Report R:081-9560, Report R:081-9568"

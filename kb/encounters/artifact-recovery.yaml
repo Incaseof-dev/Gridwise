@@ -1,0 +1,58 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: artifact-recovery
+kind: mission
+name: Artifact Recovery
+level: 2
+enemyFaction: Rogue Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Artifact Recovery
+    url: https://wiki.eveuniversity.org/Artifact_Recovery
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "220362"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal:
+    - kinetic
+    - thermal
+  resist:
+    - em
+    - explosive
+    - kinetic
+objectives:
+  - text: Retrieve the artifact from the miners who discovered it.
+notes:
+  - text: "Suggested ships: Arbitrator, Vexor"
+  - text: "Amarr and Religious Artifacts: Due in large part to the values and teachings of the Amarr faith, the Amarr have the most extensive libraries, archives, and collections of artifacts pertaining to post-Eden life and, possibly, the EVE gate. One of the heirs of the Ardishapur family, hailed as a paragon of the faith, has amassed what may be the largest array of religious artifacts in a private collection. Some of his pieces are even suspected to pre-date the closure of the EVE gate."
+npcs:
+  Rogue Miner:
+    sdeTypes:
+      - Rogue Pirate Grunt
+      - Rogue Pirate
+    class: Cruiser
+pockets:
+  - name: Warp-in
+    notes:
+      - text: Mission objective item (1x Religious Artifact) will drop from a random Rogue Pirate Grunt (Rogue Miner).
+      - text: "24 April 2023: Container with Artifact dropped from last ship/cruiser for me -- Evon R&#39;al"
+    waves:
+      - id: hostile-npcs-20-30km-auto-aggro
+        trigger:
+          on: other
+          text: Hostile NPCs (20-30km) (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "8"
+            class: Frigate
+            names:
+              - Rogue Miner
+          - count: 6-8
+            class: Cruiser
+            names:
+              - Rogue Miner
+            note: Uses Thunderbolt Heavy Missiles

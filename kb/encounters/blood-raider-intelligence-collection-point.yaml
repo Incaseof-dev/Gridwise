@@ -1,0 +1,176 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: blood-raider-intelligence-collection-point
+kind: complex
+name: Blood Raider Intelligence Collection Point
+dedRating: 3
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Blood Raider Intelligence Collection Point
+    url: https://wiki.eveuniversity.org/Blood_Raider_Intelligence_Collection_Point
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231340"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Cruiser"
+notes:
+  - text: Blood Raider Intelligence Collection Point is DED 3/10 combat site that is found in high security systems in Amarr regions that have blood raider presence.
+loot:
+  - item: 7th Tier Overseer's Effects
+    from: Dark Blood Alpha
+    note: est. 600k ISK (wiki) · 100% drop rate
+  - item: Corpii A-Type module
+    from: Dark Blood Alpha
+    note: est. 300k - 182M ISK (wiki) · rare (up to 6x)
+  - item: Cruor BPC
+    from: Dark Blood Alpha
+    note: est. 30M ISK (wiki) · rare
+  - item: Dark Blood module
+    from: Dark Blood Alpha
+    note: est. 60k - 188M ISK (wiki) · rare (up to 3x)
+lootNotes:
+  - text: 2.000.000 ISK
+  - text: Update 06 Feb 2023 - Site Dark Blood Alpha dropped 450M isk (Rare) in Corpii A-Type and Dark Blood modules.
+pockets:
+  - name: First Pocket
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "14"
+            class: Frigate
+            names:
+              - Corpii Collector
+              - Corpii Seeker
+            ewar:
+              - kind: trackingDisruption
+          - count: "1"
+            class: Frigate
+            names:
+              - Corpii Raider
+              - Corpii Diviner
+    onWarpIn: 'Between their extreme religious views and their fixation on capsuleer blood, it can be easy to forget the "raider" part of the Blood Raider Covenant. Blood Raider wolf packs are a deadly reminder of this. Should any CONCORD or otherwise friendly vessel encounter a raiding party, it is recommended that any Dark Blood Alpha encountered be eliminated on sight. DED Threat Assessment: Unsafe (3 of 10)'
+  - name: Second Pocket
+    notes:
+      - text: ----
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "13"
+            class: Frigate
+            names:
+              - Corpii Collector
+              - Corpii Seeker
+            ewar:
+              - kind: trackingDisruption
+          - count: "5"
+            class: Frigate
+            names:
+              - Corpii Herald
+              - Corpii Raider
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Sentry
+            names:
+              - Blood Point Defense Battery
+    onWarpIn: Those big ships were brought down by a well-organized group of small frigates. Wolf pack tactics. Expect more fighting.
+  - name: Third Pocket
+    notes:
+      - text: ----
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "12"
+            class: Frigate
+            names:
+              - Corpii Collector
+              - Corpii Seeker
+            ewar:
+              - kind: trackingDisruption
+          - count: "16"
+            class: Frigate
+            names:
+              - Corpii Herald
+              - Corpii Upholder
+          - count: "1"
+            class: Sentry
+            names:
+              - Blood Point Defense Battery
+  - name: Fourth Pocket
+    notes:
+      - text: ----
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "16"
+            class: Frigate
+            names:
+              - Corpii Collector
+              - Corpii Seeker
+            ewar:
+              - kind: trackingDisruption
+          - count: "16"
+            class: Frigate
+            names:
+              - Corpii Diviner
+              - Corpii Upholder
+            note: type list incomplete on the source page
+          - count: "4"
+            class: Sentry
+            names:
+              - Blood Raider Sentry Gun
+  - name: Fifth Pocket
+    notes:
+      - text: ----
+      - text: "Upon Dark Blood Alpha death: Information - Alpha Eliminated: The Dark Blood Alpha has been destroyed. The Covenant really should learn not to mess with capsuleers. Don't forget to search the wreckage for modules."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Sentry
+            names:
+              - Blood Raider Sentry Gun
+          - count: "19"
+            class: Frigate
+            names:
+              - Corpii Collector
+              - Corpii Seeker
+            ewar:
+              - kind: trackingDisruption
+          - count: "15"
+            class: Frigate
+            names:
+              - Corpii Diviner
+              - Corpii Raider
+          - count: "1"
+            class: Cruiser
+            names:
+              - Corpum Arch Priest
+          - count: "1"
+            class: Overseer Frigate
+            names:
+              - Dark Blood Alpha
+            drop: Drops 7th Tier Overseer's Personal Effects and possibly up to three Corpii A-Type modules, Cruor BPC and Faction modules
+    onWarpIn: The Dark Blood Alpha is based in the next pocket. Removing its influence will prevent these raids from reaching further.
+sde:
+  dungeonIds:
+    - 5279

@@ -1,0 +1,653 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: new-frontiers-1-7
+kind: mission
+name: New Frontiers 1-7
+level: 3
+enemyFaction: Mercenaries
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – New Frontiers 1-7
+    url: https://wiki.eveuniversity.org/New_Frontiers_1-7
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "232000"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Mine 235 of Green Aristite
+notes:
+  - text: "Summary: All gates in the missions are unlocked."
+  - text: "Summary: Several missions have pairs of Energy Neutralizer Towers that do 5gj/s each."
+  - text: "Summary: Damage can get quite high for a level 3 in later stages, especially if blitzing."
+  - text: alt=Screenshot of the grid of the Raw Materials mission, showing the group of mercenaries|thumb|left
+  - text: You must mine the Green Arisite yourself, buying it will not complete the mission.
+  - text: No initial aggro from enemies on grid. After some time 3 Cruisers (Mercenary Miners) depart. You are able to mine the Green Arisite from a distanse without being attacked, but may aggro if you get within about 15km.
+  - text: As with any time you mine (even in missions or sites), it is possible for belt rats to spawn.
+  - text: A Pioneer can mine the required ore in seconds without moving from the warpin and without aggroing any enemies.
+  - text: "Blitz: Mine the Green Arisite"
+  - text: A passive tanked battlecruiser is a good choice for this mission due to energy neutralizers.
+  - text: "Blitz: Go straight through gate, blow up Professor Delainen's Lab, and loot the cargo container spawned."
+  - text: "Blitz: Destroy Stasis/Energy Neutralizer towers as needed."
+  - text: Damage is primarily thermal.
+  - text: "Blitz: Kill Delainen-ROM Symbiote, loot Elite Drone AI, and warp out."
+  - text: Energy Neutralizers combine for -15gj/s and have a range in excess of 120Km. Web towers have a range of about 30km. If you are active tanked focus down the neutralizers first.
+  - text: "Blitz: Kill Group 2 to trigger Wave 1. Kill the battleship, loot the can, warp out."
+  - text: "Blitz: Jump through first gate, kill Delainen-Solar Cinder Entity, warp out."
+pockets:
+  - name: Warp-in
+    notes:
+      - text: There are two reinforcement chains. The Mercenary Miners will warp out after a bit if not killed. Triggers are last kill of specified ship type.
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Mercenary Miner
+            drop: Random drugs
+            note: Renamed Sansha Transport
+          - count: "3"
+            class: Frigate
+            names:
+              - Mercenary Elite Fighter
+            triggers: Reinforcement 1-1
+          - count: "2"
+            class: Cruiser
+            names:
+              - Mercenary Lieutenant
+            triggers: Reinforcement 2-1
+      - id: reinforcement-1-1-on-initial-group-frigate-destruction
+        trigger:
+          on: warpIn
+          text: Reinforcement 1-1 (On Initial Group Frigate Destruction)
+        spawns:
+          - count: "4"
+            class: Cruiser
+            names:
+              - Mercenary Commander
+            triggers: Wave 2
+      - id: reinforcement-1-2-on-reinforcement-1-1-destruction
+        trigger:
+          on: other
+          text: Reinforcement 1-2 (On reinforcement 1-1 Destruction)
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Mercenary Fighter
+      - id: reinforcement-2-1-on-initial-group-cruiser-destruction
+        trigger:
+          on: warpIn
+          text: Reinforcement 2-1 (On Initial Group Cruiser Destruction)
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Mercenary Elite Fighter
+            triggers: Wave 4
+          - count: "2"
+            class: Cruiser
+            names:
+              - Mercenary Lieutenant
+            triggers: Wave 5
+      - id: reinforcement-2-2a-on-reinforcement-2-1-frigate-destruction
+        trigger:
+          on: other
+          text: Reinforcement 2-2A (On Reinforcement 2-1 Frigate Destruction)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Cruiser
+            names:
+              - Mercenary Commander
+      - id: reinforcement-2-2b-on-reinforcement-2-1-cruiser-destruction
+        trigger:
+          on: other
+          text: Reinforcement 2-2B (On Reinforcement 2-1 Cruiser Destruction)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Mercenary Fighter
+          - count: "2"
+            class: Cruiser
+            names:
+              - Mercenary Commander
+  - name: Warp-in
+    notes:
+      - text: All enemies will aggro immediately. Destroying the two drone bunkers can stop additional reinforcements. Waves 2 and 3 are likely timed.
+      - text: WARNING There is a chance that an Alvus Controller battleship will spawn after the initial frigate spawn. Frigate Strain Sunder Alvi, which warp disrupt, might spawn as well.
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: 11-12
+            class: Frigate
+            names:
+              - Raider
+              - Sunder Alvi
+      - id: wave-1-on-attacking-initial-group
+        trigger:
+          on: warpIn
+          text: Wave 1 (On Attacking Initial Group)
+        spawns:
+          - count: "2"
+            class: Cruiser
+            names:
+              - Bomber
+              - Disintegrator Alvum
+          - count: "2"
+            class: Destroyer
+            names:
+              - Shatterer
+              - Ripper Alvior
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Frigate
+            names:
+              - Devilfish Alvi
+          - count: 1-2
+            class: Cruiser
+            names:
+              - Violator Alvum
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Viral Infector Alvum
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Destroyer
+            names:
+              - Shredder Alvior
+          - count: "1"
+            class: Cruiser
+            names:
+              - Bomber Alvum
+      - id: battleship-spawn
+        trigger:
+          on: other
+          text: Battleship spawn
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Battleship
+            names:
+              - Swarm Preserver Alvus
+  - name: 1st Pocket
+    notes:
+      - text: "Warning: You will be webbed and neuted immediately after warp-in. Make sure you have weapons/drones capable of hitting the towers at about 50 kilometers or you will be stuck while being neuted and fired upon."
+      - text: Neutralizer towers will be capping you for -10GJ/s each, -20GJ/s total. Reinforcements do not always spawn and may be prevented by destroying bunkers at warp-in.
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Professor Delainen's Lab
+            drop: Professor Kajurei Delainen
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: 4-5
+            class: Frigate
+            names:
+              - Decimator
+              - Raider Alvi
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Defeater Alvatis
+          - count: "2"
+            class: Sentry
+            names:
+              - Drone Neutralizer Sentry I
+            ewar:
+              - kind: neut
+            triggers: Wave 1
+          - count: "2"
+            class: Sentry
+            names:
+              - Drone Stasis Tower
+            ewar:
+              - kind: web
+          - count: "4"
+            class: Sentry
+            names:
+              - Tower Sentry Drone I
+      - id: wave-1-on-neutralizer-sentry-destruction
+        trigger:
+          on: other
+          text: Wave 1 (On Neutralizer Sentry Destruction)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Devilfish Alvi
+            triggers: Wave 2
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Strain Sunder Alvi
+          - count: "2"
+            class: Cruiser
+            names:
+              - Devastator Alvum
+      - id: wave-3-on-attacking-the-lab
+        trigger:
+          on: other
+          text: Wave 3(On Attacking the Lab)
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Raider
+              - Silverfish Alvi
+          - count: "2"
+            class: Destroyer
+            names:
+              - Shatter Alvior
+  - name: Warp-in
+    notes:
+      - text: Mission objective is contained in the cargo container created on destruction of Delainen-ROM Symbiote. Destroying the Drone Bunker can cause multiple waves to spawn. Triggers are last kill of specified ship type.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Battleship
+            names:
+              - Delainen-ROM Symbiote [Alvus Ruler
+              - Supreme Parasite]
+            group: Group 1
+            triggers: Trigger for Wave 3-6
+            drop: Mission objective dropped in cargo container
+          - count: "3"
+            class: Sentry
+            names:
+              - Drone Light Missile Battery
+            group: Group 1
+            triggers: Wave 1
+          - count: "10"
+            class: Frigate
+            names:
+              - Render
+              - Splinter Alvi
+            group: Group 2
+            triggers: Wave 2
+      - id: wave-1-on-group-1-destruction
+        trigger:
+          on: other
+          text: Wave 1 (On Group 1 Destruction)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Dismantler
+              - Marauder Alvior
+      - id: wave-2-on-group-2-destruction
+        trigger:
+          on: other
+          text: Wave 2 (On Group 2 Destruction)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Render Alvi
+      - id: wave-3-on-boss-75-shields
+        trigger:
+          on: other
+          text: Wave 3 (On Boss 75% Shields)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Strain Annihilator
+              - Strain Violator Alvum
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Defeater Alvatis
+      - id: wave-4-on-boss-50-shields
+        trigger:
+          on: other
+          text: Wave 4 (On Boss 50% Shields)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Devastator Alvum
+      - id: wave-5-on-boss-50-armor
+        trigger:
+          on: other
+          text: Wave 5 (On Boss 50% Armor)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Strain Raider
+              - Strain Sunder Alvi
+          - count: "3"
+            class: Destroyer
+            names:
+              - Predator
+              - Shredder Alvior
+      - id: wave-6-on-boss-50-hull
+        trigger:
+          on: other
+          text: Wave 6 (On Boss 50% Hull)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Silverfish Alvi
+          - count: "2"
+            class: Cruiser
+            names:
+              - Annihilator
+              - Devastator Alvum
+  - name: Warp-in
+    notes:
+      - text: Mission objective is contained in the cargo container created on destruction of Wave 1 Drone Battleship.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Sentry
+            names:
+              - Drone Energy Neutralizer Sentry I
+            group: Group 1 (55-60km)
+            ewar:
+              - kind: neut
+            triggers: Wave 2
+          - count: "2"
+            class: Sentry
+            names:
+              - Drone Stasis Tower
+            group: Group 1 (55-60km)
+            ewar:
+              - kind: web
+            triggers: Wave 3 and 4
+          - count: "3"
+            class: Sentry
+            names:
+              - Drone Light Missile Battery
+            group: Group 1 (55-60km)
+          - count: "2"
+            class: Sentry
+            names:
+              - Tower Sentry Drone I
+            group: Group 1 (55-60km)
+            triggers: Wave 5
+          - count: "1"
+            class: Frigate
+            names:
+              - Render
+              - Sunder Alvi
+            group: Group 2 (Spawn after ~45sec)
+            triggers: Wave 1
+          - count: "3"
+            class: Frigate
+            names:
+              - Render
+              - Sunder Alvi
+            group: Group 3 (Spawn after ~1min 45sec)
+          - count: "2"
+            class: Destroyer
+            names:
+              - Shatter
+              - Shredder Alvior
+            group: Group 4 (Spawn after ~2min)
+          - count: "2"
+            class: Cruiser
+            names:
+              - Destructor
+              - Violator
+              - Wrecker Alvum
+            group: Group 4 (Spawn after ~2min)
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Viral Infector Alvum
+            group: Group 4 (Spawn after ~2min)
+      - id: wave-1-on-group-2-destruction
+        trigger:
+          on: other
+          text: Wave 1 (On Group 2 Destruction)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Battleship
+            names:
+              - Alvus Ruler
+              - Supreme Alvus Parasite
+            triggers: Wave 6
+            drop: Mission objective in cargo container
+      - id: wave-2-on-neutralizer-sentry-destruction
+        trigger:
+          on: other
+          text: Wave 2 (On Neutralizer Sentry Destruction)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Devilfish
+              - Silverfish Alvi
+          - count: "4"
+            class: Destroyer
+            names:
+              - Predator
+              - Shredder Alvior
+      - id: wave-3-on-attacking-a-stasis-tower
+        trigger:
+          on: other
+          text: Wave 3 (On Attacking A Stasis Tower)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Raider Alvi
+      - id: wave-4-on-attacking-second-stasis-tower
+        trigger:
+          on: other
+          text: Wave 4 (On Attacking Second Stasis Tower)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Strain Raider Alvi
+      - id: wave-5-on-destroying-a-tower-sentry
+        trigger:
+          on: other
+          text: Wave 5 (On Destroying A Tower Sentry)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Strain Raider Alvi
+          - count: "2"
+            class: Cruiser
+            names:
+              - Annihilator
+              - Devastator Alvum
+      - id: wave-6-on-boss-25-armor
+        trigger:
+          on: other
+          text: Wave 6 (On Boss 25% Armor)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Cruiser
+            names:
+              - Disintegrator Alvum
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Defeater Alvatis
+  - name: Warp-in
+    notes:
+      - text: Gate is not locked. Delainen-Solar Cinder Entity will make a short appearance before using the acceleration gate. Enemy ships spawn in over the first 20 seconds.
+    waves:
+      - id: inital-group
+        trigger:
+          on: other
+          text: Inital Group
+          confidence: inferred
+        spawns:
+          - count: "15"
+            class: Frigate
+            names:
+              - Decimator
+              - Render Alvi
+          - count: "14"
+            class: Cruiser
+            names:
+              - Annihilator
+              - Devastator Alvum
+  - name: 1st Pocket
+    notes:
+      - text: On entry only Delainen-Solar Cinder Entity will be present. Group 2,3 and 4 rapidly spawn in over the next ten seconds.
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Infested Station Ruins
+            note: No Drops
+      - id: wave
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Battleship
+            names:
+              - Delainen-Solar Cinder Entity
+            group: Group 1
+            triggers: Wave 2
+            note: Renamed Supreme Alvus Parasite
+          - count: "3"
+            class: Frigate
+            names:
+              - Devilfish
+              - Hunter Alvi
+            group: Group 2
+          - count: "3"
+            class: Cruiser
+            names:
+              - Violator Alvum
+            group: Group 2
+          - count: "3"
+            class: Frigate
+            names:
+              - Barracuda
+              - Devilfish Alvi
+            group: Group 3
+          - count: "2"
+            class: Cruiser
+            names:
+              - Vilator Alvum
+            group: Group 3
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Viral Infector Alvum
+            group: Group 3
+          - count: "5"
+            class: Frigate
+            names:
+              - Devilfish
+              - Hunter
+              - Silverfish Alvi
+            group: Group 4
+          - count: "3"
+            class: Cruiser
+            names:
+              - Violator Alvum
+            group: Group 4
+      - id: wave-1-on-group-2-destruction
+        trigger:
+          on: other
+          text: Wave 1 (On Group 2 Destruction)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Barracuda
+              - Devilfish Alvi
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Viral Infector Alvum
+      - id: wave-2-on-boss-first-hit
+        trigger:
+          on: other
+          text: Wave 2 (On Boss First Hit)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Barracuda
+              - Devilfish Alvi
+          - count: "2"
+            class: Cruiser
+            names:
+              - Violator Alvum
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Viral Infector Alvum

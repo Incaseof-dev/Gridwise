@@ -1,0 +1,121 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: retribution-serpentis
+kind: mission
+name: Retribution
+level: 3
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Retribution (Serpentis)
+    url: https://wiki.eveuniversity.org/Retribution_(Serpentis)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "207699"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the Serpentis Outpost and then report back to your agent.
+ewar:
+  - kind: sensorDamp
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Guardian Veteran"
+  - text: "Suggested ships: Ferox, Ishtar, Drake"
+  - text: "Blitz: Destroy the Outpost, Warp Out"
+  - text: No hostiles at initial gate
+pockets:
+  - name: Single pocket
+    notes:
+      - text: NPC distribution
+      - text: Four groups, all peaceful. Can be separately engaged without drawing aggro from the other groups.
+      - text: Attacking the outpost will aggro the entire pocket
+    waves:
+      - id: structures-65-70km
+        trigger:
+          on: other
+          text: Structures (65-70km)
+          confidence: inferred
+        spawns:
+          - count: "?"
+            class: Structure
+            names:
+              - Serpentis Outpost
+            note: Mission objective
+          - count: "?"
+            class: Structure
+            names:
+              - Small Armory
+      - id: group-1-28-33km
+        trigger:
+          on: other
+          text: Group 1 28-33km
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Coreli Guard
+              - Coreli Safeguard
+          - count: "2"
+            class: Cruiser
+            names:
+              - Corelum Chief Defender
+              - Corelum Chief Protector
+      - id: group-2-32-40km
+        trigger:
+          on: other
+          text: Group 2 32-40km
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Guardian Veteran
+            ewar:
+              - kind: warpDisruption
+          - count: "2"
+            class: Cruiser
+            names:
+              - Corelum Chief Scout
+              - Corelum Chief Spy
+      - id: group-3-45-51km
+        trigger:
+          on: other
+          text: Group 3 45-51km
+          confidence: inferred
+        spawns:
+          - count: "8"
+            class: Frigate
+            names:
+              - Coreli Patroller
+              - Coreli Watchmen
+            ewar:
+              - kind: sensorDamp
+      - id: group-4-65-77km
+        trigger:
+          on: other
+          text: Group 4 65-77km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Coreli Protector
+              - Coreli Defender
+            ewar:
+              - kind: sensorDamp
+          - count: "1"
+            class: Frigate
+            names:
+              - Guardian Veteran
+            ewar:
+              - kind: warpDisruption
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Corelatis Squad Leader
+              - Corelatis Wing Leader

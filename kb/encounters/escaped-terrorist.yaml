@@ -1,0 +1,53 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: escaped-terrorist
+kind: mission
+name: Escaped Terrorist
+level: 1
+enemyFaction: Caldari State
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Escaped Terrorist
+    url: https://wiki.eveuniversity.org/Escaped_Terrorist
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191688"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Suggested ships: Frigate"
+  - text: All structures in Pocket 1 (except the power generator) drop T1 ammunition or trade goods
+  - text: Starbase Silo in Pocket 2 drops metal scraps
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-group-20-45km
+        trigger:
+          on: warpIn
+          text: Initial Group, 20-45km
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - State Showato
+              - State Bo-Hi
+              - State Nagasa
+  - name: Pocket 2
+    waves:
+      - id: initial-group-2-8km
+        trigger:
+          on: warpIn
+          text: Initial Group, 2-8km
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - State Bo-Hi
+              - State Nagasa
+          - count: "1"
+            class: Frigate
+            names:
+              - Telos Varshan
+            note: Mission objective

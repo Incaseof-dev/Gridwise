@@ -1,0 +1,79 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: little-fingers
+kind: mission
+name: Little Fingers
+level: 4
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Little Fingers
+    url: https://wiki.eveuniversity.org/Little_Fingers
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "216957"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Defeat any guards you find.
+notes:
+  - text: "Suggested ships: Long range battleship"
+  - text: "Sweatshops: Technology levels vary throughout New Eden. Not every system, constellation, or even region is at the cutting edge of technology. Sometimes, factories rely on old-fashioned techniques and tried-and-true methods. Child labor is one of those methods. A child's tiny hands and little fingers are perfect tools for creating the high-end textiles of Gallente fashion, as well as reaching those hard-to-reach corners of ship armaments. Though not commonplace – or legal, for that matter – sweatshops like the Rattler Row can be found in the more backwards areas of New Eden."
+  - text: Ungated semi-deadspace pocket zero jumps away in the same System.
+  - text: "Tips: Initial defenders and Reinforcements 2 deal damage over 80 km and approach at 200 m/s"
+  - text: "Tips: Reinforcements 1 and Reinforcements 3 deal damage over 20 km and approach at 1000 m/s"
+  - text: "Tips: Carry On Token is used to Blitz the next Mission while Amphere 9 and Tattered Doll are lore items"
+  - text: "Tips: 3% The Syndicate Faction Standing loss if you destroy the Fuel Depot"
+  - text: "Tips: The center Fuel Depot has the Carry On Token"
+pockets:
+  - name: Warp-in
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "5"
+            class: Battleship
+            names:
+              - Rattler Row Battleship
+            drop: Tattered Doll
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Rattler Row Elite Frigate
+            group: Reinforcements 1
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Elite Battleship
+            names:
+              - Rattler Row Elite Battleship
+            group: Reinforcements 1
+            drop: Amphere 9
+          - count: "6"
+            class: Battleship
+            names:
+              - Rattler Row Rookie Battleship
+            group: Reinforcements 2
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Rattler Row Elite Cruiser
+            group: Reinforcements 3
+            ewar:
+              - kind: neut
+              - kind: sensorDamp
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "3"
+            class: Structure
+            names:
+              - Fuel Depot
+            drop: Center Radioactive Cargo Rig contains Carry On Token

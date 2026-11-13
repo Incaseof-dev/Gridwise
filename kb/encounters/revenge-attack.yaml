@@ -1,0 +1,90 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: revenge-attack
+kind: mission
+name: Revenge Attack
+level: 3
+enemyFaction: Minmatar Republic
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Revenge Attack
+    url: https://wiki.eveuniversity.org/Revenge_Attack
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "205482"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: web
+  - kind: warpScramble
+notes:
+  - text: "Web/warp disruption: Republic Fleet C-2 Support Frigate (Web, Scram)"
+  - text: "Suggested ships: Battlecruiser"
+  - text: This mission is the second part of a 2 part mission chain. The other mission is Trespassers.
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: The enemies in Pocket 1 are divided into three groups, each about 60km away from the warp-in point.
+      - text: The gate to the second pocket is 67km away.
+    waves:
+      - id: initial-group-60km
+        trigger:
+          on: warpIn
+          text: Initial Group, 60km
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Republic Fleet C-2 Support Frigate
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "4"
+            class: Frigate
+            names:
+              - Republic Fleet Soldier
+              - Republic Fleet Elite Soldier
+          - count: "7"
+            class: Cruiser
+            names:
+              - Republic Fleet Rupture
+              - Republic Fleet Stabber
+              - Republic Fleet Officer
+          - count: "1"
+            class: Cruiser
+            names:
+              - Republic Fleet Officer
+            note: Appears as frigate, but has cruiser stats.
+          - count: "4"
+            class: Sentry
+            names:
+              - Minmatar Heavy Missile Battery
+  - name: Pocket 2
+    waves:
+      - id: initial-group-30km
+        trigger:
+          on: warpIn
+          text: Initial Group, 30km
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Republic Fleet C-2 Support Frigate
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "1"
+            class: Cruiser
+            names:
+              - Republic Fleet Raid Leader
+          - count: "3"
+            class: Cruiser
+            names:
+              - Republic Fleet Rupture
+              - Republic Fleet Stabber
+          - count: "3"
+            class: Sentry
+            names:
+              - Tower Sentry Minmatar

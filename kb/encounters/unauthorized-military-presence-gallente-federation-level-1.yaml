@@ -1,0 +1,83 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: unauthorized-military-presence-gallente-federation-level-1
+kind: mission
+name: Unauthorized Military Presence
+level: 1
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Unauthorized Military Presence (Gallente Federation) (Level 1)
+    url: https://wiki.eveuniversity.org/Unauthorized_Military_Presence_(Gallente_Federation)_(Level_1)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "230472"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Bring 10x Marines(20 m3)
+notes:
+  - text: "Suggested ships: Frigate"
+  - text: Many Plagioclase/Pyroxeres/Veldspar asteroids in both pockets.
+  - text: 1 x Kernite in the 1st pocket (small).
+  - text: 1 x Omber in the 2nd pocket (small).
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: No automatic aggro. Groups aggro separately.
+    waves:
+      - id: group-1-15km
+        trigger:
+          on: other
+          text: Group 1, 15km
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Federation Hastile
+              - Federation Clavis
+      - id: group-2-20-25km
+        trigger:
+          on: other
+          text: Group 2, 20-25km
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Federation Hastile
+              - Federation Clavis
+  - name: Pocket 2
+    notes:
+      - text: Group 1 will aggro when closer than 10km. When attacking group 1, group 2 will aggro as well.
+    waves:
+      - id: group-1-40-45km
+        trigger:
+          on: other
+          text: Group 1, 40-45km
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Federation Hastile
+              - Federation Clavis
+      - id: group-2-55-60km
+        trigger:
+          on: other
+          text: Group 2, 55-60km
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Federation Hastile
+              - Federation Clavis
+          - count: "1"
+            class: Industrial
+            names:
+              - Gallente Personnel Transport
+            drop: 10 Marines (20m3)

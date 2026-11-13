@@ -1,0 +1,302 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: blood-watch
+kind: complex
+name: Blood Watch
+dedRating: null
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Blood Watch
+    url: https://wiki.eveuniversity.org/Blood_Watch
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "205087"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Battlecruisers (Incl. T3 cruisers)"
+notes:
+  - text: This is a combat site that can be scanned down with probes, and can be found in high security space in the Amarr regions.
+  - text: The site is behind an acceleration gate. Battlecruiser hulls and below can access it.
+  - text: A passive tanked battlecruiser or faction cruiser can run this site with little difficulty.
+  - text: "Escalation: This site can escalate to Medical Twilight."
+  - text: 'Escalation: Expeditions: Medical Twilight:: The slaves you liberated from this Blood facility report that this was a holding place where slaves were gathered, before being sent off to a blood replenishing "medical" station. You have heard about those places; where the Blood members go to get their blood exchanged with the blood of a slave who has been put on a special "blood cleansing" diet for a period of time. Needless to say, this leaves the poor slave empty of the vital fluid in question. Understandably your newfound slaves are quite thrilled with these recent turn of events. None of them knows where this so called "medical" station is, but a couple can tell you that they were in another holding station like this one, before they came here and coincidentally it is not all that far away ...'
+  - text: 'ExpeditionsShip: Sentry Vexor: On warp in launch your light scout drones to clear the ships close to you. While clearing the first enemies, make sure to burn away from the other groups to gain time. Be careful not to kill the "Elder Corpii Spy Drone" as it triggers the next wave. As it webs you careful watch on your drones is required. Once you have moved far enough away, kill the "Elder Corpii Spy Drone". As the next wave spawns, retrieve your light scout drones and launch sentry drones. You should now be able to pick off the remaining waves using your sentry drones without problems.'
+  - text: 'ExpeditionsShip: HM Gnosis; blitzing: Since you will likely be armor tanked, you can stay close to the enemies and pick them off. Avoid destroying the "Elder Corpii Spy Drones" until all other enemies are cleared, then destroy them to trigger the next wave. Make sure not to trigger several waves at once, as DPS output will become very high. When the Militant Commander spawns, only kill the Corpatis Militant Commander then take the acceleration gate. For the second room, clear the room of rats before engaging the Blood Raider Cathedral. Make sure to stay as far away from it as possible to evade incoming damage. After aggressing the Cathedral, only kill the Corpus Militant Supervisor to trigger the commander wave. Then kill the Dark Blood commander that spawns, bookmark his wreck, and warp out and back in later to collect the loot.'
+loot:
+  - item: + Commander and other valuable loot
+  - item: Dark Blood modules
+    note: From Commander Frigate
+  - item: T2 implants (i.e Mid-grade Talisman Beta)
+    note: From Commander Frigate
+  - item: Salvage
+    note: est. 4.6M (wiki)
+  - item: Loot
+    note: est. 4.0M (wiki)
+  - item: + Exploration logs
+  - item: Nov 2014
+  - item: Feb 2022
+    note: est. 6.2M (wiki)
+  - item: Loot
+    note: est. no Commander (wiki)
+  - item: June 2023
+    note: est. 130M (wiki)
+pockets:
+  - name: The Site Itself
+    notes:
+      - text: The site is gated. Warping to the site lands at 0 on the acceleration gate.
+  - name: First Pocket
+    notes:
+      - text: "Note: The Elder Corpii Spy Drones orbit with microwarpdrives at around 7,500m. As you may be Tracking Disrupted, you may need to use rockets or drones to kill it."
+      - text: "Militant Commander spawn: Corpior Militant Commander: Who dares interrupt the Blood Games? I'll have your head on a platter and personally deliver it to the Overlord for your impudence."
+      - text: "Upon militant commander destruction:: The destruction of the Militant Commander has activated a mechanism inside the nearby acceleration gate. It now appears to be unlocked."
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "1"
+            class: Drone
+            names:
+              - Elder Corpii Spy Drone
+            ewar:
+              - kind: web
+            triggers: Destroying triggers next wave
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corpum Sage
+              - Corpum Priest
+            ewar:
+              - kind: neut
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Corpum Arch Reaver
+            ewar:
+              - kind: trackingDisruption
+            note: type list incomplete on the source page
+      - id: wave-2
+        trigger:
+          on: other
+          text: "Wave #2"
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Drone
+            names:
+              - Elder Corpii Spy Drone
+            ewar:
+              - kind: web
+            triggers: Destroying triggers Wave 3
+          - count: 10-12
+            class: Destroyer
+            names:
+              - Corpior Templar
+              - Corpior Devoter
+            note: type list incomplete on the source page
+      - id: wave-3
+        trigger:
+          on: other
+          text: "Wave #3"
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Drone
+            names:
+              - Elder Corpii Spy Drone
+            ewar:
+              - kind: web
+            triggers: Destroying triggers next wave
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corpior Templar
+            note: type list incomplete on the source page
+          - count: "5"
+            class: Cruiser
+            names:
+              - Corpum Sage
+            ewar:
+              - kind: neut
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Corpum Arch Templar
+            ewar:
+              - kind: trackingDisruption
+      - id: wave-4
+        trigger:
+          on: other
+          text: "Wave #4"
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Destroyer
+            names:
+              - Corpior Devoter
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Cruiser
+            names:
+              - Corpum Priest
+              - Corpum Sage
+            ewar:
+              - kind: neut
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Corpatis Militant Commander
+            triggers: Destroying unlocks Acceleration Gate
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: Unlocked by killing the Militant Commander or with a blood silver tag (consumed)
+    onWarpIn: Previous explorers have commented that one of the gates requires a passkey. Alternatively, it can be bypassed by convincing the commander to unlock it. The overseer guards the Cathedral vigorously.
+  - name: Second Pocket
+    notes:
+      - text: ----
+      - text: 400px|thumb|Blood Raider Cathedral
+      - text: "Incoming Transmission: Heuristic analysis of this location indicates that attacking the Blood Raider Cathedral would greatly improve your odds of uncovering further illicit activity."
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Station
+            names:
+              - Blood Raider Cathedral
+            triggers: Attacking triggers Blood Raider Cathedral Engagement Wave
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "1"
+            class: Drone
+            names:
+              - Elder Corpii Spy Drone
+            ewar:
+              - kind: web
+            triggers: Destruction triggers next wave
+          - count: "6"
+            class: Frigate
+            names:
+              - Corpii Engraver
+            note: type list incomplete on the source page
+          - count: 2-3
+            class: Destroyer
+            names:
+              - Corpior Templar
+            note: type list incomplete on the source page
+          - count: 5-6
+            class: Cruiser
+            names:
+              - Corpum Sage
+              - Corpum Priest
+            ewar:
+              - kind: neut
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Corpum Arch Templar
+            ewar:
+              - kind: trackingDisruption
+      - id: wave-2
+        trigger:
+          on: other
+          text: "Wave #2"
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Drone
+            names:
+              - Elder Corpii Spy Drone
+            ewar:
+              - kind: web
+            triggers: Destruction triggers next wave
+          - count: "8"
+            class: Destroyer
+            names:
+              - Corpior Friar
+            note: type list incomplete on the source page
+          - count: "8"
+            class: Elite Cruiser
+            names:
+              - Corpum Arch Engraver
+            note: type list incomplete on the source page
+      - id: wave-3
+        trigger:
+          on: other
+          text: "Wave #3"
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Elite Cruiser
+            names:
+              - Corpum Arch Priest
+            ewar:
+              - kind: neut
+      - id: blood-raider-cathedral-engagement-wave
+        trigger:
+          on: other
+          text: Blood Raider Cathedral Engagement Wave
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Destroyer
+            names:
+              - Supervisor's Henchman
+          - count: 3-4
+            class: Cruiser
+            names:
+              - Supervisor's Guardian
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Corpus Militant Supervisor
+            triggers: Destroying may trigger Commander Wave, escalation trigger
+      - id: commander-wave
+        trigger:
+          on: other
+          text: Commander Wave
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Collector
+            ewar:
+              - kind: web
+              - kind: trackingDisruption
+              - kind: warpDisruption
+            note: type list incomplete on the source page
+          - count: 0-1
+            class: Commander Frigate
+            names:
+              - Dark Blood Collector
+            ewar:
+              - kind: trackingDisruption
+            drop: Drops possibly Dark Blood modules, faction implants or blueprint copies
+            note: type list incomplete on the source page
+          - count: "4"
+            class: Destroyer
+            names:
+              - Corpior Visionary
+              - Corpior Converter
+sde:
+  dungeonIds:
+    - 1218

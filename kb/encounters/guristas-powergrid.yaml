@@ -1,0 +1,227 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: guristas-powergrid
+kind: escalation
+name: Guristas Powergrid
+dedRating: null
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Guristas Powergrid
+    url: https://wiki.eveuniversity.org/Guristas_Powergrid
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "226861"
+defaults:
+  confidence: verified
+  source: uni
+lootNotes:
+  - text: 06 Feb 2025 Dread Guristas Colonel dropped nothing (empty wreck). Expedition bugged? On previous steps dropped two Dread Guristas modules total worth ~30m.
+  - text: 09 Sep 2025 Dread Guristas Colonel dropped nothing (empty wreck)
+pockets:
+  - name: Part 1
+    notes:
+      - text: "Failed escalation message: The amount of energy harvested and stored here is phenomenal. Exploiting these facilities for your own use might sound tempting, if it weren't for the fact that the entire place is under complete lockdown and only the highest-level Angel security codes will grant access. You have no idea where to go next. Your name will however not be forgotten by certain Angel commanders."
+      - text: "Success escalation trigger message: The amount of energy harvested and stored here is phenomenal. Exploiting these facilities for your own use might sound tempting, if it weren't for the fact that the entire place is under complete lockdown and only the highest-level Angel security codes will grant access. You did however manage to gain access to an open channel in their communication network, and two energy storage locations were revealed to you."
+    waves:
+      - id: 50-70km-1-group
+        trigger:
+          on: other
+          text: 50-70km 1 group.
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Pithi Demolisher
+              - Pithi Destructor
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Saboteur
+            ewar:
+              - kind: ecm
+          - count: "4"
+            class: Destroyer
+            names:
+              - Pithior Guerilla
+            note: type list incomplete on the source page
+          - count: "4"
+            class: Cruiser
+            names:
+              - Pithum Ascriber
+              - Pithum Silencer
+          - count: "3"
+            class: Battleship
+            names:
+              - Pith Eradicator
+              - Pith Obliterator
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Dread Guristas Dismantler
+            drop: May drop faction mods
+  - name: Part 2
+    notes:
+      - text: "Escalation trigger: This facility was not just used for energy storage. Ships, modules and other supplies were storedd in those containers, and sadly every single one was destroyed when the Gurista commanders gave the order. They knew you were coming, and there was little the could do about it on such short notice. The slaughter continues as you prepare to visit the second energy storage facility."
+    waves:
+      - id: 70km-1-group
+        trigger:
+          on: other
+          text: 70km 1 group.
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Pithi Demolisher
+              - Pithi Destructor
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Arrogator
+            ewar:
+              - kind: warpDisruption
+          - count: "3"
+            class: Destroyer
+            names:
+              - Pithior Guerilla
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Mortifier
+              - Dire Pithum Inferno
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Pithatis Revolter
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Dread Guristas Eliminator
+            drop: May drop faction mods
+  - name: Part 3
+    notes:
+      - text: "Escalation trigger: You arrive at the second energy storage facility to find it completely deserted. It looks like the party ended before you arrived. Luckily for youm your computers pick up several signals in the nearby area, one of which seems to have unusually high amounts of combat ships."
+    waves:
+      - id: warp-in
+        trigger:
+          on: other
+          text: warp-in
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Pithatis Revolter
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Battleship
+            names:
+              - Pith Conquistador
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Dread Guristas Exterminator
+            drop: May drop faction loot
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+  - name: 1st Pocket
+    waves:
+      - id: 1-group-0km
+        trigger:
+          on: other
+          text: 1 group. 0km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Pithi Demolisher
+              - Pithi Destructor
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Saboteur
+          - count: "4"
+            class: Destroyer
+            names:
+              - Pithior Guerilla
+            note: type list incomplete on the source page
+          - count: "6"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Abolisher
+            note: type list incomplete on the source page
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Pithatis Death Dealer
+            note: type list incomplete on the source page
+          - count: "4"
+            class: Battleship
+            names:
+              - Pith Eradicator
+            note: type list incomplete on the source page
+  - name: 2nd pocket
+    waves:
+      - id: group-1-25km
+        trigger:
+          on: other
+          text: Group 1 25km
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Dispoiler
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Abolisher
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Pithatis Revolter
+            note: type list incomplete on the source page
+      - id: group-2-55-60km
+        trigger:
+          on: other
+          text: Group 2 55-60km
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Pithi Demolisher
+              - Pithi Destructor
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Wrecker
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Cruiser
+            names:
+              - Pithum Abolisher
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Battleship
+            names:
+              - Pith Eradicator
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Dread Guristas Colonel
+            drop: Faction mods/implant
+sde:
+  dungeonIds:
+    - 1881

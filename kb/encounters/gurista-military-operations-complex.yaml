@@ -1,0 +1,214 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: gurista-military-operations-complex
+kind: complex
+name: Gurista Military Operations Complex
+dedRating: 7
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Gurista Military Operations Complex
+    url: https://wiki.eveuniversity.org/Gurista_Military_Operations_Complex
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "214778"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: T2 Battleship"
+notes:
+  - text: Gurista Military Operations Complex is a null security DED rated site found through exploration.
+loot:
+  - item: 20th Tier Overseer's Effects
+    from: Dread Guristas Commanding Officer
+    note: est. 61.2M ISK (wiki) · 100% drop rate
+  - item: Pith C-Type module
+    from: Dread Guristas Commanding Officer
+  - item: Gila or Rattlesnake BPC
+    from: Dread Guristas Commanding Officer
+  - item: Dread Guristas module
+    from: Dread Guristas ...
+  - item: Dread Guristas module
+    from: Dread Guristas ...
+pockets:
+  - name: 1st pocket
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "13"
+            class: Destroyer
+            names:
+              - Pithior Anarchist
+              - Pithior Nihilist
+              - Pithior Renegade
+          - count: "9"
+            class: Battlecruiser
+            names:
+              - Pithatis Assaulter
+              - Pithatis Enforcer
+          - count: "7"
+            class: Battleship
+            names:
+              - Pith Conquistador
+              - Pith Destroyer
+          - count: "12"
+            class: Battleship
+            names:
+              - Pith Eliminator
+            ewar:
+              - kind: ecm
+    onWarpIn: The existence of Gurista military complexes contradicts the common perception of the organization as romantic anarchists or modern buccaneers. Time and again both State and CONCORD authorities have encountered sprawling Gurista fortresses that display a degree of organization and manpower generally found only in effective military organizations. All such sites should be dealt with severely and their command structure broken. We do not want a repeat of Kuvakei.
+  - name: 2nd pocket
+    notes:
+      - text: The defenders are split in two groups.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "11"
+            class: Destroyer
+            names:
+              - Pithior Anarchist
+              - Pithior Guerilla
+              - Pithior Nihilist
+              - Pithior Renegade
+          - count: "10"
+            class: Battlecruiser
+            names:
+              - Pithatis Assaulter
+              - Pithatis Enforcer
+          - count: "9"
+            class: Battleship
+            names:
+              - Pith Conquistador
+              - Pith Destroyer
+              - Pith Massacrer
+  - name: 3rd pocket
+    notes:
+      - text: The defenders are split in two groups.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "12"
+            class: Destroyer
+            names:
+              - Pithior Anarchist
+              - Pithior Nihilist
+              - Pithior Renegade
+          - count: "1"
+            class: Commander Cruiser
+            names:
+              - Dread Guristas Murderer
+              - Dread Guristas Killer
+            ewar:
+              - kind: ecm
+            drop: may contain faction loot items
+          - count: "11"
+            class: Battlecruiser
+            names:
+              - Pithatis Assassin
+              - Pithatis Assaulter
+              - Pithatis Enforcer
+          - count: "9"
+            class: Battleship
+            names:
+              - Pith Conquistador
+              - Pith Destroyer
+  - name: 4th pocket
+    notes:
+      - text: The defenders are split in two groups. Whole room will start attacking you.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "12"
+            class: Destroyer
+            names:
+              - Pithior Anarchist
+              - Pithior Guerilla
+              - Pithior Renegade
+          - count: "13"
+            class: Battlecruiser
+            names:
+              - Pithatis Assaulter
+              - Pithatis Enforcer
+              - Pithatis Executor
+          - count: "6"
+            class: Battleship
+            names:
+              - Pith Conquistador
+              - Pith Destroyer
+          - count: "1"
+            class: Battleship
+            names:
+              - Pith Extinguisher
+            ewar:
+              - kind: ecm
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Dread Guristas Conquistador
+            ewar:
+              - kind: ecm
+            drop: 12.75M bounty, Dread Gurista Ammo, Dread Guristas Brass Tag and can drop faction items
+            note: type list incomplete on the source page
+  - name: 5th pocket
+    notes:
+      - text: The defenders are split in three groups. Dread Guristas Commanding Officer does EXTREMELY high Kinetic damage and has a strong EHP tank.
+      - text: "After the Overseer is destroyed: Commander Eliminated The Guristas CO has been destroyed. The local Gurista command structure should be in chaos while they scramble to emplace a new leader. It appears that the Guristas aren't good at keeping leaders."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 15-16
+            class: Destroyer
+            names:
+              - Pithior Anarchist
+              - Pithior Nihilist
+              - Pithior Renegade
+          - count: "1"
+            class: Cruiser
+            names:
+              - Pithum Eraser
+          - count: "10"
+            class: Battlecruiser
+            names:
+              - Pithatis Assassin
+              - Pithatis Assaulter
+              - Pithatis Enforcer
+          - count: "11"
+            class: Battleship
+            names:
+              - Pith Conquistador
+              - Pith Destroyer
+              - Pith Massacrer
+          - count: "1"
+            class: Overseer Battleship
+            names:
+              - Dread Guristas Commanding Officer
+            ewar:
+              - kind: web
+            drop: 20th Tier Overseer's Personal Effects, faction module, Pith C-type modules, Gila or rattlesnake BPC
+          - count: "1"
+            class: Sentry
+            names:
+              - Guristas Stasis Tower
+            ewar:
+              - kind: web
+sde:
+  dungeonIds:
+    - 5233

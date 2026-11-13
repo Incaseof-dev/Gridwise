@@ -1,0 +1,317 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: terrorist-plot
+kind: escalation
+name: Terrorist Plot!
+dedRating: null
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Terrorist Plot!
+    url: https://wiki.eveuniversity.org/Terrorist_Plot!
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "222651"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Terrorist Plot! is an expedition that can escalate from Guristas Watch.
+  - text: "Escalation start: All through the battle, one of the Gurista cruisers was engaged in intense and thoroughly encrypted communications with some other ship in another system. Even though you didn't understand a thing of what was being said, your scanners successfully managed to locate the other party."
+  - text: NPCs at intial warp in.
+loot:
+  - item: +Notable loot drops
+  - item: Dread Guristas frigate modules
+    note: From Dread Guristas commander frigates
+  - item: Pithi A-Type modules
+    note: From Dread Guristas Envoy
+  - item: Worm blueprint
+    note: From Dread Guristas Envoy
+  - item: + Exploration logs
+  - item: September 2021
+    note: est. 250 Million ISK (wiki)
+  - item: January 2024
+    note: est. 70 Million ISK (wiki)
+  - item: January 2025
+    note: est. 37 Thousand ISK (wiki)
+npcs:
+  Pith Relay Commander:
+    sdeTypes:
+      - Dread Guristas Destructor
+      - Dread Guristas Demolisher
+    class: Commander Frigate
+  FIO Bomber Drone:
+    sdeTypes:
+      - Elite Repair Drone
+    class: Elite Cruiser
+pockets:
+  - name: Pocket 2
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Dire Pithi Demolisher
+              - Dire Pithi Destructor
+              - Dire Pithi Plunderer
+              - Dire Pithi Wrecker
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Pithatis Assassin
+              - Pithatis Assaulter
+          - count: "1"
+            class: Commander Frigate
+            names:
+              - Dread Gurista Destructor
+            triggers: Escalation trigger
+            drop: Can drop a faction item,Implant BPC, drops faction ammo
+  - name: First Room
+    notes:
+      - text: "Approaching the stash will trigger a one time damage event (around 1,000 damage) and the following text:"
+      - text: 'On approaching the stash: "Someone has approached the Viral Stash too closely, triggering an explosion from a hidden trap nearby!"'
+      - text: "Opening the stash triggers the following message:"
+      - text: "On opening the stash: \"In this container you find stacks of barrels containing viral agent, as well as a list of ship ID's, barrel ID's and times. Most of the times have passed, but the very last one is only a couple of minutes from now, perhaps if you intercept this ship that is supposedly arriving, you may find out more.\""
+      - text: After opening the stash, the Relay Officer will spawn after a few minutes.
+      - text: "Escalation dead-end: Sadly, the datacore of this ship has taken a direct hit and any information stored there has gone up in smoke."
+      - text: "Escalation trigger: After a brief search of the ship's datacore, you find out that the Guristas, under contract from an unnamed third party, are supposed to disperse the viral agent in the atmosphere of two terrestrial planets in Caldari space. No information is given about which planets, but you do discover the coordinates of a rally point for the operation. It appears that a sizeable fleet was supposed to meet there."
+    waves:
+      - id: container
+        trigger:
+          on: other
+          text: container
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Container
+            names:
+              - Viral Stash
+            drop: 17x Data Sheets, 5x Viral Agents
+      - id: single-enemy
+        trigger:
+          on: other
+          text: Single enemy
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Guristas Relay Officer
+            triggers: May trigger escalation
+  - name: Second Location
+    notes:
+      - text: Single ungated pocket. Damage can be high if you trigger the extra waves before you have a chance to pair it down.
+  - name: Pocket 5
+    notes:
+      - text: "Escalation trigger: Scanning through the remains of the lead ship, you find no further information on which planets were supposed to be terrorized, but you do find a location where a meeting has been scheduled with whoever organized the operation."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "1"
+            class: Drone
+            names:
+              - Elite Stasis Drone
+            triggers: Triggers wave with boss in it
+          - count: "1"
+            class: Drone
+            names:
+              - Stasis Drone
+            triggers: Triggers another wave
+          - count: "4"
+            class: Frigate
+            names:
+              - Dire Pithi Demolisher
+              - Dire Pithi Destructor
+              - Dire Pithi Plunderer
+              - Dire Pithi Wrecker
+          - count: 0-4
+            class: Destroyer
+            names:
+              - Pithior Terrorist
+              - Pithior Guerilla
+          - count: "4"
+            class: Cruiser
+            names:
+              - Pithum Inferno
+              - Pithum Mortifier
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Pithatis Assassin
+              - Pithatis Assaulter
+      - id: stasis-drone-reinforcements
+        trigger:
+          on: other
+          text: Stasis drone reinforcements
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Pithi Wrecker
+              - Pithi Plunderer
+              - Pithi Destructor
+              - Pithi Demolisher
+          - count: "4"
+            class: Destroyer
+            names:
+              - Pithior Supremacist
+              - Pithior Terrorist
+              - Pithior Anarchist
+              - Pithior Nihilist
+          - count: 6-7
+            class: Battlecruiser
+            names:
+              - Pithatis Assassin
+              - Pithatis Assaulter
+      - id: elite-stasis-drone-reinforcements
+        trigger:
+          on: other
+          text: Elite stasis drone reinforcements
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Despoiler
+              - Dire Pithi Saboteur
+            ewar:
+              - kind: ecm
+          - count: 0-1
+            class: Commander Frigate
+            names:
+              - Pith Relay Commander
+            triggers: Escalation trigger
+            drop: may contain Dread Guristas frigate modules or implant
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Pithatis Revolter
+              - Pithatis Death Dealer
+  - name: Third Location
+    notes:
+      - text: You land on an acceleration gate.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Wrecker
+              - Dire Pithi Plunderer
+              - Dire Pithi Destructor
+              - Dire Pithi Demolisher
+          - count: 0-1
+            class: Commander Destroyer
+            names:
+              - Dread Guristas Anarchist
+            triggers: Escalation trigger
+            drop: may contain Dread Guristas Frigate modules or an implant
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Pithum Inferno
+              - Pithum Mortifier
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Pithatis Revolter
+              - Pithatis Death Dealer
+  - name: First Pocket
+    notes:
+      - text: Simple warp-in can trigger escalation.
+      - text: "Escalation dead-end: You are not sure, but it seemed like the ship that slipped away had the markings of the dreaded Federal Intelligence Organization, a Gallente covert-op branch. If this is true, it bodes no good for the Caldari state, nor does it for the Gallenteans come to think of it. Action like this viral terror attack would probably be taken as a war declaration, not that the peace has been so convincing lately between the two. Whatever is to be made of it, your options to affect this matter either way have run out. You have no idea where the agent went and if this was indeed a FIO agent, he is probably already docking in some FIO base in the neighborhood and those bases are not exactly made to be an easy find."
+      - text: "Escalation trigger: You are not sure, but it seemed like the ship that slipped away had the markings of the dreaded Federal Intelligence Organization, a Gallente covert-op branch. If this is true, it bodes no good for the Caldari state, nor does it for the Gallenteans come to think of it. Action like this viral terror attack would probably be taken as a full-scale war declaration, not that the peace has been so convincing lately between the two. Whatever is to be made of it, it seems like your instruments got a lock on the agents jump as he cleared local space and the approximate destination is already flashing on your navigation panel. You are not sure if it is a good idea to follow it though, crashing uninvited into a FIO base could be more than you can handle. Either way, you probably only have mere minutes to get there in time."
+    waves:
+      - id: spawn
+        trigger:
+          on: warpIn
+          text: Spawn
+        spawns:
+          - count: "2"
+            class: Drone
+            names:
+              - Spider Drone II
+            ewar:
+              - kind: web
+          - count: 4-5
+            class: Elite Cruiser
+            names:
+              - FIO Bomber Drone
+  - name: Fourth Location
+    notes:
+      - text: You face mainly Gallente ships in this location. Pocket is ungated. If Gallente Tower Sentry attack does not trigger the reinforcement wave, attack the FIO Control Tower.
+      - text: The warp-in is very close to the defenders. Elite cruisers will damp your ship very hard.
+      - text: "Expedition end: Thankfully this was only a minor hideout and not fully manned either it seems. If the plot to corrupt the atmosphere of those Caldari planets and thereby escalating the hostilities in the region was hatched here, it has been effectively stopped. Which is of course very likely ..."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Gallente Tower Sentry
+            triggers: Attacking may trigger reinforcement wave
+          - count: "5"
+            class: Destroyer
+            names:
+              - Federation Arcus
+              - Federation Matara
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Elite Federation Calo
+              - Elite Federation Bearcus
+            ewar:
+              - kind: sensorDamp
+          - count: "7"
+            class: Battlecruiser
+            names:
+              - Federation Calo
+              - Federation Praktor Bearcus
+      - id: reinforcement-wave
+        trigger:
+          on: other
+          text: Reinforcement wave
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Elite Federation Libertus
+              - Elite Federation Manica
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 4-7
+            class: Destroyer
+            names:
+              - Federation Arcus
+              - Federation Pelekus
+          - count: "1"
+            class: Commander Destroyer
+            names:
+              - Dread Guristas Envoy
+            triggers: Trigger for expedition end
+            drop: May drop Pithi A-Type or Dread Guristas faction modules or a Worm BPC
+          - count: "7"
+            class: Battlecruiser
+            names:
+              - Federation Calo
+              - Federation Praktor Bearcus
+sde:
+  dungeonIds:
+    - 1318

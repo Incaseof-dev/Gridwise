@@ -1,0 +1,172 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: silence-the-informant-level-2
+kind: mission
+name: Silence the Informant
+level: 2
+enemyFaction: Mercenaries & Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Silence the Informant (Level 2)
+    url: https://wiki.eveuniversity.org/Silence_the_Informant_(Level_2)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "230175"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Find the former secret agent and eliminate him before he can reveal the top-secret information to agents from DED.
+notes:
+  - text: "Suggested ships: Cruiser"
+  - text: Prop mod for 2nd Pocket (ships at 55-100km)
+loot:
+  - item: + Noteworthy loot
+  - item: 2022/08/20
+    from: Pocket 2 - Mercenary Elite Fighter
+    note: est. 1,115,042 (wiki)
+  - item: Pocket 3 - Mobile Residence
+    from: Zainou ‘Gnome’ Shield Operation SP-903
+  - item: Inherent Implants ‘Lancer’ Small Energy Turret SE-603
+    from: 15,100,000
+  - item: Eyfir and Co.’Gunslinger’ small projectile turret SP-603
+    from: 1,300,000
+  - item: Zainou ‘Deadeye’Small Hybrid Turret SH-603
+    from: 1,300,000
+  - item: 2023/04/07
+    from: Pocket 2 - Mercenary Elite Fighter
+    note: est. 817,100 (wiki)
+  - item: Pocket 3 - Mobile Residence
+    from: Inherent Implants ‘Lance’ Controlled Bursts CB-703
+  - item: 2024/02/12
+    from: Pocket 2 - Mercenary Elite Fighter
+    note: est. 100,000 (wiki)
+  - item: Pocket 3 - Mobile Residence
+    from: Inherent Implants 'Noble' Remote Armor Repair Systems RA-703
+  - item: 2024/02/12
+    from: Pocket 2 - Mercenary Elite Fighter
+    note: est. 163,000 (wiki)
+  - item: Pocket 3 - Mobile Residence
+    from: Eifyr and Co. 'Gunslinger' Small Projectile Turret SP-603
+  - item: 2024/12/03
+  - item: Pocket 3 - Mobile Residence
+  - item: Eifyr and Co. 'Gunslinger' Motion Prediction MR-703
+    from: 17,000,000
+  - item: Eifyr and Co. 'Gunslinger' Small Projectile Turret SP-603
+    from: 1,360,000
+  - item: Zainou 'Gnome' Shield Operation SP-903
+    from: 16,400,000
+  - item: 2025/01/18
+    from: Pocket 3 - Mobile Residence
+    note: est. 17,800,000 (wiki)
+  - item: 2025/09/25
+    from: Pocket 3 - Mobile Residence
+    note: est. 1,718,500 (wiki)
+  - item: 2025/09/25
+    from: Pocket 3 - Mobile Residence
+    note: est. 6,140,000 (wiki)
+  - item: 2026/03/25
+    from: Pocket 3 - Mobile Residence
+    note: est. 17,700,000 (wiki)
+  - item: Zainou 'Deadeye' Small Hybrid Turret SH-603
+    from: 1,890,000
+pockets:
+  - name: 1st Pocket
+    waves:
+      - id: initial-group-15km-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group, 15km (auto-aggro)
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Render
+              - Decimator
+              - Sunder Alvi
+      - id: reinforcement-10-20-seconds-after-warp-in-15km
+        trigger:
+          on: other
+          text: Reinforcement 10-20 Seconds after warp-in, 15km
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Render
+              - Decimator
+              - Sunder Alvi
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Bunker
+            drop: random commodities
+  - name: 2nd Pocket
+    notes:
+      - text: On arrival group A is on grid the other groups warp in quickly. All groups are on grid before you are really out of warp.
+      - text: "Pop-up - Incoming Transmission:: Greetings, traveler. We are here on top secret business, and absolutely do not want to be disturbed. I expect you to turn your little tush around and head back your merry way. If you insist on bothering us, we will be forced to destroy you. You’ve had your warning, now go."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Mercenary Elite Fighter
+            group: Group A, on grid ~60km
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Mercenary Elite Fighter
+            group: Group B, warp in ~80km
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Mercenary Elite Fighter
+            group: Group C, warp in ~105km
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Mercenary Elite Fighter
+            group: Group D, warp in ~25km, Auto aggro
+  - name: 3rd Pocket
+    notes:
+      - text: "Pop-up - Mission Info: As you enter the final area of this deadspace pocket, you notice the informant, Joshuwa Minden, idly floating by his mobile residence. You wonder to yourself, how could a man commanding a lone frigate survive in this hellish place, infested by rogue drones. But such thoughts quickly evaporate as you notice yorself being locked, and attacked."
+      - text: 0.388 Gurista rep loss from destroying the Sentry Tower
+    waves:
+      - id: on-grid-20km
+        trigger:
+          on: other
+          text: On grid, 20km
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Joshuwa Minden [Ex-Secret agent]
+          - count: "1"
+            class: Sentry
+            names:
+              - Tower Sentry Drone I
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Scanner Post
+          - count: "1"
+            class: Structure
+            names:
+              - Mobile Residence [Habitation Module]
+            drop: May drop implants, Ammo, Drone

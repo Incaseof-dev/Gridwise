@@ -1,0 +1,68 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: elopement
+kind: mission
+name: Elopement
+level: 2
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Elopement
+    url: https://wiki.eveuniversity.org/Elopement
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "215289"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Suggested ships: Destroyer, Cruiser"
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: Structures drop no loot.
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Federation Praktor Balra
+              - Federation Insidiator
+          - count: "1"
+            class: Destroyer
+            names:
+              - Federation Arcus
+              - Federation Pelekus
+            triggers: Spawns Reinforcement 1
+      - id: reinforcement-1
+        trigger:
+          on: other
+          text: Reinforcement 1
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Federation Praktor Harpago
+              - Federation Pelekus
+              - Federation Praktor Belos
+          - count: "1"
+            class: Destroyer
+            names:
+              - Federation Pelekus
+            triggers: Spawns Reinforcement 2
+      - id: reinforcement-2
+        trigger:
+          on: other
+          text: Reinforcement 2
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Cruiser
+            names:
+              - Federation Loras

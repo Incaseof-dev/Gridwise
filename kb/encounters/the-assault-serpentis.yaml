@@ -1,0 +1,245 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-assault-serpentis
+kind: mission
+name: The Assault
+level: 4
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Assault (Serpentis)
+    url: https://wiki.eveuniversity.org/The_Assault_(Serpentis)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "227785"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Clear the third (last) room of NPCs.
+ewar:
+  - kind: sensorDamp
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Yes (Guardian Protector, Coreli Guardian Agent/Spy)"
+  - text: The mission consists of three pockets and you only have to clear the NPCs in the third (last) pocket. You might have to clear some warp disrupting frigates in pocket 1 and 2 so you can take the acceleration gate.
+  - text: "Blitz: In the first and second pockets, ignore all hostile targets and proceed through the acceleration gates. Note that the gates cannot be activated while warp disrupted, so it may be necessary to destroy any disrupting frigates before activating the gates. Destroy all the ships in the final pocket."
+  - text: "Warning: It can be helpful to fit a Sensor Booster or Signal Boost Amplifier to help counteract sensor dampening."
+lootNotes:
+  - text: "Loot: 12.4-18 mil"
+  - text: "Salvage: 11.3-15,2 mil"
+  - text: "Bounty: 21,5-22 mil"
+  - text: As of 10/10/24
+pockets:
+  - name: 1st Pocket (Optional)
+    notes:
+      - text: Attacking group 1 has a chance to aggro group 2. Attacking group 3 will aggro group 2. Destroying any of the triggers will spawn reinforcements. Avoid triggering reinforcements too early as it includes more warp disruption and heavy dps.
+      - text: The acceleration gate is not locked, and can be activated at any time. However, note that the acceleration gate cannot be used while warp disrupted.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Agent
+              - Coreli Guardian Spy
+            group: Group 1
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Patroller
+            group: Group 1
+            ewar:
+              - kind: sensorDamp
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corelior Infantry
+              - Corelior Sentinel
+            group: Group 2 (60 km)
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corelatis Platoon
+              - Corelatis Squad Leader
+            group: Group 2 (60 km)
+          - count: "2"
+            class: Battleship
+            names:
+              - Core Rear Admiral
+            group: Group 2 (60 km)
+            ewar:
+              - kind: sensorDamp
+            triggers: Triggers reinforcements
+          - count: "5"
+            class: Destroyer
+            names:
+              - Corelior Infantry
+              - Corelior Sentinel
+            group: Group 3 (60 km)
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corelatis Platoon
+              - Corelatis Squad Leader
+            group: Group 3 (60 km)
+            triggers: Triggers reinforcements
+          - count: "4"
+            class: Battleship
+            names:
+              - Core Flotilla
+              - Core Rear Admiral
+            group: Group 3 (60 km)
+            ewar:
+              - kind: sensorDamp
+            triggers: Triggers reinforcements
+          - count: "4"
+            class: Battleship
+            names:
+              - Core Rear Admiral
+              - Core Flotilla Admiral
+            group: Group 4 (60 km, on Radio Telescope)
+            ewar:
+              - kind: sensorDamp
+      - id: reinforcements-50-km
+        trigger:
+          on: other
+          text: Reinforcements (50 km)
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Guardian Protector
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 3-4
+            class: Battleship
+            names:
+              - Core Rear Admiral
+              - Core Port Admiral
+            ewar:
+              - kind: sensorDamp
+  - name: 2nd Pocket (Optional)
+    notes:
+      - text: Auto-aggro from groups 1 and 2 on warp-in. Destroying the trigger battleships will spawn reinforcements.
+      - text: The acceleration gate is not locked, and can be activated at any time. However, note that you cannot take the acceleration gate while warp disrupted.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Agent
+              - Coreli Guardian Spy
+            group: Group 1 (10-21 km)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corelatis Squad Leader
+              - Corelatis Platoon Leader
+            group: Group 2 (55-70 km)
+          - count: "6"
+            class: Battleship
+            names:
+              - Core Commodore
+              - Core Port Admiral
+            group: Group 2 (55-70 km)
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corelior Sentinel
+              - Corelior Cannoneer
+            group: Group 3 (71-80 km)
+          - count: "2"
+            class: Battleship
+            names:
+              - Core High Admiral
+              - Core Grand Admiral
+            group: Group 3 (71-80 km)
+            triggers: Triggers reinforcements
+      - id: reinforcements-65-km
+        trigger:
+          on: other
+          text: Reinforcements (65 km)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Guardian Defender
+            note: type list incomplete on the source page
+          - count: "4"
+            class: Battleship
+            names:
+              - Core Flotilla
+              - Core Vice Admiral
+            ewar:
+              - kind: sensorDamp
+  - name: 3rd Pocket
+    notes:
+      - text: Group 1 will aggro drones. Group 2 will aggro when approached within 40km. Mission is completed once both groups are destroyed.
+    waves:
+      - id: hostile-npcs
+        trigger:
+          on: other
+          text: Hostile NPCs
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Agent
+            group: Group 1 (65 km)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Infantry
+              - Corelum Guardian Chief Sentinel
+            group: Group 1 (65 km)
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corelatis Squad
+              - Corelatis Platoon
+            group: Group 1 (65 km)
+          - count: "1"
+            class: Battleship
+            names:
+              - Core High Admiral
+            group: Group 1 (65 km)
+          - count: "1"
+            class: Cruiser
+            names:
+              - Corelum Chief Sentinel
+            group: Group 2 (90 km)
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Corelatis Platoon Leader
+            group: Group 2 (90 km)
+          - count: "3"
+            class: Battleship
+            names:
+              - Core Port
+              - Core Rear Admiral
+            group: Group 2 (90 km)

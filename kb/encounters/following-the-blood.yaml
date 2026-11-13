@@ -1,0 +1,164 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: following-the-blood
+kind: escalation
+name: Following the Blood
+dedRating: null
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Following the Blood
+    url: https://wiki.eveuniversity.org/Following_the_Blood
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "224817"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Escalation message:: Without you noticing, a small group of the Blood ships slipped away at the beginning of the fight. Luckily your radar systems have picked up a trace leading to this location."
+  - text: Traveling may vary; the first three locations are normally in high sec and the last one in low sec.
+loot:
+  - item: + Commander and other valuable loot
+  - item: Corpii A-Type modules
+    note: From Corpii Monk
+  - item: Cruor BPC
+    note: From Corpii Monk
+  - item: Mid-Grade implants and faction ammo/tags
+    note: From Dark Blood Commander Frigates
+pockets:
+  - name: 1st location
+    notes:
+      - text: Ungated area. The rats are arranged in two groups which can be aggressed separately. Group 1 auto-aggros and has the commander among them. Group 2 does not aggro until attacked. Killing the commander frigate can trigger escalation. If no commander frigate is present then killing all ships may trigger escalation.
+      - text: "Escalation message:: You have destroyed the pirate threat. Your sensors have recovered co-ordinates from one of the frigate wreckages."
+      - text: "Escalation Failure message:: You have destroyed the pirate threat. No further threat is detected."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Corpii Worshipper
+              - Corpii Herald
+              - Corpii Follower
+            note: type list incomplete on the source page
+          - count: 0-1
+            class: Commander Frigate
+            names:
+              - Dark Blood Seeker
+              - Dark Blood Upholder
+            triggers: Escalation trigger
+            drop: Can drop faction modules, BPCs or implants
+  - name: 2nd location
+    notes:
+      - text: Ungated area. Killing the commander frigate can trigger escalation. If no commander frigate is present then killing all ships may trigger escalation.
+      - text: "Escalation message:: As expected, the Blood tried to stop you. The fierceness of the ambush was great, even for Blood fighters and you wonder why they didn't just try to escape into the vastness of space. Perhaps they are hiding something? After your systems have analyzed transmissions between the Blood ships during the fight, they come up with a location."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Corpii Diviner
+            note: type list incomplete on the source page
+          - count: 0-1
+            class: Commander Frigate
+            names:
+              - Dark Blood Seeker
+            triggers: Escalation trigger
+            drop: Can drop faction modules, BPCs or implants
+          - count: 3-4
+            class: Cruiser
+            names:
+              - Corpum Arch Engraver
+  - name: 3rd location
+    notes:
+      - text: "Note: You will a need mining laser. A Civilian Miner won't work, but a Miner I will do just fine. Alternatively, mining drones also trigger the defender spawn."
+      - text: Ungated area. A Rock Formation is about 30km away. Close to the rock formation (in a blueish little cloud) there is a small Arkonor asteroid. Mine the asteroid (you have to complete one or two mining cycles) to spawn the defenders.
+      - text: "Escalation message:: As weird as it was finding this shiny rock here in the middle of nowhere, it is a bit more understandable now, knowing it was only a sadistic trap laid out by the Blood. Luckily you were well prepared and handled the threat with ease. One of the destroyed ships even revealed co-ordinates to a large Blood Raider base."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Corpii Converter
+            note: type list incomplete on the source page
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Engraver
+            note: type list incomplete on the source page
+          - count: 0-1
+            class: Commander Frigate
+            names:
+              - Dark Blood Diviner
+            triggers: Escalation trigger
+            drop: Can drop faction modules, BPCs or implants
+  - name: 1st pocket
+    notes:
+      - text: Use caution; the rats spawn at 0 on warp-in.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Corpii Reaver
+              - Corpii Engraver
+          - count: "2"
+            class: Cruiser
+            names:
+              - Corpum Arch Templar
+            ewar:
+              - kind: trackingDisruption
+  - name: 2nd pocket
+    notes:
+      - text: One of the frigates is the overseer but has a generic frigate name. You will know it's destroyed when you see the completion message popping up.
+      - text: "Completion: Even though you are not too well versed in the twisted ways of the Blood Raiders, you think it is a bit strange to find one of their cathedrals floating out here, completely in the middle of nowhere. But whatever its purpose was, it is irrelevant now; it isn't here anymore."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Corpii Collector
+              - Corpii Seeker
+            ewar:
+              - kind: trackingDisruption
+          - count: "1"
+            class: Overseer Frigate
+            names:
+              - Corpii Monk
+            drop: Can drop faction and deadspace modules
+          - count: 2-3
+            class: Destroyer
+            names:
+              - Corpior Devoter
+              - Corpior Templar
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corpum Arch Templar
+              - Corpum Revenant
+            ewar:
+              - kind: trackingDisruption
+sde:
+  dungeonIds:
+    - 1426

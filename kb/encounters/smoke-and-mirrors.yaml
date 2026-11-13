@@ -1,0 +1,89 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: smoke-and-mirrors
+kind: mission
+name: Smoke and Mirrors
+level: 3
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Smoke and Mirrors
+    url: https://wiki.eveuniversity.org/Smoke_and_Mirrors
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "206703"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Meet with Eroma Eralen and follow his instructions
+restrictions:
+  - text: "Ship size limit: T1 Destroyer, Frigate"
+notes:
+  - text: Equip an Afterburner or a Microwarpdrive to complete the Mission faster
+  - text: Gated deadspace pocket up to eights jumps away. Your task is to play a game for Eroma Eralen. Follow their instructions to complete the Mission.
+  - text: "Blitz: approach the Guristas Warehouse, destroy the Cruiser Pithoriate, repeat three time. Finally, destroy the 4th Guristas Warehouse and approach Eroma Eralen."
+  - text: Complete the Mission remotely.
+  - text: "Tips: Get within 4 km of the first Guristas Warehouse to spawn enemies"
+  - text: "Tips: When you destroy the Pithoriate Cruiser, the Pithoriate Frigates warp out"
+pockets:
+  - name: Warp-in
+    notes:
+      - text: "Encrypted Transmission: Kori said you'd meet me here. He didn't say what this was about, or what you wanted from him, but here I am… somewhere. If you really want to speak with me, you'll have to play my game. I hear that you're a good pilot, but we'll see about that. Fly to that warehouse. Oh yeah, and don't mind those satellites."
+      - text: "Encrypted Transmission: You're good at following orders, just like Kori said you'd be. What a good, little capsuleer. Did you ever wonder why Kori told you to spare the Navy? We pirates don't have much mercy, right? Well, you're not the only one who can follow orders. Some of us have bigger agendas than we let on. Oh look! More things for you to blow up. Go ahead, egger. Do what you do best: wanton destruction."
+      - text: "Encrypted Transmission: Kori wants you to work for him again. He sees you as a valuable tool, and he'd rather have you work for him than with Cillis. She's dangerous, ambitious, and powerful; she's rising the ranks, and she will use any means to do so. Cilis has dirt on Kori, and Kori wants out. You've been a pawn in their game. I hope you've had fun. One more to go! You've been patient with me, and that's good. Now fly to that last structure, and do your worst."
+      - text: "Encrypted Transmission: And then there's Irichi. Do you remember him? That weird transmission at the Venal Regional Comms tower? I helped him plan that. He hates Cilis just as much as Kori hates her. In fact, he really despises Kori, too. See, we're a big, happy family, aren't we? You might think we're all about loot and plunder, smash and grab tactics, but the Guristas are more than that. We're about power, betrayal, and fear. That is our currency, our lifestyle, our credo. Voila! Here I am. Come closer so I can tell you a secret."
+      - text: "Encrypted Transmission: You're being used, by Kori and Cilis. You eggers aren't as smart as you think you are. No worries, though: Elaborate schemes have a tendency to play themselves out. Go with the flow, see what Cilis does next, and go from there. Give Cilis my regards; I'll tell Kori that you never showed up. Good day, egger. Oh yeah. I forgot. I have something for you to pass along to Cilis. Tell her, “Foxfire is in the Rabbit Hole.” She'll know what that means."
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Guristas Warehouse
+            note: Approach to spawn enemy ships
+          - count: "1"
+            class: Structure
+            names:
+              - Guristas Warehouse
+            note: Approach to spawn enemy ships
+          - count: "1"
+            class: Structure
+            names:
+              - Guristas Warehouse
+            note: Approach to spawn enemy ships
+          - count: "1"
+            class: Structure
+            names:
+              - Guristas Warehouse
+            note: Destroy the final warehouse
+      - id: guristas-warehouse-guards
+        trigger:
+          on: other
+          text: Guristas Warehouse guards
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Pithoriate
+          - count: "1"
+            class: Cruiser
+            names:
+              - Pithoriate
+            triggers: Spawns another Guristas Warehouse and Frigate Pithoriates warp out
+      - id: eroma-eralen
+        trigger:
+          on: other
+          text: Eroma Eralen
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Friendly Frigate
+            names:
+              - Eroma Eralen
+            note: Spawns after destroying the 4th Guristas Warehouse

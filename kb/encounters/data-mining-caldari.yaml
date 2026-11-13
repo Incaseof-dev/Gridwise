@@ -1,0 +1,72 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: data-mining-caldari
+kind: mission
+name: Data Mining
+level: 2
+enemyFaction: Caldari State
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Data Mining (Caldari)
+    url: https://wiki.eveuniversity.org/Data_Mining_(Caldari)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231070"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Mine 2,000 units (300) of Scordite and eliminate all opponents.
+restrictions:
+  - text: "Ship size limit: Cruiser or smaller, HACs prohibited"
+ewar:
+  - kind: ecm
+notes:
+  - text: "Suggested ships: Expedition Frigate/Mining Barge (for mining), Destroyer or Cruiser (for fighting)"
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: Group 1 will spawn 90 seconds after you begin mining.
+    waves:
+      - id: group-1
+        trigger:
+          on: warpIn
+          text: Group 1
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - State Nagasa
+              - State Shinai
+            triggers: Spawns Reinforcement A
+          - count: "2"
+            class: Cruiser
+            names:
+              - State Ashigaru
+              - State Fudai
+            ewar:
+              - kind: ecm
+            triggers: Spawns Reinforcement B
+      - id: reinforcement-a
+        trigger:
+          on: other
+          text: Reinforcement A
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - State Bo-Hi
+              - State Showato
+      - id: reinforcement-b
+        trigger:
+          on: other
+          text: Reinforcement B
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Cruiser
+            names:
+              - State Dogo
+              - State Bushi

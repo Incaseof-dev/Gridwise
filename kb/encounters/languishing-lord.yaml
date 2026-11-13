@@ -1,0 +1,33 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: languishing-lord
+kind: mission
+name: Languishing Lord
+level: null
+enemyFaction: null
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Languishing Lord
+    url: https://wiki.eveuniversity.org/Languishing_Lord
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223089"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Suggested ships: Shuttle"
+  - text: No combat
+  - text: thumb
+  - text: You'll be told to fly to an asteroid (about 20k away). Then you watch for a minute, and the mission completes. Do not engage any of the ships that appear. Bring a fast ship like a shuttle or a frigate.
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: Mission objective is completed after Lord Manik and the mercenary leave the area.
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns: []

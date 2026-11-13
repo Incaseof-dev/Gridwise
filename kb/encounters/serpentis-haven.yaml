@@ -1,0 +1,341 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: serpentis-haven
+kind: anomaly
+name: Serpentis Haven
+dedRating: null
+anomalyClass: 9
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Serpentis Haven
+    url: https://wiki.eveuniversity.org/Serpentis_Haven
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225144"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "There are two types of Havens: rock and gas. Gas havens have enemies pre-spawned, but the enemies are much more spread out. Rock havens have the enemies grouped together, but it takes a few seconds after warping in for them to spawn."
+  - text: The site can be done in any drone boat.
+  - text: The site consists of one ungated pocket. There is a hollow rock with a stargate inside about 20 km from warp-in.
+  - text: The initial defenders will take a few second to arrive and new wave spawns once all ships from previous spawn are destroyed.
+  - text: The site consists of one ungated pocket.
+  - text: "Escalation: Can escalate to the Serpentis Fleet Shipyard."
+lootNotes:
+  - text: "Bounty: about 40.000.000 ISK"
+  - text: "Modules: Roughly 6.000.000-15.000.000 ISK"
+  - text: "Salvage: about 15.000.000 ISK"
+npcs:
+  Factory Guard Sentry:
+    sdeTypes:
+      - Tower Sentry Serpentis III
+    class: Sentry
+pockets:
+  - name: Type 1 - Rock Haven
+    notes:
+      - text: A Shadow Serpentis commander, a Serpentis Dreadnought, or Shadow Serpentis Titan may spawn with Wave#5.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 3 - 4
+            class: Battlecruiser
+            names:
+              - Corelatis Squad Leader
+              - Corelatis Captain Sentry
+              - Corelatis Platoon Leader
+          - count: 3 - 4
+            class: Battleship
+            names:
+              - Core Grand Admiral
+              - Core Lord Admiral
+      - id: wave-1
+        trigger:
+          on: other
+          text: "Wave #1"
+          confidence: inferred
+        spawns:
+          - count: 3 - 4
+            class: Frigate
+            names:
+              - Coreli Guardian Scout
+              - Coreli Guardian Agent
+              - Coreli Guardian Guard
+              - Coreli Guardian Defender
+              - Coreli Guardian Protector
+          - count: 3 - 4
+            class: Battleship
+            names:
+              - Core Lord Admiral
+              - Core Grand Admiral
+      - id: wave-2
+        trigger:
+          on: other
+          text: "Wave #2"
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Coreli Guardian Spy
+              - Coreli Guardian Agent
+              - Coreli Guardian Patroller
+              - Coreli Guardian Watchman
+            ewar:
+              - kind: warpDisruption
+          - count: "4"
+            class: Battleship
+            names:
+              - Core Grand Admiral
+              - Core Lord Admiral
+      - id: wave-3
+        trigger:
+          on: other
+          text: "Wave #3"
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Coreli Guardian Patroller
+              - Coreli Guardian Watchman
+            ewar:
+              - kind: sensorDamp
+          - count: "4"
+            class: Battleship
+            names:
+              - Core Grand Admiral
+              - Core Lord Admiral
+      - id: wave-4
+        trigger:
+          on: other
+          text: "Wave #4"
+          confidence: inferred
+        spawns:
+          - count: 3 - 4
+            class: Cruiser
+            names:
+              - Corelum Guardian Chief Patroller
+              - Corelum Guardian Chief Watchman
+            ewar:
+              - kind: sensorDamp
+          - count: "4"
+            class: Battleship
+            names:
+              - Core Lord Admiral
+              - Core Grand Admiral
+      - id: wave-5
+        trigger:
+          on: other
+          text: "Wave #5"
+          confidence: inferred
+        spawns:
+          - count: 6 - 8
+            class: Battlecruiser
+            names:
+              - Corelatis Squad Leader
+              - Corelatis Captain Sentry
+              - Corelatis Platoon Leader
+          - count: 6 - 8
+            class: Battleship
+            names:
+              - Core Grand Admiral
+              - Core Lord Admiral
+      - id: shadow-serpentis-boss
+        trigger:
+          on: other
+          text: Shadow Serpentis Boss
+          confidence: inferred
+        spawns:
+          - count: 0-1
+            class: Battleship
+            names:
+              - Shadow Serpentis
+            drop: May drop deadspace & faction modules
+          - count: 0-1
+            class: Dreadnought
+            names:
+              - Serpentis Dreadnought
+            ewar:
+              - kind: web
+              - kind: neut
+              - kind: warpDisruption
+            drop: May drop faction modules
+            note: Very rare spawn
+          - count: 0-1
+            class: Titan
+            names:
+              - Shadow Serpentis Titan
+            ewar:
+              - kind: web
+              - kind: neut
+              - kind: warpDisruption
+            drop: May drop faction modules
+            note: Extremely rare spawn
+  - name: Type 2 - Gas Haven
+    notes:
+      - text: A Shadow Serpentis commander, a Serpentis Dreadnought, or Shadow Serpentis Titan may spawn with Wave#5.
+    waves:
+      - id: initial-wave
+        trigger:
+          on: warpIn
+          text: Initial Wave
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Factory Guard Sentry
+          - count: 3 - 4
+            class: Cruiser
+            names:
+              - Corelum Guardian Chief Defender
+              - Corelum Guardian Chief Protector
+          - count: 3 - 4
+            class: Battlecruiser
+            names:
+              - Corelatis Wing Leader
+              - Corelatis High Captain
+          - count: 4 - 8
+            class: Battleship
+            names:
+              - Core (Grand
+              - Core Lord
+              - High) Admiral
+            triggers: Destruction of the last Core Admiral triggers the next wave
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: 3 - 4
+            class: Frigate
+            names:
+              - Coreli Guardian Defender
+              - Coreli Guardian Guard
+          - count: 3 - 4
+            class: Cruiser
+            names:
+              - Coreli Guardian Chief Protector
+          - count: 3 - 4
+            class: Battlecruiser
+            names:
+              - Corelatis Sentry
+              - Corelatis High Captain
+            triggers: Trigger for next wave
+          - count: 3 - 4
+            class: Battleship
+            names:
+              - Core (High) Admiral
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: 3 - 4
+            class: Frigate
+            names:
+              - Coreli Guardian Spy
+              - Coreli Guardian Agent
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 3 - 6
+            class: Battlecruiser
+            names:
+              - Corelatis Wing Leader
+              - Corelatis Captain
+              - Corelatis Platoon Leader
+          - count: 3 - 4
+            class: Battleship
+            names:
+              - Core (High) Admiral
+      - id: wave-4
+        trigger:
+          on: other
+          text: Wave 4
+          confidence: inferred
+        spawns:
+          - count: 3 - 4
+            class: Frigate
+            names:
+              - Coreli Guardian Watchman
+              - Coreli Guardian Patroller
+              - Coreli Guardian Agent
+            ewar:
+              - kind: sensorDamp
+              - kind: warpDisruption
+          - count: 3 - 4
+            class: Battlecruiser
+            names:
+              - Corelatis Wing Leader
+              - Corelatis Squad Leader
+              - Corelatis High Captain
+          - count: 6 - 8
+            class: Battleship
+            names:
+              - Core (Grand
+              - Core Lord
+              - High) Admiral
+            triggers: Destruction of the last Core Admiral triggers the next wave
+      - id: wave-5
+        trigger:
+          on: other
+          text: Wave 5
+          confidence: inferred
+        spawns:
+          - count: 3 - 4
+            class: Frigate
+            names:
+              - Coreli Guardian Agent
+              - Coreli Guardian Spy
+              - Coreli Guardian Patroller
+            ewar:
+              - kind: sensorDamp
+              - kind: warpDisruption
+          - count: 3 - 4
+            class: Battleship
+            names:
+              - Core (Grand
+              - Core Lord
+              - High) Admiral
+      - id: shadow-serpentis-boss
+        trigger:
+          on: other
+          text: Shadow Serpentis Boss
+          confidence: inferred
+        spawns:
+          - count: 0-1
+            class: Battleship
+            names:
+              - Shadow Serpentis
+            drop: May drop deadspace & faction modules
+          - count: 0-1
+            class: Dreadnought
+            names:
+              - Serpentis Dreadnought
+            ewar:
+              - kind: web
+              - kind: neut
+              - kind: warpDisruption
+            drop: May drop faction modules
+            note: Very rare spawn
+          - count: 0-1
+            class: Titan
+            names:
+              - Shadow Serpentis Titan
+            ewar:
+              - kind: web
+              - kind: neut
+              - kind: warpDisruption
+            drop: May drop faction modules
+            note: Extremely rare spawn
+sde:
+  dungeonIds:
+    - 2300

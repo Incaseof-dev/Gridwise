@@ -1,0 +1,81 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: avenge-a-fallen-comrade-guristas-pirates-level-1
+kind: mission
+name: Avenge a Fallen Comrade
+level: 1
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Avenge a Fallen Comrade (Guristas Pirates) (Level 1)
+    url: https://wiki.eveuniversity.org/Avenge_a_Fallen_Comrade_(Guristas_Pirates)_(Level_1)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191582"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the Habitat
+ewar:
+  - kind: ecm
+notes:
+  - text: No hostiles at initial gate.
+  - text: "Blitz: Destroy the Habitat, warp out."
+pockets:
+  - name: 1st Pocket
+    notes:
+      - text: No aggro on warp-in. All groups aggro on attacking the Habitat.
+    waves:
+      - id: initial-hostiles
+        trigger:
+          on: warpIn
+          text: Initial Hostiles
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Pithi Arrogator
+              - Pithi Despoiler
+              - Pithi Saboteur
+            group: Group 1 (48km)
+            ewar:
+              - kind: ecm
+            note: Despoiler/Saboteur have target jammer
+          - count: "3"
+            class: Frigate
+            names:
+              - Pithi Infiltrator
+              - Pithi Invader
+            group: Group 2 (60km)
+      - id: wave-1-on-random-kill-in-group-2
+        trigger:
+          on: other
+          text: Wave 1 (On random kill in Group 2)
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Pithi Arrogator
+      - id: wave-2-on-attacking-random-wave-1-ship
+        trigger:
+          on: other
+          text: Wave 2 (On attacking random Wave 1 ship)
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Pithi Arrogator
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Habitat
+            triggers: Mission completed on destruction

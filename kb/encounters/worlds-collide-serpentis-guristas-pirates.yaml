@@ -1,0 +1,279 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: worlds-collide-serpentis-guristas-pirates
+kind: mission
+name: Worlds Collide
+level: 4
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Worlds Collide (Serpentis & Guristas Pirates)
+    url: https://wiki.eveuniversity.org/Worlds_Collide_(Serpentis_%26_Guristas_Pirates)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "192117"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal:
+    - kinetic
+    - thermal
+  resist:
+    - kinetic
+    - thermal
+objectives:
+  - text: Rescue ship's crew (40 m3)
+ewar:
+  - kind: web
+  - kind: ecm
+  - kind: sensorDamp
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite frigates"
+  - text: This mission consists of a deadspace complex with warpin area and three gated rooms. The warpin area has a gate to both Serpentis and Guristas bases. Both of these bases have a gate that leads to the same final room.
+  - text: "Blitz: Kill either Serpentis battleships or Guristas battleships in first room and take the corresponding gate."
+  - text: "Blitz: Clear out the second room you chose"
+  - text: "Blitz: Guristas room has higher DPS, ECM and elite cruisers. Serpentis room has more battleships to chew through."
+  - text: "Blitz: In last room kill group 1, grab the crew and return to the agent."
+lootNotes:
+  - text: "Bounties: ± 28 Mil ISK (including all the pockets)"
+  - text: "Loot: ± 9.1 Mil ISK sometimes faction shadow module 200 millions ISK"
+  - text: "Salvage: ± 9.1 Mil ISK"
+pockets:
+  - name: Warp in - "Warzone stage"
+    notes:
+      - text: Choose one of two groups, kill them (you only need to kill the battleships) and go deeper using appropriate warpgate into second pocket (Serpentis base or Gurista base). From both second pockets route is directly to third pocket which is always same (Research outpost).
+      - text: The ship groups are around 130 km from warpin
+      - text: The gates are around 20 km from warpin.
+      - text: You can skip killing the battleships by using Zbikoki's Hacker Card. (Obtained from Zor in other missions). It will be consumed upon unlocking the gate.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Guardian Veterans
+            group: Serpentis Group
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corelatis High Capitan
+              - Corelatis Captain Sentry
+            group: Serpentis Group
+          - count: "4"
+            class: Battleship
+            names:
+              - Core High Admiral
+              - Core High Admiral
+            group: Serpentis Group
+            ewar:
+              - kind: sensorDamp
+            triggers: Gate to Serpentis Base is locked until last one is killed
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Abolisher
+            group: Guristas Group
+          - count: "3"
+            class: Battleship
+            names:
+              - Pith Extinguisher
+              - Pith Dismantler
+            group: Guristas Group
+            ewar:
+              - kind: ecm
+            triggers: Gate to Guristas Base is locked until last one is killed
+  - name: 1st room A - Serpentis Base
+    notes:
+      - text: Three groups of ships at around 20 km from warpin. Group 1 and the two lone ships auto aggro. Elite frigates will aggro drones.
+      - text: The may be able to be killed separately.
+      - text: The gate to next room is locked until all ships are destroyed.
+      - text: The Serpentis Overseer is not always present at the beginning and can appear after unknown time.
+      - text: War installation drops what looks like random junk T1 loot.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Guardian Veterans
+            group: Group 1
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Corelatis Platoon Leader
+            group: Group 1
+          - count: "2"
+            class: Battleship
+            names:
+              - Core Admiral
+              - Core High Admiral
+            group: Group 1
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Guardian Veterans
+            group: Group 2
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Corelatis Platoon Leader
+            group: Group 2
+          - count: "4"
+            class: Battleship
+            names:
+              - Core Admiral
+              - Core High Admiral
+            group: Group 2
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Guardian Veterans
+            group: Group 3
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Battleship
+            names:
+              - Core Admiral
+              - Core High Admiral
+            group: Group 3
+          - count: "1"
+            class: Cruiser
+            names:
+              - Serpentis Spy
+            group: Other
+          - count: "1"
+            class: Battleship
+            names:
+              - Serpentis Supervisor
+            group: Other
+  - name: 1st room B - Gurista Base
+    notes:
+      - text: Three groups of ships. Group 1 auto aggress. Elite frigates attack drones.
+      - text: The may be able to be killed separately. Attacking the lone elite frigate will aggress the whole room.
+      - text: The incoming DPS is very high if you aggress all groups. The battleships like to orbit you at 30 km. Some of the ships also have ECM (all ECM not listed in table).
+      - text: The Guristas Overseer is not always present at the beginning and can appear after unknown time.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Abolisher
+              - Dire Pithum Ereaser
+            group: Group 1
+          - count: "3"
+            class: Battleship
+            names:
+              - Pith Massacree
+              - Pith Extinguisher
+            group: Group 1
+            ewar:
+              - kind: ecm
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Pith Usurper
+            group: Group 2
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "5"
+            class: Battleship
+            names:
+              - Pith Massacree
+            group: Group 2
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Pith Invader
+            group: Group 3
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: type list incomplete on the source page
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Abolisher
+            group: Group 3
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Guristas Kyoukan
+            group: Other
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Battleship
+            names:
+              - Guristas Overseer
+            group: Other
+  - name: 2nd pocket - The Research Outpost
+    notes:
+      - text: Last room. When you warp in the group 1 is present. Groups 2 and 3 warp in shortly. To complete the mission you need to retrieve the crew from the damaged Heron. The Heron is locked until group 1 is destroyed.
+      - text: All the groups are in same area so the only way to identify group 1 is to tag it before the other ships warp in. Each group can be aggressed separately.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corelatis Captain Sentry
+            group: Group 1
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Battleship
+            names:
+              - Core Vice
+            group: Group 1
+            ewar:
+              - kind: sensorDamp
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corelior Trooper
+              - Corelior Soldier
+            group: Groups 2 and 3
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corelatis Captain Sentry
+            group: Groups 2 and 3
+            note: type list incomplete on the source page
+          - count: "6"
+            class: Battleship
+            names:
+              - Core Vice
+            group: Groups 2 and 3
+            ewar:
+              - kind: sensorDamp
+            note: type list incomplete on the source page

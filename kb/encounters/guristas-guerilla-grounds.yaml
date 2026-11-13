@@ -1,0 +1,143 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: guristas-guerilla-grounds
+kind: complex
+name: Guristas Guerilla Grounds
+dedRating: 3
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Guristas Guerilla Grounds
+    url: https://wiki.eveuniversity.org/Guristas_Guerilla_Grounds
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "216142"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Cruisers"
+notes:
+  - text: Guristas Guerilla Grounds is a DED 3/10 complex that can be found in high and low security caldari systems.
+loot:
+  - item: 7th Tier Overseer's Personal Effects
+    from: Overseer Frigate
+    note: est. 600k ISK (wiki) · 100% drop rate
+  - item: Pithi A-type module
+    from: Overseer Frigate
+    note: Up to 3x
+  - item: Dread Guristas module
+    from: Overseer Frigate
+  - item: Pithi A-Type Small Remote Shield Booster
+    from: Dread Guristas Irregular
+    note: est. 27.5M ISK (wiki)
+  - item: Worm BPC
+    from: Overseer Frigate
+pockets:
+  - name: First Room
+    notes:
+      - text: 3 groups of 5 frigates separated at long distances from each other.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "15"
+            class: Frigate
+            names:
+              - Pithi Plunderer
+              - Pithi Wrecker
+    onWarpIn: "The Guristas Pirates, despite being an extremely modern and high-tech faction in their own right, often turn to old tactics to foil their Caldari Navy foes. The most common tactic is to launch a series of guerilla raids -- led by a Dread Guristas Irregular -- on numerous soft targets. State forces become harried and stretched thin, allowing the pirates to carry out their real objectives with minimal inference. DED Threat Assessment: 3 of 10"
+  - name: Second Room
+    notes:
+      - text: ----
+      - text: 3 groups of 6 frigates separated at long distances from each other.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "18"
+            class: Frigate
+            names:
+              - Pithi Plunderer
+              - Pithi Wrecker
+    onWarpIn: So an entire Caldari station is a "soft target"? The DED needs to update its intel.
+  - name: Third Room
+    notes:
+      - text: ----
+      - text: 4 groups of 7 frigates separated at long distances from each other. All NPCs auto-aggro.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Sentry
+            names:
+              - Gallente Point Defense Battery
+          - count: "28"
+            class: Frigate
+            names:
+              - Pithi Plunderer
+              - Pithi Wrecker
+              - Pithi Invader
+              - Pithi Infiltrator
+  - name: Fourth Room
+    notes:
+      - text: ----
+      - text: 5 groups of 7 frigates separated at long distances from each other. All NPCs auto-aggro.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "6"
+            class: Sentry
+            names:
+              - Guristas Sentry Gun
+          - count: "35"
+            class: Frigate
+            names:
+              - Pithi Plunderer
+              - Pithi Wrecker
+  - name: Fifth Room
+    notes:
+      - text: ----
+      - text: Kill Dread Gurista, either loot it or bookmark the wreck and wait other NPCs to despawn. T2 salvage loot from Dread Gurista.
+      - text: "Upon killing Dread Gurista:: \"Irregular Destroyed - The Irregular has been eliminated. The State can focus its resources elsewhere. And you can focus on robbing the Irregular's wreckage of valuable prizes.\""
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Sentry
+            names:
+              - Guristas Sentry Gun
+          - count: "34"
+            class: Frigate
+            names:
+              - Pithi Plunderer
+              - Pithi Wrecker
+          - count: "1"
+            class: Cruiser
+            names:
+              - Pithum Inferno
+              - Pithum Mortifier
+            note: Shoots Scourge Heavy missiles that deal approx. 50-100 kinetic damage
+          - count: "1"
+            class: Overseer Frigate
+            names:
+              - Dread Guristas Irregular
+            drop: Wreckage contains 7th Tier Overseer's Personal Effects and may contain Pithi A-Type Modules, Dread Guristas Modules, and/or a Worm BPC
+    onWarpIn: '"Irregular Detected - You have found the Dread Guristas Irregular and its support wing. Kill them all."'
+sde:
+  dungeonIds:
+    - 5302

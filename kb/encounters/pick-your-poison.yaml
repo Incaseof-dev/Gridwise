@@ -1,0 +1,117 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: pick-your-poison
+kind: mission
+name: Pick Your Poison
+level: 3
+enemyFaction: Amarr Empire & Minmatar Republic
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Pick Your Poison
+    url: https://wiki.eveuniversity.org/Pick_Your_Poison
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191826"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Rescue the diplomats and other station personnel from the damaged emissary, and then return them to the Sisters of EVE Rescue Vessel.
+restrictions:
+  - text: "Ship size limit: Cruiser and below"
+notes:
+  - text: There are 2 parts to this mission, the first part is in the first pocket and restricts the size of ship that can be used to a cruiser or smaller, but there are no hostiles. You need only grab the cargo using a MWD frig or shuttle. Once you have the diplomat in cargo, you must warp back to the entrance and deposit it in a can. This can be accomplished in the fast ship, but if desired this part may be completed in any combat ship as no gate is required. This allows you to engage the navy ships present.
+  - text: Initially at the warp-in there is an acceleration gate and a stationary SOE Rescue Vessel. There are no hostiles.
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: "Pocket One consists of no hostiles two cans: one labeled Minmatar Embassy Housing, one labeled Amarr Embassy Housing and an Acceleration Gate to Pocket 2. Shortly after warping in you are given a message that you can only save one."
+      - text: "When you rescue the Amarr diplomat: You cut it close, but our diplomat lives! Please, return him to the Sisters of Eve ship in the first deadspace pocket. (or) You recovered our revered diplomat just in time. Please bring him to the Sisters of Eve ship in the first deadspace pocket."
+      - text: "When you rescue the Minmatar diplomat: You cut it close, but our emissary lives! Please, return him to the Sisters of Eve ship in the first deadspace pocket."
+      - text: Pick up the embassy staff from one of the housing cans, and the other blows up. Contrary to the mission advice, you do not seem to lose faction standing for the faction that you leave behind, or receive any improvements if you rescue one or both.
+      - text: "Note: It is possible to rescue both diplomats at once, but it will require a fleet and proper timing. Once you rescue one, you will have only a few seconds to rescue the second before the embassy building explodes, so you'll need a second pilot at the other embassy to grab the other diplomat at the same time you do. Either way, an opposing fleet will be present at the destination of the second gate (ie, the mission entrance) following your rescue. A third pilot with a well-tanked battleship can withstand the enemy fleet while other pilots complete the drop-off."
+      - text: There is an acceleration gate here that returns to the warp-in/mission entrance and it will place you at 50km from the container, but if you prefer it is possible to warp out and then warp back to the mission.
+    waves:
+      - id: demonstration
+        trigger:
+          on: other
+          text: Demonstration
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Container
+            names:
+              - Amarr Diplomat Quarters
+            drop: Amarr Diplomat
+            note: When looted, Minmatar enemies spawn.
+          - count: "1"
+            class: Container
+            names:
+              - Minmatar Emissary Quarters
+            drop: Minmatar Diplomat
+            note: When looted, Amarr enemies spawn.
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            group: Acceleration Gate
+            note: goes to 2nd pocket
+    onWarpIn: Careful, pilot. The site is increasingly unstable. The Minmatar and Amarr diplomats are at different ends of the site. You only have time to save one.
+  - name: Second Gate (Mission Entrance)
+    notes:
+      - text: In addition to the SOE Rescue Vessel present when you first warped-in, you now have faction ships of the faction you didn't save out for your blood (See list below), but you do not have to kill them to complete the mission. Ships will vary depending on which empire space you are in.
+      - text: "Upon deposit into the SoE ship (Minmatar): The Minmatar Republic is in your debt, Pilot."
+      - text: "Upon deposit into the SoE ship (Amarr): Praise be to God. The Empire is in your debt, capsuleer."
+      - text: There is no reason to take the gate as it will simply return you to P1. The mission is complete once the diplomatic staff are placed inside the SoE ship.
+      - text: Blitz:Use a fast frigate or interceptor. Pick up the diplomat in P1. Return to the warp in, drop them off, and warp away. Mission is complete.
+      - text: "Eliminating the Navy Ships: Instead of returning to the entrance start point immediately, you can go get your ship of choice to kill all enemies at the warp-in point. Simply ensure you transfer the rescued diplomat into your combat ship's cargohold. Upon returning to the warp-in/mission entrance you can kill everything with your large ship and deposit the diplomat."
+      - text: If you wish to fight the NPCs fight the Minmatar ones; they are significantly easier to destroy and tank against.
+      - text: Amarr
+      - text: "Loot: 7.7M Isk in Insignias and other drops, 1.4M Isk in salvage"
+      - text: Minmatar
+      - text: "Loot: 12.7M Isk in Insignias and other drops, 920k Isk in salvage"
+      - text: "Standing: No standing loss from killing ships in pocket 2."
+    waves:
+      - id: amarr-spawn
+        trigger:
+          on: other
+          text: Amarr spawn
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Imperial Felix
+              - Imperial Paladin
+          - count: "4"
+            class: Cruiser
+            names:
+              - Imperial Templar Agatho
+              - Imperial Templar Mathura
+          - count: "2"
+            class: Battleship
+            names:
+              - Imperial Ultara
+              - Imperial Tanakh
+      - id: minmatar-spawn
+        trigger:
+          on: other
+          text: Minmatar spawn
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Republic Baldur
+              - Republic Takan
+          - count: "3"
+            class: Cruiser
+            names:
+              - Republic Tribal Ormur
+              - Republic Tribal Rodul
+          - count: "2"
+            class: Battleship
+            names:
+              - Republic Jotun
+              - Republic Sigur

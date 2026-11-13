@@ -1,0 +1,106 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: soct-survey-expedition
+kind: anomaly
+name: SoCT Survey Outpost
+dedRating: null
+anomalyClass: 3
+enemyFaction: null
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – SoCT Survey Expedition
+    url: https://wiki.eveuniversity.org/SoCT_Survey_Expedition
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "205794"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal:
+    - em
+    - thermal
+    - kinetic
+    - explosive
+  resist:
+    - em
+    - thermal
+    - kinetic
+    - explosive
+restrictions:
+  - text: "Ship size limit: T2 Battlecruiser, T3 Cruisers"
+notes:
+  - text: NPCs do not drop any loot except the master. Salvaging in this site is around 500K ISK.
+  - text: All remaining NPCs will warp away when the master is destroyed so go immediately for him when he appears.
+  - text: All the NPCs orbit quite close, generally within 10km.
+  - text: All enemies have uniform resistance profile, so use the ammo type you prefer.
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: list-of-possible-npcs-to-face
+        trigger:
+          on: other
+          text: "List of possible NPCs to face:"
+          confidence: inferred
+        spawns:
+          - count: 0-5
+            class: Frigate
+            names:
+              - SoCT Pacifier
+            ewar:
+              - kind: neut
+              - kind: warpDisruption
+          - count: 0-5
+            class: Frigate
+            names:
+              - SoCT Skybreaker
+            ewar:
+              - kind: targetPaint
+          - count: 0-5
+            class: Frigate
+            names:
+              - SoCT Metamorphosis
+            ewar:
+              - kind: warpScramble
+            note: orbits very close (3km), can be difficult to hit
+          - count: 0-3
+            class: Destroyer
+            names:
+              - SoCT Sunesis
+            ewar:
+              - kind: web
+          - count: 0-3
+            class: Cruiser
+            names:
+              - SoCT Stormbringer
+            ewar:
+              - kind: targetPaint
+          - count: 0-3
+            class: Cruiser
+            names:
+              - SoCT Enforcer
+            ewar:
+              - kind: neut
+              - kind: web
+              - kind: warpDisruption
+          - count: 0-2
+            class: Battlecruiser
+            names:
+              - SoCT Gnosis
+            ewar:
+              - kind: neut
+              - kind: web
+              - kind: warpDisruption
+          - count: "1"
+            class: Battleship
+            names:
+              - SoCT Master
+            group: 3rd Wave
+            ewar:
+              - kind: neut
+              - kind: targetPaint
+              - kind: web
+              - kind: warpDisruption
+            drop: 1st-23rd Overseer's Personal Effects, event boosters, hardwiring implants, versus blueforce and redforce skin, T1 meta modules, T1 ammo, event glamourex booster and cerebral accelerator, Genolution implant
+            note: Praxis hull

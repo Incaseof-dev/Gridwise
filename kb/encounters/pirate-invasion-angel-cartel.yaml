@@ -1,0 +1,124 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: pirate-invasion-angel-cartel
+kind: mission
+name: Pirate Invasion
+level: 4
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Pirate Invasion (Angel Cartel)
+    url: https://wiki.eveuniversity.org/Pirate_Invasion_(Angel_Cartel)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "215126"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Kill angels
+ewar:
+  - kind: web
+  - kind: targetPaint
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite frigates"
+  - text: Single gated pocket. You warp in to an empty pocket but soon find yourself surrounded by a swarm of Hostiles.
+  - text: Group spawn is slightly delayed and distances vary. The spawn order is group 4, 2, 1 and then 3 and 5 (numbered from closest to furthest).
+  - text: Group 1 will auto aggro after some time.
+  - text: Proximity aggro is a major factor in this mission. Please be aware that you can aggro a neutral group by just moving too close to it.
+  - text: The proximity distance for Group 4 is about 80km. It is recommended that you do not move your ship.
+  - text: All other groups remain neutral until attacked or approached.
+  - text: "Tip: Attacking group 1 does not aggro any other groups."
+  - text: "Tip: Attacking group 2 will aggro group 3 (and vice-versa)."
+  - text: "Tip: Attacking group 4 will aggro group 5."
+  - text: "Tip: To throw off aggro from group 5, wait until an enemy ship from group 5 has locked your ship. Warp out, then warp back in."
+  - text: "Tip: If you have to move be careful not to approach the neutral groups, move up or down as you are surrounded from the sides."
+  - text: "Tip: Recommended order of elimination: Group 1, 5 (if you do not warp out to throw-off aggro), 4, 2 and 3."
+  - text: "Tip: All ships except Gist Saint and the Battlecruiser come in range of 5-8 km. Great for salvaging afterwards. Short range weapons recommended unless you can kill things before they get in knifefight range."
+  - text: "Blitz: Warp in, destroy ships from Group 5 (MJD) and warp out."
+lootNotes:
+  - text: "Bounties: ≈ 9.5 Million ISK (2021-08-16)"
+  - text: "Loot: ≈ 2.4 Mil ISK (100% Jita Buy, 2021-08-16)"
+  - text: "Salvage: ≈ 1.4 Mil ISK (100% Jita Buy, 2021-08-16)"
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Rogue
+              - Arch Gistii Hijacker
+            group: Group 1 (25-40 km)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Gistatis Tribuni
+            group: Group 1 (25-40 km)
+          - count: "3"
+            class: Battleship
+            names:
+              - Gist Warlord
+              - Gist Saint
+              - Gist Nephilim
+            group: Group 1 (25-40 km)
+            ewar:
+              - kind: targetPaint
+          - count: "2"
+            class: Destroyer
+            names:
+              - Gistior Haunter
+              - Gistior Defiler
+            group: Group 2 (45-60 km)
+          - count: "4"
+            class: Battleship
+            names:
+              - Gist Commander
+              - Gist General
+            group: Group 2 (45-60 km)
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Rogue
+              - Arch Gistii Hijacker
+            group: Group 3 (60-70 km, Amarr Trade Station Ruins, Left)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Liquidator
+              - Arch Gistum Marauder
+            group: Group 3 (60-70 km, Amarr Trade Station Ruins, Left)
+          - count: 0-2
+            class: Battlecruiser
+            names:
+              - Gistatis Praefectus
+              - Gistatis Tribunus
+            group: Group 4 (75-90 km, Amarr Trade Station Ruins, Right)
+          - count: "4"
+            class: Battleship
+            names:
+              - Gist Commander
+              - Gist General
+              - Gist War General
+              - Gist Warlord
+            group: Group 4 (75-90 km, Amarr Trade Station Ruins, Right)
+          - count: "6"
+            class: Battleship
+            names:
+              - Gist Commander
+              - Gist General
+              - Gist War General
+            group: Group 5 (90 km, Carrier Wreck)
+            triggers: Mission object

@@ -1,0 +1,106 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: kicking-the-nest
+kind: mission
+name: Kicking the Nest
+level: 2
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Kicking the Nest
+    url: https://wiki.eveuniversity.org/Kicking_the_Nest
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "221258"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy Drone Hive
+notes:
+  - text: Kicking the Nest is the final mission of a 3 part mission chain, The other missions are Survey Rendezvous and Listening Post.
+pockets:
+  - name: Warp-in
+    notes:
+      - text: The acceleration gate is ~about 20 km from the warp-in.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+  - name: Pocket
+    notes:
+      - text: "Blitz: Kill the Drone Hive."
+      - text: When the Drone Hive is destroyed before the last ship of group A there will be no reinforcement waves.
+      - text: Reinforcement 1 spawns after group A is destroyed.
+      - text: Reinforcement 2 spawns after reinforcement 1 is destroyed.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Splinter
+            group: Group A at the Drone Hive
+            note: type list incomplete on the source page
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Wrecker
+              - Destructor Alvum
+            group: Group A at the Drone Hive
+            triggers: Last ship destroyed triggers reinforcement 1
+          - count: 20-29
+            class: Drone
+            names:
+              - Arachula
+              - Asmodeus
+            group: Group B (70-80km)
+            note: All types are possible; type list incomplete on the source page
+          - count: "?"
+            class: Sentry
+            names:
+              - Drone Hive
+            group: ~20km
+      - id: reinforcement-1-at-the-drone-hive
+        trigger:
+          on: other
+          text: Reinforcement 1 at the Drone Hive
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Splinter
+            note: type list incomplete on the source page
+          - count: "4"
+            class: Cruiser
+            names:
+              - Wrecker
+              - Destructor Alvum
+            triggers: Last ship destroyed triggers reinforcement 2
+      - id: reinforcement-2-at-the-drone-hive
+        trigger:
+          on: other
+          text: Reinforcement 2 at the Drone Hive
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Hunter
+              - Silverfish Alvi
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Viral Infector
+              - Violater Alvum

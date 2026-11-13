@@ -1,0 +1,127 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: escaped-killer
+kind: mission
+name: Escaped Killer
+level: 1
+enemyFaction: Amarr Empire
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Escaped Killer
+    url: https://wiki.eveuniversity.org/Escaped_Killer
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231256"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Recapture Milare Terhellen and return him to agent.
+ewar:
+  - kind: trackingDisruption
+notes:
+  - text: "Suggested ships: Frigate, Destroyer"
+npcs:
+  Cargo Rig:
+    sdeTypes:
+      - STANDINGS LOSS
+    class: Structure
+  Warehouse:
+    sdeTypes:
+      - Starbase Storage
+    class: Structure
+pockets:
+  - name: Warp-In
+    notes:
+      - text: No aggro until you approach the Acceleration Gate.
+      - text: All enemies must be destroyed to continue the mission.
+      - text: DO NOT DESTROY ANY STRUCTURES - The standings loss with the Amarr Empire can be as severe as -0.307.
+    waves:
+      - id: initial-group-6-vessels
+        trigger:
+          on: warpIn
+          text: Initial Group - 6 vessels
+        spawns:
+          - count: 5-6
+            class: Frigate
+            names:
+              - Imperial Disciple
+              - Imperial Haran
+              - Imperial Matendi
+          - count: 0-1
+            class: Frigate
+            names:
+              - Imperial Forian
+            ewar:
+              - kind: trackingDisruption
+      - id: structure
+        trigger:
+          on: warpIn
+          text: Structure
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Cargo Rig
+            drop: Valuable Ammunition
+          - count: "1"
+            class: Structure
+            names:
+              - Habitation Module
+            drop: Commodities
+          - count: "1"
+            class: Structure
+            names:
+              - Warehouse
+            drop: 50 Metal scrap & commodities
+          - count: "1"
+            class: Structure
+            names:
+              - Pressure Silo
+            drop: Valuable Ammunition
+      - id: asteroids
+        trigger:
+          on: other
+          text: Asteroids
+          confidence: inferred
+        spawns: []
+  - name: Pocket
+    notes:
+      - text: Full aggro on warp in.
+      - text: "Blitz: Destroy Milare's frigate, pick him up out of the container and get out."
+      - text: "The Blitz method is known to avoid serious standings losses with the Amarr Empire. CAUTION: Killing or destroying anything else is untested."
+    waves:
+      - id: initial-group-5-vessels
+        trigger:
+          on: warpIn
+          text: Initial Group - 5 vessels
+        spawns:
+          - count: 2-4
+            class: Frigate
+            names:
+              - Imperial Disciple
+              - Imperial Haran
+              - Imperial Matendi
+          - count: 0-2
+            class: Frigate
+            names:
+              - Imperial Forian
+            ewar:
+              - kind: trackingDisruption
+          - count: "1"
+            class: Frigate
+            names:
+              - Milare Terhellen [Republic Baltur
+              - Milare Terhellen [Republic Takan]
+            drop: Drops a container with Milare Terhellen.
+      - id: structure
+        trigger:
+          on: warpIn
+          text: Structure
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Starbase Silo
+            drop: Metal Scrap & Commodities

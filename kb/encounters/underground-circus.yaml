@@ -1,0 +1,171 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: underground-circus
+kind: mission
+name: Underground Circus
+level: 4
+enemyFaction: Serpentis & Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Underground Circus
+    url: https://wiki.eveuniversity.org/Underground_Circus
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "211029"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Retrieve the Ringmaster (1.0 m3) from her pleasure hub, and bring her back to Mourmarie Mone.
+ewar:
+  - kind: sensorDamp
+  - kind: targetPaint
+notes:
+  - text: 10M ISK in Bounties
+  - text: "The Underground Circus: “Guilt is unknown in the Gallente Federation. Pleasure, desire, lust, avarice: These are the rights of all people, laws be damned. Our economy is built not upon currency or scarcity, but on the supply and demand of needs, wants, and yearnings. A guilty pleasure is the highest right of the Gallente; my Circus is here to satisfy and fulfill this right. Let us redefine what it is to be guilty.” -The Ringmaster, on the opening of the Underground Circus, YC 108"
+  - text: Gated deadspace pocket one jump away in Caslemon.
+  - text: "Blitz: clear Room 1, take the Gate, destroy The Ringmaster's Pleasure Hub Structure, kill the The Ringmaster and pick up the Ringmaster from their ship wreck."
+  - text: "Tips: You cannot warp inside the Rooms"
+  - text: "Tips: There are three different Factions that you need to destroy"
+  - text: "Tips: The Ringmaster's Pleasure Hub has a lot of Structure Hitpoints"
+  - text: "Tips: Clear both Rooms if you are unsure about surviving"
+  - text: "Tips: Destroy the Sensor Dampening ships first"
+  - text: "Tips: The Ringmaster's smallest resistance is 74% Kinetic"
+pockets:
+  - name: Warp-in
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+  - name: Room 1
+    notes:
+      - text: "The Undergound Circus: Depravity, consumption, and the pleasures of the flesh are big business throughout New Eden. These desires are even more profitable in society's fringe: the gutters and ghettoes of the Empires, the borderlands, and the dark pockets of empty space. When law, ethics, and customs are of little concern, any service can be provided, any object bought, though often at a very steep cost. Even the underground has an economy: the supply and demand of desire. The Underground Circus is home to just such decadence, straddling the boundary between the legal and illicit. The Ringmaster runs this operation, and she is shrewd enough to know how to keep herself under the radar. Or maybe her circus remains open at the whim of some greater authority, in order to fulfill the desires of a corrupt law enforcement agency."
+    waves:
+      - id: defenders
+        trigger:
+          on: warpIn
+          text: Defenders
+        spawns:
+          - count: "4"
+            class: Cruiser
+            names:
+              - Sinful Saints
+            group: Group 1 (30 km)
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Consumption Junkies
+            group: Group 1 (30 km)
+            ewar:
+              - kind: sensorDamp
+          - count: "3"
+            class: Battleship
+            names:
+              - Consumption Junkies
+            group: Group 1 (30 km)
+          - count: "4"
+            class: Battleship
+            names:
+              - Sinful Saints
+            group: Group 1 (30 km)
+            ewar:
+              - kind: targetPaint
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Lustadores
+            group: Group 2 (50 km)
+            ewar:
+              - kind: sensorDamp
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Lustadores
+            group: Group 2 (50 km)
+      - id: structures-50-km
+        trigger:
+          on: other
+          text: Structures (50 km)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+            note: Locked until the Defenders are destroyed
+  - name: Room 2
+    notes:
+      - text: "The Ringmaster: I am a Gallente citizen, and I have done nothing wrong. Why are the FIO punishing their own people? They frequent my Circus as much as any other patron. You can tell those Black Eagle bastards that if they want their cut, they'll have to call you off. I don't know anything about the Pator 6, or any kidnapping. Even if I did, you'll never get it out of me. I'll never give anything back to those hypocrites."
+    waves:
+      - id: defenders-spread-out-in-several-groups
+        trigger:
+          on: warpIn
+          text: Defenders (spread out in several groups)
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Sinful Saints
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Consumption Junkies
+            ewar:
+              - kind: sensorDamp
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Lustadores
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Consumption Junkies
+            ewar:
+              - kind: sensorDamp
+          - count: "3"
+            class: Battleship
+            names:
+              - Consumption Junkies
+          - count: "3"
+            class: Battleship
+            names:
+              - Sinful Saints
+            ewar:
+              - kind: targetPaint
+          - count: "3"
+            class: Battleship
+            names:
+              - Lustadores
+            ewar:
+              - kind: sensorDamp
+      - id: structures-60-km
+        trigger:
+          on: other
+          text: Structures (60 km)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - The Ringmaster's Pleasure Hub
+            triggers: Spawns The Ringmaster
+      - id: the-ringmaster
+        trigger:
+          on: other
+          text: The Ringmaster
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Cruiser
+            names:
+              - The Ringmaster
+            ewar:
+              - kind: sensorDamp
+            drop: The Ringmaster (1.0 m3)

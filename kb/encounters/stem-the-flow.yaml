@@ -1,0 +1,85 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: stem-the-flow
+kind: mission
+name: Stem The Flow
+level: 4
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Stem The Flow
+    url: https://wiki.eveuniversity.org/Stem_The_Flow
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "205198"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Suggested ships: Battleship"
+lootNotes:
+  - text: "Mission Reward: ± 2.8 Mil ISK"
+  - text: "Time Bonus: ± 2.7 Mil ISK"
+  - text: "Bounty: ± 19.7 Mil ISK"
+  - text: "Loot: ± 3.3 Mil ISK"
+  - text: "Salvage: ± 2.9 Mil ISK"
+pockets:
+  - name: Single pocket
+    notes:
+      - text: When you enter the mission, you will see a tower and four industrial ships, each at a cargo platform, that is attached to the tower.
+      - text: If you fly towards each industrial they disappear. After the last industrial has disappeared the first wave of ships arrives.
+      - text: "WARNING: DPS from wave 3 can be quite heavy. Keep aligned to a nearby gate or planet and be prepared to warp out if necessary."
+    waves:
+      - id: wave-1-30-40km-auto-aggro
+        trigger:
+          on: other
+          text: Wave 1 30-40km (auto aggro)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Wrecker
+          - count: "3"
+            class: Battleship
+            names:
+              - Pith Massacrer
+              - Pith Usurper
+      - id: wave-2-auto-aggro
+        trigger:
+          on: other
+          text: Wave 2 (auto aggro)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Pithatis Death Dealer
+          - count: "4"
+            class: Battleship
+            names:
+              - Pith Massacrer?usurper
+      - id: wave-3-auto-aggro
+        trigger:
+          on: other
+          text: Wave 3 (auto aggro)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Eraser
+            group: Wave 3 is actually two separate spawns
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Pithatis Assasin
+              - Pithatis Executor
+            group: Wave 3 is actually two separate spawns
+          - count: "6"
+            class: Battleship
+            names:
+              - Pith Massacrer
+              - Pith Usurper
+            group: Wave 3 is actually two separate spawns

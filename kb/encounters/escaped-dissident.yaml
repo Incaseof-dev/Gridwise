@@ -1,0 +1,65 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: escaped-dissident
+kind: mission
+name: Escaped Dissident
+level: 1
+enemyFaction: Minmatar Republic
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Escaped Dissident
+    url: https://wiki.eveuniversity.org/Escaped_Dissident
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "230722"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Recapture Parriaval Mastes and return him to agent.
+notes:
+  - text: "Suggested ships: Frigate"
+  - text: Some structures drop trade goods.
+  - text: "2022-08-31: Republic Frigate at warp-in had an M-36 Enduring Warp Disruption Field Generator Estimated value about 4m as cargo."
+pockets:
+  - name: Warp-in
+    waves:
+      - id: initial-group-20-45km
+        trigger:
+          on: warpIn
+          text: Initial Group, 20-45km
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Republic Frigate
+            note: Renamed Republic Radur/Skani/Otur
+  - name: Pocket
+    waves:
+      - id: initial-group-5-8km
+        trigger:
+          on: warpIn
+          text: Initial Group, 5-8km
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Republic Frigate
+            note: Renamed Republic Radur/Skani/Otur
+          - count: "1"
+            class: Frigate
+            names:
+              - Parriaval Mastes
+            drop: Drops container with Prisoner.
+            note: Mission objective. Renamed Imperial Felix/Paladin
+      - id: structure
+        trigger:
+          on: warpIn
+          text: Structure
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Starbase Silo
+            drop: drops trade goods

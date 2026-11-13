@@ -1,0 +1,144 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: record-cleaning
+kind: mission
+name: Record Cleaning
+level: 4
+enemyFaction: Mercenaries
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Record Cleaning
+    url: https://wiki.eveuniversity.org/Record_Cleaning
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223407"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: web
+  - kind: warpScramble
+notes:
+  - text: "Web/warp disruption: Mercenary Wingman (Web, Scram)"
+  - text: "Blitz: Go to the Pirate Station and loot the Hostage."
+  - text: Maximum bounty when going through the Patrol Area = 4.41 mill
+  - text: "Loot: About 1200 m³ before cap booster charges and metal scraps."
+  - text: Standing increase is excellent with this storyline mission.
+  - text: This being a typical mercenary mission, all NPCs will close to a range of 15k or less, similar to Damsel in Distress L4. If you can handle the DPS, and deal good DPS, this is very easy and quick (10 minutes) to finish.
+pockets:
+  - name: Warp-In
+    notes:
+      - text: You are given the choice between two gates
+      - text: Gate to Acidic Cloud (18km)
+      - text: Gate to Patrol Area (18km)
+      - text: When approaching either of the acceleration gates a popup message explains what you have to expect in the area they lead into.
+  - name: Pocket 1a (Acidic Cloud)
+    notes:
+      - text: Empty pocket, no spawn.
+      - text: Ship receives damage of unknown type every second.
+      - text: Gate to Pirate Base 40k away.
+      - text: Gate to Entrance 6k away.
+      - text: "Note: Area deals enough damage to reduce my Rattlesnake's almost perfect passive tank (I have T1 Defense Field Purgers instead of T2, and level 4 in the shield compensation skills) to 56% (stable) by the time I fly to the next gate."
+      - text: "Note: Seamus Donohue calculates, based on his personal observations, that the acidic cloud deals 600 damage per second as perfect omnidamage (that is, 150 EM/second, 150 thermal/second, 150 kinetic/second, and 150 explosive/second)."
+  - name: Pocket 1b (Patrol Area)
+    waves:
+      - id: group-1-20km-auto-aggro
+        trigger:
+          on: other
+          text: Group 1, 20km (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Mercenary Wingman
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "3"
+            class: Cruiser
+            names:
+              - Mercenary Commander
+              - Mercenary Lieutenant
+          - count: "3"
+            class: Battleship
+            names:
+              - Mercenary Overlord
+      - id: group-2-20km-auto-aggro
+        trigger:
+          on: other
+          text: Group 2, 20km (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Mercenary Wingman
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "3"
+            class: Cruiser
+            names:
+              - Mercenary Commander
+              - Mercenary Lieutenant
+          - count: "3"
+            class: Battleship
+            names:
+              - Mercenary Overlord
+  - name: Pocket 2 (Pirate Base)
+    notes:
+      - text: Will not aggro until attacked, no drone aggression.
+    waves:
+      - id: group-1-21-26km-auto-aggro
+        trigger:
+          on: other
+          text: Group 1, 21-26km (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Mercenary Wingman
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "2"
+            class: Cruiser
+            names:
+              - Mercenary Lieutenant
+          - count: "3"
+            class: Battleship
+            names:
+              - Mercenary Overlord
+      - id: group-2-48-55km
+        trigger:
+          on: other
+          text: Group 2, 48-55km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Mercenary Commander
+              - Mercenary Lieutenant
+          - count: "3"
+            class: Battleship
+            names:
+              - Mercenary Overlord
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "2"
+            class: Structure
+            names:
+              - Shipyard
+            note: Invulnerable
+          - count: "1"
+            class: Structure
+            names:
+              - Asteroid Pirate Station
+            drop: Hostage

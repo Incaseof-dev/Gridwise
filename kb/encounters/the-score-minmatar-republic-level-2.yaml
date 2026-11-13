@@ -1,0 +1,52 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-score-minmatar-republic-level-2
+kind: mission
+name: The Score
+level: 2
+enemyFaction: Minmatar Republic
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Score (Minmatar Republic) (Level 2)
+    url: https://wiki.eveuniversity.org/The_Score_(Minmatar_Republic)_(Level_2)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "192051"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: targetPaint
+notes:
+  - text: "Suggested ships: Cruiser, Destroyer"
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: group-1-35km
+        trigger:
+          on: other
+          text: Group 1, 35km
+          confidence: inferred
+        spawns:
+          - count: "11"
+            class: Frigate
+            names:
+              - Republic Gleeda
+              - Republic Kvarm
+              - Republic Skani
+              - Republic Takan
+            ewar:
+              - kind: targetPaint
+      - id: group-2-35km
+        trigger:
+          on: other
+          text: Group 2, 35km
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Republic Kvarm
+              - Republic Radur
+              - Republic Skani

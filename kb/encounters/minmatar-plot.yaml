@@ -1,0 +1,116 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: minmatar-plot
+kind: mission
+name: Minmatar Plot
+level: 2
+enemyFaction: Amarr Empire & Minmatar Republic
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Minmatar Plot
+    url: https://wiki.eveuniversity.org/Minmatar_Plot
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223312"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Retrieve the slaves
+pockets:
+  - name: Part 1 of 3
+    notes:
+      - text: "Blitz: Bypass the first pocket and just run to the 2nd acceleration gate, kill the destroyer to get the mission objective."
+  - name: Pocket 1
+    notes:
+      - text: "Note: They spawn once you get close to the Private Hangar."
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Structure
+            names:
+              - Private Hangar
+            triggers: Trigger wave 1 when approaches
+            drop: miscellaneous trade goods
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Imperial Disciple
+          - count: "2"
+            class: Frigate
+            names:
+              - Imperial Haran
+  - name: Pocket 2
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Destroyer
+            names:
+              - Republic Bormin
+              - Republic Austri
+  - name: Part 2 of 3
+    notes:
+      - text: Mission objective is dropped by the last enemy destroyed.
+  - name: Warp-in
+    waves:
+      - id: warp-in-60km
+        trigger:
+          on: other
+          text: Warp-in (60km)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Federation Kontos
+          - count: "2"
+            class: Frigate
+            names:
+              - Federation Hoplon
+  - name: Part 3 of 3
+    notes:
+      - text: "Blitz: Killing the Minmatar Contact completes the mission"
+    waves:
+      - id: warp-in-80km
+        trigger:
+          on: other
+          text: Warp In (80km)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Federation Clavis
+          - count: "1"
+            class: Destroyer
+            names:
+              - Minmatar Contact
+      - id: reinforcement
+        trigger:
+          on: other
+          text: Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Republic Kvarm
+          - count: "2"
+            class: Frigate
+            names:
+              - Republic Tribal Gleeda

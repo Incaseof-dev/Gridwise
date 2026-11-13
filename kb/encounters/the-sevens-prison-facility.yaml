@@ -1,0 +1,70 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-sevens-prison-facility
+kind: mission
+name: The Seven's Prison Facility
+level: 3
+enemyFaction: Mercenaries
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Seven's Prison Facility
+    url: https://wiki.eveuniversity.org/The_Seven's_Prison_Facility
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "205377"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Find and eliminate the leader of the 'Seven's' forces within their compound and his bodyguard, then report back to your agent.
+ewar:
+  - kind: web
+notes:
+  - text: "Suggested ships: Battlecruiser"
+  - text: "Blitz: Kill Olufami/Elena Gazky/Schmidt and the Seven Assassin/Thug."
+pockets:
+  - name: Warp-in
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Hangar Array
+            names:
+              - Prison
+            drop: mining crystals and/or livestock and/or slaves
+      - id: initial-group-40-55km-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group, 40-55km (auto-aggro)
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Seven Grunt
+              - Seven Death Dealer
+              - Seven Deathguard
+          - count: "1"
+            class: Cruiser
+            names:
+              - Seven Assassin
+              - Seven Thug
+          - count: "1"
+            class: Cruiser
+            names:
+              - Olufami
+              - Elena Gazky
+              - Schmidt
+            ewar:
+              - kind: web
+          - count: "3"
+            class: Sentry
+            names:
+              - Sentry Gun I
+              - Sentry Gun II
+            drop: May drop ammo
+            note: Renamed Tower Sentry Angel I/II
+    onWarpIn: This is the location of one of Jakerion Pahydan's prison outpost. Jakerion is an infamous outlaw who controls a loose-knit criminal organization which split itself from the Serpentis a few years ago. 'The Seven' it is called, named after the small group of comrades within the Serpentis who founded the organization.

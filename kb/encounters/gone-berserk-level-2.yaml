@@ -1,0 +1,108 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: gone-berserk-level-2
+kind: mission
+name: Gone Berserk
+level: 2
+enemyFaction: Equilibrium of Mankind
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Gone Berserk (Level 2)
+    url: https://wiki.eveuniversity.org/Gone_Berserk_(Level_2)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "222510"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Take care of the terrorist fanatics and then report back to your agent.
+notes:
+  - text: "Suggested ships: Cruiser"
+  - text: "Blitz: Kill the left group of EoM ships and each subsequent spawn. Do not touch the center and right groups."
+  - text: Warp to Acceleration Gate.
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: Like the level 4 variant, the spawns appear in chains.
+      - text: For each initial spawn group you kill, you'll get an additional reinforcement chain consisting of 4 waves.
+      - text: "Note: The frigates may target your drones, but will deal very little damage to them, so using something like a Vexor with T1 Drones will work just fine."
+      - text: "Reinforcement chain once for each initial group:"
+      - text: "Bounties: 494,000 ISK"
+      - text: "Loot and salvage: ~850,000 ISK (at 80 % salvage access difficulty bonus, ~78 % wrecks successfully salvaged, value estimation of April 2025, Rens)"
+    waves:
+      - id: initial-spawn
+        trigger:
+          on: warpIn
+          text: Initial Spawn
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - EoM Succubus
+            group: Left
+          - count: "2"
+            class: Frigate
+            names:
+              - EoM Succubus
+            group: Center
+          - count: "2"
+            class: Frigate
+            names:
+              - EoM Succubus
+            group: Right
+      - id: reinforcement-1
+        trigger:
+          on: other
+          text: Reinforcement 1
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - EoM Succubus
+          - count: "1"
+            class: Frigate
+            names:
+              - EoM Demon
+            triggers: Triggers reinforcement 2
+      - id: reinforcement-2
+        trigger:
+          on: other
+          text: Reinforcement 2
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - EoM Demon
+            triggers: last kill triggers reinforcement 3
+      - id: reinforcement-3
+        trigger:
+          on: other
+          text: Reinforcement 3
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - EoM Succubus
+            group: Left
+            triggers: Triggers reinforcement 4
+          - count: "2"
+            class: Frigate
+            names:
+              - EoM Demon
+            group: Center and right
+            triggers: Triggers reinforcement 4
+      - id: reinforcement-4
+        trigger:
+          on: other
+          text: Reinforcement 4
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Cruiser
+            names:
+              - EoM Priest

@@ -1,0 +1,129 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-blockade-guristas-pirates-level-1
+kind: mission
+name: The Blockade
+level: 1
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Blockade (Guristas Pirates) (Level 1)
+    url: https://wiki.eveuniversity.org/The_Blockade_(Guristas_Pirates)_(Level_1)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191985"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Kill their high-ranking officers
+ewar:
+  - kind: ecm
+  - kind: web
+notes:
+  - text: "Web/warp disruption: Starbase Stasis Tower (Web)"
+  - text: "Suggested ships: Frigate, Destroyer"
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: Structure drop no loot
+      - text: The pirates managed to take control of a statis tower near the stargate.
+      - text: "In local after destroying trigger ship: A nearby pirate gang has arrived to reinforce the blockade!"
+      - text: "In local after destroying trigger ship: A nearby pirate gang has arrived to reinforce the blockade!"
+      - text: "In local after destroying trigger ship: A nearby pirate gang has arrived to reinforce the blockade!"
+      - text: "In local after destroying trigger ship: A nearby pirate gang has arrived to reinforce the blockade!"
+    waves:
+      - id: initial-group-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group, Auto-aggro
+        spawns:
+          - count: "1"
+            class: Sentry
+            names:
+              - Starbase Stasis Tower
+            ewar:
+              - kind: web
+          - count: "4"
+            class: Frigate
+            names:
+              - Pithi Arrogator
+              - Pithi Imputor
+          - count: "1"
+            class: Frigate
+            names:
+              - Pithi Plunderer
+              - Pithi Wrecker
+            triggers: Spawns reinforcement 1
+      - id: reinforcement-1-100-140km
+        trigger:
+          on: other
+          text: Reinforcement 1, 100-140km
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Pithi Arrogator
+              - Pithi Imputor
+          - count: "1"
+            class: Frigate
+            names:
+              - Pithi Infiltrator
+            triggers: Spawns reinforcement 2
+      - id: reinforcement-2
+        trigger:
+          on: other
+          text: Reinforcement 2
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Pithi Arrogator
+          - count: "1"
+            class: Frigate
+            names:
+              - Pithi Despoiler
+              - Pithi Saboteur
+            ewar:
+              - kind: ecm
+            triggers: Spawns reinforcement 3
+      - id: reinforcement-3
+        trigger:
+          on: other
+          text: Reinforcement 3
+          confidence: inferred
+        spawns:
+          - count: "8"
+            class: Frigate
+            names:
+              - Pithi Imputor
+              - Pithi Arrogator
+          - count: "1"
+            class: Frigate
+            names:
+              - Pithi Despoiler
+              - Pithi Saboteur
+            ewar:
+              - kind: ecm
+            triggers: Spawns reinforcement 4
+      - id: reinforcement-4
+        trigger:
+          on: other
+          text: Reinforcement 4
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Pithi Despoiler
+              - Pithi Saboteur
+            ewar:
+              - kind: ecm
+          - count: "1"
+            class: Frigate
+            names:
+              - Pithi Plunderer
+            note: Mission objective

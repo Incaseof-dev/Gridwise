@@ -1,0 +1,107 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: guri-malakim-survey-base
+kind: anomaly
+name: Guri Malakim Survey Base
+dedRating: null
+anomalyClass: 3
+enemyFaction: null
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Guri Malakim Survey Base
+    url: https://wiki.eveuniversity.org/Guri_Malakim_Survey_Base
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "205795"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal:
+    - em
+    - thermal
+    - kinetic
+    - explosive
+  resist:
+    - em
+    - thermal
+    - kinetic
+    - explosive
+restrictions:
+  - text: "Ship size limit: T2 Battlecruiser, T3 Cruisers"
+notes:
+  - text: NPCs do not drop any loot except the boss. Salvaging in this site is around 500K ISK.
+  - text: All remaining NPCs will warp away when the boss is destroyed so go immediately for him when he appears.
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: list-of-possible-npcs-to-face
+        trigger:
+          on: other
+          text: "List of possible NPCs to face:"
+          confidence: inferred
+        spawns:
+          - count: 0-5
+            class: Frigate
+            names:
+              - Guri Malakim Dramiel
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: 0-5
+            class: Frigate
+            names:
+              - Guri Malakim Griffin
+            ewar:
+              - kind: neut
+              - kind: ecm
+          - count: 0-5
+            class: Frigate
+            names:
+              - Guri Malakim Worm
+            ewar:
+              - kind: warpDisruption
+          - count: 0-3
+            class: Cruiser
+            names:
+              - Guri Malakim Cynabal
+            ewar:
+              - kind: warpDisruption
+          - count: 0-3
+            class: Cruiser
+            names:
+              - Guri Malakim Gila
+            ewar:
+              - kind: neut
+          - count: 0-2
+            class: Battlecruiser
+            names:
+              - Guri Malkim Tornado
+            ewar:
+              - kind: neut
+          - count: "1"
+            class: Battleship
+            names:
+              - Guri Malakim Boss
+            group: 3rd Wave
+            ewar:
+              - kind: neut
+              - kind: web
+              - kind: warpDisruption
+            drop: Smuggler Lockboxes, event boosters, hardwiring implants, versus blueforce and redforce skin, T1 meta modules, T1 ammo, event glamourex booster and cerebral accelerator
+            note: Rattlesnake hull
+          - count: "1"
+            class: Battleship
+            names:
+              - Guri Malakim Boss
+            group: 3rd Wave
+            ewar:
+              - kind: neut
+              - kind: web
+              - kind: warpDisruption
+            drop: Smuggler Lockboxes, event boosters, hardwiring implants, versus blueforce and redforce skin, T1 meta modules, T1 ammo, event glamourex booster and cerebral accelerator
+            note: Machariel hull
+sde:
+  dungeonIds:
+    - 10345

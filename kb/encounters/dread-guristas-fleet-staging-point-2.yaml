@@ -1,0 +1,204 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: dread-guristas-fleet-staging-point-2
+kind: escalation
+name: Dread Guristas Fleet Staging Point 2
+dedRating: null
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Dread Guristas Fleet Staging Point 2
+    url: https://wiki.eveuniversity.org/Dread_Guristas_Fleet_Staging_Point_2
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "170483"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: The site is considerably harder than the unrated complex due to heavy neuting and webbing, as well as high DPS. Again, a fleet of T2, T3 or Faction Cruisers or a small group of Battleships is recommended for this site.
+loot:
+  - item: + Commander and other valuable loot
+  - item: 12th Tier Overseer's Personal Effects
+    note: est. 9.9M ISK (wiki) · From Guristas Scout Commander
+  - item: Dread Guristas faction modules
+    note: From Guristas Scout Commander
+pockets:
+  - name: Warp-in
+    notes:
+      - text: You land on a beacon.
+      - text: Wave 2 triggers when the penultimate battleship in initial spawn is attacked.
+      - text: Wave 3 triggers when the last battleship in initial spawn is attacked.
+      - text: The Guristas Scout Commander does not have significant tank, like a regular Overseer Cruiser. Its wreck may produce T2 salvage materials, though.
+      - text: Destroying the commander (and possibly, failing that, all ships) will trigger an escalation to Dread Guristas Fleet Staging Point 3. To blitz, then, kill battleships until the elite frigates spawn, then kill the Overseer cruiser.
+      - text: "Escalation trigger: The last Guristas Battleship sends out a distress signal before it goes down. Luckily your com systems have managed to decrypt the message and follow it to it's final destination."
+      - text: The acceleration gate to the first pocket does not have to be used; the first pocket is optional, and only worth doing for extra bounties/salvage.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Pithior Guerilla
+              - Pithior Renegade
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Pithatis Enforcer
+              - Pithatis Executor
+          - count: "4"
+            class: Battleship
+            names:
+              - Pith Usurper
+              - Pith Massacrer
+            triggers: Attacking triggers wave 2 and 3
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Guristas Energy Neutralizing Sentry II
+            ewar:
+              - kind: neut
+          - count: "3"
+            class: Sentry
+            names:
+              - Guristas Cruise Missile Batteries
+      - id: wave-3-20-km-from-acceleration-gate
+        trigger:
+          on: other
+          text: Wave 3 (20 km from acceleration gate)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Destructor
+              - Dire Pithi Demolisher
+            triggers: Triggers wave 4
+          - count: "3"
+            class: Destroyer
+            names:
+              - Pithior Guerilla
+              - Pithior Renegade
+          - count: "4"
+            class: Battleship
+            names:
+              - Pith Conquistador
+              - Pith Destroyer
+      - id: wave-4
+        trigger:
+          on: other
+          text: Wave 4
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Pithior Supremacist
+              - Pithior Terrorist
+          - count: "1"
+            class: Overseer Cruiser
+            names:
+              - Guristas Scout Commander
+            drop: May contain 12th Tier Overseer's Personal Effects or Dread Guristas faction modules
+            note: Immune to all EWAR
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Pithatis Assassin
+              - Pithatis Assaulter
+          - count: "2"
+            class: Battleship
+            names:
+              - Pith Massacrer
+      - id: wave
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: Locked until all ships are destroyed
+  - name: First Pocket
+    notes:
+      - text: Only go in here if you want bounties/salvage. No escalation is triggered here.
+      - text: Highly recommend destroying the stasis tower and neuting sentry first; they add a lot of difficulty to this room.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "1"
+            class: Sentry
+            names:
+              - Guristas Energy Neutralizer Sentry III
+            ewar:
+              - kind: neut
+            note: Has a strong passive tank and neuts 40 GJ/s
+          - count: "5"
+            class: Sentry
+            names:
+              - Guristas Cruise Missile Batteries
+          - count: "2"
+            class: Sentry
+            names:
+              - Guristas Point Defense Battery
+          - count: "1"
+            class: Sentry
+            names:
+              - Guristas Stasis Tower
+            ewar:
+              - kind: web
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Destructor
+              - Dire Pithi Demolisher
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Pithatis Assassin
+              - Pithatis Assaulter
+          - count: "5"
+            class: Battleship
+            names:
+              - Pith Usurper
+              - Pith Massacrer
+            triggers: Triggers wave 2
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Destructor
+              - Dire Pithi Demolisher
+          - count: "5"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Annihilator
+              - Dire Pithum Killer
+              - Dire Pithum Nullifier
+            ewar:
+              - kind: ecm
+          - count: "5"
+            class: Battleship
+            names:
+              - Pith Usurper
+              - Pith Massacrer

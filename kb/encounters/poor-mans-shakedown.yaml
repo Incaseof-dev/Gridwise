@@ -1,0 +1,164 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: poor-mans-shakedown
+kind: mission
+name: Poor Man's Shakedown
+level: 4
+enemyFaction: Minmatar Republic
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Poor Man's Shakedown
+    url: https://wiki.eveuniversity.org/Poor_Man's_Shakedown
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "229468"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Enter the colony and track down any information you can about the Pator 6
+notes:
+  - text: No Standing loss
+  - text: Gated deadspace pocket two jumps away in Charmerout. Gather intel from Minmatar thugs. They won't co-operate so you will need to use force to gain the information from them.
+  - text: "Blitz: Warp to zero and destroy the furthest Asteroid Micro-Colony Minor Structure (~ 45 km away). Destroy only the Defender Battleships. Last one will drop the Shanty Town Gate Clearance in a Cargo Container. Take the Gate while ignoring the Cruisers. Again destroy the furthest Asteroid Micro-Colony Minor Structure and kill The Elder."
+  - text: "Tips: You only need to destroy the farthest Asteroid Micro-Colony Minor Structure in each room"
+  - text: "Tips: Shanty Town Gate Clearance is consumed by the Acceleration Gate, so bookmark Room 1. Allies can follow you through the gate for a short time after activating it."
+  - text: "Tips: The Elder's lowest Shield and Armour resistance is 72% Explosive"
+pockets:
+  - name: Warp-in
+    notes:
+      - text: "Shanty Town: Refugees from an impoverished world, struggling survivors in decrepit structures, the inhabitants of this colony epitomize the harsh realities of life in space. Scraping together a living from wreckage and scavenged ships, the Minmatar in this group appear quiet and subdued. The downtrodden are often the ones who know the most, although they have very little to gain from it."
+      - text: "Agent Conversation at landing: These people know who took Ralie. They're hiding something and won't tell us. Looks like that acceleration gate is locked as well. We'll have to use some persuasion. Smoke those Matari out from their hiding places. One of them will either have the information we need or the means to go through that acceleration gate."
+      - text: "Defenders begging: Here's the gate clearance for that acceleration gate. Go through it and talk to The Elder. Just please stop shooting us."
+    waves:
+      - id: structures-25-km
+        trigger:
+          on: other
+          text: Structures (25 km)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Structure
+            names:
+              - Asteroid Micro-Colony Minor
+            triggers: Spawns Defenders
+      - id: structures-45-km
+        trigger:
+          on: other
+          text: Structures (45 km)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Asteroid Micro-Colony Minor
+            triggers: Spawns Defenders
+            drop: Shanty Town Gate Clearance
+      - id: defenders
+        trigger:
+          on: warpIn
+          text: Defenders
+        spawns:
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Independent Green-crewed Bellicose
+          - count: 2-3
+            class: Battleship
+            names:
+              - Independent Green-crewed Typhoon
+      - id: structures-40-km
+        trigger:
+          on: other
+          text: Structures (40 km)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+            note: Requires Shanty Town Gate Clearance
+  - name: Room 1
+    notes:
+      - text: "Agent Conversation on landing: It looks like the Elder is also hiding. Destroy some of those structures to smoke him out."
+      - text: "Mercy, Please!: I don't know why you're attacking us. We don't know anything. If you want information, then go to the Underground Circus. That's where the lowlifes are, not here in a simple shanty town like ours."
+    waves:
+      - id: structures-20-km
+        trigger:
+          on: other
+          text: Structures (20 km)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Asteroid Micro-Colony Minor
+            triggers: Spawns Defenders 1
+      - id: structures-31-km
+        trigger:
+          on: other
+          text: Structures (31 km)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Asteroid Micro-Colony Minor
+            triggers: Spawns Defenders 2
+      - id: structures-32-km
+        trigger:
+          on: other
+          text: Structures (32 km)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Asteroid Micro-Colony Minor
+            triggers: Spawns Elder
+      - id: defenders-1
+        trigger:
+          on: warpIn
+          text: Defenders 1
+        spawns:
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Independent Veteran Scythe
+            ewar:
+              - kind: neut
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Elite Battleship
+            names:
+              - Independent Veteran Tempest
+      - id: defenders-2
+        trigger:
+          on: warpIn
+          text: Defenders 2
+        spawns:
+          - count: "2"
+            class: Cruiser
+            names:
+              - Independent Rupture
+          - count: "3"
+            class: Battleship
+            names:
+              - Independent Typhoon
+              - Independent Maelstrom
+      - id: elder
+        trigger:
+          on: other
+          text: Elder
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Cruiser
+            names:
+              - The Elder
+            triggers: Destroy to complete the Mission
+          - count: "4"
+            class: Battleship
+            names:
+              - Independent Green-crewed Tempest

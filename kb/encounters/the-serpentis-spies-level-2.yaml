@@ -1,0 +1,52 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-serpentis-spies-level-2
+kind: mission
+name: The Serpentis Spies
+level: 2
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Serpentis Spies (Level 2)
+    url: https://wiki.eveuniversity.org/The_Serpentis_Spies_(Level_2)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "192058"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Suggested ships: Cruiser"
+  - text: Serpentis Bunker may drop loot, all others do not.
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: group-1-20km-auto-aggro
+        trigger:
+          on: other
+          text: Group 1, 20km (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Coreli Agent
+              - Coreli Initiate
+              - Coreli Safeguard
+      - id: group-2-70km
+        trigger:
+          on: other
+          text: Group 2, 70km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Coreli Spy
+      - id: asteroids
+        trigger:
+          on: other
+          text: Asteroids
+          confidence: inferred
+        spawns: []

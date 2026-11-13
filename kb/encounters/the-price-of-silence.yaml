@@ -1,0 +1,124 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-price-of-silence
+kind: mission
+name: The Price of Silence
+level: null
+enemyFaction: Ishukone (Caldari ships)
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Price of Silence
+    url: https://wiki.eveuniversity.org/The_Price_of_Silence
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231247"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal:
+    - kinetic
+    - thermal
+  resist:
+    - kinetic
+    - thermal
+objectives:
+  - text: Retrieve 1x Ishukone Operational Reports
+ewar:
+  - kind: ecm
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Ishukone Watch Hawks"
+  - text: "Crielere; a parable told to all aspiring young Caldari: “There once was a great rich merchant,” she began hesitantly, suddenly all too aware that all eyes in the room were on her. But she plunged on regardless, steeling her nerves. “He lived to a grand old age and possessed every wealth a man could dream of. Many looked to him in awe or envy, coveting his treasures and desiring to imitate his great successes. Yet the old man was never happy and on his deathbed, a young clerk working for him asked: ‘You must feel that your life has been one great success story, what with all the wealth you have accumulated.' But the old man replied. ‘My life has been one of misery and sorrow. As a young man I chose wealth over family, discarding the love of my life. When I die all that I will leave behind in the world is money. But money is the same all over, mine is no different from anyone else's. Once my wealth has been scattered, all that I will be is dust and vague memories. My life is a failure young man, don't make the same mistakes I did.'"
+  - text: The mission objective is slightly misleading. The mission is marked complete when you approach (or warp at range) close to the Ishukone Watch Base 3 structure - no cargo pickup is required.
+  - text: "Blitz: Use a fast frigate or shuttle, create a ping while warping in, ping off, warp to the structure, and warp out immediately. The mission will be marked finished shortly after."
+  - text: "Notes: The mission is in ungated semi-deadspace which means it allows warping inside the pocket, although you will always warp to the mission location when warping from outside the pocket. Create a bounce bookmark as you land on grid for easy repositioning."
+  - text: The cruise missile batteries will hit battleships hard. You will want to take them out soon. For smaller ships, primary the Stasis Towers as they will make speed-tanking difficult.
+  - text: Ishukone Operational Reports will drop from a can next to you when you get near the station. Picking it up is not required to complete the mission.
+  - text: Killing NPCs is optional but they drop Caldari Navy insignias, which can be profitable (approx. 25M). No standing loss for killing them.
+npcs:
+  Ishukone Watch Hawk:
+    sdeTypes:
+      - Taibu State Shirasaya
+    class: Frigate
+  Ishukone Watch Buzzard:
+    sdeTypes:
+      - Taibu State Tachi
+    class: Frigate
+  Ishukone Watch Kitsune:
+    sdeTypes:
+      - Taibu State Katana
+      - Taibu State Wakizashi
+    class: Frigate
+  Ishukone Watch Moa:
+    sdeTypes:
+      - Taibu State Bajo
+    class: Elite Cruiser
+  Ishukone Watch Rook:
+    sdeTypes:
+      - Taibu State Bajo
+      - Taibu State Daimyo
+    class: Elite Cruiser
+  Ishukone Watch Raven:
+    sdeTypes:
+      - State Shukuro Shogun
+    class: Battleship
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: Completing this mission ends the Caldari epic arc.
+    waves:
+      - id: single-defending-fleet
+        trigger:
+          on: other
+          text: Single Defending Fleet
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Ishukone Watch Hawk
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Frigate
+            names:
+              - Ishukone Watch Buzzard
+            ewar:
+              - kind: ecm
+          - count: "4"
+            class: Frigate
+            names:
+              - Ishukone Watch Kitsune
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Ishukone Watch Moa
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Ishukone Watch Rook
+            ewar:
+              - kind: ecm
+          - count: "6"
+            class: Battleship
+            names:
+              - Ishukone Watch Raven
+          - count: "1"
+            class: Battleship
+            names:
+              - Ishukone Watch Commander
+          - count: "8"
+            class: Sentry
+            names:
+              - Ishukone Watch Cruise Missile Battery
+          - count: "2"
+            class: Sentry
+            names:
+              - Ishukone Watch Stasis Tower
+            ewar:
+              - kind: web
+    onWarpIn: Private military compounds like these house the very finest of corporate security fleets. Decked out with the latest high-end military technologies, these fortresses perform vital roles protecting corporate assets and other more shadowy interests. During the liberation of the Caldari Prime, it was compounds like these that supplemented the Caldari Navy's military infrastructure, ensuring the success of the most ferocious surprise attack in recent State history. In this era of heightened tension, many stations still stand as supplemental bases for Caldari Navy contingency plans. Others though, have returned to much older tasks, guarding over the secrets of their parent corporation, and serving its own agenda ruthlessly.

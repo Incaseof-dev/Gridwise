@@ -1,0 +1,192 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: pith-merchant-depot
+kind: complex
+name: Pith Merchant Depot
+dedRating: 2
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Pith Merchant Depot
+    url: https://wiki.eveuniversity.org/Pith_Merchant_Depot
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "157301"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Destroyers"
+notes:
+  - text: Pith Merchant Depot is a DED Complex that can be found via exploration.
+  - text: Only Destroyers (including tech 2 and tech 3) and below can enter the complex.
+loot:
+  - item: 3rd Tier Overseer's Personal Effects
+    from: Blockade General Sade (x1)
+    note: est. 40k ISK (wiki) · 100% drop rate
+  - item: Dread Guristas module
+    from: Blockade General Sade (x1)
+  - item: 5th Tier Overseer's Personal Effects
+    from: Storage Taxes
+    note: est. 180k ISK (wiki) · 100% drop rate
+  - item: 6th Tier Overseer's Personal Effects
+    from: The Superintendant
+    note: est. 360k ISK (wiki) · 100% drop rate
+  - item: Pithi B-type Modules
+    from: The Superintendant
+    note: Up to 3x
+  - item: Worm BPC
+    from: The Superintendant
+pockets:
+  - name: Room 1
+    notes:
+      - text: "Upon entering the first room: The Pith Guristas rely on nimble fighters to stop any intruders into this complex by stationing them close to the gate-in beacon. In reality, the defenses are rather incompetent."
+      - text: The sentries can be ignored; they don't have to be destroyed to enter the second pocket.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "6"
+            class: Sentry
+            names:
+              - Pith Guristas Sentry
+          - count: "1"
+            class: Overseer Frigate
+            names:
+              - Blockade General Sade
+            drop: Drops Sade's Pass to Room 2 and 3rd Tier Overseer's Personal Effects. Low chance to contain Dread Guristas modules
+      - id: spawns-very-quickly
+        trigger:
+          on: other
+          text: Spawns very quickly
+          confidence: inferred
+        spawns:
+          - count: 10-11
+            class: Frigate
+            names:
+              - Pithi Infiltrator
+              - Pithi Invader
+              - Pithi Arrogator
+              - Pithi Imputor
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Ancient Acceleration Gate
+            note: Locked until all ships are destroyed. Requires Sade's Pass
+    onWarpIn: "Supply depot for combat vessels and pirate cargo haulers alike. The Pith Guristas in these depots are very aggressive. DED Threat Assessment: Minor (2 of 10)"
+  - name: Room 2
+    notes:
+      - text: "Upon entering the second Room: The Pith wheel and deal in fuel, and a lot of supplies are stored in this deadspace pocket. Aware that they could be attacked at any time, they stock up just sufficiently to meet demands."
+      - text: This room can be largely ignored. Destroy the overseer frigate, loot the key, and proceed into the third pocket.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Overseer Frigate
+            names:
+              - Supply Station Manager
+            drop: Drops passkey to third room and has a low chance of dropping Dread Guristas faction modules
+          - count: "3"
+            class: Sentry
+            names:
+              - Guristas Sentry Gun
+          - count: "3"
+            class: Sentry
+            names:
+              - Guristas Stasis Tower
+            ewar:
+              - kind: web
+  - name: Room 3
+    notes:
+      - text: "Upon entering the third room: The Pith Guristas collect and store cargo from various raids here. They liquidate their assets as fast as possible, so the actual amount being stored varies from day to day. The locales are relatively well defended."
+      - text: Most of the rats have special names but are just renamed Guristas deadspace rats.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Cruiser
+            names:
+              - Gate Beacon Patrol
+            group: Camping warpin
+          - count: "6"
+            class: Frigate
+            names:
+              - Pithi Invader
+              - Pithi Infiltrator
+            group: Near acceleration gate
+          - count: "6"
+            class: Frigate
+            names:
+              - Supply Patrol
+            group: Near acceleration gate
+          - count: "1"
+            class: Frigate
+            names:
+              - Pith Tax Patrol
+            group: Near acceleration gate
+          - count: "1"
+            class: Cruiser
+            names:
+              - The Pith Taxman
+            group: Near acceleration gate
+          - count: "3"
+            class: Cruiser
+            names:
+              - Supply Patrol
+            group: Near acceleration gate
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+          - count: "1"
+            class: Red Container
+            names:
+              - Storage Taxes
+            drop: 5th Tier Overseer's Personal Effects. Can drop Dread Guristas modules.
+            note: Locked until all ships are destroyed
+  - name: Room 4
+    notes:
+      - text: "Upon entering the final room: Inside the last pocket of the Pith Merchant Depot resides the Superintendent. He oversees the collective storage space, collection of taxes and fees and manages investments. He is well guarded."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "8"
+            class: Frigate
+            names:
+              - Pithi Infiltrator
+              - Pithi Plunderer
+          - count: "9"
+            class: Cruiser
+            names:
+              - Pithum Silencer
+              - Pithum Ascriber
+          - count: "1"
+            class: Overseer Frigate
+            names:
+              - The Superintendant
+            drop: 6th Tier Overseer's Personal Effects, May contain Pithi frigate B-type Modules, or a worm BPC
+sde:
+  dungeonIds:
+    - 43

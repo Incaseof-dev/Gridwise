@@ -1,0 +1,73 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: pirate-business-gallente-federation-level-3
+kind: mission
+name: Pirate Business
+level: 3
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Pirate Business (Gallente Federation) (Level 3)
+    url: https://wiki.eveuniversity.org/Pirate_Business_(Gallente_Federation)_(Level_3)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191832"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: sensorDamp
+notes:
+  - text: "Suggested ships: Cruiser/ Battlecruiser"
+  - text: Gallente Federation standing loss -0.24
+  - text: Pirate Business (Gallente) is a mission involving combat against Gallente Federation.
+  - text: Acceleration gate, no hostiles on warp in
+pockets:
+  - name: Room 1
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "12"
+            class: Frigate
+            names:
+              - Federation Kontos
+              - Federation Insidiator
+          - count: "7"
+            class: Cruiser
+            names:
+              - Federation Praktor
+              - Federation Misthios
+            drop: Federation Navy Fleet Captain Insignia I
+  - name: Room 2
+    notes:
+      - text: "Bliz: only kill middle group, last ship drops quest item."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "12"
+            class: Frigate
+            names:
+              - Federation Kontos
+              - Federation Insidiator
+          - count: "10"
+            class: Cruiser
+            names:
+              - Federation Praktor
+              - Federation Misthios
+              - Federation Hastatus
+            drop: Federation Navy Fleet Captain Insignia I
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Federation Pezos
+          - count: "2"
+            class: Industrial
+            names:
+              - Gallente Personnel Transport

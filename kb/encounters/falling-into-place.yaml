@@ -1,0 +1,92 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: falling-into-place
+kind: mission
+name: Falling into Place
+level: null
+enemyFaction: Mercenaries (Amarr ships)
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Falling into Place
+    url: https://wiki.eveuniversity.org/Falling_into_Place
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231019"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal:
+    - em
+    - thermal
+  resist:
+    - em
+    - thermal
+objectives:
+  - text: Place the Homemade Sansha Beacon (1 m3) in the Linked Broadcast Array Hub, and destroy the ships that spawn.
+ewar:
+  - kind: neut
+  - kind: trackingDisruption
+notes:
+  - text: thumb
+  - text: Travel 13 jumps to Shaha, place the Homemade Sansha Beacon (1 m3) in the Linked Broadcast Array Hub, and destroy the ships that spawn. There is no standing loss for destroying ships in this mission.
+  - text: You can complete this mission remotely and accept the next mission remotely.
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: Placing the Homemade Sansha Beacon into the Linked Broadcast Array Hub will spawn the Rescue Group.
+      - text: Destroying the last ship flags the mission as completed.
+    waves:
+      - id: structures-20-km-from-warp-in
+        trigger:
+          on: other
+          text: Structures (20 km from warp-in)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Container
+            names:
+              - Linked Broadcast Array Hub
+      - id: rescue-group-60-km-from-container
+        trigger:
+          on: other
+          text: Rescue Group (60 km from container)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Cruiser
+            names:
+              - Independent Maller
+          - count: "2"
+            class: Cruiser
+            names:
+              - Independent Green-Crewed Maller
+              - Independent Green-Crewed Augoror
+              - Independent Green-Crewed Arbitrator
+          - count: 1-2
+            class: Elite Cruiser
+            names:
+              - Independent Veteran Augoror
+              - Independent Veteran Arbitrator
+              - Independent Veteran Omen
+            ewar:
+              - kind: trackingDisruption
+              - kind: neut
+            note: Energy neutralizer - 25km range
+          - count: "4"
+            class: Battleship
+            names:
+              - Independent Abaddon
+              - Independent Armageddon
+              - Independent Apocalypse
+          - count: "1"
+            class: Battleship
+            names:
+              - Independent Green-Crewed Abaddon
+              - Independent Green-Crewed Armageddon
+              - Independent Green-Crewed Apocalypse
+          - count: "1"
+            class: Elite Battleship
+            names:
+              - Independent Veteran Armageddon

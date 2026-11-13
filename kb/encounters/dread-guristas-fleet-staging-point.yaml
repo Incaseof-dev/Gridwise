@@ -1,0 +1,169 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: dread-guristas-fleet-staging-point
+kind: complex
+name: Dread Guristas Fleet Staging Point
+dedRating: null
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Dread Guristas Fleet Staging Point
+    url: https://wiki.eveuniversity.org/Dread_Guristas_Fleet_Staging_Point
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "222643"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: This site is fairly hard due to large number of ships and neuting towers. It can be done in a group of T2, T3 or Faction cruisers or a few battleships.
+  - text: Warping to the site lands you at 0 on an acceleration gate.
+  - text: "Escalation: The site has an almost 100% chance to escalate to Dread Guristas Fleet Staging Point 2."
+  - text: "Escalation: Dread Guristas Fleet Staging Point 2: The last Guristas Pirate Battleship sends out a distress signal before it goes down. Luckily your com systems have managed to decrypt the message and follow it to it's final destination."
+pockets:
+  - name: First pocket
+    notes:
+      - text: The first pocket is fairly straightforward and easy. Destroy initial spawn, blow up the trigger last, destroy wave 2, take the gate.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "?"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+            note: Locked until pocket is cleared
+      - id: initial-defenders-45-55-km-from-acceleration-gate
+        trigger:
+          on: warpIn
+          text: Initial defenders (45-55 km from acceleration gate)
+        spawns:
+          - count: 2-3
+            class: Destroyer
+            names:
+              - Pithior Guerilla
+              - Pithior Renegade
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Pithatis Assassin
+              - Pithatis Assaulter
+          - count: "4"
+            class: Battleship
+            names:
+              - Pith Usurper
+              - Pith Massacrer
+            triggers: Triggers Reinforcement
+      - id: reinforcement-20-30-km-from-acceleration-gate
+        trigger:
+          on: other
+          text: Reinforcement (20-30 km from acceleration gate)
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Destroyer
+            names:
+              - Pithior Supremacist
+              - Pithior Terrorist
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Pithatis Assassin
+              - Pithatis Assaulter
+          - count: "6"
+            class: Battleship
+            names:
+              - Pith Usurper
+              - Pith Massacrer
+    onWarpIn: "The massive amounts of signatures you are getting on your short range scan can only indicate one thing, a full combat fleet in station around the deadspace pocket. The Guristas Pirates would seem to be planning a large scale military operation in the area and you should expect nothing but the heaviest resistance should you try to oppose them here. DED Threat Assessment: Extreme (9 of 10)"
+  - name: Second pocket
+    notes:
+      - text: Get ready to blow up the energy neutralizing sentries when you warp in; they add a lot of difficulty to the room.
+      - text: The site does not contain any noteworthy loot.
+    waves:
+      - id: initial-defenders-60-km-away
+        trigger:
+          on: warpIn
+          text: Initial defenders (60 km away)
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Pithior Guerilla
+              - Pithior Renegade
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Pithatis Assassin
+              - Pithatis Death Dealer
+          - count: "4"
+            class: Battleship
+            names:
+              - Pith Usurper
+              - Pith Massacrer
+            triggers: Triggers wave 2
+          - count: "2"
+            class: Sentry
+            names:
+              - Guristas Energy Neutralizing Sentry II
+            ewar:
+              - kind: neut
+            note: Spawns 70 km away
+          - count: "4"
+            class: Sentry
+            names:
+              - Guristas Cruise Missile Batteries
+          - count: "2"
+            class: Sentry
+            names:
+              - Guristas Point Defense Battery
+      - id: wave-2-20-km-away-from-warp-in
+        trigger:
+          on: other
+          text: Wave 2 (20 km away from warp-in
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Pithior Supremacist
+              - Pithior Terrorist
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Pithatis Assassin
+              - Pithatis Assaulter
+          - count: "4"
+            class: Battleship
+            names:
+              - Pith Usurper
+              - Pith Massacrer
+            triggers: Triggers wave 3
+      - id: wave-3-60-75-km-from-warp-in
+        trigger:
+          on: other
+          text: Wave 3 (60-75 km from warp-in)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Pithior Supremacist
+              - Pithior Terrorist
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Pithatis Assassin
+              - Pithatis Death Dealer
+          - count: "3"
+            class: Battleship
+            names:
+              - Pith Usurper
+              - Pith Massacrer
+            triggers: Triggers escalation
+sde:
+  dungeonIds:
+    - 2575

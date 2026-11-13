@@ -1,0 +1,94 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: delving-into-the-past
+kind: mission
+name: Delving Into the Past
+level: 2
+enemyFaction: Amarr Empire
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Delving Into the Past
+    url: https://wiki.eveuniversity.org/Delving_Into_the_Past
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231042"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Warp into deadspace and recover "Old Star Map" (0.1)
+notes:
+  - text: "Suggested ships: Cruiser (for fight), Shuttle (for quick-in/out)"
+  - text: Delving into the past is a mission consisting of 3 sub-missions.
+  - text: Hostiles may spawn upon reaching "Cartographer's Quarters" to retrieve "Old Star Map". Sometimes they do, sometimes they don't.
+  - text: "Tips: You do not need to destroy the hostiles in order to retrieve the map."
+  - text: Hostiles may spawn upon reaching "Cartographer's Quarters" to retrieve "Old Star Map". Sometimes they do, sometimes they don't.
+  - text: "Tips: You do not need to destroy the hostiles in order to retrieve the map."
+pockets:
+  - name: (Part 1)
+    notes:
+      - text: "Space type: Deadspace"
+  - name: Pocket 2
+    waves:
+      - id: single-group
+        trigger:
+          on: other
+          text: Single group
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Imperial Templar Agatho
+              - Imperial Templar Methura
+      - id: asteroids
+        trigger:
+          on: other
+          text: Asteroids
+          confidence: inferred
+        spawns: []
+  - name: ( Part 2 )
+    notes:
+      - text: "Space type: Deadspace"
+  - name: Pocket 4
+    waves:
+      - id: single-group
+        trigger:
+          on: other
+          text: Single group
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Imperial Templar Agatho
+              - Imperial Templar Methura
+  - name: (Part 3)
+    notes:
+      - text: "Space type: Deadspace with gate"
+      - text: "Recommended generic setup: Long Range"
+      - text: "Tips: Amarr vessels are short range - try to stay out 25+ km from them."
+    waves:
+      - id: single-group-35-40-km-no-aggro
+        trigger:
+          on: other
+          text: Single group (35-40 Km) no aggro
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Imperial Bahir
+              - Imperial Sixtus
+          - count: "4"
+            class: Cruiser
+            names:
+              - Imperial Templar Agatho
+              - Imperial Templar Methura
+      - id: asteroids
+        trigger:
+          on: other
+          text: Asteroids
+          confidence: inferred
+        spawns: []

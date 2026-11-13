@@ -1,0 +1,47 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-hidden-stash-angel-cartel-level-1
+kind: mission
+name: The Hidden Stash
+level: 1
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Hidden Stash (Angel Cartel) (Level 1)
+    url: https://wiki.eveuniversity.org/The_Hidden_Stash_(Angel_Cartel)_(Level_1)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "192015"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the warehouse and retrieve the small sealed containers(150), eliminate the Angel Cartel threat, and then return to your agent with the goods.
+notes:
+  - text: "Suggested ships: Frigate, Destroyer"
+  - text: 150 m3 cargo space required
+  - text: "Blitz: Destroy the warehouse, loot the containers, and warp out."
+  - text: "Video: Punisher"
+  - text: Warehouse drops trade loot in one can and mission objective in second can.
+  - text: Habitation Modules drop trade goods.
+  - text: Pressure Silo (high HP) and Cargo Rigs drop ammo.
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: forces-on-grid-at-the-warehouse
+        trigger:
+          on: other
+          text: Forces on grid, at the warehouse)
+          confidence: inferred
+        spawns:
+          - count: "8"
+            class: Frigate
+            names:
+              - Gistii Hijacker
+            group: Group A Aggro's and attacks
+          - count: "4"
+            class: Frigate
+            names:
+              - Gistii Hijacker
+            group: Group B Holds at the warehouse

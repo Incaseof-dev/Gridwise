@@ -1,0 +1,267 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: worlds-collide-blood-raiders-angel-cartel-level-4
+kind: mission
+name: Worlds Collide
+level: 4
+enemyFaction: Blood Raider Covenant & Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Worlds Collide (Blood Raiders & Angel Cartel) (Level 4)
+    url: https://wiki.eveuniversity.org/Worlds_Collide_(Blood_Raiders_%26_Angel_Cartel)_(Level_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "222525"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: nos
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite Frigates, Blood Spy"
+  - text: "Suggested ships: Apocalypse, Dominix, Maelstrom, Sacrilege, Nighthawk"
+  - text: I recommend going with Blood Raider specific defenses, since most of the pockets can be done with this defense. First (if you want to) and third pocket are from Blood Raiders, so fighting with Angel Cartel defenses can be a bit tricky for your resistances.
+lootNotes:
+  - text: "Bounty: 27.12M ISK (2025-04-21) By Verum Peto"
+  - text: "Loot: 24.5M ISK (2025-04-21) By Verum Peto"
+  - text: "Salvage: 15.5M ISK (2025-04-21) By Verum Peto"
+pockets:
+  - name: First Pocket (Warzone)
+    notes:
+      - text: You arrive in the middle of two large groups and two gates approximately 33km from the warp-in. One for your primary enemy, and one for the faction mentioned in the mission briefing (in this case, Blood Raiders and Angels). They start far away from you behind their own gate. The gates are locked until you kill the last ship of that faction.
+      - text: "Blitz: You can blitz this by using Zbikoki's Hacker Card. (Obtained from Zor in other missions). It will be consumed upon unlocking the gate."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Follower
+              - Elder Corpii Herald
+              - Elder Corpii Worshiper
+              - Dark Corpii Upholder
+            group: Blood Raider Deadspace Tactical Unit (135km)
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Dark Priest
+              - Elder Corpum Shadow Sage
+            group: Blood Raider Deadspace Tactical Unit (135km)
+          - count: "3"
+            class: Battleship
+            names:
+              - Corpus Prophet
+              - Corpus Oracle
+            group: Blood Raider Deadspace Tactical Unit (135km)
+            triggers: Gate Unlock Trigger
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Thug
+              - Arch Gistii Outlaw
+            group: Angel Asteroid Outpost (135km)
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Gistum Domination Crusher
+              - Gistum Domination Smasher
+            group: Angel Asteroid Outpost (135km)
+          - count: "4"
+            class: Battleship
+            names:
+              - Gist Malakim
+              - Gist Throne
+            group: Angel Asteroid Outpost (135km)
+            triggers: Gate Unlock Trigger
+  - name: Blood Raider Pocket
+    notes:
+      - text: "Warning: If you do it all wrong and aggro all of them the full-aggro is 1,100-1,200dps (EM 50%/TH 50%) with the occasional kinetic cruise missile from the battleships."
+      - text: "Tips: Shooting the Spies with your own guns/missiles will not aggro anything else. Drones and anyone else will."
+      - text: "Tips: Drones can be safely used to kill the auto-aggro group. Just make sure they don't shoot Spies."
+      - text: "Tips: One can slowboat to the next gate. No additional aggro. You will be at around 5 km to the gate when the gate group aggros you."
+      - text: "Tips: Wait for the 1st group to target you, and take them all out. Fire on another ship, it's group will target you, and take that group out. Feel free to take out the Blood Spies, once the 2nd group is gone, to trigger the last group."
+      - text: "Tips: You might find a collidable structure in your way (or even hit it) as you enter."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Blood Spy
+            group: Group 1 Auto Aggro (7km Blood Watchtower)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Battleship
+            names:
+              - Corpus Apostle
+              - Corpus Oracle
+            group: Group 1 Auto Aggro (7km Blood Watchtower)
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Corpatis Fanatic
+            group: Group 2 (23km Acceleration Gate)
+          - count: "2"
+            class: Battleship
+            names:
+              - Corpus Apostle
+              - Corpus Oracle
+            group: Group 2 (23km Acceleration Gate)
+          - count: "5"
+            class: Destroyer
+            names:
+              - Corpior Friar
+            group: Group 3 (24km Blood Watchtower)
+          - count: "5"
+            class: Battleship
+            names:
+              - Corpus Apostle
+              - Corpus Oracle
+            group: Group 3 (24km Blood Watchtower)
+          - count: "1"
+            class: Battleship
+            names:
+              - Blood Rider Supervisor
+            group: Group 4 (7km)
+          - count: "1"
+            class: Battleship
+            names:
+              - "Random chance: Blood Overseer"
+            group: Group 4 (7km)
+  - name: Angel Cartel Pocket
+    notes:
+      - text: "Aggro at warp in: Yes (might web too)"
+      - text: "Tips: Using drones on the Spies causes the whole room to aggro."
+      - text: "Tips: The Saints throw Bane torpedoes and can hit at 55km or more."
+      - text: "Tips: Arch Gistum Centurion is fast and will close the range to under 20km, so kill before the Saints."
+      - text: "Tips: Cherubim throw Havoc cruise missiles to at least 80km. Thrones are shorter range."
+      - text: "Tips: Chance of spawning a Gist Overlord [543k battleship] as well. Chance increases with every ship that enters the room. Overlord waits to be attacked, and attacking it caused the remainder of the room to aggro."
+      - text: "Tips: Original player leaving to get more ammo and returning does not cause remaining groups to aggro."
+      - text: "//Untested: A second ship (gangmate) present may cause entire room to aggro immediately.//"
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Angle Spy
+            group: Group 1 (7km)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Battleship
+            names:
+              - Blood Apostle
+              - Blood Oracle
+            group: Group 1 (7km)
+          - count: "4"
+            class: Frigate
+            names:
+              - Gist Viper
+            group: Group 2 (20km)
+            ewar:
+              - kind: web
+          - count: "2"
+            class: Cruiser
+            names:
+              - Gist Primus
+            group: Group 2 (20km)
+          - count: "3"
+            class: Battleship
+            names:
+              - Gist Saint
+            group: Group 2 (20km)
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Arch Gist Hunter
+              - Arch Gist Impaler
+            group: Group 3 (35km)
+          - count: "1"
+            class: Elite Battlecruiser
+            names:
+              - Arch Gist Centurion
+            group: Group 3 (35km)
+          - count: "4"
+            class: Battleship
+            names:
+              - Gist Saint
+              - Gist Warlord
+            group: Group 3 (35km)
+          - count: "5"
+            class: Battleship
+            names:
+              - Gist Throne
+              - Gist Cherubim
+            group: Group 4 (50km)
+  - name: 3rd Pocket (Blood Raiders)
+    notes:
+      - text: Killing all the ships in the 3rd pocket trips the "mission completed" flag even if you do NOT pick up the stranded crew. If you forget you will have to quit the mission with loss of standings from agent, corp, and faction.
+      - text: The pocket looks like a single group, but it's actually 3. Use the same technique suggested for the Blood Raider pocket. If you do everything wrong [use drones, etc.] full-aggro is 900-950dps (EM 51%/TH 49%) with the occasional kinetic cruise missile from the battleships.
+      - text: "Tips: Group 1 won't move very fast, so you can get some range on them if you can find a direction to go that doesn't come close to other groups."
+      - text: "Tips: Group 2 can be attacked separately."
+      - text: "Tips: You only need to blow up the auto-aggro group to get the ship crew."
+      - text: "Tips: Keep drones on Passive to prevent any unwanted aggro."
+      - text: "Tips: On occasion, you might - even without drones or partners - aggro all of the groups (some of which can warp scramble). I suggest you put some distance fast between you and the groups you haven't yet aggroed."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Elite Battlecruiser
+            names:
+              - Elder Corpum Dark Priest
+              - Elder Corpum Shadow Sage
+            group: Group 1 Auto Aggro (5km)
+          - count: "2"
+            class: Battleship
+            names:
+              - Corpus Apostle
+              - Corpus Oracle
+              - Corpus Prophet
+            group: Group 1 Auto Aggro (5km)
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Herald
+              - Elder Corpii Upholder
+            group: Group 2 (10km)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Battleship
+            names:
+              - Corpus Apostle
+              - Corpus Oracle
+            group: Group 2 (10km)
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corpatis Fanatic
+              - Corpatis Phantom
+            group: Group 3 (10km)
+          - count: "2"
+            class: Battleship
+            names:
+              - Corpus Apostle
+              - Corpus Oracle
+              - Corpus Prophet
+            group: Group 3 (10km)

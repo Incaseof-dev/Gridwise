@@ -1,0 +1,92 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: unauthorized-military-presence-angel-cartel-level-2
+kind: mission
+name: Unauthorized Military Presence
+level: 2
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Unauthorized Military Presence (Angel Cartel) (Level 2)
+    url: https://wiki.eveuniversity.org/Unauthorized_Military_Presence_(Angel_Cartel)_(Level_2)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231149"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Intercept the personnel transport ship, destroy its guards, and bring the militants to your agent.
+ewar:
+  - kind: targetPaint
+notes:
+  - text: "Suggested ships: Destroyer"
+pockets:
+  - name: Warp-in Point
+    notes:
+      - text: Unguarded Acceleration Point
+  - name: Single Room
+    notes:
+      - text: "Blitz: Destroy the personnel transport convoy group, grab the militia from the transport wreck and warp out."
+      - text: The convoy arrives after about 20 seconds. Stay away of the initial forces and they will not aggro.
+    waves:
+      - id: initial-forces
+        trigger:
+          on: warpIn
+          text: Initial forces
+        spawns:
+          - count: 4-5
+            class: Frigate
+            names:
+              - Gistii Ambusher
+              - Gistii Raider
+            group: Group 1, 30km
+          - count: 2-3
+            class: Destroyer
+            names:
+              - Gistior Defiler
+              - Gistior Haunter
+            group: Group 1, 30km
+          - count: "6"
+            class: Destroyer
+            names:
+              - Gistior Haunter
+              - Gistior Defacer
+            group: Group 2, 45km
+      - id: personnel-transport-convoy
+        trigger:
+          on: other
+          text: Personnel transport convoy
+          confidence: inferred
+        spawns:
+          - count: 5-6
+            class: Frigate
+            names:
+              - Gistii Ruffian
+              - Gistii Nomad
+              - Gistii Ambusher
+              - Gistii Raider
+            ewar:
+              - kind: targetPaint
+            note: Ruffian has target painter!
+          - count: "1"
+            class: Cruiser
+            names:
+              - Angel Cartel Personnel Transport
+      - id: asteroids
+        trigger:
+          on: other
+          text: Asteroids
+          confidence: inferred
+        spawns: []
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Structure
+            names:
+              - Bunker
+            note: Drops no loot.

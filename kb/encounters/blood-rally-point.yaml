@@ -1,0 +1,145 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: blood-rally-point
+kind: anomaly
+name: Blood Rally Point
+dedRating: null
+anomalyClass: 6
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Blood Rally Point
+    url: https://wiki.eveuniversity.org/Blood_Rally_Point
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225172"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: The site consists of single ungated pocket. Reinforcement spawns are triggered by the last hostile ship destroyed. All enemy ships spawn around the Blood Raider Lookout structure.
+  - text: With the initial defending fleet and 4 triggered spawns, a total of 21-31 ships.
+  - text: text-top|300px|thumb|.
+  - text: "Escalation: This site can escalate to Crimson Hand Supply Depot."
+lootNotes:
+  - text: "Bounty: ≈2 Mil"
+  - text: "Loot/salvage: ≈5 Mil"
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Blood Raider Lookout
+      - id: initial-defending-fleet
+        trigger:
+          on: warpIn
+          text: Initial Defending Fleet
+        spawns:
+          - count: 3-4
+            class: Destroyer
+            names:
+              - Corpior Cleric
+              - Corpior Converter
+              - Corpior Friar
+              - Corpior Visionary
+              - Corpior Devoter
+          - count: 3-4
+            class: Cruiser
+            names:
+              - Corpum Shadow Sage
+              - Corpum Dark Priest
+          - count: "2"
+            class: Sentry
+            names:
+              - Tower Sentry Bloodraider I
+      - id: 1st-reinforcement-spawn
+        trigger:
+          on: other
+          text: 1st Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 1-3
+            class: Elite Frigate
+            names:
+              - Elder Corpii Collector
+              - Elder Corpii Deviner
+              - Elder Corpii Herald
+              - Elder Corpii Follower
+              - Elder Corpii Seeker
+              - Elder Corpii Upholder
+              - Elder Corpii Worshiper
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Corpum Arch Sage
+              - Corpum Arch Priest
+      - id: 2nd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 2nd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Elite Frigate
+            names:
+              - Elder Corpii Collector
+              - Elder Corpii Deviner
+              - Elder Corpii Herald
+              - Elder Corpii Follower
+              - Elder Corpii Seeker
+              - Elder Corpii Upholder
+              - Elder Corpii Worshiper
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Corpatis Phantom
+              - Corpatis Exorcist
+      - id: 3rd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 3rd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Cruiser
+            names:
+              - Corpum Arch Priest
+              - Corpum Dark Priest
+              - Corpum Shadow Sage
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Corpatis Phantom
+              - Corpatis Exorcist
+      - id: 4th-reinforcement-spawn
+        trigger:
+          on: other
+          text: 4th Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Battlecruiser
+            names:
+              - Corpatis Phantom
+              - Corpatis Exorcist
+          - count: 1-2
+            class: Battleship
+            names:
+              - Corpus Apostle
+              - Corpus Oracle
+sde:
+  dungeonIds:
+    - 2163

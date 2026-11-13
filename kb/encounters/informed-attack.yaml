@@ -1,0 +1,160 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: informed-attack
+kind: mission
+name: Informed Attack
+level: 5
+enemyFaction: Amarr Empire
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Informed Attack
+    url: https://wiki.eveuniversity.org/Informed_Attack
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191747"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the Amarr Bio Weapons Facility
+ewar:
+  - kind: neut
+  - kind: trackingDisruption
+  - kind: web
+  - kind: warpScramble
+notes:
+  - text: "Web/warp disruption: Stasis Tower (Web), Divine Imperial Imran/Sixtus (Web, Scram)"
+  - text: "Suggested ships: Passive Battleship + Logistics, Capital (No gates)"
+  - text: "Blitz: Destroy the Extremely Powerful EM Forcefield, then the Amarr Bio Weapons Facility."
+  - text: Use a passive tank or plan a capacitor that receives an additional 90+ units/s.
+  - text: Maximum damage dealing of initial group, if it gets into range, is 1,956 hp/s (EM 68%, Therm 32%)
+  - text: No gates exist, so using a Carrier or HAW Dreadnought is possible
+  - text: "Next: Dirty Job"
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: Ships are split into 4 groups.
+    waves:
+      - id: initial-group-65-80km
+        trigger:
+          on: warpIn
+          text: Initial Group, 65-80km
+        spawns:
+          - count: "16"
+            class: Sentry
+            names:
+              - Amarr Cruise Missile Battery
+          - count: "4"
+            class: Sentry
+            names:
+              - Amarr Energy Neutralizer Sentry I
+              - Amarr Energy Neutralizer Sentry II
+              - Amarr Energy Neutralizer Sentry III
+            ewar:
+              - kind: neut
+          - count: "4"
+            class: Sentry
+            names:
+              - Amarr Stasis Tower
+            ewar:
+              - kind: web
+          - count: "18"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Napat
+            ewar:
+              - kind: trackingDisruption
+          - count: "10"
+            class: Battlecruiser
+            names:
+              - Imperial Templar Seer
+            ewar:
+              - kind: neut
+              - kind: trackingDisruption
+            triggers: 1st Reinforcement, at 50% Armor
+          - count: "4"
+            class: Battleship
+            names:
+              - Imperial Templar Diviner
+            ewar:
+              - kind: neut
+              - kind: trackingDisruption
+            triggers: 2nd Reinforcement, at 50% Structure
+      - id: 1st-reinforcement
+        trigger:
+          on: other
+          text: 1st Reinforcement
+          confidence: inferred
+        spawns:
+          - count: 3-5
+            class: Elite Cruiser
+            names:
+              - Divine Imperial Ambrose
+              - Divine Imperial Basil
+            ewar:
+              - kind: neut
+      - id: 2nd-reinforcement
+        trigger:
+          on: other
+          text: 2nd Reinforcement
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Battleship
+            names:
+              - Imperial Templar Judgment
+      - id: mission-objective
+        trigger:
+          on: other
+          text: Mission Objective
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Extremely Powerful EM Forcefield
+            note: 5,200 HP. Recharges 83 HP/s.
+          - count: "1"
+            class: Structure
+            names:
+              - Amarr Bio Weapons Facility
+            group: Destroying Extremely Powerful EM Forcefield
+          - count: "5"
+            class: Fighter
+            names:
+              - Imperial Fighter
+            group: Shooting the Bio Weapons Facility
+            triggers: Destroying triggers 5 more Fighters
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Imran
+              - Divine Imperial Sixtus
+            group: Shooting the Bio Weapons Facility
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "8"
+            class: Battlecruiser
+            names:
+              - Imperial Templar Phalanx
+              - Imperial Templar Donus
+              - Imperial Templar Tamir
+            group: Shooting the Bio Weapons Facility
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Imran
+              - Divine Imperial Sixtus
+            group: Bio Weapons Facility, 20% shields (3 Groups)
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "8"
+            class: Battlecruiser
+            names:
+              - Imperial Templar Phalanx
+              - Imperial Templar Donus
+              - Imperial Templar Tamir
+            group: Bio Weapons Facility, 20% shields (3 Groups)

@@ -1,0 +1,201 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: guristas-military-complex
+kind: complex
+name: Guristas Military Complex
+dedRating: null
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Guristas Military Complex
+    url: https://wiki.eveuniversity.org/Guristas_Military_Complex
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "230806"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Escalation: This site can escalate to Pirate's Path."
+  - text: Range of EM smartbomb
+  - text: Does dread guristas spawns 100% (No it does not, and it not spawning does not automatically lead to an escalation the Pirate's Path site).
+pockets:
+  - name: 1st Pocket
+    notes:
+      - text: 3 NPC groups, with two more spawns upon attacking and killing the control tower. Without diamond tag, blitz is still possible, but not recommended, incoming damage becomes *very* high and the frigates point.
+      - text: It seems you can skip the room and activate the gate with a Guristas diamond tag in your cargo.
+      - text: Destroying the EM forcefield will destroy your drones.
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Control Tower
+            triggers: attacking triggers Tower Wave, destroying it unlocks the gate.
+      - id: initial
+        trigger:
+          on: warpIn
+          text: Initial
+        spawns:
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Pithatis Executor
+              - Pithatis Enforcer
+              - Pithatis Assulter
+              - Pithatis Death Dealer
+            group: Group A
+          - count: "4"
+            class: Battleship
+            names:
+              - Pith Destroyer
+              - Pith Massacrer
+              - Pith Usurper
+              - Pith Conquistador
+            group: Group A
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Pithatis Executor
+              - Pithatis Enforcer
+              - Pithatis Assulter
+              - Pithatis Death Dealer
+            group: Group B
+          - count: "3"
+            class: Battleship
+            names:
+              - Pith Destroyer
+              - Pith Massacrer
+              - Pith Usurper
+              - Pith Conquistador
+            group: Group B
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Pithatis Executor
+              - Pithatis Enforcer
+              - Pithatis Assulter
+              - Pithatis Death Dealer
+            group: Group C
+          - count: "4"
+            class: Battleship
+            names:
+              - Pith Destroyer
+              - Pith Massacrer
+              - Pith Usurper
+              - Pith Conquistador
+            group: Group C
+      - id: tower-wave
+        trigger:
+          on: other
+          text: Tower Wave
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Pithi Destructor
+              - Pithi Arrogator
+              - Pithi Plunderer
+              - Pithi Wrecker
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "6"
+            class: Battleship
+            names:
+              - Pith Destroyer
+              - Pith Massacrer
+              - Pith Usurper
+              - Pith Conquistador
+  - name: 2nd pocket
+    notes:
+      - text: 4 NPC groups
+      - text: The sentry guns deal 53% kinetic, 40% thermal, 7% EM damage, high K and T resistance and the use of afterburner can lower sentry damage to the minimum.
+      - text: "The deep space stronghold has about 500,000 EHP and triggers reinforcement at 30% hull:"
+      - text: If the faction battleship does not spawn, the stronghold is the escalation trigger.
+      - text: Destroying the deep space stronghold (or the Dread Guristas Eliminator, if it spawns) finishes the site. Deep Space Stronghold drops nothing interesting.
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Deep Space Stronghold
+            triggers: Triggers stronghold wave at 30% hull
+      - id: initial
+        trigger:
+          on: warpIn
+          text: Initial
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Dire Pithi Invader
+              - Dire Pithi Imputor
+              - Dire Pithi Arrogator
+              - Dire Pithi infiltrator
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Pithatis Assassin
+              - Pithatis Revolter
+          - count: "7"
+            class: Battleship
+            names:
+              - Pith Usurper
+              - Pith Destroyer
+              - Pith Massacrer
+          - count: "4"
+            class: Sentry
+            names:
+              - Guristas Sentry
+      - id: stronghold-reinforcement
+        trigger:
+          on: other
+          text: Stronghold Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Arrogator
+              - Dire Pithi Imputor
+              - Dire Pithi infiltrator
+              - Dire Pithi invader
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Cruiser
+            names:
+              - Dire Pithum Mortifier
+              - Dire Pithum Eraser
+          - count: "6"
+            class: Battleship
+            names:
+              - Pith Massacrer
+              - Pith Usurper
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - Dread Guristas Eliminator
+            ewar:
+              - kind: ecm
+            triggers: Escalation trigger
+            drop: may contain Dread Guristas modules.
+            note: moves surprisingly fast, almost 2km/sec - can give t2 salvage
+sde:
+  dungeonIds:
+    - 1655

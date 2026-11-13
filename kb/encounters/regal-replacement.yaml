@@ -1,0 +1,203 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: regal-replacement
+kind: mission
+name: Regal Replacement
+level: null
+enemyFaction: Amarr Empire
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Regal Replacement
+    url: https://wiki.eveuniversity.org/Regal_Replacement
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223374"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Deliver the fake body
+ewar:
+  - kind: neut
+  - kind: trackingDisruption
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite frigates"
+  - text: No standing loss
+  - text: At warp-in you find the Business Associate who will have the Artificial Miyan which you can take from his bestower (appears as container on the overview).
+  - text: To Complete the mission destroy the Safe House and place the Artificial Miyan in the Safe house ruins (appears as container on overview)
+  - text: "Tips: Instead of attacking the safe house, attack the power generator behind it."
+  - text: "Tips: The mission pockets are not deadspace. You can warp out, repair and warp back in."
+  - text: 'Tips: Wait till you are out of low sec to start a conversation with him to receive the Sansha "modified" Gnome implant which is placed in to your cargohold.'
+pockets:
+  - name: Warpin
+    notes:
+      - text: Open the Business Associate container. This will cause another container to drop. Grab the fake Lord Miyan from the container.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Container
+            names:
+              - Business Associate
+  - name: 1st pocket
+    notes:
+      - text: The gate is not locked. Quickly take the gate before the missiles reach you.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "8"
+            class: Sentry
+            names:
+              - Amarr Cruise Missile Battery
+  - name: 2nd pocket
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Imperial Felix
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Frigate
+            names:
+              - Imperial Paladin
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Imperial Agatho
+            ewar:
+              - kind: trackingDisruption
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Imperial Templar Forian
+            ewar:
+              - kind: trackingDisruption
+  - name: 3rd pocket
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Felix
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Cruiser
+            names:
+              - Imperial Tamir
+              - Imperial Templar Muzakir
+            ewar:
+              - kind: neut
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Imperial Bahir
+            ewar:
+              - kind: trackingDisruption
+          - count: "2"
+            class: Frigate
+            names:
+              - Imperial Sixtus
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Imperial Templar Mathura
+  - name: 4th pocket
+    notes:
+      - text: Destroy the poser generator to blow up the safe house. Place the fake body into the wreck of the safe house to complete the mission.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Power Generator
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Imran
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Lord Miyan
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Imperial Tamir
+            ewar:
+              - kind: neut
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Sprite

@@ -1,0 +1,86 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: mission-of-mercy
+kind: mission
+name: Mission of Mercy
+level: 2
+enemyFaction: Mercenaries
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Mission of Mercy
+    url: https://wiki.eveuniversity.org/Mission_of_Mercy
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223731"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Secure the Medical Drone and ensure the safe arrival of the repair teams.
+notes:
+  - text: You don't need to approach the Medical Drone to complete the mission.
+  - text: Mission can be completed remotely.
+  - text: "Blitz: Kill only the Lieutenants of the last wave. Note there can be Lieutenants in the 2nd wave too."
+pockets:
+  - name: Single pocket
+    notes:
+      - text: "Agent after hand in: You've done a great thing! Countless people owe you their lives. We should have just enough time to get the medicine to the planet. The Sisters are coordinating with Mordu's Legion this time. They'll escort it safely to the people of ."
+    waves:
+      - id: wave-1-abt-10-seconds-after-warp-in
+        trigger:
+          on: other
+          text: Wave 1 (abt 10 seconds after warp in)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Mercenary Elite Fighter
+          - count: "1"
+            class: Cruiser
+            names:
+              - Mercenary Commander
+      - id: wave-2-abt-20-seconds-after-wave-1
+        trigger:
+          on: other
+          text: Wave 2 (abt 20 seconds after wave 1)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Mercenary Elite Fighter
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Mercenary Commander
+              - Mercenary Lieutenant
+      - id: wave-3-abt-25-seconds-after-wave-2
+        trigger:
+          on: other
+          text: Wave 3 (abt 25 seconds after wave 2)
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Elite Frigate
+            names:
+              - Mercenary Elite Fighter
+          - count: 1-2
+            class: Cruiser
+            names:
+              - Mercenary Commander
+      - id: wave-4-abt-25-seconds-after-wave-3
+        trigger:
+          on: other
+          text: Wave 4 (abt 25 seconds after wave 3)
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Elite Frigate
+            names:
+              - Mercenary Elite Fighter
+          - count: 1-2
+            class: Cruiser
+            names:
+              - Mercenary Lieutenant

@@ -1,0 +1,81 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: longing-leman
+kind: mission
+name: Longing Leman
+level: null
+enemyFaction: Amarr Empire
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Longing Leman
+    url: https://wiki.eveuniversity.org/Longing_Leman
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231756"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Retrieve the Communications Logs (0.1 m3)
+notes:
+  - text: "Suggested ships: Frigate"
+  - text: Data analyzer needed, no standing loss for ship kills
+  - text: thumb
+  - text: "Blitz: Create bookmark while warping in. Warp to the bookmark. Warp to the Encrypted Communications Array at 0 km. Hack the Container and Warp out."
+  - text: "Tips: You will need a Data Analyzer module to hack the Encrypted Communications Array. The mission does not provide you with one, so you'll have to get one yourself."
+  - text: "Tips: This is not a combat mission. It is not necessary to destroy any NPC ships, and they seem to not attack you unless you get close."
+  - text: "Tips: If you do wish to engage the NPC fleet, either kill the elite frigates quickly and speed-tank or be prepared to tank an extreme amount of incoming damage."
+  - text: "Tips: The Outpost Defender fighters alone do a combined total of ~500 DPS EM/Thermal. The battleships will use microwarpdrive to quickly close in on you and do a combined total of 1500 DPS at 60km range."
+  - text: "Tips: This mission can be accepted remotely."
+  - text: Single ungated pocket. The defenders are 100 km from warpin while the container is 20 km away.
+  - text: Approximately 30M isk in loot and salvage.
+  - text: "Loot+ Salvage: 40.7mil 9-June-2024"
+npcs:
+  Outpost Defender:
+    sdeTypes:
+      - Equite
+    class: Fighter
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Hackable
+            names:
+              - Encrypted Communications Array
+            drop: 1 x Communications Logs
+      - id: outpost-guards
+        trigger:
+          on: other
+          text: Outpost Guards
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Fighter
+            names:
+              - Outpost Defender
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Imran
+              - Divine Imperial Sixtus
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Imperial Templar Phalanx
+          - count: "7"
+            class: Elite Battleship
+            names:
+              - Imperial Templar Diviner
+              - Imperial Templar Judgment
+            ewar:
+              - kind: trackingDisruption
+              - kind: neut

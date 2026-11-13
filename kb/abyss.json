@@ -1,0 +1,4160 @@
+{
+ "schema": 1,
+ "sources": [
+  {
+   "title": "Abyssal Deadspace",
+   "url": "https://wiki.eveuniversity.org/Abyssal_Deadspace",
+   "revision": 232382,
+   "retrieved": "2026-10-27",
+   "license": "CC BY-SA 4.0"
+  },
+  {
+   "title": "Possible rooms in Abyssal Deadspace",
+   "url": "https://wiki.eveuniversity.org/Possible_rooms_in_Abyssal_Deadspace",
+   "revision": 229129,
+   "retrieved": "2026-10-27",
+   "license": "CC BY-SA 4.0"
+  }
+ ],
+ "tiers": [
+  {
+   "tier": 0,
+   "name": "Tranquil",
+   "penalty": [
+    30,
+    50
+   ]
+  },
+  {
+   "tier": 1,
+   "name": "Calm",
+   "penalty": [
+    30,
+    50
+   ]
+  },
+  {
+   "tier": 2,
+   "name": "Agitated",
+   "penalty": [
+    30,
+    50
+   ]
+  },
+  {
+   "tier": 3,
+   "name": "Fierce",
+   "penalty": [
+    30,
+    50
+   ]
+  },
+  {
+   "tier": 4,
+   "name": "Raging",
+   "penalty": [
+    50,
+    70
+   ]
+  },
+  {
+   "tier": 5,
+   "name": "Chaotic",
+   "penalty": [
+    50,
+    70
+   ]
+  },
+  {
+   "tier": 6,
+   "name": "Cataclysmic",
+   "penalty": [
+    50,
+    70
+   ]
+  }
+ ],
+ "weathers": [
+  {
+   "id": "dark",
+   "name": "Dark",
+   "penalty": {
+    "kind": "turretRange",
+    "text": "-30/50/70% Turret Optimal and Falloff Range"
+   },
+   "bonus": "+50% Maximum Velocity",
+   "advice": [
+    "Turret optimal and falloff penalty: As this applies to not only NPC and player turrets but player drone turrets, it is inadvisable to bring turret or drone boats to these sites, and to use launchers instead. Additionally, missiles lack of navigation requirements for the purposes of damage application, enable the player to more easily and better take advantage of the maximum velocity bonus found in this weather. This penalty will dramatically reduce the amount of tank requirement/damage taken by players due to the NPC AI not correcting for the reduced range; they will fire on you from outside optimal, and often even outside 1x falloff or more, and consistently miss. Finally, this penalty means that there is no resist penalty, and therefore no resist hole to attack. This weather will require more damage output than most others, save potentially Firestorm.",
+    "Maximum Velocity bonus: Enemies and player drones will only use the bonused attribute of \"Maximum Velocity\" when chasing. When in their desired range, they will use their normal, un-bonused \"Orbit Velocity\". Players, however, are able to control how much of their max velocity they are using, and thus can fully benefit from this bonus. Better pay extra attention to those Tachyon clouds, though!"
+   ]
+  },
+  {
+   "id": "electrical",
+   "name": "Electrical",
+   "penalty": {
+    "kind": "resist",
+    "damage": "em",
+    "text": "-30/50/70% EM Resist"
+   },
+   "bonus": "-50% Capacitor Recharge Time",
+   "advice": [
+    "Resistance penalties: These will increase the amount of damage taken in the damage type of the resistance penalty. These penalties are addressed by covering this hole on your ship(s), and ensuring that you are putting out damage that matches this resist hole as closely as possible. By forgoing the resist hole, one is choosing to fight against the natural resistances of the NPCs, just as one would in Dark weather, which lacks a resistance penalty.",
+    "Capacitor recharge time bonus: This bonus effectively grants not a 50% bonus, but rather 100%, as it halves capacitor recharge time, thereby doubling the capacitor recharge rate. NPCs receive essentially no benefit from this bonus, but players are able to leverage the additional capacitor regen to great effect. Ship fits for this tier can afford to run many more cap-hungry tank mods than usual and still have little problem, and as such Electrical is generally considered one of the easiest weathers. The resist penalty may still be a issue for shield tanked ships with an EM resist hole in some rooms, namely Angel and Sansha, which deal heavy EM damage."
+   ]
+  },
+  {
+   "id": "exotic",
+   "name": "Exotic",
+   "penalty": {
+    "kind": "resist",
+    "damage": "kinetic",
+    "text": "-30/50/70% Kinetic Resist"
+   },
+   "bonus": "+50% Scan Resolution",
+   "advice": [
+    "Resistance penalties: These will increase the amount of damage taken in the damage type of the resistance penalty. These penalties are addressed by covering this hole on your ship(s), and ensuring that you are putting out damage that matches this resist hole as closely as possible. By forgoing the resist hole, one is choosing to fight against the natural resistances of the NPCs, just as one would in Dark weather, which lacks a resistance penalty.",
+    "Scan resolution bonus: Largely irrelevant, be aware that NPCs will lock you faster, enjoy locking NPCs faster. The kinetic damage bonus is generally more of a boon."
+   ]
+  },
+  {
+   "id": "firestorm",
+   "name": "Firestorm",
+   "penalty": {
+    "kind": "resist",
+    "damage": "thermal",
+    "text": "-30/50/70% Thermal Resist"
+   },
+   "bonus": "+50% Armor HP",
+   "advice": [
+    "Resistance penalties: These will increase the amount of damage taken in the damage type of the resistance penalty. These penalties are addressed by covering this hole on your ship(s), and ensuring that you are putting out damage that matches this resist hole as closely as possible. By forgoing the resist hole, one is choosing to fight against the natural resistances of the NPCs, just as one would in Dark weather, which lacks a resistance penalty.",
+    "Armor hit point bonus: This bonus is the opposite of what is found in Electrical sites, in a way - it is usually not relevant to player ships, only in certain cases, and is highly impactful to the enemies. As many enemies you will encounter in these sites are armor-heavy, this will dramatically increase the time-to-kill for each individual enemy, thereby keeping threats on the field longer, and increasing overall site time. The hit point bonus on the player ship can be relevant to players running destroyers and frigates, to some degree, though is largely unimpactful for players using cruisers. Firestorm is generally known as the most difficult weather."
+   ]
+  },
+  {
+   "id": "gamma",
+   "name": "Gamma",
+   "penalty": {
+    "kind": "resist",
+    "damage": "explosive",
+    "text": "-30/50/70% Explosive Resist"
+   },
+   "bonus": "+50% Shield HP",
+   "advice": [
+    "Resistance penalties: These will increase the amount of damage taken in the damage type of the resistance penalty. These penalties are addressed by covering this hole on your ship(s), and ensuring that you are putting out damage that matches this resist hole as closely as possible. By forgoing the resist hole, one is choosing to fight against the natural resistances of the NPCs, just as one would in Dark weather, which lacks a resistance penalty.",
+    "Shield hit point bonus: While most enemies are armor-heavy and some (Lucid Sleepers of the Vigilant Tyrannos) lack shield entirely, there is more than enough shield HP present for this to present a time challenge compared to sites without a hit point bonus, though less of a challenge than Firestorm. In terms of players leveraging this bonus, players are able to utilize the increased shield regeneration that comes along with the increased hit points, building passive shield regeneration tanks that can handle massive amounts of damage. NPC shields found here generally are designed to effectively not regenerate whatsoever, and thus do not gain a notable amount of regeneration from this bonus."
+   ]
+  }
+ ],
+ "factions": [
+  {
+   "id": "drones",
+   "name": "Rogue Drones",
+   "markers": [
+    "Tessella",
+    "Tessera",
+    "Abyssal Overmind"
+   ],
+   "roles": [
+    {
+     "token": "Spark",
+     "ewar": [],
+     "tags": [
+      "damage"
+     ],
+     "text": "EM Damage"
+    },
+    {
+     "token": "Ember",
+     "ewar": [],
+     "tags": [
+      "damage"
+     ],
+     "text": "Thermal Damage"
+    },
+    {
+     "token": "Strike",
+     "ewar": [],
+     "tags": [
+      "damage"
+     ],
+     "text": "Kinetic Damage"
+    },
+    {
+     "token": "Blast",
+     "ewar": [],
+     "tags": [
+      "damage"
+     ],
+     "text": "Explosive Damage"
+    },
+    {
+     "token": "needle",
+     "hull": "frigate",
+     "ewar": [],
+     "tags": [
+      "damage"
+     ],
+     "text": "Low damage"
+    },
+    {
+     "token": "lance",
+     "hull": "frigate",
+     "ewar": [],
+     "tags": [
+      "highDamage"
+     ],
+     "text": "Higher damage"
+    },
+    {
+     "token": "grip",
+     "hull": "battlecruiser",
+     "ewar": [],
+     "tags": [
+      "highDamage"
+     ],
+     "text": "Battlecruiser, short range but extreme damage"
+    },
+    {
+     "token": "Snarecaster",
+     "ewar": [
+      "web"
+     ],
+     "tags": [],
+     "text": "Webbing"
+    },
+    {
+     "token": "Fogcaster",
+     "ewar": [
+      "trackingDisruption",
+      "guidanceDisruption"
+     ],
+     "tags": [],
+     "text": "Turret and Launcher Disruption"
+    },
+    {
+     "token": "Gazedimmer",
+     "ewar": [
+      "sensorDamp"
+     ],
+     "tags": [],
+     "text": "Sensor Dampening"
+    },
+    {
+     "token": "Spotlighter",
+     "ewar": [
+      "targetPaint"
+     ],
+     "tags": [],
+     "text": "Target Painting"
+    },
+    {
+     "token": "Fieldweaver",
+     "ewar": [],
+     "tags": [
+      "logi"
+     ],
+     "text": "Remote Shield Logi. No damage."
+    },
+    {
+     "token": "Plateforger",
+     "ewar": [],
+     "tags": [
+      "logi"
+     ],
+     "text": "Remote Armor Logi. No damage."
+    }
+   ],
+   "notes": [
+    "Rogue Drones are perhaps the most common type of enemies encountered in Abyssal Deadspace, and come in three sizes: Frigate, Battlecruiser, and Battleship. Rogue Drone Frigates can often be found in rooms containing extremely large groups of them, alongside other larger Rogue Drones, or even alongside ships from other factions. Rogue Drone Battlecruisers are somewhat slow and have very short range (only 2+4km), but have pinpoint tracking within that range and extremely high damage. The Rogue Drone Battleship (\"Abyssal Overmind\") has extremely long range and damage, comes in a different variant at each Abyssal Filament level, and is discussed further, later in this page.",
+    "Rogue Drone Frigates deal either a single type of damage based on their name, or a small amount of omni damage alongside EWAR. Rogue Drone Frigates are also susceptible to Deviant Automata Suppressor pylons, but if those are not available, they can be much more easily fought using Multibody Tracking Pylons or Bioluminescent Clouds.",
+    "Rogue Drone Battlecruisers also deal only a single type of damage, based on their name.",
+    "The Rogue Drone Battleship deals Kinetic and Thermal damage, and the Battleship found in Tier 5 and 6 sites also has a Stasis Webifier, which helps counteract its poor tracking.",
+    "Rogue Drone Battleships have a small exploitable gimmick - if a generic damage dealer frigate (e.g. Sparkneedle Tessella) spawns, the battleship follows it in orbit and as a result will draw close to you, as Rogue Drone Frigates naturally orbit close to your ship (minus the repair frigates). This can greatly help afterburner-fit ships which normally can't easily get under the battleship's guns, but can also become problematic in high tier sites as it may put you within their webifier range.",
+    "Rogue Drone Frigate names have the suffix Tessella. Rogue Drone Battlecruiser names have the suffix Tessera."
+   ],
+   "damageToDeal": "Rogue drone ships have wildly varying resists. Damage-dealing and EWAR frigates have the same natural resists as a Tech 1 hull from one of the races. Repair frigates have 0 resists. Battlecruisers are slightly weak to EM/EX, and slightly more resistant to TH/KIN."
+  },
+  {
+   "id": "drifters",
+   "name": "Drifters and Seekers",
+   "markers": [
+    "Ephialtes",
+    "Tyrannos",
+    "Drifter"
+   ],
+   "roles": [
+    {
+     "token": "Entanglement",
+     "hull": "cruiser",
+     "ewar": [
+      "web"
+     ],
+     "tags": [],
+     "text": "Webbing"
+    },
+    {
+     "token": "Nullwarp",
+     "hull": "cruiser",
+     "ewar": [
+      "warpScramble"
+     ],
+     "tags": [],
+     "text": "Warp Scramblers"
+    },
+    {
+     "token": "Nullcharge",
+     "hull": "cruiser",
+     "ewar": [
+      "neut"
+     ],
+     "tags": [],
+     "text": "Energy Neutralizers"
+    },
+    {
+     "token": "Lancer",
+     "ewar": [],
+     "tags": [
+      "damage"
+     ],
+     "text": "Generic Damage Dealer"
+    },
+    {
+     "token": "Entangler",
+     "ewar": [
+      "web"
+     ],
+     "tags": [],
+     "text": "Webbing"
+    },
+    {
+     "token": "Spearfisher",
+     "ewar": [
+      "warpScramble"
+     ],
+     "tags": [],
+     "text": "Warp Scramblers"
+    },
+    {
+     "token": "Illuminator",
+     "ewar": [
+      "targetPaint"
+     ],
+     "tags": [],
+     "text": "Target Painting"
+    },
+    {
+     "token": "Dissipator",
+     "ewar": [
+      "neut"
+     ],
+     "tags": [],
+     "text": "Energy Neutralizers"
+    },
+    {
+     "token": "Obfuscator",
+     "ewar": [
+      "sensorDamp"
+     ],
+     "tags": [],
+     "text": "Sensor Dampening"
+    },
+    {
+     "token": "Confuser",
+     "ewar": [
+      "trackingDisruption",
+      "guidanceDisruption"
+     ],
+     "tags": [],
+     "text": "Turret and Missile Disruption"
+    }
+   ],
+   "notes": [
+    "Drifters and seekers are sometimes encountered together but can also appear on their own. They all fire omni-damage turrets and have flat omni-resist profiles.",
+    "The key ship in a Drifter room is Karybdis Tyrannos, who flies a Drifter Battleship. This battleship has extremely long range, and will attempt to fly away from your ship(s) at around 300m/s, to drag you to the edge of the abyssal pocket.",
+    "This can be very irritating, as it forces you to fly all the way back to the exit gate after the battleship finally dies. During the time spent chasing the battleship, you are vulnerable to its poorly-tracking but hard-hitting turrets. The strength of the battleship varies with the level of the Abyssal filament; higher-level filaments feature more damage and HP. Thankfully, the Drifter Battleship here does not come with either a Doomsday Weapon or any EWAR abilities.",
+    "The same gimmick that applies to Rogue Drone Battleships also applies to Drifter battleships, albeit even easier to exploit, which can greatly benefit afterburner-focused cruisers; if the pocket happens to spawn an Ephialtes Lancer, the battleship will follow it in orbit and as a result move closer to you, making it significantly easier to get under its guns and save a lot of stress. This does not work with any other Sleeper/Drifter cruiser types.",
+    "Drifter ships start the fight with pre-existing damage; cruisers have 24% shields, 14% armor (~50% in Firestorm) and 30% hull, while the battleship's damage varies according to the filament tier. Drifter cruisers all use some form of EWAR in addition to dealing damage, but they also have large signature radii and are thus easy to finish off.",
+    "Seeker ships are far more generic than Drifter ships, and while they feature many forms of EWAR, they also have only thin armor. They all have the Ephialtes prefix.",
+    "Drifter Cruisers will all be named Scylla Tyrannos, and so their type must be checked to see their abilities."
+   ],
+   "damageToDeal": "Drifter ships, Seeker drones, and Sleeper drones have uniform resists."
+  },
+  {
+   "id": "sleepers",
+   "name": "Sleepers",
+   "markers": [
+    "Lucid"
+   ],
+   "roles": [
+    {
+     "token": "Escort",
+     "hull": "frigate",
+     "ewar": [],
+     "tags": [
+      "damage"
+     ],
+     "text": "Generic Damage Dealer"
+    },
+    {
+     "token": "Aegis",
+     "hull": "frigate",
+     "ewar": [],
+     "tags": [
+      "highDamage"
+     ],
+     "text": "Higher Damage Dealer"
+    },
+    {
+     "token": "Warden",
+     "hull": "frigate",
+     "ewar": [
+      "web"
+     ],
+     "tags": [],
+     "text": "Webbing"
+    },
+    {
+     "token": "Firewatcher",
+     "hull": "frigate",
+     "ewar": [
+      "neut"
+     ],
+     "tags": [],
+     "text": "Energy Neutralizers"
+    },
+    {
+     "token": "Preserver",
+     "hull": "frigate",
+     "ewar": [],
+     "tags": [
+      "logi"
+     ],
+     "text": "Strong remote repairs"
+    },
+    {
+     "token": "Watchman",
+     "hull": "cruiser",
+     "ewar": [],
+     "tags": [
+      "damage"
+     ],
+     "text": "Generic Damage Dealer"
+    },
+    {
+     "token": "Upholder",
+     "hull": "cruiser",
+     "ewar": [
+      "web"
+     ],
+     "tags": [],
+     "text": "Webbing"
+    },
+    {
+     "token": "Sentinel",
+     "hull": "cruiser",
+     "ewar": [
+      "neut"
+     ],
+     "tags": [],
+     "text": "Energy Neutralizers"
+    },
+    {
+     "token": "Deepwatcher",
+     "hull": "battleship",
+     "ewar": [
+      "targetPaint"
+     ],
+     "tags": [],
+     "text": "Target painting"
+    }
+   ],
+   "notes": [
+    "Every Sleeper drone is equipped with remote repairers, so it is best to kill smaller ships first, as they die before repairs land. In addition to damage, they will also use webs and energy neutralizers. The Sleeper drone battleship (Lucid Deepwatcher) spawns alone in T1 and 2, in pairs in T3 and 4, and in trios in T5 and 6. It starts with 50% armor (65% in Firestorm) and 65% structure, and deals strong EM/Thermal damage, but has very poor tracking (worse than the Drifter battleship), and its Kinetic/Explosive missiles have poor application and will generally not hit at all unless you are extremely close to it. Its damage can easily be evaded with a sub-10km orbit, though it has some of the strongest tank of any Abyssal enemy and usually kills via timeout.",
+    "Sleeper drones fire EM/Thermal turrets (and the cruisers have irritatingly high tracking and range), and Kinetic/explosive missiles (with poor flight speed and application).",
+    "Sleeper Drones all have the Lucid prefix."
+   ],
+   "damageToDeal": "Drifter ships, Seeker drones, and Sleeper drones have uniform resists."
+  },
+  {
+   "id": "triglavian",
+   "name": "Triglavian Collective",
+   "markers": [
+    "Damavik",
+    "Kikimora",
+    "Vedmak",
+    "Rodiva",
+    "Drekavac",
+    "Leshak"
+   ],
+   "roles": [
+    {
+     "token": "Damavik",
+     "hull": "frigate",
+     "ewar": [],
+     "tags": [],
+     "text": "Very fast frigate. Large signature radius."
+    },
+    {
+     "token": "Kikimora",
+     "hull": "destroyer",
+     "ewar": [],
+     "tags": [],
+     "text": "Fast, extended range destroyer"
+    },
+    {
+     "token": "Vedmak",
+     "hull": "cruiser",
+     "ewar": [],
+     "tags": [
+      "highDamage"
+     ],
+     "text": "Hard-hitting cruiser"
+    },
+    {
+     "token": "Rodiva",
+     "hull": "cruiser",
+     "ewar": [],
+     "tags": [
+      "logi"
+     ],
+     "text": "Low-damage remote-repair cruiser"
+    },
+    {
+     "token": "Drekavac",
+     "hull": "battlecruiser",
+     "ewar": [],
+     "tags": [
+      "highDamage"
+     ],
+     "text": "Harder-hitting battlecruiser. Spawns with 37% shield, 69% armor and 11% hull."
+    },
+    {
+     "token": "Leshak",
+     "hull": "battleship",
+     "ewar": [],
+     "tags": [
+      "highDamage"
+     ],
+     "text": "Long-range, slow, high-damage battleship. Spawns with 46% hull (less for Tangling and Renewing variants) and no shields or armor (though they gain ~40% armor in Firestorm)."
+    },
+    {
+     "token": "Striking",
+     "ewar": [],
+     "tags": [
+      "damage"
+     ],
+     "text": "Generic Damage Dealer"
+    },
+    {
+     "token": "Starving",
+     "ewar": [
+      "neut"
+     ],
+     "tags": [],
+     "text": "Energy Neutralizers. No Remote Repairs."
+    },
+    {
+     "token": "Harrowing",
+     "ewar": [
+      "targetPaint"
+     ],
+     "tags": [],
+     "text": "Target Painting"
+    },
+    {
+     "token": "Shining",
+     "ewar": [
+      "targetPaint"
+     ],
+     "tags": [],
+     "text": "Target Painting"
+    },
+    {
+     "token": "Anchoring",
+     "ewar": [
+      "warpScramble"
+     ],
+     "tags": [],
+     "text": "Warp Scramblers"
+    },
+    {
+     "token": "Renewing",
+     "ewar": [],
+     "tags": [
+      "logi"
+     ],
+     "text": "Strong remote repairs"
+    },
+    {
+     "token": "Blinding",
+     "ewar": [
+      "sensorDamp"
+     ],
+     "tags": [],
+     "text": "Sensor Dampening"
+    },
+    {
+     "token": "Tangling",
+     "ewar": [
+      "web"
+     ],
+     "tags": [],
+     "text": "Webbing"
+    },
+    {
+     "token": "Ghosting",
+     "ewar": [
+      "trackingDisruption",
+      "guidanceDisruption"
+     ],
+     "tags": [],
+     "text": "Turret and Missile Disruption"
+    },
+    {
+     "token": "Vila",
+     "ewar": [],
+     "tags": [
+      "damage",
+      "swarm"
+     ],
+     "text": "3 or 4 Vila Swarmers will be spawned by NPCs that have \"Vila\" as the middle name (example: Striking Vila Damavik). Deals very low omni DPS. (10-20 DMG per shot) Focus on destroying the controlling ships since the Swarmers will deactivate when they are destroyed, and the gate will still unlock regardless of if they are alive or not."
+    }
+   ],
+   "notes": [
+    "Triglavian ships can often appear alongside Rogue Drone spawns (though never with the drone battleship). They use Entropic Disintegrators to deal high Thermal and Explosive damage. As each ship's damage will slowly increase the longer it stays focused on one target, Triglavian rooms can quickly become DPS or range-control races, to either kill their high-damage ships before they can kill you or to kill their tackle ships and fly beyond their damage range.",
+    "With the exception of neuting types, Triglavian ships all feature Remote Armor Repair abilities, and mount the widest range of EWAR of any Abyssal faction."
+   ],
+   "damageToDeal": "Triglavian ships are weak to Explosive, then Thermal, and strong against Kinetic and EM. In a -30% Electrical filament, their EM resist is equal to Explosive resist."
+  },
+  {
+   "id": "sansha",
+   "name": "Sansha's Nation",
+   "markers": [
+    "Devoted"
+   ],
+   "roles": [
+    {
+     "token": "Knight",
+     "hull": "cruiser",
+     "ewar": [
+      "web",
+      "neut"
+     ],
+     "tags": [
+      "highDamage"
+     ],
+     "text": "Heavy damage dealer; high range & tracking"
+    },
+    {
+     "token": "Hunter",
+     "hull": "frigate",
+     "ewar": [],
+     "tags": [
+      "highDamage"
+     ],
+     "text": "Above Generic (50% More) Damage Dealer"
+    },
+    {
+     "token": "Fisher",
+     "hull": "frigate",
+     "ewar": [
+      "web"
+     ],
+     "tags": [],
+     "text": "Webbing"
+    },
+    {
+     "token": "Priest",
+     "hull": "frigate",
+     "ewar": [],
+     "tags": [
+      "logi"
+     ],
+     "text": "Remote repairs"
+    },
+    {
+     "token": "Trapper",
+     "hull": "frigate",
+     "ewar": [
+      "warpScramble"
+     ],
+     "tags": [],
+     "text": "Warp Scramblers"
+    },
+    {
+     "token": "Smith",
+     "hull": "frigate",
+     "ewar": [
+      "neut"
+     ],
+     "tags": [],
+     "text": "Energy Neutralizers"
+    },
+    {
+     "token": "Lookout",
+     "hull": "frigate",
+     "ewar": [
+      "sensorDamp"
+     ],
+     "tags": [],
+     "text": "Sensor Dampening"
+    },
+    {
+     "token": "Herald",
+     "hull": "frigate",
+     "ewar": [
+      "trackingDisruption",
+      "guidanceDisruption"
+     ],
+     "tags": [],
+     "text": "Turret and Missile Disruption"
+    },
+    {
+     "token": "Torchbearer",
+     "hull": "frigate",
+     "ewar": [
+      "targetPaint"
+     ],
+     "tags": [],
+     "text": "Target Painting"
+    }
+   ],
+   "notes": [
+    "Sansha's Nation ships have slow speed, deal large amounts of EM/Thermal damage and are most safely fought at long range. Fighting them up close is a challenge, as they bring a wide range of EWAR abilities, including significant energy neutralizers.",
+    "All Sansha's Nation ships have the Devoted prefix."
+   ],
+   "damageToDeal": "Sansha's Nation ships other than the Devoted Knight are weak to EM and Thermal and strong against Kinetic and Explosive. The Devoted Knight is weak to EM, then Explosive, and strong against Thermal and Kinetic. Angel Cartel ships are the opposite of Sansha's Nation: strong against EM and Thermal, weak to Explosive and Kinetic."
+  },
+  {
+   "id": "concord",
+   "name": "CONCORD and EDENCOM",
+   "markers": [
+    "Disparu Troop"
+   ],
+   "roles": [
+    {
+     "token": "Pacifier",
+     "ewar": [],
+     "tags": [
+      "damage"
+     ],
+     "text": "or 39 DPS Rockets"
+    },
+    {
+     "token": "Enforcer",
+     "ewar": [],
+     "tags": [
+      "damage"
+     ],
+     "text": "or 130 DPS Heavy Assault Missiles"
+    },
+    {
+     "token": "Marshal",
+     "ewar": [],
+     "tags": [
+      "highDamage"
+     ],
+     "text": "or 427 DPS Faction Rapid Heavy Missiles"
+    },
+    {
+     "token": "Attacker",
+     "ewar": [],
+     "tags": [
+      "damage"
+     ],
+     "text": "Generic damage dealer"
+    },
+    {
+     "token": "Assault",
+     "ewar": [],
+     "tags": [
+      "damage"
+     ],
+     "text": "Generic damage dealer"
+    },
+    {
+     "token": "Arrester",
+     "ewar": [
+      "web"
+     ],
+     "tags": [],
+     "text": "Webbing"
+    },
+    {
+     "token": "Marker",
+     "ewar": [
+      "targetPaint"
+     ],
+     "tags": [],
+     "text": "Target Painting"
+    },
+    {
+     "token": "Drainer",
+     "ewar": [
+      "neut"
+     ],
+     "tags": [],
+     "text": "Heavy Energy Neutralizers"
+    },
+    {
+     "token": "Skybreaker",
+     "ewar": [],
+     "tags": [
+      "damage"
+     ],
+     "text": "87% 14% , 444 damage / 6 seconds"
+    },
+    {
+     "token": "Stormbringer",
+     "ewar": [],
+     "tags": [
+      "damage"
+     ],
+     "text": "87% 14% , 666 damage / 9 seconds"
+    },
+    {
+     "token": "Thunderchild",
+     "ewar": [],
+     "tags": [
+      "damage"
+     ],
+     "text": "77% 23% , 2470 damage / 15 seconds"
+    }
+   ],
+   "notes": [
+    "CONCORD rooms contain a mix of CONCORD and EDENCOM ship hulls. CONCORD hulls use Thermal or Explosive missiles, while EDENCOM ships use EM-Kinetic Vorton Projectors. Marshals start off with no shields and 28% armor, while EDENCOM Thunderchilds start off with about 8% shield, no armor and 40% structure.",
+    "CONCORD rooms are generally feared by many Abyssal runners due to their high damage and heavy damage-application support. The sheer incoming DPS, combined with the multiple Webs and Target Painters, makes passive or active tanking in these rooms extremely difficult. Because of this, Marshal rats (especially Drainers) are often targeted first to reduce incoming DPS.",
+    "While the EDENCOM ships offer no EWAR, they bring very high alpha damage on very slow fire rates, meaning that the combination of Marshal DPS and EDENCOM alpha can easily and unexpectedly break an Abyssal runner's buffer.",
+    "The few saving graces when fighting CONCORD/EDENCOM ships are:",
+    "they always deal a constant amount of damage relative to signature radius and velocity, meaning they cannot land critical hits (\"Wrecking Shots\").",
+    "since their damage is completely based on missile damage mechanics, maintaining transversal is a non-issue.",
+    "Vorton Projectors will chain their damage to any objects within 10km of your ship, and can thus be exploited into dealing friendly fire damage to other enemy CONCORD/EDENCOM ships",
+    "CONCORD ships have poor tank relative to their damage, which turns the room into a pure DPS race to determine whether you die first or the Marshals die first.",
+    "All CONCORD and EDENCOM ships have the Disparu Troop suffix.",
+    "When the Depths of the Abyss expansion released and first introduced CONCORD spawns, Marshals used to spawn with full HP, resulting in said spawns being unfairly difficult to many players. In a later unknown update the Marshal NPCs were nerfed to provide slightly more balanced gameplay of CONCORD spawns in particular.",
+    "}}"
+   ],
+   "damageToDeal": "CONCORD ships have uniform resists. EDENCOM ships are weak to Thermal and EM."
+  },
+  {
+   "id": "angel",
+   "name": "Angel Cartel",
+   "markers": [
+    "Lucifer"
+   ],
+   "roles": [
+    {
+     "token": "Cynabal",
+     "ewar": [
+      "web",
+      "neut"
+     ],
+     "tags": [
+      "highDamage"
+     ],
+     "text": "Heavy damage dealer; high range & tracking"
+    },
+    {
+     "token": "Ixion",
+     "ewar": [
+      "guidanceDisruption",
+      "targetPaint"
+     ],
+     "tags": [],
+     "text": "Target Painting, Missile Disruption"
+    },
+    {
+     "token": "Dramiel",
+     "ewar": [],
+     "tags": [
+      "damage"
+     ],
+     "text": "Generic damage dealer · None"
+    },
+    {
+     "token": "Fury",
+     "ewar": [
+      "neut"
+     ],
+     "tags": [],
+     "text": "Energy Neutralizers"
+    },
+    {
+     "token": "Echo",
+     "ewar": [
+      "web",
+      "warpScramble"
+     ],
+     "tags": [],
+     "text": "Webbing and Scrambling"
+    },
+    {
+     "token": "Medusa",
+     "ewar": [
+      "sensorDamp"
+     ],
+     "tags": [],
+     "text": "Sensor Dampening"
+    },
+    {
+     "token": "Burst",
+     "ewar": [],
+     "tags": [
+      "logi"
+     ],
+     "text": "Remote repairs · None"
+    },
+    {
+     "token": "Swordspine",
+     "ewar": [
+      "targetPaint"
+     ],
+     "tags": [],
+     "text": "Target Painting"
+    }
+   ],
+   "notes": [
+    "Angel Cartel rooms are the bane of fast and evasive ships. Angel Cartel ships have extremely high flight speeds, rather small signature radii, good range, varied damage types, and varied EWAR. The Cynabal is especially problematic, as it features all of these abilities combined in one ship.",
+    "All Angel Cartel rats have the Lucifer prefix, and deal heavy EM and Explosive damage along with a small amount of Kinetic/Thermal. The Cynabal and Dramiel can additionally spawn with an Elite prefix, with slightly increased damage, better tracking speed, even higher flight speed and a significantly stronger resist profile. The Elite Lucifer Dramiel also gains stasis web."
+   ],
+   "damageToDeal": "Angel Cartel ships are the opposite of Sansha's Nation: strong against EM and Thermal, weak to Explosive and Kinetic."
+  }
+ ],
+ "overminds": [
+  {
+   "tier": 1,
+   "name": "Photic Abyssal Overmind",
+   "damage": [
+    "explosive"
+   ]
+  },
+  {
+   "tier": 2,
+   "name": "Twilit Abyssal Overmind",
+   "damage": [
+    "thermal"
+   ],
+   "note": "The one exception. Very high Kinetic resist. Use Thermal, even in an Exotic Filament."
+  },
+  {
+   "tier": 3,
+   "name": "Bathyic Abyssal Overmind",
+   "damage": [
+    "thermal",
+    "kinetic"
+   ]
+  },
+  {
+   "tier": 4,
+   "name": "Hadal Abyssal Overmind",
+   "damage": [
+    "explosive"
+   ]
+  },
+  {
+   "tier": 5,
+   "name": "Benthic Abyssal Overmind",
+   "damage": [
+    "thermal",
+    "kinetic"
+   ]
+  },
+  {
+   "tier": 6,
+   "name": "Endobenthic Abyssal Overmind",
+   "damage": [
+    "thermal",
+    "kinetic"
+   ]
+  }
+ ],
+ "rooms": [
+  {
+   "tier": 0,
+   "faction": "concord",
+   "note": "Skybreaker is the hardest EDENCOM spawn to kill due to good Active Shield tank. 100 dps minimum recommended.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Frigate",
+     "count": "1",
+     "names": [
+      "Skybreaker Disparu Troop"
+     ],
+     "ewar": [],
+     "note": "Has strong active tank"
+    }
+   ]
+  },
+  {
+   "tier": 0,
+   "faction": "concord",
+   "note": "Uses Thermal damage Rockets (Explosive for Arrester variant). Don't stop moving.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Frigate",
+     "count": "1",
+     "names": [
+      "Attacker Pacifier Disparu Troop"
+     ],
+     "ewar": []
+    }
+   ]
+  },
+  {
+   "tier": 0,
+   "faction": "drones",
+   "note": "Typical spawn are 2-3. 4 different variants [Spark, Ember, Strike, Blast] with the difference of damage type.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Frigate",
+     "count": "2-3",
+     "names": [
+      "[Name]needle Tessella"
+     ],
+     "ewar": []
+    }
+   ]
+  },
+  {
+   "tier": 0,
+   "faction": "drones",
+   "note": "Lance Tessella deals twice as much damage as the Needles",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Frigate",
+     "count": "1",
+     "names": [
+      "[Name]needle Tessella"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Elite Frigate",
+     "count": "1",
+     "names": [
+      "[Name]lance Tessella"
+     ],
+     "ewar": []
+    }
+   ]
+  },
+  {
+   "tier": 0,
+   "faction": "angel",
+   "note": "Only one frigate will spawn.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Frigate",
+     "count": "1",
+     "names": [
+      "Lucifer Fury"
+     ],
+     "ewar": [
+      "neut"
+     ]
+    }
+   ]
+  },
+  {
+   "tier": 0,
+   "faction": "angel",
+   "note": null,
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Frigate",
+     "count": "1",
+     "names": [
+      "Lucifer Echo"
+     ],
+     "ewar": [
+      "web",
+      "warpScramble"
+     ]
+    }
+   ]
+  },
+  {
+   "tier": 0,
+   "faction": "angel",
+   "note": null,
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Frigate",
+     "count": "1",
+     "names": [
+      "Lucifer Swordspine"
+     ],
+     "ewar": [
+      "targetPaint"
+     ]
+    }
+   ]
+  },
+  {
+   "tier": 0,
+   "faction": "angel",
+   "note": null,
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Frigate",
+     "count": "1",
+     "names": [
+      "Lucifer Medusa"
+     ],
+     "ewar": [
+      "sensorDamp"
+     ]
+    }
+   ]
+  },
+  {
+   "tier": 0,
+   "faction": "angel",
+   "note": null,
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Frigate",
+     "count": "1",
+     "names": [
+      "Lucifer Dramiel"
+     ],
+     "ewar": []
+    }
+   ]
+  },
+  {
+   "tier": 0,
+   "faction": "sleepers",
+   "note": "Aegis is a higher damage variant of Escort",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Frigate",
+     "count": "1",
+     "names": [
+      "Lucid Escort",
+      "Lucid Aegis"
+     ],
+     "ewar": []
+    }
+   ]
+  },
+  {
+   "tier": 0,
+   "faction": "sleepers",
+   "note": "Only one Cruiser will spawn. Orbit it at close distance or outrange it.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Cruiser",
+     "count": "1",
+     "names": [
+      "Ephialtes Lancer"
+     ],
+     "ewar": []
+    }
+   ]
+  },
+  {
+   "tier": 0,
+   "faction": "triglavian",
+   "note": "Has fast speed, making applying damage difficult sometimes.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Frigate",
+     "count": "1",
+     "names": [
+      "Striking Damavik"
+     ],
+     "ewar": []
+    }
+   ]
+  },
+  {
+   "tier": 0,
+   "faction": "triglavian",
+   "note": "Vila is the drone boat variant of Triglavian enemy.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Frigate",
+     "count": "1",
+     "names": [
+      "Striking Vila Damavik"
+     ],
+     "ewar": [],
+     "note": "Spawns relatively harmless drones"
+    }
+   ]
+  },
+  {
+   "tier": 0,
+   "faction": "sansha",
+   "note": "Most dangerous spawn in T0 Abyss. High DPS. Most low investment Frigates will require liberal overheating of tank modules.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Frigate",
+     "count": "1",
+     "names": [
+      "Devoted Hunter"
+     ],
+     "ewar": []
+    }
+   ]
+  },
+  {
+   "tier": 1,
+   "faction": "concord",
+   "note": "Spawn 2-3 ships in one room of any type. Pacifier have high dps in multiple number.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Frigate",
+     "count": "0-2",
+     "names": [
+      "Skybreaker Disparu Troop"
+     ],
+     "ewar": [],
+     "note": "Has strong active tank"
+    },
+    {
+     "class": "Frigate",
+     "count": "0-3",
+     "names": [
+      "Attacker Pacifier Disparu Troop",
+      "Marker Pacifier Disparu Troop"
+     ],
+     "ewar": []
+    }
+   ]
+  },
+  {
+   "tier": 1,
+   "faction": "concord",
+   "note": "Marshal deals high damage (427 DPS Caldari Navy heavy missiles) against slow ships. Never stop moving. Spawns with no shield, 28% armor and full structure, but will repair shield if given enough time.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Battleship",
+     "count": "1",
+     "names": [
+      "Attacker Marshal Disparu Troop"
+     ],
+     "ewar": []
+    }
+   ]
+  },
+  {
+   "tier": 1,
+   "faction": "drones",
+   "note": "Grip Tessera has very high tracking and damage, making it one of the deadliest enemies in T1 Abyssal. Frigate users should fly beyond 15 km from it.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Battlecruiser",
+     "count": "1",
+     "names": [
+      "[Name]grip Tessera"
+     ],
+     "ewar": [],
+     "note": "Very high damage and tracking, but low range (<15 km)"
+    }
+   ]
+  },
+  {
+   "tier": 1,
+   "faction": "drones",
+   "note": "Can be problematic toward Frigate users in large number.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Frigate",
+     "count": "3-6",
+     "names": [
+      "[Name]needle Tessella"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Elite Frigate",
+     "count": "0-3",
+     "names": [
+      "[Name]lance Tessella"
+     ],
+     "ewar": [],
+     "note": "Deals twice as much damage as the Needles"
+    },
+    {
+     "class": "Frigate",
+     "count": "0-1",
+     "names": [
+      "Striking Damavik"
+     ],
+     "ewar": [],
+     "note": "Rare spawn. Lower the number of enemies in a room"
+    }
+   ]
+  },
+  {
+   "tier": 1,
+   "faction": "drones",
+   "note": "Overmind have very high HP. Timeout killer in T1 Abyssal. Armor tank with lowest resist to Explosive.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Battleship",
+     "count": "1",
+     "names": [
+      "Photic Abyssal Overmind"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Frigate",
+     "count": "1-2",
+     "names": [
+      "[Name]needle Tessella"
+     ],
+     "ewar": []
+    }
+   ]
+  },
+  {
+   "tier": 1,
+   "faction": "angel",
+   "note": "Lucifer Echo Webs and Warp Scrambles while Lucifer Fury Cap Neutralizes.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Frigate",
+     "count": "3",
+     "names": [
+      "Lucifer Dramiel",
+      "Lucifer Echo",
+      "Lucifer Medusa",
+      "Lucifer Fury",
+      "Lucifer Swordspine"
+     ],
+     "ewar": []
+    }
+   ]
+  },
+  {
+   "tier": 1,
+   "faction": "angel",
+   "note": "Cynabal is a tough enemy, equipped with Web, Neutralizer, and fast speed. Often kills unsuspecting Frigate users.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Cruiser",
+     "count": "1",
+     "names": [
+      "Lucifer Cynabal"
+     ],
+     "ewar": [
+      "web",
+      "neut"
+     ]
+    },
+    {
+     "class": "Frigate",
+     "count": "1",
+     "names": [
+      "Lucifer Dramiel",
+      "Lucifer Echo",
+      "Lucifer Medusa",
+      "Lucifer Fury",
+      "Lucifer Swordspine"
+     ],
+     "ewar": []
+    }
+   ]
+  },
+  {
+   "tier": 1,
+   "faction": "angel",
+   "note": "A rare angel room with quite easy enemies.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Cruiser",
+     "count": "1",
+     "names": [
+      "Lucifer Ixion"
+     ],
+     "ewar": [
+      "targetPaint",
+      "guidanceDisruption"
+     ]
+    },
+    {
+     "class": "Frigate",
+     "count": "1",
+     "names": [
+      "Lucifer Dramiel",
+      "Lucifer Echo",
+      "Lucifer Medusa",
+      "Lucifer Fury",
+      "Lucifer Swordspine"
+     ],
+     "ewar": []
+    }
+   ]
+  },
+  {
+   "tier": 1,
+   "faction": "sleepers",
+   "note": "Maximum of 3 enemies per room. Firewatcher have 8 GJ/s Cap Neutralizer, while Warden has Web.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Frigate",
+     "count": "0-3",
+     "names": [
+      "Lucid Escort",
+      "Lucid Aegis",
+      "Lucid Firewatcher",
+      "Lucid Warden"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Cruiser",
+     "count": "0-3",
+     "names": [
+      "Ephialtes Lancer",
+      "Ephialtes Illuminator",
+      "Ephialtes Spearfisher"
+     ],
+     "ewar": []
+    }
+   ]
+  },
+  {
+   "tier": 1,
+   "faction": "sleepers",
+   "note": "Maximum of 2 enemies per room. Upholder has 15 km webs, while Sentinel has 15 GJ/s cap neuts. Lucid cruiser types have dangerously good tracking even against fast frigates.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Cruiser",
+     "count": "1",
+     "names": [
+      "Lucid Watchman",
+      "Lucid Upholder",
+      "Lucid Sentinel"
+     ],
+     "ewar": [],
+     "note": "Deals quite high damage. Variants are both problematic but rare."
+    },
+    {
+     "class": "Frigate",
+     "count": "0-1",
+     "names": [
+      "Lucid Escort",
+      "Lucid Aegis",
+      "Lucid Firewatcher",
+      "Lucid Warden"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Cruiser",
+     "count": "0-1",
+     "names": [
+      "Ephialtes Lancer",
+      "Ephialtes Illuminator",
+      "Ephialtes Spearfisher"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Cruiser",
+     "count": "0-1",
+     "names": [
+      "Scylla Tyrannos"
+     ],
+     "ewar": []
+    }
+   ]
+  },
+  {
+   "tier": 1,
+   "faction": "sleepers",
+   "note": "Maximum of 2 enemies per room. Karybdis Tyrannos has very poor tracking. Deals 100 DPS omni but rarely hits as long as you don't fly straight at her. Never spawns alongside Lucid frigates/cruiser. Extremely low shield and almost negligible armor, but has ~40% structure.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Cruiser",
+     "count": "0-1",
+     "names": [
+      "Scylla Tyrannos"
+     ],
+     "ewar": [],
+     "note": "Spawns with half damaged Shield, Armor, and Hull"
+    },
+    {
+     "class": "Cruiser",
+     "count": "0-1",
+     "names": [
+      "Ephialtes Lancer"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Battleship",
+     "count": "0-1",
+     "names": [
+      "Karybdis Tyrannos"
+     ],
+     "ewar": [],
+     "note": "Spawns with half damaged Shield, Armor, and Hull"
+    }
+   ]
+  },
+  {
+   "tier": 1,
+   "faction": "sleepers",
+   "note": "DPS check room. Tankiest enemy in T1 Abyss. Poor aim and slow missiles that never hit makes it non threatening. Kills runners by timeout.",
+   "dpsCheck": true,
+   "npcs": [
+    {
+     "class": "Battleship",
+     "count": "1",
+     "names": [
+      "Lucid Deepwatcher"
+     ],
+     "ewar": []
+    }
+   ]
+  },
+  {
+   "tier": 1,
+   "faction": "triglavian",
+   "note": "Kikimora is one of the more dangerous enemy in T1 Abyssal with its high potential damage and decent tank.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Destroyer",
+     "count": "1",
+     "names": [
+      "Striking Kikimora"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Frigate",
+     "count": "1",
+     "names": [
+      "Striking Damavik"
+     ],
+     "ewar": []
+    }
+   ]
+  },
+  {
+   "tier": 1,
+   "faction": "triglavian",
+   "note": "Fast speed and armor repair each other. Can cause timeout on low tracking/application or low dps fits",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Frigate",
+     "count": "3",
+     "names": [
+      "Striking Damavik",
+      "Anchoring Damavik",
+      "Ghosting Damavik"
+     ],
+     "ewar": []
+    }
+   ]
+  },
+  {
+   "tier": 1,
+   "faction": "triglavian",
+   "note": "Spawns relatively harmless drones which do not need to be destroyed to unlock the gate.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Frigate",
+     "count": "2",
+     "names": [
+      "Striking Vila Damavik",
+      "Anchoring Vila Damavik",
+      "Shining Vila Damavik"
+     ],
+     "ewar": [],
+     "note": "Spawn 3 drones each"
+    }
+   ]
+  },
+  {
+   "tier": 1,
+   "faction": "triglavian",
+   "note": "Drekavac has poor tracking. Half damaged",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Battlecruiser",
+     "count": "1",
+     "names": [
+      "Striking Drekavac",
+      "Shining Drekavac"
+     ],
+     "ewar": []
+    }
+   ]
+  },
+  {
+   "tier": 1,
+   "faction": "triglavian",
+   "note": "Leshak has poor tracking. On hull half damaged. Dangerous in Firestorm since it gains ~40% of its armor back, and Triglavian ships are heavily armor tanked which makes the Leshak able to ramp up to a dangerous amount of DPS more easily.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Battleship",
+     "count": "1",
+     "names": [
+      "Striking Leshak",
+      "Blinding Leshak"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Frigate",
+     "count": "0-1",
+     "names": [
+      "[Name] Tessela"
+     ],
+     "ewar": [],
+     "note": "Rare Spawn"
+    }
+   ]
+  },
+  {
+   "tier": 1,
+   "faction": "sansha",
+   "note": "Devoted Hunters x3 is one of the worst combination in T1 abyss. Very high damage.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Frigate",
+     "count": "3",
+     "names": [
+      "Devoted Hunter",
+      "Devoted Trapper",
+      "Devoted Torchbearer"
+     ],
+     "ewar": []
+    }
+   ]
+  },
+  {
+   "tier": 1,
+   "faction": "sansha",
+   "note": "Devoted Knight has strong Web and Neut, can easily kill unsuspecting Frigate pilot.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Cruiser",
+     "count": "1",
+     "names": [
+      "Devoted Knight"
+     ],
+     "ewar": [
+      "neut",
+      "web"
+     ],
+     "note": "Considered a newbie frigate killer, can be countered by orbit 500 and turning off repair modules"
+    }
+   ]
+  },
+  {
+   "tier": 2,
+   "faction": "concord",
+   "note": "Strongest DPS spawn appears to be 1 battleship and 1 cruiser. Frigates are interchangable between Skybreakers and Pacifiers. Typically the setup will include 1 battleship/cruiser and roughly 3 frigates. Highest DPS spawn recorded: 1x Attacker Marshal, 1x Stormbringer.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Battleship",
+     "count": "0-1",
+     "names": [
+      "Arrester Marshal Disparu Troop"
+     ],
+     "ewar": [
+      "web"
+     ]
+    },
+    {
+     "class": "Battleship",
+     "count": "0-1",
+     "names": [
+      "Thunderchild Disparu Troop"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Cruiser",
+     "count": "0-1",
+     "names": [
+      "Drainer Enforcer Disparu Troop"
+     ],
+     "ewar": [
+      "neut"
+     ]
+    },
+    {
+     "class": "Cruiser",
+     "count": "0-1",
+     "names": [
+      "Stormbringer Disparu Troop"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Frigate",
+     "count": "0-3",
+     "names": [
+      "Skybreaker Disparu Troop"
+     ],
+     "ewar": []
+    }
+   ]
+  },
+  {
+   "tier": 2,
+   "faction": "drones",
+   "note": "Spawn size is roughly double that of T1. Often will feature more EWAR ships.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Frigate",
+     "count": "5",
+     "names": [
+      "Blastneedle Tessella"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Frigate",
+     "count": "3",
+     "names": [
+      "Sparkneedle Tessella"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Frigate",
+     "count": "3",
+     "names": [
+      "Fogcaster Tessella"
+     ],
+     "ewar": [
+      "trackingDisruption"
+     ]
+    }
+   ]
+  },
+  {
+   "tier": 2,
+   "faction": "drones",
+   "note": "2 BCs and several EWAR/remote rep frigates frequently observed. EWAR will almost always be stasis webs, beware.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Battlecruiser",
+     "count": "1",
+     "names": [
+      "Embergrip Tessera"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Battlecruiser",
+     "count": "1",
+     "names": [
+      "Blastgrip Tessera"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Frigate",
+     "count": "0-3",
+     "names": [
+      "Snarecaster Tessella"
+     ],
+     "ewar": [
+      "web"
+     ]
+    },
+    {
+     "class": "Frigate",
+     "count": "0-2",
+     "names": [
+      "Fieldweaver Tessella",
+      "Plateforger Tessella"
+     ],
+     "ewar": [],
+     "note": "Remote reps"
+    }
+   ]
+  },
+  {
+   "tier": 2,
+   "faction": "drones",
+   "note": "Mostly the same as T1 Abyss in terms of layout. Frigates are more likely to be the EWAR types. Twilit has extremely high Kinetic resist.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Battleship",
+     "count": "1",
+     "names": [
+      "Twilit Abyssal Overmind"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Frigate",
+     "count": "2-3",
+     "names": [
+      "Gazedimmer Tessella"
+     ],
+     "ewar": [
+      "sensorDamp"
+     ]
+    }
+   ]
+  },
+  {
+   "tier": 2,
+   "faction": "angel",
+   "note": "Strongest spawn: 2 Cynabals. Elite variants of the Cynabal and Dramiel can often appear as well.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Cruiser",
+     "count": "0-1",
+     "names": [
+      "Lucifer Ixion"
+     ],
+     "ewar": [
+      "targetPaint",
+      "guidanceDisruption"
+     ]
+    },
+    {
+     "class": "Cruiser",
+     "count": "0-2",
+     "names": [
+      "Lucifer Cynabal"
+     ],
+     "ewar": [
+      "web",
+      "neut"
+     ]
+    },
+    {
+     "class": "Elite Cruiser",
+     "count": "0-1",
+     "names": [
+      "Elite Lucifer Cynabal"
+     ],
+     "ewar": [
+      "web",
+      "neut"
+     ]
+    },
+    {
+     "class": "Frigate",
+     "count": "0-6",
+     "names": [
+      "Lucifer Dramiel",
+      "Elite Lucifer Dramiel",
+      "Lucifer Medusa",
+      "Lucifer Swordspine"
+     ],
+     "ewar": []
+    }
+   ]
+  },
+  {
+   "tier": 2,
+   "faction": "sleepers",
+   "note": "Average 7-8 ships.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Cruiser",
+     "count": "2",
+     "names": [
+      "Ephialtes Lancer"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Cruiser",
+     "count": "4",
+     "names": [
+      "Ephialtes Dissipator"
+     ],
+     "ewar": [
+      "neut"
+     ]
+    }
+   ]
+  },
+  {
+   "tier": 2,
+   "faction": "sleepers",
+   "note": null,
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Frigate",
+     "count": "2",
+     "names": [
+      "Lucid Escort"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Frigate",
+     "count": "3",
+     "names": [
+      "Lucid Warden"
+     ],
+     "ewar": [
+      "web"
+     ]
+    },
+    {
+     "class": "Frigate",
+     "count": "1",
+     "names": [
+      "Lucid Firewatcher"
+     ],
+     "ewar": [
+      "neut"
+     ]
+    }
+   ]
+  },
+  {
+   "tier": 2,
+   "faction": "sleepers",
+   "note": "Same as T1 but with a larger escort force aside from the battleship.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Battleship",
+     "count": "1",
+     "names": [
+      "Lucid Deepwatcher"
+     ],
+     "ewar": [
+      "targetPaint"
+     ]
+    },
+    {
+     "class": "Cruiser",
+     "count": "1",
+     "names": [
+      "Ephialtes Obfuscator"
+     ],
+     "ewar": [
+      "sensorDamp"
+     ]
+    },
+    {
+     "class": "Frigate",
+     "count": "2",
+     "names": [
+      "Lucid Escort"
+     ],
+     "ewar": []
+    }
+   ]
+  },
+  {
+   "tier": 2,
+   "faction": "sleepers",
+   "note": null,
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Cruiser",
+     "count": "1",
+     "names": [
+      "Lucid Watchman"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Cruiser",
+     "count": "1",
+     "names": [
+      "Lucid Sentinel"
+     ],
+     "ewar": [
+      "neut"
+     ]
+    },
+    {
+     "class": "Cruiser",
+     "count": "2",
+     "names": [
+      "Scylla Tyrannos"
+     ],
+     "ewar": [
+      "web"
+     ]
+    }
+   ]
+  },
+  {
+   "tier": 2,
+   "faction": "sleepers",
+   "note": "Drifter battleship gains +100 DPS omni to a total of 200. Each tier up will boost DPS by the same amount.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Battleship",
+     "count": "1",
+     "names": [
+      "Karybdis Tyrannos"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Cruiser",
+     "count": "2",
+     "names": [
+      "Ephialtes Obfuscator"
+     ],
+     "ewar": [
+      "sensorDamp"
+     ]
+    }
+   ]
+  },
+  {
+   "tier": 2,
+   "faction": "sleepers",
+   "note": null,
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Cruiser",
+     "count": "2",
+     "names": [
+      "Ephialtes Entangler"
+     ],
+     "ewar": [
+      "web"
+     ]
+    },
+    {
+     "class": "Frigate",
+     "count": "3",
+     "names": [
+      "Lucid Aegis"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Frigate",
+     "count": "1",
+     "names": [
+      "Lucid Preserver"
+     ],
+     "ewar": []
+    }
+   ]
+  },
+  {
+   "tier": 2,
+   "faction": "triglavian",
+   "note": null,
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Battlecruiser",
+     "count": "2",
+     "names": [
+      "Shining Drekavac"
+     ],
+     "ewar": [
+      "targetPaint"
+     ]
+    },
+    {
+     "class": "Frigate",
+     "count": "1",
+     "names": [
+      "Striking Damavik"
+     ],
+     "ewar": []
+    }
+   ]
+  },
+  {
+   "tier": 2,
+   "faction": "triglavian",
+   "note": null,
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Destroyer",
+     "count": "1",
+     "names": [
+      "Striking Kikimora"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Cruiser",
+     "count": "1",
+     "names": [
+      "Renewing Rodiva"
+     ],
+     "ewar": []
+    }
+   ]
+  },
+  {
+   "tier": 2,
+   "faction": "triglavian",
+   "note": null,
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Frigate",
+     "count": "1",
+     "names": [
+      "Striking Damavik"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Destroyer",
+     "count": "1",
+     "names": [
+      "Striking Kikimora"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Battlecruiser",
+     "count": "1",
+     "names": [
+      "Striking Drekavac"
+     ],
+     "ewar": []
+    }
+   ]
+  },
+  {
+   "tier": 2,
+   "faction": "triglavian",
+   "note": null,
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Battleship",
+     "count": "1",
+     "names": [
+      "Striking Leshak"
+     ],
+     "ewar": [],
+     "note": "Heavily damaged"
+    },
+    {
+     "class": "Battleship",
+     "count": "1",
+     "names": [
+      "Tangling Leshak"
+     ],
+     "ewar": [
+      "web"
+     ]
+    }
+   ]
+  },
+  {
+   "tier": 2,
+   "faction": "triglavian",
+   "note": "~6 Damaviks if no Vedmak is present. Unconfirmed if more than one Vedmak can spawn.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Cruiser",
+     "count": "1",
+     "names": [
+      "Harrowing Vedmak"
+     ],
+     "ewar": [],
+     "note": "High ramping damage"
+    },
+    {
+     "class": "Frigate",
+     "count": "1",
+     "names": [
+      "Striking Damavik"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Frigate",
+     "count": "1",
+     "names": [
+      "Tangling Damavik"
+     ],
+     "ewar": [
+      "web"
+     ]
+    }
+   ]
+  },
+  {
+   "tier": 2,
+   "faction": "triglavian",
+   "note": null,
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Frigate",
+     "count": "2",
+     "names": [
+      "Striking Vila Damavik"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Frigate",
+     "count": "2",
+     "names": [
+      "Tangling Vila Damavik"
+     ],
+     "ewar": [
+      "web"
+     ]
+    },
+    {
+     "class": "Drone",
+     "count": "12",
+     "names": [
+      "Vila Swarmer"
+     ],
+     "ewar": []
+    }
+   ]
+  },
+  {
+   "tier": 2,
+   "faction": "triglavian",
+   "note": null,
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Frigate",
+     "count": "1",
+     "names": [
+      "Striking Damavik"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Frigate",
+     "count": "2",
+     "names": [
+      "Starving Damavik"
+     ],
+     "ewar": [
+      "neut"
+     ]
+    },
+    {
+     "class": "Destroyer",
+     "count": "3",
+     "names": [
+      "Striking Kikimora"
+     ],
+     "ewar": []
+    }
+   ]
+  },
+  {
+   "tier": 3,
+   "faction": "concord",
+   "note": "Up to 3 Marshals can spawn. Interchangable with Thunderchild Disparu Troop, though usually only one Thunderchild will spawn. Enforcers may replace the battleship spawns; if they spawn together it will usually be split into 1-2 Marshals/1 Thunderchild and 1-2 Enforcers. Having at least one battleship in the room will be the case for 9/10 of CONCORD spawns in this tier. If there are none, expect up to 3 Enforcers/Stormbringers and 3-4 Skybreakers/Pacifiers. Highest DPS spawn recorded: 2x Marshal, 2 Thunderchild.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Battleship",
+     "count": "0-3",
+     "names": [
+      "Attacker Marshal Disparu Troop"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Battleship",
+     "count": "0-2",
+     "names": [
+      "Thunderchild Disparu Troop"
+     ],
+     "ewar": [],
+     "note": "Very high alpha, deals mostly Kinetic damage"
+    },
+    {
+     "class": "Cruiser",
+     "count": "0-2",
+     "names": [
+      "Drainer Enforcer Disparu Troop"
+     ],
+     "ewar": [
+      "neut"
+     ]
+    },
+    {
+     "class": "Frigate",
+     "count": "0-3",
+     "names": [
+      "Marker Pacifier Disparu Troop"
+     ],
+     "ewar": [
+      "targetPaint"
+     ]
+    }
+   ]
+  },
+  {
+   "tier": 3,
+   "faction": "drones",
+   "note": "Swarm size approximates 10 ships with varied EWAR frigates in between. This tier is the first where the drone swarms comprise primarily of Lance-prefix drones that deal double the individual damage of weaker Needle variants.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Frigate",
+     "count": "3",
+     "names": [
+      "Emberlance Tessella"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Frigate",
+     "count": "4",
+     "names": [
+      "Strikelance Tessella"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Frigate",
+     "count": "2",
+     "names": [
+      "Fieldweaver Tessella"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Frigate",
+     "count": "2",
+     "names": [
+      "Spotlighter Tessella"
+     ],
+     "ewar": [
+      "targetPaint"
+     ]
+    }
+   ]
+  },
+  {
+   "tier": 3,
+   "faction": "drones",
+   "note": "DPS check room, one of the tankiest rooms besides Sleeper battleship room. Frigate escorts will usually spawn in a group of 4-5. Battleship prefers to orbit at roughly 40 km.",
+   "dpsCheck": true,
+   "npcs": [
+    {
+     "class": "Battleship",
+     "count": "1",
+     "names": [
+      "Bathyic Abyssal Overmind"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Frigate",
+     "count": "2",
+     "names": [
+      "Blastneedle Tessella"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Frigate",
+     "count": "1",
+     "names": [
+      "Gazedimmer Tessella"
+     ],
+     "ewar": [
+      "sensorDamp"
+     ]
+    },
+    {
+     "class": "Frigate",
+     "count": "1-2",
+     "names": [
+      "Fogcaster Tessella"
+     ],
+     "ewar": [
+      "trackingDisruption"
+     ]
+    }
+   ]
+  },
+  {
+   "tier": 3,
+   "faction": "drones",
+   "note": "Frigate swarm size decreases with more Rodivas present. Easy and fast room that requires little tanking effort.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Elite Frigate",
+     "count": "5",
+     "names": [
+      "Emberlance Tessella"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Frigate",
+     "count": "2",
+     "names": [
+      "Fogcaster Tessella"
+     ],
+     "ewar": [
+      "trackingDisruption"
+     ]
+    },
+    {
+     "class": "Frigate",
+     "count": "2",
+     "names": [
+      "Gazedimmer Tessella"
+     ],
+     "ewar": [
+      "sensorDamp"
+     ]
+    },
+    {
+     "class": "Cruiser",
+     "count": "1-3",
+     "names": [
+      "Renewing Rodiva"
+     ],
+     "ewar": []
+    }
+   ]
+  },
+  {
+   "tier": 3,
+   "faction": "drones",
+   "note": "Usually will spawn three battlecruisers + remote repair frigates. Frequently can spawn Snarecasters (Web) which pose a speed danger due to the larger ships' high point-blank tracking and DPS. Frigate escort will always be either Snarecasters or Fieldweavers/Plateforgers. Every tier above this follows the same logic. Maximum of 4 Tessera battlecruisers observed.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Battlecruiser",
+     "count": "1-2",
+     "names": [
+      "Sparkgrip Tessera"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Battlecruiser",
+     "count": "1",
+     "names": [
+      "Strikegrip Tessera"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Battlecruiser",
+     "count": "1",
+     "names": [
+      "Embergrip Tessera"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Frigate",
+     "count": "2",
+     "names": [
+      "Plateforger Tessella"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Frigate",
+     "count": "3",
+     "names": [
+      "Snarecaster Tessella"
+     ],
+     "ewar": [
+      "web"
+     ]
+    }
+   ]
+  },
+  {
+   "tier": 3,
+   "faction": "angel",
+   "note": "Lucifer Cynabal and its elite variant are interchangable. Typical spawn includes 1-2 Cynabals and roughly 5-6 frigates. Strongest spawn recorded: 2 Lucifer Cynabals, 2 Elite Lucifer Cynabals, 1 Lucifer Swordspine. Elite variants are a common sight in this tier and subsequent ones and will frequently target drones.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Cruiser",
+     "count": "0-2",
+     "names": [
+      "Lucifer Ixion"
+     ],
+     "ewar": [
+      "targetPaint",
+      "guidanceDisruption"
+     ]
+    },
+    {
+     "class": "Cruiser",
+     "count": "0-3",
+     "names": [
+      "Lucifer Cynabal"
+     ],
+     "ewar": [
+      "web",
+      "neut"
+     ]
+    },
+    {
+     "class": "Elite Cruiser",
+     "count": "0-2",
+     "names": [
+      "Elite Lucifer Cynabal"
+     ],
+     "ewar": [
+      "web",
+      "neut"
+     ]
+    },
+    {
+     "class": "Frigate",
+     "count": "3-6",
+     "names": [
+      "Lucifer Dramiel",
+      "Elite Lucifer Dramiel",
+      "Lucifer Medusa",
+      "Lucifer Swordspine"
+     ],
+     "ewar": []
+    }
+   ]
+  },
+  {
+   "tier": 3,
+   "faction": "sleepers",
+   "note": "DPS check room, most likely to kill via timeout. This tier is the first to spawn multiple Deepwatcher battleships. Roughly 450 DPS needed to clear within a safe time limit, +100 in Firestorm (546 DPS cleared room in 6 minutes.)",
+   "dpsCheck": true,
+   "npcs": [
+    {
+     "class": "Battleship",
+     "count": "2",
+     "names": [
+      "Lucid Deepwatcher"
+     ],
+     "ewar": [
+      "targetPaint"
+     ]
+    },
+    {
+     "class": "Cruiser",
+     "count": "0-1",
+     "names": [
+      "Ephialtes Lancer"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Frigate",
+     "count": "0-1",
+     "names": [
+      "Lucid Escort",
+      "Lucid Aegis"
+     ],
+     "ewar": []
+    }
+   ]
+  },
+  {
+   "tier": 3,
+   "faction": "sleepers",
+   "note": "Sleeper spawns can include up to 5 Sleeper cruisers. If such a spawn occurs, no frigates spawn, though some cruisers may be replaced with Ephialtes or Drifter cruisers. Typical layout involves 1-2 cruisers and approximately 6-7 frigates.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Cruiser",
+     "count": "0-2",
+     "names": [
+      "Lucid Upholder"
+     ],
+     "ewar": [
+      "web"
+     ]
+    },
+    {
+     "class": "Frigate",
+     "count": "1-6",
+     "names": [
+      "Lucid Firewatcher"
+     ],
+     "ewar": [
+      "neut"
+     ]
+    },
+    {
+     "class": "Frigate",
+     "count": "2",
+     "names": [
+      "Lucid Escort",
+      "Lucid Aegis"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Frigate",
+     "count": "1",
+     "names": [
+      "Lucid Warden"
+     ],
+     "ewar": [
+      "web"
+     ]
+    }
+   ]
+  },
+  {
+   "tier": 3,
+   "faction": "sleepers",
+   "note": "Typical Drifter layout is 4-6 cruisers and 1 battleship, rarely any more or less. Cruiser types are interchangable. Karybdis Tyrannos has roughly 40% shield, 33% armor (50% in Firestorm), 48% hull.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Battleship",
+     "count": "1",
+     "names": [
+      "Karybdis Tyrannos"
+     ],
+     "ewar": [],
+     "note": "approx. 41% shield, 24% armor, 45% structure"
+    },
+    {
+     "class": "Cruiser",
+     "count": "0-4",
+     "names": [
+      "Ephialtes Lancer",
+      "Ephialtes Spearfisher",
+      "Ephialtes Illuminator"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Cruiser",
+     "count": "0-4",
+     "names": [
+      "Scylla Tyrannos"
+     ],
+     "ewar": [
+      "web"
+     ]
+    }
+   ]
+  },
+  {
+   "tier": 3,
+   "faction": "sleepers",
+   "note": "EWAR management room. Spawn caps out at around 12 cruisers.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Cruiser",
+     "count": "2",
+     "names": [
+      "Ephialtes Lancer"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Cruiser",
+     "count": "1",
+     "names": [
+      "Scylla Tyrannos"
+     ],
+     "ewar": [
+      "neut"
+     ]
+    },
+    {
+     "class": "Cruiser",
+     "count": "4",
+     "names": [
+      "Ephialtes Confuser"
+     ],
+     "ewar": [
+      "trackingDisruption"
+     ]
+    },
+    {
+     "class": "Cruiser",
+     "count": "2",
+     "names": [
+      "Ephialtes Illuminator"
+     ],
+     "ewar": [
+      "targetPaint"
+     ]
+    }
+   ]
+  },
+  {
+   "tier": 3,
+   "faction": "triglavian",
+   "note": "Max 3 Drekavacs. Note that in some cases Drekavacs and/or Rodivas will never spawn and instead be replaced with a large Kikimora swarm. They ramp damage incredibly fast and are as dangerous as the Vedmak rooms. Kikimora spawn averages around 6-8 ships, spawn size decreases if Drekavacs are present. Rodivas will sometimes spawn alongside Rogue Drone frigate swarms. Rodivas and Drekavacs will never appear together.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Frigate",
+     "count": "1-2",
+     "names": [
+      "Striking Damavik"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Destroyer",
+     "count": "1-2",
+     "names": [
+      "Ghosting Kikimora"
+     ],
+     "ewar": [
+      "trackingDisruption"
+     ]
+    },
+    {
+     "class": "Cruiser",
+     "count": "0-2",
+     "names": [
+      "Renewing Rodiva"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Battlecruiser",
+     "count": "0-3",
+     "names": [
+      "Striking Drekavac"
+     ],
+     "ewar": []
+    }
+   ]
+  },
+  {
+   "tier": 3,
+   "faction": "triglavian",
+   "note": "Up to 4 Leshaks can spawn. Layout includes either 3 Leshaks and 3-4 rogue drone frigates, or 4 Leshaks and no frigates.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Battleship",
+     "count": "2-3",
+     "names": [
+      "Striking Leshak"
+     ],
+     "ewar": [],
+     "note": "Heavily damaged"
+    },
+    {
+     "class": "Battleship",
+     "count": "1",
+     "names": [
+      "Renewing Leshak"
+     ],
+     "ewar": [],
+     "note": "Has strong remote repairs"
+    },
+    {
+     "class": "Frigate",
+     "count": "0-3",
+     "names": [
+      "Gazedimmer Tessella"
+     ],
+     "ewar": [
+      "sensorDamp"
+     ]
+    }
+   ]
+  },
+  {
+   "tier": 3,
+   "faction": "triglavian",
+   "note": "Number of Vedmaks appears to be capped at 2. This room can spawn with a varying number of Rogue Drone frigates (usually the Needle type.)",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Cruiser",
+     "count": "1",
+     "names": [
+      "Harrowing Vedmak"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Cruiser",
+     "count": "1",
+     "names": [
+      "Starving Vedmak"
+     ],
+     "ewar": [
+      "neut"
+     ]
+    },
+    {
+     "class": "Frigate",
+     "count": "2",
+     "names": [
+      "Ghosting Damavik"
+     ],
+     "ewar": [
+      "trackingDisruption"
+     ]
+    },
+    {
+     "class": "Frigate",
+     "count": "1",
+     "names": [
+      "Striking Damavik"
+     ],
+     "ewar": []
+    }
+   ]
+  },
+  {
+   "tier": 3,
+   "faction": "triglavian",
+   "note": "Largest DPS spawn is 3 Harrowing Vila Vedmaks. Generally this is the easiest variant of the Triglavian rooms other than Rogue Drone/Rodiva combinations, though the drone swarms may pose a problem for frigates.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Cruiser",
+     "count": "1",
+     "names": [
+      "Harrowing Vila Vedmak"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Frigate",
+     "count": "1",
+     "names": [
+      "Striking Vila Damavik"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Frigate",
+     "count": "3",
+     "names": [
+      "Anchoring Vila Damavik"
+     ],
+     "ewar": [
+      "warpScramble"
+     ]
+    },
+    {
+     "class": "Drone",
+     "count": "16",
+     "names": [
+      "Vila Swarmer"
+     ],
+     "ewar": [],
+     "note": "Avoid destroying"
+    }
+   ]
+  },
+  {
+   "tier": 3,
+   "faction": "sansha",
+   "note": "Up to 3 Knights will spawn. Frigate swarm size is inversely proportional to the number of Knights. Assuming no Knights spawn, the frigate group size approximates around 10-12 ships - with 3 Knights there will be only 1 or 2 frigates. DO NOT attempt to fight at brawling range if your fit isn't specifically tailored to that.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Cruiser",
+     "count": "0-3",
+     "names": [
+      "Devoted Knight"
+     ],
+     "ewar": [
+      "web",
+      "neut"
+     ]
+    },
+    {
+     "class": "Frigate",
+     "count": "1-10",
+     "names": [
+      "Devoted Hunter",
+      "Devoted Smith",
+      "Devoted Herald"
+     ],
+     "ewar": []
+    }
+   ]
+  },
+  {
+   "tier": 4,
+   "faction": "concord",
+   "note": "Up to 5 battleships will spawn. Weakest spawn w/o any battleships will feature at least two cruisers and 6+ frigates.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Frigate",
+     "count": "2",
+     "names": [
+      "Marker Pacifier Disparu Troop"
+     ],
+     "ewar": [
+      "targetPaint"
+     ]
+    },
+    {
+     "class": "Cruiser",
+     "count": "0-4",
+     "names": [
+      "Assault Enforcer Disparu Troop"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Battleship",
+     "count": "0-4",
+     "names": [
+      "Thunderchild Disparu Troop"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Battleship",
+     "count": "0-5",
+     "names": [
+      "Arrester Marshal Disparu Troop"
+     ],
+     "ewar": [
+      "web"
+     ]
+    }
+   ]
+  },
+  {
+   "tier": 4,
+   "faction": "drones",
+   "note": "Drone BS turret range is about 41 km. Heavily standardized armor resists, thermal damage seems to be the best on average. Tier 4 Drone BS is the hardest one to speed tank as it has the best tracking of the six variants (4.33), though it still struggles to apply at close range or to AB-fitted cruisers. It also orbits closer to you compared to most other Overmind variants except the T1 one (AB-fit Gila recorded 30km orbit average).",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Battleship",
+     "count": "1",
+     "names": [
+      "Hadal Abyssal Overmind"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Frigate",
+     "count": "2",
+     "names": [
+      "Spotlighter Tessella"
+     ],
+     "ewar": [
+      "targetPaint"
+     ]
+    },
+    {
+     "class": "Frigate",
+     "count": "2",
+     "names": [
+      "Fogcaster Tessella"
+     ],
+     "ewar": [
+      "trackingDisruption"
+     ]
+    },
+    {
+     "class": "Frigate",
+     "count": "2",
+     "names": [
+      "Fieldweaver Tessella"
+     ],
+     "ewar": [],
+     "note": "Uses remote shield logi"
+    },
+    {
+     "class": "Frigate",
+     "count": "1",
+     "names": [
+      "Emberneedle Tessella"
+     ],
+     "ewar": []
+    }
+   ]
+  },
+  {
+   "tier": 4,
+   "faction": "drones",
+   "note": "Drone swarm averages around 16-20 ships.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Frigate",
+     "count": "10",
+     "names": [
+      "Blastlance Tessella"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Frigate",
+     "count": "2",
+     "names": [
+      "Snarecaster Tessella"
+     ],
+     "ewar": [
+      "web"
+     ]
+    },
+    {
+     "class": "Frigate",
+     "count": "3",
+     "names": [
+      "Spotlighter Tessella"
+     ],
+     "ewar": [
+      "targetPaint"
+     ]
+    }
+   ]
+  },
+  {
+   "tier": 4,
+   "faction": "drones",
+   "note": "Maximum 5 Drone Battlecruisers. Frigate escort is guaranteed to be either Fieldweaver/Plateforger remote reps or Snarecaster webbing, like T3.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Battlecruiser",
+     "count": "2",
+     "names": [
+      "Strikegrip Tessera"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Battlecruiser",
+     "count": "1",
+     "names": [
+      "Sparkgrip Tessera"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Battlecruiser",
+     "count": "2",
+     "names": [
+      "Embergrip Tessera"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Frigate",
+     "count": "0-6",
+     "names": [
+      "Fieldweaver Tessella",
+      "Plateforger Tessella"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Frigate",
+     "count": "0-5",
+     "names": [
+      "Snarecaster Tessella"
+     ],
+     "ewar": [
+      "web"
+     ]
+    }
+   ]
+  },
+  {
+   "tier": 4,
+   "faction": "angel",
+   "note": "Max 5 Cynabals. Strongest DPS spawn recorded: 2 Elite Lucifer Cynabals, 3 Lucifer Cynabals, 1 Lucifer Ixion, 1-2 frigates. Consider having some beefed up EM resist tank for this room. This tier and subsequent ones will easily web you to a standstill so don't expect to speed tank at all.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Cruiser",
+     "count": "0-2",
+     "names": [
+      "Lucifer Ixion"
+     ],
+     "ewar": [
+      "targetPaint",
+      "guidanceDisruption"
+     ]
+    },
+    {
+     "class": "Cruiser",
+     "count": "0-5",
+     "names": [
+      "Lucifer Cynabal"
+     ],
+     "ewar": [
+      "web",
+      "neut"
+     ]
+    },
+    {
+     "class": "Elite Cruiser",
+     "count": "0-5",
+     "names": [
+      "Elite Lucifer Cynabal"
+     ],
+     "ewar": [
+      "web",
+      "neut"
+     ]
+    },
+    {
+     "class": "Frigate",
+     "count": "3-6",
+     "names": [
+      "Lucifer Dramiel",
+      "Elite Lucifer Dramiel",
+      "Lucifer Medusa",
+      "Lucifer Swordspine"
+     ],
+     "ewar": []
+    }
+   ]
+  },
+  {
+   "tier": 4,
+   "faction": "sleepers",
+   "note": "Mostly the same as in T3 with additional frigate and cruiser escort. If you can clear the T3 variant quickly enough this one should not necessitate that much more DPS.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Battleship",
+     "count": "2",
+     "names": [
+      "Lucid Deepwatcher"
+     ],
+     "ewar": [
+      "targetPaint"
+     ]
+    },
+    {
+     "class": "Cruiser",
+     "count": "1-3",
+     "names": [
+      "Ephialtes Dissipator"
+     ],
+     "ewar": [
+      "neut"
+     ]
+    },
+    {
+     "class": "Frigate",
+     "count": "1",
+     "names": [
+      "Lucid Firewatcher"
+     ],
+     "ewar": [
+      "neut"
+     ]
+    },
+    {
+     "class": "Frigate",
+     "count": "3",
+     "names": [
+      "Lucid Aegis"
+     ],
+     "ewar": []
+    }
+   ]
+  },
+  {
+   "tier": 4,
+   "faction": "sleepers",
+   "note": "Drifter BS has 62% shield, 37% armor and 41% structure. Escort fleet looks to be around 8-9 ships.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Battleship",
+     "count": "1",
+     "names": [
+      "Karybdis Tyrannos"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Cruiser",
+     "count": "3",
+     "names": [
+      "Scylla Tyrannos"
+     ],
+     "ewar": [
+      "warpScramble"
+     ]
+    },
+    {
+     "class": "Cruiser",
+     "count": "2",
+     "names": [
+      "Ephialtes Obfuscator"
+     ],
+     "ewar": [
+      "sensorDamp"
+     ]
+    },
+    {
+     "class": "Cruiser",
+     "count": "2",
+     "names": [
+      "Scylla Tyrannos"
+     ],
+     "ewar": [
+      "web"
+     ]
+    }
+   ]
+  },
+  {
+   "tier": 4,
+   "faction": "sleepers",
+   "note": "Spawn without cruisers will feature ~15 frigates. Full cruiser spawn will average roughly 8 ships and will almost always split between Lucid/Ephialtes/Drifter cruisers.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Cruiser",
+     "count": "0-7",
+     "names": [
+      "Lucid Watchman",
+      "Lucid Upholder",
+      "Lucid Sentinel"
+     ],
+     "ewar": [
+      "web"
+     ]
+    },
+    {
+     "class": "Cruiser",
+     "count": "0-4",
+     "names": [
+      "Scylla Tyrannos"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Cruiser",
+     "count": "0-4",
+     "names": [
+      "Ephialtes Lancer"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Frigate",
+     "count": "0-15",
+     "names": [
+      "Lucid Escort",
+      "Lucid Warden",
+      "Lucid Firewatcher"
+     ],
+     "ewar": []
+    }
+   ]
+  },
+  {
+   "tier": 4,
+   "faction": "triglavian",
+   "note": "Maximum 4 Vedmaks plus a Damavik or two. No Vedmak spawn appears to feature at least 10-12 Damaviks, but this is rare and will usually come with Rogue Drone frigates. Full neut room in this tier will nuke your capacitor within a minute if you're not in Electrical.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Cruiser",
+     "count": "0-4",
+     "names": [
+      "Harrowing Vedmak",
+      "Starving Vedmak"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Frigate",
+     "count": "0-12",
+     "names": [
+      "Anchoring Damavik"
+     ],
+     "ewar": [
+      "warpScramble"
+     ]
+    }
+   ]
+  },
+  {
+   "tier": 4,
+   "faction": "triglavian",
+   "note": "Up to 5 Leshaks.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Battleship",
+     "count": "1",
+     "names": [
+      "Striking Leshak"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Battleship",
+     "count": "2",
+     "names": [
+      "Blinding Leshak"
+     ],
+     "ewar": [
+      "sensorDamp"
+     ]
+    },
+    {
+     "class": "Battleship",
+     "count": "2",
+     "names": [
+      "Starving Leshak"
+     ],
+     "ewar": [
+      "neut"
+     ]
+    },
+    {
+     "class": "Frigate",
+     "count": "1",
+     "names": [
+      "Snarecaster Tessella"
+     ],
+     "ewar": [
+      "web"
+     ]
+    }
+   ]
+  },
+  {
+   "tier": 4,
+   "faction": "triglavian",
+   "note": "Up to 4 Harrowing Vila Vedmaks.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Cruiser",
+     "count": "0-4",
+     "names": [
+      "Harrowing Vila Vedmak"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Frigate",
+     "count": "1",
+     "names": [
+      "Shining Vila Damavik"
+     ],
+     "ewar": [
+      "targetPaint"
+     ]
+    },
+    {
+     "class": "Frigate",
+     "count": "3",
+     "names": [
+      "Ghosting Vila Damavik"
+     ],
+     "ewar": [
+      "trackingDisruption"
+     ]
+    },
+    {
+     "class": "Frigate",
+     "count": "1",
+     "names": [
+      "Anchoring Vila Damavik"
+     ],
+     "ewar": [
+      "warpScramble"
+     ]
+    },
+    {
+     "class": "Drone",
+     "count": "23",
+     "names": [
+      "Vila Swarmer"
+     ],
+     "ewar": []
+    }
+   ]
+  },
+  {
+   "tier": 4,
+   "faction": "triglavian",
+   "note": "The Kikimora-only spawn will average around 8-10 ships. Less if Drekavacs or Rodivas are present.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Battlecruiser",
+     "count": "0-4",
+     "names": [
+      "Striking Drekavac",
+      "Shining Drekavac"
+     ],
+     "ewar": [
+      "targetPaint"
+     ]
+    },
+    {
+     "class": "Cruiser",
+     "count": "0-3",
+     "names": [
+      "Renewing Rodiva"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Destroyer",
+     "count": "1-8",
+     "names": [
+      "Striking Kikimora"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Frigate",
+     "count": "0-12",
+     "names": [
+      "Anchoring Damavik"
+     ],
+     "ewar": [
+      "warpScramble"
+     ]
+    }
+   ]
+  },
+  {
+   "tier": 4,
+   "faction": "sansha",
+   "note": "Up to 4 Devoted Knights will spawn. Number of Knights determine size of frigate escort.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Cruiser",
+     "count": "0-4",
+     "names": [
+      "Devoted Knight"
+     ],
+     "ewar": [
+      "web",
+      "neut"
+     ]
+    },
+    {
+     "class": "Frigate",
+     "count": "1-10",
+     "names": [
+      "Devoted Hunter",
+      "Devoted Smith",
+      "Devoted Herald"
+     ],
+     "ewar": []
+    }
+   ]
+  },
+  {
+   "tier": 5,
+   "faction": "concord",
+   "note": null,
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Frigate",
+     "count": "2",
+     "names": [
+      "Marker Pacifier Disparu Troop"
+     ],
+     "ewar": [
+      "targetPaint"
+     ]
+    },
+    {
+     "class": "Cruiser",
+     "count": "2",
+     "names": [
+      "Assault Enforcer Disparu Troop"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Battleship",
+     "count": "1",
+     "names": [
+      "Thunderchild Disparu Troop"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Battleship",
+     "count": "2",
+     "names": [
+      "Arrester Marshal Disparu Troop"
+     ],
+     "ewar": [
+      "web"
+     ]
+    },
+    {
+     "class": "Battleship",
+     "count": "1",
+     "names": [
+      "Drainer Marshal Disparu Troop"
+     ],
+     "ewar": [
+      "neut"
+     ]
+    }
+   ]
+  },
+  {
+   "tier": 5,
+   "faction": "drones",
+   "note": "Drone battleship now gains stasis web with 15 km range in this tier (as well as T6).",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Battleship",
+     "count": "1",
+     "names": [
+      "Benthic Abyssal Overmind"
+     ],
+     "ewar": [
+      "web"
+     ],
+     "note": "Webs up to 15 km"
+    },
+    {
+     "class": "Frigate",
+     "count": "4",
+     "names": [
+      "Snarecaster Tessella"
+     ],
+     "ewar": [
+      "web"
+     ]
+    },
+    {
+     "class": "Frigate",
+     "count": "3",
+     "names": [
+      "Fogcaster Tessella"
+     ],
+     "ewar": [
+      "trackingDisruption"
+     ]
+    },
+    {
+     "class": "Frigate",
+     "count": "4",
+     "names": [
+      "Fieldweaver Tessella"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Frigate",
+     "count": "2",
+     "names": [
+      "Spotlighter Tessella"
+     ],
+     "ewar": [
+      "targetPaint"
+     ]
+    }
+   ]
+  },
+  {
+   "tier": 5,
+   "faction": "drones",
+   "note": null,
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Battlecruiser",
+     "count": "2",
+     "names": [
+      "Embergrip Tessera"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Battlecruiser",
+     "count": "1",
+     "names": [
+      "Blastgrip Tessera"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Battlecruiser",
+     "count": "3",
+     "names": [
+      "Sparkgrip Tessera"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Frigate",
+     "count": "4",
+     "names": [
+      "Plateforger Tessella"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Frigate",
+     "count": "2",
+     "names": [
+      "Snarecaster Tessella"
+     ],
+     "ewar": [
+      "web"
+     ]
+    }
+   ]
+  },
+  {
+   "tier": 5,
+   "faction": "drones",
+   "note": null,
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Frigate",
+     "count": "4-5",
+     "names": [
+      "Emberlance Tessella"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Frigate",
+     "count": "1-2",
+     "names": [
+      "Blastlance Tessella"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Frigate",
+     "count": "2",
+     "names": [
+      "Spotlighter Tessella"
+     ],
+     "ewar": [
+      "targetPaint"
+     ]
+    },
+    {
+     "class": "Frigate",
+     "count": "3-4",
+     "names": [
+      "Gazedimmer Tessella"
+     ],
+     "ewar": [
+      "sensorDamp"
+     ]
+    }
+   ]
+  },
+  {
+   "tier": 5,
+   "faction": "sleepers",
+   "note": null,
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Cruiser",
+     "count": "4",
+     "names": [
+      "Scylla Tyrannos"
+     ],
+     "ewar": [
+      "neut"
+     ]
+    },
+    {
+     "class": "Cruiser",
+     "count": "3",
+     "names": [
+      "Ephialtes Spearfisher"
+     ],
+     "ewar": [
+      "warpScramble"
+     ]
+    },
+    {
+     "class": "Cruiser",
+     "count": "2",
+     "names": [
+      "Lucid Watchman"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Cruiser",
+     "count": "2",
+     "names": [
+      "Ephialtes Lancer"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Cruiser",
+     "count": "3",
+     "names": [
+      "Lucid Upholder"
+     ],
+     "ewar": [
+      "web"
+     ]
+    }
+   ]
+  },
+  {
+   "tier": 5,
+   "faction": "sleepers",
+   "note": "Escort size will approach 10-12 ships.",
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Battleship",
+     "count": "1",
+     "names": [
+      "Karybdis Tyrannos"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Cruiser",
+     "count": "3",
+     "names": [
+      "Ephialtes Dissipator"
+     ],
+     "ewar": [
+      "neut"
+     ]
+    },
+    {
+     "class": "Cruiser",
+     "count": "2",
+     "names": [
+      "Scylla Tyrannos"
+     ],
+     "ewar": [
+      "web"
+     ]
+    },
+    {
+     "class": "Cruiser",
+     "count": "1",
+     "names": [
+      "Scylla Tyrannos"
+     ],
+     "ewar": [
+      "warpScramble"
+     ]
+    },
+    {
+     "class": "Cruiser",
+     "count": "3",
+     "names": [
+      "Ephialtes Entangler"
+     ],
+     "ewar": [
+      "web"
+     ]
+    },
+    {
+     "class": "Cruiser",
+     "count": "2",
+     "names": [
+      "Ephialtes Illuminator"
+     ],
+     "ewar": [
+      "targetPaint"
+     ]
+    }
+   ]
+  },
+  {
+   "tier": 5,
+   "faction": "sleepers",
+   "note": "Once again, most dangerous DPS check room. BS spawn now comes in trios!",
+   "dpsCheck": true,
+   "npcs": [
+    {
+     "class": "Battleship",
+     "count": "3",
+     "names": [
+      "Lucid Deepwatcher"
+     ],
+     "ewar": [
+      "targetPaint"
+     ]
+    },
+    {
+     "class": "Frigate",
+     "count": "0-1",
+     "names": [
+      "Lucid Escort"
+     ],
+     "ewar": []
+    }
+   ]
+  },
+  {
+   "tier": 5,
+   "faction": "triglavian",
+   "note": null,
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Cruiser",
+     "count": "1",
+     "names": [
+      "Harrowing Vedmak"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Cruiser",
+     "count": "2",
+     "names": [
+      "Starving Vedmak"
+     ],
+     "ewar": [
+      "neut"
+     ]
+    },
+    {
+     "class": "Frigate",
+     "count": "3",
+     "names": [
+      "Starving Damavik"
+     ],
+     "ewar": [
+      "neut"
+     ]
+    },
+    {
+     "class": "Frigate",
+     "count": "1",
+     "names": [
+      "Tangling Damavik"
+     ],
+     "ewar": [
+      "web"
+     ]
+    }
+   ]
+  },
+  {
+   "tier": 5,
+   "faction": "triglavian",
+   "note": null,
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Battleship",
+     "count": "1",
+     "names": [
+      "Tangling Leshak"
+     ],
+     "ewar": [
+      "web"
+     ]
+    },
+    {
+     "class": "Battleship",
+     "count": "1",
+     "names": [
+      "Warding Leshak"
+     ],
+     "ewar": [],
+     "note": "Same as striking variant, but has more hull damage"
+    },
+    {
+     "class": "Battleship",
+     "count": "4",
+     "names": [
+      "Renewing Leshak"
+     ],
+     "ewar": [],
+     "note": "Uses remote armor repairers"
+    },
+    {
+     "class": "Frigate",
+     "count": "3",
+     "names": [
+      "Plateforger Tessella"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Frigate",
+     "count": "4",
+     "names": [
+      "Spotlighter Tessella"
+     ],
+     "ewar": [
+      "targetPaint"
+     ]
+    }
+   ]
+  },
+  {
+   "tier": 5,
+   "faction": "triglavian",
+   "note": null,
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Cruiser",
+     "count": "3",
+     "names": [
+      "Harrowing Vila Vedmak"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Frigate",
+     "count": "2",
+     "names": [
+      "Ghosting Vila Damavik"
+     ],
+     "ewar": [
+      "trackingDisruption"
+     ]
+    },
+    {
+     "class": "Frigate",
+     "count": "3",
+     "names": [
+      "Anchoring Vila Damavik"
+     ],
+     "ewar": [
+      "warpScramble"
+     ]
+    },
+    {
+     "class": "Frigate",
+     "count": "1",
+     "names": [
+      "Striking Vila Damavik"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Drone",
+     "count": "30",
+     "names": [
+      "Vila Swarmer"
+     ],
+     "ewar": []
+    }
+   ]
+  },
+  {
+   "tier": 5,
+   "faction": "triglavian",
+   "note": null,
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Frigate",
+     "count": "3",
+     "names": [
+      "Tangling Damavik"
+     ],
+     "ewar": [
+      "web"
+     ]
+    },
+    {
+     "class": "Destroyer",
+     "count": "1",
+     "names": [
+      "Striking Kikimora"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Battlecruiser",
+     "count": "5",
+     "names": [
+      "Striking Drekavac"
+     ],
+     "ewar": []
+    }
+   ]
+  },
+  {
+   "tier": 6,
+   "faction": "drones",
+   "note": null,
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Frigate",
+     "count": "2",
+     "names": [
+      "Spotlighter Tessella"
+     ],
+     "ewar": [
+      "targetPaint"
+     ]
+    },
+    {
+     "class": "Frigate",
+     "count": "1",
+     "names": [
+      "Gazedimmer Tessella"
+     ],
+     "ewar": [
+      "sensorDamp"
+     ]
+    },
+    {
+     "class": "Frigate",
+     "count": "3",
+     "names": [
+      "Snarecaster Tessella"
+     ],
+     "ewar": [
+      "web"
+     ]
+    },
+    {
+     "class": "Frigate",
+     "count": "1",
+     "names": [
+      "Fogcaster Tessella"
+     ],
+     "ewar": [
+      "trackingDisruption"
+     ]
+    },
+    {
+     "class": "Battleship",
+     "count": "1",
+     "names": [
+      "Endobenthic Abyssal Overmind"
+     ],
+     "ewar": [
+      "web"
+     ]
+    }
+   ]
+  },
+  {
+   "tier": 6,
+   "faction": "triglavian",
+   "note": null,
+   "dpsCheck": false,
+   "npcs": [
+    {
+     "class": "Cruiser",
+     "count": "5",
+     "names": [
+      "Harrowing Vedmak"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Frigate",
+     "count": "3",
+     "names": [
+      "Striking Damavik"
+     ],
+     "ewar": []
+    },
+    {
+     "class": "Frigate",
+     "count": "1",
+     "names": [
+      "Tangling Damavik"
+     ],
+     "ewar": [
+      "web"
+     ]
+    },
+    {
+     "class": "Frigate",
+     "count": "2",
+     "names": [
+      "Starving Damavik"
+     ],
+     "ewar": [
+      "neut"
+     ]
+    }
+   ]
+  }
+ ],
+ "general": [
+  "Unlike in most other regions in EVE, Abyssal Deadspace NPCs have very clear naming patterns and will have either a prefix or suffix that states what special abilities they have.",
+  "This makes target prioritization easier, which is extremely important in the Abyss: the general best strategy in most rooms is to start out by killing any EWAR that poses a threat to your ship. Depending on your fit, this can mean Neutralizers, Webs, Warp scramblers, Tracking/Guidance disruptors, or, if the pocket has battleships, Target Painters.",
+  "You should also pay attention on whether dedicated remote repair ships are on grid; if you can't kill other frigates before repairs land, prioritize killing remote repairs first. After the dangerous EWAR and remote repair ships are dead, you can focus on the damage dealers in your preferred order.",
+  "Vila Swarmers DO NOT need to be destroyed; they will deactivate when their linked ship is destroyed and if they are still there, if all other ships are destroyed, the conduit will still unlock. Sleeper frigates and cruisers, Drifter cruisers, and rogue drone frigates and battlecruisers like to target drones, so watch them and recall them if necessary. Generic damage dealer ships (Ephialtes Lancer, Lucid Aegis, etc.) and tackle ships (Anchoring/Tangling Damavik, Lucid Upholder, Ephialtes Spearfisher, etc.) will target your drones the most often.",
+  "Harrowing Vedmaks do not use target painters despite their prefix normally indicating so.",
+  "Triglavian and Rogue Drone rooms may not be fully accurate as the enemies will typically spawn interchangably regardless of faction.",
+  "Rooms labeled DPS check rooms typically take the longest on an EHP-average, but this may vary in reality due to the different NPC AI mechanics.",
+  "Triglavian Extraction Nodes/SubNodes are not present in T0 Abyssal sites.",
+  "The amount of loot are determined with the number of filament used. (e.g. Frigate gets 3 times the loot of a Cruiser because Frigate uses 3 filaments per run.) Extraction Node/SubNode loot is not modified by number of filament used, but increases with difficulty tier. Bioadaptive/Biocombinative Cache will always drop loot, Nodes/SubNodes do not guarantee loot drops."
+ ]
+}

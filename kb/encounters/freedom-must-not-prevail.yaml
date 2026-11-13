@@ -1,0 +1,40 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: freedom-must-not-prevail
+kind: mission
+name: Freedom Must Not Prevail
+level: 2
+enemyFaction: Minmatar Republic
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Freedom Must Not Prevail
+    url: https://wiki.eveuniversity.org/Freedom_Must_Not_Prevail
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191709"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal:
+    - thermal
+    - kinetic
+  resist:
+    - kinetic
+notes:
+  - text: "Suggested ships: Cruiser, Assault Frigate"
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: thumb|left|Damage info for Minmatar Freedom Fighter Click for full size
+    waves:
+      - id: initial-group-40-50km-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group, 40-50km (auto-aggro)
+        spawns:
+          - count: "7"
+            class: Frigate
+            names:
+              - Minmatar Freedom Fighter

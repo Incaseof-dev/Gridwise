@@ -1,0 +1,164 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: true-sansha-fleet-staging-point
+kind: complex
+name: True Sansha Fleet Staging Point
+dedRating: null
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – True Sansha Fleet Staging Point
+    url: https://wiki.eveuniversity.org/True_Sansha_Fleet_Staging_Point
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "227876"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Battleships"
+notes:
+  - text: The site can be difficult due to energy neutralizer sentries in the second room. Advise fitting for a strong tank against EM and Thermal damage. Warping to the site lands you on an ancient acceleration gate.
+  - text: "Escalation: Destroying all enemy ships may trigger an escalation to True Sansha Fleet Staging Point 2."
+  - text: "Escalation: Escalation start: Reading Sansha databursts from a nearby system. High likelihood of further Sansha forces. Coordinates uploaded to Expedition panel."
+pockets:
+  - name: First Pocket
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Centior Abomination
+              - Centior Devourer
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Centatis Devil
+              - Centatis Phantasm
+          - count: "4"
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Dread Lord
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Centior Abomination
+              - Centior Monster
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Centatis Devil
+              - Centatis Phantasm
+          - count: "6"
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Dread Lord
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: Locked
+    onWarpIn: Continued sightings of Sansha flotillas suggest the presence of a fleet staging point. Should any CONCORD or otherwise friendly forces discover the location of this site, their standing orders are to engage and eliminate any enemy forces, then perform a follow-up strike on any further Sansha bases revealed through gathered intel.
+  - name: Second Pocket
+    notes:
+      - text: Energy Meutralizer Sentries have a decent amount of armor, so it takes a while to destroy them, even with a high DPS battleship. Their range is exactly 115km. If you are in range of both Energy Neutralizer Sentries and don't have a cap booster fitted, you will run out of capacitor before you destroy even one of them. Some good approaches are either using cap boosters or a Micro Jump Drive to get out of the range of the sentries. It is not mandatory to destroy them for the site to be completed and/or to get an escalation.
+      - text: This site does not drop any special loot.
+    waves:
+      - id: initial-wave
+        trigger:
+          on: warpIn
+          text: Initial wave
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Sansha Energy Neutralizer Sentry II
+            ewar:
+              - kind: neut
+            note: Neuts 20 GJ/s
+          - count: "2"
+            class: Sentry
+            names:
+              - Sansha Point Defense Battery
+          - count: "4"
+            class: Sentry
+            names:
+              - Sansha Cruise Missile Battery
+          - count: 2-3
+            class: Destroyer
+            names:
+              - Centior Abomination
+              - Centior Devourer
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centatis Daemon
+          - count: "4"
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Dread Lord
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Centior Abomination
+              - Centior Monster
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Centatis Phantasm
+              - Centatis Devil
+          - count: "4"
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Dread Lord
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Centior Horror
+              - Centior Monster
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Centatis Phantasm
+              - Centatis Devil
+          - count: 3-4
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Dread Lord
+sde:
+  dungeonIds:
+    - 5210

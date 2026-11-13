@@ -1,0 +1,92 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: serpentis-burrow
+kind: anomaly
+name: Serpentis Burrow
+dedRating: null
+anomalyClass: 2
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Serpentis Burrow
+    url: https://wiki.eveuniversity.org/Serpentis_Burrow
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "222644"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: This variation features a large rock formation at the center of the anomaly.
+pockets:
+  - name: Rock formation
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Coreli Scout
+              - Coreli Initiate
+      - id: first-spawn
+        trigger:
+          on: other
+          text: First Spawn
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Coreli Agent
+              - Coreli Spy
+      - id: second-spawn
+        trigger:
+          on: other
+          text: Second Spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Coreli Scout
+              - Coreli Initiate
+      - id: third-spawn
+        trigger:
+          on: other
+          text: Third Spawn
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Coreli Scout
+              - Coreli Initiate
+      - id: fourth-spawn
+        trigger:
+          on: other
+          text: Fourth Spawn
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Frigate
+            names:
+              - Coreli Guard
+              - Coreli Safeguard
+      - id: bonus-spawn
+        trigger:
+          on: other
+          text: Bonus Spawn
+          confidence: inferred
+        spawns:
+          - count: 0-1
+            class: Frigate
+            names:
+              - Shadow Serpentis Initiate
+            drop: Shadow Serpentis ammo, sometimes faction module
+sde:
+  dungeonIds:
+    - 2218

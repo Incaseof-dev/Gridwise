@@ -1,0 +1,347 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: dread-pirate-scarlet
+kind: mission
+name: Dread Pirate Scarlet
+level: 4
+enemyFaction: Serpentis & Angel Cartel & Guristas Pirates & Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Dread Pirate Scarlet
+    url: https://wiki.eveuniversity.org/Dread_Pirate_Scarlet
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "230780"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Kill Anire Scarlet
+ewar:
+  - kind: ecm
+  - kind: sensorDamp
+  - kind: targetPaint
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite frigates (last pocket)"
+  - text: "Suggested ships: Battleship (clear), T2/T3/faction cruiser (blitz)"
+  - text: Every pocket in this mission has ships from one randomly selected faction. Your fit should be able to fight with all of them. You can bring an extra Gate Key to skip warpin area or to give to fleet members.
+  - text: The mission pockets are semi deadspace. This means that you can warp within a pocket grid but any warps from outside the pocket will land on the warpin area.
+  - text: "Blitz: Bring your own gate key and skip first room."
+  - text: "Blitz: Rush to acceleration gates and make your way to last room. All gates are open."
+  - text: "Blitz: Kill Scarlet and return to agent."
+pockets:
+  - name: Warp-in
+    notes:
+      - text: "Merchant message: Hey there, you must be the bounty hunter. Anire just boarded her ship. You should see her in the next area. To get inside you'll need to destroy their security guards and loot a passkey for the gate. We've just reported to them that you fired on our merchant convoy, so they'll be here shortly to respond. Good luck!"
+      - text: "Anire Scarlet, after taking the first gate: Well, well. You're the one who's given my boys some trouble, I see. Don't worry, I'll make this as fast and painless as possible. Anire Scarlet is nothing if not merciful."
+      - text: The gate deeper into the mission requires one Gate Key. The key is dropped by last battleship. The key is not consumed on use so you can keep it and skip fighting at warpin next time you get this mission.
+      - text: you can warp in at distance to snipe.
+      - text: At first some merchants are on the gate. The hostiles arrive soon. The hostiles are either Serpentis ships or Angel ships.
+    waves:
+      - id: initial-defenders-angel
+        trigger:
+          on: warpIn
+          text: Initial defenders (Angel)
+        spawns:
+          - count: "4"
+            class: Cruiser
+            names:
+              - Gistum Liquidator
+              - Gistum Marauder
+          - count: "5"
+            class: Battleship
+            names:
+              - Gist Malakim
+              - Gist Nephilim
+              - Gist Warlord
+            ewar:
+              - kind: targetPaint
+            drop: Last one drops the gate key.
+      - id: initial-defenders-serpentis
+        trigger:
+          on: warpIn
+          text: Initial defenders (Serpentis)
+        spawns:
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Corelum Chief Safeguard
+            ewar:
+              - kind: sensorDamp
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corelatis Squad Leader
+          - count: "4"
+            class: Battleship
+            names:
+              - Core Admiral
+              - Core High Admiral
+            drop: Last one drops the gate key.
+  - name: 1st pocket
+    notes:
+      - text: You will see Anire Scarlet when you warp in but she will warp to the next pocket once a hostile module of any kind is activated on her. However, you can kill her here if you can do so with one volley from grouped turrets. She will leave a normal wreck, but not the additional jet can with the +3 Charisma implant. Despite this, she will be present in the next pocket.
+      - text: This room contains either Guristas ships or Blood Raider ships.
+      - text: Gate to next room is not locked so you can skip combat. The gate is 29 km away.
+    waves:
+      - id: initial-defenders-guristas
+        trigger:
+          on: warpIn
+          text: Initial defenders (Guristas)
+        spawns:
+          - count: 3-5
+            class: Battlecruiser
+            names:
+              - Pithatis Enforcer
+            note: type list incomplete on the source page
+          - count: "4"
+            class: Battleship
+            names:
+              - Pith Exterminator
+              - Pith Eliminator
+            ewar:
+              - kind: ecm
+      - id: initial-defenders-blood-raider
+        trigger:
+          on: warpIn
+          text: Initial defenders (Blood Raider)
+        spawns:
+          - count: "4"
+            class: Cruiser
+            names:
+              - Corpum Arch Priest
+            note: type list incomplete on the source page
+          - count: "4"
+            class: Battleship
+            names:
+              - Corpus Cardinal
+              - Corpus Monsignor
+  - name: 2nd pocket
+    notes:
+      - text: You can see Anire again when you warp in. This time you will have enough time to get one or two shots at her. If you have enough DPS you can kill her here and complete the mission prematurely. If you manage to kill her here you will be able to loot an +3 charisma implant from her wreck. Anire Scarlet is most vulnerable to EM/Thermal damage; it is advisable to preload EMP ammo or Mjolnir missiles before warping into the pocket. Any fit that can deal at least 1000 DPS EM or can do at least 7-8k alpha in EM damage should be able to accomplish this.
+      - text: This room contains initially either Serpentis ships or Serpentis and Guristas ships. Regardless of which are present first more Guristas battleships will spawn as reinforcement.
+      - text: The gate to next room is again unlocked. The gate is 19 km away.
+    waves:
+      - id: initial-defenders-guristas-battleships
+        trigger:
+          on: warpIn
+          text: Initial defenders (Guristas battleships)
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corelior Artillery
+              - Corelior Cannoneer
+          - count: "4"
+            class: Battleship
+            names:
+              - Pith Conquistador
+              - Pith Massacrer
+      - id: initial-defenders-serpentis-battleships
+        trigger:
+          on: warpIn
+          text: Initial defenders (Serpentis battleships)
+        spawns:
+          - count: 3-5
+            class: Cruiser
+            names:
+              - Pithum Silencer
+          - count: "6"
+            class: Battleship
+            names:
+              - Core Port Admiral
+              - Core Rear Admiral
+      - id: spawn-serpentis
+        trigger:
+          on: other
+          text: Spawn (Serpentis)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battleship
+            names:
+              - Core Flotilla
+              - Core Vice Admiral
+            ewar:
+              - kind: sensorDamp
+      - id: spawn-guristas
+        trigger:
+          on: other
+          text: Spawn (Guristas)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battleship
+            names:
+              - Pith Eliminator
+              - Pith Extinguisher
+            ewar:
+              - kind: ecm
+  - name: 3rd pocket
+    notes:
+      - text: Last pocket. This time Anire Scarlet has nowhere to run to so you can finish her.
+      - text: The initial defenders are from a random faction. The spawn's faction is based on the initial defender's faction, if Guristas, then the spawn will be Blood Raider, if Angels then Serpentis. Anire Scarlet deals about 2-3x the damage of a normal NPC battlecruiser at 28km range.
+      - text: "Note: Scarlet's Station does not drop loot."
+      - text: The Angel/Guristas spawns will be roughly 50-75 km away from you. Blood Raiders/Serpentis spawns will be further, at ~100 km.
+      - text: Duration, Loot, Salvage
+      - text: (Sept 2020)
+      - text: "Ship Fit Used: Praxis"
+      - text: "Duration: 85mins (2 jumps away, salvaging of 10 minutes included)"
+      - text: "Loot: 10mil"
+      - text: "Salvage: 5mil"
+      - text: "Bounty: 29mil"
+    waves:
+      - id: initial-defenders-80-km
+        trigger:
+          on: warpIn
+          text: Initial defenders (80 km)
+        spawns:
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Anire Scarlet
+            triggers: Mission objective
+            drop: Chance of dropping +3 charisma implant
+          - count: "1"
+            class: Sentry
+            names:
+              - Angel Heavy Missile Battery
+          - count: "1"
+            class: Sentry
+            names:
+              - Blood Heavy Missile Battery
+          - count: "1"
+            class: Sentry
+            names:
+              - Guristas Cruise Missile Battery
+          - count: "1"
+            class: Sentry
+            names:
+              - Serpentis Cruise Missile Battery
+      - id: initial-defenders-angel-and-blood-raider
+        trigger:
+          on: warpIn
+          text: Initial defenders (Angel and Blood Raider)
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Rogue
+              - Arch Gistii Hijacker
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Breaker
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Gistatis Primus
+              - Gistatis Tribuni
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corpatis Bishop
+          - count: "4"
+            class: Battleship
+            names:
+              - Corpus Archon
+      - id: initial-defenders-guristas
+        trigger:
+          on: warpIn
+          text: Initial defenders (Guristas)
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Imputor
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Abolisher
+            ewar:
+              - kind: ecm
+            note: type list incomplete on the source page
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Pithatis Enforcer
+              - Pithatis Executor
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corpatis Bishop
+              - Corpatis Seer
+            group: Group 2 (100 km)
+          - count: "4"
+            class: Battleship
+            names:
+              - Corpus Archon
+              - Corpus Prophet
+            group: Group 2 (100 km)
+      - id: initial-defenders-serpentis-variant-1
+        trigger:
+          on: warpIn
+          text: Initial defenders (Serpentis variant 1)
+        spawns:
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corelatis Squad Leader
+              - Corelatis Wing Leader
+          - count: "4"
+            class: Battleship
+            names:
+              - Core Baron
+              - Core Commodore
+      - id: reinforcements
+        trigger:
+          on: other
+          text: Reinforcements
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battleship
+            names:
+              - Corpus Oracle
+              - Corpus Apostle
+      - id: initial-defenders-serpentis-variant-2
+        trigger:
+          on: warpIn
+          text: Initial defenders (Serpentis variant 2)
+        spawns:
+          - count: "4"
+            class: Battleship
+            names:
+              - Core Port Admiral
+              - Core Rear Admiral
+      - id: reinforcements-100-km
+        trigger:
+          on: other
+          text: Reinforcements (100 km)
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Battleship
+            names:
+              - Corpus Cardinal
+              - Corpus Patriarch
+      - id: initial-defenders-serpentis-variant-3
+        trigger:
+          on: warpIn
+          text: Initial defenders (Serpentis variant 3)
+        spawns:
+          - count: "5"
+            class: Battleship
+            names:
+              - Core Grand Admiral
+              - Core High Admiral

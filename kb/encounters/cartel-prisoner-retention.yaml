@@ -1,0 +1,201 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: cartel-prisoner-retention
+kind: complex
+name: Cartel Prisoner Retention
+dedRating: 8
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Cartel Prisoner Retention
+    url: https://wiki.eveuniversity.org/Cartel_Prisoner_Retention
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231505"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Battleships"
+notes:
+  - text: No Hostiles at initial gate.
+loot:
+  - item: 21st Tier Overseer's Effects
+    from: Angel Retention Facility
+    note: est. 80M ISK (wiki) · 100% drop rate
+  - item: Gist B-Type module
+    from: Angel Retention Facility
+  - item: Machariel BPC
+    from: Angel Retention Facility
+  - item: Domination module
+    from: Angel Prison Warden
+    note: rare
+  - item: Domination module
+    from: Angel Prisonwatch Commander
+    note: rare
+  - item: Domination module
+    from: Angel Cartel Jailor
+    note: rare
+  - item: Domination module
+    from: Watch Officer
+    note: rare
+pockets:
+  - name: First pocket
+    notes:
+      - text: ----
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Ancient Acceleration Gate
+            note: 24 km
+      - id: defending-fleet-28-38km
+        trigger:
+          on: other
+          text: Defending Fleet (28- 38km)
+          confidence: inferred
+        spawns:
+          - count: "7"
+            class: Destroyer
+            names:
+              - Gistior Defiler
+              - Gistior Haunter
+              - Gistior Seizer
+          - count: "2"
+            class: Battleship
+            names:
+              - Gist Malakim
+          - count: "1"
+            class: Overseer Battleship
+            names:
+              - Watch Officer
+            drop: low chance of Faction modules
+    onWarpIn: "This deadspace complex bestows a heavily guarded prison facility of the Angel Cartel. It is here that kidnapping victims and enemies of the cartel are held for ransom or brutal interrogation and torture. DED Threat Assessment: Perilous (8 of 10)"
+  - name: Second room
+    notes:
+      - text: ----
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: 39km
+      - id: defending-fleet
+        trigger:
+          on: other
+          text: Defending Fleet
+          confidence: inferred
+        spawns:
+          - count: "16"
+            class: Destroyer
+            names:
+              - Gistior Defacer
+              - Gistior Defiler
+              - Gistior Haunter
+              - Gistior Shatterer
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Gistatis Primus
+              - Gistatis Tribuni
+          - count: "6"
+            class: Battleship
+            names:
+              - Gist Malakim
+              - Gist Nephilin
+              - Gist Throne
+            ewar:
+              - kind: targetPaint
+          - count: "1"
+            class: Overseer Battleship
+            names:
+              - Angel Cartel Jailor
+            drop: low chance of Faction modules
+    onWarpIn: This first pocket within the deadspace field contains the main gates to this Angel Cartel prison complex, defended by a pair of experienced frigate pilots.
+  - name: Third room
+    notes:
+      - text: ----
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: 46km
+          - count: "1"
+            class: Container
+            names:
+              - Ammunition Cache
+            drop: Random Charges
+          - count: "1"
+            class: Structure
+            names:
+              - Prisoner Cells
+            drop: Random Commodities
+          - count: "1"
+            class: Structure
+            names:
+              - Scramble Wave Generator
+            drop: Security Cypher for Angel Prison
+      - id: defending-fleet-16-54km
+        trigger:
+          on: other
+          text: Defending Fleet (16- 54km)
+          confidence: inferred
+        spawns:
+          - count: "13"
+            class: Destroyer
+            names:
+              - Gistior Defiler
+              - Gistior Haunter
+          - count: "4"
+            class: Cruiser
+            names:
+              - Gistum Centurion
+              - Gistum Phalanx
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Gistatis Legionnaire
+            note: type list incomplete on the source page
+          - count: "7"
+            class: Battleship
+            names:
+              - Gist Malakim
+            ewar:
+              - kind: targetPaint
+            note: Nephilim Target Painter, 120+km range; type list incomplete on the source page
+          - count: "1"
+            class: Battleship
+            names:
+              - Angel Prisonwatch Commander
+            drop: Low chance of Faction modules, security cypher for angel prison (Unconfirmed)
+            note: Renamed Gist War General
+          - count: "4"
+            class: Sentry
+            names:
+              - Angel Sentry Gun
+    onWarpIn: This area of the complex handles the traffic of incoming (and sometimes outgoing) prisoners. The pocket is well defended by a small but powerful Angel fleet. The resident jailor holds control over who is allowed further inside the complex, through the traffic gate towards the prison battlements.
+  - name: Fourth room
+    notes:
+      - text: ----
+      - text: "Important: The main structure (Angel Retention Facility) will steadily repair its shields, and if anything (ships or drones) is within 35~38km of it, it will web you and repair all of its armor every few seconds. This dramatically increases the DPS needed to break it."
+    onWarpIn: This heavily guarded pocket bestows the prison battlements and a massive fleet of Angel vessels that see to it that no one can escape from within the retention core. The acceleration gate that takes prison transport ships into the main Prisoner block is scrambled by a scramble wave generator to keep the gate closed at almost all times.
+sde:
+  dungeonIds:
+    - 2261

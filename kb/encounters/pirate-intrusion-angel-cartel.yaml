@@ -1,0 +1,140 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: pirate-intrusion-angel-cartel
+kind: mission
+name: Pirate Intrusion
+level: 1
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Pirate Intrusion (Angel Cartel)
+    url: https://wiki.eveuniversity.org/Pirate_Intrusion_(Angel_Cartel)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "230522"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Our surveillance cameras just spotted a few groups of hostile ships enter our system. Head out and bring me their heads on a plate, spare no one.
+ewar:
+  - kind: targetPaint
+notes:
+  - text: "Suggested ships: Frigate"
+  - text: No aggro on warp in for either pocket.
+  - text: Groups aggro individually upon aggression and distance.
+  - text: "Blitz: 1st pocket: Total clear"
+  - text: "Blitz: 2nd pocket: Clear Group C (1 Destroyer, 2 Frigates)"
+pockets:
+  - name: 1st Pocket
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 1-2
+            class: Frigate
+            names:
+              - Gistii Ruffian
+            group: Group A 30km E
+            ewar:
+              - kind: targetPaint
+          - count: 0-1
+            class: Frigate
+            names:
+              - Gistii Nomad
+            group: Group A 30km E
+          - count: 0-1
+            class: Frigate
+            names:
+              - Gistii Ruffian
+            group: Group B 40-45km NW
+            ewar:
+              - kind: targetPaint
+          - count: 3-4
+            class: Frigate
+            names:
+              - Gistii Nomad
+              - Gistii Ambusher
+              - Gistii Raider
+            group: Group B 40-45km NW
+          - count: 2-3
+            class: Frigate
+            names:
+              - Gistii Outlaw
+              - Gistii Thug
+              - Gistii Nomad
+              - Gistii Hunter
+              - Gistii Impaler
+            group: Group C 50km W
+          - count: 0-1
+            class: Frigate
+            names:
+              - Gistii Ruffian
+            group: Group C 50km W
+            ewar:
+              - kind: targetPaint
+          - count: 2-3
+            class: Frigate
+            names:
+              - Gistii Outlaw
+              - Gistii Thug
+              - Gistii Nomad
+              - Gistii Hunter
+              - Gistii Impaler
+            group: Group D 40-50km SW
+  - name: 2nd Pocket
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 0-2
+            class: Frigate
+            names:
+              - Gistii Ruffian
+            group: Group A 35km W, 3 frigates
+            ewar:
+              - kind: targetPaint
+          - count: 1-3
+            class: Frigate
+            names:
+              - Gistii Nomad
+            group: Group A 35km W, 3 frigates
+          - count: "3"
+            class: Frigate
+            names:
+              - Gistii Ambusher
+              - Gistii Raider
+              - Gistii Hunter
+              - Gistii Impaler
+            group: Group B 30-40km NW
+          - count: "2"
+            class: Frigate
+            names:
+              - Gistii Ambusher
+              - Gistii Raider
+            group: Group C 30-40km W
+          - count: "1"
+            class: Destroyer
+            names:
+              - Gistior Haunter
+            group: Group C 30-40km W
+            triggers: Mark mission complete
+          - count: 1-3
+            class: Frigate
+            names:
+              - Gistii Ruffian
+            group: Group D 20-30km SW, 4 frigates
+            ewar:
+              - kind: targetPaint
+          - count: 1-3
+            class: Frigate
+            names:
+              - Gistii Nomad
+              - Gistii Hunter
+              - Gistii Impaler
+            group: Group D 20-30km SW, 4 frigates

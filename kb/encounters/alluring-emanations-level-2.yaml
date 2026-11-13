@@ -1,0 +1,31 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: alluring-emanations-level-2
+kind: mission
+name: Alluring Emanations
+level: 2
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Alluring Emanations (Level 2)
+    url: https://wiki.eveuniversity.org/Alluring_Emanations_(Level_2)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191546"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal:
+    - em
+    - thermal
+  resist:
+    - thermal
+    - em
+notes:
+  - text: "Suggested ships: Cruiser"
+  - text: Alluring Emanations is a mission involving combat against Rogue Drones. There are multiple level variants.
+  - text: Upon warp-in, there will be one rogue drone at approximately 50km. Destroying this drone completes the mission and spawns an ambush group of 42 additional rogue drones.
+  - text: The ambush group does not need to be destroyed, and because drones do not drop loot, it may be more time-efficient to blitz the mission by simply destroying the initial single drone and warping away.
+  - text: Pilots who wish to engage the ambush group should ensure that they remain outside of the ambush group's optimal range, as getting too close can result in massive amounts of damage due to the number of hostiles.

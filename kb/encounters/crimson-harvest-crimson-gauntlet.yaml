@@ -1,0 +1,213 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: crimson-harvest-crimson-gauntlet
+kind: anomaly
+name: Crimson Gauntlet
+dedRating: null
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Crimson Harvest (2026), section "Crimson Gauntlet"
+    url: https://wiki.eveuniversity.org/Crimson_Harvest_(2026)#Crimson_Gauntlet
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "232560"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Part of the Crimson Harvest (2026) event. Event sites change from year to year.
+  - text: Level 3 Blood Raider combat site. NPCs do mostly EM/Thermal damage, a few also deal Explosive damage.
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: The waves may be sometimes timed and the next one can spawn while ships from the previous wave are still alive.
+    waves:
+      - id: warp-in
+        trigger:
+          on: other
+          text: Warp-in
+          confidence: inferred
+        spawns:
+          - count: 0-2
+            class: Frigate
+            names:
+              - Harvest Shepherd
+              - Harvest Savior
+            group: Initial defenders
+            ewar:
+              - kind: web
+              - kind: neut
+          - count: 0-1
+            class: Frigate
+            names:
+              - Harvest Follower
+            group: Initial defenders
+            ewar:
+              - kind: warpScramble
+            note: Uses warp scrambler to disrupt microwarpdrives
+          - count: 0-5
+            class: Cruiser
+            names:
+              - Harvest Prophet
+              - Harvest Sage
+            group: Initial defenders
+            ewar:
+              - kind: web
+              - kind: neut
+              - kind: warpDisruption
+            note: Can web up to 20km. Sage webs and neuts; Prophet warp disrupts
+          - count: 0-2
+            class: Battlecruiser
+            names:
+              - Harvest Diviner
+            group: Initial defenders
+            note: High damage and less tank than cruisers
+  - name: 2nd Room
+    notes:
+      - text: The waves may be sometimes timed and the next one can spawn while ships from the previous wave are still alive.
+      - text: "Note: The boss can sometimes spawn alongside a third wave of ships in this room. The incoming DPS will be very high, approaching 600, if this happens."
+    waves:
+      - id: 2nd-room
+        trigger:
+          on: other
+          text: 2nd Room
+          confidence: inferred
+        spawns:
+          - count: 0-4
+            class: Frigate
+            names:
+              - Harvest Savior
+              - Harvest Shepherd
+            group: 2 Waves
+            ewar:
+              - kind: neut
+              - kind: web
+          - count: 0-4
+            class: Frigate
+            names:
+              - Harvest Exsanguinator
+            group: 2 Waves
+          - count: 0-4
+            class: Frigate
+            names:
+              - Harvest Follower
+            group: 2 Waves
+            ewar:
+              - kind: warpScramble
+          - count: 0-2
+            class: Destroyer
+            names:
+              - Harvest Cleric
+            group: 2 Waves
+            ewar:
+              - kind: warpDisruption
+          - count: 0-4
+            class: Cruiser
+            names:
+              - Harvest Prophet
+            group: 2 Waves
+            ewar:
+              - kind: warpDisruption
+          - count: 0-4
+            class: Cruiser
+            names:
+              - Harvest Sage
+            group: 2 Waves
+            ewar:
+              - kind: neut
+              - kind: web
+          - count: 0-2
+            class: Battlecruiser
+            names:
+              - Harvest Diviner
+            group: 2 Waves
+            ewar:
+              - kind: warpDisruption
+          - count: "?"
+            class: Acceleration Gate
+            names:
+              - Active Acceleration Gate
+            group: Objects
+            note: Unlocks after destroying enough ships, may not need to destroy all of them
+  - name: 3rd Room
+    waves:
+      - id: 3rd-room
+        trigger:
+          on: other
+          text: 3rd Room
+          confidence: inferred
+        spawns:
+          - count: 0-4
+            class: Frigate
+            names:
+              - Harvest Savior
+              - Harvest Shepherd
+            group: 2 Waves
+            ewar:
+              - kind: neut
+              - kind: web
+          - count: 0-4
+            class: Frigate
+            names:
+              - Harvest Exsanguinator
+            group: 2 Waves
+          - count: 0-4
+            class: Frigate
+            names:
+              - Harvest Follower
+            group: 2 Waves
+            ewar:
+              - kind: warpScramble
+          - count: 0-2
+            class: Destroyer
+            names:
+              - Harvest Cleric
+            group: 2 Waves
+            ewar:
+              - kind: warpDisruption
+          - count: 0-4
+            class: Cruiser
+            names:
+              - Harvest Prophet
+            group: 2 Waves
+            ewar:
+              - kind: warpDisruption
+          - count: 0-4
+            class: Cruiser
+            names:
+              - Harvest Sage
+            group: 2 Waves
+            ewar:
+              - kind: neut
+              - kind: web
+          - count: 0-2
+            class: Battlecruiser
+            names:
+              - Harvest Diviner
+            group: 2 Waves
+            ewar:
+              - kind: warpDisruption
+          - count: "1"
+            class: Battleship
+            names:
+              - Harvest Overseer
+            group: Boss Wave
+            ewar:
+              - kind: neut
+              - kind: web
+              - kind: warpDisruption
+            drop: Mutated Blood Samples, Overseer Sabik Vials, fireworks, Mobile Sanguine Harvester BPC, rarely Dark Blood faction modules
+          - count: "1"
+            class: Hangar Array
+            names:
+              - Decloaked Dark Blood Transmission Relay
+            group: Structures
+            drop: empire NPC insignias, Mutated Blood Samples, Overseer Sabik Vials
+            note: Only appears once the boss is killed.
+aliases:
+  - "Crimson Harvest: Crimson Gauntlet"
+sde:
+  dungeonIds:
+    - 6402

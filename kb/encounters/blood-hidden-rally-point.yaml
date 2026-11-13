@@ -1,0 +1,155 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: blood-hidden-rally-point
+kind: anomaly
+name: Blood Hidden Rally Point
+dedRating: null
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Blood Hidden Rally Point
+    url: https://wiki.eveuniversity.org/Blood_Hidden_Rally_Point
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225129"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: The site is an open deadspace pocket, warpable at any range. It can be easily soloed in a HAC, Battleship, T3C or Battlecruiser. The site consists of an asteroid colony surrounded by snake-shaped rocks.
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "5"
+            class: Destroyer
+            names:
+              - Corpior Devoter
+              - Corpior Friar
+          - count: "6"
+            class: Cruiser
+            names:
+              - Corpum Arch Priest
+            triggers: Triggers wave 2
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Corpatis Seer
+              - Corpatis Shade
+          - count: 3-4
+            class: Battleship
+            names:
+              - Corpus Patriarch
+              - Corpus Pope
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Elder Corpii Herald
+              - Elder Corpii Upholder
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "6"
+            class: Cruiser
+            names:
+              - Corpum Arch Priest
+              - Corpum Arch Engraver
+          - count: "7"
+            class: Battlecruiser
+            names:
+              - Corpatis Seer
+              - Corpatis Shade
+            triggers: Triggers wave 3
+          - count: 3-4
+            class: Battleship
+            names:
+              - Corpus Archon
+              - Corpus Prophet
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Cruiser
+            names:
+              - Corpum Dark Priest
+              - Corpum Shadow Sage
+          - count: "7"
+            class: Battlecruiser
+            names:
+              - Corpatis Exorcist
+              - Corpatis Phantom
+            triggers: Triggers wave 4
+      - id: wave-4
+        trigger:
+          on: other
+          text: Wave 4
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Collector
+              - Elder Corpii Seeker
+            ewar:
+              - kind: trackingDisruption
+          - count: "5"
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Arch Priest
+              - Elder Corpum Arch Sage
+            triggers: Triggers wave 5
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Corpatis Exorcist
+              - Corpatis Phantom
+          - count: 2-3
+            class: Battleship
+            names:
+              - Corpus Archbishop
+              - Corpus Harbinger
+            ewar:
+              - kind: neut
+      - id: wave-5
+        trigger:
+          on: other
+          text: Wave 5
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Dark Priest
+              - Elder Corpum Shadow Sage
+          - count: "8"
+            class: Battleship
+            names:
+              - Corpus Cardinal
+              - Corpus Patriarch
+      - id: rare-commander-spawn
+        trigger:
+          on: other
+          text: Rare commander spawn
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Commander Battlecruiser
+            names:
+              - Dark Blood Exorcist
+              - Dark Blood Phantom
+            drop: May drop Dark Blood faction modules
+    onWarpIn: The Amarr Empire has had its share of religious cults and fanatics in the past, but few have been as successful, or as highly feared, as the Blood Raiders. The Blood Raiders are a sect of an ancient cult called Sani Sabik, who use blood in their rituals. The Blood Raiders believe that cloned bodies have "purer" blood than other bodies, and this explains while they operate mainly in space, attacking unwary spacefarers and draining their bodies of blood. The Blood Raiders are led by the fearsome Omir Sarikusa, who has remained on top of the DED's most wanted list for many years now. Under Sarikusa's leadership, the Blood Raiders have become more organized, establishing several bases in the Bleak Lands region.

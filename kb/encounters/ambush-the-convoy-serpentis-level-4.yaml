@@ -1,0 +1,65 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: ambush-the-convoy-serpentis-level-4
+kind: mission
+name: Ambush the Convoy
+level: 4
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Ambush the Convoy (Serpentis) (Level 4)
+    url: https://wiki.eveuniversity.org/Ambush_the_Convoy_(Serpentis)_(Level_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231768"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal: []
+  resist:
+    - kinetic
+    - thermal
+    - explosive
+ewar:
+  - kind: sensorDamp
+notes:
+  - text: Ambush the Convoy is a combat mission with multiple faction and level variants.
+  - text: The objective item drops from the last hostile NPC ship destroyed. Cruise Missile Batteries do not count as ships for the purposes of the objective, so they do not need to be destroyed to obtain the item drop.
+  - text: Completing the mission changes your Serpentis faction standing by -0.3.
+lootNotes:
+  - text: "Bounty: ~2m ISK"
+  - text: "Loot: ~200k ISK"
+  - text: "Salvage: ~1m ISK"
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Industrial
+            names:
+              - Industrial Transport
+          - count: "1"
+            class: Cruiser
+            names:
+              - Corelum Chief Spy
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corelatis Squad Leader
+              - Corelatis Platoon Leader
+          - count: "2"
+            class: Battleship
+            names:
+              - Core Flotilla Admiral
+              - Core Vice Admiral
+          - count: "2"
+            class: Sentry
+            names:
+              - Cruise Missile Battery
+            note: Deals Explosive damage

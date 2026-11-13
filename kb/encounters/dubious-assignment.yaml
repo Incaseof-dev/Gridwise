@@ -1,0 +1,245 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: dubious-assignment
+kind: escalation
+name: Dubious Assignment
+dedRating: null
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Dubious Assignment
+    url: https://wiki.eveuniversity.org/Dubious_Assignment
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "221222"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Dubious Assignment is an escalation from the Blood Raider Fortress.
+  - text: The expedition consists of four possible parts. Each part containing a single dark blood faction spawn with the final part having a chance at dropping Corpus A-type battleship modules, however the escalations and loot are not always guaranteed to trigger.
+pockets:
+  - name: Part 1
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Corpii Raider
+              - Corpii Diviner
+              - Corpii Engraver
+              - Corpii Reaver
+          - count: "4"
+            class: Battleship
+            names:
+              - Corpus Patriarch
+          - count: "1"
+            class: Elite Battleship
+            names:
+              - Dark Blood Harbinger
+            ewar:
+              - kind: neut
+            triggers: Destroying may trigger escalation
+            drop: Contains Blood Raider Faction Loot
+  - name: Room 1
+    notes:
+      - text: "If the escalation ends...: Having waited for this devious Blood Raider for a while, you are starting to think he is not going to show up at all. You kind of feel used... but on the other hand, you got to rob some more Blood Raiders."
+      - text: "If the escalation Continues...: Finally your communication instruments come alive as this devious Blood Raider who hired you starts talking on the private channel. Even though the place was empty, he commends you on a job well done and gives you directions to the next assassination target."
+  - name: Part 2
+    notes:
+      - text: "If the expedition continues...: This time your employer is right on time with the coordinates to the last location. He sounds somewhat stressed, but before you can reply he is gone."
+      - text: "If the expedition ends...: This time your employer does not let you wait, with a more hissy voice than before he thanks you for services rendered and congratulates you on being scammed for a good cause. And with that he is off the air, permanently this time. It is true that having some reward for your efforts would be nice, but then again, you got to kill some Blood Raiders who would otherwise still be alive."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Diviner
+              - Elder Corpii Engraver
+              - Elder Corpii Raider
+              - Elder Corpii Reaver
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Corpatis Bishop
+              - Corpatis Exorcist
+              - Corpatis Fanatic
+              - Corpatis Phantom
+          - count: "4"
+            class: Battleship
+            names:
+              - Corpus Cardinal
+              - Corpus Monsignor
+          - count: "1"
+            class: Elite Battleship
+            names:
+              - Dark Blood Archbishop
+              - Dark Blood Monsignor
+            ewar:
+              - kind: neut
+            triggers: Destroying may trigger escalation
+            drop: Contains Blood Raider Faction Loot
+  - name: Room 1
+    notes:
+      - text: This pocket appears to serve no purpose...
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Corpii Diviner
+              - Corpii Engraver
+              - Corpii Reaver
+          - count: "7"
+            class: Battlecruiser
+            names:
+              - Corpatis Bishop
+              - Corpatis Exorcist
+              - Corpatis Fanatic
+              - Corpatis Phantom
+              - Corpatis Seer
+              - Corpatis Shade
+          - count: "4"
+            class: Battleship
+            names:
+              - Corpus Cardinal
+              - Corpus Monsignor
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Arch Priest
+              - Elder Corpum Arch Sage
+              - Elder Corpum Dark Priest
+              - Elder Corpum Shadow Sage
+  - name: Part 3
+    notes:
+      - text: "If the expedition continues...: After blowing up his third rival, you have probably come closer than you ever will to hear how a sadistic head honcho with the Blood Raider Covenant sounds when he is ecstatically pleased. He gives you one last location, tells you to come meet him there and take with you everything you looted from the three raids. It is payday."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Corpii Engraver
+              - Corpii Raider
+              - Corpii Reaver
+          - count: "2"
+            class: Destroyer
+            names:
+              - Corpior Cleric
+              - Corpior Devoter
+              - Corpior Friar
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Corpum Arch Priest
+              - Corpum Arch Sage
+              - Corpum Dark Priest
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corpatis ExorcistPhantom
+          - count: "3"
+            class: Battleship
+            names:
+              - Corpus Apostle
+              - Corpus Oracle
+          - count: "1"
+            class: Elite Battleship
+            names:
+              - Dark Blood Cardinal
+            ewar:
+              - kind: neut
+            triggers: Destroying may trigger escalation
+            drop: Contains Blood Raider Faction Loot
+  - name: Room 1
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "8"
+            class: Frigate
+            names:
+              - Corpii Engraver
+              - Corpii Raider
+              - Corpii Reaver
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Herald
+              - Elder Corpii Upholder
+          - count: "4"
+            class: Cruiser
+            names:
+              - Corpum Arch Priest
+              - Corpum Arch Sage
+              - Corpum Dark Priest
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corpatis ExorcistPhantom
+          - count: "3"
+            class: Battleship
+            names:
+              - Corpus Patriarch
+              - Corpus Pope
+  - name: Room 2
+    notes:
+      - text: "Upon death of Dark Corpus Preacher...: You have always been a bit ambivalent to having a day job, mostly due to several of your previous employers being bastards. This one however was ok, if only you could have more like him."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "11"
+            class: Frigate
+            names:
+              - Corpii Engraver
+              - Corpii Reaver
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Diviner
+              - Elder Corpii Engraver
+              - Elder Corpii Raider
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "4"
+            class: Cruiser
+            names:
+              - Corpum Arch Priest
+              - Corpum Arch Sage
+              - Corpum Dark Priest
+          - count: "4"
+            class: Battleship
+            names:
+              - Corpus Patriarch
+              - Corpus Pope
+          - count: "1"
+            class: Elite Battleship
+            names:
+              - Dark Corpus Preacher
+            drop: May contain Corupus A-type Blood Raider Faction Loot
+sde:
+  dungeonIds:
+    - 1433

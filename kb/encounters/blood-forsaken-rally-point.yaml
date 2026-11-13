@@ -1,0 +1,155 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: blood-forsaken-rally-point
+kind: anomaly
+name: Blood Forsaken Rally Point
+dedRating: null
+anomalyClass: 6
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Blood Forsaken Rally Point
+    url: https://wiki.eveuniversity.org/Blood_Forsaken_Rally_Point
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225128"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Single ungated normal space pocket.
+  - text: This site has triggers, most notably 2 cruisers in the initial defending fleet.
+  - text: If these cruisers are killed, they will spawn the next wave(s) regardless of whether the battleships are killed.
+  - text: "Note that one random cruiser in the initial fleet will trigger Wave #2, and another will trigger Wave #3."
+  - text: "Escalation: The anomaly can escalate to Blood Raider Prison Camp."
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: The site contains approximately 20 million in bounties on average, fluctuating mostly with the number of battleships that spawn.
+      - text: Faction spawns are possible.
+    waves:
+      - id: initial-defending-fleet
+        trigger:
+          on: warpIn
+          text: Initial Defending Fleet
+        spawns:
+          - count: 5-6
+            class: Elite Cruiser
+            names:
+              - Arch Sage
+              - Dark Priest
+              - Shadow Sage
+            triggers: Triggers Wave 2 and 3
+          - count: 2-3
+            class: Battleship
+            names:
+              - Corpus Patriarch
+              - Corpus Pope
+          - count: 2-3
+            class: Battleship
+            names:
+              - Corpus Archbishop
+              - Corpus Harbinger
+            ewar:
+              - kind: neut
+      - id: wave-2
+        trigger:
+          on: other
+          text: "Wave #2"
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battleship
+            names:
+              - Corpus Cardinal
+              - Corpus Monsignor
+          - count: 0-1
+            class: Elite Cruiser
+            names:
+              - (now reserch)
+            ewar:
+              - kind: neut
+      - id: wave-3
+        trigger:
+          on: other
+          text: "Wave #3"
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Elder Corpii Engraver
+              - Elder Corpii Raider
+              - Elder Corpii Reaver
+          - count: 2-3
+            class: Battleship
+            names:
+              - Corpus Archbishop
+              - Corpus Harbinger
+            ewar:
+              - kind: neut
+            triggers: Triggers Wave 4
+      - id: wave-4
+        trigger:
+          on: other
+          text: "Wave #4"
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Corpum Arch Priest
+              - Corpum Arch Sage
+              - Corpum Shadow Sage
+            triggers: Triggers Wave 5
+          - count: 2-3
+            class: Battleship
+            names:
+              - Corpus Cardinal
+              - Corpus Monsignor
+      - id: wave-5
+        trigger:
+          on: other
+          text: "Wave #5"
+          confidence: inferred
+        spawns:
+          - count: 0-2
+            class: Elite Frigate
+            names:
+              - Elder Corpii Engraver
+              - Elder Corpii Raider
+              - Elder Corpii Worshiper
+          - count: 0-2
+            class: Elite Frigate
+            names:
+              - Elder Corpii Follower
+              - Elder Corpii Herald}
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 2-3
+            class: Battleship
+            names:
+              - Corpus Patriarch
+              - Corpus Pope
+            triggers: Triggers Wave 6
+      - id: wave-6
+        trigger:
+          on: other
+          text: "Wave #6"
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corpatis Fanatic
+              - Corpatis Phantom
+              - Corpatis Seer
+              - Corpatis Shade
+          - count: "4"
+            class: Battleship
+            names:
+              - Corpus Cardinal
+              - Corpus Monsignor
+    onWarpIn: The Amarr Empire has had its share of religious cults and fanatics in the past, but few have been as successful, or as highly feared, as the Blood Raiders. The Blood Raiders are a sect of an ancient cult called Sani Sabik, who use blood in their rituals. The Blood Raiders believe that cloned bodies have "purer" blood than other bodies, and this explains while they operate mainly in space, attacking unwary spacefarers and draining their bodies of blood. The Blood Raiders are led by the fearsome Omir Sarikusa, who has remained on top of the DED's most wanted list for many years now. Under Sarikusa's leadership, the Blood Raiders have become more organized, establishing several bases in the Bleak Lands region.

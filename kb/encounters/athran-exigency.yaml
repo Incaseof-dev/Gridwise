@@ -1,0 +1,198 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: athran-exigency
+kind: mission
+name: Athran Exigency
+level: 1
+enemyFaction: Minmatar Republic
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Athran Exigency
+    url: https://wiki.eveuniversity.org/Athran_Exigency
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "202679"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Approach Abandoned Mining Station
+notes:
+  - text: Athran Exigency is a five part mission chain. Involving combat with the Minmatar Republic.
+pockets:
+  - name: Part 1 of 5
+    notes:
+      - text: "The Athran Brotherhood: Sometimes calling itself \"The Scions of Athra,\" the Athran Brotherhood is a group of Khanid secessionists with headquarters located on the Khanid homeworld of Amarr Prime (called Athra in the Old Khanid tongue). This group tends to rise perhaps every other generation or so, seemingly from its own ashes, making trouble for local government and interstellar trade alike. Given the many large pirate organizations and other independent \"freebooters\" of New Eden, not to mention the constant weight of intergalactic politics and the ongoing \"Minmatar Problem,\" Amarr rulers cannot generally spare a large-scale military effort to deal with these relatively minor troublemakers. Perhaps this is the reason the Brotherhood seems never to die, but always reappears just when authorities start to think they've rid themselves of the nuisance."
+  - name: Warp-in
+    notes:
+      - text: Single pocket without gate.
+      - text: Approach the mission objective (Abandoned Mining Station). Make it visible in the overview by enabling 'Types - Celestial - Large Collidable Object'.
+      - text: The Station is 40km away from warp-in. The mission is flagged as complete when within 5km of the station.
+    waves:
+      - id: 20-30km-spawn-when-you-are-within-10km-of-the-station
+        trigger:
+          on: other
+          text: 20-30km, spawn when you are within 10km of the station
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Athran Agent
+  - name: Part 2 of 5
+    notes:
+      - text: "Battle Tips: Always be ready to warp out if you start taking heavy damage, whether in a mission or in lawless space. Sometimes it's a good idea to have a jump route selected before going into a mission so you can simply click your autopilot to get out quickly; this is a valid approach only with relatively small ships, though. Eventually, once you get into something like a Battleship, aligning to warp can take so long — especially if you begin once you're already taking heavy damage — that your ship might be destroyed by the time you actually start your warp. Remember too that if you take damage in battle, you can always return to a nearby station for repairs; also be sure to replenish your ammunition while you're there if you're running low. Combat in EVE can be deadly and costly, so do what you can to cut your losses. \"It's better to warp away and fight again another day.\""
+  - name: First pocket
+    waves:
+      - id: 15-20km-auto-aggro
+        trigger:
+          on: other
+          text: 15-20km, auto aggro
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Athran Agent
+  - name: Second pocket
+    notes:
+      - text: A Battleship, the Republic Tribal Ymir, is exploding when you arrive in the second pocket, leaving behind no wreckage.
+      - text: Group 2 appears after the explosion of the above mentioned battleship.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Athran Agent
+            group: Group 1 (20km, auto aggro)
+          - count: "6"
+            class: Frigate
+            names:
+              - Athran Agent
+            group: Group 2 (50km, auto aggro)
+          - count: "1"
+            class: Frigate
+            names:
+              - Athran Operative
+            group: Group 2 (50km, auto aggro)
+  - name: Part 3 of 5
+    notes:
+      - text: "Blitz: Destroy the Amarr Starbase Control Tower, leaving the ships alone."
+  - name: Single pocket
+    notes:
+      - text: The mission objective is the Amarr Starbase Control Tower. Show it on your overview with "Entity - Large Collidable Structure".
+      - text: Despite the wording of the mission briefing, you do not need to destroy the Stationary Bestower to complete the mission.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Athran Agent
+            group: Group 1 (10km, auto aggro)
+            triggers: Destruction triggers reinforcements
+          - count: "3"
+            class: Frigate
+            names:
+              - Athran Agent
+            group: Group 2 (30km, auto aggro)
+          - count: "1"
+            class: Frigate
+            names:
+              - Athran Operative
+            group: Group 2 (30km, auto aggro)
+      - id: reinforcements-10km-auto-aggro
+        trigger:
+          on: other
+          text: Reinforcements (10km, auto aggro)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Athran Agent
+  - name: First pocket
+    notes:
+      - text: 'Blitz: Go directly to the acceleration gate. Destruction of the "Repair Crew" is not necessary.'
+      - text: "On activating the acceleration gate the following message appears:"
+      - text: "\"Something just isn't right here. Several Minmatar ships circle the outpost, and your scanners clearly indicate artillery being fired off in the vicinity. Best be careful here.\""
+    waves:
+      - id: 30-40km-no-auto-aggro
+        trigger:
+          on: other
+          text: (30-40km, no auto aggro)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Repair Crew
+  - name: Second pocket
+    notes:
+      - text: Five 'Minmatar kamikaze pilot' frigates destroy themselves upon warp-in to the second pocket.
+      - text: Group 1 spawns after the explosion of the above mentioned kamikaze frigates explode
+    waves:
+      - id: group-1
+        trigger:
+          on: warpIn
+          text: Group 1
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Republic Radur
+          - count: "1"
+            class: Frigate
+            names:
+              - Republic Skani
+          - count: "1"
+            class: Cruiser
+            names:
+              - Republic Commander
+      - id: asteroids
+        trigger:
+          on: other
+          text: Asteroids
+          confidence: inferred
+        spawns: []
+  - name: Warp-in
+    notes:
+      - text: "Tips: Part 5 of 5 is a good mission to mine with large amounts of Veldspar and Scordite very near warp-in point."
+      - text: "Tips: Several Athran Proximity Mines are scattered throughout the asteroids. Be careful as they do explode and do a decent amount of damage."
+      - text: "Structures: No loot"
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Athran Agent
+            group: Group 1 (20-30km, auto aggro)
+          - count: "3"
+            class: Frigate
+            names:
+              - Athran Agent
+            group: Group 2 (40-50km, auto aggro)
+          - count: "1"
+            class: Frigate
+            names:
+              - Cosensin Thrand
+            group: Group 2 (40-50km, auto aggro)
+            note: Has a longer range than the other ships
+      - id: asteroids
+        trigger:
+          on: other
+          text: Asteroids
+          confidence: inferred
+        spawns: []

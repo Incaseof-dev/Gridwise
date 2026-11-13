@@ -1,0 +1,65 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: dread-pirates
+kind: mission
+name: Dread Pirates
+level: null
+enemyFaction: null
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Dread Pirates
+    url: https://wiki.eveuniversity.org/Dread_Pirates
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231190"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Deliver 1 Dread Guristas Strike Force (1.0 m3)
+restrictions:
+  - text: "Ship size limit: T1 destroyers, T1/T2 frigates"
+notes:
+  - text: "Agent at hand-in: I'll admit I had doubts about you. You think you can do anything you want to anyone without reason or plan. I think you might be different. Cilis seems to think so. But then again, Cilis was an egger, too. Anyhow, smash up job. I couldn't be more pleased. I like it when a target is surprised to see death waiting for him. It's one of the most beautiful things you can do as a pirate. The egger who held me taught me that. Her crew chief helped me get away, but the container I was in busted on impact. In the madness, I found myself re-forged. Even though I will kill the person who did this to me, I have to thank them as well for making me what I am. The recordings you've received in the field are from me. Anyhow, what you did will certainly help, but there's a lot of work to be done, and I can promise you that I'll pay well. You had better have the stomach for it."
+  - text: This mission can be complete remotely. You are granted the Dread Gurista Strike Force when accepting this mission (in your inventory). Put it in your cargo before undocking. The mission site consists of one gated deadspace room.
+  - text: "Blitz: Destroy the Ytiri Security Bunker, drop the Dread Guristas Strike Force into the warehouse, and stay alive until the mission is completed. Killing ships is optional. Complete and accept next mission remotely."
+pockets:
+  - name: Room 1
+    notes:
+      - text: Destroy the Ytiri Security Bunker to gain access to the Ytiri Storage Warehouse.
+      - text: The bunker itself has 12,000 total HP. Bring a fair deal of ammo; it will take a little while to destroy.
+      - text: Destroying Ytiri Security Bunker causes -0.24 standing loss to the Caldari State.
+      - text: Drop the Dread Guristas Strike Force into the warehouse.
+      - text: Dropping off the strike force will create an instance of repeating reinforcement wave spawns.
+      - text: Destroying all ships in a group will make a new instance spawn. This goes on for 3 minutes after which all remaining hostile ships will explode and the mission is marked as complete.
+      - text: The ships do no need to be destroyed. Circling in the pocket for three minutes after dropping off the Strike Force completes the mission.
+      - text: Ytiri Light Missile batteries have limited aggro range. Past 18 km they will not shoot you.
+      - text: After dropping off the Dread Guristas Strike Force, a series of messages will show up in local every 20 seconds indicating your progress towards completing the mission. The mission completion will be shortly after the fifth message in local.
+      - text: "First message: Dread Pirate: Get back here, you dogs. We're not going to hurt you too much."
+      - text: "Second message: Dread Pirate: I have this sector under control. We were supposed to kill everyone, right?"
+      - text: "Third message: Dread Pirate: Come here, little dogs. I've got a treat for you. It's right here in my rifle."
+      - text: "Fourth message: Dread Pirate: Almost done here, chief. Just a few more rooms to go, and a lot more bodies."
+      - text: "Fifth message: Dread Pirate : Stay away from this crate. This is my loot."
+      - text: You can both complete this mission and accept the next mission remotely while still in space.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Ytiri Light Missile Battery
+            note: 18km aggro range
+      - id: repeating-wave
+        trigger:
+          on: other
+          text: Repeating wave
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Ytiri Frigate

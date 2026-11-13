@@ -1,0 +1,66 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: fear-of-angels
+kind: mission
+name: Fear of Angels
+level: 3
+enemyFaction: CONCORD
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Fear of Angels
+    url: https://wiki.eveuniversity.org/Fear_of_Angels
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231798"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal:
+    - em
+    - thermal
+    - kinetic
+    - explosive
+  resist:
+    - em
+    - thermal
+    - kinetic
+    - explosive
+notes:
+  - text: 10M ISK worth CONCORD Star Emblem
+  - text: Gated deadspace pocket up to five jump away. Take the Gate and kill the lone enemy.
+  - text: "Tips: Marshal Treonis has 55% omni Shield and Armour Resistances and approached at 3000 m/s"
+  - text: "Tips: Marshal Treonis will have 1000 m/s if you try to orbit her at 500 m"
+  - text: "Tips: Loot and sell the the CONCORD Star Emblem from Marshal Treonis' wreck for 10M ISK in System"
+pockets:
+  - name: Warp-in
+    notes:
+      - text: "Transmission from Treonis: I'm surprised you showed up. I'd pretend you were under arrest, but we both know you'd resist. I'll just kill you a few dozen times."
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+  - name: Single room
+    notes:
+      - text: Marshal Treonis does a fairly dangerous amount of omni damage with her turrets, but they have poor tracking against interceptors and will struggle to apply damage at close range. Her missiles deal purely kinetic damage with decent alpha. Her signature radius is small (27m) and she will orbit you at 1000m/s at 7.5km. Use precision ammo and expect to be on grid for a little while - she has a fairly strong buffer shield and armor tank.
+    waves:
+      - id: group-95-km
+        trigger:
+          on: other
+          text: Group (95 km)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Marshal Treonis
+            ewar:
+              - kind: web
+            drop: 1x CONCORD Star Emblem

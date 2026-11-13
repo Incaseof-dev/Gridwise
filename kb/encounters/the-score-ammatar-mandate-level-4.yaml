@@ -1,0 +1,143 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-score-ammatar-mandate-level-4
+kind: mission
+name: The Score
+level: 4
+enemyFaction: Ammatar Mandate
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Score (Ammatar Mandate) (Level 4)
+    url: https://wiki.eveuniversity.org/The_Score_(Ammatar_Mandate)_(Level_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "196407"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: web
+notes:
+  - text: "Suggested ships: Battleship"
+lootNotes:
+  - text: "Loot: ± 23 Mil ISK"
+  - text: "Besides normal loot, the NPCs also drop Ammatar Navy Insignia ('tags'):"
+  - text: 9 Ammatar Navy Colonel Insignia I
+  - text: 7 Ammatar Navy Colonel Insignia II
+  - text: 8 Ammatar Navy Major Insignia I
+  - text: 14 Ammatar Navy Major Insignia II
+  - text: 14 Ammatar Navy Sergeant Insignia I
+  - text: 4 Ammatar Navy Sergeant Insignia II
+  - text: 6 Ammatar Navy Sergeant Insignia III
+  - text: "Ammatar Navy Insignia: Current Jita sell value is 12 million isk and buy value 8 million isk."
+  - text: "Salvage: ± 3 Mil ISK"
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: Gate to pocket 2 is 60 km from arrival point. There are two groups, 35-85km from arrival point.
+    waves:
+      - id: group-1
+        trigger:
+          on: warpIn
+          text: Group 1
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Ammatar Navy Gamma I Support
+            ewar:
+              - kind: web
+          - count: "4"
+            class: Cruiser
+            names:
+              - Ammatar Navy Maller
+          - count: "1"
+            class: Battleship
+            names:
+              - Ammatar Navy Armageddon
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Ammatar Navy Delta I
+              - Ammatar Navy Delta II Support Frigate
+            group: Group 2
+            ewar:
+              - kind: web
+          - count: "10"
+            class: Frigate
+            names:
+              - Ammatar Navy Soldier
+            group: Group 2
+          - count: "4"
+            class: Cruiser
+            names:
+              - Ammatar Navy Augoror
+            group: Group 2
+          - count: "3"
+            class: Battleship
+            names:
+              - Ammatar Navy Apocalypse
+              - Ammatar Navy Armageddon
+            group: Group 2
+  - name: Pocket 2
+    notes:
+      - text: Gate to pocket 3 is 44km from arrival point. There are two groups, 40-60km from arrival point.
+    waves:
+      - id: group-1
+        trigger:
+          on: warpIn
+          text: Group 1
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Ammatar Navy Gamma II Support
+            ewar:
+              - kind: web
+          - count: "6"
+            class: Cruiser
+            names:
+              - Ammatar Navy Maller
+          - count: "1"
+            class: Battleship
+            names:
+              - Ammatar Navy Armageddon
+          - count: "4"
+            class: Cruiser
+            names:
+              - Ammatar Navy Augoror
+            group: Group 2
+          - count: "4"
+            class: Battleship
+            names:
+              - Ammatar Navy Apocalypse
+            group: Group 2
+  - name: Pocket 3
+    notes:
+      - text: One group, 65-80km from arrival point.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Ammatar Navy Gamma II Support
+            ewar:
+              - kind: web
+          - count: "4"
+            class: Frigate
+            names:
+              - Ammatar Navy Soldier
+          - count: "4"
+            class: Cruiser
+            names:
+              - Ammatar Navy Maller
+          - count: "6"
+            class: Battleship
+            names:
+              - Ammatar Navy Apocalypse
+              - Ammatar Navy Armageddon

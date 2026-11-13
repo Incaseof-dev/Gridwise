@@ -1,0 +1,59 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: edencom-forward-post
+kind: anomaly
+name: EDENCOM Forward Post
+dedRating: null
+enemyFaction: EDENCOM
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – EDENCOM Forward Post
+    url: https://wiki.eveuniversity.org/EDENCOM_Forward_Post
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "214446"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: This combat site, together with the revamped Emerging Conduits, are the primary combat sites found in the Stellar Reconnaissance phase.
+  - text: These combat sites also spawn in minor victory systems.
+  - text: Clearing this site helps the Triglavian Collective.
+pockets:
+  - name: Running the site
+    notes:
+      - text: "Incoming Transmission:: Foreign Narodyna translocation beacons activating at conduit thresholds. Extirpate the small fleet of foreign vessels that surface."
+      - text: Initially the site has no NPCs. Shortly after warp-in a cynosural field will spawn and the rats will appear around it.
+    waves:
+      - id: wave-1-around-3-6-ships
+        trigger:
+          on: other
+          text: Wave 1 (around 3-6 ships)
+          confidence: inferred
+        spawns:
+          - count: 0-2
+            class: Elite Frigate
+            names:
+              - Scout Navy
+              - Fleet Frigate
+            ewar:
+              - kind: sensorDamp
+          - count: 0-2
+            class: Elite Frigate
+            names:
+              - Navy
+              - Fleet Frigate
+          - count: 0-1
+            class: Cruiser
+            names:
+              - Scout Navy
+              - Fleet Cruiser
+          - count: 0-1
+            class: Battleship
+            names:
+              - Scout Navy
+              - Fleet Battleship
+sde:
+  dungeonIds:
+    - 8792

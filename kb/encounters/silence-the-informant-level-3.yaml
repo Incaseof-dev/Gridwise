@@ -1,0 +1,149 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: silence-the-informant-level-3
+kind: mission
+name: Silence the Informant
+level: 3
+enemyFaction: Rogue Drones & Mercenaries
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Silence the Informant (Level 3)
+    url: https://wiki.eveuniversity.org/Silence_the_Informant_(Level_3)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223384"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Kill Terak Nomuri
+ewar:
+  - kind: web
+  - kind: warpScramble
+notes:
+  - text: "Web/warp disruption: Web, Scram (Mercenary Wingman, Strain Infestor Alvi)"
+  - text: "Suggested ships: Battlecruiser"
+  - text: No hostiles at initial gate.
+  - text: Unless otherwise noted, structures do not drop loot.
+  - text: Shooting the Particle accelerator cause a lighting bolt on the rocks circle
+pockets:
+  - name: 1st Pocket
+    notes:
+      - text: Acceleration Gate to next pocket is 5km away. Clear all Targets to open the gate.
+    waves:
+      - id: 1st-group-20-22km-auto-aggro
+        trigger:
+          on: other
+          text: 1st Group, 20-22km (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Striker Alvatis
+      - id: 2nd-group-60-65km
+        trigger:
+          on: other
+          text: 2nd Group, 60-65km
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Frigate
+            names:
+              - Barracuda
+              - Devilfish
+              - Raider
+              - Sunder Alvi
+          - count: 0-1
+            class: Elite Frigate
+            names:
+              - Strain Infestor
+              - Strain Decimator Alvi
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "2"
+            class: Cruiser
+            names:
+              - Disintegrator Alvum
+              - Viral Infector Alvum
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Enforcer Alvatis
+  - name: 2nd Pocket
+    notes:
+      - text: "Upon entry: Greetings, traveler. We are here on top secret business, and absolutely do not want to be disturbed. I expect you to turn your little tush around and head back your merry way. If you insist on bothering us, we will be forced to destroy you. You've had your warning, now go."
+    waves:
+      - id: 1st-group-15-20km-auto-aggro
+        trigger:
+          on: other
+          text: 1st Group, 15-20km (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Mercenary Elite Fighter
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Mercenary Wingman
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "2"
+            class: Cruiser
+            names:
+              - Mercenary Commander
+      - id: 2nd-group-60-70km-auto-aggro
+        trigger:
+          on: other
+          text: 2nd Group, 60-70km (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Mercenary Wingman
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "3"
+            class: Cruiser
+            names:
+              - Mercenary Commander
+  - name: 3rd Pocket
+    notes:
+      - text: "Blitz: kill Terak Nomuri."
+      - text: "Info: As you enter the final area of this deadspace pocket, you notice the informant, Terak Nomuri, idly floating by his mobile residence. You wonder to yourself, how could a man commanding a lone frigate survive in this hellish place, infested by rogue drones. But such thoughts quickly evaporate as you notice yourself being locked, and attacked"
+    waves:
+      - id: initial-group-30-50km
+        trigger:
+          on: warpIn
+          text: Initial Group, 30-50km
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Drone Sentry I
+          - count: "2"
+            class: Sentry
+            names:
+              - Drone Sentry II
+          - count: "1"
+            class: Frigate
+            names:
+              - Terak Nomuri
+      - id: wave
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Pleasure Hub
+            drop: Science skillbooks, materials, possibly illicit goods

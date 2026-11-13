@@ -1,0 +1,29 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: a-matter-of-decorum
+kind: mission
+name: A Matter of Decorum
+level: null
+enemyFaction: null
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – A Matter of Decorum
+    url: https://wiki.eveuniversity.org/A_Matter_of_Decorum
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "228283"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Bring Mizara's doll to the colony where her family lives.
+notes:
+  - text: "Tradition: Amarr society is popularly conceived as hierarchical and old-fashioned. True Amarr are thought to dominate all people they conquer, and treat their own people as little better than cattle. While that can be true in certain cases, the political realities of the Amarr Empire are far too complex to paint the Empire as a wholly evil power."
+  - text: Objective
+  - text: Bring Mizara's doll to the colony where her family lives, in Tanoo.
+  - text: Notes
+  - text: --The mission can be completed remotely and the next mission can be accepted remotely.--
+  - text: You will receive 1x Mizara's Doll to deliver. Don't forget to put it from your items hangar into your cargo before undocking. Warp to the encounter. You will be placed about 18km away from Mizara Familty Hovel. Aproach it and drop Mizara's Doll into their home. Mission complete. Hopefully, it will help the family in their grieving process.
+  - text: 'On turn in, Dovrich Anselm says: "Thank you for doing this, my friend. To see others suffer is never easy."'
+  - text: "Next Mission: New Friends"

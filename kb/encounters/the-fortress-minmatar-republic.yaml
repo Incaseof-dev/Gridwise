@@ -1,0 +1,134 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-fortress-minmatar-republic
+kind: mission
+name: The Fortress
+level: 5
+enemyFaction: Minmatar Republic
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Fortress (Minmatar Republic)
+    url: https://wiki.eveuniversity.org/The_Fortress_(Minmatar_Republic)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "198293"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal: []
+  resist:
+    - explosive
+    - kinetic
+    - thermal
+ewar:
+  - kind: web
+  - kind: neut
+  - kind: warpScramble
+notes:
+  - text: "Web/warp disruption: Scramble"
+  - text: "Blitz: mission is complete once cap ship array is dead (good luck tanking!)"
+  - text: When you enter, you will get full aggro and be neuted. Taking out the cruise batteries first gets rid of annoying thermal damage.
+  - text: The Republic Fighters are not to be underestimated. They tend to have their shots synchronized, so a group of 10 will do 7000+ alpha unresisted.
+lootNotes:
+  - text: "Capital Ship Maintenance Array: trade goods"
+  - text: "Wrecks: Tags"
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Structure
+            names:
+              - Starbase Capital Ship Maintenance Array
+            triggers: Damage level triggers reinforcements 1 to 3
+      - id: initial-forces
+        trigger:
+          on: warpIn
+          text: Initial forces
+        spawns:
+          - count: "8"
+            class: Elite Frigate
+            names:
+              - Chief Republic Ivan
+              - Chief Republic Magni
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Republic Tribal Norn
+              - Republic Tribal Nutia
+          - count: "6"
+            class: Battleship
+            names:
+              - Republic Tribal Jotun
+              - Republic Tribal Sigur
+          - count: "8"
+            class: Sentry
+            names:
+              - Minmatar Neutralizer Sentry III
+            ewar:
+              - kind: neut
+          - count: "4"
+            class: Sentry
+            names:
+              - Minmatar Sentry Gun III
+      - id: reinforcement-1
+        trigger:
+          on: other
+          text: Reinforcement 1
+          confidence: inferred
+        spawns:
+          - count: "10"
+            class: Fighter
+            names:
+              - Republic Fighter
+            group: Triggered when the maintenance array gets into armor (or very low shields)
+      - id: reinforcement-2
+        trigger:
+          on: other
+          text: Reinforcement 2
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Chief Republic Ivan
+              - Chief Republic Magni
+            group: Triggered when the maintenance array gets into low armor
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "6"
+            class: Elite Cruiser
+            names:
+              - Chief Republic Pafi
+            group: Triggered when the maintenance array gets into low armor
+          - count: "8"
+            class: Battleship
+            names:
+              - Republic Tribal Ymir
+            group: Triggered when the maintenance array gets into low armor
+          - count: "4"
+            class: Sentry
+            names:
+              - Tower Sentry Minmatar III
+            group: Triggered when the maintenance array gets into low armor
+      - id: reinforcement-3
+        trigger:
+          on: other
+          text: Reinforcement 3
+          confidence: inferred
+        spawns:
+          - count: "10"
+            class: Fighter
+            names:
+              - Republic Fighter
+            group: Triggered when the maintenance array gets below half hull

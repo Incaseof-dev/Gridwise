@@ -1,0 +1,73 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: unauthorized-military-presence-mordus
+kind: mission
+name: Unauthorized Military Presence
+level: 1
+enemyFaction: Mordu's Legion Command
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Unauthorized Military Presence (Mordus)
+    url: https://wiki.eveuniversity.org/Unauthorized_Military_Presence_(Mordus)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231252"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Intercept the personnel transport ship, destroy its guards, and bring the militants to your agent
+notes:
+  - text: "Suggested ships: Frigate"
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: "Blitz: Ignore the Sabre and take the gate."
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial group
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Mordus Sabre
+            triggers: Sends message on damage
+      - id: reinforcement
+        trigger:
+          on: other
+          text: Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Mordus Rookie
+  - name: Pocket 2
+    waves:
+      - id: initial-group-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial group, auto aggro
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Mordus Rookie
+      - id: personnel-transport-and-escort-after-2-minutes
+        trigger:
+          on: other
+          text: Personnel Transport and escort, after 2 minutes
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Mordus Rookie
+              - Mordus Sabre
+          - count: "1"
+            class: Cruiser
+            names:
+              - Mordus Personnel Transport

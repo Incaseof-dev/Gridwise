@@ -1,0 +1,50 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: dark-alliance
+kind: mission
+name: Dark Alliance
+level: 3
+enemyFaction: Minmatar Republic
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Dark Alliance
+    url: https://wiki.eveuniversity.org/Dark_Alliance
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191633"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: targetPaint
+  - kind: web
+notes:
+  - text: "Web/warp disruption: Some Cruisers may web"
+  - text: "Suggested ships: Battlecruiser"
+  - text: "Blitz: Destroy one Fuel Depot to detonate ambassador's ship and get 1x Political Envoy in your cargo automatically, then warp-out."
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: initial-spawn-20-30km
+        trigger:
+          on: warpIn
+          text: Initial Spawn, 20-30km
+        spawns:
+          - count: "13"
+            class: Frigate
+            names:
+              - Minmatar Scout
+            ewar:
+              - kind: targetPaint
+          - count: "12"
+            class: Cruiser
+            names:
+              - Minmatar Escort
+            ewar:
+              - kind: web
+          - count: "4"
+            class: Structure
+            names:
+              - Fuel Depot
+            note: Shoot to get loot container.

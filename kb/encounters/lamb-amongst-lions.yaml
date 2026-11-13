@@ -1,0 +1,89 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: lamb-amongst-lions
+kind: mission
+name: Lamb Amongst Lions
+level: 4
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Lamb Amongst Lions
+    url: https://wiki.eveuniversity.org/Lamb_Amongst_Lions
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "205183"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy
+ewar:
+  - kind: ecm
+notes:
+  - text: No aggro upon warp-in.
+  - text: "Spawn triggers: Wave 1 spawns when initial defenders are agressed."
+  - text: "Spawn triggers: Rest of the waves spawn after the previous wave has been destroyed. Ships MIGHT have triggers, but the writer went from frigates to BS's."
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Pithi Destructor
+          - count: "2"
+            class: Battleship
+            names:
+              - Pithi Conquistador
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Pithi Demolisher
+          - count: "3"
+            class: Battleship
+            names:
+              - Pith destroyer
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Cruiser
+            names:
+              - Pithum Mortifier
+              - Pithum Inferno
+          - count: "4"
+            class: Battleship
+            names:
+              - Pith destroyer
+              - Pith Conquistador
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battleship
+            names:
+              - Pith destroyer
+              - Pith Conquistador
+          - count: "4"
+            class: Battleship
+            names:
+              - Guristas Officer
+            ewar:
+              - kind: ecm

@@ -1,0 +1,64 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: jet-canning-a-janitor
+kind: mission
+name: Jet-Canning a Janitor
+level: null
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Jet-Canning a Janitor
+    url: https://wiki.eveuniversity.org/Jet-Canning_a_Janitor
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "228250"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Kill the pirates, find Nebben Centrien and return him to Sister Alitura.
+notes:
+  - text: "Janitors: If you think it’s easy to find people to take on the janitor role between the stars -- well, it’s not, okay? Janitors are in high demand, especially in places frequented by capsuleers, who are not exactly famous for cleaning up after themselves."
+  - text: After destroying the enemy ships, collect Nebben from his shuttle and return to Sister Alitura.
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: "On reinforcement destruction, Nebben Centrien says:"
+      - text: "Nebben Centrien:: \"Yeah, I know where Aubrei--the ship's cook--was headed, but I'll need a terminal to give you the coordinates. A terminal in a safe station. I'm not stupid.\""
+      - text: "Next Mission: Chivvying a Chef"
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Coreli Spy
+              - Coreli Agent
+            triggers: Reinforcements
+      - id: reinforcements
+        trigger:
+          on: other
+          text: Reinforcements
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Coreli Scout
+              - Coreli Initiate
+            triggers: Last ship destroyed drops Centrien's Shuttle
+      - id: wave
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: "?"
+            class: Container
+            names:
+              - Centrien's Shuttle
+            drop: 1x Nebben Centrien, Janitor

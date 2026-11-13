@@ -1,0 +1,78 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: smuggler-interception-sanshas-nation
+kind: mission
+name: Smuggler Interception
+level: 2
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Smuggler Interception (Sansha's Nation)
+    url: https://wiki.eveuniversity.org/Smuggler_Interception_(Sansha's_Nation)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191943"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: trackingDisruption
+notes:
+  - text: "Suggested ships: Cruiser"
+  - text: "Blitz: Destroy group 2 and loot militants from Sansha Personnel Transport wreck."
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: group-1-40km
+        trigger:
+          on: other
+          text: Group 1, 40km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Centii Butcher
+              - Centii Manslayer
+              - Centii Minion
+              - Centii Servant
+      - id: group-2-45km
+        trigger:
+          on: other
+          text: Group 2, 45km
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Centii Slavehunter
+              - Centii Savage
+              - Centii Abomination
+              - Centii Minion
+            ewar:
+              - kind: trackingDisruption
+          - count: "1"
+            class: Cruiser
+            names:
+              - Centum Ravager
+          - count: "2"
+            class: Industrial
+            names:
+              - Sansha Personnel Transport
+            drop: Militants
+            note: Mission objective
+      - id: structures-no-loot
+        trigger:
+          on: other
+          text: Structures (No Loot)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Structure
+            names:
+              - Colony
+          - count: "1"
+            class: Structure
+            names:
+              - Installation

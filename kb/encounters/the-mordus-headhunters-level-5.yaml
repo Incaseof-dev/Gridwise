@@ -1,0 +1,212 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-mordus-headhunters-level-5
+kind: mission
+name: The Mordus Headhunters
+level: 5
+enemyFaction: Mordu's Legion Command
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Mordus Headhunters (Level 5)
+    url: https://wiki.eveuniversity.org/The_Mordus_Headhunters_(Level_5)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223378"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: T2 Battleship and smaller"
+notes:
+  - text: "Suggested ships: Passive/Active Battleship + Logistics Battleship"
+  - text: No Neuts means this mission is active tank friendly
+  - text: Spawns will aggro teammates and drones, so trigger spawns before friendly Logistics ship(s) enter the room
+  - text: Maximum damage dealing of all ships in 3rd Pocket is 1,980 HP/s (72% Kin, 28% Therm)
+  - text: "Orbit ranges:"
+  - text: Frigates - 8km
+  - text: Cruisers - 18km
+  - text: Battleships - 50km
+  - text: Mordus Fleet Commander might Drop a x03 implant
+pockets:
+  - name: 1st Pocket
+    notes:
+      - text: Reinforcements that are triggered when a ship is shot will be referred to as "Hair-Trigger".
+      - text: Initial Group and the locations of upcoming spawns
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Mordus Katana
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Mordus Bounty Hunter
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "2"
+            class: Battleship
+            names:
+              - Mordus Mammoth
+            triggers: 1A Reinforcement (Hair-Trigger)
+          - count: "3"
+            class: Battleship
+            names:
+              - Mordus Gigamar
+            triggers: 2nd Reinforcement (Hair-Trigger)
+      - id: 1a-reinforcement-hair-trigger-at-station-ruins
+        trigger:
+          on: other
+          text: 1A Reinforcement (Hair-Trigger), at Station Ruins
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Mordus Bounty Hunter
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "5"
+            class: Cruiser
+            names:
+              - Mordus Leopard
+              - Mordus Lion
+            triggers: Leopard kill triggers 1B Reinforcement
+      - id: 1b-reinforcement-at-asteroids
+        trigger:
+          on: other
+          text: 1B Reinforcement, at Asteroids
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Battleship
+            names:
+              - Mordus Gigamar
+              - Mordus Mammoth
+      - id: 2nd-reinforcement-hair-trigger-at-asteroids
+        trigger:
+          on: other
+          text: 2nd Reinforcement (Hair-Trigger), at Asteroids
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Mordus Bounty Hunter
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "2"
+            class: Cruiser
+            names:
+              - Mordus Lion
+          - count: "3"
+            class: Battleship
+            names:
+              - Mordus Gigamar
+  - name: 2nd Pocket
+    notes:
+      - text: Initial Group and the locations of upcoming spawns
+    waves:
+      - id: initial-group-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group (auto-aggro)
+        spawns:
+          - count: "10"
+            class: Battleship
+            names:
+              - Mordus Mammoth
+              - Mordus Phanti
+              - Mordus Gigamar
+              - Mordus Sequestor
+            triggers: Sequestor triggers 1st Reinforcement (Hair-Trigger)
+      - id: 1st-reinforcement-hair-trigger-0km
+        trigger:
+          on: other
+          text: 1st Reinforcement (Hair-Trigger), 0km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Mordus Bounty Hunter
+            ewar:
+              - kind: web
+              - kind: warpScramble
+            triggers: 2nd Reinforcement
+          - count: "4"
+            class: Cruiser
+            names:
+              - Mordus Lion
+      - id: 2nd-reinforcement
+        trigger:
+          on: other
+          text: 2nd Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Mordus Bounty Hunter
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "7"
+            class: Cruiser
+            names:
+              - Mordus Leopard
+              - Mordus Lion
+          - count: "5"
+            class: Battleship
+            names:
+              - Mordus Mammoth
+  - name: 3rd Pocket
+    notes:
+      - text: Reinforcement spawn locations
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Mordus Bounty Hunter
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "3"
+            class: Battleship
+            names:
+              - Mordus Gigamar
+          - count: "1"
+            class: Battleship
+            names:
+              - Mordus Fleet Commander
+            triggers: Reinforcement (Hair-Trigger)
+      - id: reinforcement-hair-trigger-30km-on-4-sides
+        trigger:
+          on: other
+          text: Reinforcement (Hair-Trigger), 30km on 4 sides
+          confidence: inferred
+        spawns:
+          - count: "12"
+            class: Elite Frigate
+            names:
+              - Mordus Bounty Hunter
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "12"
+            class: Battleship
+            names:
+              - Mordus Gigamar

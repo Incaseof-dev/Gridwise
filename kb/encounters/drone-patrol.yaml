@@ -1,0 +1,336 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: drone-patrol
+kind: anomaly
+name: Drone Patrol
+dedRating: null
+anomalyClass: 9
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Drone Patrol
+    url: https://wiki.eveuniversity.org/Drone_Patrol
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231245"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Before hacking and slashing, beware that there are three versions of the site, and the spawns may vary considerably. There is at least one version of the site that is considerably more difficult than what is listed below!
+  - text: The site consists of one ungated pocket. There is an Abandoned Station about 3 km from warp-in and around 30-40 Ship Debris spread around the pocket. New wave spawns once ships from previous spawn are dead.
+  - text: Some of the frigates scramble and warp disrupt.
+  - text: This variant contains a prominent Abandoned Station
+  - text: "Escalation: Site may escalate to Outgrowth Rogue Drone Hive (10/10)"
+lootNotes:
+  - text: The drones drop no loot
+  - text: Bounty amount to about 22-23 million ISK
+  - text: There is a rare sentient spawn
+  - text: There is a rare INFESTED CARRIER spawn (18.06.2024)
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Strain Silverfish Alvi
+              - Strain Hunter Alvi
+          - count: 3-4
+            class: Battleship
+            names:
+              - Alvus Creator
+              - Patriach Alvus
+      - id: wave-1
+        trigger:
+          on: other
+          text: "Wave #1"
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Destroyer
+            names:
+              - Dismantler
+              - Predator
+              - Marauder Alvior
+          - count: "3"
+            class: Battleship
+            names:
+              - Alvus Creator
+              - Patriach Alvus
+      - id: wave-2
+        trigger:
+          on: other
+          text: "Wave #2"
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Strain Render Alvi
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Enforcer
+              - Defeater Alvatis
+          - count: "3"
+            class: Battleship
+            names:
+              - Patriach Alvus
+              - Alvus Creator
+      - id: wave-3
+        trigger:
+          on: other
+          text: "Wave #3"
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Strain Devilfish Alvi
+              - Strain Barracuda Alvi
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Strain Disintegrator Alvum
+              - Strain Bomber Alvum
+          - count: "3"
+            class: Battleship
+            names:
+              - Patriach Alvus
+              - Alvus Creator
+  - name: Abandoned Station
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Strain Hunter
+              - Strain Silverfish Alvi
+          - count: 3-4
+            class: Battleship
+            names:
+              - Alvus Creator
+              - Patriarch Alvus
+      - id: wave-1
+        trigger:
+          on: other
+          text: "Wave #1"
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Dismantler
+              - Predator Alvior
+          - count: "4"
+            class: Battleship
+            names:
+              - Alvus Creator
+              - Patriach Alvus
+      - id: wave-3
+        trigger:
+          on: other
+          text: "Wave #3"
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Strain Decimator
+              - Strain Splinter Alvi
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Striker
+              - Exterminator
+              - Siege Alvatis
+          - count: "4"
+            class: Battleship
+            names:
+              - Patriach Alvus
+              - Alvus Creator
+  - name: 3rd variant
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "1"
+            class: Battleship
+            names:
+              - Elite Drone Parasite
+            triggers: Hitting this battleship spawns the other waves
+      - id: reinforcement-spawn-3-pokets
+        trigger:
+          on: other
+          text: Reinforcement Spawn(3 pokets)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Strain Decimator Alvi
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "5"
+            class: Elite Frigate
+            names:
+              - Strain Splinter Alvi
+            ewar:
+              - kind: web
+          - count: "7"
+            class: Battleship
+            names:
+              - Alvus Creator
+              - Patriach Alvus
+      - id: reinforcement-spawn-1
+        trigger:
+          on: other
+          text: "Reinforcement Spawn #1"
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Strain Sunder Alvi
+              - Strain Raider Alvi
+          - count: "3"
+            class: Battleship
+            names:
+              - Alvus Creator
+              - Patriach Alvus
+      - id: reinforcement-spawn-2
+        trigger:
+          on: other
+          text: "Reinforcement Spawn #2"
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Strain Silverfish Alvi
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Strain Barracuda Alvi
+          - count: "2"
+            class: Battleship
+            names:
+              - Alvus Creator
+              - Patriach Alvus
+      - id: reinforcement-spawn-3
+        trigger:
+          on: other
+          text: "Reinforcement Spawn #3"
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Destroyer
+            names:
+              - Marauder Alvior
+          - count: "2"
+            class: Destroyer
+            names:
+              - Predator Alvior
+          - count: "3"
+            class: Battleship
+            names:
+              - Alvus Creator
+              - Patriach Alvus
+      - id: reinforcement-spawn-4
+        trigger:
+          on: other
+          text: "Reinforcement Spawn #4"
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Destroyer
+            names:
+              - Marauder Alvior
+          - count: "2"
+            class: Cruiser
+            names:
+              - Disintegrator Alvum
+          - count: "3"
+            class: Battleship
+            names:
+              - Alvus Creator
+              - Patriach Alvus
+      - id: reinforcement-spawn-5
+        trigger:
+          on: other
+          text: "Reinforcement Spawn #5"
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Enforcer Alvatis
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Striker Alvatis
+          - count: "2"
+            class: Battleship
+            names:
+              - Alvus Creator
+      - id: reinforcement-spawn-6
+        trigger:
+          on: other
+          text: "Reinforcement Spawn #6"
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Strain Devilfish Alvi
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Strain Barracuda Alvi
+          - count: "2"
+            class: Battleship
+            names:
+              - Alvus Creator
+              - Patriach Alvus
+      - id: reinforcement-spawn-7
+        trigger:
+          on: other
+          text: "Reinforcement Spawn #7"
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Strain Devilfish Alvi
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Strain Barracuda Alvi
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Strain Silverfish Alvi
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Strain Hunter Alvi
+          - count: "4"
+            class: Battleship
+            names:
+              - Alvus Creator
+sde:
+  dungeonIds:
+    - 2347

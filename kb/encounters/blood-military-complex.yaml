@@ -1,0 +1,175 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: blood-military-complex
+kind: complex
+name: Blood Military Complex
+dedRating: null
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Blood Military Complex
+    url: https://wiki.eveuniversity.org/Blood_Military_Complex
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "214043"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Escalation: Chance of triggering escalation site Frontier in Flames"
+lootNotes:
+  - text: Loot is usually minimal 10M ISK but you may get a faction drop 50M ISK.
+pockets:
+  - name: Room 1
+    notes:
+      - text: thumb|Gate locked pop-up.
+      - text: The acceleration gate in this room is locked; a Blood Diamond Tag must be obtained from hostiles and used to unlock the gate. Shooting the Blood Control Unit Unlocks the gate and triggers another spawn.
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+            note: Locked! Requires a Blood Diamond Tag to unlock.
+      - id: initial-forces
+        trigger:
+          on: warpIn
+          text: Initial Forces
+        spawns:
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Corpatis Shade
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Corpatis Fanatic
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Corpatis Phantom
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Corpatis Exorcist
+          - count: "4"
+            class: Battleship
+            names:
+              - Corpus Pope
+          - count: "2"
+            class: Battleship
+            names:
+              - Corpus Patriarch
+  - name: Room 2
+    notes:
+      - text: Note that shooting the main structure in this room spawns additional waves.
+      - text: Elite frigate webbing and tackling
+      - text: Killing the Dark Blood Harbinger may lead to further escalation.
+    waves:
+      - id: wave-1
+        trigger:
+          on: warpIn
+          text: Wave 1
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corpior Devoter
+          - count: "1"
+            class: Destroyer
+            names:
+              - Corpior Cleric
+          - count: "6"
+            class: Battleship
+            names:
+              - Corpus Patriarch
+          - count: "3"
+            class: Battleship
+            names:
+              - Corpus Pope
+          - count: "2"
+            class: Battleship
+            names:
+              - Corpus Cardinal
+          - count: "1"
+            class: Battleship
+            names:
+              - Corpus Monsignor
+          - count: "3"
+            class: Sentry
+            names:
+              - Blood Cruise Missile Battery
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Corpior Friar
+          - count: "1"
+            class: Destroyer
+            names:
+              - Corpior Devoter
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Revenant
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Priest
+          - count: "4"
+            class: Battleship
+            names:
+              - Corpus Patriarch
+          - count: "2"
+            class: Battleship
+            names:
+              - Corpus Pope
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Diviner
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Reaver
+          - count: "5"
+            class: Elite Frigate
+            names:
+              - Supervisor's Wingman
+            note: Renamed Elder Corpii H(?)/U(?)
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Priest
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Revenant
+          - count: "6"
+            class: Elite Cruiser
+            names:
+              - Supervisor's Guardian
+            note: Renamed Elder Corpum ?
+          - count: "1"
+            class: Battleship
+            names:
+              - Dark Blood Harbinger
+sde:
+  dungeonIds:
+    - 1662

@@ -1,0 +1,77 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-sansha-spies-level-4
+kind: mission
+name: The Sansha Spies
+level: 4
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Sansha Spies (Level 4)
+    url: https://wiki.eveuniversity.org/The_Sansha_Spies_(Level_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "193406"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Kill the Sansha Spies
+notes:
+  - text: "Suggested ships: Battleship"
+  - text: "Blitz: Kill the 3rd Group and warp out."
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: 1st-group-36-42km-auto-aggro
+        trigger:
+          on: other
+          text: 1st Group, 36-42km (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Sentry
+            names:
+              - Tower Sentry Sansha I
+          - count: "4"
+            class: Sentry
+            names:
+              - Tower Sentry Sansha II
+      - id: 2nd-group-70-75km
+        trigger:
+          on: other
+          text: 2nd Group, 70-75km
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Destroyer
+            names:
+              - Centior Devourer
+              - Centior Abomination
+          - count: "4"
+            class: Cruiser
+            names:
+              - Centum Hellhound
+              - Centum Fiend
+          - count: "2"
+            class: Battleship
+            names:
+              - Centus Savage Lord
+              - Centus Mutant Lord
+      - id: 3rd-group-80km
+        trigger:
+          on: other
+          text: 3rd Group, 80km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Sansha Spy
+            note: Centatis Devil/Wraith type
+          - count: "1"
+            class: Battleship
+            names:
+              - Centus Dark Lord
+              - Centus Overlord

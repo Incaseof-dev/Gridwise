@@ -1,0 +1,225 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: vengeance-serpentis
+kind: mission
+name: Vengeance
+level: 4
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Vengeance (Serpentis)
+    url: https://wiki.eveuniversity.org/Vengeance_(Serpentis)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "218584"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroye Xevni Jipon and his escort
+ewar:
+  - kind: sensorDamp
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite frigates"
+  - text: You will warp into a large swarm of Hostiles in the first 2 pockets, a MJD is highly recommended to snipe.
+  - text: Groups will aggro Drones, keep a close eye on them.
+  - text: "Tip: Xevni Jipon is weak against thermal damage but has high resistances against kinetic and is immune to EW."
+  - text: "Tip: Be careful not to get stuck on the gate and asteroids in the 1st pocket."
+  - text: "Blitz: 1st and 2nd pocket: destroy all ships to unlock the gates."
+  - text: "Blitz: 3rd pocket: destroy the 3rd group (All ships by the station. Tagging these ships makes it easier). No other kills are needed to complete the mission."
+  - text: No Hostiles at initial gate.
+lootNotes:
+  - text: Bounties ± 11.9 Mil ISK
+  - text: Loot ~ 15 Mil ISK
+  - text: Salvage ~ 7 Mil ISK
+  - text: As of 09/03/2024
+pockets:
+  - name: 1st pocket (Outer Perimeter)
+    notes:
+      - text: Serpentis Narcotics Warehouse drops 10 Drugs.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Destroyer
+            names:
+              - Corelior Soldier
+              - Corelior Infantry
+            group: Group 1 (Asteroid Mining Post, 25-30 km)
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Squad
+              - Platoon Leader
+            group: Group 1 (Asteroid Mining Post, 25-30 km)
+          - count: "5"
+            class: Frigate
+            names:
+              - Coreli Protector
+              - Coreli Defender
+            group: Group 2 (Serpentis Narcotics Warehouse Post, 20-25 km)
+          - count: "5"
+            class: Elite Cruiser
+            names:
+              - Corelum Chief Guard
+              - Corelum Chief Safeguard
+            group: Group 2 (Serpentis Narcotics Warehouse Post, 20-25 km)
+            ewar:
+              - kind: sensorDamp
+          - count: "1"
+            class: Battleship
+            names:
+              - Core Port
+              - Core Rear Admiral
+            group: Group 2 (Serpentis Narcotics Warehouse Post, 20-25 km)
+          - count: "5"
+            class: Elite Frigate
+            names:
+              - Guardian Veteran
+            group: Group 3 (Advance Factory, 15-25 km)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "1"
+            class: Battleship
+            names:
+              - Core Commodore
+              - Core Baron
+            group: Group 3 (Advance Factory, 15-25 km)
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corelior Infantry
+              - Corelior Sentinel
+            group: Group 4 (Asteroid Colony, 20-25 km)
+          - count: "9"
+            class: Elite Cruiser
+            names:
+              - Corelum Chief Sentinel
+            group: Group 4 (Asteroid Colony, 20-25 km)
+            note: type list incomplete on the source page
+  - name: 2nd pocket
+    notes:
+      - text: Attacking the 2nd group will aggro the 4th group.
+      - text: "Recommended order of attack: 1st, 4th, 2nd and 3rd group."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "6"
+            class: Elite Frigate
+            names:
+              - Guardian Veteran
+            group: Group 1 (Acceleration Gate, 0-5 km)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "5"
+            class: Elite Cruiser
+            names:
+              - Corelum Chief Infantry
+              - Corelum Chief Sentinel
+            group: Group 2 (Ruined Monument, 25-30 km)
+            ewar:
+              - kind: sensorDamp
+          - count: "2"
+            class: Battleship
+            names:
+              - Core Rear Admiral
+            group: Group 2 (Ruined Monument, 25-30 km)
+          - count: "4"
+            class: Frigate
+            names:
+              - Coreli Defender
+              - Coreli Protector
+            group: Group 3 (Serpentis Pirate Quarters, 30-40 km)
+          - count: "2"
+            class: Destroyer
+            names:
+              - Corelor Sentinel
+            group: Group 3 (Serpentis Pirate Quarters, 30-40 km)
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Corelum Chief Infantry
+              - Corelum Chief Sentinel
+            group: Group 3 (Serpentis Pirate Quarters, 30-40 km)
+          - count: "2"
+            class: Destroyer
+            names:
+              - Corelor Infantry
+            group: Group 4 (Serpentis Control Tower, 25-35 km)
+          - count: "3"
+            class: Battleship
+            names:
+              - Core Port Admiral
+              - Core Commodore
+            group: Group 4 (Serpentis Control Tower, 25-35 km)
+  - name: 3rd pocket (To the Coven)
+    notes:
+      - text: "Blitz: Destroy group 3 to complete the mission."
+      - text: Serpentis Stronghold as high hp and only drops basic T1 Modules and random ammo (not worth the time).
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corelatis Squad
+              - Corelatis Wing Leader
+            group: Group 1 (Beacon, 0-5 km)
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Guardian Veteran
+            group: Group 2 (50 km)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Corelum Chief Sentinel
+              - Corelum Chief Infantry
+            group: Group 2 (50 km)
+          - count: "2"
+            class: Battleship
+            names:
+              - Core Commodore
+              - Core Port Admiral
+            group: Group 2 (50 km)
+          - count: "4"
+            class: Destroyer
+            names:
+              - Corelior Cannoneer
+              - Corelior Sentinel
+            group: Group 3 (90 km)
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Corelum Chief Sentinel
+              - Corelum Chief Infantry
+            group: Group 3 (90 km)
+          - count: "2"
+            class: Battleship
+            names:
+              - Xevni Jipon
+              - Core Rear Admiral
+              - Flotilla Admiral
+            group: Group 3 (90 km)
+          - count: "4"
+            class: Sentry
+            names:
+              - Serpentis Heavy Missile Battery
+            group: Group 4 (100 km)

@@ -1,0 +1,63 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-angel-cartel-spies-level-4
+kind: mission
+name: The Angel Cartel Spies
+level: 4
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Angel Cartel Spies (Level 4)
+    url: https://wiki.eveuniversity.org/The_Angel_Cartel_Spies_(Level_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "205118"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: web
+notes:
+  - text: The Angel Cartel Spies is a mission involving combat against the Angel Cartel.
+  - text: "Blitz: Destroy all ships. You do not need to shoot the towers."
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: single-group-50km-auto-aggro-on-warp-in
+        trigger:
+          on: warpIn
+          text: Single Group (50km, Auto-aggro on warp-in.)
+        spawns:
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Gistatis Praefectus
+              - Gistatis Tribunis
+          - count: "3"
+            class: Battleship
+            names:
+              - Gist Warlord
+              - Gist Saint
+              - Gist Nephilim
+            note: damage- Thermal 51%, Explosive 36%, Kinetic 11% damage
+          - count: "1"
+            class: Sentry
+            names:
+              - Angel Stasis Tower
+            ewar:
+              - kind: web
+          - count: "2"
+            class: Sentry
+            names:
+              - Angel Heavy Missile Battery
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Barracks
+            drop: Chance for T1 ammo, cap booster charges

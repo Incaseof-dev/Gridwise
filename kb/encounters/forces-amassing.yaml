@@ -1,0 +1,136 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: forces-amassing
+kind: mission
+name: Forces Amassing (Amarr), Level 5
+level: 5
+enemyFaction: Amarr Empire
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Forces Amassing
+    url: https://wiki.eveuniversity.org/Forces_Amassing
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "208625"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Suggested ships: Dual logistics domi"
+  - text: "Space type: Deadspace with gate"
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: group-a-full-aggro-on-warp-in
+        trigger:
+          on: warpIn
+          text: Group A (Full aggro on warp in)
+        spawns:
+          - count: "3"
+            class: Sentry
+            names:
+              - Amarr Cruise Missile Battery
+          - count: "2"
+            class: Sentry
+            names:
+              - Amarr Heavy Missile Battery
+          - count: "3"
+            class: Sentry
+            names:
+              - Amarr Energy Neutralizer II Tower
+            ewar:
+              - kind: neut
+      - id: group-b-orbits-at-10km
+        trigger:
+          on: other
+          text: Group B (Orbits at ~10Km)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Cruiser
+            names:
+              - Imperial Templar Champion
+          - count: "6"
+            class: Cruiser
+            names:
+              - Imperial Justicar
+            triggers: Reinforcements B1
+      - id: group-c-orbits-49km
+        trigger:
+          on: other
+          text: Group C (Orbits 49Km)
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Battleship
+            names:
+              - Imperial Templar Judgment
+            triggers: Reinforcements C1
+      - id: reinforcements-b1-orbits-10km
+        trigger:
+          on: other
+          text: Reinforcements B1 (Orbits 10Km?)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Cruiser
+            names:
+              - Imperial Templar Champion
+          - count: "4"
+            class: Cruiser
+            names:
+              - Imperial Justica
+            triggers: Reinforcements B2)
+      - id: reinforcements-b2-orbits-10km
+        trigger:
+          on: other
+          text: Reinforcements B2 (Orbits ~10Km?)
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Cruiser
+            names:
+              - Imperial Templar Phalanx
+      - id: reinforcements-c1-orbits-49km
+        trigger:
+          on: other
+          text: Reinforcements C1 (Orbits 49km)
+          confidence: inferred
+        spawns:
+          - count: "7"
+            class: Battleship
+            names:
+              - Imperial Templar Martyr
+            triggers: Reinforcements C2
+      - id: reinforcements-c2
+        trigger:
+          on: other
+          text: Reinforcements C2
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battleship
+            names:
+              - Imperial Templar Dominator
+            group: Orbits 17Km
+          - count: "2"
+            class: Battleship
+            names:
+              - Imperial Templar Martyr
+            group: Orbits 49Km
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "3"
+            class: Structure
+            names:
+              - Amarr Bunkers
+            note: No loot
+          - count: "?"
+            class: Structure
+            names:
+              - Amarr Battlestation
+            note: No loot

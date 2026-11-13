@@ -1,0 +1,103 @@
+# Builds the Linux AppImage and the Windows installer + zip. A version tag (v1.2.0, pushed by hand) also publishes
+# them as a GitHub release, which the app updates itself from (src/main/appUpdate.ts). Run by hand (Actions → Build
+# → Run workflow) it only builds. Not on every push, so it does not use build minutes for nothing.
+#
+# The repository is public, and so are these logs: no secret is used beyond the job's own GITHUB_TOKEN, which can
+# write releases only in the release job. Nothing of the developer's machine goes into the build: the SDE index is
+# fetched from CCP here, and the knowledge base is what is in git.
+name: Build
+
+on:
+  workflow_dispatch:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-24.04
+            target: --linux AppImage
+          - os: windows-latest
+            target: --win
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+
+      # The SDE index is not in git. Build it once per SDE build and cache it, so CCP's server is asked for the
+      # ~100 MB zip only when a new build is out.
+      - name: SDE build number
+        id: sde
+        shell: bash
+        # Block scalar: the `": *"` in the sed pattern would otherwise be read as YAML mapping syntax.
+        run: |
+          echo "build=$(curl -sS https://developers.eveonline.com/static-data/tranquility/latest.jsonl | sed -E 's/.*"buildNumber": *([0-9]+).*/\1/')" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/cache@v6
+        id: sde-cache
+        with:
+          path: data/sde.sqlite
+          key: sde-${{ steps.sde.outputs.build }}
+
+      - if: steps.sde-cache.outputs.cache-hit != 'true'
+        run: npm run sde -- update --db data/sde.sqlite
+
+      - run: npx electron-vite build
+      # On Windows the .exe resources (icon, version info) can be edited natively, so it is enabled here.
+      - run: npx electron-builder ${{ matrix.target }} --publish never ${{ runner.os == 'Windows' && '--config.win.signAndEditExecutable=true' || '' }}
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: gridwise-${{ runner.os }}
+          path: |
+            dist/*.AppImage
+            dist/*.exe
+            dist/*.zip
+            dist/*.blockmap
+            dist/latest*.yml
+          if-no-files-found: error
+
+  release:
+    needs: build
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+
+      # The tag must match the version the app reports, or the updater would offer the same version again.
+      - name: Tag matches package.json
+        run: |
+          v="$(node -p "require('./package.json').version")"
+          [ "v$v" = "$GITHUB_REF_NAME" ] || { echo "tag $GITHUB_REF_NAME, package.json $v"; exit 1; }
+
+      - uses: actions/download-artifact@v8
+        with:
+          path: dist
+          merge-multiple: true
+
+      - uses: softprops/action-gh-release@v3
+        with:
+          name: Gridwise ${{ github.ref_name }}
+          generate_release_notes: true
+          fail_on_unmatched_files: true
+          files: |
+            dist/*.AppImage
+            dist/*.exe
+            dist/*.zip
+            dist/*.blockmap
+            dist/latest.yml
+            dist/latest-linux.yml

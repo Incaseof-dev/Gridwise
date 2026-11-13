@@ -1,0 +1,83 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: drone-collection
+kind: anomaly
+name: Drone Collection
+dedRating: null
+anomalyClass: 2
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Drone Collection
+    url: https://wiki.eveuniversity.org/Drone_Collection
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225180"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Single normal space pocket. Auto-aggression from each wave. The last drone killed triggers the next wave. Waves spawn at 5-8 km from warp-in
+  - text: "Escalation: This site doesn't have any escalations."
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 1-2
+            class: Frigate
+            names:
+              - Infester
+              - Splinter Alvi
+      - id: first-spawn
+        trigger:
+          on: other
+          text: First spawn
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Infester
+              - Splinter Alvi
+      - id: second-spawn
+        trigger:
+          on: other
+          text: Second spawn
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Frigate
+            names:
+              - Render
+              - Decimator Alvi
+      - id: third-spawn
+        trigger:
+          on: other
+          text: Third spawn
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Render
+              - Decimator Alvi
+      - id: fourth-spawn
+        trigger:
+          on: other
+          text: Fourth spawn
+          confidence: inferred
+        spawns:
+          - count: 1-3
+            class: Frigate
+            names:
+              - Infester
+              - Splinter Alvi
+    onWarpIn: It appears that you have stumbled upon the first seeds of a Rogue Drone Hive. Destroying it before it grows any larger would probably be a good idea.
+sde:
+  dungeonIds:
+    - 2339

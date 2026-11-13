@@ -1,0 +1,69 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: after-the-seven-replacement
+kind: mission
+name: After The Seven - "Replacement"
+level: 1
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – After The Seven - "Replacement"
+    url: https://wiki.eveuniversity.org/After_The_Seven_-_%22Replacement%22
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "230793"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Protect the civilian convoy
+notes:
+  - text: This mission is issued by a Security division agent and is part 1 of the 5 part mission chain After The Seven
+  - text: Single ungated pocket. When you warp in there are 3 groups of pirates attacking the neutral transports. Group A and B auto aggro shortly after the message from the team leader. Group C warps out after the destruction of "their" transport.
+  - text: As you kill the hostile frigates the neutral transport ships are able to warp away.
+  - text: "Message from The Seven Team Leader: Hey gang, it looks like the second string escort has finally arrived. We're done with this transport, so we're going to get out of here. Take out this new trash quickly so you can empty the rest of the convoy and catch up."
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: "Note: The compass directions in the table, i.e. NW, are relative to the non-white axis of the tactical overlay."
+      - text: Next mission
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Seven Plebe [Coreli Scout]
+            group: Group A, 9km NW
+          - count: "1"
+            class: Neutral Frigate
+            names:
+              - Transport Vessel
+            group: Group A, 9km NW
+          - count: "3"
+            class: Frigate
+            names:
+              - Seven Plebe [Coreli Spy
+              - Seven Plebe [Coreli Agent]
+            group: Group B, 10km E
+          - count: "1"
+            class: Neutral Frigate
+            names:
+              - Transport Vessel
+            group: Group B, 10km E
+          - count: "5"
+            class: Frigate
+            names:
+              - Seven Plebe [Coreli Spy
+              - Seven Plebe [Coreli Agent]
+            group: Group C, 67km SE
+          - count: "1"
+            class: Neutral Frigate
+            names:
+              - Transport Vessel
+            group: Group C, 67km SE
+            triggers: When destructed this groups pirates leave the scene.

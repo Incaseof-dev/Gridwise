@@ -1,0 +1,296 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: drone-horde
+kind: anomaly
+name: Drone Horde
+dedRating: null
+anomalyClass: 10
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Drone Horde
+    url: https://wiki.eveuniversity.org/Drone_Horde
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225115"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Drone Horde is an unrated combat site belonging to the Rogue Drones faction. It can be found via exploration as a cosmic anomaly in null-security systems across New Eden. As an ungated complex, the limitations as to which ships can complete this site are tied to the security rating of the system where the anomaly spawns (T2 Battleships for high-security systems, and up to Titans in low-security and null-security systems).
+  - text: "This site comes in two forms: One which cointains a turret ring and a cloud gas centering a structure, and other that has 4 bunkers in the middle and many scattered in the corners of a square pattern."
+  - text: This site contains four bunkers at 30km from landing and four other separated in a square pattern centering the bunker cluster. The initial wave spawns scattered at the "corners" of that square, all next waves spawn near the central bunker cluster. The site shows some major inconsistencies regarding the order and timing of wave spawning, resulting in some iterations spawning more than one wave at once, and in others skipping one entirely. There is incoming EM in this site (Alvus Queen, Exterminator Alvatis)
+  - text: Features a structure 30km app. from landing, 8x Lookout Tokers and a Battlecruiser as the initial spawn. Waves are spawned on different points of an horizontal ring with a 20km radius centering the middle structure. Each of these waves spawns a little deployable (not lootable) that diminishes incoming damage. This combat site has a chance to spawn a Sentient Commander Rogue Drone, which drops drone components and may drop faction drone modules and items.
+  - text: "Escalation: Both sites may escalate to Outgrowth Rogue Drone Hive (10/10)"
+pockets:
+  - name: Walkthrough (4-Bunker Variant)
+    notes:
+      - text: Removing battleships from the initial wave will trigger two additional waves before the complete removal of the initial wave.
+      - text: One of those two waves will consist of frigates and some bigger ships, the other of cruisers and bigger ships.
+      - text: "After the complete removal of the initial spawn and the two additional waves, the site will sequentially spawn these five additional waves (in a random order):"
+      - text: With the last wave, there is a chance of a rare spawn
+    waves:
+      - id: initial-spawn
+        trigger:
+          on: warpIn
+          text: Initial spawn
+        spawns:
+          - count: 2-4
+            class: Elite Frigate
+            names:
+              - Strain Infester
+              - Strain Splinter
+              - Strain Raider
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 1-3
+            class: Destroyer
+            names:
+              - Marauder
+              - Dismantler
+              - Predator Alvior
+          - count: 1-2
+            class: Battlecruiser
+            names:
+              - Crippler
+              - Defeater
+              - Exterminator Alvatis
+          - count: 4-8
+            class: Battleship
+            names:
+              - Alvus Queen
+              - Matriarch Alvus
+      - id: 3x-cruiser-battleship-waves
+        trigger:
+          on: other
+          text: 3x Cruiser & Battleship waves
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Cruiser
+            names:
+              - Strain Nuker
+              - Strain Bomber
+              - Strain Disintegrator Alvum
+          - count: 3-4
+            class: Battleship
+            names:
+              - Alvus Queen
+              - Matriarch Alvus
+      - id: 1x-battlecruiser-battleship-wave
+        trigger:
+          on: other
+          text: 1x Battlecruiser & Battleship wave
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Striker
+              - Siege
+              - Enforcer Alvatis
+          - count: 3-4
+            class: Battleship
+            names:
+              - Alvus Queen
+              - Matriarch Alvus
+      - id: 1x-frigate-battlecruiser
+        trigger:
+          on: other
+          text: 1x Frigate & Battlecruiser
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Strain Infester
+              - Strain Splinter
+              - Strain Render
+          - count: 2-3
+            class: Battlecruiser
+            names:
+              - Crippler
+              - Defeater
+              - Exterminator Alvatis
+      - id: 1x-destroyer-battleship-wave-consistently-the-last-wave
+        trigger:
+          on: other
+          text: 1x Destroyer & Battleship wave; Consistently the last wave
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Destroyer
+            names:
+              - Marauder
+              - Dismantler
+              - Predator Alvior
+          - count: 3-4
+            class: Battleship
+            names:
+              - Alvus Queen
+              - Matriarch Alvus
+      - id: wave
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - Sentient Domination Alvus
+          - count: 0-1
+            class: Carrier
+            names:
+              - Infested Carrier
+  - name: Ring spawn
+    waves:
+      - id: initial-spawn
+        trigger:
+          on: warpIn
+          text: Initial spawn
+        spawns:
+          - count: "8"
+            class: Sentry
+            names:
+              - Lookout Tower
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Striker Alvatis
+      - id: first-spawn
+        trigger:
+          on: other
+          text: First spawn
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Strain Splinter
+              - Strain Render
+              - Strain Decimator
+              - Strain Infester Alvi
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Battleship
+            names:
+              - Matriach Alvus
+      - id: second-spawn
+        trigger:
+          on: other
+          text: Second spawn
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Strain Infester
+              - Strain Splinter
+              - Strain Decimator Alvi
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Battleship
+            names:
+              - Alvus Queen
+              - Matriarch Alvus
+      - id: third-spawn
+        trigger:
+          on: other
+          text: Third spawn
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Strain Hunter
+              - Strain Barracuda Alvi
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "5"
+            class: Cruiser
+            names:
+              - Atomizer
+              - Nuker Alvum
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Siege
+              - Exterminator Alvatis
+      - id: fourth-spawn
+        trigger:
+          on: other
+          text: Fourth spawn
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Destroyer
+            names:
+              - Marauder
+              - Dismantler Alvior
+          - count: "4"
+            class: Battleship
+            names:
+              - Marauder Alvus
+              - Matriarch Alvus
+              - Alvus Queen
+      - id: fifth-spawn
+        trigger:
+          on: other
+          text: Fifth spawn
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Strain Infester
+              - Strain Splinter
+              - Strain Render
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Strain Devastator
+              - Strain Violator Alvum
+              - Viral Infector
+          - count: "6"
+            class: Battleship
+            names:
+              - Alvus Queen
+              - Matriarch Alvus
+      - id: sixth-spawn
+        trigger:
+          on: other
+          text: Sixth spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Striker
+              - Siege Alvatis
+          - count: "4"
+            class: Battleship
+            names:
+              - Alvus Queen
+              - Matriarch Alvus
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - Sentient Domination Alvus
+          - count: 0-1
+            class: Carrier
+            names:
+              - Infested Carrier
+sde:
+  dungeonIds:
+    - 2351

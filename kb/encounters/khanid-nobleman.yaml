@@ -1,0 +1,106 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: khanid-nobleman
+kind: mission
+name: Khanid Nobleman
+level: 4
+enemyFaction: Mercenaries & Khanid Kingdom
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Khanid Nobleman
+    url: https://wiki.eveuniversity.org/Khanid_Nobleman
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191767"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal:
+    - kinetic
+    - thermal
+  resist:
+    - em
+    - thermal
+ewar:
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Web/Point (Mercenary Wingman & Khanid Sparrow)"
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: group-1
+        trigger:
+          on: warpIn
+          text: Group 1
+        spawns:
+          - count: "1"
+            class: Cruiser
+            names:
+              - Pleasure Cruiser
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Mercenary Wingman
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "5"
+            class: Frigate
+            names:
+              - Mercenary Elite Fighter
+          - count: "6"
+            class: Cruiser
+            names:
+              - Mercenary Commander
+      - id: group-2
+        trigger:
+          on: other
+          text: Group 2
+          confidence: inferred
+        spawns:
+          - count: "9"
+            class: Cruiser
+            names:
+              - Khanid Hawk
+              - Khanid Eagle
+              - Khanid Officer
+      - id: group-3
+        trigger:
+          on: other
+          text: Group 3
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Khanid Sparrow
+            ewar:
+              - kind: web
+          - count: "5"
+            class: Cruiser
+            names:
+              - Khanid Eagle
+      - id: group-4
+        trigger:
+          on: other
+          text: Group 4
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Khanid Sparrow
+            ewar:
+              - kind: web
+          - count: "10"
+            class: Cruiser
+            names:
+              - Khanid Hawk
+              - Khanid Officer
+          - count: "1"
+            class: Battleship
+            names:
+              - Khanid High Commander

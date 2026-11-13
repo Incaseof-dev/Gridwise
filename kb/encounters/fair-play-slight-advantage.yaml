@@ -1,0 +1,42 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: fair-play-slight-advantage
+kind: mission
+name: Fair Play - Slight Advantage
+level: 1
+enemyFaction: Mercenaries & Rogue Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Fair Play - Slight Advantage
+    url: https://wiki.eveuniversity.org/Fair_Play_-_Slight_Advantage
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223301"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Wait near the decommissioned jumpgate for the pirate scout to come through, then eliminate him.
+notes:
+  - text: This mission is part 4 of the mission chain Fair Play
+  - text: "Walkthrough: When you warp in you arrive at a dis-used stargate."
+  - text: "Walkthrough: After a few seconds the Pirate Scout will jump in, and will start to aggress you."
+  - text: "Walkthrough: Destroy the Pirate Scout and report to your agent."
+  - text: "Structures: No loot"
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: "Agent's comments on completion of mission:"
+      - text: "\"That's exactly what I want to hear. Any minute now the ambush will begin. \""
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Pirate Scout
+            note: Flavor name, actuaal ship type Rogue Pirate Grunt

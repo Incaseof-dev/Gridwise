@@ -1,0 +1,280 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: angels-red-light-district
+kind: complex
+name: Angel's Red Light District
+dedRating: 5
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Angel's Red Light District
+    url: https://wiki.eveuniversity.org/Angel's_Red_Light_District
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231859"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Battleships"
+notes:
+  - text: Angel's Red Light District is a DED Complex (rated 5/10), occupied by the Angel Cartel pirate faction. It can be found via exploration by probing in Highsec and Lowsec systems, or as an escalation from Angel Refuge or Angel Den.
+  - text: The site consists of a volume of space with an acceleration gate and contains various structures and their defending pirates. Using the gate allows access to other areas within the site.
+  - text: This site's acceleration gate allows all subcapitals to enter.
+  - text: "The location of this complex can be received as an escalation from Cosmic Anomalies, in particular the Angel Refuge and Angel Den. Upon such a discovery, the following message appears:"
+  - text: ": Your scanner has picked up a transmission originating from a nearby system. It would be wise to investigate this mysterious signal further."
+loot:
+  - item: 18th Tier Overseers Effects
+    from: Angel Retirement Home
+    note: est. 43m ISK (wiki) · 100% drop rate
+  - item: Gistum B-type Modules
+    from: Angel Retirement Home
+    note: Up to 4x
+  - item: Cynabal BPC
+    from: Angel Retirement Home
+  - item: Domination module
+    from: Captain Rogue
+    note: rare
+  - item: Domination module
+    from: Gardan's Fantasy Complex
+    note: rare
+  - item: Domination module
+    from: Angel Retirement Home
+pockets:
+  - name: Room 1
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Gistii Hunter
+              - Gistii Impaler
+            group: Group 1
+          - count: "2"
+            class: Cruiser
+            names:
+              - Gistum Centurion
+              - Gistum Phalanx
+            group: Group 1
+          - count: "1"
+            class: Overseer Battleship
+            names:
+              - Captain Rouge
+            group: Group 1
+            drop: May rarely contain Domination modules, No Overseers effects
+          - count: "1"
+            class: Sentry
+            names:
+              - Tower Sentry Angel II
+            group: Group 1
+          - count: "17"
+            class: Frigate
+            names:
+              - Gistii Hunter
+              - Gistii Impaler
+            group: Group 2
+          - count: 5-6
+            class: Cruiser
+            names:
+              - Gistum Centurion
+              - Gistum Phalanx
+            group: Group 2
+          - count: 1-2
+            class: Battlecruiser
+            names:
+              - Gistatis Legionnaire
+              - Gistatis Primus
+            group: Group 2
+          - count: "3"
+            class: Battleship
+            names:
+              - Gist Saint
+              - Gist Warlord
+            group: Group 2
+            ewar:
+              - kind: targetPaint
+          - count: "1"
+            class: Sentry
+            names:
+              - Tower Sentry Angel II
+            group: Group 2
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+            note: unlocks when all defenders are dead.
+    onWarpIn: 'This is a den for the ones that value instant worldly pleasure above other things. It is a popular stopover for overworked Angel pirates and members of secret guilds or groups. Captain Rogue or the "Pleasure Officer" maintains a firm control of who is let further into the complex and who is not. DED Threat Assessment: Dangerous (5 of 10)"'
+  - name: Room 2
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Cruiser
+            names:
+              - Gistum Centurion
+              - Gistum Phalanx
+            group: Group 1
+          - count: "6"
+            class: Frigate
+            names:
+              - Gistii Hunter
+              - Gistii Impaler
+            group: Group 2
+          - count: "4"
+            class: Destroyer
+            names:
+              - Gistior Defacer
+              - Gistior Shatterer
+            group: Group 2
+          - count: "3"
+            class: Cruiser
+            names:
+              - Gistum Centurion
+              - Gistum Liquidator
+              - Gistum Phalanx
+            group: Group 2
+          - count: 10-11
+            class: Battlecruiser
+            names:
+              - Gistatis Legionnaire
+              - Gistatis Primus
+            group: Group 2
+          - count: "3"
+            class: Battleship
+            names:
+              - Gist Warlord
+            group: Group 2
+          - count: "3"
+            class: Battleship
+            names:
+              - Gist Malakim
+            group: Group 2
+          - count: "2"
+            class: Battleship
+            names:
+              - Gist Nephilim
+            group: Group 2
+            ewar:
+              - kind: targetPaint
+          - count: "8"
+            class: Sentry
+            names:
+              - Angel Sentry Gun
+            group: Group 3
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+            note: Requires Garan's Private Key, and all defenders to be destroyed.
+          - count: "1"
+            class: Structure
+            names:
+              - Gardan's Fantasy Complex
+            drop: Contains Gardan's Private Key, Can also contain a Domination Adaptive faction module.
+    onWarpIn: Trafficking of drugs, hallucogenics, exotic art pieces and valuables is rampant in this den of carnal pleasures. Attempts to crack down on this operation have all failed as the entertainment facilities here are frequented by prominent political individuals and celebrities. Operatives should restrict themselves to monitoring only.
+  - name: Room 3
+    notes:
+      - text: "Warning: Initial incoming damage will be very high. Clear the triple Stasis Towers as fast as possible; they will web you to a standstill. Stasis towers spawn up to 50km from the beacon. Recommend over 85% resists to Explosive damage."
+      - text: Angel's Retirement Home (the structure with your loot) has 93k shield HP buffer. Unless you can permatank the rats, do not attempt to go after it first.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "11"
+            class: Frigate
+            names:
+              - Gistii Hijacker
+              - Gistii Hunter
+              - Gistii Impaler
+          - count: "1"
+            class: Destroyer
+            names:
+              - Gistior Defacer
+              - Gistior Shatterer
+          - count: "10"
+            class: Cruiser
+            names:
+              - Gistum Centurion
+              - Gistum Phalanx
+          - count: "1"
+            class: Battleship
+            names:
+              - Gist Warlord
+          - count: "1"
+            class: Battleship
+            names:
+              - Gist Nephilim
+            ewar:
+              - kind: targetPaint
+          - count: "2"
+            class: Battleship
+            names:
+              - Elite Warden
+            note: Renamed Gist Throne
+          - count: "1"
+            class: Battleship
+            names:
+              - Bobo the Bruised
+          - count: "1"
+            class: Battleship
+            names:
+              - Dingo
+            ewar:
+              - kind: targetPaint
+            note: Renamed Gist Saint
+          - count: "3"
+            class: Sentry
+            names:
+              - Angel Stasis Tower
+            ewar:
+              - kind: web
+          - count: "9"
+            class: Sentry
+            names:
+              - Angel Sentry Gun
+          - count: "2"
+            class: Sentry
+            names:
+              - Angel Light Missile Battery
+          - count: "1"
+            class: Sentry
+            names:
+              - Angel Heavy Missile Battery
+          - count: "1"
+            class: Sentry
+            names:
+              - Angel Cruise Missile Battery
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Angel Retirement Home
+            drop: Contains 18th tier Overseers Personal effects, and may contain Gistum B-type modules and/or a Cynabal BPC.
+    onWarpIn: A prominent figure in the art world, Mandat Gardan, has established a fairly exotic entertainment facility here. It has gained some renown as it is the only pleasure spa so far to combine hot streams of air and cool water fountains with zero gravity and imaginative architectural solutions. It is reportedly very cheap to build and a surge in this kind of entertainment is expected to happen soon. The wheels of your imagination start turning as your ship's weapon systems warm up.
+sde:
+  dungeonIds:
+    - 2264

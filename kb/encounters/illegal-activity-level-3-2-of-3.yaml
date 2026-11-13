@@ -1,0 +1,47 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: illegal-activity-level-3-2-of-3
+kind: mission
+name: Illegal Activity (2 of 3)
+level: 3
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Illegal Activity (Level 3) (2 of 3)
+    url: https://wiki.eveuniversity.org/Illegal_Activity_(Level_3)_(2_of_3)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "218653"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Investigate the site of the strange anomaly. Destroy any hostiles if you encounter them.
+ewar:
+  - kind: web
+lootNotes:
+  - text: "Loot: ~240k ISK"
+  - text: "Salvage: ~540k ISK"
+  - text: </noinclude
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: warp-in
+        trigger:
+          on: other
+          text: Warp-in
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Federation Navy Delta II Support Frigate
+            ewar:
+              - kind: web
+            drop: Federation Navy Sergeant Insignia II
+          - count: "3"
+            class: Cruiser
+            names:
+              - Federation Navy Detective
+            drop: Federation Navy Sergeant Insignia I

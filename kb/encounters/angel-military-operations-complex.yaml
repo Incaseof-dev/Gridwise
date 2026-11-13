@@ -1,0 +1,362 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: angel-military-operations-complex
+kind: complex
+name: Angel Military Operations Complex
+dedRating: null
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Angel Military Operations Complex
+    url: https://wiki.eveuniversity.org/Angel_Military_Operations_Complex
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "232350"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: No hostiles at initial gate. The site offers a choice of 3 acceleration gates in the 2nd Pocket each leading to an alternate variant of the 3rd pocket and further leading to a common 4th pocket.
+loot:
+  - item: 20th Tier Overseer's Effects
+    from: The Battlestation Admiral
+    note: est. 61.2M ISK (wiki) · 100% drop rate
+  - item: Gist C-Type module
+    from: The Battlestation Admiral
+  - item: Machariel BPC
+    from: The Battlestation Admiral
+  - item: Domination battleship module
+    from: The Stronghold General
+  - item: Domination battleship module
+    from: Tritan -The Underground
+  - item: Domination cruiser module
+    from: Control Headquarters
+  - item: Domination cruiser module
+    from: Security Coordinator
+npcs:
+  Ancient Acceleration Gate:
+    sdeTypes:
+      - Supply Depot
+    class: Accl Gate
+  Ancient Acceleration Gate Mark II:
+    sdeTypes:
+      - Tactical Operations Center
+    class: Accl Gate
+  Ancient Acceleration Gate Mark III:
+    sdeTypes:
+      - Watchpost
+    class: Accl Gate
+pockets:
+  - name: 1st Pocket
+    notes:
+      - text: Dented Cipher from Container with Blast Marks alternative opens 1st gate, but is not required if you kill all enemies.
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: 40km
+          - count: "1"
+            class: Red Container
+            names:
+              - Container with Blast Marks
+            drop: Dented Cipher
+            note: 62km
+      - id: defending-fleet-40-80km
+        trigger:
+          on: other
+          text: Defending Fleet (40-80km)
+          confidence: inferred
+        spawns:
+          - count: 10-14
+            class: Destroyer
+            names:
+              - Gistior Defacer
+              - Gistior Defiler
+              - Gistior Seizer
+              - Gistior Trasher
+          - count: "9"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+            note: type list incomplete on the source page
+          - count: 8-12
+            class: Battleship
+            names:
+              - Gist Malakim
+              - Gist Nephilim
+              - Gist Throne
+            ewar:
+              - kind: targetPaint
+            note: Nephilim uses Target Painter
+    onWarpIn: This military complex belongs to the Angel Cartel, which sent a crew of their finest engineers and military personnel here to establish a mining complex. Unconfirmed DED reports state that the Cartel plans to use this complex to develop new weapons, as well as practice combat maneuvers and strategies away from prying eyes.
+  - name: 2nd Pocket
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Ancient Acceleration Gate
+            note: 40km, leads to 3rd pocket (Supply Depot)
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Ancient Acceleration Gate Mark II
+            note: 30km, leads to alternate 3rd pocket (Tactical Operations Center)
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Ancient Acceleration Gate Mark III
+            note: 60km, leads to alternate 3rd pocket (Watchpost)
+          - count: "1"
+            class: Structure
+            names:
+              - Stargate Under Construction
+            drop: Isogen (50K), Pyerite (100K), Tritanium (200K)
+          - count: "1"
+            class: Structure
+            names:
+              - Angel Cop Bunker
+            drop: Common items
+      - id: defending-fleet-2-5-72km
+        trigger:
+          on: other
+          text: Defending Fleet (2.5-72km)
+          confidence: inferred
+        spawns:
+          - count: 9-11
+            class: Destroyer
+            names:
+              - Gistior Defacer
+            note: type list incomplete on the source page
+          - count: 7-10
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+            note: type list incomplete on the source page
+          - count: 8-9
+            class: Battleship
+            names:
+              - Gist Cherubim
+            note: type list incomplete on the source page
+    onWarpIn: The rumour is that the building of this complex was only half-completed before the Angel Cartel's military operations started. Blasted asteroids and debris from reckless dogfighting litter these deadspace pockets. Caution is advised. Your transmission decoded flickers, a locator signal seemingly emanating from a typical container inside this deadspace pocket. Other transmissions indicate that some kind of a disaster has struck and a massive explosion knocked communications offline a while ago.
+  - name: 3rd Pocket (Supply Depot)
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Ancient Acceleration Gate
+      - id: defending-fleet
+        trigger:
+          on: other
+          text: Defending Fleet
+          confidence: inferred
+        spawns:
+          - count: "10"
+            class: Destroyer
+            names:
+              - Gistior Defacer
+            note: type list incomplete on the source page
+          - count: 6-10
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+            note: type list incomplete on the source page
+          - count: 7-10
+            class: Battleship
+            names:
+              - Gist Cherubim
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - The Stronghold General
+            drop: Possible Domination Battleship modules
+            note: Immune to EWAR
+    onWarpIn: Available data indicates that this deadspace complex pocket was supposed to contain the first deadspace Stargate. Reports indicate that the Angel Cartel was not successful.
+  - name: 3rd Pocket (Tactical Operations Center)
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: 90km
+      - id: defending-fleet-1-100km
+        trigger:
+          on: other
+          text: Defending Fleet (1-100km)
+          confidence: inferred
+        spawns:
+          - count: "10"
+            class: Destroyer
+            names:
+              - Gistior Defacer
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Commander Cruiser
+            names:
+              - Control Headquarters
+            drop: Possible Domination Cruiser modules
+            note: Immune to EWAR, very strong shield tank, HIGHEST resist is Explosive, deal EM damage here.
+          - count: "10"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+            note: type list incomplete on the source page
+          - count: "11"
+            class: Battleship
+            names:
+              - Gist Cherubim
+            note: type list incomplete on the source page
+    onWarpIn: The Angel Cartel has established a well fortified supply depot with a lot of troops stationed in military bunkers. A scout mission revealed that the battlestation in the center is not fully operational and supposedly serves as supply management HQ and storage facilities.
+  - name: 3rd Pocket (Watchpost)
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Ancient Acceleration Gate
+      - id: defending-fleet
+        trigger:
+          on: other
+          text: Defending Fleet
+          confidence: inferred
+        spawns:
+          - count: "12"
+            class: Destroyer
+            names:
+              - Gistior Defacer
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Commander Cruiser
+            names:
+              - Security Coordinator
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            drop: Possible Domination Cruiser modules
+            note: Immune to EWAR
+          - count: "11"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+            note: type list incomplete on the source page
+          - count: "9"
+            class: Battleship
+            names:
+              - Gist Cherubim
+            note: type list incomplete on the source page
+    onWarpIn: Tactical operations in the entire deadspace complex are coordinated and handled from here. The batlestation is reported to be well defended.
+  - name: 4th Pocket
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+      - id: defending-fleet-2-97km
+        trigger:
+          on: other
+          text: Defending Fleet (2-97km)
+          confidence: inferred
+        spawns:
+          - count: 10-12
+            class: Destroyer
+            names:
+              - Gistior Defacer
+            note: type list incomplete on the source page
+          - count: 11-13
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+            note: type list incomplete on the source page
+          - count: "7"
+            class: Battleship
+            names:
+              - Gist Cherubim
+            ewar:
+              - kind: targetPaint
+            note: Nephilim uses Target Painter; type list incomplete on the source page
+          - count: "1"
+            class: Overseer Battleship
+            names:
+              - Tritan -The Underground Overseer
+            drop: Possible Domination Battleship modules
+            note: Immune to EWAR
+    onWarpIn: The Outer Perimeter Watchpost is on the outskirts of the deadspace area. Despite the protection the warp-free space offers, the Angel Cartel nonetheless monitors the area closely. A CONCORD diplomatic committee is negotiating an information-sharing deal to relieve tension.
+  - name: 5th Pocket
+    notes:
+      - text: The overseer battleship has strong structure hitpoints.
+    waves:
+      - id: defending-fleet-1-60km
+        trigger:
+          on: other
+          text: Defending Fleet (1-60km)
+          confidence: inferred
+        spawns:
+          - count: 18-20
+            class: Destroyer
+            names:
+              - Gistior Defacer
+              - Gistior Defiler
+              - Gistior Seizer
+              - Gistior Trasher
+          - count: "1"
+            class: Cruiser
+            names:
+              - Gistum Centurion
+            note: May not spawn
+          - count: "12"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+            note: type list incomplete on the source page
+          - count: 11-12
+            class: Battleship
+            names:
+              - Gist Cherubim
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Overseer Battleship
+            names:
+              - The Battlestation Admiral
+            drop: 20th Overseer Personal Effects, Possible Domination Battleship and/or Gist C-Type modules, rare possibility of a Macherial BPC
+            note: Deals thermal damage
+          - count: "1"
+            class: Sentry
+            names:
+              - Angel Stasis Tower
+            ewar:
+              - kind: web
+    onWarpIn: A scouting mission spotted the so-called "underground Overseer" before warping out under heavy fire.
+sde:
+  dungeonIds:
+    - 2246

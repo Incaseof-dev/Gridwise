@@ -1,0 +1,48 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: no-honor
+kind: mission
+name: No Honor
+level: 2
+enemyFaction: Mercenaries
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – No Honor
+    url: https://wiki.eveuniversity.org/No_Honor
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "202672"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy enemy ship; return stolen cargo(80) to agent.
+notes:
+  - text: "Suggested ships: Assault Frigate"
+  - text: "Danger and You: Remember to keep an eye on your shields and armor during battle. But if you do forget and you happen to lose a ship, well… hey, that's the life of a capsuleer. Just get a new one, even if you've got to beg, borrow, or steal, and just get right back to work. Get used to the idea: Ships — not to mention your current clone — won't last forever."
+  - text: 'Blitz: Destroy the hauler, "Stolen goods" will automagically appear in your cargo, and warp off.'
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: "Agent hand-in message: Superbly done, ! If only I could have been there, to see him mewl as his ship crumbled around him — oh, the hilarity! Enjoy your reward, friend. You've earned it."
+    waves:
+      - id: group-1-17km-auto-aggro
+        trigger:
+          on: other
+          text: Group 1 17km, auto-aggro
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Mercenary Elite Fighter
+          - count: "1"
+            class: Cruiser
+            names:
+              - Mercenary Commander
+          - count: "1"
+            class: Hauler
+            names:
+              - Federation Hauler
+    onWarpIn: "I knew it. I just knew it. I knew they would send an assassin after me. Let me guess: They said I didn't pay for this, right? Same old doublecross they always try to pull. I should have listened to my corporation advisers, but of course, I didn't. Still, no point trying to talk to the likes of you. Take your best shot. We'll see who walks away from this."

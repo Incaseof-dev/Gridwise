@@ -1,0 +1,216 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: portal-to-war-2-of-5
+kind: mission
+name: Portal to War (2 of 5)
+level: 3
+enemyFaction: Caldari State & Amarr Empire
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Portal to War (2 of 5)
+    url: https://wiki.eveuniversity.org/Portal_to_War_(2_of_5)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223258"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Infiltrate the Amarr complex and destroy the control tower quickly, before it manages to call in reinforcements. Bring back the contents of the loot-1x Encoded Data Chip (0.1)- from the control tower to your agent. Once you enter the complex and the alarm bells sound, you will only have a certain amount of time before they manage to greatly bolster their defenses.
+ewar:
+  - kind: neut
+  - kind: trackingDisruption
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Caldari Navy Delta II Support Frigate (Web, Warp Disrupt)"
+  - text: "Suggested ships: HAC, Battlecruiser"
+  - text: Prop mod or Tractor Beam to pull cargo container
+  - text: If you destroy the Control Tower, the 2nd and 3rd Reinforcements will not spawn.
+  - text: Structures do not drop loot.
+  - text: Standing loss for killing Amarr in part 2 is -0.24, this can be avoided by only blasting the Control tower for the chip.
+  - text: As of 09-May-YC124, I destroyed only Control Tower in pocket 4 and got 0.24 standing loss from Amarr Empire (no ships were shot). This was in addition to standing loss in pocket 3 (another 0.24 from Amarr).
+  - text: After mission was complete and standing from agent was increased, another 0.24 standing loss from Amarr Empire - total for part 2 of 5 is 3x 0.24 loss from Amarr !
+  - text: "Next: Portal to War (3 of 5)"
+pockets:
+  - name: 1st Pocket
+    notes:
+      - text: No enemy ships.
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Acceleration Gate
+            names:
+              - Ancient Acceleration Gate
+  - name: 2nd Pocket
+    notes:
+      - text: No enemy ships.
+      - text: When warping to pocket 3
+      - text: "Pop-up - Incoming Transmission:: We’ve reconfigure the acceleration gate I here to send you to the Amarr-Caldari complex. The first room looks like a Caldari outpost, haven’t managed to get into the one beyond.. Good luck in your mission! And remember, you only have a short while before the Amarrian reinforcements arive, so hurry!"
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Acceleration Gate
+            names:
+              - Old Acceleration Gate
+  - name: 3rd Pocket (Caldari ships)
+    notes:
+      - text: Acceleration Gate is locked until all hostile ships are destroyed. Despite that you fight Caldari Navy ships, standing loss is from Amarr Empire (no way to avoid it).
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Caldari Navy Delta II Support Frigate
+            group: 1st Group, 18-30km (auto-aggro)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Cruiser
+            names:
+              - Caldari Navy Blackbird
+            group: 1st Group, 18-30km (auto-aggro)
+          - count: "6"
+            class: Frigate
+            names:
+              - Caldari Navy Soldier
+              - Caldari Navy Officer
+            group: 2nd Group, 30-45km
+          - count: "6"
+            class: Frigate
+            names:
+              - Caldari Navy Soldier
+              - Caldari Navy Officer
+            group: 3rd Group, 30-45km
+          - count: "3"
+            class: Frigate
+            names:
+              - Caldari Navy Griffin
+            group: 4th Group, 50km
+          - count: 1-2
+            class: Cruiser
+            names:
+              - Caldari Navy Moa
+            group: 4th Group, 50km
+  - name: 4th Pocket (Amarr ships)
+    notes:
+      - text: Amarr fleet is timed and will take approximately 2 hours to spawn.
+      - text: "Agent hand-in message: So you retrieved a data chip, from one of the control towers. Excellent. I'll have it looked at immediately."
+    waves:
+      - id: structure-17km
+        trigger:
+          on: other
+          text: Structure, 17km
+          confidence: inferred
+        spawns:
+          - count: "?"
+            class: Structure
+            names:
+              - Imperial Control Tower
+            triggers: 1st Reinforcement upon shooting
+            drop: 1x Encoded Data Chip (0.1 m3)
+            note: Mission object
+      - id: initial
+        trigger:
+          on: warpIn
+          text: Initial
+        spawns:
+          - count: "1"
+            class: Cruiser
+            names:
+              - Imperial Avenger
+              - Imperial Equalizer
+            group: Group A, 30-35km
+          - count: "1"
+            class: Sentry
+            names:
+              - Imperial Sentry Gun
+            group: Group A, 30-35km
+            drop: May drop ammo/missiles
+          - count: "2"
+            class: Cruiser
+            names:
+              - Imperial Agatho
+              - Imperial Avenger
+              - Imperial Donus
+            group: Group B, 40-45km
+          - count: "1"
+            class: Sentry
+            names:
+              - Imperial Sentry Gun
+            group: Group B, 40-45km
+            drop: May drop ammo/missiles
+      - id: 1st-reinforcement-6-10km-from-control-tower
+        trigger:
+          on: other
+          text: 1st Reinforcement, 6-10km from Control Tower
+          confidence: inferred
+        spawns:
+          - count: 0-2
+            class: Cruiser
+            names:
+              - Imperial Agatho
+              - Imperial Donus
+            ewar:
+              - kind: trackingDisruption
+          - count: 0-5
+            class: Battlecruiser
+            names:
+              - Imperial Avenger
+              - Imperial Equalizer
+            triggers: Last ship down triggers 2nd Reinforcement
+          - count: 0-1
+            class: Sentry
+            names:
+              - Imperial Sentry Gun
+            drop: May drop ammo/missiles
+      - id: 2nd-reinforcement
+        trigger:
+          on: other
+          text: 2nd Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Paladin
+              - Divine Imperial Napat
+              - Divine Imperial Valok
+            ewar:
+              - kind: trackingDisruption
+            triggers: 3rd Reinforcement upon shooting
+      - id: 3rd-reinforcement
+        trigger:
+          on: other
+          text: 3rd Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Cruiser
+            names:
+              - Imperial Donus
+              - Imperial Equalizer
+              - Imperial Navy Maller
+            ewar:
+              - kind: trackingDisruption
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Imperial Templar Seer
+            ewar:
+              - kind: neut
+              - kind: trackingDisruption

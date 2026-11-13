@@ -1,0 +1,104 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: breaking-the-lock
+kind: mission
+name: Breaking the Lock
+level: 3
+enemyFaction: Minmatar Republic
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Breaking the Lock
+    url: https://wiki.eveuniversity.org/Breaking_the_Lock
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223302"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the Boundless Creations Data Centers
+notes:
+  - text: 2.4% Minmatar Republic Faction Standing loss
+  - text: Accept the Mission remotely.
+  - text: Gated deadspace pocket one jumps away in K-QWHE. Destroy all ships and take the Gate until you reach the last Room. Destroy the Boundless Creations Data Center and warp out.
+  - text: "Tips: You only need to destroy the final Boundless Creations Data Center to complete the mission"
+  - text: "Tips: You will lose 2.4% Minmatar Republic Faction Standing because you have to destroy the Data Center, not the ships"
+  - text: "Tips: Messages about the Acceleration Gates being unlocked lie"
+  - text: "Tips: Prepare for a moderate amount of Explosive damage"
+pockets:
+  - name: Warp-in
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+  - name: Room 1
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Destroyer
+            names:
+              - Republic Tribal Austri
+              - Republic Tribal Bormin
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Boundless Creations Data Center
+  - name: Room 2
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "5"
+            class: Destroyer
+            names:
+              - Republic Tribal Austri
+              - Republic Tribal Bormin
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Boundless Creations Data Center
+  - name: Room 3
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "6"
+            class: Destroyer
+            names:
+              - Republic Tribal Austri
+              - Republic Tribal Bormin
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Boundless Creations Data Center
+            triggers: Destroy to complete the Mission

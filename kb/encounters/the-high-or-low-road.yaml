@@ -1,0 +1,24 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-high-or-low-road
+kind: mission
+name: The High or Low Road
+level: 4
+enemyFaction: null
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The High or Low Road
+    url: https://wiki.eveuniversity.org/The_High_or_Low_Road
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "222920"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Choose your path
+notes:
+  - text: "Choose between: the Low Security path, Outside the Scope"
+  - text: "Choose between: the High Security path, Into the Black"
+  - text: Your choice has no lasting impact on the Epic Arc.

@@ -1,0 +1,134 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: unauthorized-military-presence-blood-raiders-level-4
+kind: mission
+name: Unauthorized Military Presence
+level: 4
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Unauthorized Military Presence (Blood Raiders) (Level 4)
+    url: https://wiki.eveuniversity.org/Unauthorized_Military_Presence_(Blood_Raiders)_(Level_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "230477"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Intercept the personnel transport ship, destroy its guards, and bring the militants to your agent.
+ewar:
+  - kind: warpDisruption
+notes:
+  - text: Unauthorized Military Presence is a mission involving combat against the Blood Raiders.
+  - text: Sentry Dominix, Gila 2021-04-28]
+  - text: "Blitz: Ignore ships at warpin and take the acceleration gate."
+  - text: "Blitz: In the pocket destroy the group by the shuttle wreck (the group that has transport ships)."
+  - text: "Blitz: Remember to take the militants from the transport ship wreck. Though militants from other sources will also work."
+lootNotes:
+  - text: "loot: ~0,7M ISK"
+  - text: "salvage: ~3,7M ISK"
+  - text: "bounty: ~3,7M ISK"
+pockets:
+  - name: Warpin
+    notes:
+      - text: Gate is unlocked, you can ignore this group if you want to. The Acceleration Gate is 20 km from the warp-in point.
+    waves:
+      - id: single-group-25km-delayed-aggro
+        trigger:
+          on: other
+          text: Single Group (25km, delayed aggro)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Corpior Templar
+              - Corpior Devoter
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Corpum Arch Sage
+              - Corpum Arch Priest
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Corpior Bishop
+              - Corpior Seer
+  - name: 1st pocket
+    notes:
+      - text: There will be a group at the Ammatar Holy Dome when you warp-in and two others will spawn within a few seconds. They will look like two groups.
+      - text: The group at the Ammatar Holy Dome will aggro drones.
+      - text: No Aggro on warp in. Group 2 aggroes by proximity 70km.
+      - text: Destroy group 2 to complete the mission. Remember to take the militants from the transporter wreck.
+      - text: No structures drop loot.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Corpii Reaver
+              - Corpii Engraver
+            group: Group 1 (Ammatar Holy Dome, 70-100 km)
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Seeker
+              - Elder Corpii Collector
+            group: Group 1 (Ammatar Holy Dome, 70-100 km)
+            ewar:
+              - kind: trackingDisruption
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corpum Dark Priest
+              - Corpum Shadow Sage
+            group: Group 1 (Ammatar Holy Dome, 70-100 km)
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corpior Bishop
+              - Corpior Seer
+            group: Group 1 (Ammatar Holy Dome, 70-100 km)
+          - count: "4"
+            class: Battleship
+            names:
+              - Corpus Archon
+              - Corpus Oracle
+              - Corpus Prophet
+            group: Group 1 (Ammatar Holy Dome, 70-100 km)
+          - count: "1"
+            class: Industrial
+            names:
+              - Blood Raider Personnel Transport
+            group: Group 2 (Shuttle Wreck, 90-100 km)
+            drop: 10x Militants
+          - count: "3"
+            class: Frigate
+            names:
+              - Corpii Engraver
+              - Corpii Reaver
+            group: Group 2 (Shuttle Wreck, 90-100 km)
+          - count: "2"
+            class: Destroyer
+            names:
+              - Corpior Templar
+              - Corpior Devoter
+            group: Group 2 (Shuttle Wreck, 90-100 km)
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corpum Shadow Sage
+            group: Group 2 (Shuttle Wreck, 90-100 km)
+          - count: "2"
+            class: Battleship
+            names:
+              - Corpus Apostle
+              - Corpus Archon
+              - Corpus Oracle
+            group: Group 2 (Shuttle Wreck, 90-100 km)

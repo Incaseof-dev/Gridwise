@@ -1,0 +1,265 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: angel-powergrid
+kind: escalation
+name: Angel Powergrid
+dedRating: null
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Angel Powergrid
+    url: https://wiki.eveuniversity.org/Angel_Powergrid
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "156468"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: T2 Battleship"
+notes:
+  - text: "Escalation start: This hidden outpost seems to have played a vital role in the Angel Cartel's expansion in the area. The fact that this operation is now history surely slows down whatever plans the Cartel had. Among one of the wreckages you locate co-ordinates for an energy harvesting facility nearby. Whether you explore it or not is your decision."
+loot:
+  - item: Gist C-Type battleship modules
+    from: Angel Colonel
+  - item: Domination Battleship modules
+    from: Domination battleships
+    note: May not drop
+  - item: Cynabal BPC
+    from: Angel Colonel
+    note: Rare drop
+lootNotes:
+  - text: You will get Domination ammo/tags, possible Domination faction modules, Gist C-Type deadspace modules or a rare Cynabal BPC.
+pockets:
+  - name: First Location (Low sec)
+    notes:
+      - text: Ungated pocket. You land amongst a field of solar harvesters.
+      - text: "Escalation trigger: The amount of energy harvested and stored here is phenomenal. Exploiting these facilities for your own use might sound tempting, if it weren't for the fact that the entire place is in complete lockdown and only the highest-level Angel security codes will grant access. You did however manage to gain access to one an open channel in the Angel communication network, and two energy storage locations were revealed to you."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Rogue
+              - Arch Gistii Outlaw
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Nomad
+              - Arch Gistii Ruffian
+            ewar:
+              - kind: targetPaint
+          - count: 6-7
+            class: Destroyer
+            names:
+              - Gistior Seizer
+              - Gistior Trasher
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Gistatis Praefectus
+              - Gistatis Tribuni
+          - count: "3"
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Seraphim
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Domination General
+            triggers: Escalation trigger
+            drop: Faction ammo/tags; possible Domination faction modules/implants
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "16"
+            class: Structure
+            names:
+              - Solar Harvester
+  - name: Second Location (Low sec)
+    notes:
+      - text: "Escalation trigger: This facility was not just used for energy storage. Ships, modules and other supplies were stored in those containers, and sadly every single one was destroyed when the Angel commanders gave the order. The Angels knew you were coming, and there was little they could do about it on such short notice. The slaughter continues as you prepare to visit the second energy storage facility."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Gistii Impaler
+              - Gistii Hunter
+          - count: 1-2
+            class: Destroyer
+            names:
+              - Gistior Defiler
+              - Gistior Shatterer
+          - count: 6-7
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Crusher
+              - Arch Gistum Smasher
+            ewar:
+              - kind: targetPaint
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Gistatis Primus
+              - Gistatis Legionnaire
+          - count: 1-2
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Seraphim
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Domination War General
+            triggers: Escalation trigger
+            drop: Faction ammo/tags; Possible Domination faction modules or implants
+  - name: Third Location (Low sec)
+    notes:
+      - text: You land at 0 on an acceleration gate. If commander battleship does not spawn or does not trigger escalation, take the acceleration gate.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Gistatis Praefectus
+              - Gistatis Tribunal
+          - count: "4"
+            class: Battleship
+            names:
+              - Gist Nephilim
+              - Gist Saint
+            ewar:
+              - kind: targetPaint
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Domination Nephilim
+              - Domination Saint
+            ewar:
+              - kind: targetPaint
+            triggers: Escalation trigger
+            drop: Faction ammo/tags; Possible Domination faction modules or implants
+  - name: First Pocket
+    notes:
+      - text: Simple warp-in can trigger escalation.
+      - text: "Escalation trigger: You arrive at the second energy storage facility to find it completely deserted. It looks like the party ended before you even arrived. Luckily for you, your computers pick up several signals in the nearby area, one of which seems to have unusually high amounts of combat ships."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "8"
+            class: Sentry
+            names:
+              - Angel Cruise Missile Battery
+  - name: Fourth Location (Null sec)
+    notes:
+      - text: You land at an acceleration gate on the warp-in.
+  - name: First Pocket
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 7-8
+            class: Frigate
+            names:
+              - Gistii Hijacker
+              - Gistii Rogue
+              - Gistii Outlaw
+              - Gistii Thug
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Marauder
+              - Arch Gistum Liquidator
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Gistatis Legionnaire
+              - Gistatis Legatus
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: 40 km away
+  - name: Second Pocket
+    notes:
+      - text: "Expedition end: You have destroyed four strategically vital locations for the Angel Cartel. Their expansion in the area has been halted severely, and it would surprise you a lot if you saw even a single one of them in the near future. Whether to continue this journey is up to you, though you have no more clues which could lead you further."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 4-6
+            class: Frigate
+            names:
+              - Gistii Ambusher
+              - Gistii Raider
+              - Gistii Outlaw
+              - Gistii Thug
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Hijacker
+              - Arch Gistii Rogue
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 2-3
+            class: Destroyer
+            names:
+              - Gistior Haunter
+              - Gistior Shatterer
+          - count: 3-4
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Centurion
+              - Arch Gistum Phalanx
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Gistatis Praefectus
+              - Gistatis Tribunal
+          - count: 3-4
+            class: Battleship
+            names:
+              - Gist Commander
+              - Gist General
+          - count: "1"
+            class: Overseer Battleship
+            names:
+              - Angel Colonel
+            triggers: Trigger for expedition end
+            drop: Possible Domination and Gist C-Type battleship modules and a possible Cynabal BPC. Wreck produces Tech 2 salvage
+sde:
+  dungeonIds:
+    - 1241

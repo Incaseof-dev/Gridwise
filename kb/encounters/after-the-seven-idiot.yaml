@@ -1,0 +1,41 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: after-the-seven-idiot
+kind: mission
+name: After The Seven - "Idiot"
+level: 1
+enemyFaction: null
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – After The Seven - "Idiot"
+    url: https://wiki.eveuniversity.org/After_The_Seven_-_%22Idiot%22
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "230795"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Obtain a sample of Phenod's DNA (0.1)
+notes:
+  - text: This mission is issued by a Security division agent and is part 3 of the 5 part mission chain After The Seven
+  - text: Aggro instantly upon warp-in. Phenod's wreck contains Phenod's DNA.
+  - text: Kill Phenod, grab the DNA and return to agent.
+  - text: "Phenod's Message: Back off, man! You're no match for my custom rig, even with how messed up it is. Either way, you'd better run before Mona - I mean Surenna - gets here. She'll blast you!"
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: Previous mission - Next mission
+    waves:
+      - id: single-group
+        trigger:
+          on: other
+          text: Single Group
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Destroyer
+            names:
+              - Phenod
+            drop: Phenod's DNA

@@ -1,0 +1,54 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: stellar-observation-post
+kind: anomaly
+name: Stellar Observation Post
+dedRating: null
+enemyFaction: EDENCOM
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Stellar Observation Post
+    url: https://wiki.eveuniversity.org/Stellar_Observation_Post
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "163144"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: T1 Cruiser and below"
+notes:
+  - text: The Stellar Observation Post is a combat anomaly found in EDENCOM-controlled systems.
+  - text: The site is centered around a destroyable structure, the Stellar Observatory. The Observatory projects a system-wide effect. Destroying it will temporarily remove this effect.
+  - text: The type of rats in the site and the type of effect it provides depends on the empire that holds the system.
+  - text: Few EDENCOM ships of the local empire type.
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+            note: "Only open to the following ships: Frigate, Cruiser, Capsule, Shuttle, Corvette, Assault Frigate, Destroyer, Interdicter, Covert Ops, Intercepter, Stealth Bomber, Electronic Attack Ship, Compact Exploration Ship, Expedition Frigate, Tactical Destroyer, Logistics Frigate, Command Destroyer."
+  - name: 1st Room
+    notes:
+      - text: Moderate number of EDENCOM rats of the local empire type with supporting Heavy Gunstar sentries.
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Stellar Observatory
+sde:
+  dungeonIds:
+    - 8791

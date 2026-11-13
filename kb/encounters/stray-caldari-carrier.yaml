@@ -1,0 +1,145 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: stray-caldari-carrier
+kind: mission
+name: Stray Caldari Carrier
+level: 5
+enemyFaction: Caldari State
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Stray Caldari Carrier
+    url: https://wiki.eveuniversity.org/Stray_Caldari_Carrier
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "208701"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: neut
+  - kind: nos
+  - kind: ecm
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: All frigates"
+  - text: "Space type: Normal Space, No Gates"
+  - text: "Recommended ships: Completed in (1) Maelstrom w/ Passive Tank and (1) Maelstrom with Shield Transporters"
+  - text: "Tips: Mission occurs in normal space, so you can always warp to distances and to bookmarks farther away from the NPCs."
+  - text: "Tips: Your first warp attempt will be a forced Warp to 0. Even if you select Warp to 100 you will arrive at the Warp-In Beacon"
+  - text: "Tips: Try selecting warp, canceling your warp, then warping to your desired distance"
+  - text: "Tips: Warping to within 100km leaves plenty of distance that spreads out the aggro"
+  - text: "Tips: Cruise Missile Batteries have a maximum range of 170km, and the Carrier’s NOS has a maximum range of 150km"
+  - text: "Tips: Fighters will immediately attack your drones when they spawn from the Carrier, but this can be used to your advantage"
+  - text: "Tips: Small Drones are invulnerable to the Fighters, as long as they are moving/attacking; and they are a great way to draw-off the Fighters aggro. Have your small drones attacking the carrier when the fighters spawn."
+  - text: "Tips: The Fighters are only be able to hit Large and Medium drones"
+  - text: "Tips: Mission is flagged complete when the Carrier and Fighters are destroyed. You do not need to destroy the Cap Ship Maint Array"
+pockets:
+  - name: Warp-In
+    notes:
+      - text: Ships at 25-75k unless you choose to warp to within a different distance
+    waves:
+      - id: forces-on-grid
+        trigger:
+          on: other
+          text: Forces on grid
+          confidence: inferred
+        spawns:
+          - count: "8"
+            class: Frigate
+            names:
+              - Taibu State Nagasa
+              - Taibu State Shinai
+              - Taibu State Wakizashi
+              - Taibu State Tachi
+            ewar:
+              - kind: ecm
+              - kind: warpScramble
+            note: Orbits of 3-17km. Taichi does ECM
+          - count: "7"
+            class: Cruiser
+            names:
+              - Taibu State Bajo
+              - Taibu State Samurai
+              - Taibu State Shugo
+            ewar:
+              - kind: ecm
+            note: Orbits of 18-33km. Shugo does ECM.
+          - count: "7"
+            class: Battleship
+            names:
+              - State Shukuro Shogun
+              - State Zen
+              - State Oshiro
+            ewar:
+              - kind: ecm
+            triggers: Zen spawn 1?
+            note: Orbits of 29-35km. Oshiro does ECM
+          - count: "1"
+            class: Carrier
+            names:
+              - State Izanaki
+            ewar:
+              - kind: nos
+          - count: "5"
+            class: Fighter
+            names:
+              - State Fighter
+            note: Orbits at 3km
+          - count: "12"
+            class: Sentry
+            names:
+              - Caldari Cruise Missile Batery
+      - id: spawn-1
+        trigger:
+          on: other
+          text: Spawn 1
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Battleship
+            names:
+              - State Shukuro Bishamon
+              - State Shukuro Shogun
+      - id: carrier-spawns
+        trigger:
+          on: other
+          text: Carrier spawns
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Fighter
+            names:
+              - State Fighter
+            group: 40% of the carrier's shield destroyed
+          - count: "3"
+            class: Sentry
+            names:
+              - Caldari Energy Neutralizer III
+            group: 40% of the carrier's shield destroyed
+          - count: "5"
+            class: Fighter
+            names:
+              - State Fighter
+            group: 95% of the carrier's shield destroyed
+          - count: "3"
+            class: Sentry
+            names:
+              - Caldari Energy Neutralizer III
+            group: 95% of the carrier's shield destroyed
+          - count: "5"
+            class: Fighter
+            names:
+              - State Fighter
+            group: 40% of the carrier's armor destroyed
+          - count: "5"
+            class: Fighter
+            names:
+              - State Fighter
+            group: 95% of the carrier's armor destroyed
+          - count: "5"
+            class: Fighter
+            names:
+              - State Fighter
+            group: 50% of the carrier's hulldestroyed

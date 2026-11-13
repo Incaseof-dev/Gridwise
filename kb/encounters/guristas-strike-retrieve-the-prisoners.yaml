@@ -1,0 +1,80 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: guristas-strike-retrieve-the-prisoners
+kind: mission
+name: Guristas Strike - Retrieve the Prisoners
+level: 3
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Guristas Strike - Retrieve the Prisoners
+    url: https://wiki.eveuniversity.org/Guristas_Strike_-_Retrieve_the_Prisoners
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "214329"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Retrieve the prisoners (5x, 37.5) from the Serpentis ships. One of them carries them aboard. Then report back to your agent.
+ewar:
+  - kind: sensorDamp
+notes:
+  - text: Guristas Strike - Retrieve the Prisoners is mission 9 of the mission chain Guristas Strike. Unlike most storyline missions this mission gives no faction standing, but it does give agent standing. The faction standing is awarded for the final mission in the chain.
+  - text: "Blitz: Kill group 4, grab prisoners and return to agent."
+  - text: "Space Type: Deadspace with gates. No hostiles at initial gate."
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: The prisoners are dropped by the last NPC killed from group 4. Don't forget to take the prisoners.
+      - text: "Previous: Guristas Strike - Defend the Civilian Convoy Next: Guristas Strike - Final Battle"
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Destroyer
+            names:
+              - Corelior Soldier
+              - Corelior Trooper
+            group: Group 1 (45 km)
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Corelum Chief Sentinel
+            group: Group 1 (45 km)
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Corelum Chief Defender
+              - Corelum Chief Protector
+            group: Group 2 (45 km)
+          - count: "3"
+            class: Frigate
+            names:
+              - Coreli Defender
+              - Coreli Protector
+            group: Group 3 (50 km)
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Corelatis Wing
+              - Corelatis Squad Leader
+            group: Group 3 (50 km)
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Guardian Veteran
+            group: Group 4 (70 km)
+            ewar:
+              - kind: web
+              - kind: sensorDamp
+              - kind: warpDisruption
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Corelatis Platoon Leader
+            group: Group 4 (70 km)

@@ -1,0 +1,50 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: desperate-measures
+kind: mission
+name: Desperate Measures
+level: 1
+enemyFaction: Mercenaries
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Desperate Measures
+    url: https://wiki.eveuniversity.org/Desperate_Measures
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191644"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the Subspace Data Miner
+notes:
+  - text: "Suggested ships: Frigate, Destroyer"
+  - text: "Blitz: Destroy Subspace Data Miner"
+  - text: Structures drop no loot.
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Mercenary Rookie
+          - count: "1"
+            class: Frigate
+            names:
+              - Mercenary Fighter
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Hangar Array
+            names:
+              - Subspace Data Miner
+            triggers: Destroy it to complete mission objectives

@@ -1,0 +1,79 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: oldest-profession
+kind: mission
+name: Oldest Profession
+level: null
+enemyFaction: Independent (Various Ship Types)
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Oldest Profession
+    url: https://wiki.eveuniversity.org/Oldest_Profession
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "220735"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal:
+    - kinetic
+  resist:
+    - em
+    - thermal
+    - kinetic
+    - explosive
+notes:
+  - text: "Suggested ships: Stealth Bomber or Cloaky T3C"
+  - text: This pathway option requires travel through low-sec to a different high-sec location (possibly always Archavoinet; Oulley is often smartbomb-camped). Use Eve Gate-Check before you travel
+  - text: Go to the Spintrix. Talk to the workers there and look for Ralie. Destroy any aggressors and if that doesn't do it, destroy the Spintrix. Recommended to Omni-Tank for this mission.
+  - text: 3% Syndicate Faction Standing loss for destroying the Spintrix structure.
+  - text: "WARNING: Aubenal and Oulley is home to sophisticated pirates that place hundreds of cans around the gates preventing you from cloaking and escaping their camp"
+pockets:
+  - name: Warp-in
+    notes:
+      - text: Search containers dropped by enemies for coins, a Spintrixiate Rewards Coin is needed to activate the acceleration gate to Room B. It is consumed upon gate activation. Not all enemies need to be destroyed.
+      - text: Once the coin is found, destroy the Spintrix structure to reveal the acceleration gate.
+    waves:
+      - id: the-spintrix-group-40-70km
+        trigger:
+          on: other
+          text: The Spintrix Group (40-70km)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Cruiser
+            names:
+              - Molden Merchant, Domain Distribution
+          - count: "1"
+            class: Battlecruiser?
+            names:
+              - Retribution Angel
+          - count: "6"
+            class: Battleship
+            names:
+              - Black Rise Wrecker, Venalia, Inner Ring Explorer, Queriate, Malpais Marauder, Kadorite
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - The Spintrix
+            triggers: Trigger Hidden Acceleration Gate to first room
+  - name: Room B
+    notes:
+      - text: No NPCs on warp in. This part of The Spintrix's complex is a storage facility with various structures. Destroy structures and search loot drops for 'Carry On Token' which can be used to blitz the next mission.
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "20"
+            class: Structure
+            names:
+              - Storage Bunker

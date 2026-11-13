@@ -1,0 +1,150 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: ritualist-raids
+kind: mission
+name: Ritualist Raids
+level: 4
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Ritualist Raids
+    url: https://wiki.eveuniversity.org/Ritualist_Raids
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "222184"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy Blood Raider cathedral and its defenders
+ewar:
+  - kind: neut
+  - kind: trackingDisruption
+notes:
+  - text: Blitz
+  - text: Clear first pocket
+  - text: In second pocket destroy the battleships, destroyers and the cathedral.
+lootNotes:
+  - text: "Salvage & Loot: 5.3M~ ISK"
+  - text: "Bounties: 6M ISK"
+pockets:
+  - name: 1st pocket
+    notes:
+      - text: No aggro at warp-in. Proximity aggro range for the Blood Cruise Missile Batteries is about 30km.
+      - text: The warp gate is locked until all hostile ships have been eliminated.
+      - text: "Notes: Eliminate the battlecruisers, destroyers and cruise missile batteries first, to reduce incoming DPS."
+      - text: "Notes: If you do not move when you first warp-in, Cruise Batteries will not aggro you."
+    waves:
+      - id: single-group-30-35km
+        trigger:
+          on: other
+          text: "Single Group: (30-35km)"
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Corpii Collector
+              - Corpii Seeker
+            ewar:
+              - kind: trackingDisruption
+          - count: "8"
+            class: Destroyer
+            names:
+              - Corpior Cleric
+              - Corpior Devoter
+              - Corpior Friar
+              - Corpior Templar
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corpatis Bishop
+              - Corpatis Shade
+              - Fanatic Seer
+          - count: "2"
+            class: Battleship
+            names:
+              - Corpus Monsignor
+              - Corpus Harbinger
+              - Corpus Oracle
+            ewar:
+              - kind: neut
+          - count: "2"
+            class: Sentry
+            names:
+              - Blood Cruise Missile Battery
+  - name: 2nd pocket
+    notes:
+      - text: At warp-in, you will get proximity aggroed from the sentry guns and missile batteries that sits within 30km range. No NPC ships will aggro UNTIL you start your attack.
+      - text: The sentry guns/missile batteries, each have an aggro & shooting range of 30km. Before starting your attack, move away > 30km to remove them as a threat.
+      - text: Eliminate the battlecruisers and destroyers first, to reduce incoming DPS.
+      - text: Mission is flagged completed once you have destroyed the Blood Raiders Cathedral and eliminated all defending battleships and destroyers.
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Bloodraider Cathedral
+            triggers: Destruction is part of the mission objective
+            drop: Trade goods
+          - count: "2"
+            class: Structure
+            names:
+              - Bunker
+            drop: T1 ammo
+          - count: "2"
+            class: Structure
+            names:
+              - Sentry
+            drop: T1 ammo
+          - count: "?"
+            class: Structure
+            names:
+              - Bloodraider Chapel
+          - count: "?"
+            class: Structure
+            names:
+              - Bloodraider Station
+      - id: single-group-20-35km
+        trigger:
+          on: other
+          text: "Single Group: (20-35km)"
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Corpii Engraver
+              - Corpii Reaver
+          - count: "6"
+            class: Destroyer
+            names:
+              - Corpior Devoter
+              - Corpior Cleric
+              - Corpior Friar
+            triggers: Destruction is part of the mission objective
+          - count: "9"
+            class: Battlecruiser
+            names:
+              - Corpatis Bishop
+              - Corpatis Seer
+              - Corpatis Shade
+          - count: "2"
+            class: Battleship
+            names:
+              - Corpus Patriarch
+              - Corpus Pope
+            triggers: Destruction is part of the mission objective
+          - count: "6"
+            class: Sentry
+            names:
+              - Blood Raider Sentry Gun
+          - count: "6"
+            class: Sentry
+            names:
+              - Blood Raider Heavy Missile Battery

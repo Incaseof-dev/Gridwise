@@ -1,0 +1,277 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: minor-blood-annex
+kind: complex
+name: Minor Blood Annex
+dedRating: null
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Minor Blood Annex
+    url: https://wiki.eveuniversity.org/Minor_Blood_Annex
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "216635"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: T2 Battleship"
+notes:
+  - text: Minor Blood Annex is a low security unrated site found through exploration. Excercise extreme caution due to multiple waves potentially having been spawned before you enter.
+  - text: Upon warping to the site you will arrive at an acceleration gate.
+  - text: "Escalation: The site can escalate to Blood Owned Station."
+pockets:
+  - name: 1st pocket
+    notes:
+      - text: The webbing drone in each group will spawn the next group. On some occasions multiple groups will already be present when you warp in.
+      - text: In final wave the destruction of Corpus Militant Commander unlocks the gate.
+      - text: The gate can also be unlocked with a Blood Crystal Tag. The tag is consumed.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "1"
+            class: Drone
+            names:
+              - Elder Corpii Spy Drone
+            ewar:
+              - kind: web
+            triggers: Triggers wave 1
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Corpatis ?
+          - count: "7"
+            class: Battleship
+            names:
+              - Corpus ?
+      - id: group-1
+        trigger:
+          on: other
+          text: Group 1
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Drone
+            names:
+              - Elder Corpii Spy Drone
+            ewar:
+              - kind: web
+            triggers: Triggers wave 2
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Sage
+            ewar:
+              - kind: neut
+      - id: group-2
+        trigger:
+          on: other
+          text: Group 2
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Drone
+            names:
+              - Elder Corpii Spy Drone
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            triggers: Triggers wave 2
+          - count: "2"
+            class: Frigate
+            names:
+              - Elder Corpii Follower
+              - Elder Corpii Upholder
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Priest
+            ewar:
+              - kind: neut
+          - count: "3"
+            class: Battleship
+            names:
+              - Corpus ?
+      - id: group-3
+        trigger:
+          on: other
+          text: Group 3
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Destroyer
+            names:
+              - Corpior ?
+          - count: "2"
+            class: Battleship
+            names:
+              - Corpus ?
+          - count: "1"
+            class: Battleship
+            names:
+              - Corpus Militant Commander
+            triggers: Unlocks the gate
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+    onWarpIn: Previous explorers have commented that one of the gates requires a passkey. Alternatively, it can be bypassed by convincing the commander to unlock it. The overseer guards the Cathedral vigorously.
+  - name: 2nd pocket
+    notes:
+      - text: Destroying the webbing drones will again trigger additional waves.
+      - text: Attacking the cathedral triggers cathedral wave.
+      - text: Destroying Corpus Militant Supervisor in cathedral wave triggers commander wave.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "1"
+            class: Drone
+            names:
+              - Elder Corpii Spy Drone
+            ewar:
+              - kind: web
+            triggers: Triggers wave 1
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Herald
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Destroyer
+            names:
+              - Corpior ?
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Priest
+              - Elder Corpum Sage
+              - Elder Corpum Arch Templar
+            ewar:
+              - kind: neut
+          - count: "7"
+            class: Battleship
+            names:
+              - Corpus ?
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Drone
+            names:
+              - Elder Corpii Spy Drone
+            ewar:
+              - kind: web
+            triggers: Triggers wave 2
+          - count: "3"
+            class: Frigate
+            names:
+              - Corpii ?
+          - count: "5"
+            class: Destroyer
+            names:
+              - Corpior ?
+          - count: "2"
+            class: Cruiser
+            names:
+              - Corpum ?
+          - count: "4"
+            class: Battleship
+            names:
+              - Corpus ?
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Cruiser
+            names:
+              - Corpum ?
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Corpatis ?
+          - count: "2"
+            class: Battleship
+            names:
+              - Corpus ?
+      - id: cathedral-wave
+        trigger:
+          on: other
+          text: Cathedral wave
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Supervisor's Hanchman
+          - count: "2"
+            class: Battleship
+            names:
+              - Supervisor Guardian
+            ewar:
+              - kind: neut
+          - count: "1"
+            class: Battleship
+            names:
+              - Corpus Militant Supervisor
+            triggers: Commander wave trigger. Escalation trigger.
+      - id: commander-wave
+        trigger:
+          on: other
+          text: Commander wave
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Herald
+              - Elder Corpii Wrokshiper
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corpatis Phantom
+          - count: "1"
+            class: Commander Battlecruiser
+            names:
+              - Dark Blood Seer
+            triggers: Escalation trigger.
+            drop: Can drop faction items.
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Blood Raider Cathedral
+            triggers: Triggers Cathedral wave. Escalation trigger.
+sde:
+  dungeonIds:
+    - 1573

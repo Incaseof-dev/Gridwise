@@ -1,0 +1,170 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: provisional-serpentis-outpost
+kind: complex
+name: Provisional Serpentis Outpost
+dedRating: null
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Provisional Serpentis Outpost
+    url: https://wiki.eveuniversity.org/Provisional_Serpentis_Outpost
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "230515"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Battlecruisers"
+notes:
+  - text: Provisional Serpentis Outpost is a low security unrated site found through exploration.
+  - text: Upon warping to the site you will arrive at an ancient acceleration gate.
+  - text: The defenders in the pockets can be 50-160 km away.
+  - text: "Escalation: The site can escalate to Guardian Angels Surveillance Squad"
+pockets:
+  - name: First Pocket
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: 1-2
+            class: Frigate
+            names:
+              - Coreli Agent
+              - Coreli Spy
+            group: 0 km off
+          - count: 1-3
+            class: Frigate
+            names:
+              - Coreli Agent
+              - Coreli Spy
+            group: 80 km off
+          - count: "1"
+            class: Cruiser
+            names:
+              - Corelum Chief Spy
+              - Corelum Chief Scout
+            group: 150 km off
+            triggers: Triggers second wave
+      - id: wave-2
+        trigger:
+          on: other
+          text: "Wave #2"
+          confidence: inferred
+        spawns:
+          - count: 2-4
+            class: Frigate
+            names:
+              - Coreli Spy
+              - Coreli Agent
+            group: 100 km behind acceleration gate
+      - id: gate-wave-triggered-by-approaching-the-gate
+        trigger:
+          on: other
+          text: Gate Wave (triggered by approaching the gate)
+          confidence: inferred
+        spawns:
+          - count: 1-4
+            class: Cruiser
+            names:
+              - Corelum Chief Spy
+              - Corelum Chief scout
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: Locked
+  - name: Second Pocket
+    notes:
+      - text: ----
+      - text: "(Update: March 5th, 2026 - No Commander spawn - But site did escalate to Guardian Angels Surveillance Squad upon destroying the armory structure which only contained Medium Hybrid Ammo.)"
+      - text: "(Update: April 13th, 2026 - Commander spawned but did not trigger escalation; nor did the armory structure destruction."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Coreli Watchman
+            triggers: Commander trigger
+      - id: commander
+        trigger:
+          on: other
+          text: Commander
+          confidence: inferred
+        spawns:
+          - count: 0-1
+            class: Commander Cruiser
+            names:
+              - Shadow Serpentis Chief Guard
+            triggers: escalation trigger
+            drop: faction modules
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Frigate
+            names:
+              - Coreli Guardian Defender
+          - count: 1-2
+            class: Battlecruiser
+            names:
+              - Corelatis Captain
+              - High Captain Sentry
+      - id: wave-4
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Coreli Guard
+              - Coreli Safeguard
+      - id: spawns-upon-serpentis-armory-attack
+        trigger:
+          on: other
+          text: Spawns upon Serpentis Armory attack
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Destroyer
+            names:
+              - Corelior Sentinel
+              - Corelior Infantry
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corelum Chief Sentinel
+              - Corelum Chief Infantry
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Serpentis Armory
+            triggers: Escalation trigger
+            drop: T1 Ammo
+    onWarpIn: Heuristic analysis of this location indicates that destroying the Serpentis Armory would greatly improve your odds of uncovering further illicit activity.
+sde:
+  dungeonIds:
+    - 1409

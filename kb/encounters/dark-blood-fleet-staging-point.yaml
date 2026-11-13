@@ -1,0 +1,173 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: dark-blood-fleet-staging-point
+kind: complex
+name: Dark Blood Fleet Staging Point
+dedRating: null
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Dark Blood Fleet Staging Point
+    url: https://wiki.eveuniversity.org/Dark_Blood_Fleet_Staging_Point
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223382"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Blood Forlorn Hub anomalies. The site itself escallates twice, involving travel. If both escallations go in the same direction, you could end up in hostile space for part 3.
+  - text: This can be run in a single Ishtar. The site appears to not aggro on Ishtar drones, so reset the aggro if that happens. The most critical part of running this is to deal with the neut batteries. Primary them but run away while you do because incoming damage will be heavy and you won't have cap. Fits with 100mn ABs and especially drone navigation modules, to get to the neut batteries faster may be best. Note that non-capital dark blood modules vary widely in price and so the site may not be worth running. It takes a long time. I destroyed all the batteries, but I recommend only destroying the neut batteries.
+  - text: "Escalation: Dark Blood Fleet Staging Point 2: Scans show that the nearby supply cache has been used to store goods stolen from another system. The Blood Raiders likely have a larger contingent there, and coordinates have been uploaded to the Expedition panel in your NeoCom Journal."
+  - text: "Escalation: This site can escalate, and I believe it may be guaranteed to do so, to Dark Blood Fleet Staging Point 2."
+pockets:
+  - name: Warp-in
+    notes:
+      - text: No hostiles on warpin.
+    onWarpIn: "Intelligence indicates this site is a fleet staging area for the Blood Raider Covenant. Resources and ships travel to this location from a remote base, coming here to re-arm and refuel. Elimination of forces at the staging area should reveal the location of the remote base. DED Threat Assessment: 9 of 10"
+  - name: 1st Pocket
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corpior Devoter
+              - Corpior Friar
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corpatis Fanatic
+            note: type list incomplete on the source page
+          - count: "4"
+            class: Battleship
+            names:
+              - Corpus Pope
+            triggers: Last killed trigger spawn
+            note: type list incomplete on the source page
+      - id: reinforcement-spawn
+        trigger:
+          on: other
+          text: Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corpior Friar
+              - Corpior Devoter
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corpatis Fanatic
+            note: type list incomplete on the source page
+          - count: "6"
+            class: Battleship
+            names:
+              - Corpus Pope
+              - Corpus Patriarch
+            note: type list incomplete on the source page
+  - name: 2nd Pocket
+    notes:
+      - text: Killing the Corpus Pope will proceed the site to stage 2
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Corpior Devoter
+              - Corpior Friar
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Corpatis Phantom
+            note: type list incomplete on the source page
+          - count: "4"
+            class: Battleship
+            names:
+              - Corpus Patriarch
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Sentry
+            names:
+              - Blood Energy Neutralizer Sentry II
+            ewar:
+              - kind: neut
+            note: -100GJ / 5sec each, 250km range
+          - count: "2"
+            class: Sentry
+            names:
+              - Blood Point Defense Battery
+          - count: "4"
+            class: Sentry
+            names:
+              - Blood Cruise Missile Battery
+      - id: 1st-reinforcement-spawn
+        trigger:
+          on: other
+          text: 1st Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Corpior Friar
+              - Corpior Devoter
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Corpatis Fanatic
+              - Corpatis Phantom
+            note: type list incomplete on the source page
+          - count: "4"
+            class: Battleship
+            names:
+              - Corpus Patriarch
+            note: type list incomplete on the source page
+      - id: 2nd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 2nd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Corpior Friar
+              - Corpior Devoter
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Corpatis Fanatic
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Battleship
+            names:
+              - Corpus Pope
+              - Corpus Patriarch
+            note: type list incomplete on the source page
+sde:
+  dungeonIds:
+    - 5209

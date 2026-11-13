@@ -1,0 +1,63 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: crooked-cop
+kind: mission
+name: Crooked Cop
+level: 3
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Crooked Cop
+    url: https://wiki.eveuniversity.org/Crooked_Cop
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223607"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: sensorDamp
+notes:
+  - text: "Suggested ships: Battlecruiser"
+  - text: "Blitz: Destroy Imperial Industrial"
+  - text: 'Mission is in an ungated deadspace. All enemies spawn close to the warp-in point. If some initial distance is desired for combat (for example: railguns, artillery, beam lasers, and/or sentry drones), then warp to the mission "to within" a distance.'
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: initial-spawn-auto-aggro-10-km-north
+        trigger:
+          on: warpIn
+          text: Initial Spawn, auto-aggro, 10 km north
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Coreli Guard
+          - count: 2~3
+            class: Cruiser
+            names:
+              - Corelum Chief Scout
+              - Corelum Chief Spy
+            triggers: Spawns Reinforcement
+          - count: "1"
+            class: Industrial
+            names:
+              - Imperial Industrial
+      - id: reinforcement-5-10-km-north
+        trigger:
+          on: other
+          text: Reinforcement, 5-10 km north
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corelior ?
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corelum Chief Patroller
+              - Corelum Chief Scout
+            ewar:
+              - kind: sensorDamp

@@ -1,0 +1,73 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: wightstorm-anchorage
+kind: anomaly
+name: Wightstorm Anchorage
+dedRating: null
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Wightstorm Anchorage
+    url: https://wiki.eveuniversity.org/Wightstorm_Anchorage
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "198697"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal: []
+  resist:
+    - em
+    - thermal
+    - kinetic
+    - explosive
+restrictions:
+  - text: "Ship size limit: T2 Battleship"
+notes:
+  - text: Wightstorm Anchorage is a Winter Nexus event that appears in the 2021 year. It contains 4 Diamond (♦) Dreadnaught and some other ships.
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: wave-1
+        trigger:
+          on: warpIn
+          text: Wave 1
+        spawns:
+          - count: 0-?
+            class: Frigate
+            names:
+              - Sansha's Daunting
+              - Sansha's Hailburst
+              - Sansha's Darkling
+              - Sansha's Numbing Frostwight
+            ewar:
+              - kind: web
+              - kind: neut
+              - kind: warpDisruption
+          - count: 0-?
+            class: Cruiser
+            names:
+              - Sansha's Numbing
+              - Sansha's Hailburst Icewight
+              - Sansha's Stormwight
+            ewar:
+              - kind: web
+              - kind: neut
+          - count: 0-?
+            class: Battlecruiser
+            names:
+              - Sansha's Haulburst Stormwight
+          - count: "4"
+            class: Dreadnought
+            names:
+              - Sansha's Nation Starlight
+              - Moonwight Rakshasa
+            ewar:
+              - kind: web
+              - kind: neut
+              - kind: warpDisruption
+sde:
+  dungeonIds:
+    - 9259

@@ -1,0 +1,109 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: honor-guristas-pirates
+kind: mission
+name: Honor
+level: 5
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Honor (Guristas Pirates)
+    url: https://wiki.eveuniversity.org/Honor_(Guristas_Pirates)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191735"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: ecm
+  - kind: web
+  - kind: warpScramble
+notes:
+  - text: "Web/warp disruption: Dire Pithi Despoiler/Demolisher (Web, Scram)"
+  - text: "Suggested ships: Battleship + Logistics, Marauder"
+  - text: "Blitz: Destroy Recruitment Station in Pocket 2."
+  - text: Battleships may trigger a group of 4 frigates and/or 3 destroyers.
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-group-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group (auto-aggro)
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Guristas Energy Neutralizer Sentry III
+            ewar:
+              - kind: neut
+          - count: "4"
+            class: Sentry
+            names:
+              - Guristas Cruise Missile Battery
+          - count: "1"
+            class: Sentry
+            names:
+              - Tower Sentry Guristas III
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Mortifier
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Pithatis Enforcer
+          - count: "11"
+            class: Battleship
+            names:
+              - Pith Massacrer
+              - Pith Exterminator
+              - Pith Usurper
+  - name: Pocket 2
+    waves:
+      - id: initial-group-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group (auto-aggro)
+        spawns:
+          - count: "5"
+            class: Sentry
+            names:
+              - Guristas Energy Neutralizer Sentry III
+            ewar:
+              - kind: neut
+          - count: "7"
+            class: Sentry
+            names:
+              - Guristas Cruise Missile Battery
+          - count: "7"
+            class: Sentry
+            names:
+              - Guristas Heavy Missile Battery
+          - count: "6"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Despoiler
+              - Dire Pithi Demolisher
+            ewar:
+              - kind: ecm
+              - kind: web
+              - kind: warpScramble
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Nullifier
+            ewar:
+              - kind: ecm
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Pithatis Death Dealer
+          - count: "10"
+            class: Battleship
+            names:
+              - Pith Massacrer
+              - Pith Exterminator
+              - Pith Usurper

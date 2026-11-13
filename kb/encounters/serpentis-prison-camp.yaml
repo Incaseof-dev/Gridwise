@@ -1,0 +1,248 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: serpentis-prison-camp
+kind: complex
+name: Serpentis Prison Camp
+dedRating: 8
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Serpentis Prison Camp
+    url: https://wiki.eveuniversity.org/Serpentis_Prison_Camp
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "211861"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Battleships"
+notes:
+  - text: Serpentis Prison Camp is a DED Rated Complex (rated 8/10) type, occupied by the Serpentis pirate faction. It can be found via exploration by probing in Nullsec systems.
+  - text: The site consists of a volume of space with an acceleration gate and contains various structures and their defending pirates. Using the gate allows access to other areas within the site. When attacked, the defenders may send multiple waves of reinforcements. Each group's appearance is triggered by the destruction of members of the previous group. The names and amount of ships listed may vary slightly, but will always be of Battleship class or smaller.
+  - text: This site's acceleration gate allows only Battleship class ships or lower and their Tech 2 equivalents to enter the site.
+  - text: You may receive this site as an escalation from a Serpentis Hub or a Serpentis Forsaken Rally Point.
+loot:
+  - item: 21st Tier Overseers Effects
+    from: Serpentis Prisoner Isolation Facility
+    note: est. 80M ISK (wiki) · 100% drop rate
+  - item: Core B-type Battleship Modules
+    from: Serpentis Prisoner Isolation Facility
+  - item: Shadow Serpentis Battleship Modules
+    from: Shadow Serpentis Grand Admiral (Room 3)
+  - item: Vindicator BPC
+    from: From the Serpentis Prisoner Isolation Facility
+lootNotes:
+  - text: Clearing it all gives 29.500.000 ISK in bounties.
+pockets:
+  - name: Room 1
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 6-7
+            class: Destroyer
+            names:
+              - Corelior Infantry
+              - Corelior Sentinel
+          - count: "1"
+            class: Battleship
+            names:
+              - Core Admiral
+              - Core Rear Admiral
+          - count: "1"
+            class: Battleship
+            names:
+              - Core Vice Admiral
+            ewar:
+              - kind: sensorDamp
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: Unlocks when all defenders are destroyed
+    onWarpIn: '"The Serpentis Corporation has long been the principal source for boosters and other designer drugs traded in open space. One of the keys to their continued success is a strict internal policy of monitoring and controlling the drug use of their own employees. Members of Serpentis Corp deemed too addicted to their own products are sent to Serpentis prison facilities. Here the inmates are subjected to extreme detoxing methods, from complete isolation to gene-alteration procedures. Rumors persist of Serpentis using the more “creative” of their inmates in extreme R and D programs, essentially working them to death in pursuit of better starship modules. DED Threat Assessment: 8 of 10"'
+  - name: Room 2
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 16-17
+            class: Destroyer
+            names:
+              - Corelior Infantry
+              - Corelior Sentinel
+            note: type list incomplete on the source page
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Corelatis Platoon Leader
+            note: type list incomplete on the source page
+          - count: "5"
+            class: Battleship
+            names:
+              - Core Admiral
+              - Core High Admiral
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Battleship
+            names:
+              - Core Vice Admiral
+            ewar:
+              - kind: sensorDamp
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: Unlocks when all defenders are destroyed
+          - count: "30"
+            class: Structure
+            names:
+              - Bunker
+  - name: Room 3
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Sentry
+            names:
+              - Serpentis Sentry Gun
+          - count: "13"
+            class: Destroyer
+            names:
+              - Corelior Infantry
+            note: type list incomplete on the source page
+          - count: "4"
+            class: Cruiser
+            names:
+              - Corelum Chief Infantry
+              - Corelum Chief Sentinel
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Corelatis Platoon Leader
+            note: type list incomplete on the source page
+          - count: "7"
+            class: Battleship
+            names:
+              - Core Admiral
+              - Core High Admiral
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Overseer Battleship
+            names:
+              - Shadow Serpentis Grand Admiral
+            drop: May contain Shadow Serpentis Ammo, Tags, and Shadow Serpentis Battleship Modules
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: Unlocks when all defenders are destroyed
+  - name: Room 4
+    notes:
+      - text: "Note: The Serpentis Prisoner Isolation Facility (the structure that contains your loot) has a very strong web and will immediately target you upon warp in. Be prepared to not be able to speed tank or move closer to the structure. Also of note is that it shoots XL Inferno torpedoes that do approx 2000 thermal damage, though their explosion radius is appropriate to the signature radius of capital ships so they apply little damage to battleships or smaller ships. The outpost also repairs itself to the tune of about 1000 DPS and has lots of structure hit points."
+      - text: "Incoming damage can be very high by reason of the Stasis Towers and the structure's web. Suggest refitting for maximum tank. Kill the webbing towers first, then the Elite Frigates, then move on to the rest. Profile is shown here: Database Entry"
+      - text: There is a glitch on this structure whereby the structure will stop repairing armor if it switches aggro. The structure's armor repair can be turned off by forcing it to switch its primary target (the target it fires torpedoes at and webs). A drone ship does this by having its drones out and attacking the structure, then flying over 120km away from it. Players in ships without drones will have to have ensure another pilot is in space within application range of the structure.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 7-8
+            class: Frigate
+            names:
+              - Coreli Defender
+            note: type list incomplete on the source page
+          - count: 6-8
+            class: Elite Frigate
+            names:
+              - Coreli Guard Agent
+              - Coreli Spy
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "16"
+            class: Destroyer
+            names:
+              - Corelior Infantry
+              - Corelior Sentinel
+          - count: "4"
+            class: Cruiser
+            names:
+              - Corelum chief Infantry
+              - Corelum chief Sentinel
+          - count: "6"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Defender
+            note: type list incomplete on the source page
+          - count: "10"
+            class: Battlecruiser
+            names:
+              - Corelatis Captain Sentry
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Battleship
+            names:
+              - Core Admiral
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Battleship
+            names:
+              - Core Vice Admiral
+            ewar:
+              - kind: sensorDamp
+          - count: "4"
+            class: Sentry
+            names:
+              - Serpentis Stasis Tower
+            ewar:
+              - kind: web
+          - count: "4"
+            class: Sentry
+            names:
+              - Serpentis Sentry Gun
+          - count: "1"
+            class: Sentry Outpost
+            names:
+              - Serpentis Prisoner Isolation Facility
+            ewar:
+              - kind: web
+            drop: Contains 21st Tier Overseers Effects, and may contain Core B-type Battleship modules or a Vindicator BPC
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "3"
+            class: Station
+            names:
+              - Station
+    onWarpIn: "Approaching the Administrative Complex: The panicked comms I am reading indicate that an administration facility on the other side of this gate houses a stockpile of experimental Serpentis tech. My best guess is the facility will be the one that shoots back."
+sde:
+  dungeonIds:
+    - 5236

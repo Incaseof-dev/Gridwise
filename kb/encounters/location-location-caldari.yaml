@@ -1,0 +1,196 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: location-location-caldari
+kind: mission
+name: Location Location (Part 1 of 5)
+level: 5
+enemyFaction: Caldari State
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Location Location (Caldari)
+    url: https://wiki.eveuniversity.org/Location_Location_(Caldari)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191786"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: neut
+  - kind: ecm
+  - kind: web
+  - kind: warpScramble
+notes:
+  - text: "Web/warp disruption: Web/Scramble: All Frigates."
+  - text: "Suggested ships: (1) Ishtar w/ Passive Tank and (1) Osprey w/ Shield Transporters but recommend more DPS (I used a Drake for backup)"
+pockets:
+  - name: Part 1 of 5
+    notes:
+      - text: "Space type: Deadspace with Gate"
+      - text: Acceleration Gate into Deadspace
+  - name: Single Pocket
+    notes:
+      - text: Contact’s ship is present at Warp-In at 15km away. But 20 seconds later you are notified in Local that, Oh sh--, “It’s a Trap!”
+      - text: The Contact's ship vanishes and instead a Caldari Fleet uncloaks near the same spot. Ships are 25-40km to the right of Warp-In
+      - text: Your position at warp-in
+      - text: Triggered ships spawn at the Warp-In Beacon when the following Batteries are destroyed
+      - text: View of Batteries from warp-in beacon
+      - text: "Caution: The Nagashins will quickly move out to 68km and do a LOT of dps! Make sure you are tanked or have a logistics ships. 5 of them do over 1500 dps after resists."
+      - text: "Tips: Use a Passive Tank or plan a capacitor that receives an additional 120 units/s"
+      - text: "Tips: Maximum damage dealing of initial group is 1814 hp/s (EM 58%, Therm 42%)"
+      - text: "Tips: Do __not__ shoot Missile Batteries first (unless you can tank over 4000 hp/s...)"
+      - text: "Tips: Mission totals 33 Battleships, 16 Battlecruisers, 3 Cruisers, 6 Frigates"
+      - text: 'Tips: Mission flagged complete when all "Battery 2 (Left)" spawns are destroyed'
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Taibu State Shuriken
+            triggers: Wave 1
+            note: orbits at 10km, Web/Scramble, 27.5% Jamming
+          - count: "3"
+            class: Cruiser
+            names:
+              - Taibu State Daimyo
+              - Taibu State Shugo
+            note: orbits at 17km, 37.5% Jamming
+          - count: "12"
+            class: Battleship
+            names:
+              - State Shukuro Bishamon
+              - State Shukuro Shogun
+              - State Shukuro Taisho
+            triggers: Bishamon wave 2, Shogun wave 3
+            note: orbits of 32-50km
+          - count: "5"
+            class: Sentry
+            names:
+              - Caldari Cruise Missile Batteries
+            triggers: Each battery triggers a wave.
+          - count: "1"
+            class: Sentry
+            names:
+              - Caldari Stasis Tower
+            ewar:
+              - kind: web
+          - count: "3"
+            class: Sentry
+            names:
+              - Caldari Energy Neutralizer Sentry IIIs
+            ewar:
+              - kind: neut
+      - id: spawn-1-orbits-at-2-5km
+        trigger:
+          on: other
+          text: Spawn 1 orbits at 2.5km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Taibu State Nagasa
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: Web/Scramble
+      - id: spawn-2
+        trigger:
+          on: other
+          text: Spawn 2
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Battleship
+            names:
+              - State Shukuru Shogun
+              - State Shukuru Bishamon
+      - id: spawn-3-orbits-at-35km
+        trigger:
+          on: other
+          text: Spawn 3 orbits at 35km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battleship
+            names:
+              - State Shokuru Shogun
+      - id: wave-5
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Battleship
+            names:
+              - State Shukuro Bishamon
+              - State Shukuro Daijo
+            note: orbits of 35km
+      - id: wave-6
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - State Shukuo Seki
+            triggers: Spawn 2b???
+            note: orbits at 22km
+          - count: "3"
+            class: Battleship
+            names:
+              - State Shukuro Nagashin
+            triggers: Spawn 2a??
+            note: orbits at 68km
+          - count: "5"
+            class: Battleship
+            names:
+              - State Shukuro Nagashin
+            triggers: Objective complete
+            note: orbits at 68km
+      - id: wave-7
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battleship
+            names:
+              - State Shukuro Turushima
+            note: orbits at 21km, Jamming
+      - id: wave-8
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - State Kanpaku
+              - State Shukuro Bajo
+            note: orbits at 23-35km
+      - id: wave-9
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - State Kerai
+              - State Ronin
+            note: orbits at 17.5km
+  - name: Part 2 of 5
+    notes:
+      - text: See The Hard Way (2 of 5) (Caldari)

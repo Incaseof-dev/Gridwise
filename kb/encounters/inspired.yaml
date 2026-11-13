@@ -1,0 +1,121 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: inspired
+kind: mission
+name: Inspired
+level: 4
+enemyFaction: Serpentis & Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Inspired
+    url: https://wiki.eveuniversity.org/Inspired
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "220148"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Prop mod recomended as gates are 15 to 51km out.
+  - text: "Notes: Gallente Control Tower drops nothing."
+  - text: "Notes: Drop off the Quantum Entanglement in the container to start the mission"
+pockets:
+  - name: Warp-In
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "1"
+            class: Neutral Battleship
+            names:
+              - The Manager
+          - count: "4"
+            class: Sentry
+            names:
+              - Serpentis Heavy Missile Battery
+            group: After depositing mission item
+          - count: "3"
+            class: Frigate
+            names:
+              - Coreli Protector
+            group: After depositing mission item
+          - count: "2"
+            class: Battleship
+            names:
+              - Core Admiral
+            group: After depositing mission item
+          - count: "1"
+            class: Battleship
+            names:
+              - Core High Admiral
+            group: After depositing mission item
+  - name: Pocket 1
+    waves:
+      - id: initial-group-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group (auto-aggro)
+        spawns:
+          - count: "6"
+            class: Sentry
+            names:
+              - Gallente Heavy Missile Battery
+          - count: "8"
+            class: Frigate
+            names:
+              - Coreli Safeguard
+          - count: 4-6
+            class: Battleship
+            names:
+              - Core Admiral
+              - Core High Admiral
+            triggers: Last ship triggers Reinforcement 1 and begins timer for additional reinforcements
+          - count: "2"
+            class: Cruiser
+            names:
+              - Corelum Chief Infantry
+            group: Reinforcement 1 (auto-aggro)
+          - count: "2"
+            class: Battleship
+            names:
+              - Core High Admiral
+            group: Reinforcement 1 (auto-aggro)
+          - count: "2"
+            class: Cruiser
+            names:
+              - Corelum Chief Infantry
+            group: Reinforcement 2, 1 minute after Reinforcement 1
+          - count: "2"
+            class: Battleship
+            names:
+              - Core Admiral
+            group: Reinforcement 2, 1 minute after Reinforcement 1
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Corelatis Captain
+            group: Reinforcement 3, 1 minute after Reinforcement 2
+          - count: "3"
+            class: Battleship
+            names:
+              - Core High Admiral
+            group: Reinforcement 3, 1 minute after Reinforcement 2
+  - name: Pocket 2
+    waves:
+      - id: initial-group-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group (auto-aggro)
+        spawns:
+          - count: "1"
+            class: Battleship
+            names:
+              - The Manager
+            drop: 1x Quantum Entanglement
+            note: Blaster fit
+          - count: "1"
+            names:
+              - Gallente Control Tower

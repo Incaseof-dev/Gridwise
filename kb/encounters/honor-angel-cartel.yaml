@@ -1,0 +1,146 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: honor-angel-cartel
+kind: mission
+name: Honor
+level: 5
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Honor (Angel Cartel)
+    url: https://wiki.eveuniversity.org/Honor_(Angel_Cartel)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "195550"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: web
+  - kind: neut
+  - kind: targetPaint
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: All Frigates"
+  - text: "Suggested ships: (1) Maelstrom w/ Passive Tank, plus (1) Maelstrom w/ Shield Transporters"
+  - text: "Blitz: Mission is flagged as complete when Recruitment Station (Objective) is destroyed. Even if all the ships are not destroyed."
+  - text: "Space type: Deadspace - Gated"
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: ships-at-25-60km
+        trigger:
+          on: other
+          text: Ships at 25-60km
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Marauder
+            note: Orbits at 5km
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+            note: Orbits at 23km
+          - count: "13"
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Saint
+            ewar:
+              - kind: targetPaint
+            note: Target paint by Gist Saint. Orbits at 34-39km
+          - count: "1"
+            class: Sentry
+            names:
+              - Tower Sentry Angel III
+          - count: "4"
+            class: Sentry
+            names:
+              - Angel Cruise Missile Battery
+          - count: "1"
+            class: Sentry
+            names:
+              - Angel Stasis Tower
+            ewar:
+              - kind: web
+          - count: "2"
+            class: Sentry
+            names:
+              - Angel Energy Neutralizer Sentry III
+            ewar:
+              - kind: neut
+  - name: Pocket 2
+    notes:
+      - text: "Tips: Consider a Passive Tank, especially for Pocket 2 with five Neuts"
+      - text: "Tips: Pocket 1 ships deal 1,916 hp/s (Expl: 43%, Therm: 35%, Kin: 13%, EM: 10%)"
+      - text: "Tips: Pocket 2 ships deal 1,766 hp/s (Expl: 37%, Therm: 46%, Kin: 17%)"
+    waves:
+      - id: initial-ships-at-25-75km
+        trigger:
+          on: warpIn
+          text: "Initial: Ships at 25-75km"
+        spawns:
+          - count: "6"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Hunter
+              - Arch Gistii Nomad
+            ewar:
+              - kind: targetPaint
+              - kind: web
+              - kind: warpScramble
+            note: Orbits at 2-7km. Target Paint by Gistii Nomad
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Breaker
+            ewar:
+              - kind: web
+            note: Orbbits at 20km
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Gistatis Tribunus
+            note: Orbits at 22km
+          - count: "9"
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Nephilim
+            ewar:
+              - kind: targetPaint
+            note: Orbits at 31-39km. Target Painter by Gist Nephilim
+          - count: "4"
+            class: Sentry
+            names:
+              - Angel Heavy Missile Battery
+          - count: "8"
+            class: Sentry
+            names:
+              - Angel Cruise Missile Batery
+          - count: "5"
+            class: Sentry
+            names:
+              - Angel Energy Neutralizer Sentry II
+            ewar:
+              - kind: neut
+      - id: reinforcement-when-the-recruitment-station-is-reduced-to-10-shields
+        trigger:
+          on: other
+          text: "Reinforcement: When the Recruitment Station is reduced to 10% Shields"
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Phalanx
+            note: Orbits at 24km
+          - count: "3"
+            class: Battleship
+            names:
+              - Gist Cherubim
+            note: Orbits at 39km

@@ -1,0 +1,41 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: fair-play-to-the-rescue
+kind: mission
+name: Fair Play - To The Rescue
+level: 1
+enemyFaction: Mercenaries
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Fair Play - To The Rescue
+    url: https://wiki.eveuniversity.org/Fair_Play_-_To_The_Rescue
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223450"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Investigate the distress call. Eliminate all hostiles.
+notes:
+  - text: This mission is part 1 of the mission chain Fair Play
+  - text: Single pocket, no gate.
+  - text: Pop-up when starting to warp to the location
+  - text: "40px|link=|alt= Warning signLone Pirate: I knew one of you stupid newbies would fall for this. Now send me all of your ISK or I'll pod you."
+  - text: When the pirate starts taking damage
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: "Note: The smuggler's stargate drops about 50 scrap metal and some illegal drugs. Not worth destroying, as it has an obscene amount of HP."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Lone Pirate
+            note: "Flavor name: actual ship type is Mercenary Rookie."

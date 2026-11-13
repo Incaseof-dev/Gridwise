@@ -1,0 +1,148 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: limited-mining-expedition
+kind: escalation
+name: Limited Mining Expedition
+dedRating: null
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Limited Mining Expedition
+    url: https://wiki.eveuniversity.org/Limited_Mining_Expedition
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "215922"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: In a limited mining expedition site, you need to mine 10,000 units of ore and deposit it in the friendly Orca, while under attack from enemy frigates.
+pockets:
+  - name: Site details
+    notes:
+      - text: Rewards are based on total time taken to complete the site.
+  - name: Amarr
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Friendly Industrial
+            names:
+              - Orca
+          - count: "2"
+            class: Friendly Frigate
+            names:
+              - Imperial War Reserves Punisher
+            ewar:
+              - kind: web
+  - name: Caldari
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Friendly Industrial
+            names:
+              - Orca
+          - count: "2"
+            class: Friendly Frigate
+            names:
+              - State Military Stockpile Merlin
+            ewar:
+              - kind: web
+  - name: Gallente
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Friendly Industrial
+            names:
+              - Orca
+          - count: "2"
+            class: Friendly Frigate
+            names:
+              - Federal Strategic Materiel Incursus
+            ewar:
+              - kind: web
+  - name: Minmatar
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Friendly Industrial
+            names:
+              - Orca
+          - count: "2"
+            class: Friendly Frigate
+            names:
+              - Republic Fleet Ordnance Rifter
+            ewar:
+              - kind: web
+  - name: Amarr
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Blood Raiders Cruor
+            ewar:
+              - kind: web
+            note: Fires light energy beams
+  - name: Caldari
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Guristas Worm
+            ewar:
+              - kind: web
+            note: Fires T1 Scourge Rockets
+  - name: Gallente
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Serpentis Corporation Daredevil
+            ewar:
+              - kind: web
+            note: Uses Light Electron Blasters
+  - name: Minmatar
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 1-2
+            class: Frigate
+            names:
+              - Archangels Dramiel
+            ewar:
+              - kind: web
+            note: Respawns every few minutes. Deals 75% kinetic and 25% explosive damage.

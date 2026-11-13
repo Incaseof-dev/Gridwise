@@ -1,0 +1,99 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: hidden-hope
+kind: mission
+name: Hidden Hope
+level: 4
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Hidden Hope
+    url: https://wiki.eveuniversity.org/Hidden_Hope
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "205219"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Notes: There are many Gallente structures and SoE ships. There is no loot from industrial or freights. The freighters have about 100,000 HP and industrial have about 20,000 HP. Don't waste your time and ammo on them."
+pockets:
+  - name: 1st pocket
+    notes:
+      - text: There are a number of SoE transports upon warp-in. Serpentis attackers show up shortly after and aggro.
+      - text: Spawns appear to arrive when all ships are destroyed. Spawns aggro drones.
+      - text: 10km to gate.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "4"
+            class: Cruiser
+            names:
+              - Corelatis Platoon Leader
+          - count: "4"
+            class: Battleship
+            names:
+              - Core Port Admiral
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Core Defender
+          - count: "2"
+            class: Battleship
+            names:
+              - Core Port Admiral
+  - name: 2nd pocket
+    notes:
+      - text: Serpentis appear shortly after warp-in and aggro. Spawns appear to arrive when all ships are destroyed. Spawns aggro drones.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Core Chief Infantry
+          - count: "3"
+            class: Battleship
+            names:
+              - Core Port Admiral
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Coreli Safeguard
+          - count: "2"
+            class: Battleship
+            names:
+              - Core Port Admiral
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Cruiser
+            names:
+              - Corelum Chief Defender
+          - count: "3"
+            class: Battleship
+            names:
+              - Core Rear Admiral

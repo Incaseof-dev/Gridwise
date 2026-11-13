@@ -1,0 +1,88 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-guristas-spies-level-4
+kind: mission
+name: The Guristas Spies
+level: 4
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Guristas Spies (Level 4)
+    url: https://wiki.eveuniversity.org/The_Guristas_Spies_(Level_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "196566"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Eliminate the Guristas Spies and their guards.
+ewar:
+  - kind: ecm
+notes:
+  - text: "Blitz: Destroy group 3 with the Guristas spies."
+  - text: "Notes: Can be done in an AFK drone boat if bounties are desired."
+  - text: ~6.8M Bounty
+  - text: ~0.7M Salvage
+  - text: ~1.3M Loot
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: group-1-23-30km-from-warp-in
+        trigger:
+          on: other
+          text: Group 1, 23-30km from warp-in
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Destroyer
+            names:
+              - Pithior Supremacist
+              - Pithior Terrorist
+          - count: "3"
+            class: Battleship
+            names:
+              - Pith Extinguisher
+              - Pith Destroyer
+            ewar:
+              - kind: ecm
+            note: Exterminators target jam; type list incomplete on the source page
+      - id: group-2-30km-from-warp-in
+        trigger:
+          on: other
+          text: Group 2, 30km from warp-in
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Pithatis Assaulter
+              - Pithatis Enforcer
+          - count: "4"
+            class: Battleship
+            names:
+              - Pith Eradicator
+              - Pith Obliterator
+            ewar:
+              - kind: ecm
+            note: Exterminators target jam; type list incomplete on the source page
+      - id: group-3-57-80km-from-warp-in
+        trigger:
+          on: other
+          text: Group 3, 57-80km from warp-in
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Pithior Terrorist
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Guristas Spy
+          - count: "1"
+            class: Battleship
+            names:
+              - Pith Massacrer
+              - Pith Conquistador

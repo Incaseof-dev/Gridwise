@@ -1,0 +1,104 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-best-kind-of-revenge
+kind: mission
+name: The Best Kind of Revenge
+level: 3
+enemyFaction: Mercenaries
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Best Kind of Revenge
+    url: https://wiki.eveuniversity.org/The_Best_Kind_of_Revenge
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231748"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal:
+    - kinetic
+    - em
+    - thermal
+  resist: []
+objectives:
+  - text: Eliminate all hostile targets then approach Central Database Hub
+ewar:
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Mercenary Wingman"
+  - text: "Black market clones: Hundreds of small companies exist in the fringes of space that cater to those who either can't afford or are banned from the big-name cloning companies. Naturally, there is a much greater risk with these organizations. No regulations means there are no guarantees of revival, and there are many stories of capsuleers waking up in distant backup cloning facilities after their local clone never activated. For most capsuleers this represents only a minor inconvenience, since very few are foolish enough to place their lives in the hands of questionable company. For those criminals who can pay, the clones are nearly as safe as the Empire ones, a fact that has stymied efforts to curb the proliferation of capsuleer outlaws, and allowed them to move about the cluster with the freedom capsuleers are famous for."
+  - text: Accept the Mission remotely.
+  - text: Gated deadspace pocket up to four jumps away. Eliminate all hostile targets, then upload the Serpentis Inquest virus by approaching the Central Database Hub Structure.
+  - text: Complete the Mission remotely.
+  - text: "Tips: You do not need to kill the Cruise Missile Batteries"
+  - text: "Tips: Destroying the Cruise Missile Batteries incurs minor Guristas Pirates Standing Loss"
+pockets:
+  - name: Warp-in
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+  - name: Room 1
+    notes:
+      - text: "Warning: Restricted Area: Listen up, whoever you are. This area is off limits to anyone who isn't just coming back from the dead. I suggest you hit the nearest stargate if you don't want to end up waking up in a cloning vat of your own."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Cruiser
+            names:
+              - Mercenary Commander
+          - count: "2"
+            class: Sentry
+            names:
+              - Cruise Missile Battery
+            note: Aggro on landing and doesn't have to be killed
+      - id: reinforcement-1
+        trigger:
+          on: other
+          text: Reinforcement 1
+          confidence: inferred
+        spawns:
+          - count: "7"
+            class: Elite Frigate
+            names:
+              - Mercenary Elite Fighter
+      - id: reinforcement-2
+        trigger:
+          on: other
+          text: Reinforcement 2
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Mercenary Rookie
+          - count: "1"
+            class: Frigate
+            names:
+              - Mercenary Wingman
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Central Database Hub
+            note: Approach to complete the Mission

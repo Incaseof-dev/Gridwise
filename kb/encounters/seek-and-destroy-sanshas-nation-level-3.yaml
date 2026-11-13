@@ -1,0 +1,67 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: seek-and-destroy-sanshas-nation-level-3
+kind: mission
+name: Seek and Destroy
+level: 3
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Seek and Destroy (Sansha's Nation) (Level 3)
+    url: https://wiki.eveuniversity.org/Seek_and_Destroy_(Sansha's_Nation)_(Level_3)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191918"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: trackingDisruption
+  - kind: web
+notes:
+  - text: "Web/warp disruption: Sansha's Demon/Berserker (Web)"
+  - text: "Suggested ships: Battlecruiser"
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: group-1-30km
+        trigger:
+          on: other
+          text: Group 1, 30km
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Sansha's Demon
+              - Sansha's Berserker
+            ewar:
+              - kind: web
+          - count: "1"
+            class: Cruiser
+            names:
+              - Centum Execrator
+              - Centum Slaughterer
+      - id: group-2-55-60km
+        trigger:
+          on: other
+          text: Group 2, 55-60km
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Centii Savage
+              - Centii Slavehunter
+            ewar:
+              - kind: trackingDisruption
+          - count: "2"
+            class: Cruiser
+            names:
+              - Centum Execrator
+              - Centum Slaughterer
+              - Centum Fiend
+              - Centum Hellhound
+            ewar:
+              - kind: trackingDisruption

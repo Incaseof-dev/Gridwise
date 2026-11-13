@@ -1,0 +1,172 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: massive-attack-minmatar-republic
+kind: mission
+name: Massive Attack
+level: 4
+enemyFaction: Minmatar Republic
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Massive Attack (Minmatar Republic)
+    url: https://wiki.eveuniversity.org/Massive_Attack_(Minmatar_Republic)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223401"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal:
+    - explosive
+  resist:
+    - kinetic
+    - thermal
+    - explosive
+ewar:
+  - kind: web
+  - kind: sensorDamp
+notes:
+  - text: "Suggested ships: High DPS ship"
+lootNotes:
+  - text: "Loot: ± 2 Mil ISK"
+  - text: "Besides normal loot, the NPCs also drop Republic Fleet Insignia ('tags'):"
+  - text: 7 Republic Fleet Commander Insignia I
+  - text: 19 Republic Fleet High Captain Insignia I
+  - text: 15 Republic Fleet Captain Insignia I
+  - text: 10 Republic Fleet Private Insignia V
+  - text: 19 Republic Fleet Private Insignia II
+  - text: 2 Republic Fleet Private Insignia IV
+  - text: 1 Republic Fleet Private Insignia III
+  - text: 1 Republic Fleet Midshipman Insignia III
+  - text: 1 Republic Fleet Midshipman Insignia II
+  - text: "Republic Fleet Insignia: Current Jita sell value is 55 million isk and buy value 52 million isk."
+  - text: "Salvage: ± 1 Mil ISK"
+pockets:
+  - name: Acceleration Gate
+    waves:
+      - id: initial-spawn
+        trigger:
+          on: warpIn
+          text: Initial spawn
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Republic Tribal Austri
+              - Republic Tribal Faxi
+          - count: "2"
+            class: Cruiser
+            names:
+              - Republic Jarpur
+  - name: Pocket 1
+    notes:
+      - text: (2 groups, 40-70 km)
+    waves:
+      - id: initial-spawn
+        trigger:
+          on: warpIn
+          text: Initial spawn
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Chief Republic Baldur
+              - Chief Republic Ofeg
+              - Chief Republic Isak
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "4"
+            class: Destroyer
+            names:
+              - Republic Tribal Austri
+          - count: "3"
+            class: Cruiser
+            names:
+              - Republic Jarpur
+              - Republic Ormur
+              - Republic Solon
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Republic Norn
+          - count: "3"
+            class: Battleship
+            names:
+              - Republic Sigur
+  - name: Pocket 2
+    notes:
+      - text: (3 groups, 40-65 km)
+    waves:
+      - id: initial-spawn
+        trigger:
+          on: warpIn
+          text: Initial spawn
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Republic Baldur
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Chief Republic Isak
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Destroyer
+            names:
+              - Republic Tribal Austri
+          - count: "5"
+            class: Cruiser
+            names:
+              - Republic Jarpur
+              - Republic Ormur
+              - Republic Solon
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Republic Nutia
+          - count: "2"
+            class: Battleship
+            names:
+              - Republic Sigur
+  - name: Pocket 3
+    notes:
+      - text: (3 groups, 40-65 km)
+    waves:
+      - id: initial-spawn
+        trigger:
+          on: warpIn
+          text: Initial spawn
+        spawns:
+          - count: "5"
+            class: Elite Frigate
+            names:
+              - Chief Republic Isak
+              - Chief Republic Ivan
+              - Chief Republic Magni
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Destroyer
+            names:
+              - Republic Tribal Austri
+          - count: "5"
+            class: Cruiser
+            names:
+              - Republic Jarpur
+              - Republic Tribal Solon
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Republic Norn
+              - Republic Nutia
+          - count: "3"
+            class: Battleship
+            names:
+              - Republic Sigur
+              - Republic Ymir

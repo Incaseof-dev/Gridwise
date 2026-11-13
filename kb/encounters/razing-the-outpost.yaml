@@ -1,0 +1,185 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: razing-the-outpost
+kind: mission
+name: Razing the Outpost
+level: null
+enemyFaction: Mercenaries (Mordu's Legion ships)
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Razing the Outpost
+    url: https://wiki.eveuniversity.org/Razing_the_Outpost
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231202"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal:
+    - kinetic
+    - thermal
+  resist:
+    - kinetic
+    - thermal
+objectives:
+  - text: Destroy all enemy ships and The Outpost
+ewar:
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite frigates"
+  - text: thumb
+  - text: This mission can be accepted and completed remotely. No standing loss for destroying enemies, sentries, or structures.
+  - text: "Blitz: Clear gates of rats (gates are locked while guarded, missile batteries do not need to be destroyed in order to unlock the gate though) and make best speed to the final room. In the final room orbit structure and eliminate tackle and incoming DPS as needed, but leave 1 battleship. Structure damage does not spawn additional waves. Structure kill completes mission."
+  - text: "Tips: You can warp to the warp-in at range to avoid being webbed instantly."
+  - text: "Tips: The NPCs in the warp-in area and the first pocket are at 0. The second pocket NPCs are roughly 50-60 km away."
+  - text: "Tips: Remember to switch resists modules for this mission or the incoming kinetic damage will hit to your resist hole."
+  - text: "Tips: Kinetic damage is much more important than thermal, both incoming and outgoing."
+  - text: "Tips: The battleships with higher bounty will deal much higher damage than the ones that have lower bounty so you should take them out asap."
+pockets:
+  - name: Warpin
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Mordus Bounty Hunter
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Cruiser
+            names:
+              - Mordus Lion
+          - count: "4"
+            class: Battleship
+            names:
+              - Mordus Gigamar
+              - Mordus Phanti
+          - count: "3"
+            class: Sentry
+            names:
+              - Caldari Cruise Missile Battery
+            note: Scourge missiles (kinetic)
+  - name: 1st pocket
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "6"
+            class: Cruiser
+            names:
+              - Mordus Puma
+              - Mordus Leopard
+          - count: "4"
+            class: Battleship
+            names:
+              - Mordus Gigamar
+              - Mordus Phanti
+              - Mordus Mammoth
+          - count: "3"
+            class: Sentry
+            names:
+              - Caldari Cruise Missile Battery
+            note: Scourge missiles (kinetic)
+  - name: 2nd pocket
+    notes:
+      - text: The Outpost appears to immediately explode and complete the mission upon putting it into about ~75% armor.
+    waves:
+      - id: initial-group-50-60-km-away
+        trigger:
+          on: warpIn
+          text: Initial Group (50-60 km away)
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Mordus Bounty Hunter
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "4"
+            class: Cruiser
+            names:
+              - Mordus Bobcat
+          - count: "2"
+            class: Battleship
+            names:
+              - Mordus Gigamar
+            triggers: Last battleship destroyed triggers Wave 1
+          - count: "3"
+            class: Sentry
+            names:
+              - Caldari Heavy Missile Battery
+            note: Inferno missiles (thermal)
+          - count: "3"
+            class: Sentry
+            names:
+              - Caldari Cruise Missile Battery
+            note: Scourge missiles (kinetic)
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Mordus Bounty Hunter
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "4"
+            class: Cruiser
+            names:
+              - Mordus Leopard
+          - count: "4"
+            class: Battleship
+            names:
+              - Mordus Gigamar
+              - Mordus Mammoth
+            triggers: Third battleship destroyed triggers Wave 2
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Mordus Bounty Hunter
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Cruiser
+            names:
+              - Mordus Lion
+          - count: "8"
+            class: Battleship
+            names:
+              - Mordus Gigamar
+              - Mordus Phanti
+              - Mordus Mammoth
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Structure
+            names:
+              - The Outpost
+            triggers: Destroying completes the mission objective
+            drop: Meta module
+            note: ~53,000 HP, appears to explode once dropping below ~75% armor

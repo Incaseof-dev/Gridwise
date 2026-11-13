@@ -1,0 +1,50 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: what-comes-around-goes-around
+kind: mission
+name: What Comes Around Goes Around
+level: 3
+enemyFaction: Mercenaries
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – What Comes Around Goes Around
+    url: https://wiki.eveuniversity.org/What_Comes_Around_Goes_Around
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223605"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Bounty Hunter (Web, Point)"
+  - text: "Suggested ships: Battlecruiser"
+  - text: Bounty Hunter weakest to em on shields and ex on armor
+  - text: Mission completes when all enemies are destroyed
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: This mission is in ungated normal space. Players that aren't warp disrupted or scrambled can warp normally. NPC distances and directions are relative to the mission's warp-in point. If a greater initial distance is desired, then warp to the mission "to within" a distance from some bookmark or celestial to the west. Warping "to within" 20 kilometers from the east will minimize initial distance to enemies, if so desired.
+    waves:
+      - id: initial-group-19-31km-generally-east
+        trigger:
+          on: warpIn
+          text: Initial Group, 19-31km generally east
+        spawns:
+          - count: "4"
+            class: Cruiser
+            names:
+              - Mercenary Lieutenant
+          - count: "1"
+            class: Cruiser
+            names:
+              - Bounty Hunter Jason
+              - Bounty Hunter Ikaruz
+              - Bounty Hunter Obunga
+              - Bounty Hunter Okochyn
+            ewar:
+              - kind: web
+              - kind: warpDisruption

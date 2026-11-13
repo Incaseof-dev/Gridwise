@@ -1,0 +1,96 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-good-word
+kind: mission
+name: The Good Word
+level: 3
+enemyFaction: Caldari State & Scions of the Superior Gene (Caldari State ships)
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Good Word
+    url: https://wiki.eveuniversity.org/The_Good_Word
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "218554"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Take the preacher called Tolmak (Preacher 1) from the Yunshin Z refining complex to your agent.
+notes:
+  - text: "Suggested ships: Battlecruiser"
+  - text: No bounty
+  - text: "The Prophet of the Seventh Sphere: Religious freaks like to spread all sorts of apocalyptic messages, and in recent times there are few who have captured the imagination of conspiracy theorists in the way that Tolmak has. The so-called “Prophet of the Seventh Sphere,” Tolmak is an enigmatic and elusive character. He has never shown himself publicly for fear of reprisal, and relies instead of proxies to spread his word. Others say his real strength comes from the media outlets that cover these preachers. Outlets that, for their own part, are mostly concerned with the profit to be made from the inevitable controversy his message brings. Among other things, Tolmak's elaborate revelations paint a universe governed by demonic forces that secretly control the heads of all the empires. He reserves special bile for the capsuleer class, teaching that their clones are not actually the same person reborn, but are instead, demonic simulacra."
+  - text: The damage output is significant. Good tank recommended.
+  - text: No faction standings penalty for destroying the enemies. No bounties for destroying ships.
+  - text: "Blitz: Kill all enemies of wave 1 in the first pocket. Ignore NPCs in the second pocket, grab the preacher from the Preacher's Quarters (container), and warp out."
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: The pocket starts off empty. After a few seconds, 8 enemy cruisers spawn, but two of them are scripted to blow up when the friendly cruisers arrive. The friendly cruisers simply stay in the pocket and do not engage the enemies.
+      - text: "Message from the Preacher: Greetings, pilot. Have you come to listen, or with violence in mind?"
+      - text: "Message from the Preacher: Be warned, the Scions of the Superior Gene are incoming. They're a militant splinter group that labled us heretics and will wipe out me, you, and every colonist here. If you help stop them, I'll come willingly."
+      - text: About 20 seconds after out of warp.
+      - text: After disposing of the last enemy in the initial wave, five additional enemy cruisers spawn. The gate will be unlocked at this point, and thus engaging the second wave is optional.
+      - text: About 30 seconds after hostiles wave 1
+      - text: "Tolmak's Zealots: You must save the preacher! The gate has been unlocked; go while we cover you, noble capsuleer!"
+    waves:
+      - id: hostiles-wave-1
+        trigger:
+          on: other
+          text: Hostiles Wave 1
+          confidence: inferred
+        spawns:
+          - count: "8"
+            class: Cruiser
+            names:
+              - Scions of the Superior Gene
+            triggers: Last one destroyed triggers hostiles wave 2
+      - id: friendlies
+        trigger:
+          on: other
+          text: Friendlies
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Friendly Cruiser
+            names:
+              - Tolmak's Zealots
+      - id: hostiles-wave-2
+        trigger:
+          on: other
+          text: Hostiles Wave 2
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Cruiser
+            names:
+              - Scions of the Superior Gene
+  - name: Pocket 2
+    notes:
+      - text: The objective is in the Preacher's Quarters, which you can loot without engaging the enemies.
+      - text: Note for blitzing, you have to wait a bit (until a message popup?). "Bring Preacher to {Agent Name}" from the mission tracker indicates the completion of the quest, after this you can warp out and complete the quest.
+      - text: "Message from the Scions: Fool! Tolmak's gnats won't stop us!"
+      - text: "Message from the Preachers: Thank you for saving us, we come in peace."
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Container
+            names:
+              - Preacher's Quarters
+            drop: Preacher
+      - id: auto-aggro
+        trigger:
+          on: other
+          text: Auto aggro
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Cruiser
+            names:
+              - Scions of the Superior Gene

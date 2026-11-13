@@ -1,0 +1,81 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: labor-of-love
+kind: mission
+name: Labor of Love
+level: 2
+enemyFaction: Minmatar Republic & Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Labor of Love
+    url: https://wiki.eveuniversity.org/Labor_of_Love
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223288"
+defaults:
+  confidence: verified
+  source: uni
+pockets:
+  - name: Part 1 of 3
+    notes:
+      - text: "Blitz: Destroy the initial forces' industrials."
+    waves:
+      - id: initial-forces-no-aggro-15-20km
+        trigger:
+          on: warpIn
+          text: Initial forces, no aggro (15-20km)
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Republic Trabal Balder
+          - count: "3"
+            class: Hauler
+            names:
+              - Republic Fleet Industrial
+      - id: reinforcement
+        trigger:
+          on: other
+          text: Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Federation Prattor Harpago
+          - count: "1"
+            class: Destroyer
+            names:
+              - Federation Pelekus
+  - name: Part 2 of 3
+    notes:
+      - text: "Blitz: Destroy the industrial only."
+      - text: "Tip: Don't forget the workers from the industrial."
+  - name: Warp-in
+    waves:
+      - id: 11km
+        trigger:
+          on: other
+          text: 11km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Gallente ?
+          - count: "1"
+            class: Hauler
+            names:
+              - Republic Fleet Industrial
+            drop: Workers
+  - name: Part 3 of 3
+    notes:
+      - text: "Blitz: Destroy the manufacturing outpost only."
+  - name: Pocket 5
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns: []

@@ -1,0 +1,44 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: eliminate-a-pirate-nuisance-serpentis
+kind: mission
+name: Eliminate a Pirate Nuisance
+level: 1
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Eliminate a Pirate Nuisance (Serpentis)
+    url: https://wiki.eveuniversity.org/Eliminate_a_Pirate_Nuisance_(Serpentis)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191671"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Eliminate the pirates causing the nuisance
+notes:
+  - text: "Suggested ships: Frigate"
+  - text: Single pocket with gate
+  - text: No minable asteroids.
+  - text: Structures drop no loot.
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Coreli Initiate
+            group: Group 1, 3-4km
+          - count: "2"
+            class: Frigate
+            names:
+              - Coreli Agent
+              - Coreli Spy
+            group: Group 2, 35-40km

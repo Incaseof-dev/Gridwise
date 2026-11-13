@@ -1,0 +1,211 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: angel-cartel-occupied-mining-colony
+kind: complex
+name: Angel Cartel Occupied Mining Colony
+dedRating: null
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Angel Cartel Occupied Mining Colony
+    url: https://wiki.eveuniversity.org/Angel_Cartel_Occupied_Mining_Colony
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "230594"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Battlecruisers"
+notes:
+  - text: "Rating: DED 4/10"
+  - text: The Angel Cartel Occupied Mining Colony is a Cosmic Signature of the DED Complex (rated 4/10) type, occupied by the Angel Cartel pirate faction. It can be found via exploration by probing in Highsec and Lowsec systems.
+  - text: The site consists of a volume of space with an acceleration gate and contains various structures and their defending pirates. Using the gate allows access to other areas within the site. When attacked, the defenders may send multiple waves of reinforcements. Each group's appearance is triggered by the destruction of members of the previous group. The names and amount of ships listed may vary slightly, but will always be of Battlecruiser class or smaller.
+  - text: This site's acceleration gate allows only Battlecruiser class ships or lower and their Tech 2 equivalents to enter the site.
+  - text: (Note - Tech 3 cruisers are not supported by the entrance gate)
+  - text: First room
+  - text: Second room
+loot:
+  - item: 8th Tier Overseers Effects
+    from: Domination Excavator
+    note: est. 1.2m Isk (wiki) · 100% drop rate
+  - item: Domination Modules
+    from: Domination Excavator
+  - item: Gistum C-type Modules
+    from: Domination Excavator
+  - item: Cynabal BPC
+    from: Domination Excavator
+  - item: + Exploration logs
+  - item: May 2020
+    note: est. 10M ISK (wiki) · From Domination Excavator
+  - item: Gistum C-Type Medium Shield Booster
+    note: est. From Domination Excavator (wiki)
+  - item: June 2020
+    note: est. 120M ISK (wiki) · From Domination Excavator
+  - item: June 2020
+    note: est. 5M ISK (wiki) · From Domination Excavator
+  - item: Gistum C-Type Kinetic Shield Amplifier
+    note: est. From Domination Excavator (wiki)
+  - item: Gistum C-Type Multispectrum Shield Hardener
+    note: est. From Domination Excavator (wiki)
+  - item: October 2023
+    note: est. 2.3M ISK (wiki) · From Domination Excavator
+  - item: Gistum C-Type Multispectrum Shield Hardener
+    note: est. From Domination Excavator (wiki)
+  - item: October 2023
+    note: est. 150M ISK (wiki) · From Domination Excavator
+lootNotes:
+  - text: Other Loot + Salvage 1.7M (16-March-2024)
+  - text: ~3.4M ISK in bounties
+pockets:
+  - name: Room 1
+    waves:
+      - id: group-1
+        trigger:
+          on: warpIn
+          text: Group 1
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Gistii Outlaw
+          - count: "4"
+            class: Frigate
+            names:
+              - Gistii Raider
+          - count: "3"
+            class: Frigate
+            names:
+              - Gistii Nomad
+              - Gistii Ruffian
+            ewar:
+              - kind: targetPaint
+          - count: "3"
+            class: Cruiser
+            names:
+              - Gistum Liquidator
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Gistatis Legionnaire
+      - id: group-2
+        trigger:
+          on: other
+          text: Group 2
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Gistii Ambusher
+              - Gistii Hunter
+          - count: "3"
+            class: Frigate
+            names:
+              - Gistii Ruffian
+            ewar:
+              - kind: targetPaint
+          - count: "2"
+            class: Cruiser
+            names:
+              - Gistum Breaker
+            ewar:
+              - kind: web
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Gistatis Primus
+    onWarpIn: "Despite numerous laws across the empires bolstering security regulations after the outbreak of Sansha incursions in YC 113, mining colonies still provide a weak, target-rich environment for pirate factions. The Angel Cartel takes an unorthodox approach to these colonies, imprisoning the miners and replacing them with their own excavation teams, led by a Domination Excavator. The CDIA has yet to determine what the Cartel is after, though no significant amount of traditionally valuable ore has been taken. DED Threat Assessment: Risky (4 of 10)"
+  - name: Room 2
+    notes:
+      - text: "Upon entering room 2.: Excavator Detected: I'm reading the presence of a Domination Excavator. Prepare yourself for a fight. Scientists or not, the Cartel only fields warships."
+      - text: The entire pocket will auto-aggro in a few seconds, and the combined DPS is quite high. Well-tanked battlecruiser or pirate faction/heavy assault cruiser is advised. The Domination Excavator is marked with a battlecruiser icon but is an Overseer Cruiser. It has a fairly strong active tank which requires at least 250-300 Explosive DPS to safely break. Medium and heavy drones have no fun in this pocket as the rats tend to switch to attacking them in swarms and killing them quickly with high burst DPS.
+      - text: "Excavator Down: The Excavator has been eliminated. Whatever the Cartel was looking for, they won't get it now. Don't forget to rob the wreckage of delicious prizes."
+    waves:
+      - id: group-1
+        trigger:
+          on: warpIn
+          text: Group 1
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Gistii Outlaw
+          - count: "4"
+            class: Frigate
+            names:
+              - Gistii Ambusher
+              - Gistii Raider
+              - Gistii Rogue
+          - count: "3"
+            class: Frigate
+            names:
+              - Gistii Nomad
+            ewar:
+              - kind: targetPaint
+          - count: "1"
+            class: Cruiser
+            names:
+              - Gistum Crusher
+            ewar:
+              - kind: targetPaint
+          - count: "1"
+            class: Cruiser
+            names:
+              - Gistum Breaker
+              - Gistum Defeater
+            ewar:
+              - kind: web
+          - count: "3"
+            class: Cruiser
+            names:
+              - Gistum Liquidator
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Gistatis Legionnaire
+              - Gistatis Primus
+      - id: group-2
+        trigger:
+          on: other
+          text: Group 2
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Gistii Ambusher
+              - Gistii Hijacker
+              - Gistii Raider
+          - count: "3"
+            class: Frigate
+            names:
+              - Gistii Nomad
+              - Gistii Ruffian
+            ewar:
+              - kind: targetPaint
+          - count: "1"
+            class: Cruiser
+            names:
+              - Gistum Smasher
+            ewar:
+              - kind: targetPaint
+          - count: "3"
+            class: Cruiser
+            names:
+              - Gistum Liquidator
+              - Gistum Marauder
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Gistatis Primus
+          - count: "1"
+            class: Overseer Cruiser
+            names:
+              - Domination Excavator
+            drop: Contains 8th Tier Overseers effects, May also contain Gistum C-Type Modules or Domination Modules. May also contain a Cynabal BPC.
+            note: Shield tank requires about 200-300 DPS to break
+sde:
+  dungeonIds:
+    - 5275

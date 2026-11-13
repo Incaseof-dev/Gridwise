@@ -1,0 +1,327 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: no-quarter
+kind: escalation
+name: No Quarter
+dedRating: null
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – No Quarter
+    url: https://wiki.eveuniversity.org/No_Quarter
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "200498"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: The first two locations are doable solo, while the last two are much harder, with the final location requiring at least 1200 DPS minimum to break the overseer's tank. Even then it takes a long time due to the boss's strong active shield tank and high hitpoints, as well as high DPS that can tear apart a well-tanked T3 Cruiser with ease.
+  - text: "Warning: The DED 10/10 The Maze combat site is comparatively easy to this escalation. Use extreme caution unless you want to risk losing your ship."
+  - text: "Escalation start: As the dust settles from the battle, you receive a transmission from someone claiming to be a local vigilante who congratulates you on a job well done. Your computers run a check on his ship ID's and other info they can gather on him in such a short period of time, but come up with nothing. He is at least not a part of any pirate faction, nor seems he to represent any of the official states in the galaxy. This person continues to welcome you to the area and offers to point you to some other Gurista bases he knows about and have been a menace for the local population. If you want to come and meet him, he will lead the way."
+pockets:
+  - name: Warp-in
+    notes:
+      - text: You land on an acceleration gate. Take it if no escalation is triggered from the Dread Guristas commander.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Destroyer
+            names:
+              - Pithior Supremacist
+              - Pithior Terrorist
+          - count: 3-5
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Abolisher
+              - Dire Pithum Eraser
+          - count: 7-8
+            class: Battleship
+            names:
+              - Pith Usurper
+              - Pith Massacrer
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - Dread Guristas Conquistador
+            triggers: Escalation trigger
+            drop: may contain Dread Guristas faction modules or an implant
+  - name: First pocket
+    notes:
+      - text: No enemies in the pocket. Spy drones will warp away shortly after entry.
+      - text: 'Escalation trigger: The radio crackles, it is the vigilante all excited, who whispers in a conspiratorial tone, "They are still here! Come quick and we shall introduce them to pain!'
+      - text: "Escalation dead-end: After a few exciting moments waiting for further messages, a series of less interesting moments waiting still and then a few very boring moments while your patience approaches a grand finale, you decide that this stranger must have wet himself when he saw you and used the chance to hide deep inside his Industrial. Or maybe his 'spy drones' simply take forever and a day to accomplish their task. Either way you decide to abandon this farce and continue on with your business."
+    waves:
+      - id: passive-ships-and-structures
+        trigger:
+          on: warpIn
+          text: Passive ships and structures
+        spawns:
+          - count: "2"
+            class: Neutral Frigate
+            names:
+              - Spy Drone
+          - count: "1"
+            class: Neutral Cruiser
+            names:
+              - Teinei Kuma
+          - count: "60"
+            class: Structure
+            names:
+              - Pressure Silo
+  - name: Second location
+    notes:
+      - text: Destroy the Guristas Control Tower if no escalation is received from the commander battleship.
+      - text: "Escalation trigger: \"We sure showed them! You're handy to have around when the missiles are flying, but there's no time to float here celebrating. We must press on! Another division of this same group happens to be close by!\""
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Structure
+            names:
+              - Guristas Control Tower
+            triggers: Alternate escalation trigger
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 1-2
+            class: Elite Frigate
+            names:
+              - Dire Pithi Despoiler
+              - Dire Pithi Saboteur
+            ewar:
+              - kind: ecm
+          - count: "11"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Abolisher
+              - Dire Pithum Eraser
+              - Dire Pithum Inferno
+              - Dire Pithum Mortifier
+          - count: "9"
+            class: Battleship
+            names:
+              - Pith Usurper
+              - Pith Massacrer
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - Dread Guristas Conquistador
+              - Dread Guristas Destroyer
+            triggers: Escalation trigger
+            drop: may contain Dread Guristas faction modules or an implant; wreck may produce Tech 2 salvage
+          - count: "6"
+            class: Sentry
+            names:
+              - Guristas Tower Sentries
+          - count: "2"
+            class: Sentry
+            names:
+              - Guristas Stasis Tower
+            ewar:
+              - kind: web
+  - name: Third location
+    notes:
+      - text: There is considerably higher damage in this pocket; the Guristas Annihilation Missile Battery does extreme EM damage and the Siege Railgun Sentries do high alpha Therm/Kin damage. Together they can destroy an improperly tanked T3C in as few as three volleys. Thus, mainly tank against EM and Kinetic damage.
+      - text: Attacking the Guristas Annihilation Missile Battery triggers a defensive wave. Destroying it or the commander battleship may trigger escalation and allows you to blitz through this location.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "5"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Nullifier
+              - Dire Pithum Murderer
+            ewar:
+              - kind: ecm
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Pithatis Revolter
+              - Pithatis Death Dealer
+          - count: "10"
+            class: Battleship
+            names:
+              - Pith Conquistador
+              - Pith Destroyer
+              - Pith Usurper
+              - Pith Massacrer
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - Dread Guristas Massacrer
+            triggers: Escalation trigger
+            drop: may contain Dread Guristas faction modules or an implant; wreck may produce T2 salvage
+          - count: "2"
+            class: Sentry
+            names:
+              - Siege Railgun Sentry
+            note: High DPS and tank
+          - count: "2"
+            class: Sentry
+            names:
+              - Guristas Stasis Tower
+            ewar:
+              - kind: web
+          - count: "1"
+            class: Sentry
+            names:
+              - Guristas Annihilation Missile Battery
+            triggers: Attacking triggers reinforcements
+            note: Shoots high damaging EM Cruise missiles
+      - id: reinforcement-wave
+        trigger:
+          on: other
+          text: Reinforcement wave
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Arrogator
+              - Dire Pithi Imputor
+              - Dire Pithi Invader
+              - Dire Pithi Infiltrator
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Destroyer
+            names:
+              - Pithior Supremacist
+              - Pithior Terrorist
+          - count: "10"
+            class: Battleship
+            names:
+              - Pith Usurper
+              - Pith Massacrer
+  - name: Fourth location
+    notes:
+      - text: This location is very hard, requiring around 3-4 people in high-DPS strong tank ships. The overseer battleship has extremely strong shield reps which require the damage to exceed 1200 DPS to thermal.
+      - text: Attacking the Guristas War Installation spawns two defensive waves, the second wave including the overseer.
+      - text: The Siege Sentries deal a high alpha damage of 1200 mostly therm/kin per turret but fire every 16 seconds. Since there are at least 8 turrets firing at warp in, they can destroy a single T3C in two volleys if improperly tanked. It is advised to make a bookmark on-grid as you land at the site to warp to in case of danger and to reset aggro.
+      - text: Terrorist Overlord Inzi Kika deals 500 DPS with turrets and nearly 1500 DPS with missiles. He has 89% EM resists, 79% Explosive and Kinetic resists, and 69% Thermal resists.
+      - text: It is strongly advised to keep your ship aligned to a bouncing bookmark 200 km off, warp to it as soon as the overseer wave spawns, and snipe the spider drones, the elite frigates and then the Terrorist Overlord. His turrets reach out to 200 km and his missiles to 130 km.
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Station
+            names:
+              - Guristas War Installation
+            triggers: Triggers defensive waves at different damage intervals
+            note: Has around 350K eHP
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Pithi Wrecker
+            note: type list incomplete on the source page
+          - count: "7"
+            class: Elite Frigate
+            names:
+              - Dire Pithi...
+          - count: "3"
+            class: Cruiser
+            names:
+              - Pithum Inferno
+            note: type list incomplete on the source page
+          - count: "5"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Annihilator
+            note: type list incomplete on the source page
+          - count: "17"
+            class: Battleship
+            names:
+              - Pith Destroyer
+            note: type list incomplete on the source page
+          - count: "5"
+            class: Sentry
+            names:
+              - Siege Railgun Sentry
+            note: High DPS and tank
+          - count: "5"
+            class: Sentry
+            names:
+              - Siege Blaster Sentry
+            note: High DPS and tank
+          - count: "2"
+            class: Sentry
+            names:
+              - Guristas Stasis Tower
+            ewar:
+              - kind: web
+      - id: guristas-war-installation-attacked
+        trigger:
+          on: other
+          text: Guristas War Installation attacked
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Dire Pithi...
+          - count: "10"
+            class: Cruiser
+            names:
+              - Pithum Abolisher
+            note: type list incomplete on the source page
+          - count: "5"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Inferno
+            note: type list incomplete on the source page
+          - count: "15"
+            class: Battleship
+            names:
+              - Pith Extinguisher
+            note: type list incomplete on the source page
+      - id: overseer-wave-guristas-war-installation-55-structure
+        trigger:
+          on: other
+          text: Overseer wave (Guristas War Installation 55% structure)
+          confidence: inferred
+        spawns:
+          - count: "8"
+            class: Drone
+            names:
+              - Spider Drone II
+            ewar:
+              - kind: web
+          - count: "8"
+            class: Elite Frigate
+            names:
+              - Inzi Kika Disciple
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "1"
+            class: Overseer Battleship
+            names:
+              - Terrorist Overlord Inzi Kika
+            triggers: Destroying ends expedition
+            drop: Wreck may contain Pith X-Type or Dread Guristas Battleship modules and may include a rare Rattlesnake BPC
+sde:
+  dungeonIds:
+    - 1873

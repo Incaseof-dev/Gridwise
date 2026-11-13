@@ -1,0 +1,95 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: crimson-gauntlet-2020
+kind: anomaly
+name: Crimson Gauntlet
+dedRating: null
+anomalyClass: 3
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Crimson Gauntlet (2020)
+    url: https://wiki.eveuniversity.org/Crimson_Gauntlet_(2020)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "208763"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Battleship"
+notes:
+  - text: Crimson Gauntlet appears during the recurring Crimson Harvest event.
+  - text: If a capsuleer is present at the Crimson Gauntlet it will appear in the Overview of every capsuleer in the same System.
+  - text: Enemy ships can warp to tactical bookmarks.
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 1-3
+            class: Frigate
+            names:
+              - Harvest Shepherd
+            ewar:
+              - kind: neut
+              - kind: web
+          - count: 0-1
+            class: Frigate
+            names:
+              - Harvest Follower
+            ewar:
+              - kind: warpDisruption
+            note: Uses warp scrambler to disrupt microwarpdrives
+          - count: 0-3
+            class: Frigate
+            names:
+              - Harvest Savior
+            ewar:
+              - kind: neut
+          - count: 0-3
+            class: Cruiser
+            names:
+              - Harvest Prophet
+              - Harvest Sage
+            ewar:
+              - kind: neut
+              - kind: web
+            note: Can web up to 20km. Sage webs and neuts; Prophet does no EWAR.
+          - count: 0-1
+            class: Battlecruiser
+            names:
+              - Harvest Diviner
+            note: High damage and less tank than cruisers
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Secure Shortcut Gate
+            note: Unlocked with Crimson Gauntlet Shortcut Keypass. Leads to 2nd Room.
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Activated Acceleration Gate
+            note: Inactive until warp in is cleared.
+  - name: 1st Room
+    notes:
+      - text: Three waves of 6-9 random frigate/cruiser/battlecruiser rats.
+      - text: The acceleration gate opens after second wave is destroyed. Third wave does not need to be destroyed.
+      - text: Cthonic Attar can be mined.
+  - name: 2nd Room
+    notes:
+      - text: Three waves of 6-9 random frigate/cruiser/battlecruiser rats.
+      - text: Fourth wave is one Harvester Overseer. Overseer webs and scrams. The overseer drops the valuable loot. He also sometimes drops the Crimson Gauntlet Shortcut Keypass which allows skipping the second room.
+      - text: 18x Cthonic Attar
+sde:
+  dungeonIds:
+    - 6402

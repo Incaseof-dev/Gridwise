@@ -1,0 +1,127 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: besieged-covert-research-facility
+kind: anomaly
+name: Besieged Covert Research Facility
+dedRating: null
+enemyFaction: Mordu's Legion Command
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Besieged Covert Research Facility
+    url: https://wiki.eveuniversity.org/Besieged_Covert_Research_Facility
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "230947"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "You will need: a ship that can sustain fire from up to five Battleships, a passive buffer Gila with Vespa and Kin/Therm resists can do this site in approx. 10-12 mins."
+  - text: "You will need: a Stealth Bomber with an oversized afterburner and missile precision enhancers. This method relies completely on speed tanking and cannot absorb more than one or two lucky hits from the battleships, and necessitates Tech II torpedo fits and high navigation skills to reliably complete the sites. Requires at least 500 DPS (Kinetic) to complete."
+  - text: "Tips: No faction standing penalty for killing Mordu's ships."
+  - text: "Tips: All ships fly up to 380m/s"
+  - text: "Tips: All ships have active shield tank"
+  - text: "Tips: Kinetic is the best damage to both deal and resist."
+  - text: "Tips: The Cruiser's missiles deal Kinetic damage"
+  - text: "Tips: The Battleship's high accuracy and infinite range Thermal/Kinetic/EM turrets deal 350 damage per shot, while their cruise missiles deal 900 Kinetic damage per shot."
+  - text: "Tips: The Commander's turrets deal all damage types, but have poor tracking; and their 54 km range torpedoes deal Kinetic damage"
+  - text: "Tips: On paper, the highest possible incoming DPS is 1040 (170 EM, 250 Thermal, 620 Kinetic) with 5 Battleships, before taking into account resists and relative signature radius."
+  - text: "You should deal Kinetic damage because: The Cruiser is weak to EM, but has low HP so high Kinetic volley damage can still kill it quickly"
+  - text: "You should deal Kinetic damage because: The Battleship's shields are weak to EM and armor is weak to Explosive, but the lowest average resistance is Thermal with Kinetic at close second"
+  - text: "You should deal Kinetic damage because: The Commander has the highest EHP of the three ships but its weakest average resistance is Kinetic"
+  - text: You should also put emphasis on primarily resisting Kinetic damage (while maintaining omni tank) since the cruiser lacks turrets and its missiles deal purely Kinetic damage, while the battleships output more DPS in Kinetic than all other damage types combined.
+  - text: "Message from Mordu's Legion: Stay out, capsuleers! This is a private matter and your interference is not welcome. If you engage our forces, interfere with our task, or do anything else except leave immediately, we will have no choice but to attack you."
+  - text: Single deadspaced pocket. You cannot warp around.
+  - text: The site is empty at first and remains that way until a player enters within 50 km of the Guristas Research and Trade Hub, even if they are cloaked. Wave 1 spawns within a few seconds after the proximity trigger, indicated by a message in local.
+  - text: "Message at Wave spawn: This is a distress call to anyone listening in the vicinity! We are a Guristas research and trading facility that's under heavy attack! Please come to our aid before lives are lost!"
+  - text: None of the NPCs drop any loot, though the Mordu’s Legion Commander has a bounty of 900k ISK.
+lootNotes:
+  - text: Covert Research Tools
+  - text: Any type of pirate faction ammo (regardless of region), includes commander ammo types (e.g. Dread Guristas)
+  - text: 30-day pirate ship skins
+  - text: "Low and Mid-Grade implant drops of the following sets: Virtue, Nomad, Centurion, Talisman, Halo, Amulet, Harvest, Hydra, Crystal, Savior, Edge, Asklepian, Snake"
+  - text: Blueprint copies for Hyperspatial Accelerators, Jump Drive Economizers and any of the implants listed above
+  - text: Minerals, in stacks of 10 (from the Thukker Component Assembly Facility) excluding Morphite
+  - text: Thukker Capital Component Manufacturing Technical Data Chip, which can be opened to receive Thukker manufacturing rig blueprints for Upwell structures
+  - text: Loot will usually average between 15-40M ISK per site with some variance through implant and BPC drops, which can jack up the loot value to well over 300M. Lowest loot drop seen was around 6M, so it may be a good idea to warp in at long range to the site and cargo scan the Guristas Research and Trade Hub to see if the site is worth running, since the rewards are highly variable.
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: There is no trigger ship. The Second Wave will warp in seconds after you destroy the last ship in the wave.
+      - text: The main value of the site comes from the Guristas Research and Trade Hub. The Thukker Component Assembly Facility only drops one or two Covert Research Tools, some minerals and possibly a rare Thukker Component Technical Data Chip that can contain Thukker Upwell structure rig blueprints.
+      - text: "Message after killing Wave 2: Thank you for rescuing us, capsuleer! This is delicate research we've been doing, and these attacking forces might have ruined it completely."
+      - text: If the site isn't cleared within 20 minutes after Wave 1 spawns, the structures, along with any loot inside them, will explode (though the explosions don't deal damage to your ship), and the site is considered failed. Any remaining rats on grid will instantly despawn.
+      - text: "Message on site failure: Capsuleer, I am a member of Mordu's Legion. You tried intercepting our attack on this installation, and as you can see by its explosion, your efforts have utterly failed. We are honorable fighters, but I suggest you steer clear of the Legion's operations in the future."
+    waves:
+      - id: wave-1-total-3-ships
+        trigger:
+          on: other
+          text: Wave 1 (total 3 ships)
+          confidence: inferred
+        spawns:
+          - count: 0-3
+            class: Cruiser
+            names:
+              - Mordu's Legion Cruiser
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: Warp disrupt at 36 km and Webs at 10 km
+          - count: 0-3
+            class: Battleship
+            names:
+              - Mordu's Legion Battleship
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: Warp disrupt at 36 km and Webs at 22 km
+          - count: 0-3
+            class: Battleship
+            names:
+              - Mordu's Legion Commander
+      - id: wave-2-total-5-ships
+        trigger:
+          on: other
+          text: Wave 2 (total 5 ships)
+          confidence: inferred
+        spawns:
+          - count: 0-5
+            class: Cruiser
+            names:
+              - Mordu's Legion Cruiser
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: Warp Scramble at 36 km and Webs at 10 km
+          - count: 0-5
+            class: Battleship
+            names:
+              - Mordu's Legion Battleship
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: Warp Scrambles at 36 km and Webs at 22 km
+          - count: 0-5
+            class: Battleship
+            names:
+              - Mordu's Legion Commander
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Container
+            names:
+              - Guristas Research and Trade Hub
+            drop: Covert Research Tools, Implants or their BPCs, SKIN (30d), Hyperspatial Accelerator and Jump Drive Economizer BPC, Pirate Faction Ammo
+            note: Locked until all ships are destroyed
+          - count: "1"
+            class: Structure
+            names:
+              - Thukker Component Assembly Facility
+            drop: Covert Research Tools, minerals, rare Thukker Component Technical Data Chip
+sde:
+  dungeonIds:
+    - 5579

@@ -1,0 +1,241 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: blood-raider-powergrid
+kind: escalation
+name: Blood Raider Powergrid
+dedRating: null
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Blood Raider Powergrid
+    url: https://wiki.eveuniversity.org/Blood_Raider_Powergrid
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "195519"
+defaults:
+  confidence: verified
+  source: uni
+lootNotes:
+  - text: The commander rate can spawn special blood raiders themed items.
+pockets:
+  - name: Location One (Lowsec, Gateless)
+    notes:
+      - text: Group is located ~65 km from warp in. Site is ungated.
+      - text: "Escalation message:: The amount of energy harvested and stored here is phenomenal. Exploiting these facilities for your own use might sound tempting if it weren't for the fact that the entire place is in complete lock-down; only the highest-level Blood Raider security codes will grant access. You did, however, manage to gain access to one an open channel in an unsecure communication network, and two energy storage locations were revealed to you."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "8"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Diviner
+              - Elder Corpii Engraver
+              - Elder Corpii Follower
+              - Elder Corpii Reaver
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Priest
+              - Elder Corpum Sage
+            ewar:
+              - kind: neut
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corpatis Phantom
+          - count: "3"
+            class: Battleship
+            names:
+              - Corpus Archon
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Dark Blood Oracle
+              - Dark Blood Prophet
+            triggers: Destroying this may trigger further escalation
+  - name: Location Two (Lowsec)
+    notes:
+      - text: Group is located 60-70 km from warp in. Site is ungated.
+      - text: "Escalation message:: This facility was not just used for energy storage. Ships, modules and other supplies were stored in those containers, and sdly every single one was destroyed when the Blood commanders gave the order. They knew you were coming, and there was little they could do about on such short notice. The slaughter continues as you prepare to visit the second energy storage facility."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Corpii Engraver
+              - Corpii Raider
+          - count: "7"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Engraver
+              - Elder Corpii Herald
+              - Elder Corpii Raider
+              - Elder Corpii Worshiper
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corpum Shadow Sage
+              - Corpum Dark Priest
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Revenant
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corpatis Fanantic
+              - Corpatis Sage
+          - count: "3"
+            class: Battleship
+            names:
+              - Corpum Patriarch
+              - Corpum Pope
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Dark Blood Archbishop
+            triggers: Destroying this may trigger further escalation
+  - name: Location Three (Lowsec)
+    notes:
+      - text: Group is located ~15 km from warp in. Site is ungated. The Newly Constructed Acceleration Gate is usable, but leads to an empty room.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Arch Priest
+              - Elder Corpum Dark Priest
+              - Elder Corpum Shadow Sage
+          - count: "3"
+            class: Battleship
+            names:
+              - Corpus Apostle
+              - Corpus Oracle
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Dark Blood Apostle
+            triggers: Destroying this may trigger further escalation
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+  - name: Location Four (Lowsec)
+    notes:
+      - text: Site is gated. Initial wave is ~20 (may be 5) km from entry beacon.
+  - name: Room 1
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Corpii Engraver
+              - Corpii Reaver
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Collector
+              - Elder Corpii Reaver
+            ewar:
+              - kind: trackingDisruption
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corpii Friar
+              - Corpii Converter
+              - Corpii Templar
+          - count: 3-5
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Priest
+              - Elder Corpum Sage
+            ewar:
+              - kind: neut
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corpatis Fanantic
+              - Corpatis Sage
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+  - name: Room 2
+    notes:
+      - text: A group of four frigates and three cruisers spawns 30km off, with the main spawn located at ~65 km.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "18"
+            class: Frigate
+            names:
+              - Corpii Engraver
+              - Corpii Reaver
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Corpii Diviner
+              - Corpii Engraver
+              - Corpii Raider
+              - Corpii Reaver
+          - count: "6"
+            class: Cruiser
+            names:
+              - Corpum Shadow Sage
+              - Corpum Dark Priest
+              - Corpum Revenant
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Shadow Sage
+              - Elder Corpum Dark Priest
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Corpatis Seer
+              - Corpatis Shade
+          - count: "3"
+            class: Battleship
+            names:
+              - Corpus Patriatch
+              - Corpus Pope
+          - count: "1"
+            class: Overseer Battleship
+            names:
+              - Dark Blood Colonel
+            drop: Dark Blood faction loot, Corpus C-Type modules or a Bhaalgorn BPC
+sde:
+  dungeonIds:
+    - 1883

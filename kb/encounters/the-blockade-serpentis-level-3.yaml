@@ -1,0 +1,143 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-blockade-serpentis-level-3
+kind: mission
+name: The Blockade
+level: 3
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Blockade (Serpentis) (Level 3)
+    url: https://wiki.eveuniversity.org/The_Blockade_(Serpentis)_(Level_3)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191992"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Kill their high-ranking officers
+ewar:
+  - kind: sensorDamp
+  - kind: web
+notes:
+  - text: "Web/warp disruption: Starbase Stasis Tower (Web)"
+  - text: "Suggested ships: Battlecruiser"
+  - text: "Blitz: Kill the Stasis Tower, all trigger ships, then last group."
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: All groups aggro on spawn.
+    waves:
+      - id: initial-group-20km
+        trigger:
+          on: warpIn
+          text: Initial Group, 20km
+        spawns:
+          - count: "1"
+            class: Tower
+            names:
+              - Starbase Stasis Tower
+            ewar:
+              - kind: web
+          - count: "1"
+            class: Destroyer
+            names:
+              - Corelior Infantry
+              - Corelior Sentinel
+            triggers: Spawns Reinforcement 1
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corelum Guardian Chief Infantry
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corelatis Squad Leader
+      - id: reinforcement-1-105km
+        trigger:
+          on: other
+          text: Reinforcement 1, 105km
+          confidence: inferred
+        spawns:
+          - count: "7"
+            class: Destroyer
+            names:
+              - Corelior Soldier
+              - Corelior Cannoneer
+              - Corelior Trooper
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Corelatis Wing Leader
+              - Corelatis Squad Leader
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Corelatis Platoon Leader
+            triggers: Spawns Reinforcement 2
+      - id: reinforcement-2-95-145km
+        trigger:
+          on: other
+          text: Reinforcement 2, 95-145km
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Destroyer
+            names:
+              - Corelior Cannoneer
+          - count: "2"
+            class: Cruiser
+            names:
+              - Corelum Guardian Chief Protector
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Corelatis Wing Leader
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Corelatis Captain
+            triggers: Spawns Reinforcement 3
+      - id: reinforcement-3-85-175km
+        trigger:
+          on: other
+          text: Reinforcement 3, 85-175km
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Defender
+              - Coreli Guardian Protector
+          - count: "7"
+            class: Cruiser
+            names:
+              - Corelum Chief Defender
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Corelatis Squad Leader
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Corelatis Captain
+              - Corelatis Platoon Leader
+            triggers: Spawns Reinforcement 4
+      - id: reinforcement-4
+        trigger:
+          on: other
+          text: Reinforcement 4
+          confidence: inferred
+        spawns:
+          - count: 0-8
+            class: Frigate
+            names:
+              - Coreli Guardian Watchman
+            ewar:
+              - kind: sensorDamp
+          - count: 0-8
+            class: Battlecruiser
+            names:
+              - Corelatis Captain Sentry

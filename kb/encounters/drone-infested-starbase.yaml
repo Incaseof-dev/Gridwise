@@ -1,0 +1,63 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: drone-infested-starbase
+kind: escalation
+name: Drone Infested Starbase
+dedRating: 4
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Drone Infested Starbase
+    url: https://wiki.eveuniversity.org/Drone_Infested_Starbase
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "228938"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Drone Infested Starbase is a DED 4/10 rated combat site that is found in null security space. It consists of a starbase protected by a shield bubble, a large number of sentries with neutralizers, and several waves of drones. Despite being listed as a level 4/10 site in game, it requires capital scale damage to complete. It can be found as an escalation from Rogue Drone anomalies. It lasts 3 days once earned in the Opportunities journal.
+  - text: "Expeditions: You've intercepted an encrypted broadcast. It appears to be communications with an infested starbase. The location has been saved in your databanks."
+  - text: "Description: A shielded starbase controlled by the Angel Cartel. It is recommended that this entrenched encampment be assaulted using capital ships."
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Forcefield
+            note: 400,000 hp Repairs for 8000 dps, must be destroyed to reach tower
+          - count: "1"
+            class: Structure
+            names:
+              - Pirate Rogue Drone Tower
+            note: 100,000 hp, 75,000,000 Bounty
+          - count: "9"
+            class: Sentry
+            names:
+              - Drone Sentry Turret
+          - count: "8"
+            class: Sentry
+            names:
+              - Drone Light Missile Turret
+          - count: "8"
+            class: Sentry
+            names:
+              - Drone Heavy Missile Turret
+          - count: "4"
+            class: Sentry
+            names:
+              - Drone Stasis Tower
+          - count: "4"
+            class: Sentry
+            names:
+              - Drone Energy Neutralizer
+sde:
+  dungeonIds:
+    - 11020

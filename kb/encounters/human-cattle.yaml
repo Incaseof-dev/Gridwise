@@ -1,0 +1,219 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: human-cattle
+kind: mission
+name: Human Cattle
+level: 2
+enemyFaction: Rogue Drones & Caldari State
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Human Cattle
+    url: https://wiki.eveuniversity.org/Human_Cattle
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "230659"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Retrieve the data chip(Encoded Data Chip - 0.1) from one of the habitation modules and return it to your agent. Please note you are not supposed to destroy the habitation module in this case.
+notes:
+  - text: Human Cattle is a 5 part mission chain. It consists of 4 encounter and a courier mission.
+  - text: "Blitz: Destroy the Rogue drone ships, pick-up the data chip and get out."
+  - text: "Agent completion message: Interesting. The data chip was in fact damaged by an ultra-powerful EMP burst. This would also explain why we received no distress signal from the settlement when the inhabitants were abducted. I assume whoever the perpetrators are, they are trying to be extra careful to avoid detection. The bad news is that our surveillance equipment was disabled by the EMP burst before it could detect who the attackers were. Therefore we're back to square one.*sigh*"
+  - text: Warp-in at about 10-20km from the gate.
+pockets:
+  - name: Warp-in
+    notes:
+      - text: You have to dispatch the drones to open the cargo can (disguised as a habitation module) and pick up the data chip needed for the mission.
+      - text: The bulk of the incoming damage is from the missile batteries, using Scourge Light missiles. They do roughly 10x as much damage as the ships.
+      - text: "Agent completion message: Sorry about the trap you had to deal with, . Those drones and sentry guns must have been set up by whoever was behind the disappearance of the inhabitants. Thank goodness you made it out alive."
+      - text: 2022-05-29 While the EVE-Survival import reports 2.4% standing loss with Caldari State no loss was seen.
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Container
+            names:
+              - Habitation Module
+            drop: Encoded Data Chip
+          - count: "11"
+            class: Structure
+            names:
+              - Habitation Module
+          - count: "1"
+            class: Structure
+            names:
+              - Casino
+          - count: "4"
+            class: Structure
+            names:
+              - Debris
+      - id: defenders
+        trigger:
+          on: warpIn
+          text: Defenders
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Sunder
+              - Decimator Alvi
+            group: Group A (15-20km) delayed auto aggro
+          - count: "3"
+            class: Sentry
+            names:
+              - Missile Battery [Caldari Light Missile Battery]
+            group: Group B (34-40km) auto aggro
+            drop: Possible container with ammo.
+  - name: Warp-in
+    notes:
+      - text: The residence in the middle drop some trade goods.
+      - text: "Agent completion message: So the Caldari were behind this? Very surprising ... but it does explain the lack of captives you brought back with you. They don't like being taken alive. I'll have to report this straight to the upper echelons of Sisters of EVE. We need to get to the bottom of this ..."
+    waves:
+      - id: on-grid-auto-aggro
+        trigger:
+          on: other
+          text: On-grid, Auto aggro
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Caldari Navy Soldier
+              - Caldari Navy Officer
+      - id: wave-when-approaching-structures
+        trigger:
+          on: warpIn
+          text: Wave, when approaching structures
+        spawns:
+          - count: "9"
+            class: Frigate
+            names:
+              - Caldari Navy Scout
+              - Caldari Navy Griffin
+  - name: Human Cattle (4 of 5)
+    notes:
+      - text: "Agent completion message: You brought back captives in shackles? Let me take a look at this ..."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 5-6
+            class: Frigate
+            names:
+              - Mercenary Fighter
+          - count: 0-1
+            class: Frigate
+            names:
+              - Mercenary Interceptor
+            ewar:
+              - kind: web
+  - name: Pocket 1
+    notes:
+      - text: "Possible Blitz: Take care of group A and go trough the gate. When enough distance is maintained the other groups will not aggro."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "8"
+            class: Destroyer
+            names:
+              - State Kay Gunto
+              - State Kissaki
+              - State Yumi
+            group: Group A, ~15km, Auto aggro
+          - count: "3"
+            class: Frigate
+            names:
+              - Imperial Templar Forian
+            group: Group B, ~33-36km
+          - count: "1"
+            class: Cruiser
+            names:
+              - Imperial Donus
+            group: Group B, ~33-36km
+          - count: "8"
+            class: Frigate
+            names:
+              - Imperial Disciple
+              - Imperial Haran
+              - Imperial Felix
+            group: Group C, ~50-55km
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Frigate
+            names:
+              - Divine Imperial Forian
+              - Divine Imperial Sprite
+            group: Group D, ~22km
+  - name: Pocket 2
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Commander Frigate
+            names:
+              - Divine Imperial Forian
+              - Divine Imperial Sprite
+          - count: "3"
+            class: Sentry
+            names:
+              - Amarr Sentry Gun
+  - name: Pocket 3
+    notes:
+      - text: The mission completes on warp in, with both a pop-up and a message in local.
+      - text: "Blitz: Immediately warp out on mission complete. No combat required."
+      - text: "WARNING: ALL of the Imperial Navy Gamma II Support Frigates have warp scramblers."
+      - text: In the third room of this mission, there are six groups of enemy ships in a 2x3 grid, about 160 km away from warp-in. Each group has two battleships, five frigates, and the bottom left group has the three Mallers. In addition, one of the five Gamma II frigates starts 20km away from warp in and will attempt to scram immediately. The Jakars attack with cruise missiles, while the rest of the battleships attack with beam lasers. The DPS in this room is extremely high - enough to destroy a heavily tanked Raven in roughly 30 seconds. If you insist on completing this room, it is strongly advised to bring at the very least a marauder with logi support.
+      - text: "Pop-up: System message: Warning! Multiple battleships have been spotted. Suggested action: Tactical retreat."
+      - text: Drops about 2500 m3 of loot in total, including Large Tachyon Beam Lasers and a chance of some Caldari Navy Fulmination Heavy Assault missiles.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Amarr Navy Gamma II Support Frigate
+            group: Group A
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "11"
+            class: Frigate
+            names:
+              - Amarr Navy Gamma I
+              - II Support Frigate
+            group: The others, ~130km away
+          - count: "17"
+            class: Frigate
+            names:
+              - Amarr Navy Delta I
+              - II Support Frigate
+            group: The others, ~130km away
+          - count: "4"
+            class: Cruiser
+            names:
+              - Amarr Navy Maller
+            group: The others, ~130km away
+          - count: "14"
+            class: Battleship
+            names:
+              - Amarr Navy Apocalypse
+              - Amarr Navy Armageddon
+              - Amarr Navy Jakar
+            group: The others, ~130km away

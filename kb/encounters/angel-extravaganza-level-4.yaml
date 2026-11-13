@@ -1,0 +1,472 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: angel-extravaganza-level-4
+kind: mission
+name: Angel Extravaganza
+level: 4
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Angel Extravaganza (Level 4)
+    url: https://wiki.eveuniversity.org/Angel_Extravaganza_(Level_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "227723"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Kill Tiogo Kargaz
+ewar:
+  - kind: web
+  - kind: targetPaint
+notes:
+  - text: "Web/warp disruption: Angel Viper/Webifier, Spider Drone II"
+  - text: "Suggested ships: Dominix, Paladin"
+  - text: Angel Diamond Tag to unlock the Bonus pocket
+  - text: Angel Extravaganza is a mission involving combat against the Angel Cartel.
+  - text: Example clear videos can be found featuring a Sentry Dominix, Paladin and Gila, 07-03-2021]
+  - text: "Pocket 1: Kill the Scanner Post, then kill the initial ships and wave 1."
+  - text: "Pocket 2: Kill all ships."
+  - text: "Pocket 3: Kill the Battleship, ignore everything else."
+  - text: "Pocket 4: Kill the Silo (bookmark the can) and the Radio Telescope, then kill all ships."
+  - text: "Pocket 5: Kill the Battleships, starting with the highest bounty of each group to trigger spawns, kill Tiogo Kargaz you're done."
+  - text: "Notes: Bring an Angel Diamond Tag to unlock the Bonus pocket gate."
+  - text: "Notes: Auto aggro from initial groups in every room. The spawns may target your drones."
+  - text: "Notes: No Hostiles at initial gate."
+  - text: "Notes: Identifying the spawn trigger may be tricky, it is usually the highest bounty Battleship yet not always or could be one that flies differently."
+  - text: "Notes: Fit for DPS, tanking doesn't require much, with the exception of bonus room."
+pockets:
+  - name: 1st pocket
+    notes:
+      - text: Acceleration gate to next pocket is at 13km. The acceleration gate is locked until all ships are dead.
+      - text: "Tip: Killing the Scanner Post will remove the 2nd wave."
+    waves:
+      - id: initial-defenders-30km
+        trigger:
+          on: warpIn
+          text: Initial defenders (30km)
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Angel Webifier
+              - Angel Viper
+            ewar:
+              - kind: web
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Gistatis Tribuni
+              - Gistatis Praefectus
+          - count: "3"
+            class: Battleship
+            names:
+              - Gist Commander
+              - Gist General
+              - Gist War General
+            triggers: Triggers wave 1 when dies
+      - id: wave-1-20km
+        trigger:
+          on: other
+          text: Wave 1 (20km)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Gistatis Tribuni
+              - Gistatis Praefectus
+          - count: "2"
+            class: Battleship
+            names:
+              - Gist General
+              - Gist War General
+              - Gist Warlord
+            triggers: Closest spawn to Gate triggers wave 2 when dies
+      - id: wave-2-50km
+        trigger:
+          on: other
+          text: Wave 2 (50km)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Angel Webifier
+              - Angel Viper
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Battleship
+            names:
+              - Gist War General
+              - Gist Warlord
+  - name: 2nd pocket
+    notes:
+      - text: Acceleration gate to next pocket is at 5km. The gate is locked until all ships are destroyed.
+    waves:
+      - id: initial-defenders-25km-control-tower
+        trigger:
+          on: warpIn
+          text: Initial defenders (25km Control Tower)
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Gistior Seizer
+              - Gistior Trasher
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Gistatis Praefectus
+              - Gistatis Tribunus
+          - count: "1"
+            class: Battleship
+            names:
+              - Gist Warlord
+              - Gist Saint
+            triggers: Triggers wave 1 when it dies
+      - id: wave-1-40km-wreck
+        trigger:
+          on: other
+          text: Wave 1 (40km Wreck)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Gistatis Tribuni
+              - Gistatis Tribunus
+          - count: "2"
+            class: Battleship
+            names:
+              - Gist War General
+              - Gist Warlord
+              - Gist Saint
+            ewar:
+              - kind: targetPaint
+            triggers: Triggers wave 2 when highest bounty is attacked
+      - id: wave-2-55km-rock-formation
+        trigger:
+          on: other
+          text: Wave 2 (55km Rock Formation)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Angel Webifier
+              - Angel Viper
+            ewar:
+              - kind: web
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Marauder
+              - Arch Gistum Liquidator
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Gistatis Primus
+              - Gistatis Tribuni
+          - count: "1"
+            class: Battleship
+            names:
+              - Gist Warlord
+              - Gist Saint
+              - Gist Nephilim
+            ewar:
+              - kind: targetPaint
+  - name: 3rd Pocket
+    notes:
+      - text: Acceleration gate to next pocket is at 5km. One battleship with multiple sentries. Killing the battleship unlocks the gate so the sentries do not need to be killed. The towers are spread out between 15-70km from the gate.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Battleship
+            names:
+              - Gist Commander
+              - Gist Warlord
+              - Gist Saint
+              - Gist Nephilim
+            triggers: unlocks the gate
+          - count: "3"
+            class: Sentry
+            names:
+              - Angel Sentry
+          - count: "7"
+            class: Sentry
+            names:
+              - Angel Light Missile
+          - count: "2"
+            class: Sentry
+            names:
+              - Angel Heavy Missile
+  - name: 4th pocket
+    notes:
+      - text: Multiple waves. Every one of the battleships triggers the next wave.
+      - text: "Tips: Blow up the Storage Silo and the Radio Telescope and the spawns won't appear."
+      - text: "Tips: Storage Silo will drop a random Hardwiring Implant (3% bonus) and T1 modules."
+    waves:
+      - id: initial-defenders-40km-storage-silo
+        trigger:
+          on: warpIn
+          text: Initial defenders (40km Storage Silo)
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Angel Webifier
+              - Angel Viper
+            ewar:
+              - kind: web
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Gistatis Tribuni
+              - Gistatis Praefectus
+          - count: "2"
+            class: Battleship
+            names:
+              - Gist Warlord
+              - Gist Saint
+              - Gist Nephilim
+            triggers: Higher bounty triggers wave 1 on death
+      - id: wave-1-45km-radio-telescope
+        trigger:
+          on: other
+          text: Wave 1 (45km Radio Telescope)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Angel Viper
+            ewar:
+              - kind: web
+          - count: "4"
+            class: Battleship
+            names:
+              - Gist War General
+              - Gist Warlord
+              - Gist Saint
+              - Gist Nephilim
+            triggers: Last one triggers wave 2 on death
+      - id: wave-2-70km-barren-asteroid-front
+        trigger:
+          on: other
+          text: Wave 2 (70km Barren Asteroid-Front)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Angel Viper
+            ewar:
+              - kind: web
+          - count: "3"
+            class: Battleship
+            names:
+              - Gist Warlord
+              - Gist Saint
+              - Gist Nephilim
+            triggers: Last one triggers wave 3 on death
+      - id: wave-3-70km-barren-asteroid-rear
+        trigger:
+          on: other
+          text: Wave 3 (70km Barren Asteroid-Rear)
+          confidence: inferred
+        spawns:
+          - count: 0-1
+            class: Destroyer
+            names:
+              - Garin Kezmonu
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Gistatis Praefectus
+              - Gistatis Tribunus
+          - count: "1"
+            class: Battleship
+            names:
+              - Gist Warlord
+              - Gist Saint
+  - name: 5th pocket
+    notes:
+      - text: Multiple waves. Every time the last battleship of a wave triggers next wave. Mission is completed once Tiogo Kargaz is killed.
+      - text: "Bonus pocket: The acceleration gate leads to the Bonus Pocket."
+      - text: "Bonus pocket: Fleet members may use the acceleration gate without the tag if they do it within 10 seconds after activation."
+      - text: "Incoming Transmission: At last, you have reached the final rendezvous point. I can see from your ship's scanners that their general, Tiogo Kargaz, is located in the area. This is good news indeed. Strike him down now and their attack will surely be called off. Not only that, but Tiogo's death will be a serious blow to the Cartel. Return to me immediately after he has been eliminated."
+    waves:
+      - id: initial-defenders-35km-shipyard
+        trigger:
+          on: warpIn
+          text: Initial defenders (35km Shipyard)
+        spawns:
+          - count: "1"
+            class: Destroyer
+            names:
+              - Gistior Seizer
+              - Gistior Trasher
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Gistatis Tribunus
+              - Gistatis Legatus
+          - count: "2"
+            class: Battleship
+            names:
+              - Gist General
+              - Gist War General
+            triggers: Triggers wave 1 when higher bounty is killed
+      - id: wave-1-45km-ruined-monument
+        trigger:
+          on: other
+          text: Wave 1 (45km Ruined Monument)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Gistior Defacer
+              - Gistior Haunter
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Gistatis Primus
+              - Gistatis Tribuni
+          - count: "1"
+            class: Battleship
+            names:
+              - Gist Warlord
+              - Gist Saint
+            triggers: Triggers wave 2
+      - id: wave-2-45km-angel-station-foundation
+        trigger:
+          on: other
+          text: Wave 2 (45km Angel Station Foundation)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Angel Viper
+            ewar:
+              - kind: web
+          - count: "3"
+            class: Battleship
+            names:
+              - Gist Warlord
+              - Gist Saint
+            ewar:
+              - kind: targetPaint
+            triggers: Triggers wave 3
+      - id: wave-3-70km-angel-repair-outpost
+        trigger:
+          on: other
+          text: Wave 3 (70km Angel Repair Outpost)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Drone
+            names:
+              - Spider Drone II
+            ewar:
+              - kind: web
+          - count: "1"
+            class: Battleship
+            names:
+              - Tiogo Kargaz
+            triggers: Kill to complete mission
+  - name: Bonus Pocket
+    notes:
+      - text: Bring an Angel Diamond Tag to unlock the Bonus pocket gate!
+      - text: Fit with either very high DPS to take out most of the aggro, or with a massive tank to not worry about that.
+      - text: Move away from the Angel Bunker to buy you a bit of time to kill the sentries as the enemy ships try to close in.
+      - text: Eliminating all the Angel Cruise Missile Batteries and Tower Sentry Angel III first will negate a significant portion of the incoming damage.
+      - text: Do not kill the Gist Seraphim trigger, wait until you have cleared the pocket from all other hostile targets.
+      - text: The Single Spawn isn't triggered if you destroy the Angel Bunker before Killing the Gist Seraphim.
+      - text: Depending on the spawns, damage is Explosive (49- 55%)/ Kinetic (22- 28%)/ EM (7- 14%)/ Thermal (9- 15%).
+      - text: The Sentry Towers deal equal EM/ Thermal. Angel Cruise Batteries, Arch Gistii Ruffian, and Gistatis Tribunis deal lots of Thermal.
+      - text: Angel Viper, Gistatis Legatus, Gist Malakim, and Gist Throne deal EM. Removing these may help your tank, depending on how you decide to set up.
+      - text: "Tips: Angel Cruise Missile Batteries spam Cataclysm Cruise Missiles every 25 secs. Each missile deals 900 Thermal damage at 0% resist."
+      - text: "Tips: Angel Light Missile Battery fire Piranha Light Missiles."
+      - text: "Tips: Tower Sentry Angel III fires every 2- 3 sec, each hit deals 80- 250 Explosive damage at 0% resist."
+      - text: Angel Battle Station & Angel Bunker drop T1 modules and ammo. The Angel Battle Station has over 400k hp and has not been observed to drop anything of significant value so it may not be worth destroying.
+      - text: "Incoming Transmission: What are you doing?? I told you to return to me immediately after destroying the Angel general. You are now flying into uncharted territory, who knows what you might encounter there. Do not throw your life away so carelessly ..."
+      - text: ± 17.4M ISK (2025-04-21) By Verum Peto
+      - text: ± 10.2M ISK (2025-04-21) By Verum Peto
+      - text: ± 30.33M ISK (2025-04-21) By Verum Peto
+    waves:
+      - id: initial
+        trigger:
+          on: warpIn
+          text: Initial
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Angel Viper
+            ewar:
+              - kind: web
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Ruffian
+              - Arch Gistii Nomad
+            ewar:
+              - kind: targetPaint
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Breaker
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+              - Gistatis Tribunus
+          - count: "4"
+            class: Battleship
+            names:
+              - Gist Warlord
+              - Gist Nephilim
+              - Gist Malakim
+          - count: "1"
+            class: Battleship
+            names:
+              - Gist Seraphim
+            triggers: Triggers reinforcements
+          - count: "2"
+            class: Sentry
+            names:
+              - Tower Sentry Angel II
+          - count: "3"
+            class: Sentry
+            names:
+              - Tower Sentry Angel III
+          - count: "2"
+            class: Sentry
+            names:
+              - Angel Light Missile Battery
+          - count: "3"
+            class: Sentry
+            names:
+              - Angel Cruise Missile Battery
+      - id: reinforcements
+        trigger:
+          on: other
+          text: Reinforcements
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Battleship
+            names:
+              - Gist Malakim
+              - Gist Throne

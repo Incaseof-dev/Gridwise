@@ -1,0 +1,233 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: sansha-refuge
+kind: anomaly
+name: Sansha Refuge
+dedRating: null
+anomalyClass: 3
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Sansha Refuge
+    url: https://wiki.eveuniversity.org/Sansha_Refuge
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "212611"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Sansha Refuge is an unrated combat site belonging to the Sansha's Nation pirate faction. It can be found via exploration as a cosmic anomaly within systems owned by the Amarr Empire and Ammatar Mandate. As an ungated complex, the limitations as to which ships can enter this site are tied to the security rating of the system where the anomaly spawns (up to T2 battleships for high-security systems, and titans in low-security and null-security systems). Completing this complex may award the player with valuable True Sansha faction modules and ammunition.
+  - text: This combat site consists of a single ungated pocket of space containing a variety of frigate- and destroyer-sized enemy ships. Destroying all hostile ships may escalate into the DED rated Sansha's Command Relay Outpost complex.
+  - text: The site is an open single pocket, one may warp to a preferred distance.
+  - text: thumb|400px|Site variant 1 on warp-in
+  - text: Distinguished by orange clouds. You land at 10km away.
+  - text: thumb|450px|Site variant 2 on warp-in
+  - text: Distinguished by cyan clouds. You land directly at the site.
+  - text: "Escalation: This anomaly can escalate to the 3/10 Sansha DED site Sansha's Command Relay Outpost."
+loot:
+  - item: True Sansha Copper Tag
+    from: True Sansha's Cannibal
+    note: est. 10k ISK (wiki) · 100% drop rate
+  - item: (True) Sansha Ammo
+    from: True Sansha's Cannibal
+    note: est. 6k - 58M ISK (wiki) · 100% drop rate
+  - item: True Sansha module
+    from: True Sansha's Cannibal
+    note: est. 10k - 190M ISK (wiki) · rare
+  - item: Mid-grade Nirvana Implant BPC
+    from: True Sansha's Cannibal
+    note: est. 15M - 50M ISK (wiki) · rare
+lootNotes:
+  - text: ~150.000 ISK
+pockets:
+  - name: Variant 1
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Centii Servant
+              - Centii Minion
+          - count: "1"
+            class: Sentry
+            names:
+              - Tower Sentry Sansha I
+            drop: T1 medium laser ammo
+          - count: "1"
+            class: Sentry
+            names:
+              - Sansha Light Missile Battery
+            drop: T1 light missiles
+      - id: reinforcement-wave-1
+        trigger:
+          on: other
+          text: Reinforcement Wave 1
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Centii Ravener
+              - Centii Scavenger
+      - id: reinforcement-wave-2
+        trigger:
+          on: other
+          text: Reinforcement Wave 2
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Centii Savage
+              - Centii Slavehunter
+            ewar:
+              - kind: trackingDisruption
+      - id: reinforcement-wave-3
+        trigger:
+          on: other
+          text: Reinforcement Wave 3
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Destroyer
+            names:
+              - Centior Cannibal
+              - Centior Misshape
+      - id: reinforcement-wave-4
+        trigger:
+          on: other
+          text: Reinforcement Wave 4
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Destroyer
+            names:
+              - Centior Abomination
+              - Centior Devourer
+      - id: commander-wave
+        trigger:
+          on: other
+          text: Commander Wave
+          confidence: inferred
+        spawns:
+          - count: 0-1
+            class: Frigate
+            names:
+              - Centii Enslaver
+              - Centii Plague
+          - count: 0-1
+            class: Commander Destroyer
+            names:
+              - True Sansha's Cannibal
+            drop: Faction loot
+  - name: Variant 2
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Centii Ravener
+              - Centii Scavenger
+          - count: "1"
+            class: Sentry
+            names:
+              - Tower Sentry Sansha I
+            drop: T1 medium laser ammo
+          - count: "1"
+            class: Sentry
+            names:
+              - Sansha Light Missile Battery
+            drop: T1 light missiles
+      - id: reinforcement-wave-1
+        trigger:
+          on: other
+          text: Reinforcement Wave 1
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Centii Savage
+              - Centii Slavehunter
+            ewar:
+              - kind: trackingDisruption
+      - id: reinforcement-wave-2
+        trigger:
+          on: other
+          text: Reinforcement Wave 2
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Frigate
+            names:
+              - Centii Enslaver
+              - Centii Manslayer
+              - Centii Plague
+          - count: 1-2
+            class: Destroyer
+            names:
+              - Centior Abomination
+              - Centior Devourer
+      - id: reinforcement-wave-3
+        trigger:
+          on: other
+          text: Reinforcement Wave 3
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Centii Butcher
+              - Centii Enslaver
+              - Centii Plague
+          - count: 2-3
+            class: Destroyer
+            names:
+              - Centior Cannibal
+              - Centior Misshape
+      - id: reinforcement-wave-4
+        trigger:
+          on: other
+          text: Reinforcement Wave 4
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Centii Butcher
+              - Centii Enslaver
+              - Centii Plague
+          - count: 2-3
+            class: Destroyer
+            names:
+              - Centior Abomination
+              - Centior Devourer
+      - id: commander-wave
+        trigger:
+          on: other
+          text: Commander Wave
+          confidence: inferred
+        spawns:
+          - count: 0-2
+            class: Frigate
+            names:
+              - Centii Enslaver
+              - Centii Plague
+          - count: 0-1
+            class: Commander Destroyer
+            names:
+              - True Sansha's Cannibal
+            drop: Faction loot
+sde:
+  dungeonIds:
+    - 2313

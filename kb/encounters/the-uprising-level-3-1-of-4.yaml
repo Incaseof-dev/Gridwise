@@ -1,0 +1,66 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-uprising-level-3-1-of-4
+kind: mission
+name: The Uprising (1 of 4)
+level: 3
+enemyFaction: Mordu's Legion Command
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Uprising (Level 3) (1 of 4)
+    url: https://wiki.eveuniversity.org/The_Uprising_(Level_3)_(1_of_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223215"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Suggested ships: Battlecruiser"
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: "Next: The Uprising (Level 3) (2 of 4)"
+    waves:
+      - id: 1st-group-10-25km-auto-aggro
+        trigger:
+          on: other
+          text: 1st Group, 10-25km (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Mordu's Missile Battery
+          - count: "9"
+            class: Frigate
+            names:
+              - Mordus Gladius
+              - Mordus Katana
+              - Mordus Sabre
+      - id: 2nd-group-45km
+        trigger:
+          on: other
+          text: 2nd Group, 45km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Mordus Puma
+      - id: 3rd-group-65km-trigger
+        trigger:
+          on: other
+          text: 3rd Group, 65km(trigger?)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Mordus Gladius
+          - count: "2"
+            class: Cruiser
+            names:
+              - Mordus Bobcat
+              - Mordus Lion

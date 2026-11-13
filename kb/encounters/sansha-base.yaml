@@ -1,0 +1,168 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: sansha-base
+kind: complex
+name: Sansha Base
+dedRating: null
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Sansha Base
+    url: https://wiki.eveuniversity.org/Sansha_Base
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "224918"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Completing the site chages your Sansha standing by -0.3
+  - text: "Escalation: Destroying the Sansha Minor Refinery structure or the Overseer Battleship in Room 2 may cause the site to escalate to True Power HQ."
+loot:
+  - item: +Run 1
+    note: 01.08.2025
+  - item: Salvage
+    note: est. ~4 100 000 ISK (wiki) · 01.08.2025
+  - item: +Run 2
+  - item: Salvage
+    note: est. ~ 5 600 000 ISK (wiki)
+lootNotes:
+  - text: "01.08.2025: The Overseer Battleship did not spawn."
+  - text: The Overseer Battleship did spawn and dropped a True Sansha Crystal Tag, Sanshas Radio L and T2 salvage.
+pockets:
+  - name: Room 1
+    notes:
+      - text: Acceleration gate is 56 km from warp-in. It unlocks when all enemies are killed.
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+            triggers: Approaching triggers wave 1
+            note: 56km from warp-in. Unlocked by destroying all enemies.
+      - id: initial-defenders-120-km-off-warp-in
+        trigger:
+          on: warpIn
+          text: Initial defenders (120 km off warp-in)
+        spawns:
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Centatis Daemon
+              - Centatis Behemoth
+          - count: "1"
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Dread Lord
+              - Centus Dark Lord
+      - id: wave-1-when-approaching-acceleration-gate
+        trigger:
+          on: other
+          text: Wave 1 (when approaching acceleration gate)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Centii Butcher
+              - Centii Plague
+              - Centii Enslaver
+              - Centii Manslayer
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Centii Loyal Savage
+  - name: Room 2
+    notes:
+      - text: Any last enemy in a wave can be a trigger for faction spawn. Goal in this room is to destroy Sansha Minor Refinery which spawns 160 km off warp-in. Sansha Minor Refinery drops tech 1 ammo.
+      - text: "01.08.2025: The last wave spawned when all of the battleships were killed, with some of the battlecruisers still alive"
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Structure
+            names:
+              - Sansha Minor Refinery
+            triggers: Destruction may trigger escalation
+            note: 160km from warp-in
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Centii Loyal Manslayer
+              - Centii Loyal Butcher
+              - Centii Loyal Scavenger
+              - Centii Loyal Minion
+      - id: timed-wave-1
+        trigger:
+          on: other
+          text: Timed wave 1
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Centii Loyal Manslayer
+              - Centii Loyal Butcher
+              - Centii Loyal Scavenger
+              - Centii Loyal Minion
+              - Centii Loyal Servant
+              - Centii Loyal Ravener
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 2-3
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Dread Lord
+              - Centus Savage Lord
+              - Centus Mutant Lord
+      - id: timed-wave-2
+        trigger:
+          on: other
+          text: Timed wave 2
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Centatis Phantasm
+              - Centatis Specter
+      - id: wave-3-triggered-by-killing-all-ships-in-previous-waves
+        trigger:
+          on: other
+          text: Wave 3 (triggered by killing all ships in previous waves)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Lord
+              - Centus Slave Lord
+              - Centus Dread Lord
+          - count: 0-1
+            class: Overseer Battleship
+            names:
+              - True Sansha Lord
+              - True Sansha Tyrant
+              - Mutant Lord
+            drop: Shinies
+sde:
+  dungeonIds:
+    - 1463

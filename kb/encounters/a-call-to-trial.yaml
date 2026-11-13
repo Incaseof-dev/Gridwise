@@ -1,0 +1,41 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: a-call-to-trial
+kind: mission
+name: A Call to Trial
+level: null
+enemyFaction: Amarr Empire
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – A Call to Trial
+    url: https://wiki.eveuniversity.org/A_Call_to_Trial
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "212770"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Defeat Taphos in Trial by Combat.
+notes:
+  - text: No standing loss
+  - text: Objective
+  - text: Defeat Taphos in Trial by Combat. Location Tanoo
+  - text: Notes
+  - text: --The mission can be completed remotely and the next mission can be accepted remotely.--
+  - text: Taphos will be in a frigate at the designated location. Easy kill mission.
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: "Next Mission: Brothers and Sisters"
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Taphos

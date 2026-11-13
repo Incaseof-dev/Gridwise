@@ -1,0 +1,125 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: sansha-acclimatization-facility
+kind: complex
+name: Sansha Acclimatization Facility
+dedRating: 2
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Sansha Acclimatization Facility
+    url: https://wiki.eveuniversity.org/Sansha_Acclimatization_Facility
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "197723"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Destroyer"
+notes:
+  - text: Sansha Acclimatization Facility is a DED Rated Complex found via exploration. The site consists of four different pockets accessed by an acceleration gate. The gates allow Frigate, Destroyer, and their tech 2 and tech 3 versions.
+  - text: The pirate ship classes encountered within this combat site are Frigate and Cruiser class. The Acceleration Gates are unlocked after all pirate ships are destroyed. The names and amount of ships may slightly vary from what is listed here.
+  - text: "Note: Various NPCs in this site have tracking disruption modules."
+loot:
+  - item: 6th tier Overseers Effects
+    from: Sansha Tenebrus
+    note: est. 360k Isk (wiki) · 100% drop rate
+  - item: Centii B-type Frigate Modules
+    from: Sansha Tenebrus
+  - item: True Sansha Modules
+    from: Sansha Tenebrus
+pockets:
+  - name: Room 1
+    notes:
+      - text: "Note: The Sentry guns can be ignored. The gate to the second pocket will unlock even if they are left alive."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: ~25
+            class: Frigate
+            names:
+              - Centii Servant
+            note: type list incomplete on the source page
+          - count: "6"
+            class: Sentry
+            names:
+              - Sansha Sentry Gun
+    onWarpIn: Sansha Kuvakei and the quasi-human denizens of his Nation have long been among the most feared groups in New Eden, and this fear has recently been multiplied in the wake of their concentrated spate of attacks against the inhabited worlds of the cluster. Places such as this one are where the Nation's conquests are taken screaming from their safe havens and homesteads to be modified and brought into the Nation's fold.
+  - name: Room 2
+    notes:
+      - text: "Note: the Sentry guns can be ignored. The gate to the third pocket will unlock even if they are left alive. (You still want to kill the stasis towers though.)"
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: ~10
+            class: Frigate
+            names:
+              - Centii Scavenger
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Sentry
+            names:
+              - Sansha Stasis Tower
+            ewar:
+              - kind: web
+          - count: "3"
+            class: Sentry
+            names:
+              - Sansha Sentry Gun
+  - name: Room 3
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: ~15
+            class: Frigate
+            names:
+              - Centii Scavenger
+          - count: ~6
+            class: Cruiser
+            names:
+              - Centum Ravisher
+              - Centum Ravager
+  - name: Room 4
+    notes:
+      - text: "Loot Blitz: Kill the Sansha Tenebrus, lure all NPCs about 40-50km away from the wreck, go sideways then if your 30-35km away from NPCs, approach then loot the Sansha Tenebrus wreck."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: ~12
+            class: Frigate
+            names:
+              - Centii Slavehunter
+              - Centii Servant
+              - Centii Minion
+            ewar:
+              - kind: trackingDisruption
+          - count: "9"
+            class: Cruiser
+            names:
+              - Centum Beast
+              - Centum Ravager
+              - Centum Ravisher
+            ewar:
+              - kind: trackingDisruption
+          - count: "1"
+            class: Overseer Frigate
+            names:
+              - Sansha Tenebrus
+            drop: Contains 6th tier overseers personal effects, may contain Centii B-type frigate modules and True Sansha modules.
+sde:
+  dungeonIds:
+    - 5469

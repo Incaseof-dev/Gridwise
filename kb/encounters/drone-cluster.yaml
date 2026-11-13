@@ -1,0 +1,172 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: drone-cluster
+kind: anomaly
+name: Drone Cluster
+dedRating: null
+anomalyClass: 1
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Drone Cluster
+    url: https://wiki.eveuniversity.org/Drone_Cluster
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225183"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "This site has two variants: one with a habitation module and another with a shuttle wreck."
+  - text: Single open pocket.
+  - text: Single open pocket.
+pockets:
+  - name: Habitation module
+    waves:
+      - id: on-grid-at-arrival
+        trigger:
+          on: other
+          text: On grid at arrival
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Frigate
+            names:
+              - Infester
+              - Splinter
+              - Render Alvi
+      - id: first-spawn
+        trigger:
+          on: other
+          text: First spawn
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Frigate
+            names:
+              - Decimator
+              - Render Alvi
+      - id: second-spawn
+        trigger:
+          on: other
+          text: Second spawn
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Splinter
+              - Infester Alvi
+      - id: third-spawn
+        trigger:
+          on: other
+          text: Third spawn
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Decimator
+              - Render Alvi
+      - id: fourth-spawn
+        trigger:
+          on: other
+          text: Fourth spawn
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Frigate
+            names:
+              - Hunter
+              - Silverfish Alvi
+      - id: commander-spawn
+        trigger:
+          on: other
+          text: Commander spawn
+          confidence: inferred
+        spawns:
+          - count: 0-1
+            class: Commander Frigate
+            names:
+              - Sentient Sunder Alvi
+    onWarpIn: It appears that some Rogue Drones have attacked this Habitation Module. It looks shaken up and a part of it is on fire. It doesn't look like they will last much longer.
+  - name: Shuttle wreck
+    waves:
+      - id: on-grid-at-arrival
+        trigger:
+          on: other
+          text: On grid at arrival
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Frigate
+            names:
+              - Splinter
+              - Render
+              - Decimator Alvi
+      - id: first-spawn
+        trigger:
+          on: other
+          text: First spawn
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Render
+              - Decimator Alvi
+      - id: second-spawn
+        trigger:
+          on: other
+          text: Second spawn
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Destroyer
+            names:
+              - Shatter Alvior
+      - id: third-spawn
+        trigger:
+          on: other
+          text: Third spawn
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Frigate
+            names:
+              - Render
+              - Decimator
+              - Hunter
+            note: type list incomplete on the source page
+      - id: fourth-spawn
+        trigger:
+          on: other
+          text: Fourth spawn
+          confidence: inferred
+        spawns:
+          - count: 1-3
+            class: Frigate
+            names:
+              - Raider
+              - Hunter
+              - Silverfish Alvi
+      - id: fifth-spawn-optional
+        trigger:
+          on: other
+          text: Fifth spawn (Optional)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Sunder
+              - Raider Alvi
+          - count: "1"
+            class: Commander Frigate
+            names:
+              - Sentient
+            group: or
+sde:
+  dungeonIds:
+    - 2188

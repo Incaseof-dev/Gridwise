@@ -1,0 +1,67 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-hidden-stash-sanshas-nation-level-2
+kind: mission
+name: The Hidden Stash
+level: 2
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Hidden Stash (Sansha's Nation) (Level 2)
+    url: https://wiki.eveuniversity.org/The_Hidden_Stash_(Sansha's_Nation)_(Level_2)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "192023"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the warehouse and pick up mission loot
+ewar:
+  - kind: trackingDisruption
+notes:
+  - text: "Suggested ships: heavy frigate, destroyer, cruiser"
+  - text: Centii Savages and Slavehunters use tracking disrupters.
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "7"
+            class: Frigate
+            names:
+              - Centii Manslayer
+              - Centii Butcher
+              - Centii Slavehunter
+              - Centii Savage
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Container
+            names:
+              - Warehouse
+            triggers: Mission objective
+            drop: 1st is Mission loot and the 2nd has various trade goods and station reports.
+          - count: "2"
+            class: Structure
+            names:
+              - Cargo Rig
+            drop: Various tech one ammo.
+          - count: "2"
+            class: Structure
+            names:
+              - Habitat Module
+            drop: Station reports and trade goods.
+          - count: "2"
+            class: Structure
+            names:
+              - Pressure Silo
+            drop: Various tech one ammo.

@@ -1,0 +1,113 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: angel-domination-fleet-staging-point-3
+kind: escalation
+name: Angel Domination Fleet Staging Point 3
+dedRating: null
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Angel Domination Fleet Staging Point 3
+    url: https://wiki.eveuniversity.org/Angel_Domination_Fleet_Staging_Point_3
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "219120"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: The Angel Domination Fleet Staging Point 3 is the final part of the escalation chain received from the unrated cosmic signature site of the same name.
+  - text: The site consists of one open deadspace pocket. no ship restriction so supercarrier can beat this site very easy
+  - text: Do not try to Blitz with subcapital. it is impossible to active tank since there is neutralizing tower.
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: This structure tanks over 1400+ dps
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Hijacker
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Centurion
+            note: type list incomplete on the source page
+          - count: "5"
+            class: Battleship
+            names:
+              - Gist Cherubim
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Sentry
+            names:
+              - Angel Fleet Outpost
+            ewar:
+              - kind: web
+            triggers: 75% shield triggers 1st spawn, 25% shield triggers 2nd spawn, 50% armor triggers 3rd spawn
+            drop: 22nd Tier Overseer's Personal Effects, possible Gist A-Type modules and Machariel BPC (rare)
+      - id: 1st-reinforcement-spawn
+        trigger:
+          on: other
+          text: 1st Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Sentry
+            names:
+              - Angel Cruise Missile Battery
+      - id: 2nd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 2nd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Hijacker
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Centurion
+            note: type list incomplete on the source page
+          - count: "6"
+            class: Battleship
+            names:
+              - Gist Cherubim
+            note: type list incomplete on the source page
+          - count: 2- 3
+            class: Sentry
+            names:
+              - Angel Energy Neutralizer III
+            ewar:
+              - kind: neut
+      - id: 3rd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 3rd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Hijacker
+            note: type list incomplete on the source page
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Centurion
+            note: type list incomplete on the source page
+          - count: "5"
+            class: Battleship
+            names:
+              - Gist Cherubim
+            note: type list incomplete on the source page

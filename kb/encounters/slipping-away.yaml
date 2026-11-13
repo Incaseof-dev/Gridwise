@@ -1,0 +1,23 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: slipping-away
+kind: mission
+name: Slipping Away
+level: 4
+enemyFaction: null
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Slipping Away
+    url: https://wiki.eveuniversity.org/Slipping_Away
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "226760"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Report back to Arikio Kuretsu in Wuos
+notes:
+  - text: Report to Arikio Kuretsu sixteen jumps away in in Wuos.
+  - text: Take a combat ship. You'll need it for the next Mission.

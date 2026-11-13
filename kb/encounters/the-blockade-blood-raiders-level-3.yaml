@@ -1,0 +1,155 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-blockade-blood-raiders-level-3
+kind: mission
+name: The Blockade
+level: 3
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Blockade (Blood Raiders) (Level 3)
+    url: https://wiki.eveuniversity.org/The_Blockade_(Blood_Raiders)_(Level_3)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191981"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Eliminate the leader of the pirates blockading the stargate
+ewar:
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Starbase Stasis Tower (Web), Elder Corpii Raider/Diviner (Web, Warp disrupt)"
+  - text: "Suggested ships: Battlecruiser, HAC"
+  - text: "Blitz: Kill Stasis Tower, all triggers, then final battlecruisers."
+  - text: "Video: Cerberus"
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: All groups aggro on spawn
+      - text: May (Fleet) warp to preferred distance
+    waves:
+      - id: initial-group-20km
+        trigger:
+          on: warpIn
+          text: Initial Group, 20km
+        spawns:
+          - count: "1"
+            class: Sentry
+            names:
+              - Starbase Stasis Tower
+            ewar:
+              - kind: web
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Diviner
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "1"
+            class: Destroyer
+            names:
+              - Corpior Devoter
+            triggers: Spawns Reinforcement 1
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corpior Exorcist
+      - id: reinforcement-1-100-120km
+        trigger:
+          on: other
+          text: Reinforcement 1, 100-120km
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Corpii Raider
+          - count: "4"
+            class: Destroyer
+            names:
+              - Corpior Visionary
+              - Corpior Templar
+          - count: "7"
+            class: Battlecruiser
+            names:
+              - Corpatis Seer
+              - Corpatis Shade
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Corpatis Fanatic
+            triggers: Spawns Reinforcement 2
+      - id: reinforcement-2-90-120km
+        trigger:
+          on: other
+          text: Reinforcement 2, 90-120km
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Destroyer
+            names:
+              - Corpior Templar
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Arch Sage
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Corpatis Seer
+              - Corpatis Bishop
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Corpatis Fanatic
+            triggers: Spawns Reinforcement 3
+      - id: reinforcement-3-100-128km
+        trigger:
+          on: other
+          text: Reinforcement 3, 100-128km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Raider
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Cruiser
+            names:
+              - Corpum Arch Priest
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corpatis Bishop
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Corpatis Shade
+            triggers: Spawns Reinforcement 4
+      - id: reinforcement-4-20km
+        trigger:
+          on: other
+          text: Reinforcement 4, 20km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Raider
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Corpatis Exorcist
+              - Corpatis Phantom
+            note: Mission objective

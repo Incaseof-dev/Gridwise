@@ -1,0 +1,61 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-hidden-stash-serpentis-level-1
+kind: mission
+name: The Hidden Stash
+level: 1
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Hidden Stash (Serpentis) (Level 1)
+    url: https://wiki.eveuniversity.org/The_Hidden_Stash_(Serpentis)_(Level_1)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "192024"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Retrieve 15x Small Sealed Cargo Containers (150 m3)
+notes:
+  - text: Single pocket with gate
+  - text: "Blitz: Blow up the warehouse, grab the containers and return to agent."
+pockets:
+  - name: Single pocket
+    waves:
+      - id: initial-group-15km
+        trigger:
+          on: warpIn
+          text: Initial group, 15km
+        spawns:
+          - count: "12"
+            class: Frigate
+            names:
+              - Coreli Initiates
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Warehouse
+            triggers: Contains mission objectives loot
+            drop: Mission objectives loot and commodities
+          - count: "1"
+            class: Structure
+            names:
+              - Cargo Rig
+            drop: Some Ammo
+          - count: "1"
+            class: Structure
+            names:
+              - Pressure Silo
+            drop: Some Ammo
+          - count: "1"
+            class: Structure
+            names:
+              - Habitation Module
+            drop: Commodities

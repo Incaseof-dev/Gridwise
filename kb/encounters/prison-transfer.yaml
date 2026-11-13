@@ -1,0 +1,130 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: prison-transfer
+kind: mission
+name: Prison Transfer
+level: 4
+enemyFaction: Caldari State
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Prison Transfer
+    url: https://wiki.eveuniversity.org/Prison_Transfer
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "230832"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Retrieve and deliver the Caldari operative(0.1).
+notes:
+  - text: "Suggested ships: Properly tanked battleship, Speed Tanked Ishtar"
+  - text: "Space type: Deadspace, no gates"
+pockets:
+  - name: Warp-in
+    notes:
+      - text: "Warp-in Point: 25km from Cell Block D (appears as a Spawn Container on Overview). No hostiles on initial warp-in."
+      - text: Approaching Cell Block D within 5km triggers the first spawn and temporarily despawns Cell Block D.
+      - text: All spawns appear within 5km of Cell Block D and auto-aggro at close range.
+      - text: Once mission completion has been triggered, Cell Block D respawns and you can retrieve the Caldari Operative.
+      - text: Besides the "Derived Modification" normally received for any Storyline Mission, you will get standings losses of at most -0.02% each for "Combat - Ship Kill" for the Caldari State. These secondary standing losses are on the standard 15 minute standings timer, so divide how long it takes you by 15 minutes and round up, and that is how many of these you will get. These are unavoidable but negligible. With Social at level 4, expect a 9% gain with the faction you are working for and a 36% gain with the corporation you are working for.
+    waves:
+      - id: wave-1
+        trigger:
+          on: warpIn
+          text: Wave 1
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - State Shukuro Buke
+              - State Shukuro Ashura
+          - count: "2"
+            class: Battleship
+            names:
+              - State Shukuro Daijo
+            triggers: Triggers wave 2
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - State Yumi
+              - State Kissaki
+            triggers: Triggers wave 3
+          - count: "3"
+            class: Battleship
+            names:
+              - State Shukuro Daijo
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - State Kanpaku
+              - State Shukuro Bajo
+          - count: "3"
+            class: Battleship
+            names:
+              - State Shukuro Daijo
+            triggers: Triggers wave 4
+      - id: wave-4
+        trigger:
+          on: other
+          text: Wave 4
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - State Yumi
+              - State Kai Gunto
+            triggers: Triggers wave 5
+          - count: "2"
+            class: Battleship
+            names:
+              - State Shukuro Daijo
+              - State Shukuro Bishamon
+      - id: wave-5
+        trigger:
+          on: other
+          text: Wave 5
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - State Kissaki
+              - State Tsuba
+          - count: "3"
+            class: Battleship
+            names:
+              - State Shukuro Daijo
+              - State Shukuro Taisho
+            triggers: Triggers wave 6
+      - id: wave-6
+        trigger:
+          on: other
+          text: Wave 6
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - State Shukuro Bajo
+              - State Shukuro Samurai
+          - count: "3"
+            class: Battleship
+            names:
+              - State Shukuro Daijo
+              - State Shukuro Taisho
+            triggers: Triggers mission complete

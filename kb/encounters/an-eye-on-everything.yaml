@@ -1,0 +1,83 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: an-eye-on-everything
+kind: mission
+name: An Eye on Everything
+level: null
+enemyFaction: Angel Cartel & Serpentis & Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – An Eye on Everything
+    url: https://wiki.eveuniversity.org/An_Eye_on_Everything
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "228269"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Investigate the smuggling hub and report back to Keita Eslin.
+notes:
+  - text: thumb|128px|Keita Eslin
+  - text: Objective
+  - text: Warp to the smuggling hub at the designated mission location in Hek, investigate, and report back to Agent Eslin.
+  - text: Notes
+  - text: Warp to the designated location. You will find yourself about 50km away from a sizable pirate fleet consisting of 3 frigates, 12 cruisers, and 7 battleships, plus a Nidhoggur class carrier.
+  - text: Don't attack! Don't move! Don't do anything!
+  - text: "You'll get a message from Agent Eslin: \"Looks like they're still getting reinforcements. They even have a stolen Nidhoggur. Alright, I have all the information I need, good work. Get back to me before they realize you're there, and we can discuss what comes next.\""
+  - text: Before you fly back to the station and complete the mission, take a moment to do a "Look At" on the Nidhoggur carrier. You usually see these only in low-sec or 0.0 space, so check it out before leaving. The fleet won't attack if you simply look at them.
+  - text: "If you still want to fight the pirates just to get that high sec carrier kill, here are the details on the rats:"
+  - text: The carrier neuts 1200 GJ/30 seconds (40 GJ/s), but does no damage and does not have fighters. The carrier will only aggress if you approach close to it or attack it. Simply attacking the other ships will not agro the carrier. There are no warp disruptors in this mission. It is recommended to destroy all the other ships before attacking the carrier, that way you will not have to deal with the neuting while under fire. After all the other ships are dead, you can attack the carrier. When attacking the carrier, you should either use weapons that don't require capacitor (projectile weapons, missiles, or drones) or have a lot of cap batteries, rechargers, and/or cap boosters. The carrier will always stay stationary and is immune to all forms of EWAR and tackle. The carrier always drops a 5,000,000 ISK Minmatar Rear Admiral Tag, and may drop a large quantity of marines and small arms. The carrier does not drop capital modules, and does not have any noteworthy salvage. Salvaging the carrier will not yield T2 salvage.
+  - text: Most of the incoming damage will come from the Serpentis and Angel battleships. The best way to destroy the pirate fleet is to keep at range, perhaps with a micro jump drive, and use long range weapons. A marauder or a Rattlesnake is recommended due to the high damage. When all the ships are close, the damage can exceed 600dps. The carrier can take several minutes to burn down even with a marauder, so it is recommended to engage it last.
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: "Bounties: ~11 million ISK"
+      - text: Next Mission The Uses of Force
+    waves:
+      - id: wave-1
+        trigger:
+          on: warpIn
+          text: Wave 1
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Centii Loyal Enslaver
+              - Centii Loyal Manslayer
+            note: type list incomplete on the source page
+          - count: 3-4
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Fiend
+              - Centum Loyal Hellhound
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Gistatis Primus
+              - Gistatis Legatus
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corelatis Platoon leader
+              - Corelatis Captain
+              - Corelatis High Captain
+            note: type list incomplete on the source page
+          - count: 3-4
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Seraphim
+          - count: 3-4
+            class: Battleship
+            names:
+              - Core Grand
+              - Core Lord Admiral
+          - count: "1"
+            class: Carrier
+            names:
+              - Republic Harkal
+            ewar:
+              - kind: neut

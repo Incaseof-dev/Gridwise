@@ -1,0 +1,127 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-missing-convoy
+kind: mission
+name: The Missing Convoy
+level: 3
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Missing Convoy
+    url: https://wiki.eveuniversity.org/The_Missing_Convoy
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "221731"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the Lesser Drone Hive, loot the special delivery package (0.1), and then report back to your agent.
+notes:
+  - text: "Suggested ships: Batttlecruiser"
+  - text: "Blitz: Destroy the lesser drone hive (85km away), pick up contents (from cargo container)."
+  - text: No hostiles at the initial gate
+npcs:
+  Lesser Drone Hive:
+    sdeTypes:
+      - Shielded
+    class: Structure
+pockets:
+  - name: Single pocket
+    notes:
+      - text: After warp-in, only three towers, groups spawn every few seconds
+      - text: No aggro on warp-in
+      - text: Aggro on any group except towers does not trigger others
+      - text: 714px|border|alt=Positions of NPC groups in pocket
+      - text: Other structures have no loot
+      - text: Attacking the towers aggros entire pocket
+      - text: "Choice of aggro: shoot the shield before the last group spawns, and you will only have aggro from group 2 until the shield dies (then groups 6+7 join in); alternatively, wait until after the last group spawned before shooting the shield for full stage aggro and safe drone usage."
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Lesser Drone Hive
+            drop: Mission Objective & may also contain 1 alloy
+      - id: group-1-30-45-km
+        trigger:
+          on: other
+          text: "Group 1: 30-45 km"
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Defeater Alvatis
+            triggers: Destroying despawns the Forcefield (CONFIRMED)
+      - id: group-2-35-45-km
+        trigger:
+          on: other
+          text: "Group 2: 35-45 km"
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Cruiser
+            names:
+              - Violator Alvum
+      - id: group-3-45-50-km
+        trigger:
+          on: other
+          text: "Group 3: 45-50 km"
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Violator Alvum
+      - id: group-4-55-65-km
+        trigger:
+          on: other
+          text: "Group 4: 55-65 km"
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Wrecker Alvum
+      - id: group-5-65-75-km
+        trigger:
+          on: other
+          text: "Group 5: 65-75 km"
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Wrecker Alvum
+      - id: group-6-90-95-km
+        trigger:
+          on: other
+          text: "Group 6: 90-95 km"
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Sentry
+            names:
+              - Sentry Drone II
+      - id: group-7-95-100-km
+        trigger:
+          on: other
+          text: "Group 7: 95-100 km"
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Annihilator Alvum
+      - id: asteroids
+        trigger:
+          on: other
+          text: "Asteroids:"
+          confidence: inferred
+        spawns: []

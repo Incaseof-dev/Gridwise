@@ -1,0 +1,164 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: angel-domination-fleet-staging-point
+kind: escalation
+name: Angel Domination Fleet Staging Point
+dedRating: null
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Angel Domination Fleet Staging Point
+    url: https://wiki.eveuniversity.org/Angel_Domination_Fleet_Staging_Point
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231831"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Angel Forlorn Hub anomaly. The site is of medium difficulty, it can be done with a small fleet of Faction, T2 or T3 Cruisers or Battleships, but e.g. a single Ishtar can also do it.
+  - text: No hostiles on warpin.
+  - text: "Escalation: Angel Domination Fleet Staging Point 2: The last Angel Cartel Battleship sends out a distress signal before it goes down. Luckily your coms system has managed to decrypt the message and track it to it's final destination."
+  - text: "Escalation: This site can escalate to Angel Domination Fleet Staging Point 2"
+pockets:
+  - name: 1st Pocket
+    notes:
+      - text: ----
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Gistior Defacer
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+            note: type list incomplete on the source page
+          - count: "4"
+            class: Battleship
+            names:
+              - Gist Cherubim
+            triggers: Last killed trigger spawn
+            note: type list incomplete on the source page
+      - id: reinforcement-spawn
+        trigger:
+          on: other
+          text: Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Gistior Defacer
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+            note: type list incomplete on the source page
+          - count: "6"
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Seraphim
+    onWarpIn: "The massive amount of signatures you are getting on your short range scan can only indicate one thing: a full combat fleet stationed around the deadspace pocket. The Angel Cartel would seem to be planning a large-scale military operation in the area and you should expect nothing but the heaviest resistance should you try to oppose them here."
+  - name: 2nd Pocket
+    notes:
+      - text: ----
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Gistior Defacer
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+            note: type list incomplete on the source page
+          - count: "4"
+            class: Battleship
+            names:
+              - Gist Cherubim
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Sentry
+            names:
+              - Angel Energy Neutralizer Sentry II
+            ewar:
+              - kind: neut
+            note: 20GJ/sec, 250km range
+          - count: "2"
+            class: Sentry
+            names:
+              - Angel Point Defense Battery
+          - count: "4"
+            class: Sentry
+            names:
+              - Angel Cruise Missile Battery
+      - id: 1st-reinforcement-spawn
+        trigger:
+          on: other
+          text: 1st Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Gistior Defacer
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+            note: type list incomplete on the source page
+          - count: "4"
+            class: Battleship
+            names:
+              - Gist Cherubim
+            note: type list incomplete on the source page
+      - id: 2nd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 2nd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Gistior Defacer
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Battleship
+            names:
+              - Gist Cherubim
+            note: type list incomplete on the source page
+sde:
+  dungeonIds:
+    - 2519

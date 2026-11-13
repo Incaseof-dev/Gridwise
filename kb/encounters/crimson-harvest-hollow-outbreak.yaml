@@ -1,0 +1,34 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: crimson-harvest-hollow-outbreak
+kind: anomaly
+name: Hollow Outbreak
+dedRating: null
+enemyFaction: null
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Crimson Harvest (2026), section "Hollow Outbreak"
+    url: https://wiki.eveuniversity.org/Crimson_Harvest_(2026)#Hollow_Outbreak
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "232560"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Part of the Crimson Harvest (2026) event. Event sites change from year to year.
+  - text: "The sites come in 3 levels: Class 1: Highsec - balanced for new players in basic Tech I frigates"
+  - text: "The sites come in 3 levels: Class 2: All areas - for experienced players in Tech I destroyers, Tech II frigates, and lower."
+  - text: "The sites come in 3 levels: Class 3: Lowsec, nullsec, wormholes, and Pochven - for veterans flying up to Tech III destroyers"
+  - text: There is a "Newly Constructed Acceleration Gate" at the site's warp-in point.
+  - text: "For Class 1 sites use of the gate is restricted to: Atron, Breacher, Condor, Executioner, Incursus, Kestrel, Merlin, Punisher, Rifter, Slasher, Tormentor and Tristan."
+  - text: -->
+aliases:
+  - "Crimson Harvest: Hollow Outbreak"
+  - Class 1 Hollow Outbreak
+  - Class 2 Hollow Outbreak
+sde:
+  dungeonIds:
+    - 13416
+    - 13327

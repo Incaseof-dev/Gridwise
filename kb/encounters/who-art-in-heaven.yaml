@@ -1,0 +1,96 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: who-art-in-heaven
+kind: mission
+name: Who Art in Heaven
+level: 4
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Who Art in Heaven
+    url: https://wiki.eveuniversity.org/Who_Art_in_Heaven
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "208100"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Protect outpost
+ewar:
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite frigates"
+  - text: "Suggested ships: Fast ship"
+  - text: 9M ISK in Bounties
+  - text: thumb|right|192px
+  - text: Ungated semi-deadspace pocket one jump away from Aldrat. You can warp around freely.
+  - text: "Blitz: warp in at 100 km or create a bookmark, warp to outpost and warp out."
+  - text: "Tips: Add Large Collidable Structure/Object to your overview to see the Outpost"
+  - text: "Tips: Group 2 will warp out when you are within 20 km of the Outpost"
+  - text: "Tips: A cloaked ship can approach from the underside of the structure and complete the mission without losing cloak"
+  - text: "Tips: Be careful as all ships auto-aggro"
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: "Mission Objective Completion Dialogue: The outpost is down. We've lost this battle…and the Cartel knows it. I've just received word from one of their commanders; the terms of agreement for an exchange. Forget the base; it's a lost cause now, just come back to me."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "7"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Hunter
+              - Arch Gistii Impaler
+            group: Group 1 (20-40 km)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Breaker
+              - Arch Gistum Defeater
+            group: Group 1 (20-40 km)
+          - count: "5"
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Seraphim
+              - Gist Throne
+            group: Group 1 (20-40 km)
+          - count: "8"
+            class: Frigate
+            names:
+              - Gistii Hunter
+              - Gistii Impaler
+            group: Group 2 (70-90 km)
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Hunter
+            group: Group 2 (70-90 km)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Gistatis Praefectus
+            group: Group 2 (70-90 km)
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Archaeology Outpost
+            triggers: Destroyed when approached
+            drop: Two types of ore, metal scraps and mining crystals

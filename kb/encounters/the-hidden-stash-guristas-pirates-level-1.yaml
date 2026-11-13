@@ -1,0 +1,38 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-hidden-stash-guristas-pirates-level-1
+kind: mission
+name: The Hidden Stash
+level: 1
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Hidden Stash (Guristas Pirates) (Level 1)
+    url: https://wiki.eveuniversity.org/The_Hidden_Stash_(Guristas_Pirates)_(Level_1)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "192019"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Suggested ships: Frigate"
+  - text: 150 m3 cargo space required
+  - text: "Blitz: Destroy the warehouse, loot the containers, and warp out."
+  - text: Warehouse drops trade loot in one can and mission objective in second can.
+  - text: Habitation Modules drop trade goods.
+  - text: Pressure Silo (high HP) and Cargo Rigs drop ammo.
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: initial-group-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group (auto-aggro)
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Pithi Arrogator
+              - Pithi Imputor

@@ -1,0 +1,150 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: police-invasion-minmatar-republic
+kind: mission
+name: Police Invasion
+level: 4
+enemyFaction: Minmatar Republic
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Police Invasion (Minmatar Republic)
+    url: https://wiki.eveuniversity.org/Police_Invasion_(Minmatar_Republic)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223441"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: web
+  - kind: sensorDamp
+notes:
+  - text: "Blitz: Eliminate all ships from Group 4. You might want to destroy the frigates in group 1 as they point and web."
+  - text: "Note: It is a faction mission so no bounty."
+lootNotes:
+  - text: "Loot: ± 2 Mil ISK"
+  - text: "Besides normal loot, the NPCs also drop Republic Fleet Insignia ('tags'):"
+  - text: 9 Republic Fleet Commander Insignia I
+  - text: 22 Republic Fleet High Captain Insignia I
+  - text: 5 Republic Fleet Captain Insignia I
+  - text: 7 Republic Fleet Private Insignia II
+  - text: 3 Republic Fleet Private Insignia I
+  - text: 3 Republic Fleet Midshipman Insignia II
+  - text: 1 Republic Fleet Midshipman Insignia III
+  - text: "Republic Fleet Insignia: Current Jita sell value is 69 million isk and buy value 59 million isk."
+  - text: "Salvage: ± 1 Mil ISK"
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: Auto-aggro from Group 1 at warp-in.
+      - text: Group 2,3,4,5 remains neutral as long as you do not move from the warpin.
+      - text: Drones will get agro.
+      - text: "Group 1 (Auto-aggro): (30km)"
+      - text: "Group 2: (50km)"
+      - text: "Group 3: (70km)"
+      - text: "Group 4: (100km)"
+      - text: "Group 5: (70km)"
+    waves:
+      - id: group-1
+        trigger:
+          on: warpIn
+          text: Group 1
+        spawns:
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Republic Norn
+          - count: "3"
+            class: Cruiser
+            names:
+              - Republic Tribal Rodul
+          - count: "4"
+            class: Destroyer
+            names:
+              - Republic Austri
+              - Republic Faxi
+          - count: "3"
+            class: Frigate
+            names:
+              - Chief Republic Isak
+              - Chief Republic Iflin
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+      - id: group-2
+        trigger:
+          on: other
+          text: Group 2
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Battleship
+            names:
+              - Republic Pytara
+          - count: "3"
+            class: Cruiser
+            names:
+              - Republic Tribal Jarpur
+              - Republic Tribal Manadis
+          - count: "5"
+            class: Frigate
+            names:
+              - Republic Tribal Baldur
+              - Republic Tribal Gleeda
+              - Republic Tribal Takan
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+      - id: group-3
+        trigger:
+          on: other
+          text: Group 3
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Destroyer
+            names:
+              - Republic Austri
+              - Republic Faxi
+              - Republic Bormin
+          - count: "2"
+            class: Frigate
+            names:
+              - Chief Republic Isak
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+      - id: group-4
+        trigger:
+          on: other
+          text: Group 4
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Battleship
+            names:
+              - Republic Pytara
+              - Republic Jarl
+          - count: "5"
+            class: Cruiser
+            names:
+              - Republic Tribal Jarpur
+              - Republic Tribal Manadis
+      - id: group-5
+        trigger:
+          on: other
+          text: Group 5
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battleship
+            names:
+              - Republic Pytara
+              - Republic Jotun
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Republic Norn
+              - Republic Venis
+              - Republic Nutia

@@ -1,0 +1,130 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: pirate-intrusion-blood-raiders
+kind: mission
+name: Pirate Intrusion
+level: 1
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Pirate Intrusion (Blood Raiders)
+    url: https://wiki.eveuniversity.org/Pirate_Intrusion_(Blood_Raiders)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191835"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Our surveillance cameras just spotted a few groups of hostile ships enter our system. Head out and bring me their heads on a plate, spare no one.
+ewar:
+  - kind: trackingDisruption
+notes:
+  - text: "Suggested ships: Frigate, Destroyer"
+pockets:
+  - name: 1st Pocket
+    notes:
+      - text: You can aggro one group at a time, but if you get close to a group you will aggro it.
+      - text: Closing in on the acceleration gate will aggro group 4.
+    waves:
+      - id: 1st-group-30km
+        trigger:
+          on: other
+          text: 1st Group, 30km
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Corpii Seeker
+              - Corpii Collector
+            ewar:
+              - kind: trackingDisruption
+      - id: 2nd-group-40km
+        trigger:
+          on: other
+          text: 2nd Group, 40km
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Corpii Seeker
+              - Corpii Collector
+              - Corpii Raider
+            ewar:
+              - kind: trackingDisruption
+            note: type list incomplete on the source page
+      - id: 3rd-group-50km
+        trigger:
+          on: other
+          text: 3rd Group, 50km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Corpii Herald
+              - Corpii Seeker
+              - Corpii Collector
+            ewar:
+              - kind: trackingDisruption
+      - id: 4th-group
+        trigger:
+          on: other
+          text: 4th Group
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Corpii Reaver
+  - name: 2nd Pocket
+    waves:
+      - id: 1st-group-25km
+        trigger:
+          on: other
+          text: 1st Group, 25km
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Corpii Seeker
+              - Corpii Collector
+              - Corpii Reaver
+            ewar:
+              - kind: trackingDisruption
+            note: type list incomplete on the source page
+      - id: 2nd-group-30km
+        trigger:
+          on: other
+          text: 2nd Group, 30km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Corpii Seeker
+              - Corpii Collector
+            ewar:
+              - kind: trackingDisruption
+      - id: 3rd-group-40-60km
+        trigger:
+          on: other
+          text: 3rd Group, 40-60km
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Corpii Raider
+              - Corpii Diviner
+              - Corpii Engraver
+              - Corpii Reaver
+          - count: "1"
+            class: Destroyer
+            names:
+              - Corpior Devoter
+              - Corpior Templar

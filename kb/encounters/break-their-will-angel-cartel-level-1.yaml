@@ -1,0 +1,69 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: break-their-will-angel-cartel-level-1
+kind: mission
+name: Break Their Will
+level: 1
+enemyFaction: Angel Cartel & Mercenaries
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Break Their Will (Angel Cartel) (Level 1)
+    url: https://wiki.eveuniversity.org/Break_Their_Will_(Angel_Cartel)_(Level_1)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191587"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Find the repair station at the location your agent gives you, and attack and destroy it.
+notes:
+  - text: Repair Station repairs itself and rats. Destroying the Auxiliary Power Arrays disables the Repair Station's repair function.
+  - text: "Blitz: Destroy Repair Station, warp out."
+pockets:
+  - name: Warp-in
+    notes:
+      - text: At warp-in there are no rats. Wave 1 spawns when the repair station is hit. Wave 2 is spawned when the Repair Station is destroyed. Auto-aggro on waves spawning.
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Repair Station
+            triggers: Triggers Wave 1 and 2
+          - count: "3"
+            class: Structure
+            names:
+              - Auxiliary Power Array
+      - id: wave-1-on-attacking-the-repair-station
+        trigger:
+          on: other
+          text: Wave 1 (On attacking the Repair Station)
+          confidence: inferred
+        spawns:
+          - count: 5-8
+            class: Frigate
+            names:
+              - Gistii Hijacker
+              - Gistii Rogue
+          - count: "4"
+            class: Sentry
+            names:
+              - Repair Station's Point Defense Battery
+            note: Renamed Angel Point Defense Battery
+      - id: wave-2-on-destroying-the-repair-station
+        trigger:
+          on: other
+          text: Wave 2 (On destroying the Repair Station)
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Mercenary Fighter
+              - Mercenary Rookie

@@ -1,0 +1,89 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: rogue-drone-harassment-level-2
+kind: mission
+name: Rogue Drone Harassment
+level: 2
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Rogue Drone Harassment (Level 2)
+    url: https://wiki.eveuniversity.org/Rogue_Drone_Harassment_(Level_2)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191890"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy all Rogue Drones
+ewar:
+  - kind: web
+  - kind: warpScramble
+notes:
+  - text: "Web/warp disruption: Warp scrambler (Strain Infester Alvi)"
+  - text: "Suggested ships: Cruiser"
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: Both groups must be cleared before taking the acceleration gate.
+    waves:
+      - id: on-grid
+        trigger:
+          on: other
+          text: On grid
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Infester
+              - Splinter
+              - Sunder
+              - Raider Alvi
+            group: Group A (18-23km, auto aggro)
+            note: type list incomplete on the source page
+          - count: "5"
+            class: Frigate
+            names:
+              - Splinter
+              - Render Alvi
+            group: Group B (63-65km)
+      - id: may-spawn
+        trigger:
+          on: other
+          text: May spawn
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Strain Infestor Alvi
+            ewar:
+              - kind: web
+              - kind: warpScramble
+      - id: asteroids
+        trigger:
+          on: other
+          text: Asteroids
+          confidence: inferred
+        spawns: []
+  - name: Pocket 2
+    waves:
+      - id: on-grid-10-15km-automatic-aggro
+        trigger:
+          on: other
+          text: On grid (10-15km, Automatic Aggro)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Cruiser
+            names:
+              - Wrecker Alvum
+      - id: asteroids
+        trigger:
+          on: other
+          text: Asteroids
+          confidence: inferred
+        spawns: []

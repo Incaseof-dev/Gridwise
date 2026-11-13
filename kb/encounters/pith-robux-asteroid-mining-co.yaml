@@ -1,0 +1,180 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: pith-robux-asteroid-mining-co
+kind: complex
+name: Pith-Robux Asteroid Mining Co.
+dedRating: 1
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Pith-Robux Asteroid Mining Co.
+    url: https://wiki.eveuniversity.org/Pith-Robux_Asteroid_Mining_Co.
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "221212"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Frigate"
+notes:
+  - text: Pith-Robux Asteroid Mining Co. is a DED 1/10 Rated Complex. It can be found by scanning cosmic signatures in high security or low security space.
+  - text: This site's acceleration gate allows only Frigate class ships or lower and their Tech 2 equivalents to enter the site. The "Scratched and Dented Keycard" can also be found in the Leaking Caskets in the Haunted Yard.
+loot:
+  - item: 1st Tier Overseers Effects
+    from: Dented Cask
+    note: est. 11k ISK (wiki) · 100% drop rate
+  - item: 2nd Tier Overseers Effects
+    from: Non-Secured Mining Colony
+    note: est. 20k ISK (wiki) · 100% drop rate
+  - item: 3rd Tier Overseers Effects
+    from: Retired Mining Veteran
+    note: est. 40k ISK (wiki) · 100% drop rate
+  - item: Pithi C-type Module
+    from: Retired Mining Veteran
+    note: Up to 3x
+  - item: Worm BPC
+    from: Retired Mining Veteran
+lootNotes:
+  - text: "Possible deadspace modules: (Incomplete)"
+  - text: Pithi C-Type Thermal Shield Amplifier
+  - text: Pithi C-Type Small Shield
+pockets:
+  - name: Room 1
+    notes:
+      - text: The acceleration gate requires "scratched and dented keycard" to activate. The key is consumed on use. The container in the room contains the required key.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "22"
+            class: Frigate
+            names:
+              - Pithi Arrogator
+              - Pithi Imputor....
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+          - count: "1"
+            class: Red Container
+            names:
+              - Dented Cask
+            drop: Scratched and Dented Keycard for the gate. Also contains 1st Tier Overseer's Personal Effects
+          - count: "3"
+            class: Structure
+            names:
+              - Cargo Rig
+            drop: T1 ammo
+    onWarpIn: "The Pith Guristas run a mining operation in this deadspace complex. DED Threat Assessment: Training (1 of 10)"
+  - name: Room 2
+    notes:
+      - text: "Upon warming into the second room: The mining stations and equipment in this deadspace pocket are under construction. Funding was poorly managed before the Guristas pirates recently took it over, and the total worth of assets is still in the lower spectrum."
+      - text: The acceleration gate is again locked and requires a keycard. The keycard can be acquired from the Non-Secured Asteroid Colony.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "24"
+            class: Frigate
+            names:
+              - Pithi Arrogator
+              - Pithi Imputor....
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+          - count: "1"
+            class: Structure
+            names:
+              - Non-Secured Asteroid Colony
+            drop: Contains "Dusty Keycard" for the gate, and 2nd tier Overseer's personal effects.
+          - count: "1"
+            class: Structure
+            names:
+              - Habitation Module - Residental
+            drop: 30x trade goods
+          - count: "1"
+            class: Structure
+            names:
+              - Habitation Module - Roadhouse
+            drop: 30x trade goods
+          - count: "4"
+            class: Structure
+            names:
+              - Storage Silo
+            drop: T1 ammo
+    onWarpIn: "Until recently this was a high-tech refinery, using biochemical fusion and superheated domes. Then a disaster struck, the cause of which is as yet undetermined. Some recently added information pops up at the bottom of your screen. Surveillance mission 3498D-2K: Amazingly, just after the final blow-out of the station we caught some emergency transmissions from within it. Warp sequence was already initated so we could not investigate further, but we advise sending another recon as soon as possible.."
+  - name: Room 3
+    notes:
+      - text: "Note: The DPS in this room is very high"
+      - text: "Mineable Asteroids: All clustered near main complex, ~50km from gate beacon"
+      - text: "Mineable Asteroids: All ~ 200m size"
+      - text: "Mineable Asteroids: 1 x Omber"
+      - text: "Mineable Asteroids: 12 x Plagioclase"
+      - text: "Mineable Asteroids: 12 x Veldspar"
+      - text: Minable asteroids confirmed to still exist as of 2025-1-18. (CCP removed minable asteroids from a lot of missions during or before 2023.)
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: ~28
+            class: Frigate
+            names:
+              - Pithi Arrogator
+              - Pithi Imputor
+          - count: ~6
+            class: Cruiser
+            names:
+              - Pithum Ascriber
+              - Pithum Silencer
+          - count: "1"
+            class: Overseer Frigate
+            names:
+              - Retired Mining Veteran
+            drop: Contains 3rd Tier Overseer's Personal Effects, May contain Pithi C-type modules and rarely a Worm BPC.
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Auxiliary Power Array
+            drop: 20x trade goods
+          - count: "2"
+            class: Structure
+            names:
+              - Force Field Array
+            drop: 20x trade goods
+          - count: "1"
+            class: Structure
+            names:
+              - Small Hangar
+            drop: T1 ammo
+          - count: "10"
+            class: Structure
+            names:
+              - Small Refinery
+            drop: T1 ammo
+sde:
+  dungeonIds:
+    - 149

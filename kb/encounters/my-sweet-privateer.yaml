@@ -1,0 +1,129 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: my-sweet-privateer
+kind: mission
+name: My Sweet Privateer
+level: 3
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – My Sweet Privateer
+    url: https://wiki.eveuniversity.org/My_Sweet_Privateer
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "219217"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: kill Privateer Commander and scoop the Privateer Commander's Head.
+ewar:
+  - kind: nos
+  - kind: sensorDamp
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Privateer Specialist"
+  - text: "Blitz: Clear first room and activate gate. Kill scrambling frigates, then kill Privateer Commander, scoop the Privateer Commander's Head and warp out."
+  - text: Tips
+  - text: Kill the Privateer Specialists first just in case you have to warp out
+  - text: Destruction of any Sentry will result in -0.3 standing loss
+  - text: And last but not least don't die
+pockets:
+  - name: 1st Pocket
+    waves:
+      - id: initial-hostiles
+        trigger:
+          on: warpIn
+          text: Initial Hostiles
+        spawns:
+          - count: "2"
+            class: Cruiser
+            names:
+              - Privateer Captain
+            group: Group 1 (autoaggro)
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Privateer Sergeant
+            group: Group 1 (autoaggro)
+          - count: "3"
+            class: Battleship
+            names:
+              - Privateer Lieutenant
+            group: Group 1 (autoaggro)
+          - count: "5"
+            class: Destroyer
+            names:
+              - Privateer Private
+            group: Group 2 (drone aggro)
+          - count: "5"
+            class: Cruiser
+            names:
+              - Privateer Corporal
+            group: Group 2 (drone aggro)
+  - name: 2nd Pocket
+    waves:
+      - id: initial-group-60km
+        trigger:
+          on: warpIn
+          text: Initial Group, 60km
+        spawns:
+          - count: "1"
+            class: Sentry
+            names:
+              - Heavy Missile Battery
+          - count: "1"
+            class: Sentry
+            names:
+              - Cruise Missile Battery
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Privateer Specialist
+            group: Group 1
+            ewar:
+              - kind: sensorDamp
+              - kind: warpScramble
+          - count: "2"
+            class: Destroyer
+            names:
+              - Privateer Lance Corporal
+            group: Group 1
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Privateer Corporal
+            group: Group 2
+          - count: "3"
+            class: Battleship
+            names:
+              - Privateer Lieutenant
+            group: Group 3
+          - count: "1"
+            class: Battleship
+            names:
+              - Privateer Commander
+            group: Group 3
+            ewar:
+              - kind: sensorDamp
+              - kind: neut
+            triggers: Triggers reinforcement
+            drop: Privateer Commander's Head (0.25) m3
+      - id: reinforcement
+        trigger:
+          on: other
+          text: Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Cruiser
+            names:
+              - Privateer Strikeforce
+          - count: "1"
+            class: Sentry
+            names:
+              - Stasis Tower
+            ewar:
+              - kind: web

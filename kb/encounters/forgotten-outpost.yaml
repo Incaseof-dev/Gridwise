@@ -1,0 +1,104 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: forgotten-outpost
+kind: mission
+name: Forgotten Outpost
+level: 4
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Forgotten Outpost
+    url: https://wiki.eveuniversity.org/Forgotten_Outpost
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "205177"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Blitz: Not possible, you have to destroy all hostiles."
+lootNotes:
+  - text: "Example bounty payout: 9,993,376 ISK"
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: "Message from Agent: This is the area. Interesting. I can see there are ten different outposts. I'm not sure how to guide you, save for perhaps getting closer to the stations, starting with the ones whose names you might recognize."
+      - text: No hostiles.
+      - text: 10 stations arranged in a pattern, all roughly 35-40km from warp in.
+      - text: At about 10km from each station, you get another communication of whether there is anything of interest
+      - text: "Station names are: Ancient Caldari Outpost: Urvuulen, Umkken, Uetama, Trekos, Sikken, Shioksa, Otseni, Orieku, Korami, Arishii"
+      - text: The station to approach is Orieku.
+      - text: Upon finding the correct station...
+      - text: "Message from Agent: . This is definitely the one. It looks like someone else beat us to the discovery too. Don't let those Guristas escape alive!"
+    waves:
+      - id: group-1-15-20km-auto-aggro
+        trigger:
+          on: other
+          text: Group 1, 15-20km (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Pithatis Assassin
+          - count: "2"
+            class: Battleship
+            names:
+              - Pith Destroyer
+      - id: group-2-30-40km-auto-aggro
+        trigger:
+          on: other
+          text: Group 2, 30-40km (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Pithatis Assaulter
+          - count: "3"
+            class: Battleship
+            names:
+              - Pith Conquistador
+      - id: group-3-60-65km
+        trigger:
+          on: other
+          text: Group 3, 60-65km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Pithi Plunderer
+          - count: "2"
+            class: Battleship
+            names:
+              - Pith Destroyer
+      - id: group-4-70-75km
+        trigger:
+          on: other
+          text: Group 4, 70-75km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Pithum Eraser
+          - count: "3"
+            class: Battleship
+            names:
+              - Pith Conquistador
+      - id: group-5-75-80km
+        trigger:
+          on: other
+          text: Group 5, 75-80km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Pithi Plunderer
+          - count: "3"
+            class: Battleship
+            names:
+              - Pith Conquistador

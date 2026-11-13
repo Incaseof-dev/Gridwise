@@ -1,0 +1,40 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: whisper-of-a-conspiracy
+kind: mission
+name: Whisper of a Conspiracy
+level: 4
+enemyFaction: null
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Whisper of a Conspiracy
+    url: https://wiki.eveuniversity.org/Whisper_of_a_Conspiracy
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "213556"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Retrieve Encrypted Data Fragment (0.1 m3)
+notes:
+  - text: "Suggested ships: Travel fit"
+  - text: Ungated deadspace pocket within five jumps of Astoh. Can be either Highsec or Lowsec.
+  - text: Pick up the Encrypted Data Fragment from the Damaged Radio Telescope.
+pockets:
+  - name: Warp-in
+    notes:
+      - text: "Agent Conversation: This area used to be a research facility. Then the Gallente came, or an accident happened. No one is really sure how, but the area was leveled by some huge explosions. Nowadays it makes for a clever meeting spot, if you want your privacy. Electronic surveillance can't penetrate the heavy electromagnetic interference around here. I've had to boost my signal about a hundred times over just so I can reach you."
+    waves:
+      - id: structures-55-km
+        trigger:
+          on: other
+          text: Structures (55 km)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Container
+            names:
+              - Damaged Radio Telescope
+            drop: Encrypted Data Fragment

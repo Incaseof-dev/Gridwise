@@ -1,0 +1,514 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: ancient-ruins
+kind: other
+name: Ancient Ruins
+dedRating: null
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Ancient Ruins
+    url: https://wiki.eveuniversity.org/Ancient_Ruins
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "203292"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: T2 Battleship"
+notes:
+  - text: "Extra: Bounties: approx. 60-70M isk + bounty adjustment payout"
+  - text: "Extra: Loot: approx. 50M isk"
+  - text: "Extra: Salvage: approx. 20M isk"
+  - text: You land at the acceleration gate at warp-in
+npcs:
+  Pirate Grave Robber:
+    sdeTypes:
+      - Centus Dread Lord
+      - Centus Dark Lord
+    class: Battleship
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Battleship
+            names:
+              - Pirate Grave Robber
+            note: 25km from warp-in
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Gate to Terrace
+            note: Locked until defenders are dead
+  - name: First Pocket(Terrace)
+    notes:
+      - text: "Database information: DED deep space scouts briefly explored this strange site and left behind a rather cryptic note. As far as you can tell some ancient ruins lie within, but who built them or what treasures might lie buried there are anyone's guess."
+      - text: "Sansha Head Looter destroyed: More pirates have appeared!"
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Fiend
+              - Centum Loyal Torturer
+              - Centum Loyal Mutilator
+            group: Group 1 (15-20km)
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Centatis Daemon
+            group: Group 1 (15-20km)
+          - count: "1"
+            class: Battleship
+            names:
+              - Sansha Head Looter
+            group: Group 1 (15-20km)
+            triggers: Triggers wave 2 when destroyed
+          - count: "4"
+            class: Destroyer
+            names:
+              - Centior Abomination
+              - Centior Horror
+            group: Group 2 (60km)
+          - count: "4"
+            class: Battleship
+            names:
+              - Centus Dread Lord
+              - Centus Tyrant
+            group: Group 2 (60km)
+          - count: "1"
+            class: Sentry
+            names:
+              - Sansha Stasis Tower
+            group: Group 3 (30km)
+            ewar:
+              - kind: web
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Centatis Devil
+              - Centatis Phantasm
+            group: Group 1 (Near Gate to Portal)
+          - count: "3"
+            class: Battleship
+            names:
+              - Centus Overlord
+            group: Group 1 (Near Gate to Portal)
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Butcher
+              - Centii Loyal Enslaver
+              - Centii Loyal Plague
+            group: Group 2 (Near Gate to Hall)
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Centatis Specter
+              - Centatis Behemoth
+              - Centatis Phantasm
+            group: Group 2 (Near Gate to Hall)
+          - count: "6"
+            class: Battleship
+            names:
+              - Centus Overlord
+              - Centus Plague Lord
+              - Centus Dark Lord
+              - Centus Beast Lord
+            group: Group 2 (Near Gate to Hall)
+            ewar:
+              - kind: trackingDisruption
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Gate to Portal
+            note: Approx. 35 km away, locked until everything is destroyed
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Gate to Hall
+            note: Approx. 65 km away, locked until everything is destroyed
+  - name: Second Pocket(Portal)
+    notes:
+      - text: This is an optional room. It can be skipped and take the gate to Hall instead to progress further in the site.
+      - text: "Upon attacking the Centus Relay Commander: As the Relay Commander is attacked, he calls for backup! More hostile ships are incoming!"
+      - text: "Upon attacking the Centus Relay Commander: As the Relay Commander is attacked, he calls for backup! More hostile ships are incoming!"
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Manslayer
+              - Centii Loyal Plague
+              - Centii Loyal Enslaver
+            group: Group 1 (at warp-in)
+          - count: "4"
+            class: Cruiser
+            names:
+              - Centum Hellhound
+              - Centum Torturer
+            group: Group 1 (at warp-in)
+          - count: "5"
+            class: Battleship
+            names:
+              - Centus Dread Lord
+              - Centus Tyrant
+              - Centus Overlord
+            group: Group 1 (at warp-in)
+          - count: "1"
+            class: Battleship
+            names:
+              - Centus Relay Commander
+            group: Group 1 (at warp-in)
+            triggers: Triggers wave 2 when attacked
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Centatis Devil
+              - Centatis Wraith
+              - Centatis Behemoth
+            group: Group 2 (20km)
+          - count: "3"
+            class: Battleship
+            names:
+              - Centus Beast Lord
+            group: Group 2 (20km)
+          - count: "2"
+            class: Sentry
+            names:
+              - Sansha Stasis Tower
+            group: Group 3
+            ewar:
+              - kind: web
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Servant
+              - Centii Loyal Ravener
+              - Centii Loyal Minion
+            group: Group 1 (Near the rift, approx. 30km)
+            ewar:
+              - kind: web
+          - count: "3"
+            class: Battleship
+            names:
+              - Centus Dark Lord
+              - Centus Overlord
+            group: Group 1 (Near the rift, approx. 30km)
+          - count: "1"
+            class: Battleship
+            names:
+              - Centus Relay Commander
+            group: Group 1 (Near the rift, approx. 30km)
+            triggers: Triggers wave 3 when attacked
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Mutilator
+              - Centum Loyal Fiend
+            group: Group 2 (20km)
+          - count: "3"
+            class: Battleship
+            names:
+              - Centus Dark Lord
+              - Centus Overlord
+            group: Group 2 (20km)
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battleship
+            names:
+              - Centus Dark Lord
+              - Centus Overlord
+            group: Group 1 (45km)
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centatis Daemon
+              - Centatis Wraith
+            group: Group 2 (30km)
+          - count: "3"
+            class: Battleship
+            names:
+              - Centus Dread Lord
+              - Centus Tyrant
+            group: Group 2 (30km)
+          - count: "4"
+            class: Battleship
+            names:
+              - Centus Plague Lord
+              - Centus Beast Lord
+            group: Group 3 (20km)
+            ewar:
+              - kind: trackingDisruption
+      - id: structure
+        trigger:
+          on: warpIn
+          text: Structure
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Gate to Hall
+            note: 0km from warp-in, locked until everything is destroyed
+    onWarpIn: As you come out of acceleration you notice the resemblance of a spatial rift in the distance.
+  - name: Third Pocket(Hall)
+    notes:
+      - text: "Database information: A large force of drones has taken up residence in this area. They obviously benefit greatly from salvaging the remnants of the former inhabitants, which still litters this patch of space. A drone presence this large could not be formed without an abundance of raw materials."
+      - text: Rogue drones are present in this room. There is no limit to how many times the hacking of Floating Debris can be failed but it decreases the chance of getting valuable loot at each fail.
+      - text: "Upon destroying one of the missile batteries: Drones have been deployed from the Drone Bunkers in response to the attack on the sentry guns!"
+      - text: "When smartbomb wave is triggered: Someone has triggered an ancient land mine! All ships inside the blast radius take damage."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "8"
+            class: Elite Frigate
+            names:
+              - Strain Barracuda
+              - Strain Devilfish
+              - Strain Silverfish Alvi
+              - Strain Hunter Alvi
+          - count: "10"
+            class: Battleship
+            names:
+              - Alvus Creator
+              - Patriarch Alvus
+          - count: "8"
+            class: Sentry
+            names:
+              - Drone Cruise Missile Battery
+            triggers: Attacking any one triggers reinforcement wave
+      - id: reinforcement-wave
+        trigger:
+          on: other
+          text: Reinforcement wave
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Strain Render
+              - Strain Decimator Alvi
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Siege
+              - Exterminator
+              - Crippler Alvatis
+          - count: "4"
+            class: Battleship
+            names:
+              - Alvus Queen
+              - Matriarch Alvus
+      - id: approaching-one-of-the-6-floating-debris
+        trigger:
+          on: other
+          text: Approaching one of the 6 Floating Debris
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Cruiser
+            names:
+              - Centum Hellhound
+              - Centum Fiend
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Centatis Specter
+              - Centatis Daemon
+          - count: "7"
+            class: Battleship
+            names:
+              - Centus Beast Lord
+              - Centus Plague Lord
+              - Centus Dread Lord
+              - Centus Tyrant
+            ewar:
+              - kind: trackingDisruption
+          - count: "1"
+            class: Battleship
+            names:
+              - Ektar Ssrath
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "6"
+            class: Hackable
+            names:
+              - Floating Debris
+            triggers: Can trigger a smartbomb wave when approached or by failing the hacking
+            drop: Possible salvage materials, T1 and meta gas scoop, learning implants
+            note: Needs a relic analyser to crack it open
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Gate to Sanctum
+            note: Locked until all ships are destroyed, 0km from warp-in
+  - name: Fourth Pocket(Sanctum)
+    notes:
+      - text: "Database information: The source of the drone infestation seems to lie in this deadspace pocket, located inside a fiery nebula. The extreme and hostile environment, accompanied by a very heavy drone presence, seems to have kept most of the looters away, as two fully intact ancient ruins would indicate."
+      - text: The Hive Mother does very little damage and has a moderate tank. It will trigger new waves as it is destroyed so be sure to kill a new wave before continuing shooting the Hive Mother or you'll be quickly overwhelmed.
+      - text: "Reinforcements: The Drone Hive Mother has deployed Drone Cruise Missile Batteries along with more drone ships!"
+      - text: "Reinforcements: Drones have emerged from the nearby bunkers to defend the Hive Mother!"
+      - text: "Reinforcements: Drones have emerged from the nearby bunkers to defend the Hive Mother!"
+      - text: "Reinforcements: Drones have emerged from the nearby bunkers to defend the Hive Mother!"
+      - text: "Smartbomb wave triggered: Someone has gone too close to one of the ruins and triggered an ancient hidden explosive. Energy and material spurts in all directions, and all ships caught in the blast radius take damage!"
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "14"
+            class: Elite Cruiser
+            names:
+              - Strain Atomizer
+              - Strain Nuker Alvum
+              - Strain Bomber Alvum
+              - Strain Disintegrator
+          - count: "15"
+            class: Battleship
+            names:
+              - Alvus Creator
+              - Patriarch Alvus
+          - count: "1"
+            class: Sentry
+            names:
+              - Hive mother 2_Complex
+            triggers: Triggers subsequent waves at armor damage, hull damage, 50% and 25% hull
+            drop: 20th Tier Overseer's Personal Effects, drone alloys and a possible T2 Mindlink implant
+          - count: "6"
+            class: Sentry
+            names:
+              - Tower Sentry Drone III
+      - id: reinforcements-hive-mother-armor-damage
+        trigger:
+          on: other
+          text: Reinforcements(Hive Mother armor damage)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Sentry
+            names:
+              - Drone Cruise Missile Battery
+          - count: "11"
+            class: Battleship
+            names:
+              - Alvus Queen
+              - Matriarch Alvus
+      - id: reinforcements-hull-damage
+        trigger:
+          on: other
+          text: Reinforcements(hull damage)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Strain Bomber
+              - Strain Disintegrator Alvum
+              - Strain Atomizer
+          - count: "3"
+            class: Battleship
+            names:
+              - Alvus Queen
+              - Matriarch Alvus
+      - id: reinforcements-50-hull
+        trigger:
+          on: other
+          text: Reinforcements(50% hull)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Dismantler
+              - Marauder Alvior
+              - Predator Alvior
+          - count: "4"
+            class: Battleship
+            names:
+              - Alvus Queen
+              - Matriarch Alvus
+      - id: reinforcements-25-hull
+        trigger:
+          on: other
+          text: Reinforcements(25% hull)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Siege
+              - Crippler Alvatis
+          - count: "4"
+            class: Battleship
+            names:
+              - Alvus Ruler
+              - Supreme Alvus Parasite
+      - id: containers-and-structures
+        trigger:
+          on: warpIn
+          text: Containers and structures
+        spawns:
+          - count: "2"
+            class: Hackable
+            names:
+              - Ancient Ruins
+            triggers: Triggers smartbomb wave when approached or when hacking failed
+            drop: Possible salvage, T1 and meta gas scoop
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Gate to Portal
+            note: 12km from warp-in

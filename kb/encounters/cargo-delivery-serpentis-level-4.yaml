@@ -1,0 +1,100 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: cargo-delivery-serpentis-level-4
+kind: mission
+name: Cargo Delivery
+level: 4
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Cargo Delivery (Serpentis) (Level 4)
+    url: https://wiki.eveuniversity.org/Cargo_Delivery_(Serpentis)_(Level_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223305"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Retrieve 10x Quafe Ultra (1 m3)
+ewar:
+  - kind: sensorDamp
+notes:
+  - text: Single ungated pocket. You land 40 km away from the warehouse that contains the item so an Afterburner or Microwarpdrive is recommended. All waves spawn within the belt ~20km from the warehouse.
+  - text: "Blitz: Fly to the pickup point, loot and warp away. Nothing needs to be killed so a fast ship works. Even a Corvette!"
+lootNotes:
+  - text: "Loot: ± 1,3 M ISK"
+  - text: "Salvage: ± 2,7 M ISK"
+  - text: "Bounties: ± 6,5 M ISK"
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: Warehouse wave is triggered when you loot the Quafe.
+      - text: Reinforcements arrive once triggered. Killing the elite cruiser from initial defenders is one trigger. May be other triggers.
+      - text: Dune Conal can rep a noticeable amount.
+    waves:
+      - id: initial-defenders-25-55-km
+        trigger:
+          on: warpIn
+          text: Initial Defenders (25-55 km)
+        spawns:
+          - count: 1-2
+            class: Elite Cruiser
+            names:
+              - Corelum Chief Infantry
+            triggers: Triggers Reinforcement Wave
+          - count: 2-3
+            class: Battleship
+            names:
+              - Core Port
+              - Core Rear Admiral
+      - id: warehouse-wave
+        trigger:
+          on: other
+          text: Warehouse wave
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Watchmen
+            ewar:
+              - kind: sensorDamp
+          - count: "2"
+            class: Cruiser
+            names:
+              - Corelum Guardian Chief Guard
+            ewar:
+              - kind: sensorDamp
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Corelatis High Captain
+          - count: 1-2
+            class: Battleship
+            names:
+              - Core Port
+              - Core Rear Admiral
+      - id: reinforcements-wave
+        trigger:
+          on: other
+          text: Reinforcements wave
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Defender
+              - Corelum Guardian Chief Protector
+            ewar:
+              - kind: sensorDamp
+          - count: 2-3
+            class: Battleship
+            names:
+              - Core Port
+              - Core Rear Admiral
+          - count: 0-1
+            class: Battleship
+            names:
+              - Dune Conal

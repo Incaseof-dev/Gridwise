@@ -1,0 +1,112 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: intercept-the-saboteurs-minmatar-republic-level-2
+kind: mission
+name: Intercept The Saboteurs
+level: 2
+enemyFaction: Minmatar Republic
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Intercept The Saboteurs (Minmatar Republic) (Level 2)
+    url: https://wiki.eveuniversity.org/Intercept_The_Saboteurs_(Minmatar_Republic)_(Level_2)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191761"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: web
+  - kind: warpScramble
+notes:
+  - text: "Web/warp disruption: Chief Republic Isak/Iflin (Web, Scram)"
+  - text: "Suggested ships: Destroyer, HAC"
+  - text: Last ship killed drops the can containing the Confiscated Virus Material.
+pockets:
+  - name: 1st Pocket
+    waves:
+      - id: initial-group-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group (auto-aggro)
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Republic Baldur
+              - Republic Takan
+          - count: "1"
+            class: Industrial
+            names:
+              - Minmatar Transport
+  - name: 2nd Pocket
+    waves:
+      - id: 1st-group-20km-auto-aggro
+        trigger:
+          on: other
+          text: 1st Group, 20km (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "8"
+            class: Frigate
+            names:
+              - Republic Baldur
+              - Republic Takan
+              - Republic Gleeda
+              - Republic Otur
+      - id: 2nd-group-80-100km
+        trigger:
+          on: other
+          text: 2nd Group, 80-100km
+          confidence: inferred
+        spawns:
+          - count: "8"
+            class: Frigate
+            names:
+              - Republic Baldur
+              - Republic Takan
+              - Republic Gleeda
+              - Republic Otur
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Chief Republic Isak
+              - Chief Republic Iflin
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "1"
+            class: Cruiser
+            names:
+              - Minmatar Transport Ship
+      - id: 3rd-group-120km
+        trigger:
+          on: other
+          text: 3rd Group, 120km
+          confidence: inferred
+        spawns:
+          - count: "10"
+            class: Frigate
+            names:
+              - Republic Baldur
+              - Republic Takan
+              - Republic Gleeda
+              - Republic Otur
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Chief Republic Isak
+              - Chief Republic Iflin
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "2"
+            class: Destroyer
+            names:
+              - Republic Austri
+              - Republic Bormin
+          - count: "1"
+            class: Cruiser
+            names:
+              - Minmatar Transport Ship

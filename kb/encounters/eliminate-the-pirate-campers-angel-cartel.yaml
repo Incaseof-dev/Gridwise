@@ -1,0 +1,46 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: eliminate-the-pirate-campers-angel-cartel
+kind: mission
+name: Eliminate the Pirate Campers
+level: 3
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Eliminate the Pirate Campers (Angel Cartel)
+    url: https://wiki.eveuniversity.org/Eliminate_the_Pirate_Campers_(Angel_Cartel)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "203561"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Eliminate the Angel Cartel ships roaming around the stargate near the coordinates of your bookmark.
+ewar:
+  - kind: targetPaint
+pockets:
+  - name: Warp-in
+    waves:
+      - id: initial-defenders-aggro-on-warpin-you-are-dropped-right-in-the-middle-of-the-group
+        trigger:
+          on: warpIn
+          text: Initial defenders, aggro on warpin, you are dropped right in the middle of the group
+        spawns:
+          - count: "5"
+            class: Destroyer
+            names:
+              - Gistior Defacer
+              - Gistior Shatterer
+          - count: "3"
+            class: Cruiser
+            names:
+              - Gistum Depredator
+              - Gistum Predator
+              - Gistum Smasher
+              - Gistum Crusher
+            ewar:
+              - kind: targetPaint
+            note: Crusher does TP.
+    onWarpIn: Looks like we have us a newcomer, boys. Get 'im!

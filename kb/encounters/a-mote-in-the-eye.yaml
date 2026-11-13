@@ -1,0 +1,120 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: a-mote-in-the-eye
+kind: mission
+name: A Mote In The Eye
+level: 5
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – A Mote In The Eye
+    url: https://wiki.eveuniversity.org/A_Mote_In_The_Eye
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191538"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy all enemy ships
+ewar:
+  - kind: web
+  - kind: neut
+  - kind: sensorDamp
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite Federation Libertus"
+  - text: Fighters will respawn indefinitely until the three Fighter Bay structures are destroyed. With each structure, one fighter pops. Fourth structure, the Power Generator (250k ehp), does not take damage until Fighter Bays are destroyed. When the Generator is destroyed, the Neut that's attached to it is also destroyed.
+  - text: Mission is in deadspace, you will always be warping to the entry point(at range is allowed) and cannot warp to fleet members/bookmarks directly.
+  - text: "Strategy: Take out structures, missile & web towers, leave neuts until last."
+  - text: "Strategy: Either take one neut and one spawn at a time, or shoot at all neuts and warp your rr out while the tank gains aggro. Takes 30-50 seconds before majority of dps is in place if you stay at warp-in."
+pockets:
+  - name: Warp-in
+    notes:
+      - text: All enemies aggro on warp-in. Initial group will do around 800 dps with 42% Kinetic/58% Thermal.
+      - text: These spawns are approximations and there could be some variance. Can end up around 5,000 dps with 37% Kinetic/73% Thermal.
+      - text: The Elite Federation Libertus have web/scram, the Federation Praktor Dionia has energy neutralizer(20gj/s) and sensor damepener.
+    waves:
+      - id: initial-hostiles-spawn-after-20seconds-40-75km
+        trigger:
+          on: warpIn
+          text: Initial Hostiles (Spawn after ~20seconds 40-75km)
+        spawns:
+          - count: "3"
+            class: Fighter
+            names:
+              - Federation Fighter
+          - count: "3"
+            class: Sentry
+            names:
+              - Gallente Stasis Tower
+            ewar:
+              - kind: web
+          - count: "4"
+            class: Sentry
+            names:
+              - Gallente Energy Neutralizer Sentry II
+            ewar:
+              - kind: neut
+            triggers: each one triggers a Wave 1 variant
+            note: 20gj/s each
+          - count: "18"
+            class: Sentry
+            names:
+              - Gallente Heavy Missile Battery
+          - count: "12"
+            class: Sentry
+            names:
+              - Gallente Cruiser Missile Battery
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "3"
+            class: Structure
+            names:
+              - Fighter Bay
+          - count: "1"
+            class: Structure
+            names:
+              - Power Generator
+      - id: wave-1-spawns-for-each-energy-neutralizer-destroyed
+        trigger:
+          on: other
+          text: Wave 1 (Spawns for each Energy Neutralizer destroyed)
+          confidence: inferred
+        spawns:
+          - count: "15"
+            class: Elite Frigate
+            names:
+              - Elite Federation Libertus
+              - Elite Federation Machina
+              - Elite Federation Phalarica
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: Libertus is the only variant with tackle
+          - count: "15"
+            class: Elite Cruiser
+            names:
+              - Elite Federation Mentes
+              - Elite Federation Quadrieries
+          - count: "10"
+            class: Battlecruiser
+            names:
+              - Federation Praktor Arx
+              - Federation Praktor Auxilia
+              - Federation Praktor Diablic
+          - count: "17"
+            class: Battleship
+            names:
+              - Federation Praktor Dionia
+              - Federation Praktor Phanix
+              - Federation Praktor Polemo
+              - Federation Praktor Praeses
+            ewar:
+              - kind: neut
+              - kind: sensorDamp
+            note: Dionia is only variant with EWAR

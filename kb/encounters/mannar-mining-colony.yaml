@@ -1,0 +1,55 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: mannar-mining-colony
+kind: mission
+name: Mannar Mining Colony
+level: 3
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Mannar Mining Colony
+    url: https://wiki.eveuniversity.org/Mannar_Mining_Colony
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "215272"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Pick up the broken mining equipment from the mining colony.
+notes:
+  - text: "Suggested ships: Cruiser, Battlecruiser"
+  - text: Take the Broken Mining Equipment from the Parts Container (~16km away), warp out.
+  - text: "Note: You may take up to 8,000 damage on a Blitz run with low resistances."
+  - text: Done with 219 DPS tank (Rogue Drones specific).
+pockets:
+  - name: Single Pocket (No Gate.)
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Destructor Alvum
+            group: Group 1 (15km)
+          - count: "2"
+            class: Destroyer
+            names:
+              - Shatterer
+              - Dismantler Alvior
+            group: Group 1 (15km)
+          - count: "3"
+            class: Cruiser
+            names:
+              - Annihilator
+              - Devastator Alvum
+            group: Group 2 (15km), appears when Group 1 is destroyed
+          - count: "2"
+            class: Destroyer
+            names:
+              - Dismantler Alvior
+            group: Group 2 (15km), appears when Group 1 is destroyed

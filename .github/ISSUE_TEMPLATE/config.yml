@@ -1,0 +1,7 @@
+blank_issues_enabled: true
+contact_links:
+  - name: The wiki page itself is wrong (waves, triggers, loot)
+    url: https://wiki.eveuniversity.org
+    about: >-
+      The briefs come from the EVE University wiki; a fix there reaches everyone at the next weekly update. If the
+      wiki is right but the brief is not, open "Encounter brief does not match the wiki" instead.

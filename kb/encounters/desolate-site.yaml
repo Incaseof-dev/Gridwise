@@ -1,0 +1,125 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: desolate-site
+kind: complex
+name: Desolate Site
+dedRating: null
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Desolate Site
+    url: https://wiki.eveuniversity.org/Desolate_Site
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "230628"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: T3 Cruiser"
+notes:
+  - text: Desolate Site is an Unrated Complex found in high sec and low sec via exploration.
+  - text: You must be flying a T3 cruiser or smaller to enter the acceleration gate.
+  - text: Initially there are only two groups on grid. Third group consisting of a frigate and a destroyer appears in few seconds. You can ignore the groups that have destroyers or drones. Destroying the group with frigates only will trigger additional waves.
+  - text: The first and second spawns appear by the Warning Sign structure.
+  - text: "Escalation: Mare Sargassum: At first it seems strange the drones have picked this barren and resource deficient place to build a new hive. But then again, while you were blowing up the place, you noticed a few vessels that might have been used as transports, indicating the drones were pulling in the materials they needed from someplace else. As to compliment you on your reasoning, your communication systems start indicating several different incoming transmissions in drone beeps and clicks and after a while you manage to coerce your instruments into pointing out an approximate spatial origin of the message."
+  - text: "Escalation: Destroying the first spawn group or sentient drone can escalate the site to Mare Sargassum."
+loot:
+  - item: + Exploration logs
+  - item: May 2020
+    note: est. 146M (wiki)
+  - item: May 2020
+    note: est. 3.5M (wiki)
+  - item: August 2020
+    note: est. 1.35M (wiki)
+  - item: January 2021
+    note: est. 63K (wiki)
+  - item: February 2021
+    note: est. 2.59M (wiki)
+  - item: March 2021
+    note: est. 23.7M (wiki)
+  - item: April 2021
+    note: est. 100K (wiki)
+  - item: Sentient Remote Sensor Booster
+  - item: May 2021
+    note: est. 44M (wiki)
+  - item: April 2022
+    note: est. 700K (wiki)
+  - item: Sentient Signal Amp
+  - item: January 2026
+    note: est. 100K (wiki)
+  - item: February 2026
+    note: est. 130K (wiki)
+  - item: April 2026
+    note: est. 26K (wiki)
+lootNotes:
+  - text: "Salvage: 814K-1.42M"
+  - text: "Loot: (sentient drone) Drone Capillary Fluids + Drone Synaptic Relay Wiring (~5m). Possible Rogue Drone 46-X Nexus Chip (~50m). Sentient Modules (~100m) (very rare)."
+  - text: "Bounties: about 50k (defenders) and 80k (reinforcement)"
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: Finishing first spawn can trigger escalation.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 2-3
+            class: Drone
+            names:
+              - Drone Harvester
+            note: Renamed Drone Rats
+          - count: "8"
+            class: Frigate
+            names:
+              - Silverfish
+              - Decimator
+              - Harvester
+              - Sunder Alvi
+          - count: "1"
+            class: Destroyer
+            names:
+              - Dismantler Alvior
+      - id: first-spawn
+        trigger:
+          on: other
+          text: first spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Devilfish
+              - Barracuda Alvi
+          - count: "3"
+            class: Destroyer
+            names:
+              - Ripper Alvior
+      - id: second-spawn
+        trigger:
+          on: other
+          text: second spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Hunter
+              - Barracuda Alvi
+          - count: "1"
+            class: Commander Frigate
+            names:
+              - Sentient Devilfish Alvi
+            triggers: escalation trigger
+            drop: Drops Drone material, has a chance to drop the Rogue drone 46-X chip
+          - count: 2-3
+            class: Destroyer
+            names:
+              - Ripper Alvior
+    onWarpIn: Rogue Drones are unpredictable, pilots are advised to tread with care.
+sde:
+  dungeonIds:
+    - 1265

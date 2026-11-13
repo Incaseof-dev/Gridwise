@@ -1,0 +1,186 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: blood-raider-base
+kind: complex
+name: Blood Raider Base
+dedRating: null
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Blood Raider Base
+    url: https://wiki.eveuniversity.org/Blood_Raider_Base
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "213462"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: This site is very similar to Provisional Blood Outpost.
+  - text: Upon warping to the site you will land at an acceleration gate.
+  - text: "Escalation: This site can escalate to Religious Fury."
+loot:
+  - item: Dark Blood battleship module
+    from: Dark Blood battleship
+  - item: Mid/High-Grade implant
+    from: Dark Blood battleship
+    note: Rare drop
+pockets:
+  - name: First Pocket
+    notes:
+      - text: Acceleration gate is approx. 30 km away. Timed wave spawns in a few minutes after warpin.
+    waves:
+      - id: initial-defenders-0-30-km-off
+        trigger:
+          on: warpIn
+          text: Initial defenders(0-30 km off)
+        spawns:
+          - count: 5-7
+            class: Elite Frigate
+            names:
+              - Elder Corpii Reaver
+              - Elder Corpii Engraver
+              - Elder Corpii Follower
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 3-4
+            class: Battleship
+            names:
+              - Corpus Archbishop
+              - Corpus Harbinger
+            ewar:
+              - kind: neut
+      - id: additional-defenders-on-very-short-timer
+        trigger:
+          on: timer
+          text: Additional defenders on very short timer
+        spawns:
+          - count: 3-4
+            class: Cruiser
+            names:
+              - Corpum Dark Priest
+              - Corpum Shadow Sage
+      - id: timed-wave-100-km-off
+        trigger:
+          on: other
+          text: Timed wave(100 km off)
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Battlecruiser
+            names:
+              - Corpatis Exorcist
+              - Corpatis Phantom
+          - count: 2-3
+            class: Battleship
+            names:
+              - Corpus Patriarch
+              - Corpus Pope
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+            note: Locked until all ships are destroyed
+  - name: Second Pocket
+    notes:
+      - text: Completely destroying the Blood Raider Chapel before subsequent waves have been aggressed can cause the Commander Battleship wave to not spawn.
+    waves:
+      - id: initial-defenders-structures
+        trigger:
+          on: warpIn
+          text: Initial defenders/structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Blood Raider Chapel
+            triggers: Escalation trigger. Triggers chapel wave when attacked
+          - count: 2-3
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Priest
+              - Elder Corpum Sage
+            ewar:
+              - kind: neut
+          - count: "4"
+            class: Battleship
+            names:
+              - Corpus Cardinal
+              - Corpus Patriarch
+      - id: wave-2-on-timer
+        trigger:
+          on: timer
+          text: Wave 2(on timer)
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Elder Corpii Raider
+              - Elder Corpii Diviner
+              - Elder Corpii Reaver
+          - count: 3-4
+            class: Battleship
+            names:
+              - Corpus Archbishop
+              - Corpus Harbinger
+            ewar:
+              - kind: neut
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battleship
+            names:
+              - Corpus Cardinal
+              - Corpus Patriarch
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - Dark Blood Archon
+              - Dark Blood Oracle
+            triggers: Escalation trigger
+            drop: Possible Dark Blood faction modules, tags, ammo
+            note: May not always spawn
+      - id: chapel-wave
+        trigger:
+          on: other
+          text: Chapel wave
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Elder Corpii Raider
+              - Elder Corpii Diviner
+          - count: 3-4
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Arch Templar
+              - Elder Corpum Revenant
+            ewar:
+              - kind: neut
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Corpatis Exorcist
+              - Corpatis Phantom
+          - count: 3-4
+            class: Battleship
+            names:
+              - Corpus Archbishop
+              - Corpus Harbinger
+            ewar:
+              - kind: neut
+sde:
+  dungeonIds:
+    - 1462

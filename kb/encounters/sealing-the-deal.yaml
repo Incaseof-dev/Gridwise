@@ -1,0 +1,51 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: sealing-the-deal
+kind: mission
+name: Sealing the Deal
+level: 1
+enemyFaction: Society of Consious Thought
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Sealing the Deal
+    url: https://wiki.eveuniversity.org/Sealing_the_Deal
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "228293"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal:
+    - kinetic
+    - thermal
+  resist:
+    - kinetic
+    - thermal
+objectives:
+  - text: Destroy the Society spy ship
+notes:
+  - text: No standing loss
+  - text: Objective
+  - text: Destroy the Society spy ship at the designated location in Arnon.
+  - text: Notes
+  - text: "When you arrive at the mission location, find the Society Spy, an Independent Green-Crewed - this is the ship you want to destroy. Ignore the 7 frigates. After you destroy this ship, the frigates will de-spawn and you'll get a pop-up message from another agent, Adani Yusev: \"I’m Adani Yusev from Ishukone internal security. We’ve been monitoring data traffic between you and the Servant Sisters of EVE. No, don’t get excited. We’re all on the same side, here. The State will help you get Dagan… as long as you hand him over to us once you’ve got him.\" Seems like all of the different factions want Dagan!"
+  - text: 'On turn in, Sister Alitura says: "Excellent work. The Omnipresence has been destroyed, and there’s no indication that she managed to inform her Society masters. We’ll be resuming contact with Karin immediately."'
+  - text: "Next Mission: Chasing Shadows"
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: wave-1
+        trigger:
+          on: warpIn
+          text: Wave 1
+        spawns:
+          - count: "7"
+            class: Frigate
+            names:
+              - Society Escort
+          - count: "1"
+            class: Cruiser
+            names:
+              - Society Spy

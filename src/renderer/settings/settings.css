@@ -1,0 +1,805 @@
+:root {
+  color-scheme: light dark;
+  --bg: #f5f7f9;
+  --surface: #ffffff;
+  --text: #1b1f24;
+  --muted: #5d6b78;
+  --border: #d8dee4;
+  --code-bg: #eef1f4;
+  --ok: #1f8a4c;
+  --warn: #a86a00;
+  --bad: #c62828;
+  --accent: #2f6fbf;
+  --dmg-em: #1f6fd1;
+  --dmg-thermal: #d33a26;
+  --dmg-kinetic: #5d6b78;
+  --dmg-explosive: #b86a00;
+  --sec-high: #1d8fb8;
+  --sec-low: #d9730d;
+  --sec-null: #c62828;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #15191e;
+    --surface: #1d2228;
+    --text: #e6ebf0;
+    --muted: #8a9cae;
+    --border: #2d343c;
+    --code-bg: #0f1215;
+    --ok: #57d18a;
+    --warn: #f2b84b;
+    --bad: #ff6b6b;
+    --accent: #7fb8ff;
+    --dmg-em: #5fa8ff;
+    --dmg-thermal: #ff6e5a;
+    --dmg-kinetic: #c2c8d0;
+    --dmg-explosive: #ffab45;
+    --sec-high: #4cc3ec;
+    --sec-low: #f2943a;
+    --sec-null: #ff6b6b;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font:
+    14px/1.5 system-ui,
+    sans-serif;
+}
+
+/* The content fills the window (EVE-84). */
+main {
+  padding: 16px 24px 40px;
+}
+
+h1 {
+  font-size: 20px;
+  margin: 0 0 2px;
+}
+h2 {
+  font-size: 15px;
+  margin: 0 0 10px;
+}
+
+section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 14px 16px;
+  margin-top: 14px;
+}
+
+.field {
+  margin-top: 10px;
+}
+.field > label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.check {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin: 4px 0;
+}
+.path {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+code {
+  background: var(--code-bg);
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+kbd {
+  font:
+    12px ui-monospace,
+    monospace;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 0 4px;
+}
+button {
+  font: inherit;
+  padding: 3px 12px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background: var(--code-bg);
+  color: var(--text);
+  cursor: pointer;
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+input[type='range'] {
+  width: 260px;
+}
+
+.muted {
+  color: var(--muted);
+}
+.error {
+  color: var(--bad);
+}
+.status.watching {
+  color: var(--ok);
+}
+.status.dirMissing,
+.status.error {
+  color: var(--bad);
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 13px;
+}
+td {
+  padding: 2px 8px 2px 0;
+  vertical-align: top;
+}
+.events td:nth-child(2) {
+  white-space: nowrap;
+  color: var(--muted);
+}
+
+textarea.eft {
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 6px;
+  font:
+    12px ui-monospace,
+    monospace;
+  background: var(--code-bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 6px 8px;
+}
+.fit-stats td:first-child {
+  font-weight: 600;
+  white-space: nowrap;
+}
+.dmg-em {
+  color: var(--dmg-em);
+}
+.dmg-thermal {
+  color: var(--dmg-thermal);
+}
+.dmg-kinetic {
+  color: var(--dmg-kinetic);
+}
+.dmg-explosive {
+  color: var(--dmg-explosive);
+}
+
+.tabs {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  margin-top: 12px;
+  padding-top: 6px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+.tabs button {
+  position: relative;
+  border: 1px solid transparent;
+  border-bottom: none;
+  border-radius: 6px 6px 0 0;
+  background: none;
+  color: var(--muted);
+  padding: 6px 14px;
+  margin-bottom: -1px;
+}
+.tabs button:hover {
+  color: var(--text);
+}
+.tabs button.active {
+  background: var(--surface);
+  border-color: var(--border);
+  color: var(--text);
+  font-weight: 600;
+}
+.attention {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-left: 6px;
+  border-radius: 50%;
+  background: var(--warn);
+  vertical-align: middle;
+}
+/* The tab names the section; the panel continues the active tab. */
+.tab-panel > section {
+  margin-top: 0;
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+}
+.tab-panel > section > h2 {
+  display: none;
+}
+
+/* Enemy sites (EVE-74): faction picker, security filter, site tree against High/Low/Null columns. */
+button.link {
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--accent);
+  text-align: left;
+}
+button.link:hover {
+  text-decoration: underline;
+}
+.small {
+  font-size: 12px;
+}
+.factions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 10px 0 8px;
+}
+.factions button.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--surface);
+  font-weight: 600;
+}
+.space-filter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 14px;
+  margin-bottom: 8px;
+}
+.sec-chip.sec-high {
+  color: var(--sec-high);
+}
+.sec-chip.sec-low {
+  color: var(--sec-low);
+}
+.sec-chip.sec-null {
+  color: var(--sec-null);
+}
+.opened {
+  margin-left: auto;
+}
+.sitemap th {
+  text-align: left;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 40px;
+  background: var(--surface);
+}
+.sitemap th.sec-head {
+  width: 44px;
+  text-align: center;
+}
+.sitemap td {
+  padding: 3px 8px;
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 50%, transparent);
+}
+.sitemap tr.kind td {
+  padding-top: 14px;
+  font-weight: 600;
+  border-bottom: 1px solid var(--border);
+}
+.sitemap tr.root td.site {
+  font-weight: 500;
+}
+.sitemap tr.ref td.site {
+  font-size: 12px;
+}
+.sitemap td.rating {
+  white-space: nowrap;
+  font-size: 12px;
+}
+.sitemap .via {
+  display: inline-block;
+  width: 16px;
+  margin-left: -16px;
+  color: var(--muted);
+}
+.sitemap .from {
+  font-size: 11px;
+  font-weight: normal;
+}
+.sitemap td.sec {
+  padding: 3px 2px;
+}
+.sitemap td.sec.on::before {
+  content: '';
+  display: block;
+  height: 10px;
+  margin-top: 4px;
+  border-radius: 2px;
+  background: currentColor;
+}
+.sitemap td.sec-high {
+  color: var(--sec-high);
+}
+.sitemap td.sec-low {
+  color: var(--sec-low);
+}
+.sitemap td.sec-null {
+  color: var(--sec-null);
+}
+.abyss-tab h3 {
+  margin: 16px 0 4px;
+  font-size: 14px;
+}
+.abyss-tab .chip {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 0 4px;
+  margin-right: 3px;
+  border: 1px solid var(--accent);
+  border-radius: 3px;
+  color: var(--accent);
+}
+.abyss-tab .chip.danger {
+  border-color: var(--bad);
+  color: var(--bad);
+}
+.abyss-tab .bad {
+  color: var(--bad);
+  font-weight: 600;
+}
+.abyss-tab td.room-npcs {
+  width: 60%;
+}
+.abyss-tab .room-npcs > div + div {
+  margin-top: 2px;
+}
+.abyss-faction {
+  margin: 4px 0;
+}
+.abyss-faction summary {
+  cursor: pointer;
+  padding: 3px 0;
+}
+.abyss-tab .dmg-em {
+  color: var(--dmg-em);
+}
+.abyss-tab .dmg-thermal {
+  color: var(--dmg-thermal);
+}
+.abyss-tab .dmg-kinetic {
+  color: var(--dmg-kinetic);
+}
+.abyss-tab .dmg-explosive {
+  color: var(--dmg-explosive);
+}
+.weather-icon {
+  vertical-align: -3px;
+}
+button.shortcut-key {
+  padding: 1px 4px;
+  margin-right: 8px;
+  min-width: 130px;
+  text-align: left;
+}
+button.shortcut-key.recording {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+button.shortcut-key.bad {
+  border-color: var(--bad);
+}
+
+/* Ship fit tree (EVE-82): the player's fits by class, faction and ship, the selected fit beside it. */
+.fit-layout {
+  display: grid;
+  grid-template-columns: minmax(200px, 270px) minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+/* Ship tree | fit parts | stats side by side, as wide as the window allows; stacked when it is narrow. */
+.fit-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  align-items: start;
+}
+@media (max-width: 1100px) {
+  .fit-columns {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.fit-tree {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px;
+  max-height: calc(100vh - 280px);
+  min-height: 200px;
+  overflow-y: auto;
+  font-size: 13px;
+}
+.fit-tree summary {
+  cursor: pointer;
+  padding: 2px 0;
+  font-weight: 600;
+}
+.fit-tree .tree-faction {
+  margin-left: 10px;
+}
+.fit-tree .tree-faction > summary {
+  font-weight: 500;
+}
+.fit-tree .tree-ship {
+  margin-left: 10px;
+}
+.fit-tree .tree-ship > summary {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 400;
+}
+.fit-tree .tree-ship > summary::-webkit-details-marker {
+  display: none;
+}
+.tree-count {
+  margin-left: auto;
+}
+.hull-img {
+  width: 24px;
+  height: 24px;
+  border-radius: 3px;
+  flex: none;
+}
+.fit-row {
+  display: flex;
+  align-items: center;
+  margin-left: 30px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+}
+.fit-row.none {
+  margin: 0 0 4px;
+  width: 100%;
+  text-align: left;
+  font-size: 12px;
+}
+.fit-row.on {
+  border-color: var(--accent);
+  background: var(--code-bg);
+}
+.fit-pick {
+  flex: 1;
+  text-align: left;
+  border: none;
+  background: none;
+  padding: 2px 6px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* EVE login (EVE-38) */
+.esi-chars td {
+  padding: 4px 12px 4px 0;
+  vertical-align: top;
+}
+input.client-id {
+  width: 300px;
+  font-family: ui-monospace, monospace;
+}
+button.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+/* Fit stats as in the game's fitting window (EVE-82): always the game's dark look. */
+.game-stats {
+  --gs-bg: #12161b;
+  --gs-head: #1c232b;
+  --gs-text: #d6dbe0;
+  --gs-muted: #8b96a1;
+  background: var(--gs-bg);
+  color: var(--gs-text);
+  border: 1px solid #2a333d;
+  border-radius: 4px;
+  padding: 4px 8px 8px;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+.gs-section > summary {
+  display: flex;
+  justify-content: space-between;
+  background: var(--gs-head);
+  padding: 2px 6px;
+  margin-top: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.gs-section > summary::-webkit-details-marker {
+  display: none;
+}
+.gs-section > summary::before {
+  content: '▾';
+  margin-right: 6px;
+  color: var(--gs-muted);
+}
+.gs-section:not([open]) > summary::before {
+  content: '▸';
+}
+.gs-section > summary > span:first-child {
+  margin-right: auto;
+}
+.gs-head-value {
+  font-weight: 400;
+}
+.gs-body {
+  padding: 4px 6px 0 22px;
+}
+.gs-row {
+  padding: 1px 0;
+}
+.gs-two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px 12px;
+}
+.gs-cell .gs-label {
+  display: none;
+}
+.gs-good {
+  color: #7fd47f;
+}
+.gs-bad {
+  color: #ff5a4e;
+}
+.gs-sub {
+  color: var(--gs-muted);
+}
+.gs-resists {
+  display: grid;
+  grid-template-columns: auto repeat(4, 52px);
+  gap: 4px 6px;
+  align-items: center;
+}
+.gs-layer {
+  display: contents;
+}
+.gs-layer-hp {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.gs-layer-hp img {
+  width: 20px;
+  height: 20px;
+}
+.gs-dmg {
+  text-align: center;
+  font-size: 11px;
+  font-weight: 700;
+}
+.gs-resist {
+  position: relative;
+  display: block;
+  height: 16px;
+  background: #2a2f35;
+  border-radius: 2px;
+  overflow: hidden;
+  font-size: 11px;
+}
+.gs-fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  opacity: 0.85;
+}
+.gs-pct {
+  position: relative;
+  padding-left: 4px;
+  color: #fff;
+  text-shadow: 0 0 2px #000;
+}
+.dmg-bg-em .gs-fill {
+  background: #2f74c0;
+}
+.dmg-bg-thermal .gs-fill {
+  background: #b8312f;
+}
+.dmg-bg-kinetic .gs-fill {
+  background: #8d9399;
+}
+.dmg-bg-explosive .gs-fill {
+  background: #c7861d;
+}
+.game-stats .dmg-em {
+  color: #5fa0e8;
+}
+.game-stats .dmg-thermal {
+  color: #e2554f;
+}
+.game-stats .dmg-kinetic {
+  color: #b9bfc4;
+}
+.game-stats .dmg-explosive {
+  color: #e4a43a;
+}
+.gs-fitting {
+  display: flex;
+  gap: 24px;
+  margin-top: 10px;
+  padding-top: 6px;
+  border-top: 1px solid #2a333d;
+}
+.gs-fitting b {
+  font-size: 12px;
+}
+.chip-flying {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 3px;
+  padding: 0 4px;
+}
+
+/* Under the tree: add (dialog) left, ESI sync right (EVE-83). */
+.fit-side {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.tree-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+.tree-actions button {
+  font-size: 12px;
+  padding: 3px 8px;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: grid;
+  place-items: center;
+  z-index: 50;
+}
+.modal {
+  background: var(--bg, #1b1f24);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 20px;
+  width: min(560px, 92vw);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+.modal h3 {
+  margin: 0 0 8px;
+}
+.modal .eft {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* The fit's parts (EVE-83), in the look of the stats above. */
+.fit-parts {
+  background: #12161b;
+  color: #d6dbe0;
+  border: 1px solid #2a333d;
+  border-radius: 4px;
+  padding: 4px 8px 8px;
+  font-size: 13px;
+}
+.parts-head {
+  background: #1c232b;
+  padding: 2px 6px;
+  margin-top: 6px;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+.parts-head .muted,
+.part.muted {
+  color: #8b96a1;
+  font-weight: 400;
+}
+.part {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 6px;
+}
+.part-icon {
+  width: 24px;
+  height: 24px;
+  flex: none;
+}
+.part-name {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.part select {
+  max-width: 170px;
+  font-size: 12px;
+  background: #1c232b;
+  color: #d6dbe0;
+  border: 1px solid #2a333d;
+  border-radius: 3px;
+}
+.drone-count {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-variant-numeric: tabular-nums;
+}
+.drone-count button {
+  padding: 0 6px;
+  background: #1c232b;
+  color: #d6dbe0;
+  border-color: #2a333d;
+}
+.fit-parts .link {
+  margin-top: 8px;
+}
+/* Tactical destroyer modes (EVE-85): one of three, like the game's mode buttons. */
+.t3d-modes {
+  display: flex;
+  gap: 4px;
+  padding: 4px 6px;
+}
+.t3d-modes button {
+  flex: 1;
+  font-size: 12px;
+  padding: 3px 6px;
+  background: #1c232b;
+  color: #d6dbe0;
+  border-color: #2a333d;
+}
+.t3d-modes button.on {
+  border-color: #5fa0e8;
+  background: #233447;
+  color: #fff;
+}
+
+/* EVE Workbench on another server than the live one (EVE-90). */
+.ewb h3 .chip-flying {
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+/* About: author, support, licenses. */
+.about h3 {
+  margin: 16px 0 4px;
+  font-size: 14px;
+}
+.about-name {
+  font-size: 15px;
+}
+
+/* Settings → Intel (EVE-99) */
+.intel-tab table {
+  width: auto;
+}
+.intel-tab td {
+  padding-right: 16px;
+}
+.intel-tab .path input {
+  width: 340px;
+}

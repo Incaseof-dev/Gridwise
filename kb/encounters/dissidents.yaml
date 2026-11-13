@@ -1,0 +1,121 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: dissidents
+kind: mission
+name: Dissidents
+level: 4
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Dissidents
+    url: https://wiki.eveuniversity.org/Dissidents
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "209152"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: trackingDisruption
+notes:
+  - text: "Video: Sentry Dominix"
+lootNotes:
+  - text: "Bounties: 14M~ (Oct, 2023)"
+  - text: "Loot & Salvage: 16.5M~ (Oct, 2023)"
+pockets:
+  - name: Single Ungated Pocket
+    notes:
+      - text: Warp in at preferred distance
+      - text: The mission is complete when all ships in the first group of reinforcement 3 are destroyed.
+    waves:
+      - id: initial-group-25km-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group, 25km, auto-aggro
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Corpii Engraver
+              - Corpii Raider
+              - Corpii Reaver
+          - count: "3"
+            class: Battleship
+            names:
+              - Corpus Cardinal
+              - Corpus Monsignor
+            triggers: Spawns Reinforcement 1
+      - id: reinforcement-1-20km
+        trigger:
+          on: other
+          text: Reinforcement 1, 20km
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Elder Corpii Collector
+              - Elder Corpii Seeker
+            ewar:
+              - kind: trackingDisruption
+          - count: 2-3
+            class: Battleship
+            names:
+              - Corpus Cardinal
+              - Corpus Monsignor
+            triggers: Spawns Reinforcement 2
+      - id: reinforcement-2-20km
+        trigger:
+          on: other
+          text: Reinforcement 2, 20km
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Corpum Arch Priest
+              - Corpum Arch Sage
+              - Corpum Dark Priest
+              - Corpum Shadow Sage
+          - count: "3"
+            class: Battleship
+            names:
+              - Corpus Cardinal
+              - Corpus Monsignor
+            triggers: Spawns Reinforcement 3
+      - id: reinforcement-3-50km
+        trigger:
+          on: other
+          text: Reinforcement 3, 50km
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Battlecruiser
+            names:
+              - Corpum Bishop
+              - Corpum Exorcist
+              - Corpum Fanatic
+              - Corpum Seer
+            group: Group 1
+          - count: "3"
+            class: Battleship
+            names:
+              - Corpus Cardinal
+              - Corpus Monsignor
+            group: Group 1
+            note: Mission Target
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Corpum Arch Priest
+              - Corpum Arch Sage
+              - Corpum Dark Priest
+              - Corpum Shadow Sage
+            group: Group 2
+          - count: "3"
+            class: Battleship
+            names:
+              - Corpus Cardinal
+              - Corpus Monsignor
+            group: Group 2

@@ -1,0 +1,218 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: angel-mineral-acquisition-outpost
+kind: complex
+name: Angel Mineral Acquisition Outpost
+dedRating: 6
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Angel Mineral Acquisition Outpost
+    url: https://wiki.eveuniversity.org/Angel_Mineral_Acquisition_Outpost
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "224802"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Battleships"
+notes:
+  - text: 3 pockets' initial groups and 5 spawns for a total of 63 ships.
+  - text: "Escalation: This site can escalate to Angel Mineral Acquisition Outpost, 2nd Part"
+lootNotes:
+  - text: This site does not contain any noteworthy loot.
+pockets:
+  - name: Room 1
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Arch Gistii Impaler
+              - Arch Gistii Raider
+          - count: "6"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Rogue
+              - Arch Gistii Thug
+          - count: "2"
+            class: Cruiser
+            names:
+              - Gistum Liquidator
+              - Gistum Marauder
+          - count: "4"
+            class: Sentry
+            names:
+              - Angel Cruise Missile Battery
+          - count: "1"
+            class: Sentry
+            names:
+              - Angel Stasis Tower
+            ewar:
+              - kind: web
+      - id: 1st-reinforcement-spawn
+        trigger:
+          on: other
+          text: 1st Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Gistii Hunter
+              - Gistii Impaler
+            ewar:
+              - kind: warpDisruption
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Gistum Liquidator
+              - Gistum Marauder
+          - count: "3"
+            class: Battleship
+            names:
+              - Gist Malakim
+              - Gist Throne
+      - id: 2nd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 2nd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battleship
+            names:
+              - Gist Malakim
+              - Gist Throne
+    onWarpIn: This deadspace complex, which appears to be a mineral gathering facility, has been annexed by the Angel Cartel. While the area is not heavily guarded, any danger of attack will undoubtedly bring in Angel reinforcements.
+  - name: Room 2
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Arch Gistii Impaler
+              - Arch Gistii Raider
+          - count: "4"
+            class: Cruiser
+            names:
+              - Gistum Liquidator
+              - Gistum Marauder
+          - count: "2"
+            class: Sentry
+            names:
+              - Angel Cruise Missile Battery
+          - count: "1"
+            class: Sentry
+            names:
+              - Angel Point Defense Battery
+          - count: "1"
+            class: Sentry
+            names:
+              - Angel Stasis Tower
+            ewar:
+              - kind: web
+      - id: 1st-reinforcement-spawn
+        trigger:
+          on: other
+          text: 1st Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Gistii Impaler
+              - Gistii Raider
+          - count: "4"
+            class: Battleship
+            names:
+              - Gist Malakim
+              - Gist Throne
+      - id: 2nd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 2nd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Battleship
+            names:
+              - Gist Malakim
+  - name: Room 3
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Gistior Defiler
+              - Gistior Seizer
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+              - Gistatis Tribuni
+          - count: "6"
+            class: Battleship
+            names:
+              - Malakim
+              - Nephilim
+              - Throne
+            triggers: Triggers next wave
+          - count: "5"
+            class: Sentry
+            names:
+              - Angel Cruise Missile Battery
+          - count: "1"
+            class: Sentry
+            names:
+              - Angel Energy Neutralizer Sentry
+            ewar:
+              - kind: neut
+      - id: reinforcement-spawn
+        trigger:
+          on: other
+          text: Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Ambusher
+              - Arch Gistii Raider
+          - count: "2"
+            class: Destroyer
+            names:
+              - Gistior Defacer
+              - Gistior Hunter
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Gistatis Praefectus
+              - Gistatis Tribuni
+          - count: "5"
+            class: Battleship
+            names:
+              - Cherubim
+              - Saint
+              - Throne
+              - Warlord
+            ewar:
+              - kind: targetPaint
+            triggers: Possible escalation trigger
+sde:
+  dungeonIds:
+    - 2477

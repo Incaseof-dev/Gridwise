@@ -1,0 +1,43 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: seek-and-destroy-angel-cartel-level-1
+kind: mission
+name: Seek and Destroy
+level: 1
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Seek and Destroy (Angel Cartel) (Level 1)
+    url: https://wiki.eveuniversity.org/Seek_and_Destroy_(Angel_Cartel)_(Level_1)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191907"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the rogue pirate leader.
+notes:
+  - text: "Suggested ships: Frigate"
+  - text: "Blitz: Destroy group A."
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: forces-on-grid
+        trigger:
+          on: other
+          text: Forces on grid
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Gistii Hijacker
+            group: Group A 45-55km, at hollow asteroid (auto aggro)
+            note: Last ship destroyed is mission complete.
+          - count: "6"
+            class: Frigate
+            names:
+              - Gistii Hijacker
+            group: Group B 85-95km, at rock formation

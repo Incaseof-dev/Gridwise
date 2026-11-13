@@ -1,0 +1,121 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: search-and-rescue
+kind: mission
+name: Search and Rescue
+level: 1
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Search and Rescue
+    url: https://wiki.eveuniversity.org/Search_and_Rescue
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "227781"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Loot the VIPs from the Disabled Badger
+ewar:
+  - kind: ecm
+notes:
+  - text: "Suggested ships: Destroyer"
+  - text: Reinforcements 3-5 are triggered when last ship is killed.
+  - text: The Disabled Badger may be accessed once the pocket has been cleared.
+pockets:
+  - name: Single pocket
+    waves:
+      - id: 1st-group-16-19km
+        trigger:
+          on: other
+          text: 1st Group, 16-19km
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Pithi Infiltrator
+              - Pithi Arrogator
+            triggers: 1st Reinforcement
+      - id: 2nd-group
+        trigger:
+          on: other
+          text: 2nd Group
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Pithi Infiltrator
+              - Pithi Arrogator
+            triggers: 2nd Reinforcement
+      - id: 1st-reinforcement
+        trigger:
+          on: other
+          text: 1st Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Pithi Arrogator
+              - Pithi Imputor
+              - Pithi Saboteur
+              - Pithi Despoiler
+            ewar:
+              - kind: ecm
+      - id: 2nd-reinforcement
+        trigger:
+          on: other
+          text: 2nd Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Pithi Invader
+      - id: 3rd-reinforcement
+        trigger:
+          on: other
+          text: 3rd Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Pithi Arrogator
+              - Pithi Imputor
+      - id: 4th-reinforcement
+        trigger:
+          on: other
+          text: 4th Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Pithi Plunderer
+              - Pithi Wrecker
+      - id: 5th-reinforcement
+        trigger:
+          on: other
+          text: 5th Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Pithi Arrogator
+              - Pithi Imputor
+      - id: mission-objective-18km
+        trigger:
+          on: other
+          text: Mission Objective, 18km
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Container
+            names:
+              - Disabled Badger

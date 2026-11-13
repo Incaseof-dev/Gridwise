@@ -1,0 +1,45 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: fetching-friends
+kind: mission
+name: Fetching Friends
+level: 2
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Fetching Friends
+    url: https://wiki.eveuniversity.org/Fetching_Friends
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "216795"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Retrieve the Caldari envoy (1x Political Envoy, 2).
+notes:
+  - text: "Caldari-Gallente Conflict: The Caldari-Gallente war began based upon differences of thought and opinion of the Federation they were both a part of. It ripped the Federation completely down the middle and became particularly vicious."
+  - text: "Space type: Normal space."
+  - text: "Tips: Eliminating all enemy ships flags the mission objective as completed."
+  - text: "Tips: The last ship killed drops a container with the Political Envoy."
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: warp-in
+        trigger:
+          on: other
+          text: Warp-in
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Hauler
+            names:
+              - Caldari Envoy
+            note: Will be destroyed by the Ambushers.
+          - count: "4"
+            class: Destroyer
+            names:
+              - Ambusher
+            note: Renamed Federation Pelekus
+    onWarpIn: It appears the envoy is being pursued by Gallente. This could get messy.

@@ -1,0 +1,249 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: blood-provincial-hq
+kind: complex
+name: Blood Provincial HQ
+dedRating: null
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Blood Provincial HQ
+    url: https://wiki.eveuniversity.org/Blood_Provincial_HQ
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "157586"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: T2 Battleship"
+notes:
+  - text: The first room is largely straightforward; a well-tanked T3 Cruiser or Battleship can do it fairly easily. The second room is much harder to solo due to strong webbing, neuting and fairly high DPS. If your ship does not have the ~1000 DPS required to destroy the Arena Sentinel structure in the second room, recommend bringing a friend for this site.
+  - text: Warping to the site lands you on an acceleration gate that permits up to T2 Battleships.
+  - text: "Escalation: This site can escalate to Fountain of Youth."
+  - text: "Escalation: Escalation start: As the dust settles from the battle, you receive a transmission from someone claiming to be a local vigilante who congratulates you on a job well done. Your computers run a check on his ship ID's and other info they can gather on him in such a short period of time, but come up with nothing. He appears to represent neither a pirate faction nor one of the empires. This person continues to welcome you to the area and offers to point you to some other Blood bases he knows about and have been a menace for the local population. If you want to come and meet him, he will lead the way."
+loot:
+  - item: + Commander and other valuable loot
+  - item: Dark Blood dog tags, faction ammo
+    note: est. 1.5M (wiki) · From Dark Blood Commander
+  - item: Dark Blood faction modules
+    note: From Dark Blood Commander
+  - item: Bhaalgorn BPC
+    note: From Dark Blood Commander
+npcs:
+  Blood Gate Guardian:
+    sdeTypes:
+      - Corpus Pope
+    class: Battleship
+pockets:
+  - name: First Pocket
+    notes:
+      - text: The acceleration gate deeper into the complex is locked until the Gate Security Outpost is destroyed. Alternatively, a Blood Crystal Tag can be used to skip the room (the tag is consumed on use).
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 7-9
+            class: Elite Frigate
+            names:
+              - Elder Corpii Herald
+              - Elder Corpii Upholder
+              - Elder Corpii Follower
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: type list incomplete on the source page
+          - count: 1-2
+            class: Destroyer
+            names:
+              - Corpior Cleric
+              - Corpior Devoter
+              - Corpior Friar
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corpatis Bishop
+              - Corpatis Seer
+              - Corpatis Shade
+          - count: 11-12
+            class: Battleship
+            names:
+              - Corpus Monsignor
+              - Corpus Patriarch
+              - Corpus Pope
+      - id: reinforcements-triggered-by-attacking-the-gate-security-outpost
+        trigger:
+          on: other
+          text: Reinforcements (triggered by attacking the Gate Security Outpost)
+          confidence: inferred
+        spawns:
+          - count: 4-6
+            class: Elite Frigate
+            names:
+              - Elder Corpii Raider
+              - Elder Corpii Reaver
+              - Elder Corpii Diviner
+              - Elder Corpii Engraver
+          - count: 1-2
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Arch Priest
+              - Elder Corpum Dark Priest
+          - count: 6-7
+            class: Battleship
+            names:
+              - Corpus Patriarch
+              - Corpus Pope
+          - count: "1"
+            class: Battleship
+            names:
+              - Blood Gate Guardian
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: Locked until Gate Security Outpost is destroyed
+          - count: "1"
+            class: Structure
+            names:
+              - Gate Security Outpost
+            triggers: Attacking triggers reinforcements
+            note: Destroying unlocks acceleration gate
+          - count: "3"
+            class: Structure
+            names:
+              - Blood Sacrificial Center
+            drop: Trade goods
+  - name: Second Pocket
+    notes:
+      - text: The Siege Beam Laser Sentries deal a total of about 200 DPS of omni damage with a slant towards EM and Thermal damage. They fire every 15-16 seconds.
+      - text: The Arena Sentinel has a very strong -75% web that reaches out to 50 km. It fires Citadel EM torpedoes that deal approximately 1500 EM damage every 18 seconds. It also has a very strong active shield and armor tank that requires at least 1000 DPS to break.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Follower
+              - Elder Corpii Upholder
+              - Elder Corpii Worshipper
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 1-2
+            class: Destroyer
+            names:
+              - Corpior Cleric
+              - Corpior Devoter
+              - Corpior Friar
+          - count: 1-2
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Dark Priest
+              - Elder Corpum Shadow Sage
+          - count: 4-5
+            class: Battleship
+            names:
+              - Corpus Apostle
+              - Corpus Oracle
+          - count: "3"
+            class: Sentry
+            names:
+              - Siege Beam Laser Sentry
+            note: High DPS and tank
+          - count: "1"
+            class: Sentry
+            names:
+              - Arena Sentinel
+            ewar:
+              - kind: web
+            triggers: Triggers reinforcements at different damage intervals
+            note: Tank can withstand about 1000 DPS
+      - id: reinforcements-sentinel-attacked
+        trigger:
+          on: other
+          text: Reinforcements (Sentinel attacked)
+          confidence: inferred
+        spawns:
+          - count: 3-5
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Priest
+              - Elder Corpum Sage
+              - Elder Corpum Revenant
+            ewar:
+              - kind: neut
+              - kind: trackingDisruption
+            note: Elder Corpum Revenant neuts and tracking disrupts
+          - count: 3-5
+            class: Battleship
+            names:
+              - Corpus Patriarch
+              - Corpus Pope
+      - id: reinforcements-sentinel-armor-damage
+        trigger:
+          on: other
+          text: Reinforcements (Sentinel armor damage)
+          confidence: inferred
+        spawns:
+          - count: 5-6
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Arch Templar
+              - Elder Corpum Revenant
+            ewar:
+              - kind: neut
+              - kind: trackingDisruption
+          - count: 4-6
+            class: Battleship
+            names:
+              - Corpus Patriarch
+              - Corpus Pope
+      - id: reinforcements-sentinel-30-structure
+        trigger:
+          on: other
+          text: Reinforcements (Sentinel 30% structure)
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Elite Frigate
+            names:
+              - Elder Corpii Follower
+              - Elder Corpii Worshipper
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 3-4
+            class: Elite Cruiser
+            names:
+              - Elder Corpum Arch Templar
+              - Elder Corpum Revenant
+            ewar:
+              - kind: neut
+              - kind: trackingDisruption
+          - count: 4-6
+            class: Battleship
+            names:
+              - Corpus Patriarch
+              - Corpus Pope
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Dark Blood Cardinal
+              - Dark Blood Patriarch
+            triggers: Destroying may trigger escalation
+            drop: May contain Dark Blood faction modules or a Bhaalgorn BPC
+sde:
+  dungeonIds:
+    - 1663

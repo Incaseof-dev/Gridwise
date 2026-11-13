@@ -1,0 +1,168 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: chemical-yard
+kind: complex
+name: Chemical Yard
+dedRating: null
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Chemical Yard
+    url: https://wiki.eveuniversity.org/Chemical_Yard
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "215044"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Cruiser T1/Faction"
+notes:
+  - text: "Escalation: This site can escalate to Hunting the Drudge Factory."
+  - text: "Escalation: Hunting the Drudge Factory: As you decimate the last remnants of this rogue drone base, your sensors come across some old transportation data; lists of materials, modules, ships and locations. The only reason this is a kind of odd is that rogue drones usually are very self sufficient, making in situ what they need for their colonies. Perhaps this is nothing..."
+loot:
+  - item: + Commander and other valuable loot
+  - item: Drone Parts
+    note: 100% drop rate
+  - item: Rogue Drone chips
+    note: From Sentient Shredder Alvior
+  - item: + Exploration logs
+  - item: Nov 2014
+  - item: Aug 2020
+    note: est. 47.5 Million (wiki)
+  - item: Jan 2021
+    note: est. 47.5 Million (wiki)
+  - item: Feb 2022
+    note: est. 47.5 Million (wiki)
+  - item: Jun 2023
+    note: est. 47.5 Million (wiki)
+  - item: Aug 2023
+    note: est. 47.5 Million (wiki)
+  - item: April 2024
+    note: est. 79.6 Million (wiki)
+  - item: April 2024
+    note: est. 43.9 Million (wiki)
+lootNotes:
+  - text: "Bounty: ± 859k ISK"
+pockets:
+  - name: First Pocket
+    notes:
+      - text: Reinforcements arrive once all cruisers from initial defenders are destroyed.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "7"
+            class: Frigate
+            names:
+              - Raider
+              - Sunder Alvi
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Strain Infester Alvi
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Cruiser
+            names:
+              - Drone Guard
+            triggers: Triggers reinforcements
+            note: Renamed Wrecker Alvum
+      - id: reinforcements
+        trigger:
+          on: other
+          text: Reinforcements
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Strain Hunter
+              - Strain Silverfish Alvi
+  - name: Second Pocket
+    notes:
+      - text: ----
+      - text: The group nearest to warpin aggresses as you land. Destroying this group triggers commander wave. Destroying the reinforcement wave from group 3 is most likely second escalation trigger.
+      - text: Each group aggresses when approached or attacked. Groups 3 and 4 are far enough that they will not aggress unless specifically approached and can be ignored. Group 4 spawns differently sometimes, it may have 2 cruisers and 2 battlecruisers or 3 cruisers.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Drone Harvester
+            group: Group 1 nearest to warpin
+            triggers: Destroying this group triggers commander wave
+          - count: "5"
+            class: Frigate
+            names:
+              - Digger Drone
+            group: Group 2
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Strain Infester Alvi
+            group: Group 3
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            triggers: Attacking this group triggers reinforcements
+          - count: "2"
+            class: Cruiser
+            names:
+              - Bomber Alvum
+            group: Group 4 (~60 km off)
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Defeater Alvatis
+            group: Group 4 (~60 km off)
+      - id: commander-wave
+        trigger:
+          on: other
+          text: Commander wave
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Silverfish
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Destroyer
+            names:
+              - Marauder
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Commander Destroyer
+            names:
+              - Sentient Predator
+              - Sentient Shredder Alvior
+            drop: Drops possibly Rogue Drone chips
+      - id: reinforcement-wave
+        trigger:
+          on: other
+          text: Reinforcement wave
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Silverfish
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Strain Barracuda
+            note: type list incomplete on the source page
+sde:
+  dungeonIds:
+    - 1266

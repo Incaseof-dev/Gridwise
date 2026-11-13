@@ -1,0 +1,46 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: preliminary-strike
+kind: mission
+name: Preliminary Strike
+level: 2
+enemyFaction: Mercenaries
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Preliminary Strike
+    url: https://wiki.eveuniversity.org/Preliminary_Strike
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "202903"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Eliminate the UDI reinforcements, then report back to your agent.
+notes:
+  - text: "Suggested ships: Cruiser, HAC"
+  - text: Structures do not drop loot.
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: initial-group-45-60km-no-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group, 45-60km (no aggro)
+        spawns:
+          - count: "10"
+            class: Frigate
+            names:
+              - UDI Junior Mercenary
+            note: Renamed Mercenary Rookie
+          - count: "3"
+            class: Frigate
+            names:
+              - UDI Mercenary
+            note: Renamed Mercenary Fighter
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - UDI Elite Mercenary
+            note: Renamed Mercenary Elite Fighter

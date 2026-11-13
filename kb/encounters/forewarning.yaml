@@ -1,0 +1,40 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: forewarning
+kind: mission
+name: Forewarning
+level: 4
+enemyFaction: null
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Forewarning
+    url: https://wiki.eveuniversity.org/Forewarning
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231261"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Deliver Encoded Message
+notes:
+  - text: "Suggested ships: Travel fit"
+  - text: "Kaalakiota unveils Black Rise survey program, Scope article, March 4th, YC 111: According to Niteloho Koirolen, Kaalakiota Corporation chief spokesperson, the program will be conducted by both the corporation's intelligence division and the Home Guard, the goal being the development of a comprehensive resource database of the Black Rise region. The program will survey the planets and moons across 49 systems in 6 constellations. \"Today's announcement reinforces Kaalakiota's commitment to the development of the Black Rise region,\" said Koirolen. \"Although the State had previously done an outstanding job in Black Rise, there is still a lot to discover. We are sure that our program will ultimately contribute to the welfare of the whole State.\" The Black Rise region borders established Caldari and Gallente space and was previously deemed impenetrable, despite many efforts to map it. However, Caldari forces gained access to the region and secretly colonized it. Although it is clear that operations in Black Rise persisted for a longer time, experts claim that the region is still largely unexplored."
+  - text: Ungated deadspace pocket within 7 jumps of Astoh. Can be either Highsec or Lowsec. Drop the Encoded Message into the Conference Center.
+pockets:
+  - name: Warp-in
+    notes:
+      - text: "Federation Navy Holding Facility: Despite the outward appearance, this facility is clearly under the control of friendly forces. Long-range scans of the fleet ahead reveal a sea of Ishukone Watch identifier tags."
+      - text: "Agent Conversation (Hyasyoda Path): Hello again, pilot. It's good to see you doing so well. You've come far, very far, and we're indebted to you for everything you've done. We've been watching you gather the evidence that you've come here to deliver; you shouldn't worry, it has all been properly discredited and the appropriate co-verification documents have also been misplaced. Thanks to you, we've been able to anticipate Nugoeihuvi's moves and ensure that any hard data, anything truly conclusive, was relocated to a more secure location or isolated from collaborating evidence. Our mission to rescue more prisoners remains intact, but only barely. We need to act conclusively now and settle this matter before Nugoeihuvi think up some other scheme to undo us. I have just the assignment for you that will make this happen. I'll be honest and straightforward with you, as you've more than earned it. We plan to hold Katsen Isha's family until he can learn to hold his tongue. It is – ultimately – the only reasonable recourse left to us after being hounded like this. One family threatened so that many, many more might simply live. I think you know what must be done. I look forward to speaking with you shortly."
+      - text: "Agent Conversation: Greetings pilot. Thank you for making the delivery, pointless as the task may seem. You'll have to forgive the bluntness, but I've been asked to request that you ignore any and all orders about how to proceed in this matter unless they come directly from Ishukone itself – the corporation running these operations, let's not forget. It has come to our attention that other corporations aligned with our interests may be attempting to pursue other means to resolve this current situation. We politely request that you ignore such ideas. Though well-intentioned, such actions will only serve to further destabilize an already volatile situation. Agent Ekimo Areshi is at our headquarters in Malkalen, ready to brief you about bringing this matter to an appropriate end. You should report to her at your first convenience. First though, you should return back to Sinas, before he starts wondering why it took so long to deliver a simple note. You may be all but done with that duo for now, but there's no reason to raise their suspicion until things have been finally settled."
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Container
+            names:
+              - Conference Center

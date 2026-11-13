@@ -1,0 +1,70 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: unauthorized-military-presence-blood-raiders-level-2
+kind: mission
+name: Unauthorized Military Presence
+level: 2
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Unauthorized Military Presence (Blood Raiders) (Level 2)
+    url: https://wiki.eveuniversity.org/Unauthorized_Military_Presence_(Blood_Raiders)_(Level_2)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "230474"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Intercept the personnel transport ship, destroy its guards, and bring the militants to your agent.
+ewar:
+  - kind: trackingDisruption
+notes:
+  - text: "Suggested ships: Destroyer, Cruiser"
+  - text: "Blitz: Destroy group 3, loot militants from Personnel Transport wreck."
+  - text: No structures drop loot.
+pockets:
+  - name: Single pocket
+    waves:
+      - id: forces-on-grid
+        trigger:
+          on: other
+          text: Forces on grid
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Corpii Herald
+              - Corpii Upholder
+              - Corpii Seeker
+              - Corpii Collector
+            group: Group 1, 20-30km
+            ewar:
+              - kind: trackingDisruption
+          - count: "6"
+            class: Frigate
+            names:
+              - Corpii Herald
+              - Corpii Upholder
+              - Corpii Seeker
+              - Corpii Collector
+            group: Group 2, 40km
+            ewar:
+              - kind: trackingDisruption
+          - count: "6"
+            class: Frigate
+            names:
+              - Corpii Seeker
+              - Corpii Collector
+              - Corpii Raider
+              - Corpii Diviner
+            group: Group 3, 55km
+            ewar:
+              - kind: trackingDisruption
+          - count: "1"
+            class: Cruiser
+            names:
+              - Personnel Transport
+            group: Group 3, 55km

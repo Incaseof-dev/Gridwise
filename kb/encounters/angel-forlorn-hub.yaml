@@ -1,0 +1,144 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: angel-forlorn-hub
+kind: anomaly
+name: Angel Forlorn Hub
+dedRating: null
+anomalyClass: 8
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Angel Forlorn Hub
+    url: https://wiki.eveuniversity.org/Angel_Forlorn_Hub
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "226717"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Rating: Class 8 Level 4"
+  - text: Single ungated normal space pocket. The damage can be overwhelming if you warp to the site at zero range. The battleships have 80 km range.
+  - text: "Escalation: Angel Domination Fleet Staging Point: Systems have intercepted and decrypted an encoded DED transmission suggesting the presence of another Angel Cartel fleet staging area nearby. The location has been uploaded to the Expedition panel in your NeoCom's Journal."
+  - text: "Escalation: This site can escalate to Angel Domination Fleet Staging Point~ and also Angel Shielded Starbase and Angel Occupied Mine(as of March 2025)"
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-defenders-28-42-km
+        trigger:
+          on: warpIn
+          text: Initial Defenders (28-42 km)
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Arch Gistii Hijacker
+              - Arch Gistii Outlaw
+              - Arch Gistii Rogue
+              - Arch Gistii Thug
+            ewar:
+              - kind: warpDisruption
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Centurion
+              - Arch Gistum Phalanx
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+              - Gistatis Tribunus
+            triggers: Last ship killed of this class.
+          - count: 3- 4
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Seraphim
+      - id: 1st-reinforcement-spawn
+        trigger:
+          on: other
+          text: 1st Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Centurion
+              - Arch Gistum Phalanx
+            triggers: Last ship killed of this class.
+          - count: "7"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+              - Gistatis Legionnaire
+              - Gistatis Primus
+              - Gistatis Tribunus
+          - count: 3- 4
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Seraphim
+      - id: 2nd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 2nd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Hunter
+              - Arch Gistii Impaler
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+              - Gistatis Praefectus
+              - Gistatis Tribuni
+              - Gistatis Tribunus
+          - count: 7-8
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Nephilim
+              - Gist Saint
+              - Gist Seraphim
+              - Gist Warlord
+            ewar:
+              - kind: targetPaint
+            triggers: Nephilim triggers last spawn.
+            note: Saint and Nephilim uses Target Painter.
+      - id: 3rd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 3rd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Outlaw
+              - Arch Gistii Thug
+            ewar:
+              - kind: web
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Centurion
+              - Arch Gistum Phalanx
+          - count: "6"
+            class: Battleship
+            names:
+              - Gist Seraphim
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Domination War General
+            group: Possible Rare Reinforcement Spawn
+            drop: Faction Module
+            note: encounter on Feb 05 2022
+    onWarpIn: Operating from the heart of the Curse region, the Angel Cartel is today the largest and best organized of the space-based criminal factions. The Angels are divided into several groups, each with a very special function; it is commanded by the Dominations. In the century they've been lurking in deep space, they have stolen, plundered, or sabotaged countless number of ships and kidnapped, assaulted, or murdered thousands of people. The Angels recruit members from all the races, and are thus not bound to any one zone of operation; instead, their reach spans almost the entire known universe. Many believe that the Angels got their power by uncovering Jovian technologies hidden in their ancient homeworlds, now infested by the Angel Cartel.
+sde:
+  dungeonIds:
+    - 3452

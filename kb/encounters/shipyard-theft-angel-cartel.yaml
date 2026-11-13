@@ -1,0 +1,143 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: shipyard-theft-angel-cartel
+kind: mission
+name: Shipyard Theft
+level: 4
+enemyFaction: Serpentis & Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Shipyard Theft (Angel Cartel)
+    url: https://wiki.eveuniversity.org/Shipyard_Theft_(Angel_Cartel)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "228032"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: "Acquire: 5x Small Sealed Cargo Containers and return them to your agent (50.0m3)"
+ewar:
+  - kind: sensorDamp
+  - kind: web
+notes:
+  - text: "Web/warp disruption: Viper/Webifier"
+  - text: Gist Cherubim does Em/ damage
+  - text: No Hostiles at initial gate.
+pockets:
+  - name: 1st pocket
+    notes:
+      - text: All spawns are quite close and vaguely in a semi-circle. Multiple spawns aggro if you try to use drones. (Can use drones if you pull the groups away from the circle)
+      - text: Acceleration Gate is locked until all ships are eliminated.
+      - text: Auto-aggro from Group 1 - attacking Frigates will auto aggro Group 2
+      - text: Attacking Group 3 will get aggro from Group 4
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Angel Viper
+              - Angel Webifier
+            group: Group 1 - 15km - (auto-aggro)
+            ewar:
+              - kind: web
+          - count: "8"
+            class: Battlecruiser
+            names:
+              - Gistatis Praefectus
+              - Gistatis Tribuni
+            group: Group 1 - 15km - (auto-aggro)
+          - count: "4"
+            class: Destroyer
+            names:
+              - Gistior Defiler
+            group: Group 2 - 24km (may also have proximity aggro)
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Gistatis Primus
+            group: Group 2 - 24km (may also have proximity aggro)
+          - count: "2"
+            class: Battleship
+            names:
+              - Gist War General
+              - Gist Warlord
+            group: Group 2 - 24km (may also have proximity aggro)
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Gistatis Legionaire
+              - Gistatis Primus
+            group: Group 3 - 30km)
+          - count: "2"
+            class: Battleship
+            names:
+              - Gist Malakim
+              - Gist Nephilim
+            group: Group 3 - 30km)
+          - count: "2"
+            class: Battleship
+            names:
+              - Gist Seraphim
+              - Gist Cherubim
+            group: Group 4 - 40km)
+          - count: "7"
+            class: Cruiser
+            names:
+              - Gistum Centurion
+              - Gistum Phalanx
+            group: Group 5 - 45km)
+          - count: "2"
+            class: Battleship
+            names:
+              - Gist Nephilim
+              - Gist Saint
+            group: Group 5 - 45km)
+  - name: 2nd pocket
+    notes:
+      - text: (Note:12/7/25 - Storage Silo drops 50x High Tech Small Arms + UUA/B/C Nexus Chip. 0.3% Angel Cartel faction standing hit on destruction.)
+      - text: Last ship killed will drop the mission objective item (50.0m3)
+      - text: (Silo is a Deadspace Overseer's Structure, turn on Large Collidable Structure on Overview to see others)
+      - text: Some have reported no drone aggro, need update on this. Drones can get aggroed by group 2 (20 km away). To avoid this, turn to the right and AB away from the group. Usually a 30+km distance will do. You can use medium drones to pop the webbing frigates but watch drones carefully!
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Destroyer
+            names:
+              - Gistior Haunter
+              - Gistior Defiler
+            group: Single group (Auto aggro) - 17km)
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Gistatis Praefectus
+              - Gistatis Tribuni
+            group: Single group (Auto aggro) - 17km)
+          - count: "2"
+            class: Battleship
+            names:
+              - Gist Throne
+              - Gist Cherubim
+            group: Single group (Auto aggro) - 17km)
+          - count: "1"
+            class: Structure
+            names:
+              - Storage Silo
+            group: Single group (Auto aggro) - 17km)
+            drop: 50x High-Tech Manufacturing Tools, Minmatar UUA/UUB/UUC Nexus Chip (~125 mil ISK total)
+          - count: "4"
+            class: Structure
+            names:
+              - Habitation Module
+            group: Single group (Auto aggro) - 17km)
+            drop: Trade Goods
+            note: only 1 drops anything

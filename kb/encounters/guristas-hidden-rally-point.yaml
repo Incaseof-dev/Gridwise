@@ -1,0 +1,54 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: guristas-hidden-rally-point
+kind: anomaly
+name: Guristas Hidden Rally Point
+dedRating: null
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Guristas Hidden Rally Point
+    url: https://wiki.eveuniversity.org/Guristas_Hidden_Rally_Point
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "230627"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: 'When you arrive at the site, you receive the following message:: "Formed by two former members of the Caldari Navy who go by the names "Fatal" and "the Rabbit," the Guristas are a constant thorn in the side of the Caldari State. Traditional pirates in the sense that their operation is not based around some creed or ideology, the Guristas are motivated by plain and simple greed. They have bases close to Caldari space, and from them they embark on daring raids, often into the State itself. Though the Guristas are considered more honorable than many of their piratical counterparts, they are still extremely dangerous and not to be trifled with."'
+  - text: "Escalation: This site can escalate to Dread Guristas Fleet Staging Point."
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: wave-1
+        trigger:
+          on: warpIn
+          text: Wave 1
+        spawns:
+          - count: "5"
+            class: Destroyer
+            names:
+              - Pithior Guerilla
+          - count: "6"
+            class: Cruiser
+            names:
+              - Pithum Inferno
+              - Pithum Mortifier
+            triggers: triggers the next wave
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Pithatis Assassin
+              - Pithatis Assaulter
+              - Pithatis Death Dealer
+              - Pithatis Enforcer
+          - count: "4"
+            class: Battleship
+            names:
+              - Pith Massacrer
+              - Pith Usurper
+sde:
+  dungeonIds:
+    - 3513

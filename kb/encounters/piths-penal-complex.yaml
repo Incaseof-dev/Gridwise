@@ -1,0 +1,194 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: piths-penal-complex
+kind: complex
+name: Pith's Penal Complex
+dedRating: 8
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Pith's Penal Complex
+    url: https://wiki.eveuniversity.org/Pith's_Penal_Complex
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "222287"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: T2 Battleship"
+notes:
+  - text: Pith's Penal Complex is a DED rated complex found in null security space. This site can be found by scanning cosmic signatures.
+  - text: The acceleration gates in this site let all subcapital ships in.
+  - text: The First Gate Required CPU Management 5
+loot:
+  - item: 21st Tier Overseer's Effects
+    from: Screaming Dewak Humfry
+    note: est. 80M ISK (wiki) · 100% drop rate
+  - item: pith B-Type module
+    from: Screaming Dewak Humfry
+  - item: Rattlesnake BPC
+    from: Screaming Dewak Humfry
+pockets:
+  - name: 1st pocket
+    notes:
+      - text: Enemies have special names. "Assistant Warden" battleships have ECM. Rats are simply renamed; they don't drop anything atypical from the usual loot.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 4-6
+            class: Destroyer
+            names:
+              - Prison Beacon Patrol
+          - count: 4-6
+            class: Destroyer
+            names:
+              - Prisoner Freighter
+          - count: "10"
+            class: Battlecruiser
+            names:
+              - Reserve Task Unit
+          - count: 4-5
+            class: Battleship
+            names:
+              - Prisoner Pickup Team
+          - count: 2-3
+            class: Battleship
+            names:
+              - Dewak's First Officer
+          - count: 4-5
+            class: Battleship
+            names:
+              - Assistant Warden
+            ewar:
+              - kind: ecm
+          - count: "4"
+            class: Sentry
+            names:
+              - Guristas Heavy Missile Battery
+          - count: "1"
+            class: Sentry
+            names:
+              - Guristas Stasis Tower
+            ewar:
+              - kind: web
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Dewak's First Officer's HQ
+            drop: Dewak's level 1 decoder, Dread Guristas Module possible
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: Locked until all ships are destroyed
+    onWarpIn: "Pith Penal Complexes are run by the retired Amarr captain Dewak Humfry, a fiercely disciplined tactician often referred to as 'Screaming' Dewak by his prisoners. After his service in the Imperial Navy Dewak decided to go into the prison business in the private sector, and business is clearly booming. DED Threat Assessment: Perilous (8 of 10)"
+  - name: 2nd pocket
+    notes:
+      - text: The ships are spread out in 2 groups.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Battleship
+            names:
+              - Beacon Watch
+            group: Group 1 (Near warp-in, auto-aggro)
+          - count: "4"
+            class: Sentry
+            names:
+              - Guristas Heavy Missile Battery
+            group: Group 2 (50-110 km)
+          - count: "2"
+            class: Destroyer
+            names:
+              - Pithior Anarchist
+              - Pithior Nihilist
+            group: Group 2 (50-110 km)
+          - count: "3"
+            class: Destroyer
+            names:
+              - Perimeter Watch Assistant
+            group: Group 2 (50-110 km)
+          - count: "7"
+            class: Destroyer
+            names:
+              - Prisoner Freighter
+            group: Group 2 (50-110 km)
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Pithatis Enforcer
+              - Pithatis Assaulter
+            group: Group 2 (50-110 km)
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Perimeter Watch
+            group: Group 2 (50-110 km)
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Reserve Task Unit
+            group: Group 2 (50-110 km)
+          - count: "2"
+            class: Battleship
+            names:
+              - Perimeter Watch Major
+            group: Group 2 (50-110 km)
+          - count: "5"
+            class: Battleship
+            names:
+              - Prisoner Pickup Team
+            group: Group 2 (50-110 km)
+          - count: "2"
+            class: Battleship
+            names:
+              - Dewak's Dot Warden
+            group: Group 2 (50-110 km)
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Red Container
+            names:
+              - Dewak's Dot
+            drop: 3x Dewak's level 2 decoder
+            note: Locked
+          - count: "1"
+            class: Structure
+            names:
+              - Deepspace Monitor Base
+            drop: Passengers
+    onWarpIn: This corridor is used to guard prisoners that are deemed incapable of breaking out by themself (and thus safe enough to contain in low-security facilities) but are "connected" well enough to demand a high security deadspace pocket. Prisoners, brought here for rehabilitation, have their equipment confiscated by the authorities. Then it is "taxed" heavily to pay upkeep costs and it often leaves the prisoners without any belongings. Dewak keeps these taxes under lock and key, guarded by his number-one warden.
+  - name: 3rd pocket
+    notes:
+      - text: "Blitz: Kill Screaming Dewak Humfry, bookmark wreck, warp off and wait for site to despawn, warp back and loot."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Overseer Battleship
+            names:
+              - Screaming Dewak Humfry
+            drop: 21st Tier Overseer's Personal Effects, Pith B-Type modules, Rattlesnake BPC
+sde:
+  dungeonIds:
+    - 2262

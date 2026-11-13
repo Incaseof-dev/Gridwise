@@ -1,0 +1,52 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: a-railgun-charge-is-worth-a-thousand-words
+kind: mission
+name: A Railgun Charge is Worth a Thousand Words
+level: 2
+enemyFaction: Amarr Empire
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – A Railgun Charge is Worth a Thousand Words
+    url: https://wiki.eveuniversity.org/A_Railgun_Charge_is_Worth_a_Thousand_Words
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191539"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the Pleasure Yacht and all ships defending it.
+ewar:
+  - kind: trackingDisruption
+notes:
+  - text: "Suggested ships: Destroyer"
+  - text: No hostiles at initial gate.
+  - text: -0.24 Standing with Amarr Empire for destroying the Pleasure Yacht
+pockets:
+  - name: 1st Pocket
+    waves:
+      - id: initial-group-60km
+        trigger:
+          on: warpIn
+          text: Initial Group, 60km
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Frigate
+          - count: "1"
+            class: Cruiser
+            names:
+              - Cruiser
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Pleasure Yacht
+            triggers: Mission completed on destruction

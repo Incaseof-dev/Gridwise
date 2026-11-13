@@ -1,0 +1,22 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: rat-in-a-corner
+kind: mission
+name: Rat in a Corner
+level: 4
+enemyFaction: null
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Rat in a Corner
+    url: https://wiki.eveuniversity.org/Rat_in_a_Corner
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "206482"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Report to Ascain Adeset
+notes:
+  - text: Report to Ascain Adeset two jumps away in Mesybier.

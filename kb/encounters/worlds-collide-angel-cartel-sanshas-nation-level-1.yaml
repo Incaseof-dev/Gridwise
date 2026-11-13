@@ -1,0 +1,208 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: worlds-collide-angel-cartel-sanshas-nation-level-1
+kind: mission
+name: Worlds Collide
+level: 1
+enemyFaction: Angel Cartel & Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Worlds Collide (Angel Cartel & Sansha's Nation) (Level 1)
+    url: https://wiki.eveuniversity.org/Worlds_Collide_(Angel_Cartel_%26_Sansha's_Nation)_(Level_1)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223358"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Rescue the stranded crewmembers from the damaged ship in the third room of this deadspace complex.
+restrictions:
+  - text: "Ship size limit: Destroyer or smaller"
+ewar:
+  - kind: trackingDisruption
+notes:
+  - text: "Suggested ships: Frigate"
+  - text: The Research Outpost can be reached trough either the Angel or Sansha base. No need to do them both.
+  - text: 'Blitz: Ignore the rats, fly to "Research Outpost" gate and warp.'
+  - text: 'Blitz: Ignore the rats, fly to "Research Outpost" gate and warp.'
+  - text: The Damaged Heron contains the mission objective.
+  - text: Initial forces need to be destroyed before the Damaged Heron can be accessed.
+  - text: Unclear as to where these notes belong to.
+  - text: Reinforcement groups will spawn after the Initial Group is destroyed and you approach the gate.
+  - text: The Initial Group may respawn, up to 2 more times, after destruction of the Reinforcement group.
+pockets:
+  - name: Warp-In (Warzone)
+    notes:
+      - text: "Blitz: Ignore the rats, fly to gate of your choice and warp."
+      - text: Both gates are about 35km away from the warp in point and a have a 90 degree angle of separation. The outpost and watchtower are about 130km away.
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Acceleration Gate
+            names:
+              - To Angel Base
+          - count: "?"
+            class: Structure
+            names:
+              - Angel Asteroid Outpost
+            note: From warp in behind the Angel gate
+          - count: "?"
+            class: Acceleration Gate
+            names:
+              - To Sansha's Base
+          - count: "?"
+            class: Structure
+            names:
+              - Sansha Watchtower
+            note: From warp in behind the Sansha gate
+      - id: angel-forces-130km-around-outpost-auto-aggro
+        trigger:
+          on: other
+          text: Angel Forces, 130km around outpost(auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "8"
+            class: Frigate
+            names:
+              - Gistii Hijacker
+              - Gistii Rogue
+          - count: "1"
+            class: Destroyer
+            names:
+              - Gistior Defacer
+              - Gistior Haunter
+      - id: sansha-forces-130km-around-watchtower
+        trigger:
+          on: other
+          text: Sansha Forces, 130km around watchtower
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Centii Slavehunter
+              - Centii Savage
+            ewar:
+              - kind: trackingDisruption
+  - name: Angel Base
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Acceleration Gate
+            names:
+              - To The Research Outpost
+      - id: initial-forces
+        trigger:
+          on: warpIn
+          text: Initial forces
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Gistii Ambusher
+              - Gistii Raider
+              - Gistii Hunter
+            group: Group A, 15km (auto-aggro)
+          - count: 0-1
+            class: Commander Frigate
+            names:
+              - Angel Supervisor
+            group: Group B
+            note: Renamed Gistii Domination Rogue
+      - id: reinforcement-1
+        trigger:
+          on: other
+          text: Reinforcement 1
+          confidence: inferred
+        spawns:
+          - count: 5-6
+            class: Frigate
+            names:
+              - Gistii Hijacker
+              - Gistii Rogue
+      - id: reinforcement-2
+        trigger:
+          on: other
+          text: Reinforcement 2
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Gistii Raider
+  - name: Sansha Base
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Acceleration Gate
+            names:
+              - To The Research Outpost
+      - id: initial-group-10km-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group, 10km (auto-aggro)
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Centii Enslaver
+              - Centii Plague
+          - count: 0-1
+            class: Commander Frigate
+            names:
+              - Sansha Supervisor
+            note: Renamed True Sansha’s Minion
+      - id: reinforcement-50km
+        trigger:
+          on: other
+          text: Reinforcement, 50km
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Centii Scavenger
+              - Centii Ravener
+            note: type list incomplete on the source page
+  - name: Research Outpost
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Acceleration Gate
+            names:
+              - To The Warzone
+          - count: "?"
+            class: Container
+            names:
+              - Damaged Heron
+            drop: Ship's Crew (objective)
+      - id: initial-group-4-11km-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group, 4-11km (auto-aggro)
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Gistii Hijacker
+              - Gistii Rogue
+              - Gistii Outlaw
+              - Gistii Thug

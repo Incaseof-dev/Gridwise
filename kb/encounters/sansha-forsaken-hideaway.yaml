@@ -1,0 +1,115 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: sansha-forsaken-hideaway
+kind: anomaly
+name: Sansha Forsaken Hideaway
+dedRating: null
+anomalyClass: 1
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Sansha Forsaken Hideaway
+    url: https://wiki.eveuniversity.org/Sansha_Forsaken_Hideaway
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225100"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Rating: Class 1 Level 3"
+  - text: Sansha Forsaken Hideaway is an unrated combat site belonging to the Sansha's Nation pirate faction. It can be found via exploration as a cosmic anomaly within systems owned by the Amarr Empire and Ammatar Mandate. As an ungated complex, the limitations as to which ships can complete this site are tied to the security rating of the system where the anomaly spawns (T2 Battleships for high-security systems, and up to Titans in low-security and null-security systems). Completing this complex may award the player with valuable True Sansha faction modules and ammunition.
+  - text: "This combat site consists of a single ungated pocket of space containing a variety of Frigate-sized enemy ships. Three variations of this combat anomaly exist: Sansha Hideaway, Sansha Hidden Hideaway and Sansha Forlorn Hideaway."
+  - text: Single ungated pocket with multiple waves of rats. Killing the last ship of each wave triggers the next.
+  - text: "Escalation: This site does not appear to escalate."
+loot:
+  - item: True Sansha Copper Tag
+    from: True Sansha's Ship
+    note: est. 10k ISK (wiki) · 100% drop rate
+  - item: (True) Sansha Ammo
+    from: True Sansha's Ship
+    note: est. 6k - 58M ISK (wiki) · 100% drop rate
+  - item: True Sansha module
+    from: True Sansha's Ship
+    note: est. 10k - 190M ISK (wiki) · rare
+  - item: Mid-grade Nirvana Implant BPC
+    from: True Sansha's Ship
+    note: est. 15M - 50M ISK (wiki) · rare
+lootNotes:
+  - text: 350.000 ISK
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-defenders-last-kill-trigger
+        trigger:
+          on: warpIn
+          text: Initial defenders (last kill Trigger)
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Centii Plague
+              - Centii Butcher
+          - count: "2"
+            class: Destroyer
+            names:
+              - Centior Monster
+              - Centior Horror
+      - id: wave-2-last-kill-trigger
+        trigger:
+          on: other
+          text: Wave 2 (last kill Trigger)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Plague
+              - Centii Loyal Enslaver
+          - count: 2-4
+            class: Destroyer
+            names:
+              - Centior Horror
+      - id: weave-3-last-kill-trigger
+        trigger:
+          on: other
+          text: Weave 3 (last kill Trigger)
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Centii Manslayer
+              - Centii Enslaver
+          - count: "4"
+            class: Destroyer
+            names:
+              - Centior Monster
+              - Centior Horror
+      - id: wave-4
+        trigger:
+          on: other
+          text: Wave 4
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Centii Loyal Enslaver
+              - Centii Loyal Plague
+          - count: 3-4
+            class: Destroyer
+            names:
+              - Centior Horror
+              - Centior Monster
+          - count: 0-1
+            class: Commander Frigate
+            names:
+              - True Sansha's Ship
+            ewar:
+              - kind: trackingDisruption
+            drop: Drops faction ammo and tags. May drop faction modules.
+sde:
+  dungeonIds:
+    - 3424

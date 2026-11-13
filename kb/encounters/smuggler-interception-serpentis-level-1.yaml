@@ -1,0 +1,72 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: smuggler-interception-serpentis-level-1
+kind: mission
+name: Smuggler Interception
+level: 1
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Smuggler Interception (Serpentis) (Level 1)
+    url: https://wiki.eveuniversity.org/Smuggler_Interception_(Serpentis)_(Level_1)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231155"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy convoy and return with cargo to agent. 10 x Militants (20)
+notes:
+  - text: Single pocket with gate.
+  - text: "Walkthrough: You arrive approx 25km from a small group, including two Personnel Transports. No auto aggro."
+  - text: "Walkthrough: Group 2 and 3 spawn upon approaching the Personnel Transports."
+  - text: "Walkthrough: Destroy the convoy and loot at least one of the Personnel Transports to obtain the Militants, then return to your agent."
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-group-25-30km-no-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial group (25-30km, no auto aggro)
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corelior Trooper
+              - Corelior Soldier
+              - Corelior Infantry
+          - count: "2"
+            class: Cruiser
+            names:
+              - Serpentis Personnel Transport
+            drop: 10 x Militants
+      - id: first-reinforcements-15km-auto-aggro
+        trigger:
+          on: other
+          text: First reinforcements (15km, auto aggro)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Coreli Spy
+          - count: "2"
+            class: Frigate
+            names:
+              - Coreli Agent
+      - id: second-reinforcements-15km-auto-aggro
+        trigger:
+          on: other
+          text: Second reinforcements (15km, auto aggro)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Coreli Spy
+          - count: "2"
+            class: Frigate
+            names:
+              - Coreli Agent

@@ -1,0 +1,170 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: true-power-hq
+kind: escalation
+name: True Power HQ
+dedRating: null
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – True Power HQ
+    url: https://wiki.eveuniversity.org/True_Power_HQ
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "213508"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "NOTE: This is an initial description - feel free to edit and correct."
+pockets:
+  - name: True Power HQ Part 1
+    notes:
+      - text: After killing the True Sansha BS or Isiura Tuurento, the escalation to True Power HQ Part 2 may trigger.
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Structure
+            names:
+              - Ripped Structure
+            triggers: Approaching triggers Ripped Structure wave
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Sansha Miner
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Centatis Behemoth
+              - Centatis Devil
+          - count: "2"
+            class: Battleship
+            names:
+              - Centus Plague Lord
+              - Centus Beast Lord
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Centatis ??
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Centum Loyal Juggernaut
+              - Centum Loyal Slaughterer
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "8"
+            class: Frigate
+            names:
+              - Centii Loyal Manslayer
+              - Centii Loyal Butcher
+              - Centii Loyal Savage
+          - count: 0-1
+            class: Battleship
+            names:
+              - True Sansha
+            triggers: Possible escalation trigger
+            drop: True Sansha Battleship Modules
+      - id: ripped-structure-wave
+        trigger:
+          on: other
+          text: Ripped Structure Wave
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Battleship
+            names:
+              - Isiura Tuurento
+            triggers: Possible escalation trigger
+          - count: "2"
+            class: Sentry
+            names:
+              - Cruise Missile Battery
+  - name: True Power HQ Part 2
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "?"
+            class: Structure
+            names:
+              - Major Assembly Array
+            triggers: Attacking spawns Major Assembly Array wave
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Various frigates
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Various Elite frigates
+          - count: "3"
+            class: Cruiser
+            names:
+              - Various cruisers
+          - count: "3"
+            class: Battleship
+            names:
+              - Various battleships
+          - count: "1"
+            class: Sentry
+            names:
+              - Sansha Sentry Gun
+          - count: "3"
+            class: Sentry
+            names:
+              - Sansha Cruise Missile Battery
+      - id: major-assembly-array-wave
+        trigger:
+          on: other
+          text: Major Assembly Array Wave
+          confidence: inferred
+        spawns:
+          - count: 4-5
+            class: Cruiser
+            names:
+              - Various cruisers
+          - count: "1"
+            class: Storyline Mission Cruiser
+            names:
+              - Suard Fish
+            drop: Centus C-Type Modules, True Sansha Battleship Modules, Nightmare BPC
+          - count: 4-5
+            class: Battlecruiser
+            names:
+              - Centum Loyal Juggernaut
+              - Centum Loyal Slaughterer
+          - count: "3"
+            class: Battleship
+            names:
+              - Various battleships
+sde:
+  dungeonIds:
+    - 1876

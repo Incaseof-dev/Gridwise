@@ -1,0 +1,110 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: guristas-hidden-hideaway
+kind: anomaly
+name: Guristas Hidden Hideaway
+dedRating: null
+anomalyClass: 1
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Guristas Hidden Hideaway
+    url: https://wiki.eveuniversity.org/Guristas_Hidden_Hideaway
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225131"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Escalation: This site does not appear to escalate."
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "1"
+            class: Sentry
+            names:
+              - Guristas Sentry Gun
+            note: Trigger for Extra Spawn
+          - count: "6"
+            class: Frigate
+            names:
+              - Pithi Infiltrator
+              - Pithi Invader
+            note: "Trigger for Spawn #2"
+          - count: "2"
+            class: Cruiser
+            names:
+              - Pithum Ascriber
+              - Pithum Silencer
+      - id: extra-spawn
+        trigger:
+          on: other
+          text: Extra Spawn
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Destroyer
+            names:
+              - Pithior Guerilla
+              - Pithior Renegade
+      - id: spawn-2
+        trigger:
+          on: other
+          text: "Spawn #2"
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Pithi Arrogator
+              - Pithi Imputor
+          - count: 1-2
+            class: Cruiser
+            names:
+              - Pithum Ascriber
+              - Pithum Silencer
+            note: "Trigger for Spawn #3"
+      - id: spawn-3
+        trigger:
+          on: other
+          text: "Spawn #3"
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Pithi Arrogator
+              - Pithi Imputor
+          - count: 1-3
+            class: Destroyer
+            names:
+              - Pithior Guerilla
+              - Pithior Renegade
+            note: "Trigger for Spawn #4"
+      - id: spawn-4
+        trigger:
+          on: other
+          text: "Spawn #4"
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Pithi Arrogator
+              - Pithi Imputor
+          - count: 1-2
+            class: Cruiser
+            names:
+              - Pithum Ascriber
+              - Pithum Silencer
+    onWarpIn: Formed by two former members of the Caldari Navy who go by the names "Fatal" and "the Rabbit," the Guristas are a constant thorn in the side of the Caldari State. Traditional pirates in the sense that their operation is not based around some creed or ideology, the Guristas are motivated by plain and simple greed. They have bases close to Caldari space, and from them they embark on daring raids, often into the State itself. Though the Guristas are considered more honorable than many of their piratical counterparts, they are still extremely dangerous and not to be trifled with.
+sde:
+  dungeonIds:
+    - 3433

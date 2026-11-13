@@ -1,0 +1,284 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: mare-sargassum
+kind: escalation
+name: Mare Sargassum
+dedRating: null
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Mare Sargassum
+    url: https://wiki.eveuniversity.org/Mare_Sargassum
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "219564"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Mare Sargassum is an expedition found by completing Desolate Site combat sites. It may contain up to four parts. The first three will be in high-sec space, while the fourth can be in low-sec or high-sec.
+  - text: The sites do not have gates, and can be easily completed in a cruiser.
+  - text: "Incoming transmission: At first it seems strange the drones have picked this barren and resource deficient place to build a new hive. But then again, while you were blowing up the place, you noticed a few vessels that might have been used as transports, indicating the drones were pulling in the materials they needed from someplace else. As to compliment you on your reasoning, your communication systems start indicating several different incoming transmissions in drone beeps and clicks and after a while you manage to coerce your instruments into pointing out an approximate spatial origin of the message."
+loot:
+  - item: +Overview
+  - item: Bounties
+    note: est. 1 million ISK (wiki)
+  - item: +Commander and other valuable loot
+  - item: Rogue Drone components and/or Faction modules
+    note: est. 10-200 million ISK (wiki)
+  - item: +Exploration logs
+  - item: July 2017
+    note: est. 200M ISK (wiki) · Commander Loot
+  - item: July 2017
+    note: est. 1 million ISK (wiki)
+  - item: July 2017
+    note: est. 10 million ISK (wiki)
+  - item: April 2018
+    note: est. 34 million ISK (wiki)
+  - item: August 2018
+    note: est. 17 million ISK (wiki)
+  - item: January 2022
+    note: est. 1 million ISK (wiki)
+  - item: February 2022
+    note: est. 1 million ISK (wiki)
+  - item: January 2023
+    note: est. 56.2 million ISK (wiki)
+  - item: March 2024
+    note: est. 1 million ISK (wiki)
+lootNotes:
+  - text: Each part has a commander rat which, when killed, will drop T2 salvage and Rogue Drone components. Lootable cans may contain drone alloys.
+pockets:
+  - name: Part 1
+    notes:
+      - text: ----
+      - text: The initial defenders can vary wildly.
+      - text: The initial defenders consists of around 6 frigates and one sentient drone.
+      - text: "Note: Trash Construction is not vulnerable (despite warp-in message) - just approach it to trigger reinforcement wave. (On 26-Nov-YC124 destroying elite frigates didn't trigger reinforcement wave.)"
+      - text: Reinforcement wave triggers when the elite frigates are destroyed. It is possible to have this wave included in initial defenders, possibly due to warping through the trash construct.
+      - text: Two additional spawns triggered by killing ships from initial spawn
+      - text: "Dead end message: All the drones have been obliterated, no clues are offered on where more can be found and your expedition seems to have come to a dead end."
+      - text: "Escalation message: Most of the drones have been obliterated, but a few made it away. Luckily the average drone operates in part like a jukebox trying to play all its tracks repeatedly at the same time over the airwaves, relying on the other drones to filter out the information they need and disregard the rest. Therefore they are usually easy to find while within reasonable range and this time is no different. Your instruments concentrate on messages from one of the escaped drones and after having filtered through several thousand repetitions of electrical manuals for every hydraulic system built the last three hundred years this side of the Myridian Strip, the entire known literature on the theory of relativity recited three times and for some obscure reason a text on the effect of oriental gardening on the human condition played simultaneously on four parallel channels, they finally come across a new location:"
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 4-6
+            class: Frigate
+            names:
+              - Sunder
+            note: type list incomplete on the source page
+          - count: 0-2
+            class: Elite Frigate
+            names:
+              - Strain Infester Alvi
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            triggers: triggers reinforcement wave
+          - count: "1"
+            class: Commander Frigate
+            names:
+              - Sentient Alvi
+            triggers: Escalation trigger
+            drop: Drone components, can also drop Astero chip
+      - id: reinforcement-wave
+        trigger:
+          on: other
+          text: Reinforcement wave
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Devilfish
+            note: type list incomplete on the source page
+          - count: 3-4
+            class: Destroyer
+            names:
+              - Ripper
+              - Shatterer Alvior
+      - id: wave-2
+        trigger:
+          on: other
+          text: "Wave #2"
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Barracuda
+              - Devilfish Alvi
+      - id: wave-3
+        trigger:
+          on: other
+          text: "Wave #3"
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Silverfish Alvi
+    onWarpIn: Heuristic analysis of this location indicates that attacking the Trash Construction would greatly improve your odds of uncovering further illicit activity.
+  - name: Part 2
+    notes:
+      - text: ----
+      - text: There is at least one reinforcement wave. The escalation can be triggered by killing either the Sentient drone, or all enemies except the Sentient drone.
+      - text: "Escalation message: The current strategy chosen by the drones seems to be running away as fast as they can. Your instruments have no problems tracking their destination"
+      - text: "Escalation fail: The current strategy chosen by the drones seems to be running away as fast as they can in every conceivable direction. For a while you are getting transmissions from all over the place and your tracking devices try desperately to make sense of all this information, but all of a sudden all waves are quiet and you realize that the drones deception has succeeded, you have no clue where to go to hunt them."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 9-10
+            class: Frigate
+            names:
+              - Decimator
+            note: type list incomplete on the source page
+          - count: 3-6
+            class: Destroyer
+            names:
+              - Predator
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Commander Destroyer
+            names:
+              - Sentient Shatter
+            triggers: Escalation trigger
+            drop: Drone components or Astero chip
+            note: type list incomplete on the source page
+      - id: timed-wave
+        trigger:
+          on: other
+          text: Timed Wave
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Hunter
+            note: type list incomplete on the source page
+  - name: Part 3
+    notes:
+      - text: ----
+      - text: Fewer rogue drones, and killing the sentient drone once again triggered the escalation. As a bonus, you get to see a great big red cube in space. The Borg turned more evil?
+      - text: 400px
+      - text: "Escalation message: You notice that all of these cans bear the markings of the same space station. After checking in your databanks, you find that this particular station was destroyed decades ago and has remained deserted ever since. You retrieve the location..."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Raider
+            note: type list incomplete on the source page
+          - count: 0-2
+            class: Elite Frigate
+            names:
+              - Strain Infester Alvi
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 2-3
+            class: Destroyer
+            names:
+              - Marauder
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Commander Destroyer
+            names:
+              - Sentient Ripper
+            triggers: Escalation trigger
+            drop: Drone components or Astero chip
+            note: type list incomplete on the source page
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Barracuda Alvi
+          - count: "4"
+            class: Destroyer
+            names:
+              - Predator
+            note: type list incomplete on the source page
+  - name: Part 4
+    notes:
+      - text: ----
+      - text: This part may be in a low-sec system (26 Feb 2017 ended in a .5 system / 26 Apr 2017 ended in .6 system / 26 Aug 2019 ended in a .3 system / 9 Dec 2019 ended in a .5 system / 3 Sep 2020 ended in a .2 system / 18 Mar 2024 ended in Ahbazon / 9 Nov 2024 ended in a .5 system).
+      - text: 5 small rogue drones waiting on warpin, and 5 "Drone Hold" cans. Completion popup happened after blowing up the first wave and starting to open cans. Strain Splinter drones can warp scram and web. Two reinforcement waves later appeared, one with a Rogue Mining Overseer dropping T2 salvage. One of the Drone Hold cans contained some drone goo (Dark Compound, Condensed Compound). All drone hold cans can be empty.
+      - text: "Completion: As expected, the drones were busy turning this old station into a hive, which if they had succeeded would no doubt be spewing out innumerable copies of their kind to haunt this part of the constellation for years to come. You wonder if sentient machines can dream...if so, then this one is at least permanently broken."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Raider
+              - Hunter Alvi
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Strain Splinter
+            note: type list incomplete on the source page
+      - id: timed-wave
+        trigger:
+          on: other
+          text: Timed Wave
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Hunter
+              - Silverfish Alvi
+          - count: "4"
+            class: Destroyer
+            names:
+              - Marauder
+              - Dismantler Alvior
+            triggers: Last Possible Reinforcement Wave Trigger
+      - id: reinforcement-wave
+        trigger:
+          on: other
+          text: Reinforcement Wave
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Hunter
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Destroyer
+            names:
+              - Marauder
+            note: type list incomplete on the source page
+      - id: reinforcement-wave-4
+        trigger:
+          on: other
+          text: Reinforcement Wave
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Overseer Cruiser
+            names:
+              - Rogue Mining Overseer
+            drop: T2 Salvage
+sde:
+  dungeonIds:
+    - 1512

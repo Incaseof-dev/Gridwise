@@ -1,0 +1,119 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: guristas-forlorn-hub
+kind: anomaly
+name: Guristas Forlorn Hub
+dedRating: null
+anomalyClass: 8
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Guristas Forlorn Hub
+    url: https://wiki.eveuniversity.org/Guristas_Forlorn_Hub
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231657"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Rating: Tier 8 Level 4"
+  - text: "Escalation: This site can escalate to a Dread Guristas Fleet Staging Point."
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Arrogator
+          - count: "4"
+            class: Cruiser
+            names:
+              - Pithum Abolisher
+              - Pithum Eraser
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Pithatis Death Dealer
+              - Pithatis Executor
+              - Pithatis Revolter
+            triggers: Triggers next wave when destroyed
+          - count: "3"
+            class: Battleship
+            names:
+              - Pith Ursurper
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Cruiser
+            names:
+              - Pithum Abolisher
+            triggers: Triggers next wave when destroyed
+          - count: "8"
+            class: Battlecruiser
+            names:
+              - Pithatis Death Dealer
+              - Pithatis Executor
+              - Pithatis Revolter
+          - count: "3"
+            class: Battleship
+            names:
+              - Pith Ursurper
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Demolisher
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Pithatis Enforcer
+          - count: "7"
+            class: Battleship
+            names:
+              - Pith Eliminator
+              - Pith Extinguisher
+              - Pith Massacrer
+            ewar:
+              - kind: ecm
+            triggers: Triggers next wave when destroyed
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Abolisher
+              - Dire Pithum Eraser
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Infiltrator
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "6"
+            class: Battleship
+            names:
+              - Pith Usurper
+sde:
+  dungeonIds:
+    - 3454

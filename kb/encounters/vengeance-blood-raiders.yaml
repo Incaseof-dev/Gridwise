@@ -1,0 +1,262 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: vengeance-blood-raiders
+kind: mission
+name: Vengeance
+level: 4
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Vengeance (Blood Raiders)
+    url: https://wiki.eveuniversity.org/Vengeance_(Blood_Raiders)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "208327"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: neut
+  - kind: web
+notes:
+  - text: "Web/warp disruption: Blood Wraith/Disciple (Web)"
+  - text: "Suggested ships: Battleship, Marauder"
+  - text: "Asteroids: Pocket 1: 1,290,000 Veldspar"
+  - text: "Asteroids: Pocket 2: 705,000 Veldspar"
+  - text: These asteroids still exist as of 2023-10-03.
+lootNotes:
+  - text: "Bounties: 17M (Sept, 2023)"
+  - text: "Loot & Salvage: 18.8M (Sept, 2023)"
+pockets:
+  - name: 1st Pocket
+    notes:
+      - text: All groups within 15-30km. Group 1, 2, and 3 can be attacked separately. Attacking Group 5 aggroed Group 4.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Corpii Engraver
+              - Corpii Reaver
+            group: Group 1 Human Farm
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corpum Priest
+              - Corpum Sage
+            group: Group 1 Human Farm
+            ewar:
+              - kind: neut
+          - count: "1"
+            class: Battleship
+            names:
+              - Corpus Oracle
+            group: Group 1 Human Farm
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corpatis Exorcist
+              - Corpatis Phantom
+            group: Group 2 Asteroid Mining Outpost (auto-aggro)
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corpior Friar
+              - Corpior Devoter
+            group: Group 3 Asteroid Factory
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corpatis Bishop
+              - Corpatis Seer
+            group: Group 3 Asteroid Factory
+          - count: "4"
+            class: Cruiser
+            names:
+              - Corpum Dark Priest
+              - Corpum Shadow Sage
+            group: Group 4 Asteroid Colony
+          - count: "1"
+            class: Battleship
+            names:
+              - Corpus Apostle
+              - Corpus Archbishop
+            group: Group 4 Asteroid Colony
+          - count: "6"
+            class: Cruiser
+            names:
+              - Corpum Arch Priest
+              - Corpum Arch Sage
+            group: Group 5 Asteroid Construct
+          - count: "1"
+            class: Battleship
+            names:
+              - Corpus Prophet
+            group: Group 5 Asteroid Construct
+  - name: 2nd Pocket
+    notes:
+      - text: All groups within 15-20km. Group 1 and 3 can be attacked without drawing aggro from others. Attacking Group 4 aggroed Group 2.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corpatis Seer
+              - Corpatis Shade
+            group: Group 1 Acceleration Gate(auto-aggro) (warp-in)
+          - count: "3"
+            class: Frigate
+            names:
+              - Blood Disciple
+              - Blood Wraith
+            group: Group 2 Blood Raider Deadspace Tactical Unit (35km)
+            ewar:
+              - kind: web
+          - count: "4"
+            class: Cruiser
+            names:
+              - Corpum Arch Priest
+              - Corpum Arch Sage
+            group: Group 2 Blood Raider Deadspace Tactical Unit (35km)
+          - count: 0-5
+            class: Battlecruiser
+            names:
+              - Corpatis Bishop
+              - Corpatis Seer
+            group: Group 2 Blood Raider Deadspace Tactical Unit (35km)
+          - count: "3"
+            class: Battleship
+            names:
+              - Corpus Oracle
+              - Corpus Prophet
+            group: Group 2 Blood Raider Deadspace Tactical Unit (35km)
+          - count: "3"
+            class: Frigate
+            names:
+              - Corpii Engraver
+              - Corpii Reaver
+            group: Group 3 Blood Raider Cathedral (25km)
+          - count: "2"
+            class: Destroyer
+            names:
+              - Corpior Devoter
+            group: Group 3 Blood Raider Cathedral (25km)
+          - count: "5"
+            class: Cruiser
+            names:
+              - Corpum Dark Priest
+              - Corpum Shadow Sage
+            group: Group 3 Blood Raider Cathedral (25km)
+          - count: 1-3
+            class: Battleship
+            names:
+              - Corpus Archbishop
+              - Corpus Harbinger
+            group: Group 3 Blood Raider Cathedral (25km)
+            ewar:
+              - kind: neut
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Corpatis Bishop
+              - Corpatis Seer
+            group: Group 4 Ruined Monument (25km)
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Cathedral
+            drop: commodities, livestock
+  - name: 3rd Pocket
+    notes:
+      - text: Killing the 1st Reinforcement flags the mission as complete. The turrets spawn behind the warp-in at ~20km. Destroy the 'EM Forcefield' to remove the shield, though it is not necessary to complete the mission. Faramon is particularly strong.
+      - text: "Faramon Mundan stats: DPS: 230.20hp/s (EM: 85hp/s, Expl: 0hp/s, Kin: 43.20hp/s, Therm: 102hp/s) + Wrath cruise missile"
+    waves:
+      - id: group-1-15-20km-auto-aggro
+        trigger:
+          on: other
+          text: Group 1 (15-20km) (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Sentry
+            names:
+              - Tower Sentry Blood Raider III
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corpior Templar
+              - Corpior Devoter
+            triggers: 2nd Reinforcement
+          - count: "4"
+            class: Cruiser
+            names:
+              - Corpum Arch Priest
+              - Corpum Arch Sage
+          - count: "1"
+            class: Battleship
+            names:
+              - Corpus Apostle
+              - Corpus Oracle
+            triggers: 1st Reinforcement
+      - id: 1st-reinforcement-50km
+        trigger:
+          on: other
+          text: 1st Reinforcement (50km)
+          confidence: inferred
+        spawns:
+          - count: 5-6
+            class: Frigate
+            names:
+              - Blood Disciple
+              - Blood Wraith
+            ewar:
+              - kind: web
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corpatis Fanatic
+              - Corpatis Shade
+          - count: "1"
+            class: Battleship
+            names:
+              - Corpus Monsignor
+          - count: "1"
+            class: Battleship
+            names:
+              - Faramon Mundan
+            drop: May drop faction modules
+            note: Uses guns and turrets
+      - id: 2nd-reinforcement-60km
+        trigger:
+          on: other
+          text: 2nd Reinforcement (60km)
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Destroyer
+            names:
+              - Corpior Converter
+              - Corpior Visionary
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corpatis Bishop
+              - Corpatis Seer
+          - count: "1"
+            class: Battleship
+            names:
+              - Corpus Archon

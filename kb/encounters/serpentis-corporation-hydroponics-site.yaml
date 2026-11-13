@@ -1,0 +1,211 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: serpentis-corporation-hydroponics-site
+kind: complex
+name: Serpentis Corporation Hydroponics Site
+dedRating: 5
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Serpentis Corporation Hydroponics Site
+    url: https://wiki.eveuniversity.org/Serpentis_Corporation_Hydroponics_Site
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231198"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Battleships"
+notes:
+  - text: The damage can be overwhelming. However, in a cruiser sized ship, with a 100mn afterburner, you should be able to avoid most damage by orbiting a stationary target at around ~25km at ~900m/sec. Just make sure you target the rats which can hit you first, there should only be about 3-5 per pocket which can. However, this method becomes a bit difficult to execute due to the webs in the last room, so be wary. The webs practically make you a stationary target for the rats to shoot.
+  - text: The names and amount of ships listed may vary slightly.
+  - text: If you want to blitz the last pocket, head-shot the Sarpati Family Enforcer, bookmark their wreck, and warp out. Then come back by warping to the bookmark, since the gates will already have despawned, as will have all the remaining rats in the final room, and you can scoop the loot.
+loot:
+  - item: 18th Tier Overseer's Effects
+    from: Sarpati Family Enforcer
+    note: est. 43.2M ISK (wiki) · 100% drop rate
+  - item: Vigilant BPC
+    from: Sarpati Family Enforcer
+    note: est. 35M ISK (wiki)
+  - item: Corelum B-Type modules
+    from: Sarpati Family Enforcer
+    note: Up to 3x
+  - item: Faction modules
+    from: Sarpati Family Enforcer
+  - item: + Exploration logs
+  - item: September 2025
+    note: est. 160M ISK (wiki) · From Sarpati Battlecruiser
+  - item: Corelum B-Type Kinetic Energized Membrane
+  - item: Dual 150mm Carbide Railgun I
+  - item: Oct 2024
+    note: est. 300M ISK :D (wiki) · Hisec escalation - From Sarpati Battlecruiser
+  - item: 18th Tier Overseers Effects
+  - item: Shadow Serpentis Heavy Ion Blaster
+  - item: Loot
+  - item: Bounties
+  - item: July 2023
+    note: est. 43.2M ISK (wiki) · From Sarpati Battlecruiser
+  - item: July 2022
+    note: est. 8.2M ISK (wiki) · Hisec escalation - From Sarpati Battlecruiser
+  - item: Shadow Serpentis EXP + KIN En. Membrane
+  - item: Vigil BPC
+  - item: Loot and Salvage
+  - item: July 2020
+    note: est. 3.5M ISK (wiki) · From Sarpati Battlecruiser
+  - item: Corelum B-Type Energized Thermal Membrane
+  - item: Corelum B-Type 10MN Afterburner
+  - item: Corelum B-Type Medium Remote Armor Repairer
+  - item: August 2019
+    note: est. 3.8M ISK (wiki) · From Sarpati Battlecruiser
+  - item: Corelum B-Type Medium Armor Repairer
+  - item: Shadow Serpentis Stasis Webifier
+pockets:
+  - name: 1st Pocket
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns: []
+      - id: single-defending-fleet
+        trigger:
+          on: other
+          text: Single Defending Fleet
+          confidence: inferred
+        spawns:
+          - count: "21"
+            class: Frigate
+            names:
+              - Coreli Defender
+              - Coreli Protector
+          - count: "7"
+            class: Cruiser
+            names:
+              - Corelum Chief Infantry
+              - Corelum Chief Sentinel
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Corelatis Squad Leader
+              - Corelatis Wing Leader
+          - count: "3"
+            class: Battleship
+            names:
+              - Core Rear Admiral
+              - Core Flotilla Admiral
+            ewar:
+              - kind: sensorDamp
+            note: Flotilla Admiral uses Remote Sensor Dampener
+    onWarpIn: "The Serpentis are doing quite well for themselves in the narcotics department. Trafficking sites are bustling with activity and security. Security forces should be mindful of any Sarpati family enforcers. DED Threat Assessment: 5 of 10."
+  - name: 2nd Pocket
+    notes:
+      - text: Take extreme caution in this pocket, do not let the cruisers and battlecruisers get within 10 km; overall room damage can exceed 600 DPS and can kill even a battleship.
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns: []
+      - id: single-defending-fleet-at-15km
+        trigger:
+          on: other
+          text: Single Defending Fleet at 15km
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Coreli Defender
+              - Coreli Protector
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corelior Soldier
+              - Corelior Trooper
+          - count: "5"
+            class: Cruiser
+            names:
+              - Corelum Chief Defender
+              - Corelum Chief Infantry
+              - Corelum Chief Sentinel
+          - count: "11"
+            class: Battlecruiser
+            names:
+              - Corelatis Squad Leader
+              - Corelatis Wing Leader
+          - count: "11"
+            class: Battleship
+            names:
+              - Core Admiral
+              - Core Rear Admiral
+              - Core Flotilla Admiral
+            ewar:
+              - kind: sensorDamp
+            note: Flotilla Admiral uses Remote Sensor Dampener
+    onWarpIn: "Analysis: Whatever the Serpentis are getting out of these asteroids, it must be an integral component of their product. There's enough equipment here to support a small planetary nation."
+  - name: 3rd Pocket
+    notes:
+      - text: The initial damage is not high since most of the larger ships have limited damage projection, however due to the triple Stasis Tower webbing, they will close in quickly and apply extreme damage if the stasis towers aren't primaried. Alternatively, if you can project at least 500 DPS out to ~40-50 km, you can opt to immediately kill the Overseer, bookmark his wreck and come back to pick up the loot when the site despawns.
+      - text: "On completion:: Enforcer Eliminated: That was fun. You can be sure the Sarpati family has heard about this and written your name down somewhere. Oh well. Time to collect his loot."
+    waves:
+      - id: single-defending-fleet-and-towers
+        trigger:
+          on: other
+          text: Single Defending Fleet and Towers
+          confidence: inferred
+        spawns:
+          - count: "11"
+            class: Frigate
+            names:
+              - Coreli Inititate
+              - Coreli Defender
+              - Coreli Protector
+              - Coreli Scout
+          - count: "1"
+            class: Destroyer
+            names:
+              - Corelior Trooper
+          - count: 9-10
+            class: Cruiser
+            names:
+              - Corelum Chief Defender
+              - Corelum Chief Infantry
+              - Corelum Chief Sentinel
+          - count: 5-6
+            class: Battleship
+            names:
+              - Core High admiral
+              - Core Rear Admiral
+          - count: "1"
+            class: Overseer Battlecruiser
+            names:
+              - Sarpati Family Enforcer
+            drop: 18th Tier Overseer's Personal Effects and a possibility of Corelum B-type/ Shadow Serpentis Modules and Vigilant BPC (rare)
+          - count: "9"
+            class: Sentry
+            names:
+              - Tower Sentry Serpentis II
+          - count: "2"
+            class: Sentry
+            names:
+              - Serpentis Light Missile Battery
+          - count: "1"
+            class: Sentry
+            names:
+              - Serpentis Heavy Missile Battery
+          - count: "1"
+            class: Sentry
+            names:
+              - Serpentis Cruise Missile Battery
+          - count: "3"
+            class: Sentry
+            names:
+              - Serpentis Stasis Tower
+            ewar:
+              - kind: web
+    onWarpIn: "Enemy Detected: It's not every day you get to meet and kill an Enforcer for the Sarpati family. Looks like you get to today."
+sde:
+  dungeonIds:
+    - 5269

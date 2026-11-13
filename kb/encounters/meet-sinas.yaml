@@ -1,0 +1,24 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: meet-sinas
+kind: mission
+name: Meet Sinas
+level: 4
+enemyFaction: null
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Meet Sinas
+    url: https://wiki.eveuniversity.org/Meet_Sinas
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "207194"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Report to Sinas Egassuo
+notes:
+  - text: "Black Rise: A cursory glance at the Black Rise region reveals a great deal to those with even the most basic understanding of Caldari internal politics. Kaalakiota, Lai Dai and Wiyrkomi led the charge in colonization, each flanked by their private security forces. Supplemented by the Caldari Navy, the State War Academy and Caldari Constructions, the colonization has all the hallmarks of a Patriot faction power play."
+  - text: thumb|left|128px|Sinas Egassuo
+  - text: Report to Sinas Egassuo twelve jumps away in Astoh at the Caldari Navy Relay Nexus Beacon.

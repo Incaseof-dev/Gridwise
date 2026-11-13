@@ -1,0 +1,135 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: mindflood
+kind: escalation
+name: Mindflood
+dedRating: null
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Mindflood
+    url: https://wiki.eveuniversity.org/Mindflood
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "222578"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Sites are not gated, and can be completed in a T1 frigate at range, though larger ships will be safer. The final named frigate requires around 50 DPS. In all sections, killing the Shadow Serpentis named frigate will trigger the next phase. If using a T1 frigate, a Tristan and proper range is highly recommended.
+  - text: In the second room in each phase there is usually Elgur Erinn escorted by two frigates and they will warp away immediately.
+loot:
+  - item: + Exploration logs
+  - item: May 2020
+    note: est. 8M ISK (wiki) · From Shadow Serpentis Agent
+  - item: Coreli C-Type Kinetic Plating
+    note: est. From Elgur Erinn (wiki)
+  - item: April 2025
+    note: est. 78K ISK (wiki) · From Elgur Erinn
+  - item: Shadow Serpentis Small Plasma Smartbomb
+  - item: Coreli C-Type 5MN Microwarpdrive
+lootNotes:
+  - text: Each part has a commander rat which, when killed, will drop faction ammunition and Shadow Serpentis tags. Typical module drop includes a Vortex Compact Magnetic Field Stabilizer. The commander may also drop implants, e.g. Mid-grade Snake Beta (and possibly Shadow Serpentis modules by comparison with other escalations, but not seen). Salvaging commander wrecks may generate T2 salvage.
+  - text: Elgur Erinn may drop Coreli C-Type modules.
+pockets:
+  - name: "Part #1"
+    notes:
+      - text: "Escalation failure: Either your sensors are malfunctioning or the data was incorrect. The Serpentis ships are nowhere to be seen."
+      - text: "Escalation trigger: Your sensors pick up on the Serpentis trail and provide you with a set of coordinates to their next probable destination."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Coreli Protector
+          - count: "4"
+            class: Destroyer
+            names:
+              - Corelior Trooper
+          - count: 0-1
+            class: Commander Frigate
+            names:
+              - Shadow Serpentis Scout
+            triggers: Escalation trigger
+            drop: Shadow ammunition
+  - name: "Part #2"
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Coreli Safeguard
+          - count: "4"
+            class: Destroyer
+            names:
+              - Corelior Trooper
+          - count: 0-1
+            class: Commander Frigate
+            names:
+              - Shadow Serpentis Scout
+            triggers: Escalation trigger
+            drop: Shadow ammunition
+  - name: Part 3
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Guard
+              - Coreli Guardian Protector
+          - count: "4"
+            class: Destroyer
+            names:
+              - Corelior Infantry
+              - Corelior Sentinel
+          - count: 0-1
+            class: Commander Frigate
+            names:
+              - Shadow Serpentis Patroller
+            triggers: Escalation trigger
+            drop: Shadow ammunition
+  - name: Part 4
+    notes:
+      - text: In this part there is no acceleration gate, and no Shadow spawn. Destroy the first wave to bring the commander. Erinn will repair armour at around 30-40 DPS.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Coreli Protector
+              - Coreli Defender
+          - count: "6"
+            class: Destroyer
+            names:
+              - Corelior Trooper
+      - id: second-wave
+        trigger:
+          on: other
+          text: Second wave
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Overseer Frigate
+            names:
+              - Elgur Erinn
+            drop: Coreli C-type modules
+sde:
+  dungeonIds:
+    - 1578

@@ -1,0 +1,139 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: recon-1-of-3-angel-cartel-level-4
+kind: mission
+name: Recon (1 of 3)
+level: 4
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Recon (1 of 3) (Angel Cartel) (Level 4)
+    url: https://wiki.eveuniversity.org/Recon_(1_of_3)_(Angel_Cartel)_(Level_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "229139"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal: []
+  resist:
+    - em
+    - thermal
+    - kinetic
+    - explosive
+ewar:
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite frigates"
+  - text: "Suggested ships: Frigate (blitz), Battleship (clear)"
+  - text: "Parts: 1 of 3 (Angel Cartel), 2 of 3, 3 of 3"
+  - text: Recon mission chain has three missions. The parts 2 and 3 are same for all factions.
+  - text: The Angel cartel ships deal mixture of all damage types. Majority of the damage is explosive and kinetic but many of the ships deal EM or thermal as their third damage type.
+  - text: "Blitz: The gates are not locked, so you can blitz this mission in a shuttle without a single kill. Go to warp gate, activate it, when you reach the next pocket you are done! (Attemping so in a Caldari shuttle failed on Jul 23 2022, ship explode before reaching, not sure if it is skill problem)."
+pockets:
+  - name: 1st pocket
+    notes:
+      - text: The gate is not locked so you can proceed to next pocket as fast as you can move. ~60km to acceleration gate, no loot drops from structures.
+      - text: "Clear: In general, keep moving either towards the other gate or towards a distant object. Every minute, another group will respawn. If you are not killing them fast enough, you can get overwhelmed. There are a couple warp scrambling elite frigates, and most of the ships do damage from a distance (36km). Once they all spawn, it can make things rather difficult for a weakly tanked ship. So be careful."
+    waves:
+      - id: npc-spawns
+        trigger:
+          on: other
+          text: NPC Spawns
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Outlaw
+            group: Immediately after warp-in
+            ewar:
+              - kind: warpDisruption
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Phalanx
+            group: Immediately after warp-in
+          - count: "1"
+            class: Battleship
+            names:
+              - Gist Cherubim
+            group: Immediately after warp-in
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Breaker
+            group: 1 minute after warp-in
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Gistatis Tribuni
+            group: 1 minute after warp-in
+          - count: "1"
+            class: Battleship
+            names:
+              - Gist Seraphim
+            group: 1 minute after warp-in
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Breaker
+            group: 2 minutes after warp-in
+          - count: "2"
+            class: Battleship
+            names:
+              - Gist Seraphim
+            group: 2 minutes after warp-in
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Thug
+            group: 3 minutes after warp-in
+            ewar:
+              - kind: warpDisruption
+          - count: "2"
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Seraphim
+            group: 3 minutes after warp-in
+  - name: 2nd pocket
+    notes:
+      - text: Mission completes when you arrive in the second pocket.
+      - text: The Gist Throne battleships inflict very high damage at short distances. If you decide to clear the pocket, kill these first while flying away from them.
+      - text: Leads to Recon (2 of 3) (Level 4)
+    waves:
+      - id: npc-spawns
+        trigger:
+          on: other
+          text: NPC Spawns
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Breaker
+              - Arch Gistum Smasher
+            group: 20 seconds after warp-in
+          - count: 2-3
+            class: Battleship
+            names:
+              - Gist Throne
+              - Gist Malakim
+            group: 20 seconds after warp-in
+            note: Throne hits only at short range
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Outlaw
+            group: 1 minute after warp-in
+            ewar:
+              - kind: warpDisruption
+          - count: "5"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Marauder
+            group: 1 minute after warp-in

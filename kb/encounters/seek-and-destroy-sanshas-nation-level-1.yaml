@@ -1,0 +1,44 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: seek-and-destroy-sanshas-nation-level-1
+kind: mission
+name: Seek and Destroy
+level: 1
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Seek and Destroy (Sansha's Nation) (Level 1)
+    url: https://wiki.eveuniversity.org/Seek_and_Destroy_(Sansha's_Nation)_(Level_1)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "219387"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Suggested ships: Frigate, Destroyer"
+  - text: "Blitz: Kill Group 1"
+pockets:
+  - name: Single Pocket
+    waves:
+      - id: group-1-35km
+        trigger:
+          on: other
+          text: Group 1, 35km
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Centii Servant
+      - id: group-2-65km
+        trigger:
+          on: other
+          text: Group 2, 65km
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Centii Servant

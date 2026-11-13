@@ -1,0 +1,335 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: pirate-slaughter-angel-cartel
+kind: mission
+name: Pirate Slaughter
+level: 4
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Pirate Slaughter (Angel Cartel)
+    url: https://wiki.eveuniversity.org/Pirate_Slaughter_(Angel_Cartel)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "199182"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Suggested ships: CNR, Rattlesnake, Golem"
+  - text: "Space type: Deadspace with gates"
+  - text: "Extra features: Extra spawns. (Fixed locations)."
+  - text: "Note: The spawns and triggers are a big mess. Just be prepared for a massive respawn with following aggro. Not drone friendly."
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: Screenshot
+    waves:
+      - id: initial-delayed-or-no-aggro
+        trigger:
+          on: warpIn
+          text: Initial (delayed or no aggro)
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Hijacker
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            triggers: Trigger for 8th ambush
+          - count: "2"
+            class: Destroyer
+            names:
+              - Gistior Defacer
+          - count: "2"
+            class: Cruiser
+            names:
+              - Gistum Defeater
+            triggers: Possible trigger for 1st ambush
+      - id: 1st-ambush-possibly-by-destroying-the-defeaters
+        trigger:
+          on: other
+          text: 1st ambush (possibly by destroying the Defeaters)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Gistum Liquidator
+          - count: "1"
+            class: Battleship
+            names:
+              - Gist War General
+      - id: 2nd-ambush-either-time-triggered-or-when-the-bs-hits-structure
+        trigger:
+          on: other
+          text: 2nd ambush (Either time triggered or when the BS hits structure)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Battleship
+            names:
+              - Gist Commander
+              - Gist General
+      - id: 3rd-ambush-time-triggered
+        trigger:
+          on: other
+          text: 3rd ambush (Time triggered)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Gistatis Praefectus
+      - id: 4th-ambush-time-triggered
+        trigger:
+          on: other
+          text: 4th ambush (Time triggered?)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Gistii Raider
+              - Gistii Ambusher
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Gistum Phalanx
+      - id: 5th-ambush-time-triggered
+        trigger:
+          on: other
+          text: 5th ambush (Time triggered?)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Gistatis Primus
+              - Gistatis Legionnaire
+      - id: 6th-ambush-time-triggered
+        trigger:
+          on: other
+          text: 6th ambush (Time triggered?)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Cruiser
+            names:
+              - Gistum Phalanx
+      - id: 7th-ambush-time-triggered
+        trigger:
+          on: other
+          text: 7th ambush (Time triggered?)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Cruiser
+            names:
+              - Gistum Phalanx
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Gistatis Praefectus
+      - id: 8th-ambush-triggered-by-destruction-of-arch-gistii-hijacker
+        trigger:
+          on: other
+          text: 8th ambush (Triggered by destruction of Arch Gistii Hijacker)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Gistatis Praefectus
+  - name: Pocket 2
+    notes:
+      - text: All spawns will happen around the gate. So it's snipable if you get some distance to the gate.
+      - text: Screenshot
+    waves:
+      - id: initial-aggro
+        trigger:
+          on: warpIn
+          text: Initial (aggro)
+        spawns:
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Gistatis Tribuni
+            triggers: Trigger for 2nd ambush
+          - count: "4"
+            class: Battleship
+            names:
+              - Gist Warlord
+              - Gist General
+      - id: 1st-ambush-time-triggered
+        trigger:
+          on: other
+          text: 1st ambush (Time triggered)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Cruiser
+            names:
+              - Gistum Liquidator
+              - Gistum Marauder
+      - id: 2nd-ambush-two-of-the-tribunis-will-trigger-each-half-of-it
+        trigger:
+          on: other
+          text: 2nd ambush (Two of the Tribunis will trigger each half of it)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Destroyer
+            names:
+              - Gistior Defacer
+      - id: 3rd-ambush-time-triggered-or-by-destruction-of-the-cr
+        trigger:
+          on: other
+          text: 3rd ambush (Time triggered or by destruction of the CR)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Cruiser
+            names:
+              - Gistum Centurion
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Gistatis Tribuni
+      - id: 4th-ambush-time-triggered-or-by-attacking-3rd-ambush
+        trigger:
+          on: other
+          text: 4th ambush (Time triggered or by attacking 3rd ambush)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Battleship
+            names:
+              - Gist General
+              - Gist Commander
+      - id: 5th-ambush-time-triggered-or-by-attacking-a-general-or-bs
+        trigger:
+          on: other
+          text: 5th ambush (Time triggered or by attacking a General or BS)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Liquidator
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Gistatis Legionnaire
+      - id: 6th-ambush-upon-destruction-of-the-last-bs-or-general
+        trigger:
+          on: other
+          text: 6th ambush (Upon destruction of the last BS or General)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Gistatis Primus
+              - Gistatis Legionnaire
+          - count: "3"
+            class: Battleship
+            names:
+              - Gist Malakim
+              - Gist Warlord
+              - Gist General
+            note: Gist Malakim (EM torpedo)
+  - name: Pocket 3
+    notes:
+      - text: "Small blitz: No need to shoot the Gistior Trasher in the 3rd stage, mission completes without that trigger."
+      - text: "Small blitz: Mission is also completed before the 4th ambush. Maybe before the 3rd."
+      - text: The initial wave will assemble over a short period of time. No aggro, so you can snipe this one.
+      - text: Screenshot
+    waves:
+      - id: initial-no-aggro
+        trigger:
+          on: warpIn
+          text: Initial (No aggro)
+        spawns:
+          - count: "4"
+            class: Destroyer
+            names:
+              - Gistior Defiler
+              - Gistior Seizer
+          - count: "7"
+            class: Cruiser
+            names:
+              - Gistum Centurion
+              - Gistum Phalanx
+            triggers: Trigger 2nd ambush
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+              - Gistatis Praefectus
+            triggers: Trigger 3rd ambush
+          - count: "1"
+            class: Battleship
+            names:
+              - Gist Nephilim
+            triggers: Triggers 1st ambush
+      - id: 1st-ambush-upon-destruction-of-gist-nephilim
+        trigger:
+          on: other
+          text: 1st ambush (Upon destruction of Gist Nephilim)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Battleship
+            names:
+              - Gist War General
+      - id: 2nd-ambush-upon-destruction-of-one-of-the-phalanx
+        trigger:
+          on: other
+          text: 2nd ambush (Upon destruction of one of the Phalanx')
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Battleship
+            names:
+              - Gist Warlord
+      - id: 3rd-ambush-upon-destruction-of-one-or-all-the-bcs
+        trigger:
+          on: other
+          text: 3rd ambush (Upon destruction of one or all the BCs)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Destroyer
+            names:
+              - Gistior Seizer
+            triggers: Trigger 4th ambush
+      - id: 4th-ambush-upon-destruction-of-the-dd-in-3rd-ambush-no-aggro
+        trigger:
+          on: other
+          text: 4th ambush (Upon destruction of the DD in 3rd ambush) (No aggro)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Cruiser
+            names:
+              - Gistum Marauder
+          - count: "2"
+            class: Battleship
+            names:
+              - Gist Seraphim
+      - id: 5th-ambush-upon-destruction-of-one-of-the-cr-in-4th-ambush-no-aggro
+        trigger:
+          on: other
+          text: 5th ambush (upon destruction of one of the CR in 4th ambush) (No aggro)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Hijacker
+            ewar:
+              - kind: web
+              - kind: warpDisruption

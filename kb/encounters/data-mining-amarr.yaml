@@ -1,0 +1,81 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: data-mining-amarr
+kind: mission
+name: Data Mining
+level: 2
+enemyFaction: Amarr Empire
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Data Mining (Amarr)
+    url: https://wiki.eveuniversity.org/Data_Mining_(Amarr)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "217141"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Mine 2000 units of Scordite; eliminate any hostiles that show up.
+restrictions:
+  - text: "Ship size limit: Cruiser or smaller"
+ewar:
+  - kind: trackingDisruption
+notes:
+  - text: "Suggested ships: Expedition Frigate(for mining), Cruiser or Destroyer (for shooting)"
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: Initial wave will spawn ~30 seconds after after completion of first mining cycle.
+      - text: Reinforcements will spawn after destruction or near destruction of previous group.
+    waves:
+      - id: asteroids
+        trigger:
+          on: other
+          text: Asteroids
+          confidence: inferred
+        spawns: []
+      - id: initial-wave
+        trigger:
+          on: warpIn
+          text: Initial wave
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Imperial Matendi
+              - Imperial Forian
+            ewar:
+              - kind: trackingDisruption
+            triggers: Last frigate triggers reinforcement 1
+          - count: "2"
+            class: Cruiser
+            names:
+              - Imperial Agatho
+              - Imperial Donus
+            ewar:
+              - kind: trackingDisruption
+            triggers: Last cruiser triggers reinforcement 2
+      - id: reinforcement-1
+        trigger:
+          on: other
+          text: Reinforcement 1
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Imperial Disciple
+              - Imperial Haran
+      - id: reinforcement-2
+        trigger:
+          on: other
+          text: Reinforcement 2
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Cruiser
+            names:
+              - Imperial Mathura
+              - Imperial Muzakir

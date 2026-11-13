@@ -1,0 +1,145 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: oust-the-claimjumpers
+kind: mission
+name: Oust The Claimjumpers
+level: 5
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Oust The Claimjumpers
+    url: https://wiki.eveuniversity.org/Oust_The_Claimjumpers
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191822"
+defaults:
+  confidence: verified
+  source: uni
+damage:
+  deal:
+    - kinetic
+    - thermal
+  resist:
+    - thermal
+    - kinetic
+ewar:
+  - kind: neut
+  - kind: web
+  - kind: warpScramble
+notes:
+  - text: "Web/warp disruption: Stasis Towers Stasis webifier, Elite Frigates warp scrambler"
+  - text: "Suggested ships: Passive Tanked Ships (Nighthawk, Drake, etc.), Damage dealers: CNR, Golem, Etc."
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: When you warp in, there is a single mixed group. Aggro is automatic.
+      - text: Each Energy Neutralizer Tower III has 2 replacement spawns (e.g. Initial ENT --> Replacement Tower 1 --> Replacement Tower 2).
+      - text: Once these 6 towers have been destroyed, the next spawn appears.
+      - text: "- It is recommend that you use Logistics support to help keep your passive tank alive to avoid warp outs"
+      - text: "- A CNR / Golem can do this mission with careful energy / tank management, but MUST have 2x Medium Energy Transfer Array II's going on it at all times and 4x Large Shield Reps. Your cap will drain, but the Neutralizer tower cycles allow you to turn your tank back on between cycles."
+      - text: "- Shoot all but one of the initial BS's to reduce your tank damage taken"
+    waves:
+      - id: initial-spawn
+        trigger:
+          on: warpIn
+          text: Initial Spawn
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Gallente Heavy Missile Battery
+          - count: "5"
+            class: Sentry
+            names:
+              - Gallente Cruise Missile Battery
+          - count: "2"
+            class: Sentry
+            names:
+              - Tower Sentry Gallente III
+          - count: "2"
+            class: Sentry
+            names:
+              - Gallente Energy Neutralizer Sentry III
+            ewar:
+              - kind: neut
+          - count: "2"
+            class: Sentry
+            names:
+              - Gallente Stasis Tower
+            ewar:
+              - kind: web
+          - count: "6"
+            class: Elite Frigate
+            names:
+              - Federation Libertus
+              - Federation Manica
+              - Federation Matara
+            ewar:
+              - kind: warpDisruption
+          - count: "12"
+            class: Battleship
+            names:
+              - Federation Praktor Praeses
+              - Federation Praktor Navis Praetoria
+              - Federation Praktor Hexeris
+              - Federation Praktor Phanix
+            triggers: Last BS killed
+      - id: first-reinforcement
+        trigger:
+          on: other
+          text: First Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battleship
+            names:
+              - Federation Covinus
+              - Federation Navis Longa
+      - id: second-reinforcement
+        trigger:
+          on: other
+          text: Second Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battleship
+            names:
+              - Federation Praktor Phanix
+              - Federation Hyperion
+      - id: third-reinforcement
+        trigger:
+          on: other
+          text: Third Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Battleship
+            names:
+              - Federation Praktor Polemo
+      - id: fourth-reinforcement
+        trigger:
+          on: other
+          text: Fourth Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Sentry
+            names:
+              - Gallente Energy Neutralizer Sentry III
+            ewar:
+              - kind: neut
+      - id: fifth-reinforcement
+        trigger:
+          on: other
+          text: Fifth Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Elite Frigate
+            names:
+              - Elite Federation Insidiator
+              - Elite Federation Lixa
+              - Elite Federation Lochos
+            ewar:
+              - kind: warpDisruption

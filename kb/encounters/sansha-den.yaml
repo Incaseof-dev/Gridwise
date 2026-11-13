@@ -1,0 +1,243 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: sansha-den
+kind: anomaly
+name: Sansha's Den
+dedRating: null
+anomalyClass: 4
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Sansha Den
+    url: https://wiki.eveuniversity.org/Sansha_Den
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225109"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Rating: Class 4 Level 1"
+  - text: Sansha Den is an unrated combat site belonging to the Sansha's Nation pirate faction. It can be found via exploration as a cosmic anomaly within systems owned by the Amarr Empire and Ammatar Mandate. As an ungated complex, the limitations as to which ships can complete this site are tied to the security rating of the system where the anomaly spawns (T2 Battleships for high-security systems, and up to Titans in low-security and null-security systems). Completing this complex may award the player with valuable True Sansha faction modules and ammunition.
+  - text: "This combat site consists of a single ungated pocket of space containing a variety of Frigate-, Destroyer- and Cruiser-sized enemy ships. Destroying all hostile ships may escalate into the DED rated Sansha's Nation Neural Paralytic Facility complex. Three variations of this combat anomaly exist: Sansha Hidden Den, Sansha Forsaken Den and Sansha Forlorn Den."
+  - text: "Two different site layouts can be encountered: The Light Missile Battery layout and the Heavy Missile Battery layout. Both layouts can spawn a True Sansha Cruiser and escalate."
+  - text: ----
+  - text: Single pocket, the last ship kill triggers next spawn. Light missile batteries have limited aggro range, only about 30 km.
+  - text: Single pocket, the last kill triggers next spawn.
+  - text: "Escalation: This site can escalate to Sansha's Nation Neural Paralytic Facility."
+loot:
+  - item: True Sansha Silver Tag
+    from: True Sansha Commander
+    note: est. 10k ISK (wiki) · 100% drop rate
+  - item: (True) Sansha Ammo
+    from: True Sansha Commander
+    note: est. 6k - 58M ISK (wiki) · 100% drop rate
+  - item: True Sansha module
+    from: True Sansha Commander
+    note: est. 10k - 190M ISK (wiki) · rare
+  - item: Mid-grade Nirvana Implant BPC
+    from: True Sansha Commander
+    note: est. 15M - 50M ISK (wiki) · rare
+lootNotes:
+  - text: 275.000 ISK
+  - text: Structures do not drop additional loot.
+pockets:
+  - name: Light Missile Battery layout
+    notes:
+      - text: ----
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Centii Plague
+              - Centii Manslayer
+          - count: "3"
+            class: Destroyer
+            names:
+              - Centior Monster
+              - Centior Horror
+          - count: "2"
+            class: Sentry
+            names:
+              - Light Missile Battery
+            triggers: Triggers 1st Battery spawn
+            drop: T1 Ammo
+      - id: timed-reinforcement-spawn-10-seconds
+        trigger:
+          on: other
+          text: Timed Reinforcement Spawn (10 seconds)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Centii Slavehunter
+              - Centii Savage
+            ewar:
+              - kind: trackingDisruption
+      - id: 1st-reinforcement-spawn
+        trigger:
+          on: other
+          text: 1st Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: 4-5
+            class: Frigate
+            names:
+              - Centii Servant
+      - id: 1st-battery-spawn
+        trigger:
+          on: other
+          text: 1st Battery spawn
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Light Missile Battery
+            triggers: Triggers 2nd Battery spawn
+      - id: 2nd-battery-spawn
+        trigger:
+          on: other
+          text: 2nd Battery spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Centii Enslaver
+              - Centii Butcher
+          - count: "3"
+            class: Destroyer
+            names:
+              - Centior Monster
+              - Centior Horror
+      - id: 3rd-battery-spawn
+        trigger:
+          on: other
+          text: 3rd Battery spawn
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Centii Slavehunter
+              - Centii Savage
+            ewar:
+              - kind: trackingDisruption
+          - count: 0-1
+            class: Commander Cruiser
+            names:
+              - True Sansha Commander
+            drop: Possible Faction Modules and or Charges
+    onWarpIn: Sansha's Nation was founded well over a century ago. Sansha was a Caldari tycoon who carved out a sizable piece of space for himself; there, he set out to create an Utopian State. His vision and charm attracted thousands of people, and for some time the Nation flourished. But Sansha became ever more warped as his success increased. He started experiments, combining capsule technology with the human mind, creating zombie-like creatures having the cold, calculating minds of computers, yet retaining the ingenuity of humans. When this terrifying truth became public knowledge, Sansha was condemned, and special forces from each of the great empires joined forces to bring him down. His "True Sansha" servitors were decimated, scattered to the furthest reaches of known space. Remnants still remain far in the outer regions, but the once glorious Nation has been reduced to small gangs of pirates and pillagers.
+  - name: Heavy Missile Battery layout
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Centii Butcher
+              - Centii Manslayer
+          - count: "3"
+            class: Destroyer
+            names:
+              - Centior Monster
+              - Centior Horror
+          - count: "2"
+            class: Sentry
+            names:
+              - Heavy Missile Battery
+            drop: T1 Ammo
+      - id: 1st-reinforcement-spawn
+        trigger:
+          on: other
+          text: 1st Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Centior Abomination
+              - Centior Misshape
+          - count: "2"
+            class: Cruiser
+            names:
+              - Centum Ravager
+              - Centum Ravisher
+      - id: 2nd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 2nd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Centii Manslayer
+          - count: "2"
+            class: Cruiser
+            names:
+              - Centum Ravisher
+      - id: 3rd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 3rd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Centior Cannibal
+          - count: "2"
+            class: Cruiser
+            names:
+              - Centum Juggernaut
+            ewar:
+              - kind: trackingDisruption
+            note: ewars within 50 km
+      - id: 4th-reinforcement-spawn
+        trigger:
+          on: other
+          text: 4th Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Centior Monster
+              - Centior Devourer
+          - count: "3"
+            class: Cruiser
+            names:
+              - Centum Execrator
+              - Centum Slaughterer
+            ewar:
+              - kind: trackingDisruption
+            note: ewars within 50 km
+      - id: 5th-reinforcement-spawn
+        trigger:
+          on: other
+          text: 5th Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Centior Monster
+              - Centior Horror
+          - count: 0-1
+            class: Commander Cruiser
+            names:
+              - True Sansha Commander
+            drop: Possible Faction Modules and or Charges

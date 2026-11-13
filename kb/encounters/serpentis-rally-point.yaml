@@ -1,0 +1,303 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: serpentis-rally-point
+kind: anomaly
+name: Serpentis Rally Point
+dedRating: null
+anomalyClass: 6
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Serpentis Rally Point
+    url: https://wiki.eveuniversity.org/Serpentis_Rally_Point
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "198036"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Serpentis Rally Point is a Class 6 combat anomaly that can be found in low and null sec space.
+  - text: Total bounties amount to around 4,500,000 ISK.
+  - text: There are two variants of the site.
+  - text: The site is an open deadspace pocket that can be warped to at any range. Tower Sentry Angels give Serpentis standing hit despite belonging to the Angel Cartel.
+  - text: Sentries spawn 35-40 km away from the warp-in point. All other ships spawn at 0 on the anomaly.
+  - text: "Escalation: This site can escalate to Serpentis Logistical Outpost."
+  - text: "Escalation: Serpentis Logistical Outpost Site: Your scanner has picked up a transmission originating from a nearby system. It would be wise to investigate this mysterious signal further."
+pockets:
+  - name: Walkthrough (silo spawn)
+    notes:
+      - text: There are two storage silos in the site that drop T1 ammo when destroyed.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 4-5
+            class: Frigate
+            names:
+              - Coreli Defender
+              - Coreli Protector
+          - count: 3-4
+            class: Destroyer
+            names:
+              - Corelior Infantry
+              - Corelior Sentinel
+          - count: "2"
+            class: Sentry
+            names:
+              - Serpentis Heavy Missile Battery
+          - count: "2"
+            class: Sentry
+            names:
+              - Tower Sentry Angel I
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Coreli Defender
+              - Coreli Protector
+              - Coreli Safeguard
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Corelum Chief Infantry
+              - Corelum Chief Sentinel
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Scout
+              - Coreli Guardian Initiate
+              - Coreli Guardian Agent
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Corelum Chief Defender
+              - Corelum Chief Protector
+              - Corelum Chief Infantry
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Coreli Guard
+              - Coreli Safeguard
+          - count: 2-3
+            class: Battlecruiser
+            names:
+              - Corelatis Squad Leader
+              - Corelatis Wing Leader
+              - Corelatis Captain Sentry
+      - id: wave-4
+        trigger:
+          on: other
+          text: Wave 4
+          confidence: inferred
+        spawns:
+          - count: 1-3
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Protector
+              - Coreli Guardian Defender
+          - count: 1-2
+            class: Battlecruiser
+            names:
+              - Corelatis Captain Sentry
+              - Corelatis High Captain
+      - id: wave-5
+        trigger:
+          on: other
+          text: Wave 5
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Corelatis Squad Leader
+              - Corelatis Wing Leader
+              - Corelatis High Captain
+              - Corelatis Captain Sentry
+      - id: wave-6
+        trigger:
+          on: other
+          text: Wave 6
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Defender
+              - Corelum Guardian Chief Protector
+              - Corelum Guardian Chief Infantry
+              - Corelum Guardian Chief Sentinel
+          - count: 2-3
+            class: Battlecruiser
+            names:
+              - Corelatis Captain Sentry
+              - Corelatis High Captain
+      - id: wave-7
+        trigger:
+          on: other
+          text: Wave 7
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Battlecruiser
+            names:
+              - Corelatis Wing Leader
+              - Corelatis Captain Sentry
+              - Corelatis High Captain
+          - count: 1-2
+            class: Battleship
+            names:
+              - Core Vice Admiral
+              - Core Flotilla Admiral
+            ewar:
+              - kind: sensorDamp
+          - count: "1"
+            class: Commander Battlecruiser
+            names:
+              - Shadow Serpentis Captain Sentry
+            group: Possible commander spawn
+            drop: Faction loot
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "2"
+            class: Structure
+            names:
+              - Storage Silo
+            drop: T1 ammo
+    onWarpIn: The Serpentis Corporation was founded a few decades ago by V. Salvador Sarpati. At first, it was engaged in hi-tech research, but with time its ties to the underworld grew, and Serpentis research stations scattered around in remote areas became notorious pirate havens. Sarpati made a deal with the Angel Cartel early on to provide protection for his stations, and this duty was eventually taken on by the Guardian Angels. Both sides have prospered enormously from this deal - Serpentis can operate in peace, and the Angel Cartel gets access to the illegal research efforts of the Serpentis conglomerate. It is strongly believed that Serpentis is the main developer and manufacturer of illegal neural boosters, especially since Sarpati's father was a renowned specialist in that field. The home of Serpentis is in the Phoenix constellation in the Fountain region.
+  - name: Walkthrough (Workers' Quarters)
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Tower Sentry Serpentis I
+          - count: 3-4
+            class: Destroyer
+            names:
+              - Corelior Artillery
+              - Corelior Cannoneer
+          - count: 3-4
+            class: Cruiser
+            names:
+              - Corelum Chief Infantry
+              - Corelum Chief Sentinel
+            triggers: Triggers wave 2 upon destruction
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Scout
+              - Coreli Guardian Initiate
+              - Coreli Guardian Spy
+              - Coreli Guardian Agent
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Corelum Chief Defender
+              - Corelum Chief Protector
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Scout
+              - Coreli Guardian Initiate
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Corelatis Captain Sentry
+              - Corelatis High Captain
+            triggers: Triggers wave 4 when destroyed
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Cruiser
+            names:
+              - Corelum Chief Defender
+              - Corelum Chief Infantry
+              - Corelum Chief Sentinel
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Corelatis Captain Sentry
+              - Corelatis High Captain
+      - id: wave-4
+        trigger:
+          on: other
+          text: Wave 4
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Battlecruiser
+            names:
+              - Corelatis Squad Leader
+              - Corelatis Wing Leader
+              - Corelatis Captain Sentry
+              - Corelatis High Captain
+          - count: 1-2
+            class: Battleship
+            names:
+              - Core Vice Admiral
+              - Core Flotilla Admiral
+              - Core Rear Admiral
+            ewar:
+              - kind: sensorDamp
+          - count: "1"
+            class: Commander Battlecruiser
+            names:
+              - Shadow Serpentis Platoon Leader
+            group: Possible commander spawn
+            drop: Faction loot
+sde:
+  dungeonIds:
+    - 2123

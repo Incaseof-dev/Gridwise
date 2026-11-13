@@ -1,0 +1,390 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: colony-under-fire
+kind: escalation
+name: Colony Under Fire
+dedRating: null
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Colony Under Fire
+    url: https://wiki.eveuniversity.org/Colony_Under_Fire
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "174910"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: The first 3 parts of this escalation are quite easy, but the 4th part can be somewhat challenging.
+lootNotes:
+  - text: "the first part: Can drop shadow serpentis modules, ammunition and tags."
+  - text: Gives around 28.000.000 ISK in bounties.
+  - text: "the second part: Can drop shadow serpentis modules, ammunition and tags."
+  - text: Gives around 36.000.000 ISK in bounties.
+  - text: "the third part: Can drop shadow serpentis modules, ammunition and tags."
+  - text: Gives around 15.000.000 ISK in bounties.
+  - text: "the fourth part: Can drop Core A-Type Modules, shadow serpentis modules, ammunition and tags."
+  - text: Gives around 50.000.000 ISK in bounties.
+pockets:
+  - name: Part 1
+    notes:
+      - text: "Access: Gateless, Open Access"
+      - text: In the first room you find a warp gate. Killing the NPCs allow usage of that gate to the second room.
+      - text: You might have a Shadow Serpentis spawn in the first room. Killing this triggers an escalation.
+      - text: If it is not there, going to the second room and killing the scout can trigger the escalation.
+      - text: Notable structures
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Coreli Guardian Safeguard
+          - count: "2"
+            class: Cruiser
+            names:
+              - Corelum Chief Infantry
+              - Corelum Chief Captain
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Corelatis Captain
+              - Corelatis High Captain
+              - Corelatis Squad Leader
+          - count: 3-4
+            class: Battleship
+            names:
+              - Core Lord Admiral
+          - count: 0-1
+            class: Battleship
+            names:
+              - Shadow Serpentis Admiral
+            ewar:
+              - kind: sensorDamp
+            triggers: Escalation
+            drop: Faction modules, ammo and tags
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+            note: Not locked
+  - name: Room 2
+    notes:
+      - text: If the second part of the escalation triggers, you get this message.
+      - text: "Expeditions: Clues within the wreckage of the ship hint at where it's from: another Serpentis station. More an outpost than a station perhaps, but it is a pure military outfit, not a regular colony."
+    waves:
+      - id: second-room
+        trigger:
+          on: other
+          text: Second room
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Cruiser
+            names:
+              - Serpentis Altac Scout
+            triggers: Escalation trigger
+  - name: Part 2
+    notes:
+      - text: "Access: Gateless, Open Access"
+      - text: This part is pretty straight forward. Clear the site of NPCs, aggress the station, kill the Shadow Serpentis and get out.
+      - text: Notable structures
+      - text: "Escalation message: Again you let your scanner comb the remains of the station and the ships, looking for clues on this alleged raid, and before long you are holding a log listing the second rally spot and as far as you can see, the raiding parties have already departed form here and two other stations and are supposed to convene within the hour. If one of the raiding parties was supposed to come from the Serpentis station you destroyed originally, you have already managed to diminish their forces somewhat."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "12"
+            class: Battlecruiser
+            names:
+              - Corelatis Captain
+              - Corelatis Captain Sentry
+          - count: "13"
+            class: Battleship
+            names:
+              - Core Lord Admiral
+              - Core Grand Admiral
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Serpentis Stronghold
+            triggers: Attacking it makes the defender wave spawn
+            drop: Nothing much
+      - id: structure-wave
+        trigger:
+          on: other
+          text: Structure wave
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corelum Guardian Chief
+              - Corelum Guardian Chief Patroller
+            ewar:
+              - kind: sensorDamp
+          - count: "3"
+            class: Battleship
+            names:
+              - Core Lord Admiral
+              - Core Grand Admiral
+          - count: "1"
+            class: Battleship
+            names:
+              - Shadow Serpentis Grand Admiral
+            triggers: Escalation trigger
+            drop: Faction modules, ammo and tags
+          - count: "8"
+            class: Sentry
+            names:
+              - Stronghold Cruise Missile Battery
+  - name: Part 3
+    notes:
+      - text: "Access: Gateless, Open Access"
+      - text: Kill the Shadow Serpentis spawn in the first room to triggers the next part of the escalation.
+      - text: If it is not there, going to the second room and an approach the beacon for the escalation.
+      - text: Notable structures
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Coreli Guardian Safeguard
+            ewar:
+              - kind: sensorDamp
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corelum Chief Infantry
+              - Corelum Chief Captain
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corelatis Captain
+              - Corelatis High Captain
+              - Corelatis Squad Leader
+          - count: "4"
+            class: Battleship
+            names:
+              - Core Lord Admiral
+              - Core Grand Admiral
+          - count: 0-1
+            class: Battleship
+            names:
+              - Shadow Serpentis Grand Admiral
+            triggers: Escalation trigger
+            drop: Faction modules, ammo and tags
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Newly Constructed Acceleration Gate
+            note: Not locked
+  - name: Room 2
+    notes:
+      - text: Beacon
+      - text: If the second part of the escalation triggers, you get this message.
+      - text: "Escalation message: A fixed guidance beacon sitting here all alone.. you examine the thing and discover its guidance system points to a place not too far away. Perhaps that is the space trucker station? In any case, that is the only clue you have to follow, if the pirates have ever been here, they have gone already."
+    waves:
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Beacon
+            names:
+              - Guidance Beacon
+            note: Approach this to trigger the next part of the escalation
+  - name: Part 4
+    notes:
+      - text: "Access: Gateless, Open Access"
+      - text: This can be quite hard. The first 3 waves spawn on a 4 minutes timer. The third wave have a Relay Commander, killing this spawn the Relay Wave. Killing the second Relay Commander spawns Black Ceasar and his followers.
+      - text: You want to clear each wave before spawning the next wave.
+      - text: "Expedition complete: Black Ceasar has been torn to pieces, and the Serpentis have scattered back to the darkness from whence they came."
+      - text: Attacking the Trucker Gate spawns a defensive wave. This offers nothing except the bounties - so there is no reason to attack the gate. They also hit A LOT harder than any other wave.
+      - text: Structure
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "4"
+            class: Destroyer
+            names:
+              - Corelior Sentinel
+            group: First wave
+          - count: "4"
+            class: Cruiser
+            names:
+              - Corelum Guardian Chief
+              - Corelum Guardian Chief Patroller
+            group: First wave
+            ewar:
+              - kind: sensorDamp
+          - count: "7"
+            class: Battleship
+            names:
+              - Core Grand Admiral
+              - Core Lord Admiral
+            group: First wave
+          - count: "3"
+            class: Frigate
+            names:
+              - Coreli Guardian Scout
+              - Coreli Guardian Agent
+            group: Second wave
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corelior High Captain
+              - Squad Leader
+            group: Second wave
+          - count: "5"
+            class: Battleship
+            names:
+              - Core Grand Admiral
+            group: Second wave
+          - count: "3"
+            class: Frigate
+            names:
+              - Coreli Guardian Patroller
+              - Coreli Guardian Watchman
+            group: Third wave
+            ewar:
+              - kind: sensorDamp
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corelum Guardian Chief
+              - Corelum Guardian Chief Patroller
+            group: Third wave
+            ewar:
+              - kind: sensorDamp
+          - count: "8"
+            class: Battleship
+            names:
+              - Core Grand Admiral
+              - Core Lord Admiral
+            group: Third wave
+          - count: "1"
+            class: Elite Battleship
+            names:
+              - Serpentis Relay Commander
+            group: Third wave
+            triggers: triggers the Relay Wave
+      - id: relay-wave
+        trigger:
+          on: other
+          text: Relay Wave
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Coreli Scout
+              - Coreli Agent
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "4"
+            class: Cruiser
+            names:
+              - Corelum Guardian Chief
+            ewar:
+              - kind: sensorDamp
+          - count: "7"
+            class: Battleship
+            names:
+              - Core Lord Admiral
+              - Core Grand Admiral
+          - count: "1"
+            class: Elite Battleship
+            names:
+              - Serpentis Relay Commander
+            triggers: triggers the Commander Wave
+      - id: commander-wave
+        trigger:
+          on: other
+          text: Commander Wave
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Elite Frigate
+            names:
+              - Ceaser's Webber
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "5"
+            class: Elite Cruiser
+            names:
+              - Ceaser's Subordinate
+            ewar:
+              - kind: sensorDamp
+          - count: "5"
+            class: Elite Battleship
+            names:
+              - Ceaser's Comrade
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Black Ceasar
+            drop: Core A-Type Modules, Shadow Serpentis Battleship Modules
+            note: He have an active armor tank, requires 600 dps to break
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Trucker Gate
+            triggers: Attacking this, triggers the Mercenary wave
+      - id: mercenary-wave-triggered-by-attacking-the-trucker-gate
+        trigger:
+          on: other
+          text: Mercenary Wave (Triggered by attacking the Trucker Gate)
+          confidence: inferred
+        spawns:
+          - count: "10"
+            class: Frigate
+            names:
+              - Space Trucker Outpost Guard
+          - count: "10"
+            class: Battleship
+            names:
+              - Space Trucker Outpost Overlord
+sde:
+  dungeonIds:
+    - 1916

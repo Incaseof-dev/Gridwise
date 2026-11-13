@@ -1,0 +1,68 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: scout-it-out
+kind: mission
+name: Scout It Out
+level: 3
+enemyFaction: Amarr Empire
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Scout It Out
+    url: https://wiki.eveuniversity.org/Scout_It_Out
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "191903"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Suggested ships: Battlecruiser"
+  - text: "Blitz: Destroy the 4 Warehouses."
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: On Warp-In you will be told to destroy the Warehouse. Mission detail journal may say "Kill Occupied Amarr Bunker.", you still need to destroy the warehouse to mark the mission as complete.
+      - text: 'Note: Even though the mission only requires you to destroy a warehouse, you will still get a standings loss with the Amarr Empire for a "Ship Kill". -0.24 Standing Loss with Amarr Empire for destroying the bunker (on par with other structure destruction missions).'
+    waves:
+      - id: initial-group-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group (auto-aggro)
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Sprite
+              - Divine Imperial Forian
+          - count: "2"
+            class: Cruiser
+            names:
+              - Imperial Templar Mathura
+              - Imperial Templar Agatho
+            triggers: Destruction of Agatho triggers Reinforcement
+      - id: reinforcement
+        trigger:
+          on: other
+          text: Reinforcement
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Imperial Caius
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Imperial Avenger
+      - id: wave
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Structure
+            names:
+              - Warehouse
+            drop: T1 ammo

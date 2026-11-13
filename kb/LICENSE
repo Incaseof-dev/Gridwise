@@ -1,0 +1,11 @@
+The knowledge base files in this directory (kb/) are licensed under the
+Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0):
+https://creativecommons.org/licenses/by-sa/4.0/
+
+Most entries are derived from the EVE University Wiki (https://wiki.eveuniversity.org/),
+which is licensed under CC BY-SA 4.0. Each file names its sources, including the page URL
+and the revision it was taken from, in its `sources` section.
+
+This licence covers the knowledge base data only, not the application source code.
+
+EVE Online and all related names are trademarks of CCP hf.

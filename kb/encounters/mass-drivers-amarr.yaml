@@ -1,0 +1,170 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: mass-drivers-amarr
+kind: mission
+name: Mass Drivers
+level: 5
+enemyFaction: Amarr Empire
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Mass Drivers (Amarr)
+    url: https://wiki.eveuniversity.org/Mass_Drivers_(Amarr)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "198928"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: web
+  - kind: neut
+  - kind: nos
+  - kind: trackingDisruption
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: All Frigates"
+  - text: "Suggested ships: (1) Maelstrom w/ Passive Tank, and (1) Maelstrom w/ 4 Shield Transporters, but recommend more DPS if you want to complete this mission within the 1.3 hour time bonus"
+  - text: "Space type: Deadspace with gates"
+pockets:
+  - name: Warp-in
+    notes:
+      - text: Warp-in - Gate positions
+      - text: Upon Warp-In you find yourself surrounded by eight gates whose relative positions form the shape of a cube around your ship. Each gate takes you into the same pocket, but each one leaves you at different position in relation to the centralized NPC targets.
+  - name: Single pocket
+    notes:
+      - text: The landing sites are in the same configuration as the original gates and form a cube around the NPC targets.
+      - text: Warp-in landing spots
+      - text: "Tips: Use a Passive Tank or plan a capacitor that receives an extra 80 GJ/sec"
+      - text: "Tips: Neutralizer Sentries re-target if you reach 100km but rarely hit past that"
+      - text: "Tips: Lower gates land you slightly farther from the Initial Group’s center than the upper gates"
+      - text: "Tips: Maximum damage dealing of all ships in initial group 2356 HP/s (EM: 57%, TH: 43%)"
+    waves:
+      - id: initial-group-35-60km-aggro-immediately
+        trigger:
+          on: warpIn
+          text: Initial Group (35-60km - aggro immediately)
+        spawns:
+          - count: "6"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Paladin
+              - Divine Imperial Valok
+              - Divine Imperial Napat*
+            ewar:
+              - kind: web
+              - kind: trackingDisruption
+              - kind: warpDisruption
+            triggers: Napat triggers reinforcement 1-1
+            note: Napat does TD
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Divine Imperial Justicar
+              - Divine Imperial Champion
+            note: Orbits at 14k/32k
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Imperial Templar Phalanx
+            note: Orbits at 22k
+          - count: "9"
+            class: Battleship
+            names:
+              - Imperial Templar Dominator
+              - Imperial Templar Judgement
+              - Imperial Templar Diviner
+              - Imperial Templar Martyr
+            ewar:
+              - kind: neut
+            triggers: Martyr triggers reinforcement 2-1
+            note: Diviner use NOS
+          - count: "1"
+            class: Sentry
+            names:
+              - Amarr Heavy Missile Battery
+          - count: "3"
+            class: Sentry
+            names:
+              - Amarr Cruise Missile Battery
+          - count: "1"
+            class: Sentry
+            names:
+              - Amarr Stasis Tower
+            ewar:
+              - kind: web
+          - count: "2"
+            class: Sentry
+            names:
+              - Amarr Energy Neutralizer Sentry II
+            ewar:
+              - kind: neut
+          - count: "1"
+            class: Sentry
+            names:
+              - Amarr Energy Neutralizer Sentry III
+            ewar:
+              - kind: neut
+      - id: reinforcement-1-1
+        trigger:
+          on: other
+          text: Reinforcement 1-1
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Imperial Templar Seer
+            ewar:
+              - kind: trackingDisruption
+            triggers: Triggers reinforcement 1-2
+            note: Orbits at 22k
+      - id: reinforcement-1-2
+        trigger:
+          on: other
+          text: Reinforcement 1-2
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Imperial Templar Justicar
+            triggers: Triggers reinforcement 1-3
+            note: Orbits at 10k
+      - id: reinforcement-1-3
+        trigger:
+          on: other
+          text: Reinforcement 1-3
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Imperial Champion
+              - Imperial Templar Justicar
+            note: Orbits at 22k
+      - id: reinforcement-2-1
+        trigger:
+          on: other
+          text: Reinforcement 2-1
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Battleship
+            names:
+              - Imperial Templar Dominator
+              - Imperial Templar Ultara
+            triggers: Triggers reinforcement 2-2
+            note: Orbits at 17k/49k
+      - id: reinforcement-2-2
+        trigger:
+          on: other
+          text: Reinforcement 2-2
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Battleship
+            names:
+              - Imperial Templar Torah
+              - Imperial Templar Ultara
+            note: Orbits at 44k/49k

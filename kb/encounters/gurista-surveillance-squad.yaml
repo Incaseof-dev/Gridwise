@@ -1,0 +1,293 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: gurista-surveillance-squad
+kind: escalation
+name: Gurista Surveillance Squad
+dedRating: null
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Gurista Surveillance Squad
+    url: https://wiki.eveuniversity.org/Gurista_Surveillance_Squad
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "228765"
+defaults:
+  confidence: verified
+  source: uni
+loot:
+  - item: + Commander and other valuable loot
+  - item: Dread Guristas Brass Tag
+    note: est. 7,500 ISK (wiki)
+  - item: Mid-Grade Crystal Gamma (Implant)
+    note: est. 55 M ISK (wiki) · Second location
+  - item: Pithum C-Type module
+    note: est. ~50-70 M ISK (wiki) · Final location
+  - item: Gila BPC
+    note: est. ~200 M ISK (wiki) · Final location. 1-run BPC
+pockets:
+  - name: First Location(lowsec)
+    notes:
+      - text: If Dread Guristas does not spawn, take the Newly Constructed Acceleration Gate into the second room and destroy the Guristas security station.
+      - text: "Upon Dread Guristas destruction: The station databanks contain information on the Gurista security network and among it; a location of yet another station similar to this one. That is your best clue as to where the ships that fled as you entered have gone."
+    waves:
+      - id: defenders-at-10-20-km
+        trigger:
+          on: warpIn
+          text: Defenders at 10-20 km
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Wrecker
+              - Dire Pithi Destructor
+            ewar:
+              - kind: ecm
+          - count: 0-1
+            class: Commander Cruiser
+            names:
+              - Dread Guristas Annihilator
+            triggers: Escalation trigger
+            drop: Possible Dread Guristas faction modules/ammo, meta modules
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Pithatis Executor
+  - name: First Pocket
+    notes:
+      - text: If Dread Guristas does not spawn, take the Newly Constructed Acceleration Gate into the second room and destroy the Gurista Security Outpost.
+    waves:
+      - id: defenders
+        trigger:
+          on: warpIn
+          text: Defenders
+        spawns:
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Inferno
+              - Dire Pithum Mortifier
+            ewar:
+              - kind: ecm
+          - count: "1"
+            class: Commander Cruiser
+            names:
+              - Dread Guristas Killer
+            drop: May drop Guristas faction modules
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Pithatis Enforcer
+              - Pithatis Executor
+  - name: Second Pocket
+    notes:
+      - text: Very large number of ships. DPS can be very high if all ships aggro.
+      - text: "Escalation trigger: To your dismay, the main computers of the station took a direct hit during your assault and any information that might have been there has now gone up in smoke. However, your instruments ran through the data from the fleeing ships and have come up with this location as a suggestion to where they might have warped."
+    waves:
+      - id: defenders-40-50-km
+        trigger:
+          on: warpIn
+          text: Defenders(40-50 km)
+        spawns:
+          - count: 7-8
+            class: Frigate
+            names:
+              - Pithi Arrogator
+              - Pithi Wrecker
+              - Pithi Destructor
+            note: type list incomplete on the source page
+          - count: "5"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Wrecker
+              - Dire Pithi Saboteur
+            ewar:
+              - kind: ecm
+            note: type list incomplete on the source page
+          - count: "6"
+            class: Destroyer
+            names:
+              - Pithior Guerilla
+              - Pithior Renegade
+          - count: 9-10
+            class: Cruiser
+            names:
+              - Pithum Silencer
+              - Pithum Eraser
+            ewar:
+              - kind: ecm
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Eraser
+            ewar:
+              - kind: ecm
+            note: type list incomplete on the source page
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Pithatis Enforcer
+            note: type list incomplete on the source page
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Gurista Security Outpost
+            triggers: Escalation trigger
+  - name: Third Location(lowsec)
+    notes:
+      - text: EWAR is not confirmed. If no Dread Guristas cruiser spawns, take the gate into the second room.
+      - text: "Escalation continuing: It looks like the most interesting of these Gurista ships got away during the fight. Luckily for you though, one of its communication devices seems to be malfunctioning for no apparent reason sending out a constant stream of screeching sounds. Your instruments have no problem tracing where it is coming from. It is an extremely irritating sound. Aggravating too. The screeching of doom."
+    waves:
+      - id: defenders-at-0-km
+        trigger:
+          on: warpIn
+          text: Defenders at 0 km
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Arrogator
+              - Dire Pithi Imputor
+            ewar:
+              - kind: ecm
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Annihilator
+              - Dire Pithum Killer
+            ewar:
+              - kind: ecm
+          - count: "1"
+            class: Commander Cruiser
+            names:
+              - Dread Guristas Inferno
+            triggers: Escalation trigger
+            drop: may drop Dread Guristas faction modules and tags
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Pithatis Assaulter
+              - Pithatis Death Dealer
+  - name: Fourth Location(nullsec or lowsec, can vary)
+    notes:
+      - text: "Escalation end: For a while there, you almost wished you had brought more friends with you and you are relieved you managed to blow the station before more could scramble against you. You are also relieved you managed to kill off that blasted gurgle sound. Permanently."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Dostan
+            triggers: Destruction triggers commander wave
+            note: Aggression triggers several smartbomb waves
+          - count: "6"
+            class: Sentry
+            names:
+              - Guristas Heavy Missile Battery
+          - count: 3-4
+            class: Destroyer
+            names:
+              - Pithior Anarchist
+              - Pithior Terrorist
+          - count: 5-6
+            class: Cruiser
+            names:
+              - Pithum Abolisher
+              - Pithum Eraser
+      - id: spawn-wave-50-armor
+        trigger:
+          on: other
+          text: Spawn wave(50% armor)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Destructor
+              - Dire Pithi Wrecker
+            ewar:
+              - kind: ecm
+          - count: "3"
+            class: Cruiser
+            names:
+              - Pithum Abolisher
+              - Pithum Eraser
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Inferno
+              - Dire Pithum Mortifier
+            ewar:
+              - kind: ecm
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Pithatis Assassin
+              - Pithatis Death Dealer
+      - id: spawn-wave-25-armor
+        trigger:
+          on: other
+          text: Spawn wave(25% armor)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Arrogator
+              - Dire Pithi Imputor
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: 7-8
+            class: Destroyer
+            names:
+              - Pithior Guerilla
+              - Pithior Renegade
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Annihilator
+              - Dire Pithum Killer
+            ewar:
+              - kind: ecm
+          - count: 7-8
+            class: Battlecruiser
+            names:
+              - Pithatis Death Dealer
+              - Pithatis Revolter
+      - id: commander-wave
+        trigger:
+          on: other
+          text: Commander wave
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Elite Frigate
+            names:
+              - Guristas Kyoukan
+              - Guristas Webifier
+            ewar:
+              - kind: web
+          - count: "1"
+            class: Storyline Mission Cruiser
+            names:
+              - Dini Mator
+            drop: Pithum C-Type modules, T2 salvage and possibly a Gila BPC
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Dire Pithum Mortifier
+            ewar:
+              - kind: ecm
+sde:
+  dungeonIds:
+    - 1742

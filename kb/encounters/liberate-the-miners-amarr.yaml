@@ -1,0 +1,172 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: liberate-the-miners-amarr
+kind: mission
+name: Liberate the Miners
+level: 5
+enemyFaction: Amarr Empire
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Liberate the Miners (Amarr)
+    url: https://wiki.eveuniversity.org/Liberate_the_Miners_(Amarr)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "197799"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Completed in (1) Maelstrom w/ Passive Tank and (1) Maelstrom w/ Shield Transporters"
+ewar:
+  - kind: web
+  - kind: neut
+  - kind: trackingDisruption
+notes:
+  - text: Acceleration Gate into Deadspace
+pockets:
+  - name: Single pocket
+    notes:
+      - text: All groups aggro within 10 seconds of warp-in
+      - text: Position of groups at warp-In
+      - text: "Tips: Use a Passive Tank and save time by not having to destroy Energy Neutralizer Sentries which re-spawn themselves 3 times, and then spawn frigates."
+      - text: "Tips: Or plan a capacitor that receives an additional 80 units/s."
+      - text: "Tips: Maximum damage dealing of initial groups are 1806 hp/s (EM 58%, Therm 42%)."
+      - text: "Tips: Mission flagged complete when all ships are destroyed."
+    waves:
+      - id: sentries-between-25-80km-away
+        trigger:
+          on: other
+          text: Sentries (Between 25-80km away)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Amarr Heavy Missile Batteries
+          - count: "5"
+            class: Sentry
+            names:
+              - Amarr Cruise Missile Batteries
+          - count: "2"
+            class: Sentry
+            names:
+              - Tower Sentry Amarr III
+          - count: "2"
+            class: Sentry
+            names:
+              - Amarr Stasis Towers
+            ewar:
+              - kind: web
+          - count: "2"
+            class: Sentry
+            names:
+              - Energy Neutralizer Sentry III
+            ewar:
+              - kind: neut
+            triggers: Replacements 3 times, after which there will spawn 6 EWAR frigates
+      - id: group-1-at-broken-metallic-crystal-asteroid-70km-from-warp-in
+        trigger:
+          on: other
+          text: Group 1 at Broken Metallic Crystal Asteroid (70km from warp-in)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battleship
+            names:
+              - Imperial Templar Martyr
+            note: Orbits at 49k
+      - id: group-2-at-amarr-control-tower-45k-from-warp-in
+        trigger:
+          on: other
+          text: Group 2 at Amarr Control Tower (45k from warp-in)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Imran
+              - Divine Imperial Sixtus
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: Orbits at 4k
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - (Divine Imperial Napat
+            ewar:
+              - kind: web
+              - kind: trackingDisruption
+              - kind: warpDisruption
+            note: Orbits at 10k
+          - count: "4"
+            class: Battleship
+            names:
+              - Imperial Templar Ultara
+            triggers: Triggers reinforcement 1
+            note: Orbits at 49k
+      - id: reinforcement-1-around-amarr-control-tower
+        trigger:
+          on: other
+          text: Reinforcement 1 Around Amarr Control Tower
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battleship
+            names:
+              - Imperial Templar Dominator
+              - Imperial Templar Martyr
+            note: Orbits at 17-49k
+      - id: group-3-at-cloven-grey-asteroid-55k-from-warp-in
+        trigger:
+          on: other
+          text: Group 3 at Cloven Grey Asteroid (55k from warp-in)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battleship
+            names:
+              - Imperial Martyr
+              - Imperial Templar Torah
+            ewar:
+              - kind: neut
+            triggers: Triggers reinforcement 2
+            note: Orbits at 17-44k, Martyr does EWAR
+      - id: reinforcement-2-around-cloven-grey-asteroid
+        trigger:
+          on: other
+          text: Reinforcement 2 Around Cloven Grey Asteroid
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battleship
+            names:
+              - Imperial Templar Dominator
+              - Imperial Templar Martyr
+            triggers: Triggers reinforcement 3
+            note: orbits at 17-49k
+      - id: reinforcement-3-around-cloven-grey-asteroid
+        trigger:
+          on: other
+          text: Reinforcement 3 Around Cloven Grey Asteroid
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battleship
+            names:
+              - Imperial Templar Dominator
+              - Imperial Templar Martyr
+            triggers: Triggers reinforcement 4
+            note: orbits at 17-49k
+      - id: reinforcement-4-around-cloven-grey-asteroid
+        trigger:
+          on: other
+          text: Reinforcement 4 Around Cloven Grey Asteroid
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Battleship
+            names:
+              - Imperial Templar Judgment
+            note: Orbits at 49k

@@ -1,0 +1,26 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: police-invasion-khanid-kingdom
+kind: mission
+name: Police Invasion
+level: 3
+enemyFaction: Khanid Kingdom
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Police Invasion (Khanid Kingdom)
+    url: https://wiki.eveuniversity.org/Police_Invasion_(Khanid_Kingdom)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "195919"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Suggested ships: Zealot"
+  - text: "Space type: Deadspace"
+  - text: Snipable mission.
+pockets:
+  - name: Pocket 3
+    notes:
+      - text: You can get through the mission quicker by ignoring the nearest group on warp in and killing the cruisers only, the frigate groups will auto aggro as you kill most of the cruisers

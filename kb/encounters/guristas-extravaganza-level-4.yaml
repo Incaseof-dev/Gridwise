@@ -1,0 +1,493 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: guristas-extravaganza-level-4
+kind: mission
+name: Guristas Extravaganza
+level: 4
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Guristas Extravaganza (Level 4)
+    url: https://wiki.eveuniversity.org/Guristas_Extravaganza_(Level_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "228329"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: ecm
+  - kind: web
+notes:
+  - text: "Web/warp disruption: Web (Guristas Kyoukan/Webifier)"
+  - text: "Blitz: Pocket 1 - Destroy all ships."
+  - text: "Blitz: Pocket 2 - Destroy the Ion Field Projection Battery and Moon Harvester, then kill all ships."
+  - text: "Blitz: Pocket 3 - Destroy the Guristas Medium Refinery, Subspace Frequency Generator, and Asteroid Mining Post. Then kill all ships."
+  - text: "Blitz: Pocket 4 - Destroy the Starbase Storage Facility, Starbase Reactor, and Guristas Starbase Control Tower. Then kill all ships."
+  - text: "Blitz: Pocket 5 - Kill all Battleships and Battlecruisers from the first spawn."
+  - text: "Notes: Structures drop no loot, with the exception of those in Pocket 5 and the Ion projections and Moon harvester."
+  - text: "Notes: Asteroid Factory has a lot of armor and there's no point in shooting it."
+  - text: "Notes: As of the Trinity 1.2 Update the Guristas Storage Facility no longer drops faction loot."
+  - text: "Notes: Many of the frigates (Kyoukan/Webifier) in the earlier waves of each pockets only do little damages and doesn't web (Jan 5th 2025)."
+lootNotes:
+  - text: "Loot: ± 8.3 Mil ISK"
+  - text: "Salvage: ± 4.4 Mil ISK"
+  - text: "Bounty: ± 28 Mil ISK"
+pockets:
+  - name: 1st Pocket
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Pithi Plunderer
+              - Pithi Wrecker
+          - count: "2"
+            class: Cruiser
+            names:
+              - Pithum Silencer
+              - Pithum Ascriber
+          - count: "3"
+            class: Sentry
+            names:
+              - Tower Sentry Guristas II
+          - count: "3"
+            class: Sentry
+            names:
+              - Tower Sentry Guristas III
+  - name: 2nd Pocket
+    notes:
+      - text: "Tips: Blow up Ion Field Projection Battery and Moon Harvester and the reinforcement spawns won't appear."
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Guristas Kyoukan
+              - Guristas Webifier
+            ewar:
+              - kind: web
+            triggers: Spawns Reinforcement 1
+          - count: 0-1
+            class: Destroyer
+            names:
+              - Pithior Supremacist
+              - Pithior Terrorist
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Pithatis Assassin
+              - Pithatis Death Dealer
+          - count: "1"
+            class: Battleship
+            names:
+              - Pith Destroyer
+              - Pith Exterminator
+      - id: reinforcement-1
+        trigger:
+          on: other
+          text: Reinforcement 1
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Guristas Kyoukan
+              - Guristas Webifier
+            ewar:
+              - kind: web
+            triggers: Spawns Reinforcement 2
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Pithatis Assaulter
+              - Pithatis Enforcer
+          - count: "2"
+            class: Battleship
+            names:
+              - Pith Eliminator
+              - Pith Extinguisher
+      - id: reinforcement-2
+        trigger:
+          on: other
+          text: Reinforcement 2
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Guristas Kyoukan
+              - Guristas Webifier
+            ewar:
+              - kind: web
+            triggers: Spawns Reinforcement 3
+          - count: "2"
+            class: Battleship
+            names:
+              - Pith Dismantler
+              - Pith Obliterator
+      - id: reinforcement-3
+        trigger:
+          on: other
+          text: Reinforcement 3
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Cruiser
+            names:
+              - Pithum Abolisher
+              - Pithum Eraser
+          - count: "2"
+            class: Battleship
+            names:
+              - Pithatis Eradicator
+          - count: "1"
+            class: Battleship
+            names:
+              - Arika Tosch
+            ewar:
+              - kind: ecm
+            note: Pith Extinguisher
+  - name: 3rd Pocket
+    notes:
+      - text: "Tips: Blow up Guristas Medium Refinery, Subspace Frequency Generator, and Asteroid Mining Post and the reinforcements spawns won't appear."
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Guristas Kyoukan
+              - Guristas Webifier
+            ewar:
+              - kind: web
+            triggers: Spawns Reinforcement 1
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Pithatis Assaulter
+              - Pithatis Enforcer
+          - count: 1-3
+            class: Battleship
+            names:
+              - Pith Dismantler
+              - Pith Obliterator
+          - count: "3"
+            class: Sentry
+            names:
+              - Guristas Cruise Missile Battery
+      - id: reinforcement-1
+        trigger:
+          on: other
+          text: Reinforcement 1
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Guristas Kyoukan
+              - Guristas Webifier
+            ewar:
+              - kind: web
+            triggers: Spawns Reinforcement 2
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Pithatis Assaulter
+              - Pithatis Enforcer
+          - count: "2"
+            class: Battleship
+            names:
+              - Pith Eradicator
+              - Pith Obliterator
+      - id: reinforcement-2
+        trigger:
+          on: other
+          text: Reinforcement 2
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Guristas Kyoukan
+              - Guristas Webifier
+            ewar:
+              - kind: web
+            triggers: Spawns Reinforcement 3
+          - count: 0-1
+            class: Battlecruiser
+            names:
+              - Pithatis Executor
+              - Pithatis Enforcer
+          - count: "3"
+            class: Battleship
+            names:
+              - Pith Dismantler
+              - Pith Extinguisher
+      - id: reinforcement-3-33-38km-auto-aggro
+        trigger:
+          on: other
+          text: Reinforcement 3, 33-38km auto-aggro
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Guristas Webifier
+            ewar:
+              - kind: web
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Pithatis Assaulter
+              - Pithatis Enforcer
+          - count: "2"
+            class: Battleship
+            names:
+              - Pith Eliminator
+              - Pith Exterminator
+            ewar:
+              - kind: ecm
+            triggers: Highest bounty BS is trigger
+            note: Jamming Eliminator/Exterminator; type list incomplete on the source page
+      - id: reinforcement-4
+        trigger:
+          on: other
+          text: Reinforcement 4
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Guristas Kyoukan
+              - Guristas Webifier
+            ewar:
+              - kind: web
+          - count: "1"
+            class: Destroyer
+            names:
+              - Pthior Terrorist
+          - count: "2"
+            class: Battleship
+            names:
+              - Pith Eliminator
+              - Pith Exterminator
+            ewar:
+              - kind: ecm
+            note: Jamming Eliminator/Exterminator; type list incomplete on the source page
+  - name: 4th Pocket
+    notes:
+      - text: "Tips: Blow up Starbase Storage Facility, Starbase Reactor, and Guristas Starbase Control Tower and the reinforcement spawns won't appear."
+    waves:
+      - id: initial-group-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group, auto-aggro
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Guristas Kyoukan
+              - Guristas Webifier
+            ewar:
+              - kind: web
+            triggers: Spawns Reinforcement 1
+          - count: "1"
+            class: Cruiser
+            names:
+              - Guristas Emissary
+          - count: "3"
+            class: Battleship
+            names:
+              - Pith Eradicator
+              - Pith Obliterator
+          - count: "4"
+            class: Sentry
+            names:
+              - Amarr Heavy Missile Battery
+            note: Alpha strike at 1,800 EM damage
+      - id: reinforcement-1
+        trigger:
+          on: other
+          text: Reinforcement 1
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Guristas Kyoukan
+              - Guristas Webifier
+            ewar:
+              - kind: web
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Pithatis Assassin
+              - Pithatis Death Dealer
+          - count: "2"
+            class: Battleship
+            names:
+              - Pith Eliminator
+              - Pith Extinguisher
+            ewar:
+              - kind: ecm
+            note: Jamming Eliminator
+  - name: 5th Pocket
+    notes:
+      - text: thumb|Example loot drop from Guristas War HQ
+      - text: Guristas War HQ has 350k HP and dropped 600 of loot that was worth 2M ISK (23 December 2025).
+    waves:
+      - id: initial-spawn-70km-from-warp-in
+        trigger:
+          on: warpIn
+          text: Initial Spawn, 70km from warp-in
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Guristas Kyoukan
+              - Guristas Webifier
+            ewar:
+              - kind: web
+            triggers: Trigger is the one that webs you
+          - count: "4"
+            class: Destroyer
+            names:
+              - Pithior Anarchist
+              - Pithior Renegade
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Pithatis Assaulter
+              - Pithatis Enforcer
+          - count: 1-2
+            class: Battleship
+            names:
+              - Pith Conquistador
+              - Pith Dismantler
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Sentry
+            names:
+              - Tower Sentry Guristas II
+          - count: "1"
+            class: Sentry
+            names:
+              - Guristas Heavy Missile Battery
+      - id: reinforcement-1-43km-from-warp-in
+        trigger:
+          on: other
+          text: Reinforcement 1, 43km from warp-in
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Guristas Kyoukan
+            ewar:
+              - kind: web
+            triggers: Spawns Reinforcement 2
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Dire Pithi Despoiler
+              - Dire Pithi Saboteur
+            ewar:
+              - kind: ecm
+          - count: "3"
+            class: Battleship
+            names:
+              - Pith Conquistador
+              - Pith Destroyer
+      - id: reinforcement-2-50km-from-warp-in
+        trigger:
+          on: other
+          text: Reinforcement 2, 50km from warp-in
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Guristas Kyoukan
+            ewar:
+              - kind: web
+            triggers: Trigger just by shooting at it
+          - count: 3-4
+            class: Destroyer
+            names:
+              - Pithior Guerilla
+              - Pithior Supremacist
+              - Pithior Terrorist
+          - count: "3"
+            class: Battleship
+            names:
+              - Pith Eradicator
+              - Pith Obliterator
+      - id: reinforcement-3
+        trigger:
+          on: other
+          text: Reinforcement 3
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Guristas Kyoukan
+            ewar:
+              - kind: web
+          - count: 2-3
+            class: Battlecruiser
+            names:
+              - Pithatis Assaulter
+              - Pithatis Death Dealer
+          - count: 2-3
+            class: Battleship
+            names:
+              - Pith Eradicator
+              - Pith Obliterator
+          - count: "1"
+            class: Battleship
+            names:
+              - Aimon Kuzni
+            note: Pith Conquistador
+  - name: 6th Pocket (Bonus Room)
+    notes:
+      - text: Requires Guristas Diamond Tag (not consumed). Gate stays unlocked for 10 seconds.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Destroyer
+            names:
+              - Pithior Supremacist
+              - Pithior Terrorist
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Pithatis Death Dealer
+              - Pithatis Revolter
+          - count: "4"
+            class: Battleship
+            names:
+              - Pith Extinguisher
+              - Pith Eliminator
+              - Pith Usurper
+          - count: "2"
+            class: Sentry
+            names:
+              - Tower Sentry Guristas II

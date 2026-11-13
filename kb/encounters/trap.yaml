@@ -1,0 +1,156 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: trap
+kind: escalation
+name: Trap?
+dedRating: null
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Trap?
+    url: https://wiki.eveuniversity.org/Trap%3F
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "215748"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Destroyer"
+notes:
+  - text: "Escalation message:: Without you noticing, a small group of the Gurista ships slipped away at the beginning of the fight. Luckily your radar systems have picked up a trace leading to their location."
+loot:
+  - item: Pithi A-Type Small Shield Booster
+    from: Dread Pithi Terminator
+    note: est. ~150 M ISK (wiki) · Looted on 2024-05-10
+pockets:
+  - name: Warpin
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Pithi Destructor
+              - Pithi Demolisher
+            note: type list incomplete on the source page
+          - count: 0-1
+            class: Commander Frigate
+            names:
+              - Dread Guristas Despoiler
+            ewar:
+              - kind: ecm
+            triggers: Escalation trigger
+            drop: Can drop faction modules, BPCs or implants
+          - count: 3-4
+            class: Destroyer
+            names:
+              - Pithior Anarchist
+              - Pithior Nihilist
+  - name: pocket
+    notes:
+      - text: Entering the pocket is second possible escalation trigger. There is nothing noteworthy in the pocket.
+      - text: "Escalation message:: Arriving at the designated rendezvous point there is nothing. Nothing at all. But all of a sudden your radio crackles once more; it is another call from seemingly the same Gurista ship announcing another location this time, adding that he is on a hot pursuit chasing some hapless industrial ships."
+  - name: Warpin
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Pithi Destructor
+              - Pithi Demolisher
+            note: type list incomplete on the source page
+          - count: 0-1
+            class: Commander Frigate
+            names:
+              - Dread Guristas Despoiler
+            ewar:
+              - kind: ecm
+            triggers: Escalation trigger
+            drop: Can drop faction modules, BPCs or implants
+          - count: 3-4
+            class: Destroyer
+            names:
+              - Pithior Anarchist
+              - Pithior Nihilist
+  - name: pocket
+    notes:
+      - text: Entering the pocket is second possible escalation trigger. There is nothing noteworthy in the pocket.
+      - text: 'Escalation message:: Again there is nothing to be seen at the location and you are starting to think you are being pulled into some sort of a trap. A feeling that only grows stronger when for the third time you receive a transmission from the Gurista announcing that "the ambush is ready" and you must hurry to a given location in order for it to succeed.'
+  - name: Warpin
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Dire Pithi Destructor
+              - Dire Pithi Plunderer
+            note: type list incomplete on the source page
+          - count: 0-1
+            class: Commander Frigate
+            names:
+              - Dread Guristas Despoiler
+            ewar:
+              - kind: ecm
+            triggers: Escalation trigger
+            drop: Can drop faction modules, BPCs or implants
+          - count: 3-4
+            class: Destroyer
+            names:
+              - Pithior Anarchist
+              - Pithior Nihilist
+  - name: pocket
+    notes:
+      - text: Entering the pocket is second possible escalation trigger. There is nothing noteworthy in the pocket.
+      - text: "Escalation message:: As soon as you arrive, you receive a distress call from a pilot identifying himself as a freight pilot under attack. His co-ordinates are included in the transmission."
+  - name: 4th location
+    notes:
+      - text: "Escalation completion message:: It was as you thought; the whole thing was a trap. You can't believe that anyone would be so gullible to fly right into that one. Unless of course they were fully aware of it and only showed up to destroy the assailants. What is exactly which you did..."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 4-6
+            class: Frigate
+            names:
+              - Pithi Demolisher
+              - Pithi Destructor
+          - count: "2"
+            class: Frigate
+            names:
+              - Pithi Despoiler
+              - Pithi Saboteur
+            ewar:
+              - kind: ecm
+          - count: "1"
+            class: Overseer Frigate
+            names:
+              - Dread Pithi Terminator
+            ewar:
+              - kind: ecm
+            drop: Can drop faction frigate modules or Pith A-type modules
+          - count: "1"
+            class: Cruiser
+            names:
+              - Pithum Ascriber
+              - Pithum Silencer
+          - count: "1"
+            class: Sentry
+            names:
+              - Gursitas Statis Tower
+            ewar:
+              - kind: web

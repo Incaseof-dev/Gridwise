@@ -1,0 +1,337 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: sansha-war-supply-complex
+kind: complex
+name: Sansha War Supply Complex
+dedRating: 6
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Sansha War Supply Complex
+    url: https://wiki.eveuniversity.org/Sansha_War_Supply_Complex
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "230239"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Battleships"
+notes:
+  - text: The site is behind an acceleration gate. Warping to the side lands you at 0 on the gate.
+  - text: This site is rated DED 6/10. 3 Battlecruisers and a Battleship ran this site easily. A well tanked T3 Cruiser is usually sufficient to clear the site in ~30-40 minutes.
+  - text: Warping to the site lands on an acceleration gate at 0.
+loot:
+  - item: 19th Tier Overseer's Effects
+    from: Skomener Effotber
+    note: est. 51M ISK (wiki) · 100% drop rate
+  - item: Centum Cruiser A-type Module
+    from: Skomener Effotber
+  - item: Phantasm BPC
+    from: Skomener Effotber
+  - item: True Sansha module
+    from: Skomener Effotber
+  - item: True Sansha module
+    from: Effotber's Transit Overseer
+  - item: True Sansha module
+    from: True Creation's Park Overseer
+lootNotes:
+  - text: You can get about 24 million ISK in bounties and a similar amount of meta module loot. There is an opportunity to get Centum Cruiser A-type Module drop, and you are guaranteed a 19th Tier Overseer's Personal Effects (~51 million ISK).
+pockets:
+  - name: Room 1
+    notes:
+      - text: The overseer battleship does not contain any notable loot.
+      - text: "Note: Room 2a (down gate) is optional and contains no particular loot. Room 2b has an overseer battleship and must be cleared in order to take the gate forward (updated June 2021). Both gates are locked until the pocket is cleared."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Centii Butcher
+              - Centii Manslayer
+          - count: "4"
+            class: Cruiser
+            names:
+              - Centum Fiend
+          - count: 7-8
+            class: Battleship
+            names:
+              - Centus Mutant Lord
+              - Centus Savage Lord
+          - count: "1"
+            class: Overseer Battleship
+            names:
+              - Sansha Corpse Collector
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate (down)
+            note: Leads to room 2a - Supply Pit
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate (up)
+            note: Leads to room 2b - Product Park
+    onWarpIn: "Sansha's War Supply Complex was built as a direct countermeasure to CONCORD's increased emphasis on curbing the influence of Sansha's Nation. The compound contains a lot of basic armaments and supplies. It is sturdy and well defended. DED Threat Assessment: Serious (6 of 10)"
+  - name: Room 2a - Supply Pit
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Centatis ?
+            group: Group 1 (0km)
+          - count: "2"
+            class: Battleship
+            names:
+              - Centus ?
+            group: Group 1 (0km)
+          - count: "5"
+            class: Frigate
+            names:
+              - Centii Butcher
+              - Centii Manslayer
+            group: Group 2 (40 km)
+          - count: "2"
+            class: Destroyer
+            names:
+              - Centior Misshape
+            group: Group 2 (40 km)
+          - count: "7"
+            class: Cruiser
+            names:
+              - Centum Fiend
+              - Centum Hellhound
+            group: Group 2 (40 km)
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Centatis Specter
+            group: Group 2 (40 km)
+          - count: "5"
+            class: Battleship
+            names:
+              - Centus Mutant Lord
+              - Centus Savage Lord
+            group: Group 2 (40 km)
+          - count: "1"
+            class: Battleship
+            names:
+              - Centus Overlord
+            group: Group 2 (40 km)
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Red Container
+            names:
+              - Main Supply Storage
+            drop: Contains the Product Park Passcard required to access the next room
+            note: Locked
+          - count: "2"
+            class: Container
+            names:
+              - Cache Container
+            drop: Drones
+          - count: "2"
+            class: Container
+            names:
+              - Charge Ammunition Storage
+            drop: T1 ammo
+          - count: "2"
+            class: Container
+            names:
+              - Cruise Missile Storage
+            drop: 100 cruise missiles in each container
+          - count: "2"
+            class: Container
+            names:
+              - Drone Sensor Storage
+            drop: Defunct Drone Sensor Modules
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: Leads back to the first section
+    onWarpIn: The Check-in Decks of Sansha's War Supply are guarded by a tight group of pirate vessels. Some firepower is required to bash through to the gates.
+  - name: Room 2b (Product Park)
+    notes:
+      - text: The rats are spread out in 4 groups. Except for the group camping the warp-in, they will not auto-aggro on landing unless approached or attacked, and will shoot drones if they have not aggro'd any players already.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Battleship
+            names:
+              - Centus Mutant Lord
+              - Centus Savage Lord
+            group: Group 1
+          - count: "2"
+            class: Frigate
+            names:
+              - Centii Butcher
+              - Centii Manslayer
+            group: Group 2 (40 km)
+          - count: "3"
+            class: Destroyer
+            names:
+              - Centior Misshape
+            group: Group 2 (40 km)
+          - count: "1"
+            class: Cruiser
+            names:
+              - Centum Fiend
+            group: Group 2 (40 km)
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Centatis Phantasm
+              - Centatis Specter
+            group: Group 2 (40 km)
+          - count: "11"
+            class: Battleship
+            names:
+              - Centus Mutant Lord
+              - Centus Overlord
+              - Centus Savage Lord
+            group: Group 2 (40 km)
+          - count: "1"
+            class: Overseer Battleship
+            names:
+              - True Creation's Park Overseer
+            group: Group 2 (40 km)
+            drop: may drop True Sansha Battleship Module
+    onWarpIn: Here, Sansha's 'True Creations' store some of the products manufactured in the complex. A tightly built city called simply "The Pit" is heavily guarded by a number of small frigates and cruisers. DED experts have described the area's patrol routines as flawed and their command as panicky and incompetent.
+  - name: Room 3
+    notes:
+      - text: Group 1 auto-aggros on landing. Group 2 will not aggro unless approached or attacked and will shoot drones if not aggressed first by a player.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Centii Butcher
+              - Centii Manslayer
+            group: Group 1, camping the warp-in
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Centatis Phantasm
+            group: Group 1, camping the warp-in
+          - count: "1"
+            class: Battleship
+            names:
+              - Centus Slave Lord
+            group: Group 1, camping the warp-in
+          - count: "2"
+            class: Frigate
+            names:
+              - Centii Plague
+            group: Group 2 (40 km)
+          - count: "5"
+            class: Destroyer
+            names:
+              - Centior Misshape
+            group: Group 2 (40 km)
+          - count: "7"
+            class: Battlecruiser
+            names:
+              - Centatis Phantasm
+              - Centatis Specter
+            group: Group 2 (40 km)
+          - count: "11"
+            class: Battleship
+            names:
+              - Centus Plague Lord
+              - Centus Savage Lord
+            group: Group 2 (40 km)
+          - count: "1"
+            class: Overseer Battleship
+            names:
+              - Effotber's Transit Overseer
+            group: Group 2 (40 km)
+            drop: may drop True Sansha Battleship Module
+    onWarpIn: The so called "Product Park" is where the complex's most vigorous mining operations take place. Structures built into asteroids house the pre-processing and manufacture of crude parts before being shipped further into the complex.
+  - name: Room 4
+    notes:
+      - text: The two sentries and the group camping the warp-in will auto-aggro on landing. Attacking Skomener Effotber will aggro the entire pocket.
+      - text: Skomener Effotber has strong armor tank that needs at least 600 DPS of pure EM damage (70% weakest resist) to break. He does ~450 dps EM/Thermal damage at 70km range. Combined with the full room aggro the total incoming damage in this pocket can well exceed 1000 dps. There are no webbing ships so speed tanking will reduce the room damage by a lot.
+      - text: "Blitz: Kill Skomener Effotber, bookmark wreck, warp out, wait 3 minutes, warp back to loot wreck."
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Centior Devourer
+              - Centior Cannibal
+            group: Group 1
+          - count: 0-1
+            class: Battlecruiser
+            names:
+              - Centatis Specter
+            group: Group 1
+          - count: 1-2
+            class: Battleship
+            names:
+              - Centus Savage Lord
+            group: Group 1
+          - count: "2"
+            class: Sentry
+            names:
+              - Sansha Cruise Missile Battery
+            group: Group 1
+          - count: "6"
+            class: Destroyer
+            names:
+              - Centior Cannibal
+              - Centior Devourer
+            group: Group 2 (40 km)
+          - count: "10"
+            class: Battlecruiser
+            names:
+              - Centatis Phantasm
+              - Centatis Specter
+            group: Group 2 (40 km)
+          - count: "7"
+            class: Battleship
+            names:
+              - Centus Beast Lord
+              - Centus Plague Lord
+            group: Group 2 (40 km)
+          - count: "1"
+            class: Overseer Battleship
+            names:
+              - Overseer Skomener Effotber
+            group: Group 2 (40 km)
+            drop: 19th Tier OPE, Centum A-Type Modules, True Sansha Battleship Modules, Phantasm BPC
+    onWarpIn: The Centus Creations station is built in the remnants of a massive asteroid. It is where the Centus Sansha mass-produce the largest components of ships and other equipment.
+sde:
+  dungeonIds:
+    - 2243

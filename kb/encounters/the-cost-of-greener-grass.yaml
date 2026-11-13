@@ -1,0 +1,103 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-cost-of-greener-grass
+kind: mission
+name: The Cost of Greener Grass
+level: 2
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Cost of Greener Grass
+    url: https://wiki.eveuniversity.org/The_Cost_of_Greener_Grass
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "227941"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Kill the Caldari traitor and his allies; bring the traitor's DNA to your agent.
+ewar:
+  - kind: sensorDamp
+notes:
+  - text: "Suggested ships: Cruiser, Battlecruiser"
+  - text: "Blitz: Kill triggers to spawn reinforcement 3, kill the Caldari Traitor, and warp out."
+  - text: Caldari Traitor's DNA will popup automatically in your cargohold on destroying his ship.
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: "Loot: Federation Navy Command Sergeant Major Insignia I x3"
+      - text: "Loot: Federation Navy Fleet Captain Insignia I x1"
+      - text: "Loot: Federation Navy Midshipman Insignia II x7"
+      - text: "Loot: Federation Navy Midshipman Insignia III x1"
+      - text: "Loot: Federation Navy Sergeant Major Insignia I x1"
+      - text: "Loot: Federation Navy Sergeant Major Insignia I x1"
+    waves:
+      - id: initial-30km
+        trigger:
+          on: warpIn
+          text: Initial (~30km)
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Federation Insidiator
+              - Federation Praktor Balra
+          - count: "2"
+            class: Cruiser
+            names:
+              - Federation Misthios
+              - Federation Hastatus
+            triggers: Triggers reinforcement 1 when destroyed
+      - id: reinforcement-1-30km
+        trigger:
+          on: other
+          text: Reinforcement 1 (~30km)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Cruiser
+            names:
+              - Federation Nauclarius
+            ewar:
+              - kind: sensorDamp
+            triggers: Attacking triggers reinforcement 2A, killing triggers reinforcement 2B
+      - id: reinforcement-2a-30km
+        trigger:
+          on: other
+          text: Reinforcement 2A (~30km)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Federation Manica
+              - Federation Libertus
+            ewar:
+              - kind: sensorDamp
+            triggers: last kill triggers reinforcement 3
+            note: Manica does ewar
+      - id: reinforcement-3-20km
+        trigger:
+          on: other
+          text: Reinforcement 3 (~20km)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Cruiser
+            names:
+              - Caldari Traitor
+            triggers: Triggers reinforcement 2B when attacked (needs verification)
+            note: Mission completion once destroyed. Renamed Federation Praktor O...
+      - id: reinforcement-2b-20km
+        trigger:
+          on: other
+          text: Reinforcement 2B (~20km)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Federation Hastarius
+              - Federation Loras

@@ -1,0 +1,180 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: a-case-of-kidnapping-level-1
+kind: mission
+name: A Case of Kidnapping
+level: 1
+enemyFaction: Equilibrium of Mankind & Mercenaries
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – A Case of Kidnapping (Level 1)
+    url: https://wiki.eveuniversity.org/A_Case_of_Kidnapping_(Level_1)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "230822"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Rescue VIPs and return them to agent. 10 x VIPs (30)
+notes:
+  - text: The EoM Imps in the first pocket will release smartbombs upon taking any form of damage.
+pockets:
+  - name: Warp-in
+    notes:
+      - text: "Pop-up: Incoming Transmission: Fool, you’re to late. We got what we came for."
+    waves:
+      - id: on-grid
+        trigger:
+          on: other
+          text: On grid
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - EoM Imp
+  - name: 1st Pocket
+    notes:
+      - text: EoM Imps in this pocket releases smartbombs on taking damage or being webbed. Smartbombs will not trigger if the first shot instakills the Imp.
+      - text: Destruction of the last ship in each wave triggers the next wave.
+    waves:
+      - id: on-grid
+        trigger:
+          on: other
+          text: On grid
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - EoM Fiend
+      - id: reinforcement-1
+        trigger:
+          on: other
+          text: Reinforcement 1
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - EoM Fiend
+      - id: reinforcement-2
+        trigger:
+          on: other
+          text: Reinforcement 2
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - EoM Imp
+      - id: reinforcement-3
+        trigger:
+          on: other
+          text: Reinforcement 3
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - EoM Imp
+              - EoM Fiend
+  - name: 2nd Pocket
+    waves:
+      - id: on-grid
+        trigger:
+          on: other
+          text: On grid
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - EoM Imp
+              - EoM Fiend
+            triggers: Fiend triggers reinforcement 1
+      - id: reinforcement-1
+        trigger:
+          on: other
+          text: Reinforcement 1
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - EoM Fiend
+            triggers: Last ship destroyed triggers Reinforcement 2
+      - id: reinforcement-2
+        trigger:
+          on: other
+          text: Reinforcement 2
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - EoM Incubus
+  - name: 3rd Pocket
+    notes:
+      - text: "Popup: Merc Fighter: Sorry, but we can’t allow you to get any farther. Nothing personal…"
+    waves:
+      - id: on-grid
+        trigger:
+          on: other
+          text: On grid
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Frigate
+            names:
+              - Mercenary Rookie
+            group: Group A 18km
+            triggers: Last ship destroyed triggers Reinforcement A1
+          - count: "5"
+            class: Frigate
+            names:
+              - Mercenary Rookie
+            group: Group B 22km
+      - id: reinforcement-a1
+        trigger:
+          on: other
+          text: Reinforcement A1
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Mercenary Fighter
+            triggers: Last Fighter destroyed triggers Reinforcement A2
+      - id: reinforcement-a2
+        trigger:
+          on: other
+          text: Reinforcement A2
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Mercenary Elite Fighter
+  - name: 4th Pocket
+    notes:
+      - text: "Popup: EoM Succubus: You managed to get past my guards along with my brethren. Intriguing. Perhaps we kidnapped the wrong specimens…"
+    waves:
+      - id: on-grid
+        trigger:
+          on: other
+          text: On grid
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - EoM Succubus
+          - count: "?"
+            class: Container
+            names:
+              - Container
+            group: On destruction drops
+            drop: 10 units of VIPs

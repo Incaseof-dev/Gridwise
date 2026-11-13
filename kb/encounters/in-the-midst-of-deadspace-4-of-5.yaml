@@ -1,0 +1,113 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: in-the-midst-of-deadspace-4-of-5
+kind: mission
+name: In The Midst of Deadspace (4 of 5)
+level: 4
+enemyFaction: Amarr Empire
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – In The Midst of Deadspace (4 of 5)
+    url: https://wiki.eveuniversity.org/In_The_Midst_of_Deadspace_(4_of_5)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223306"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy the Imperial Stargate
+ewar:
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Imperial Guard (Web, Warp disrupt)"
+  - text: "Suggested ships: Battleship, Marauder, T3C"
+  - text: Imperial Security Commander deals Kin damage.
+  - text: '"Imperial Navy Gate Permit" is required to activate the gate.'
+  - text: After the gate has been unlocked, several ships may pass through without a permit.
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: Attack middle group first. Attacking left or right group will aggro middle.
+    waves:
+      - id: left-group-20-25km
+        trigger:
+          on: other
+          text: Left Group, 20-25km
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Elite Frigate
+            names:
+              - Imperial Guard
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Battleship
+            names:
+              - Imperial Security Captain
+      - id: middle-group-16-23km
+        trigger:
+          on: other
+          text: Middle Group, 16-23km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Cruiser
+            names:
+              - Imperial Security Officer
+          - count: "2"
+            class: Battleship
+            names:
+              - Imperial Security Captain
+          - count: "1"
+            class: Battleship
+            names:
+              - Imperial Security Commander
+            note: deals Kinetic damage
+      - id: right-group-28-34km
+        trigger:
+          on: other
+          text: Right Group, 28-34km
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Elite Frigate
+            names:
+              - Imperial Guard
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Battleship
+            names:
+              - Imperial Security Captain
+  - name: Pocket 2
+    notes:
+      - text: "Next: In The Midst of Deadspace (5 of 5)"
+    waves:
+      - id: initial-group-35-45km
+        trigger:
+          on: warpIn
+          text: Initial Group, 35-45km
+        spawns:
+          - count: "3"
+            class: Sentry
+            names:
+              - Amarr Sentry Gun
+          - count: "2"
+            class: Cruiser
+            names:
+              - Divine Imperial Equalizer
+          - count: "1"
+            class: Battleship
+            names:
+              - Imperial Ultara
+          - count: "1"
+            class: Structure
+            names:
+              - Imperial Stargate
+            note: Mission Objective

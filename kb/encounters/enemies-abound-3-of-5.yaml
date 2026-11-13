@@ -1,0 +1,215 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: enemies-abound-3-of-5
+kind: mission
+name: Enemies Abound (3 of 5)
+level: 4
+enemyFaction: Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Enemies Abound (3 of 5)
+    url: https://wiki.eveuniversity.org/Enemies_Abound_(3_of_5)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223363"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Investigate the deadspace area the bookmark is linked to. Destroy any hostiles that get in your way.
+ewar:
+  - kind: sensorDamp
+  - kind: web
+  - kind: warpScramble
+notes:
+  - text: "Web/warp disruption: Elite Frigates (Web, Scram)"
+lootNotes:
+  - text: 5x Federation Navy Command Sergeant Major Insignia I
+  - text: 8x Federation Navy Fleet Captain Insignia I
+  - text: 8x Federation Navy Fleet Colonel Insignia I
+  - text: 16x Federation Navy Fleet Colonel Insignia II
+  - text: 18x Federation Navy Fleet Major Insignia I
+  - text: 4x Federation Navy Midshipman Insignia III
+  - text: 6x Federation Navy Sergeant Insignia I
+  - text: 7x Federation Navy Sergeant Insignia II
+  - text: 3x Federation Navy Sergeant Insignia III
+  - text: "Next: Enemies Abound (4 of 5)"
+pockets:
+  - name: Warp-in
+    notes:
+      - text: "Fedaration Officer: Looks like you've discovered us. To bad you're not going to escape with your life, fool"
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "7"
+            class: Elite Frigate
+            names:
+              - Navy Gamma I Support Frigate
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+  - name: Pocket 1
+    notes:
+      - text: Reinforcement groups will spawn when the trigger ship is attacked, not destroyed.
+    waves:
+      - id: initial-group-15-40km
+        trigger:
+          on: warpIn
+          text: Initial Group, 15-40km
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Federation Praktor Harpago
+              - Federation Praktor Belos
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Elite Federation Lixa
+              - Elite Federation Lochos
+            ewar:
+              - kind: web
+              - kind: warpScramble
+            triggers: Spawns Reinforcement 1
+          - count: "4"
+            class: Cruiser
+            names:
+              - Federation Praktor Centurion
+              - Federation Praktor Legionarius
+          - count: "1"
+            class: Battleship
+            names:
+              - Federation Covinus
+              - Federation Navis Longa
+            ewar:
+              - kind: sensorDamp
+      - id: reinforcement-1-15-40km
+        trigger:
+          on: other
+          text: Reinforcement 1, 15-40km
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Elite Federation Lixa
+              - Elite Federation Lochos
+            ewar:
+              - kind: web
+              - kind: warpScramble
+            triggers: Spawns Reinforcement 2
+          - count: "3"
+            class: Destroyer
+            names:
+              - Federation Matara
+              - Federation Machaira
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Federation Pezos
+          - count: "2"
+            class: Battleship
+            names:
+              - Federation Covinus
+              - Federation Navis Longa
+            ewar:
+              - kind: sensorDamp
+      - id: reinforcement-2-15-40km
+        trigger:
+          on: other
+          text: Reinforcement 2, 15-40km
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Elite Federation Lixa
+              - Elite Federation Lochos
+            ewar:
+              - kind: web
+              - kind: warpScramble
+            triggers: Spawns Reinforcement 3
+          - count: "2"
+            class: Destroyer
+            names:
+              - Federation Matara
+              - Federation Machaira
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Federation Pezos
+          - count: "3"
+            class: Battleship
+            names:
+              - Federation Covinus
+              - Federation Navis Longa
+            ewar:
+              - kind: sensorDamp
+      - id: reinforcement-3-15-40km
+        trigger:
+          on: other
+          text: Reinforcement 3, 15-40km
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Elite Federation Lixa
+              - Elite Federation Lochos
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "2"
+            class: Destroyer
+            names:
+              - Federation Pelekus
+              - Federation Arcus
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Elite Federation Calo
+              - Elite Federation Bearcus
+            ewar:
+              - kind: sensorDamp
+          - count: "2"
+            class: Battleship
+            names:
+              - Federation Covinus
+              - Federation Praktor Navis Praetoria
+            ewar:
+              - kind: sensorDamp
+  - name: Pocket 2
+    notes:
+      - text: Warp-in aggro from one random group.
+      - text: Mission complete when all ships in Group 3 are killed.
+      - text: The Orions are very strong in kinetic damage
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Battleship
+            names:
+              - Gallente Navy Megathron
+            group: Group 1, 7km
+          - count: "4"
+            class: Battleship
+            names:
+              - Gallente Navy Megathron
+            group: Group 2, 30km
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Gallente Navy Orion's Wingman
+            group: Group 3, 30-35km
+          - count: "3"
+            class: Battleship
+            names:
+              - Gallente Navy Orion
+            group: Group 3, 30-35km

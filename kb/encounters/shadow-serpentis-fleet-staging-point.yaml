@@ -1,0 +1,168 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: shadow-serpentis-fleet-staging-point
+kind: complex
+name: Shadow Serpentis Fleet Staging Point
+dedRating: null
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Shadow Serpentis Fleet Staging Point
+    url: https://wiki.eveuniversity.org/Shadow_Serpentis_Fleet_Staging_Point
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "166677"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Video
+  - text: "Escalation: It will escalate to the Shadow Serpentis Fleet Staging Point 2 and part 3."
+lootNotes:
+  - text: "first part: 25.500.000 ISK in bounties"
+  - text: Possible faction modules
+  - text: Escalation to part 2
+pockets:
+  - name: First Pocket
+    waves:
+      - id: structures-on-site
+        trigger:
+          on: other
+          text: Structures on site
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+            note: Locked until all NPCs are destroyed
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corelior Cannoneer
+              - Corelior Sentinel
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corelum Chief Defender
+              - Corelum Chief Protector
+          - count: "4"
+            class: Battleship
+            names:
+              - Core Vice Admiral
+              - Core Grand Admiral
+            triggers: Last Lord Admiral triggers next wave
+      - id: wave-1-50km-in-front-of-the-gate
+        trigger:
+          on: other
+          text: Wave 1 (50km in-front of the gate)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Corelior Cannoneer
+              - Corelior Sentinel
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corelum Chief Defender
+              - Corelum Chief Protector
+          - count: "6"
+            class: Battleship
+            names:
+              - Core Vice Admiral
+              - Core Grand Admiral
+    onWarpIn: The massive amounts of signatures you are getting on your short range scan can only indicate one thing, a full combat fleet in station around the deadspace pocket. The Serpentis would seem to be planning a large scale military operation in the area and you should expect nothing but the heaviest resistance should you try to oppose them here.
+  - name: Second Pocket
+    notes:
+      - text: You want to kill the Energy Neutralizer Sentries first and fast.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Corelior Cannoneer
+              - Corelior Sentinel
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Corelatis Captain
+              - Corelatis Captain Sentry
+          - count: "4"
+            class: Battleship
+            names:
+              - Core Vice Admiral
+              - Core Grand Admiral
+            triggers: Last Lord Admiral triggers next wave
+          - count: "4"
+            class: Sentry
+            names:
+              - Serpentis Cruise Missile Battery
+          - count: "2"
+            class: Sentry
+            names:
+              - Serpentis Energy Neutralizer Sentry II
+            ewar:
+              - kind: neut
+          - count: "2"
+            class: Sentry
+            names:
+              - Serpentis Point Defense Battery
+      - id: wave-2-30km-behind-warp-in
+        trigger:
+          on: other
+          text: Wave 2 (30km behind warp-in)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Corelior Cannoneer
+              - Corelior Sentinel
+          - count: "2"
+            class: Cruiser
+            names:
+              - Corelum Chief Defender
+              - Corelum Chief Protector
+          - count: "4"
+            class: Battleship
+            names:
+              - Core Vice Admiral
+              - Core Grand Admiral
+            triggers: Last Lord Admiral triggers third wave
+      - id: wave-3-60km-behind-warp-in
+        trigger:
+          on: other
+          text: Wave 3 (60km behind warp-in)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Serpentis Centior Abomination
+              - Serpentis Centior Monster
+          - count: "2"
+            class: Cruiser
+            names:
+              - Corelum Chief Defender
+              - Corelum Chief Protector
+          - count: "4"
+            class: Battleship
+            names:
+              - Core Vice Admiral
+              - Core Grand Admiral
+            triggers: Trigger the escalation
+sde:
+  dungeonIds:
+    - 2578

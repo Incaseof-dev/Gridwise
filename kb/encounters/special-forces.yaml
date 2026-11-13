@@ -1,0 +1,371 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: special-forces
+kind: escalation
+name: Special Forces
+dedRating: null
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Special Forces
+    url: https://wiki.eveuniversity.org/Special_Forces
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "224448"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: The second, third and fourth locations are ungated, and either strongly tanked T3C, Battleships, Marauders or a carrier are recommended due to the VERY high DPS in the third and fourth locations.
+  - text: "Escalation start: As the dust settles from the battle, you receive a transmission from someone claiming to be a local vigilante who congratulates you on a job well done. Your computers run a check on his ship ID´s and other info they can gather on him in such a short period of time, but come up with nothing. He is at least not a part of any pirate faction, nor seems he to represent any of the official states in the galaxy. This person continues to welcome you to the area and offers to point you to some other Angel bases he knows about and have been a menace for the local population. If you want to come and meet him, he will lead the way."
+loot:
+  - item: + Overseer and other valuable loot
+  - item: Gist X-Type modules
+    note: From Einhas Malak
+  - item: Machariel BPC
+    note: From Einhas Malak
+  - item: Mid/High-Grade implants and faction ammo/tags
+    note: est. Varies (wiki) · From Domination Commander Battleships
+  - item: Domination faction modules
+    note: est. Varies widely (wiki) · From Domination Commander Battleships
+npcs:
+  Stasis Webification Battery:
+    sdeTypes:
+      - Angel Stasis Tower
+    class: Sentry
+pockets:
+  - name: First Location
+    notes:
+      - text: You land on an acceleration gate. Take it if no Domination battleship spawns or if destroying it triggers no escalation.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Hijacker
+              - Arch Gistii Rogue
+              - Arch Gistii Ambusher
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: type list incomplete on the source page
+          - count: "7"
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Seraphim
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Domination Cherubim
+              - Domination Seraphim
+            triggers: Escalation trigger
+            drop: Faction ammo/tags. Possible Domination modules or implants
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Newly Constructed Acceleration Gate
+            note: Not locked
+  - name: First Pocket
+    notes:
+      - text: No enemies in this pocket. Simple warp-in can trigger escalation.
+      - text: "Escalation trigger: The radio crackles with the vigilante's excited whispering. \"They're still here! Come quick and we'll show them a whole new definition of pain!\""
+    waves:
+      - id: passive-ships-and-structures
+        trigger:
+          on: warpIn
+          text: Passive ships and structures
+        spawns:
+          - count: "2"
+            class: Neutral Drone
+            names:
+              - Spy Drone
+            note: Warps away shortly after warp-in
+          - count: "1"
+            class: Neutral Cruiser
+            names:
+              - Kaerleiks Bjorn
+          - count: "60"
+            class: Structure
+            names:
+              - Pressure Silo
+  - name: Second Location
+    notes:
+      - text: The site is NOT in deadspace, so you can grid warp in this location. Destroy the Amarr Control Center if no escalation is triggered from the Domination battleship.
+      - text: "Warning: Destroying each cruise missile battery triggers a smartbomb wave that deals around 8000 Explosive damage. Recommend bringing a ship with a strong tank and over 80% resists to Explosive damage if you are going to destroy the cruise missile batteries."
+      - text: "Escalation trigger: Kaerleiks Bjorn: We sure showed them! I'm actually starting to think I'll become a fighter some day. Will you teach me? Maybe after we're done ... We sure did show them! You sure are better than no one to have around when the missiles are flying! But there is no time to float here fabulating, we must press on, another division of this same group is close by!"
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "6"
+            class: Sentry
+            names:
+              - Angel Cruise Missile Battery
+            triggers: Destroying any missile battery triggers smartbomb wave
+          - count: "18"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Thug
+              - Arch Gistii Outlaw
+              - Arch Gistii Hijacker
+              - Arch Gistii Rogue
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "18"
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Seraphim
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Domination Cherubim
+              - Domination Seraphim
+            triggers: Escalation trigger
+            drop: Faction ammo/tags. Possible Domination modules or implants
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Structure
+            names:
+              - Amarr Control Center
+            triggers: Alternate escalation trigger
+    onWarpIn: "Kaerleiks Bjorn: Good to see you decided to come. I can not promise you any payment if you take on these Angel bases, but you will earn fame among the locals and the fortune the Angels leave behind. I'm going to send a couple of my spy drones to see if the Angels are still where they were yesterday."
+  - name: Third Location
+    notes:
+      - text: "From Kaerleiks Bjorn:: Kaerleiks Bjorn: I hope you will manage without me, but I am going to check the next and last target. It is a central station for a bunch of Domination members. We don't want them to get away, I will hold them busy till you arrive!"
+      - text: "Warning: The DPS in this room can become quite heavy if all ships get in range. Make sure you know what you're doing or risk losing your ship. Clear all rats before engaging the Military Outpost."
+      - text: The Domination Commander battleship will approach you with MWD, so it can be kited away from the other rats.
+      - text: "Escalation trigger: \"I will hold them busy till you arrive!\" Yea right, the only way he is going to hold them up is to stun them with a steady flow of exclamation marks, the Dominations are no joke. This innermost circle of the Angel cartel is legendary for its brutality and the unparalleled skill of their pilots. Soon the radio livens again when this chatty vigilant type sends a message to his newfound friend \"Yes, they are here and it seems the element of surprise is on our side! I suggest that you open with a full frontal assault, so I can charge from the side, surround their flanks and drive a stake through their rotten hearts! I will need to stay of the air for now, I am launching a covert op through deceptive tactics in order to get into position! Good luck !! \" You feel the only appropriate answer is \"Mmmm..k\", Come to think of it, this might be a 12 year old who has stolen his mom's ship. Anyways, there is nothing to wait for, there are the coordinates and the enemy is waiting. \""
+    waves:
+      - id: defending-fleet
+        trigger:
+          on: other
+          text: Defending fleet
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Stasis Webification Battery
+            ewar:
+              - kind: web
+          - count: "2"
+            class: Sentry
+            names:
+              - Siege Autocannon Sentry
+            note: Deals a LOT of damage
+          - count: "10"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Hijacker
+              - Arch Gistii Rogue
+              - Arch Gistii Thug
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: type list incomplete on the source page
+          - count: 8-9
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Centurion
+              - Arch Gistum Liquidator
+              - Arch Gistum Marauder
+              - Arch Gistum Phalanx
+            note: May target paint, not confirmed
+          - count: 10-12
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Malakim
+              - Gist Seraphim
+              - Gist Throne
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - Domination Cherubim
+              - Domination Seraphim
+            triggers: Escalation trigger
+            drop: wreck may contain Domination Battleship Modules and may produce Tech 2 Salvage
+          - count: "1"
+            class: Station
+            names:
+              - Angel Military Outpost
+            ewar:
+              - kind: web
+            triggers: Triggers more defenders when attacked. Can also trigger Escalation upon destroying.
+      - id: outpost-wave-triggered-by-attacking-the-angel-military-outpost
+        trigger:
+          on: other
+          text: Outpost wave (triggered by attacking the Angel Military Outpost)
+          confidence: inferred
+        spawns:
+          - count: "8"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Hijacker
+              - Arch Gistii Rogue
+              - Arch Gistii Thug
+            group: 100 km off one side of outpost
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: type list incomplete on the source page
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Centurion
+              - Arch Gistum Liquidator
+            group: 100 km off one side of outpost
+            note: type list incomplete on the source page
+          - count: "12"
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Seraphim
+              - Gist Malakim
+            group: 100 km off one side of outpost
+            note: type list incomplete on the source page
+          - count: "8"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Hijacker
+              - Arch Gistii Rogue
+              - Arch Gistii Thug
+            group: 100 km off opposite side of outpost
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: type list incomplete on the source page
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Centurion
+              - Arch Gistum Liquidator
+            group: 100 km off opposite side of outpost
+            note: type list incomplete on the source page
+          - count: "12"
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Seraphim
+              - Gist Malakim
+            group: 100 km off opposite side of outpost
+            note: type list incomplete on the source page
+  - name: Fourth Location
+    notes:
+      - text: The rats are spread out in 5 groups. Avoid triggering 2 waves at once; if that happens, the site is practically impossible. Try to eliminate the Siege Autocannon sentries as soon as possible, there are 10 of them and they deal VERY high DPS.
+      - text: The third and final wave is the commander wave. It is triggered by bringing the Angel Military Outpost into structure. This is a hard wave, as the large number of elite frigates can keep you halted in one spot, while the overseer battleship (Einhas Malak) deals a LOT of damage. Recommend keeping over 15 km from the elite frigates so you won't get webbed and pointed while Einhas Malak puts your tank to the acid test.
+      - text: Einhas Malak does about 3000 points of Explosive damage and 700-900 points of Kinetic damage. He also repairs both shield and armor, with strong passive shield and armor tanks with his shield recharging at about 300 DPS and his armor at about 250. Recommend over 85% resists to Explosive and Kinetic damage and at least 550 DPS to break Einhas. He has 76% EM and Kinetic resists and 66% Explosive and Thermal resists.
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Stasis Webification Battery
+            ewar:
+              - kind: web
+          - count: "10"
+            class: Sentry
+            names:
+              - Siege Autocannon Sentry
+            note: Deals VERY high DPS
+          - count: "16"
+            class: Destroyer
+            names:
+              - Gistior Defiler
+              - Gistior Seizer
+              - Gistior Trasher
+              - Gistior Haunter
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Centurion
+              - Arch Gistum Phalanx
+          - count: "20"
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Seraphim
+          - count: "1"
+            class: Structure
+            names:
+              - Angel Military Outpost
+            triggers: Attacking triggers outpost wave; damaging into structure triggers overseer wave. Destroying triggers expedition end
+      - id: outpost-wave
+        trigger:
+          on: other
+          text: Outpost wave
+          confidence: inferred
+        spawns:
+          - count: "?"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Rogue
+              - Arch Gistii Thug
+              - Arch Gistii Ruffian
+              - Arch Gistii Nomad
+            ewar:
+              - kind: web
+              - kind: targetPaint
+              - kind: warpDisruption
+            note: Elite frigates may do varying EWAR; type list incomplete on the source page
+          - count: "?"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+              - Gistatis Tribunus
+            note: type list incomplete on the source page
+          - count: 10-15
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Seraphim
+              - Gist Malakim
+            note: type list incomplete on the source page
+      - id: commander-wave
+        trigger:
+          on: other
+          text: Commander wave
+          confidence: inferred
+        spawns:
+          - count: "10"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Hijacker
+              - Arch Gistii Rogue
+              - Arch Gistii Outlaw
+              - Arch Gistii Thug
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "1"
+            class: Overseer Battleship
+            names:
+              - Einhas Malak
+            drop: wreck may contain Domination Battleship modules, Gist X-Type modules, and possibly a 1-run Machariel BPC, and can produce T2 Salvage
+            note: Deals 3000 Explosive damage and 750 Kinetic damage every 2.5 seconds
+sde:
+  dungeonIds:
+    - 1854

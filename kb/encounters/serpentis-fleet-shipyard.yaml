@@ -1,0 +1,306 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: serpentis-fleet-shipyard
+kind: complex
+name: Serpentis Fleet Shipyard
+dedRating: 10
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Serpentis Fleet Shipyard
+    url: https://wiki.eveuniversity.org/Serpentis_Fleet_Shipyard
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "216273"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Battleships"
+notes:
+  - text: The site is behind an acceleration gate. Warping to the side lands you at 0 on the gate.
+  - text: This site is rated DED 10/10.
+  - text: Warping to the site lands on an acceleration gate at 0.
+  - text: "Upon entry: This hangar area bestows docking rigs and Alpha fleet hangars. The pocket is administered by one of the Serpentis XOs."
+  - text: 30-60 km from warpin
+  - text: "Upon entry: This hangar area bestows repair lattices and Beta fleet hangars. The pocket is administered by one of the Serpentis XOs."
+  - text: "Note: The Heavy Missile batteries are Amarr and do 100% EM damage."
+  - text: 0-50 km from warpin
+  - text: "Upon entry: The Core Serpentis fleet headquarters are heavily defended by a massive battle fleet of elite officers and tactical veterans. It is inside this base that the Serpentis Corporation lays out its martial strategies for the annexation of space around the Gallente border zones. It is here that the designs for war machines and high-tech weapons of destruction are devised and rolled into action."
+  - text: 0-45 km from warpin
+loot:
+  - item: 23rdTier Overseer's Effects
+    from: Serpentis Fleet Stronghold
+    note: est. 133M ISK (wiki) · 100% drop rate
+  - item: Vindicator BPC
+    from: Serpentis Fleet Stronghold
+  - item: Core X-Type module
+    from: Serpentis Fleet Stronghold
+  - item: Shadow Serpentis module
+    from: Serpentis Deadspace Sergeant
+  - item: Shadow Serpentis module
+    from: Serpentis Executive Officer
+lootNotes:
+  - text: You can get about 60 million ISK in bounties from fully clearing the site. The Serpentis Stronghold is guaranteed to drop a 23rd Tier Officer's Personal Effects (~133 million ISK), and has a chance of dropping Core X-type and Shadow Serpentis modules.
+pockets:
+  - name: Room 1
+    notes:
+      - text: "Upon entry: The entrance pocket of this Serpentis Fleet Shipyard complex serves as a checkpoint for clearance of authorized personnel and pedestrian traffic, intended to enforce circulation control measures and other regulations. This sector is lightly defended compared to the battle fleet that resides deeper within the complex."
+      - text: 5 km from warpin
+      - text: 55 km from warpin
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "4"
+            class: Destroyer
+            names:
+              - Corelior
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Corelatis
+          - count: "4"
+            class: Battleship
+            names:
+              - Core
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: "12"
+            class: Destroyer
+            names:
+              - Corelior
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Corelatis
+          - count: "4"
+            class: Battleship
+            names:
+              - Core
+          - count: "1"
+            class: Overseer Battleship
+            names:
+              - Serpentis Shipyard Defender
+            drop: Can drop faction modules
+          - count: "1"
+            class: Sentry
+            names:
+              - Stasis Tower
+            ewar:
+              - kind: web
+          - count: "2"
+            class: Sentry
+            names:
+              - Cruise Missile Battery
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: Unlocks when all defenders are destroyed. Sentries can be ignored.
+    onWarpIn: "This deadspace complex is the fleet shipyard headquarters of the Core department of the Serpentis Corporation. It is defended by a massive battle fleet, manufactured by the corporation and assisted by the best mercenaries available. DED Threat Assessment: Critical (10 of 10)"
+  - name: Room 2
+    notes:
+      - text: "Upon entry: This central pocket of the complex houses the main hangar area, storing the bulk of the fleet reserves. Three acceleration gates give way to other pockets within the complex, two towards external hangar areas and repair equipment, and one towards the Fleet Headquarters. The gate towards the HQ is encoded with a confidential security code."
+      - text: 0-60 km from warpin
+      - text: There are three acceleration gates from this room to the Alpha/Beta/Fleet Hangar rooms. (The site is considered complete if any of the final rooms are completed and will despawn if you warp out of the site)
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "6"
+            class: Destroyer
+            names:
+              - Corelior
+          - count: "11"
+            class: Battlecruiser
+            names:
+              - Corelatis
+          - count: "8"
+            class: Battleship
+            names:
+              - Core
+          - count: "1"
+            class: Overseer Battleship
+            names:
+              - Serpentis Major Overseer
+          - count: "2"
+            class: Sentry
+            names:
+              - Stasis Tower
+            ewar:
+              - kind: web
+          - count: "4"
+            class: Sentry
+            names:
+              - Sentry Tower
+          - count: "2"
+            class: Sentry
+            names:
+              - Cruise Missile Launcher
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "3"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+  - name: Alpha Hangar
+    notes:
+      - text: There is an acceleration gate back to Room 2.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "15"
+            class: Destroyer
+            names:
+              - Corelior
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Corelatis
+          - count: "8"
+            class: Battleship
+            names:
+              - Core
+          - count: "1"
+            class: Overseer Battleship
+            names:
+              - Serpentis Executive Officer
+            drop: Can drop faction modules
+          - count: "3"
+            class: Sentry
+            names:
+              - Sentry Tower
+          - count: "2"
+            class: Sentry
+            names:
+              - Cruise Missile Battery
+          - count: "4"
+            class: Sentry
+            names:
+              - Heavy Missile Launcher
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: back to room 2
+  - name: Beta Hangar
+    notes:
+      - text: There is an acceleration gate back to Room 2.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "15"
+            class: Destroyer
+            names:
+              - Corelior
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Corelatis
+          - count: "7"
+            class: Battleship
+            names:
+              - Core
+          - count: "1"
+            class: Overseer Battleship
+            names:
+              - Serpentis Deadspace Sergeant
+            drop: Can drop faction modules
+          - count: "1"
+            class: Sentry
+            names:
+              - Stasis Tower
+            ewar:
+              - kind: web
+          - count: "3"
+            class: Sentry
+            names:
+              - Sentry Tower
+          - count: "2"
+            class: Sentry
+            names:
+              - Cruise Missile Battery
+          - count: "2"
+            class: Sentry
+            names:
+              - Heavy Missile Launcher
+      - id: structures
+        trigger:
+          on: warpIn
+          text: Structures
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: back to room 2
+  - name: Fleet HQ
+    notes:
+      - text: Serpentis Stronghold shoots Citadel Thermal Torpedos and webs within 50 km.
+      - text: If all player ships are greater than 50 km from the Serpentis Stronghold, it won't repair its armor damage. It still repairs full shields every few seconds, but it can be killed more easily this way.
+      - text: There is a glitch where Serpentis Stronghold will stop repair its armor damage if it switches target.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "12"
+            class: Destroyer
+            names:
+              - Corelior
+          - count: "9"
+            class: Battlecruiser
+            names:
+              - Corelatis
+          - count: "9"
+            class: Battleship
+            names:
+              - Core
+          - count: "4"
+            class: Sentry
+            names:
+              - Cruise Missile Battery
+          - count: "2"
+            class: Sentry
+            names:
+              - Heavy Missile Launcher
+          - count: "1"
+            class: Sentry
+            names:
+              - Serpentis Fleet Stronghold
+            ewar:
+              - kind: web
+            drop: X-type DED modules
+sde:
+  dungeonIds:
+    - 2259

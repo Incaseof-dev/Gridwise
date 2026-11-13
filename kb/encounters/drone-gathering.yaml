@@ -1,0 +1,226 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: drone-gathering
+kind: anomaly
+name: Drone Gathering
+dedRating: null
+anomalyClass: 4
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Drone Gathering
+    url: https://wiki.eveuniversity.org/Drone_Gathering
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225190"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: "Escalation: This site can escalate to Rogue Drone Asteroid Infestation (DED 3/10)"
+loot:
+  - item: Drone Cerebral Fragment ~x24
+    from: Sentient Annihilator Alvum
+    note: est. 11.2M ISK (wiki)
+  - item: Drone Tactical Limb ~x21
+    from: Sentient Annihilator Alvum
+    note: est. 90K ISK (wiki)
+pockets:
+  - name: Wreckage spawn
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: 1-2
+            class: Frigate
+            names:
+              - Hunter
+              - Devilfish Alvi
+          - count: 1-2
+            class: Destroyer
+            names:
+              - Shredder Alvior
+          - count: "2"
+            class: Sentry
+            names:
+              - Drone Heavy Missile Battery
+            note: Deals kinetic damage
+      - id: first-spawn
+        trigger:
+          on: other
+          text: First spawn
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Cruiser
+            names:
+              - Wrecker
+              - Destructor Alvum
+      - id: second-spawn
+        trigger:
+          on: other
+          text: Second spawn
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Destroyer
+            names:
+              - Shredder Alvior
+          - count: 1-2
+            class: Cruiser
+            names:
+              - Annihilator Alvum
+      - id: third-spawn
+        trigger:
+          on: other
+          text: Third spawn
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Destroyer
+            names:
+              - Shredder
+              - Ripper Alvior
+          - count: 1-3
+            class: Cruiser
+            names:
+              - Wrecker
+              - Destructor Alvum
+      - id: fourth-spawn
+        trigger:
+          on: other
+          text: Fourth spawn
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Destroyer
+            names:
+              - Ripper
+              - Shatter Alvior
+          - count: 2-3
+            class: Cruiser
+            names:
+              - Annihilator
+              - Devastator Alvum
+      - id: fifth-spawn
+        trigger:
+          on: other
+          text: Fifth spawn
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Destroyer
+            names:
+              - Dismantler
+              - Marauder Alvior
+      - id: commander-spawn
+        trigger:
+          on: other
+          text: Commander spawn
+          confidence: inferred
+        spawns:
+          - count: 0-1
+            class: Cruiser
+            names:
+              - Sentient Annihilator Alvum
+            drop: Drops drone components, may drop Rogue Drone chips.
+    onWarpIn: Rogue Drones have found this wreckage and claimed it as their own, probably for the metals and alloys they can extract from it. They do not take kindly to your intrusion.
+  - name: Old Station spawn
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Hunter
+              - Devilfish
+              - Silverfish Alvi
+          - count: "2"
+            class: Destroyer
+            names:
+              - Ripper
+              - Shatter Alvior
+      - id: first-spawn
+        trigger:
+          on: other
+          text: First spawn
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Barracuda Alvi
+          - count: "2"
+            class: Cruiser
+            names:
+              - Wrecker Alvum
+      - id: second-spawn
+        trigger:
+          on: other
+          text: Second spawn
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Marauder
+              - Dismantler Alvior
+          - count: "2"
+            class: Cruiser
+            names:
+              - Annihilator
+              - Devastator Alvum
+      - id: third-spawn
+        trigger:
+          on: other
+          text: Third spawn
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Marauder
+              - Shatter
+              - Dismantler Alvior
+          - count: "3"
+            class: Cruiser
+            names:
+              - Wrecker
+              - Destructor Alvum
+      - id: fourth-spawn
+        trigger:
+          on: other
+          text: Fourth spawn
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Destroyer
+            names:
+              - Shredder
+              - Predator Alvior
+          - count: "3"
+            class: Cruiser
+            names:
+              - Annihilator
+              - Devastator Alvum
+      - id: commander-spawn
+        trigger:
+          on: other
+          text: Commander spawn
+          confidence: inferred
+        spawns:
+          - count: 0-1
+            class: Cruiser
+            names:
+              - Sentient Annihilator Alvum
+            drop: Rogue Drone components
+    onWarpIn: You have located the ruins of an old station. The structure, once-magnificent, is now only a barren, airless derelict, its halls home to nothing but mechanical malevolence.
+sde:
+  dungeonIds:
+    - 2345

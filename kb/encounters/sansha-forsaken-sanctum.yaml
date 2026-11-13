@@ -1,0 +1,285 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: sansha-forsaken-sanctum
+kind: anomaly
+name: Sansha Forsaken Sanctum
+dedRating: null
+anomalyClass: 10
+enemyFaction: Sansha's Nation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Sansha Forsaken Sanctum
+    url: https://wiki.eveuniversity.org/Sansha_Forsaken_Sanctum
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "230534"
+defaults:
+  confidence: verified
+  source: uni
+pockets:
+  - name: Site
+    notes:
+      - text: Consists of one ungated pocket. Warping in from certain directions can cause you to decloak; even at 100km.
+      - text: Centus Doom Lord will deal Kinetic damage in addition to the normal EM/Thermal.
+    waves:
+      - id: initial-spawn
+        trigger:
+          on: warpIn
+          text: Initial spawn
+        spawns:
+          - count: "1"
+            class: Elite Destroyer
+            names:
+              - Centior Horror
+              - Centior Aberration
+              - Centior Monster
+            note: type list incomplete on the source page
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Centatis Banshee
+          - count: "4"
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Doom Lord
+      - id: 1st-reinforcement-spawn
+        trigger:
+          on: other
+          text: 1st Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Minion
+              - Centii Loyal Servant
+              - Centii Loyal Scavenger
+              - Centii Loyal Ravener
+            ewar:
+              - kind: warpDisruption
+            note: type list incomplete on the source page
+          - count: "4"
+            class: Cruiser
+            names:
+              - Centum Loyal Execrator
+              - Centum Loyal Beast
+              - Centum Loyal Slaughterer
+              - Centum Loyal Fiend
+              - Centum Loyal Hellhound
+            note: type list incomplete on the source page
+      - id: 2nd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 2nd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Destroyer
+            names:
+              - Centior Aberration
+            ewar:
+              - kind: warpDisruption
+          - count: "4"
+            class: Cruiser
+            names:
+              - Centum Loyal Execrator
+              - Centum Loyal Beast
+              - Centum Loyal Slaughterer
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Centatis Banshee
+          - count: "4"
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Doom Lord
+      - id: 3rd-reinforcement-spawn
+        trigger:
+          on: other
+          text: 3rd Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Enslaver
+              - Centii Loyal Manslayer
+              - Centii Loyal Plague
+            ewar:
+              - kind: warpDisruption
+          - count: "5"
+            class: Elite Destroyer
+            names:
+              - Centior Aberration
+              - Centior Monster
+            ewar:
+              - kind: warpDisruption
+          - count: "7"
+            class: Elite Cruiser
+            names:
+              - Centum Torturer
+              - Centum Fiend
+              - Centum Hellhound
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Centatis Banshee
+          - count: "3"
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Doom Lord
+      - id: 4th-reinforcement-spawn
+        trigger:
+          on: other
+          text: 4th Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Destroyer
+            names:
+              - Centior Aberration
+              - Centior Monster
+            ewar:
+              - kind: warpDisruption
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Centatis Banshee
+          - count: "3"
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Doom Lord
+      - id: 5th-reinforcement-spawn
+        trigger:
+          on: other
+          text: 5th Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Enslaver
+              - Centii Loyal Manslayer
+              - Centii Loyal Plague
+              - Centii Loyal Ravener
+              - Centii Loyal Minion
+            ewar:
+              - kind: warpDisruption
+          - count: "6"
+            class: Elite Destroyer
+            names:
+              - Centior Aberration
+            ewar:
+              - kind: warpDisruption
+          - count: "6"
+            class: Elite Cruiser
+            names:
+              - Centum Torturer
+              - Centum Fiend
+              - Centum Hellhound
+              - Centum Mutilator
+          - count: "5"
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Doom Lord
+              - Centus Dark Lord
+              - Centus Dread Lord
+      - id: 6th-reinforcement-spawn
+        trigger:
+          on: other
+          text: 6th Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Servant
+            ewar:
+              - kind: warpDisruption
+          - count: "2"
+            class: Elite Destroyer
+            names:
+              - Centior Aberration
+              - Centior Horror
+            ewar:
+              - kind: warpDisruption
+          - count: "6"
+            class: Elite Cruiser
+            names:
+              - Centum Torturer
+              - Centum Fiend
+              - Centum Hellhound
+              - Centum Mutilator
+          - count: "5"
+            class: Battlecruiser
+            names:
+              - Centatis Banshee
+              - Centatis Daemon
+          - count: "4"
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Doom Lord
+      - id: 7th-reinforcement-spawn
+        trigger:
+          on: other
+          text: 7th Reinforcement Spawn
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Centii Loyal Manslayer
+            ewar:
+              - kind: warpDisruption
+          - count: "2"
+            class: Elite Destroyer
+            names:
+              - Centior Aberration
+              - Centior Horror
+            ewar:
+              - kind: warpDisruption
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Centum Loyal Execrator
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Centatis Banshee
+          - count: "4"
+            class: Battleship
+            names:
+              - Centus Tyrant
+              - Centus Doom Lord
+          - count: "?"
+            class: Battleship
+            names:
+              - True Sansha’s Tyrant
+              - Dread Lord
+            drop: Can drop faction modules
+          - count: "?"
+            class: Dreadnought
+            names:
+              - Sansha's Nation Dreadnought
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            drop: Can drop faction modules
+          - count: "?"
+            class: Supercarrier
+            names:
+              - True Sansha's Nation Supercarrier
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            drop: Can drop faction modules
+sde:
+  dungeonIds:
+    - 11063

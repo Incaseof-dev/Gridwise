@@ -1,0 +1,146 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: angel-hidden-rally-point
+kind: anomaly
+name: Angel Hidden Rally Point
+dedRating: null
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Angel Hidden Rally Point
+    url: https://wiki.eveuniversity.org/Angel_Hidden_Rally_Point
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225191"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Sometimes is possible to see a Domination cruiser close to you.
+  - text: "The site is an open Deadspace pocket, one may warp to preferred distance. With the initial group and 4 triggered spawns, there is a total of 79 ships. Warning: Spawns on this variant of anomaly are much bigger, incoming DPS can become overwhelming if triggers are blown up too early."
+  - text: "Escalation: This site can escalate to Angel Mineral Acquisition Outpost"
+  - text: "Escalation: Angel Mineral Acquisition Outpost: Your scanner has picked up a transmission originating from a nearby system. It would be wise to investigate this mysterious signal further."
+pockets:
+  - name: Walktrhough
+    waves:
+      - id: initial-defenders-35-55km
+        trigger:
+          on: warpIn
+          text: Initial Defenders (35- 55km)
+        spawns:
+          - count: "5"
+            class: Destroyer
+            names:
+              - Gistior Defiler
+              - Gistior Seizer
+          - count: "6"
+            class: Cruiser
+            names:
+              - Gistum Liquidator
+              - Gistum Marauder
+            triggers: Escalation trigger
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+              - Gistatis Primus
+          - count: "3"
+            class: Battleship
+            names:
+              - Gist Cheribim
+              - Gist Seraphim
+      - id: 1st-reinforcement-spawn-46-98km
+        trigger:
+          on: other
+          text: 1st Reinforcement Spawn (46- 98km)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Rogue
+              - Arch Gistii Thug
+          - count: "6"
+            class: Cruiser
+            names:
+              - Gistum Liquidator
+              - Gistum Marauder
+          - count: "9"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+              - Gistatis Praefectus
+              - Gistatis Primus
+              - Gistatis Tribunus
+            triggers: Escalation trigger
+          - count: "4"
+            class: Battleship
+            names:
+              - Gist Commander
+              - Gist General
+      - id: 2nd-reinforcement-spawn-42-65km
+        trigger:
+          on: other
+          text: 2nd Reinforcement Spawn (42- 65km)
+          confidence: inferred
+        spawns:
+          - count: "7"
+            class: Cruiser
+            names:
+              - Gistum Centurion
+              - Gistum Liquidator
+              - Gistum Phalanx
+          - count: "7"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+              - Gistatis Praefectus
+              - Gistatis Tribunus
+            triggers: Escalation trigger
+      - id: 3rd-reinforcement-spawn-51-55km
+        trigger:
+          on: other
+          text: 3rd Reinforcement Spawn (51- 55km)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Ruffian
+          - count: "5"
+            class: Cruiser
+            names:
+              - Gistum Liquidator
+            triggers: Escalation trigger
+          - count: "6"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+              - Gistatis Tribunus
+          - count: "2"
+            class: Battleship
+            names:
+              - Gist Nephilim
+            ewar:
+              - kind: targetPaint
+      - id: 4th-reinforcement-spawn-40-44km
+        trigger:
+          on: other
+          text: 4th Reinforcement Spawn (40- 44km)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Centurion
+          - count: "8"
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Throne
+            note: Cherubim does high long range damage
+    onWarpIn: Operating from the heart of the Curse region, the Angel Cartel is today the largest and best organized of the space-based criminal factions. The Angels are divided into several groups, each with a very special function; it is commanded by the Dominations. In the century they've been lurking in deep space, they have stolen, plundered, or sabotaged countless number of ships and kidnapped, assaulted, or murdered thousands of people. The Angels recruit members from all the races, and are thus not bound to any one zone of operation; instead, their reach spans almost the entire known universe. Many believe that the Angels got their power by uncovering Jovian technologies hidden in their ancient homeworlds, now infested by the Angel Cartel.
+sde:
+  dungeonIds:
+    - 3511

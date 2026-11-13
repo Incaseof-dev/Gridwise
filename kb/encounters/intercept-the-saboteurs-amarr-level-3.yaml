@@ -1,0 +1,160 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: intercept-the-saboteurs-amarr-level-3
+kind: mission
+name: Intercept The Saboteurs
+level: 3
+enemyFaction: Amarr Empire
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Intercept The Saboteurs (Amarr) (Level 3)
+    url: https://wiki.eveuniversity.org/Intercept_The_Saboteurs_(Amarr)_(Level_3)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "194925"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: nos
+  - kind: trackingDisruption
+  - kind: web
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Divine Imperials"
+  - text: "Suggested ships: Drake, Hurricane, Brutix, Myrmidon"
+pockets:
+  - name: Warp-in
+    waves:
+      - id: 10-25km
+        trigger:
+          on: other
+          text: 10-25km
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Imperial Felix
+              - Imperial Paladin
+  - name: Single Pocket
+    notes:
+      - text: "Blitz: Kill group 4, loot the can which is dropped from the last ship in group 4"
+      - text: "Blitz: Make sure you can tank group 3, 4 and 5 at the same time"
+      - text: The mission objective drops from the last ship destroyed in group 4.
+      - text: On attacking group 1, group 2 aggros.
+      - text: On attacking group 3, group 4 aggros.
+      - text: On attacking group 4, group 3 and 5 aggro.
+      - text: On attacking group 5, group 4 aggros.
+    waves:
+      - id: group-1-40-50km
+        trigger:
+          on: other
+          text: Group 1 (40-50km)
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Cruiser
+            names:
+              - Imperial Agatho
+              - Imperial Donus
+              - Imperial Mathura
+              - Imperial Muzakir
+            ewar:
+              - kind: trackingDisruption
+      - id: group-2-60-70km
+        trigger:
+          on: other
+          text: Group 2 (60-70km)
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Felix
+              - Divine Imperial Imran
+              - Divine Imperial Nabih
+              - Divine Imperial Sixtus
+            ewar:
+              - kind: web
+              - kind: warpScramble
+      - id: group-3-85-107km
+        trigger:
+          on: other
+          text: Group 3 (85-107km)
+          confidence: inferred
+        spawns:
+          - count: "8"
+            class: Frigate
+            names:
+              - Imperial Felix
+              - Imperial Forian
+              - Imperial Matendi
+              - Imperial Paladin
+          - count: "5"
+            class: Cruiser
+            names:
+              - Imperial Agatho
+              - Imperial Donus
+              - Imperial Mathura
+              - Imperial Muzakir
+            ewar:
+              - kind: trackingDisruption
+      - id: group-4-100-117km
+        trigger:
+          on: other
+          text: Group 4 (100-117km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Imperial Felix
+              - Imperial Imran
+              - Imperial Nabih
+              - Imperial Paladin
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Divine Imperial Felix
+              - Divine Imperial Imran
+          - count: "2"
+            class: Destroyer
+            names:
+              - Imperial Crusader
+              - Imperial Templar Caius
+          - count: "2"
+            class: Cruiser
+            names:
+              - Imperial Muzakir
+              - Imperial Tamir
+              - Imperial Templar Muzakir
+            ewar:
+              - kind: neut
+            note: NOS by Imperial Tamir
+          - count: "3"
+            class: "?"
+            names:
+              - Amarr Transport Ships
+      - id: group-5-100-117km
+        trigger:
+          on: other
+          text: Group 5 (100-117km)
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Imperial Felix
+              - Imperial Paladin
+          - count: "2"
+            class: Destroyer
+            names:
+              - Imperial Caius
+              - Imperial Exarp
+          - count: "2"
+            class: Cruiser
+            names:
+              - Imperial Agatho
+              - Imperial Donus

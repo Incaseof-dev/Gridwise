@@ -1,0 +1,74 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: for-the-birds
+kind: mission
+name: For the Birds
+level: 1
+enemyFaction: Rogue Drones & Gallente Federation
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – For the Birds
+    url: https://wiki.eveuniversity.org/For_the_Birds
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "230698"
+defaults:
+  confidence: verified
+  source: uni
+restrictions:
+  - text: "Ship size limit: Corvette, Frigate, Destroyer"
+notes:
+  - text: "Suggested ships: Destroyer"
+  - text: Gallentean Guards match the Rogue Drones damage profile.
+  - text: Gallentean Guards have very low HP, but deal considerable damage.
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: Structures drop nothing.
+    waves:
+      - id: group-1-20km-auto-aggro
+        trigger:
+          on: other
+          text: Group 1, 20km, auto-aggro
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Drone
+            names:
+              - Gallentean Guard
+      - id: group-2-40km
+        trigger:
+          on: other
+          text: Group 2, 40km
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Drone
+            names:
+              - Gallentean Guard
+  - name: Pocket 2
+    notes:
+      - text: Ruined Bunkers may drop random ammo.
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "5"
+            class: Drone
+            names:
+              - Gallentean Guard
+  - name: Pocket 3
+    waves:
+      - id: initial-group
+        trigger:
+          on: warpIn
+          text: Initial Group
+        spawns:
+          - count: "1"
+            class: Cruiser
+            names:
+              - Gallentean Terrorist
+            note: Drops container with Achuran White Song Birds (0.0m3)

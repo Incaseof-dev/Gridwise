@@ -1,0 +1,99 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: drone-detritus
+kind: mission
+name: Drone Detritus
+level: 1
+enemyFaction: Rogue Drones
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Drone Detritus
+    url: https://wiki.eveuniversity.org/Drone_Detritus
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "221092"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Defeat rogue drones; bring a rogue drone AI core to your agent.
+restrictions:
+  - text: "Ship size limit: Corvette, Frigate, Destroyer, Cruiser"
+notes:
+  - text: "Suggested ships: Frigate, Destroyer"
+pockets:
+  - name: Single Pocket
+    notes:
+      - text: Structures drop no loot.
+      - text: You have to kill every drone, after which the mission item will spawn in your inventory.
+    waves:
+      - id: group-1-auto-aggro
+        trigger:
+          on: other
+          text: Group 1, auto-aggro
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Frigate
+            names:
+              - Render
+              - Splinter Alvi
+          - count: "1"
+            class: Cruiser
+            names:
+              - Wrecker Alvum
+      - id: group-2
+        trigger:
+          on: other
+          text: Group 2
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Drone
+            names:
+              - Belphegor
+              - Mammon Apis
+          - count: "3"
+            class: Frigate
+            names:
+              - Infester Alvi
+          - count: "1"
+            class: Cruiser
+            names:
+              - Destructor Alvum
+            triggers: Spawns Reinforcement 1
+      - id: reinforcement-1
+        trigger:
+          on: other
+          text: Reinforcement 1
+          confidence: inferred
+        spawns:
+          - count: 1-2
+            class: Cruiser
+            names:
+              - Wrecker Alvum
+            triggers: Spawns Reinforcement 2
+      - id: reinforcement-2
+        trigger:
+          on: other
+          text: Reinforcement 2
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Decimator
+              - Render Alvi
+            triggers: Spawns Reinforcement 3
+      - id: reinforcement-3
+        trigger:
+          on: other
+          text: Reinforcement 3
+          confidence: inferred
+        spawns:
+          - count: 3-5
+            class: Frigate
+            names:
+              - Infester
+              - Splinter Alvi

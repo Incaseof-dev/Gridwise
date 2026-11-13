@@ -1,0 +1,112 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: downing-the-slavers-2-of-2-blood-raiders
+kind: mission
+name: Downing The Slavers (2 of 2)
+level: 3
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Downing The Slavers (2 of 2) (Blood Raiders)
+    url: https://wiki.eveuniversity.org/Downing_The_Slavers_(2_of_2)_(Blood_Raiders)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "218659"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Find the Blood Raider slavers and destroy them.
+notes:
+  - text: "Suggested ships: Caracal, Drake, Ferox, Harbinger, Domi, Gila"
+  - text: "Blitz: In the last pocket you only have to kill the Slavers-- this completes the mission and you can warp out afterwards. All other kills are optional."
+lootNotes:
+  - text: "Loot: ~100k ISK + Salvage: ~350k ISK (2024/09/08)"
+  - text: "Bounty: ~780k ISK"
+pockets:
+  - name: Warp-in
+    notes:
+      - text: "Transmission- Corpior Cleric: We have an intruder! Don't let him access the Gate!"
+      - text: Acceleration gate is locked until all hostiles are destroyed.
+    waves:
+      - id: 25-30km-auto-aggro
+        trigger:
+          on: other
+          text: (25-30km), auto aggro
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Frigate
+            names:
+              - Corpii Raider
+              - Corpii Diviner
+          - count: "1"
+            class: Destroyer
+            names:
+              - Corpior Cleric
+          - count: "3"
+            class: Cruiser
+            names:
+              - Corpum Arch Sage
+              - Corpum Arch Priest
+  - name: Single pocket
+    notes:
+      - text: "Blitz: Kill the Blood Raider Slavers, warp out."
+      - text: The gate lands you right in the middle of a defensive, square structure with sentries and ships on each corner at 5 to 16km with a 15 second-ish delay before being aggro'ed.
+      - text: Note that sentries have 250km range though and will still hit you at 100km. This should however be tankable long enough to pick off the ships as they come toward you.
+      - text: Structures
+      - text: Walls & Elevators do not have loot.
+    waves:
+      - id: 5-15km-delayed-auto-aggro-15-sec
+        trigger:
+          on: other
+          text: (5-15km), Delayed auto aggro ~15 sec
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Destroyer
+            names:
+              - Corpior Converter
+            group: Group A
+          - count: "1"
+            class: Sentry
+            names:
+              - Blood Raider Sentry
+            group: Group A
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Blood Raider Slaver
+            group: Group B
+            triggers: Destroying marks mission complete
+            note: Renamed Corpatis Bishop/Seer/Shade
+          - count: "1"
+            class: Sentry
+            names:
+              - Blood Raider Sentry
+            group: Group B
+          - count: "2"
+            class: Destroyer
+            names:
+              - Corpior Visionary
+              - Corpior Converter
+              - Corpior Templar
+              - Corpior Devoter
+            group: Group C
+          - count: "1"
+            class: Sentry
+            names:
+              - Blood Raider Sentry
+            group: Group C
+          - count: "2"
+            class: Destroyer
+            names:
+              - Corpior Devoter
+              - Corpior Friar
+            group: Group D
+          - count: "1"
+            class: Sentry
+            names:
+              - Blood Raider Sentry
+            group: Group D

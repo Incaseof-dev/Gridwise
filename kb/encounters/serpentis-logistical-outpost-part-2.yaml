@@ -1,0 +1,352 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: serpentis-logistical-outpost-part-2
+kind: escalation
+name: Serpentis Logistiscal Outpost Part 2
+dedRating: null
+enemyFaction: Serpentis
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Serpentis Logistical Outpost Part 2
+    url: https://wiki.eveuniversity.org/Serpentis_Logistical_Outpost_Part_2
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231535"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Serpentis Logistical Outpost Part 2 is escalation from the Serpentis Logistical Outpost.
+  - text: The Serpentis Logistical Outpost and Serpentis Logistical Outpost Part 2 are considered to be the hardest Serpentis Escalations.
+  - text: Use extreme caution when completing the sites due to the Scramming Frigs and T2 Neuting Towers
+  - text: The site consists of a warpin area and one normal space pocket.
+  - text: The site is not in deadspace so you can warp around freely. Take advantage of this by making bounce bookmark ~300 km off the site as you land in. You can then use this bookmark to bounce on asteroid/wreck to get in good position. This also means that a potential hunter can warp directly to you in second room with combat probes.
+lootNotes:
+  - text: The boss might drop Corelum A-type modules, shadow serpentis modules, and Vigilant BPC. He always drops 19th Tier Overseer's Personal Effects. Clearing all rats gave around 50m isk bounty. Never checked salvage and so on. I usually expect salvage to be half of the bounty.
+pockets:
+  - name: Warp-in
+    notes:
+      - text: The rats are in 3 groups and you land in the middle of them. The initial two neut towers are close to two other towers. The two other groups have three towers each and after two minutes an additional neuting tower spawns at them. As this isn't dedspace you can warp freely. (The groups are close to some asteroids and structures so you have warpin points.) Carefully consider how you want to run the site and adapt it to your ship(s) because if you warp to the towers you'll face a good bit of DPS, be pointed, and webbed.
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "5"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Initiate
+              - Coreli Guardian Scout
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "4"
+            class: Cruiser
+            names:
+              - Corelum Chief Defender
+              - Corelum Chief Protector
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Infantry
+            ewar:
+              - kind: sensorDamp
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corelatis Captain
+              - Corelatis Captain Sentry
+          - count: "9"
+            class: Battleship
+            names:
+              - Core Vice Admiral
+              - Core Grand Admiral
+            ewar:
+              - kind: sensorDamp
+          - count: "2"
+            class: Sentry
+            names:
+              - Serpentis Cruise Missile Battery
+          - count: "4"
+            class: Sentry
+            names:
+              - Serpentis Heavy Missile Battery
+          - count: "2"
+            class: Sentry
+            names:
+              - Tower Sentry Serpentis III
+          - count: "2"
+            class: Sentry
+            names:
+              - Serpentis Energy Neutralizer I
+            ewar:
+              - kind: neut
+            note: Energy Neutralizer range is 150km
+      - id: spawn-after-2-min
+        trigger:
+          on: other
+          text: Spawn after 2 min
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Serpentis Energy Neutralizer II
+            ewar:
+              - kind: neut
+            note: They spawn at the asteroids surrounded by the sentries
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Acceleration Gate
+            names:
+              - Acceleration Gate
+            note: Locked until all ships are destroyed
+  - name: First Room
+    notes:
+      - text: ----
+      - text: As in the first pocket you can warp around, so use bookmarks if needed.
+      - text: In the room is a Serpentis Stronghold in the shape of a Gallente station. When warping in you face four groups of rats. One group in front of the structure is close to you when you warp in and consists of battlecruisers and frigates which web and point. One group is in the center of the structure and consists of battleships and frigates. The other two groups are on the left and right of the structure and consist of battleships and (battle-)cruisers. After a short while in the center of the structure also towers spawn (one of them is neuting). For more details see the table below.
+      - text: The four groups independently trigger respawns. In theory you could only kill the center group and it's following spawns to trigger the commander wave. But in practice you'll want to at least kill all pointing frigates and the neuting tower. For the center group a new wave is triggered if it is completely cleared. For the other groups the last ship of it's biggest shipclass is the trigger. (If the spawn contained battleships the last battleship killed in this spawn will trigger a new one and so on.) Uehiro Katsen will approach you with microwarpdrive and projects 1050 DPS out to 21 km, with -90% web within 15 km. If you can't safely project at least 600 DPS of pure Kinetic damage beyond his weapons range, you will find killing him extremely hard.
+      - text: Great little advice is to form a solo fleet and assign marks to the center group and its following waves for easy overview of who to kill.
+      - text: "Expedition ends message:: Uehiro Katsen's clone has departed, and the remaining Serpentis are scattering to the wind amongst the ruins of their former operation."
+    waves:
+      - id: central-group
+        trigger:
+          on: other
+          text: "Central group:"
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Spy
+              - Coreli Guardian Agent
+            group: First wave (already spawned)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Battleship
+            names:
+              - Core High Admiral
+            group: First wave (already spawned)
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Defender
+              - Coreli Guardian Guard
+              - Coreli Guardian Safeguard
+            group: Second wave
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Battleship
+            names:
+              - Core Admiral
+              - Core High Admiral
+            group: Second wave
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Defender
+              - Coreli Guardian Guard
+              - Coreli Guardian Protector
+            group: Third wave
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Battleship
+            names:
+              - Core Grand Admiral
+            group: Third wave
+          - count: "2"
+            class: Battleship
+            names:
+              - Core Lord Admiral
+            group: Third wave
+          - count: "2"
+            class: Elite Cruiser
+            names:
+              - Corelum Guardian Chief Infantry
+              - Corelum Guardian Chief Sentinel
+            group: Boss wave
+          - count: "1"
+            class: Elite Battleship
+            names:
+              - Uehiro Katsen
+            group: Boss wave
+            ewar:
+              - kind: web
+            drop: Can drop Corelum A-Type modules, Shadow Serpentis faction modules, implants and ship BPC. Always drops 19th Tier Overseer's Personal Effects (51,7 mil)
+            note: He has an active tank that can tank 500 dps
+      - id: towers-spawn-middle-of-the-stronghold-shortly-after-warpin
+        trigger:
+          on: other
+          text: Towers spawn (middle of the Stronghold, shortly after warpin)
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Sentry
+            names:
+              - Serpentis Cruise Missile Battery
+          - count: "4"
+            class: Sentry
+            names:
+              - Tower Sentry Serpentis III
+          - count: "1"
+            class: Sentry
+            names:
+              - Serpentis Energy Neutralizer III
+            ewar:
+              - kind: neut
+            note: Energy Neutralizer range is 150km
+      - id: frontal-group
+        trigger:
+          on: other
+          text: "Frontal Group:"
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Spy
+              - Coreli Guardian Agent
+            group: First wave (already spawned)
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Corelatis Captain
+              - Corelatis Captain Sentry
+            group: First wave (already spawned)
+            triggers: last triggers new wave
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Defender
+              - Coreli Guardian Guard
+            group: Second wave
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corelatis Captain
+              - Corelatis Platoon Leader
+            group: Second wave
+            triggers: last triggers new wave
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Coreli Guardian Defender
+              - Coreli Guardian Guard
+            group: Third wave
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corelatis High Captain
+              - Corelatis Captain Sentry
+            group: Third wave
+      - id: left-group
+        trigger:
+          on: other
+          text: "Left Group:"
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corelatis Captain
+              - Corelatis Captain Sentry
+            group: First wave (already spawned)
+          - count: "2"
+            class: Battleship
+            names:
+              - Core Admiral
+            group: First wave (already spawned)
+            triggers: last triggers new wave
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corelatis High Captain
+              - Corelatis Squad Leader
+              - Corelatis Platoon Leader
+            group: Second wave
+          - count: "4"
+            class: Battleship
+            names:
+              - Core Admiral
+              - Core High Admiral
+            group: Second wave
+            triggers: last triggers new wave
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corelatis High Captain
+              - Corelatis Squad Leader
+            group: Third wave
+          - count: "4"
+            class: Battleship
+            names:
+              - Core Grand Admiral
+              - Core Lord Admiral
+            group: Third wave
+      - id: right-group
+        trigger:
+          on: other
+          text: "Right Group:"
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Corelum Guardian Chief Protector
+              - Corelum Guardian Chief Defender
+            group: First wave (already spawned)
+          - count: "2"
+            class: Battleship
+            names:
+              - Core High Admiral
+            group: First wave (already spawned)
+            triggers: last triggers new wave
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corelum Guardian Chief Defender
+              - Corelum Guardian Chief Infantry
+              - Corelum Guardian Chief Sentinel
+            group: Second wave
+          - count: "3"
+            class: Battleship
+            names:
+              - Core Admiral
+              - Core High Admiral
+            group: Second wave
+            triggers: last triggers new wave
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corelum Guardian Chief Defender
+              - Corelum Guardian Chief Infantry
+            group: Second wave
+          - count: "3"
+            class: Battleship
+            names:
+              - Core Lord Admiral
+              - Core Grand Admiral
+            group: Second wave

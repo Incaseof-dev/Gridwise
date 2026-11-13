@@ -1,0 +1,310 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: blood-sanctum
+kind: anomaly
+name: Blood Sanctum
+dedRating: null
+anomalyClass: 10
+enemyFaction: Blood Raider Covenant
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Blood Sanctum
+    url: https://wiki.eveuniversity.org/Blood_Sanctum
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "225185"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: The site is an open Deadspace pocket, one may warp to preferred distance. Killing all NPCs will trigger the next wave.
+  - text: "Loot : 3.5M ISK"
+  - text: "Salvage : 7.7M ISK"
+  - text: "Bounty : 26-38M ISK"
+  - text: "Loot : ? ISK"
+  - text: "Salvage : ? ISK"
+  - text: "Bounty : ? ISK"
+  - text: "Escalation: This site can escalate to Blood Raider Naval Shipyard"
+pockets:
+  - name: Ring spawn Variant
+    waves:
+      - id: first-spawn
+        trigger:
+          on: other
+          text: First Spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Corpatis
+          - count: 6-7
+            class: Battleship
+            names:
+              - Corpus
+      - id: second-spawn
+        trigger:
+          on: other
+          text: Second Spawn
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corpatis
+          - count: "4"
+            class: Battleship
+            names:
+              - Corpus
+      - id: third-spawn
+        trigger:
+          on: other
+          text: Third Spawn
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Elder Corpum
+            ewar:
+              - kind: trackingDisruption
+              - kind: neut
+          - count: "3"
+            class: Battleship
+            names:
+              - Corpus
+      - id: fourth-spawn
+        trigger:
+          on: other
+          text: Fourth Spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Elder Corpii
+            ewar:
+              - kind: trackingDisruption
+          - count: 3-4
+            class: Battleship
+            names:
+              - Corpus
+      - id: fifth-spawn
+        trigger:
+          on: other
+          text: Fifth Spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Elite Frigate
+            names:
+              - Elder Corpii
+            ewar:
+              - kind: trackingDisruption
+          - count: 3-4
+            class: Battlecruiser
+            names:
+              - Corpatis
+          - count: 6-8
+            class: Battleship
+            names:
+              - Corpus
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - Dark Blood Commander
+            group: Possible Rare Spawn
+            drop: Drops Dark Blood tag, Blood ammunition crystal and possibly Dark Blood modules
+          - count: 0-1
+            class: Dreadnought
+            names:
+              - Blood
+              - Dark Blood Dreadnought
+            group: Possible Rare Spawn
+            drop: Drops Dark Blood tag, Blood ammunition crystal and possibly Dark Blood modules
+  - name: Station spawn Variant (Elite Sanctum)
+    notes:
+      - text: Patriarch Appears to be the trigger for second wave, However, Other waves spawn after being cleared.
+    waves:
+      - id: first-spawn
+        trigger:
+          on: other
+          text: First Spawn
+          confidence: inferred
+        spawns:
+          - count: 3-4
+            class: Frigate
+            names:
+              - Corpii Collector
+              - Corpii Herald
+              - Corpii Follower
+          - count: 3-4
+            class: Cruiser
+            names:
+              - Elder Corpum
+            ewar:
+              - kind: trackingDisruption
+              - kind: neut
+          - count: 6-7
+            class: Battleship
+            names:
+              - Corpus Pope
+              - Corpus Patriarch
+      - id: second-spawn
+        trigger:
+          on: other
+          text: Second Spawn
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corpus Seer
+              - Corpus Shade
+              - Corpus Exorcist
+          - count: "3"
+            class: Battleship
+            names:
+              - Corpus Pope
+              - Corpus Patriarch
+      - id: third-spawn
+        trigger:
+          on: other
+          text: Third Spawn
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Frigate
+            names:
+              - Elder Corpii Collector
+              - Elder Corpii Follower
+              - Elder Corpii Herald
+          - count: "4"
+            class: Battleship
+            names:
+              - Corpus Pope
+              - Corpus Patriarch
+      - id: fourth-spawn
+        trigger:
+          on: other
+          text: Fourth Spawn
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Battlecruiser
+            names:
+              - Corpus Seer
+              - Corpus Shade
+              - Corpus Exorcist
+          - count: "3"
+            class: Battleship
+            names:
+              - Corpus Pope
+              - Corpus Patriarch
+      - id: fifth-spawn
+        trigger:
+          on: other
+          text: Fifth Spawn
+          confidence: inferred
+        spawns:
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Follower
+              - Elder Corpii Herald
+              - Elder Corpii Collector
+          - count: "3"
+            class: Cruiser
+            names:
+              - Elder Corpum
+            ewar:
+              - kind: trackingDisruption
+              - kind: neut
+          - count: "5"
+            class: Battleship
+            names:
+              - Corpus Pope
+              - Corpus Patriarch
+              - Corpus Monsignor
+              - Corpus Cardinal
+      - id: sixth-spawn
+        trigger:
+          on: other
+          text: Sixth Spawn
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Follower
+              - Elder Corpii Herald
+              - Elder Corpii Collector
+          - count: "3"
+            class: Destroyer
+            names:
+              - Elder Corp
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Corpus Seer
+              - Corpus Shade
+              - Corpus Exorcist
+          - count: "4"
+            class: Battleship
+            names:
+              - Corpus Pope
+              - Corpus Patriarch
+      - id: sixth-spawn-7
+        trigger:
+          on: other
+          text: Sixth Spawn
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Elite Frigate
+            names:
+              - Elder Corpii Follower
+              - Elder Corpii Herald
+              - Elder Corpii Collector
+          - count: "3"
+            class: Cruiser
+            names:
+              - Elder Corpum
+            ewar:
+              - kind: trackingDisruption
+              - kind: neut
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Corpus Seer
+              - Corpus Shade
+              - Corpus Exorcist
+          - count: "3"
+            class: Battleship
+            names:
+              - Corpus Pope
+              - Corpus Patriarch
+          - count: 0-1
+            class: Commander Battleship
+            names:
+              - Dark Blood Commander
+            group: Possible Rare Spawn
+            drop: Drops Dark Blood tag, Blood ammunition crystal and possibly Dark Blood modules
+          - count: 0-1
+            class: Dreadnought
+            names:
+              - Blood
+              - Dark Blood Dreadnought
+            group: Possible Rare Spawn
+            drop: Drops Dark Blood tag, Blood ammunition crystal and possibly Dark Blood modules
+          - count: 0-1
+            class: Titan
+            names:
+              - Blood
+              - Dark Blood Titan
+            group: Possible Rare Spawn
+            drop: Drops Dark Blood tag, Blood ammunition crystal and possibly Dark Blood modules
+sde:
+  dungeonIds:
+    - 2319

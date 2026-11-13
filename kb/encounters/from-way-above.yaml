@@ -1,0 +1,161 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: from-way-above
+kind: mission
+name: From Way Above
+level: 4
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – From Way Above
+    url: https://wiki.eveuniversity.org/From_Way_Above
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "231258"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Destroy Angel ships and defend the Defiants base.
+ewar:
+  - kind: web
+  - kind: targetPaint
+  - kind: warpDisruption
+notes:
+  - text: "Web/warp disruption: Elite frigates"
+  - text: "Suggested ships: Battleship (sniper)"
+  - text: "The Republic-Cartel Relationship: The Minmatar Republic and the Angel Cartel have a long and checkered history of locked horns and uneasy handshakes. A century back, when the Angel Cartel was building its reputation as a ruthless mercenary organization but had not yet crossed over into out-and-out piracy, the Republic was rumored to frequently contract the Cartel for operations deemed too politically sensitive for the Republic's armed forces. While these rumors have never been confirmed by either side, certain other occurrences -- such as the Cartel's immediate and unexplained withdrawal from their Skarkon sovereignty bid in YC110 -- seem to corroborate the idea of a nebulous connection between the two giant entities' top levels."
+  - text: thumb|right|192px
+  - text: Accept the Mission remotely.
+  - text: Ungated semi-deadspace pocket zero jumps away in Todeko. All warps will land you at the same point, but you can warp around freely.
+  - text: Complete the Mission remotely.
+  - text: "Blitz: warp in, then warp to bookmark. Wait for 10 minutes for the final spawn to arrive and destroy the 2x Elite Battleships (Gist Domination Saint/Nephilim)."
+  - text: "Tips: A new spawn appears after a minute, then after 2, then after 3 and the final spawns after 4 minutes"
+  - text: "Tips: 2x Elite Battleships (Gist Domination Saint/Nephilim) Target Painting is effective even at 100KM"
+  - text: "Tips: Battleships can't hit at close range due to poor tracking"
+  - text: "Tips: Ships spawn around 70 km away from warp-in, all around the same spot. Large amount of elite cruisers will make speed-tanking difficult if you don't have very strong Explosive resist."
+pockets:
+  - name: Pocket 1
+    notes:
+      - text: "Mission Completion Dialogue: Nice flying out there . The Defiants dealt with the remains of the attacking fleet easily once you took out their support. As for the situation with this RSS Agent, we're still discussing our options amongst the tribal leadership, but chances are that this guy was operating on his own. That means basically nobody knew what he was doing or why the Wildfire Khumaak grabbed his attention. You're probably going to have to take that guy's passkey and go in there yourself, if the RSS lets us. We're still talking with them about the situation. Some people are looking at his disappearance in an entirely different light, if you get me. RSS operative shows up and not much later so do a bunch of Angels. Yeah…still a few discussions yet to be had, I reckon. Anyways, get back to me again soon and we'll have a plan ready for you. You've more than proven yourself now, so I'd be more than happy to trust you with whatever comes next."
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Ambusher
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Phalanx
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Gistatis Praefectus
+              - Gistatis Tribunus
+      - id: spawn-1
+        trigger:
+          on: other
+          text: Spawn 1
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Nomad
+            ewar:
+              - kind: targetPaint
+          - count: "3"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Marauder
+              - Arch Gistum Liquidator
+          - count: "1"
+            class: Battleship
+            names:
+              - Gist Warlord
+              - Gist Saint
+      - id: spawn-2
+        trigger:
+          on: other
+          text: Spawn 2
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Ruffian
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "4"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Breaker
+              - Arch Gistum Defeater
+            ewar:
+              - kind: targetPaint
+          - count: "3"
+            class: Battleship
+            names:
+              - Gist Throne
+              - Gist Cherubim
+      - id: spawn-3
+        trigger:
+          on: other
+          text: Spawn 3
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Ruffian
+            ewar:
+              - kind: web
+              - kind: warpDisruption
+          - count: "4"
+            class: Destroyer
+            names:
+              - Gistior Seizer
+              - Gistior Thrasher
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+              - Gistatis Tribunus
+      - id: spawn-4
+        trigger:
+          on: other
+          text: Spawn 4
+          confidence: inferred
+        spawns:
+          - count: "5"
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Breaker
+              - Arch Gistum Defeater
+              - Arch Gistum Smasher
+            ewar:
+              - kind: targetPaint
+          - count: "3"
+            class: Battleship
+            names:
+              - Gist Seraphim
+          - count: "2"
+            class: Elite Battleship
+            names:
+              - Gist Domination Saint
+              - Gist Domination Nephilim
+            ewar:
+              - kind: targetPaint
+            triggers: Mission objective

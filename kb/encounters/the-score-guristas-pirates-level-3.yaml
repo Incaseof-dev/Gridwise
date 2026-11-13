@@ -1,0 +1,114 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-score-guristas-pirates-level-3
+kind: mission
+name: The Score
+level: 3
+enemyFaction: Guristas Pirates
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Score (Guristas Pirates) (Level 3)
+    url: https://wiki.eveuniversity.org/The_Score_(Guristas_Pirates)_(Level_3)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223423"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Time to settle the score. Go and destroy all the ships at the encounter. Your main target will be lurking around the radio telescope, seek and destroy then return to me.
+notes:
+  - text: "Suggested ships: Battlecruiser"
+  - text: "Blitz: Kill all ships in Pocket 1 then destroy Group 3 in Pocket 2"
+  - text: Structures in Pocket 1 drop no loot.
+  - text: Structures in Pocket 2 cannot be destroyed.
+lootNotes:
+  - text: "Bounty: ~800k ISK (2024/09/07)"
+  - text: "Loot: ~100k ISK (2024/09/07)"
+  - text: "Salvage: ~170k ISK (2024/09/07)"
+pockets:
+  - name: 1st Pocket
+    notes:
+      - text: Acceleration Gate to next pocket is 40km away.
+    waves:
+      - id: 1st-group-45-50km
+        trigger:
+          on: other
+          text: 1st Group (45-50km)
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Pithi Destructor
+          - count: "2"
+            class: Cruiser
+            names:
+              - Pithum Mortifier
+              - Pithum Inferno
+          - count: "1"
+            class: Frigate
+            names:
+              - Pithi Destructor
+            group: 2nd Group (45-50km)
+          - count: "2"
+            class: Cruiser
+            names:
+              - Pithum Mortifier
+              - Pithum Inferno
+            group: 2nd Group (45-50km)
+          - count: "1"
+            class: Frigate
+            names:
+              - Pithi Demolisher
+            group: 3rd Group (60km)
+          - count: "1"
+            class: Destroyer
+            names:
+              - Pithior Terrorist
+            group: 3rd Group (60km)
+  - name: 2nd Pocket
+    waves:
+      - id: 1st-group-60km
+        trigger:
+          on: other
+          text: 1st Group, 60km
+          confidence: inferred
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Pithi Plunderer
+          - count: "2"
+            class: Cruiser
+            names:
+              - Pithum Inferno
+          - count: "2"
+            class: Frigate
+            names:
+              - Pithi Destructor
+              - Pithi Demolisher
+            group: 2nd Group (50-60km)
+          - count: "1"
+            class: Cruiser
+            names:
+              - Pithum Eraser
+            group: 2nd Group (50-60km)
+          - count: "2"
+            class: Frigate
+            names:
+              - Pithi Destructor
+              - Pithi Demolisher
+            group: 3rd Group, 55-70km
+          - count: "1"
+            class: Cruiser
+            names:
+              - Pithum Mortifier
+            group: 3rd Group, 55-70km
+          - count: "1"
+            class: Battlecruiser
+            names:
+              - Pithatis Enforcer
+              - Pithatis Assaulter
+            group: 3rd Group, 55-70km

@@ -1,0 +1,107 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: the-uprising-level-2-3-of-4
+kind: mission
+name: The Uprising (3 of 4)
+level: 2
+enemyFaction: Mordu's Legion Command
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – The Uprising (Level 2) (3 of 4)
+    url: https://wiki.eveuniversity.org/The_Uprising_(Level_2)_(3_of_4)
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "223216"
+defaults:
+  confidence: verified
+  source: uni
+ewar:
+  - kind: web
+  - kind: warpScramble
+notes:
+  - text: "Web/warp disruption: Militia Guardian/Leader (Web, Scram)"
+  - text: "Suggested ships: Cruiser"
+  - text: Militia weak to em on shield and th on armor
+pockets:
+  - name: Pocket 1
+    waves:
+      - id: group-1-6-12km-auto-aggro
+        trigger:
+          on: other
+          text: Group 1, 6-12km (auto-aggro)
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Mordus Gladius
+              - Mordus Katana
+              - Mordus Rapier
+          - count: "1"
+            class: Cruiser
+            names:
+              - Mordus Bobcat
+      - id: group-2-20km
+        trigger:
+          on: other
+          text: Group 2, 20km
+          confidence: inferred
+        spawns:
+          - count: "6"
+            class: Frigate
+            names:
+              - Mordus Gladius
+              - Mordus Katana
+          - count: "1"
+            class: Cruiser
+            names:
+              - Mordus Bobcat
+      - id: group-3-28km
+        trigger:
+          on: other
+          text: Group 3, 28km
+          confidence: inferred
+        spawns:
+          - count: "7"
+            class: Frigate
+            names:
+              - Mordus Gladius
+  - name: Pocket 2
+    waves:
+      - id: initial-group-20km-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group, 20km (auto-aggro)
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Mordus Light Missile Battery
+          - count: "4"
+            class: Elite Frigate
+            names:
+              - Militia Guardian
+            ewar:
+              - kind: web
+              - kind: warpScramble
+  - name: Pocket 3
+    notes:
+      - text: "Next: The Uprising (Level 2) (4 of 4)"
+    waves:
+      - id: initial-group-2-10km-auto-aggro
+        trigger:
+          on: warpIn
+          text: Initial Group, 2-10km (auto-aggro)
+        spawns:
+          - count: "1"
+            class: Frigate
+            names:
+              - Leader
+            ewar:
+              - kind: web
+              - kind: warpScramble
+          - count: "6"
+            class: Cruiser
+            names:
+              - Militia Guardian

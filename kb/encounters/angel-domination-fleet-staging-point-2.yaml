@@ -1,0 +1,197 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: angel-domination-fleet-staging-point-2
+kind: escalation
+name: Angel Domination Fleet Staging Point 2
+dedRating: null
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Angel Domination Fleet Staging Point 2
+    url: https://wiki.eveuniversity.org/Angel_Domination_Fleet_Staging_Point_2
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "219358"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: The Angel Domination Fleet Staging Point 2 is the 2nd part of an escalation chain received from the unrated cosmic signature site of the same name.
+  - text: "Escalation: Angel Domination Fleet Staging Point 3: The last Angel Cartel Battleship sends out a distress signal before it goes down. Luckily your coms system has managed to decrypt the message and follow it to it's final destination."
+  - text: "Escalation: This site can escalate to Angel Domination Fleet Staging Point 3"
+npcs:
+  Captain Rogue:
+    sdeTypes:
+      - Angel Scout Commander
+    class: Commander Battleship
+pockets:
+  - name: 1st pocket
+    notes:
+      - text: ----
+    waves:
+      - id: wave
+        trigger:
+          on: warpIn
+          text: Wave
+        spawns:
+          - count: "1"
+            class: Accl Gate
+            names:
+              - Acceleration Gate
+            note: 50km
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "2"
+            class: Destroyer
+            names:
+              - Gistior Defacer
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+            note: type list incomplete on the source page
+          - count: "4"
+            class: Battleship
+            names:
+              - Gist Cherubim
+              - Gist Malakim
+              - Gist Seraphim
+            triggers: First 2 Battleship killed trigger a spawn each
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: "2"
+            class: Sentry
+            names:
+              - Angel Energy Neutralizer Sentry II
+            ewar:
+              - kind: neut
+          - count: "3"
+            class: Sentry
+            names:
+              - Angel Cruise Missile Battery
+      - id: wave-2
+        trigger:
+          on: other
+          text: Wave 2
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Elite Frigate
+            names:
+              - Arch Gistii Hijacker
+            triggers: Triggers next spawn
+            note: type list incomplete on the source page
+          - count: 2-3
+            class: Destroyer
+            names:
+              - Gistior Defacer
+            note: type list incomplete on the source page
+          - count: "4"
+            class: Battleship
+            names:
+              - Gist Cherubim
+            note: type list incomplete on the source page
+      - id: wave-3
+        trigger:
+          on: other
+          text: Wave 3
+          confidence: inferred
+        spawns:
+          - count: 2- 3
+            class: Destroyer
+            names:
+              - Gistior Defacer
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+            note: type list incomplete on the source page
+          - count: "2"
+            class: Battleship
+            names:
+              - Gist Cherubim
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Commander Battleship
+            names:
+              - Captain Rogue
+            triggers: Possible Escalation
+            drop: possible Domination modules or T2 Salvage
+    onWarpIn: "The massive amount of signatures you are getting on your short range scan can only indicate one thing: a full combat fleet stationed around the deadspace pocket. The Angel Cartel would seem to be planning a large-scale military operation in the area and you should expect nothing but the heaviest resistance should you try to oppose them here."
+  - name: 2nd pocket (optional)
+    notes:
+      - text: ----
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial defenders
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Hijacker
+            note: type list incomplete on the source page
+          - count: "3"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+            note: type list incomplete on the source page
+          - count: "5"
+            class: Battleship
+            names:
+              - Gist Cherubim
+            triggers: Triggers next spawn
+            note: type list incomplete on the source page
+          - count: "1"
+            class: Sentry
+            names:
+              - Angel Stasis Tower
+            ewar:
+              - kind: web
+          - count: "2"
+            class: Sentry
+            names:
+              - Angel Point Defense Battery
+          - count: "6"
+            class: Sentry
+            names:
+              - Angel Cruise Missile Battery
+      - id: wave-1
+        trigger:
+          on: other
+          text: Wave 1
+          confidence: inferred
+        spawns:
+          - count: "3"
+            class: Elite Frigate
+            names:
+              - Arch Gistii Hijacker
+            note: type list incomplete on the source page
+          - count: 4- 6
+            class: Elite Cruiser
+            names:
+              - Arch Gistum Centurion
+            ewar:
+              - kind: web
+            note: Breaker and Defeater use Webifier; type list incomplete on the source page
+          - count: "2"
+            class: Battlecruiser
+            names:
+              - Gistatis Legatus
+            note: type list incomplete on the source page
+          - count: "5"
+            class: Battleship
+            names:
+              - Gist Cherubim
+            note: type list incomplete on the source page

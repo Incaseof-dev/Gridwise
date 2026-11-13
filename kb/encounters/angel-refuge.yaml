@@ -1,0 +1,132 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: angel-refuge
+kind: anomaly
+name: Angel Refuge
+dedRating: null
+anomalyClass: 3
+enemyFaction: Angel Cartel
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Angel Refuge
+    url: https://wiki.eveuniversity.org/Angel_Refuge
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "212608"
+defaults:
+  confidence: verified
+  source: uni
+notes:
+  - text: Angel Refuge is an unrated combat site belonging to the Angel Cartel pirate faction. It can be found via exploration as a cosmic anomaly within systems owned by the Minmatar Republic or occupied by the Angel Cartel. As an ungated complex, the limitations as to which ships can enter this site are tied to the security rating of the system where the anomaly spawns (up to T2 Battleships for high-security systems, and Titans for low-security and null-security systems). Completing this complex may award the player with valuable Domination faction modules and ammunition.
+  - text: This combat site consists of a single ungated pocket of space containing a variety of frigate- and destroyer-sized enemy ships. Destroying all hostile ships may escalate into the DED rated, Angel's Red Light District complex.
+  - text: "Escalation: This anomaly can escalate to Angel's Red Light District."
+pockets:
+  - name: Warp-in
+    waves:
+      - id: initial-defenders
+        trigger:
+          on: warpIn
+          text: Initial Defenders
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Gistii Hijacker
+              - Gistii Rogue
+              - Gistii Outlaw
+              - Gistii Thug
+          - count: "2"
+            class: Sentry
+            names:
+              - Angel Basic Defense Battery
+              - Angel Light Missile Battery
+              - Tower Sentry Angel I
+      - id: 1st-reinforcement
+        trigger:
+          on: other
+          text: 1st Reinforcement
+          confidence: inferred
+        spawns:
+          - count: 2-3
+            class: Frigate
+            names:
+              - Gistii Thug
+              - Gistii Outlaw
+              - Gistii Ruffian
+              - Gistii Nomad
+            ewar:
+              - kind: targetPaint
+            note: EWAR by Ruffian
+      - id: 2nd-reinforcement-2-4-npcs
+        trigger:
+          on: other
+          text: 2nd Reinforcement (2-4 NPCs)
+          confidence: inferred
+        spawns:
+          - count: 1-3
+            class: Frigate
+            names:
+              - Gistii Ruffian
+              - Gistii Nomad
+              - Gistii Ambusher
+              - Gistii Raider
+            ewar:
+              - kind: targetPaint
+            note: EWAR by Ruffian
+          - count: 0-3
+            class: Destroyer
+            names:
+              - Gistior Haunter
+              - Gistior Defiler
+      - id: 3rd-reinforcement-1-5-npcs
+        trigger:
+          on: other
+          text: 3rd Reinforcement (1-5 NPCs)
+          confidence: inferred
+        spawns:
+          - count: 0-3
+            class: Frigate
+            names:
+              - Gistii Ambusher
+              - Gistii Raider
+              - Gistii Hunter
+              - Gistii Impaler
+          - count: 1-3
+            class: Destroyer
+            names:
+              - Gistior Shatterer
+              - Gistior Defacer
+              - Gistior Defiler
+      - id: 4th-reinforcement-2-6-npcs
+        trigger:
+          on: other
+          text: 4th Reinforcement (2-6 NPCs)
+          confidence: inferred
+        spawns:
+          - count: 0-3
+            class: Frigate
+            names:
+              - Gistii Ambusher
+              - Gistii Hunter
+              - Gistii Impaler
+          - count: 1-2
+            class: Destroyer
+            names:
+              - Gistior Shatterer
+              - Gistior Haunter
+              - Gistior Defiler
+      - id: 5th-reinforcement-optional
+        trigger:
+          on: other
+          text: 5th Reinforcement (Optional)
+          confidence: inferred
+        spawns:
+          - count: 0-1
+            class: Commander Destroyer
+            names:
+              - Domination Defacer
+            drop: Drops faction ammo and tags. May drop faction modules.
+sde:
+  dungeonIds:
+    - 2114

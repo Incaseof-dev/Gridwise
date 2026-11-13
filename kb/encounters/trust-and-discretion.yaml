@@ -1,0 +1,23 @@
+# Generated from the EVE University wiki (CC BY-SA 4.0) by `npm run kb -- import-wiki`.
+# Re-running the import overwrites this file unless review is set to "reviewed".
+id: trust-and-discretion
+kind: mission
+name: Trust And Discretion
+level: 4
+enemyFaction: null
+review: unreviewed
+sources:
+  uni:
+    title: EVE University Wiki – Trust And Discretion
+    url: https://wiki.eveuniversity.org/Trust_And_Discretion
+    license: CC BY-SA 4.0
+    retrieved: 2026-10-23
+    revision: "206304"
+defaults:
+  confidence: verified
+  source: uni
+objectives:
+  - text: Deliver 1x Questionable Cargo (3.0 m3)
+notes:
+  - text: "Under the Radar: Nicknamed the “Shadow HQ” after its curious location, the Nugoeihuvi station in Poinen sits just one jump out from their Headquarters and shares the system with Internal Security HQ, the security arm of NOH. For certain individuals, the station is ideally situated, offering fast and easy personal access to many of NOH's highest-ranking officials – whilst remaining on the periphery of things, unnoticed in the shadow of the 13th moon. To those who are charged with the defense of Nugoeihuvi interests, it is not Josameto but Poinen that is considered the nexus, the bustling heart of a corporation that is their whole world."
+  - text: Deliver Questionable Cargo (3.0 m3) one jump away to Josameto VIII - Nugoeihuvi Corporation Publisher.
