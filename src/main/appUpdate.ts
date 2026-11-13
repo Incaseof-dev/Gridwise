@@ -9,7 +9,10 @@
 import { existsSync, readdirSync } from 'node:fs';
 import { dirname } from 'node:path';
 import { app } from 'electron';
-import { autoUpdater, type UpdateInfo } from 'electron-updater';
+// electron-updater is CommonJS: the ESM main bundle can only take its default export, not named ones.
+import electronUpdater, { type UpdateInfo } from 'electron-updater';
+
+const { autoUpdater } = electronUpdater;
 
 export const RELEASES_URL = 'https://github.com/Incaseof-dev/Gridwise/releases/latest';
 

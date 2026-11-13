@@ -27,4 +27,4 @@ reading of it. Please look at the wiki page first.
 <!-- What the brief shows instead, or that it is missing. A screenshot of the brief helps. -->
 
 **Version**
-<!-- From Settings → Diagnostics, e.g. "v1.2.1 · …" -->
+<!-- From Settings → Diagnostics, e.g. "v1.2.2 · …" -->
