@@ -14,6 +14,7 @@ const spawn = (p: Partial<BriefSpawn>): BriefSpawn => ({
   triggers: null,
   note: null,
   drop: null,
+  dropNotable: false,
   ...p,
 });
 
@@ -36,7 +37,16 @@ describe('ultra compact waves', () => {
       ['cruiser', false, '2'],
       ['frigate', true, '1'],
     ]);
-    expect(badges[0]).toMatchObject({ ewar: ['web', 'warpScramble'], trigger: true, loot: false });
+    expect(badges[0]).toMatchObject({ ewar: ['web', 'warpScramble'], trigger: true, loot: false, lootNotable: false });
     expect(badges[2]!.loot).toBe(true);
+  });
+});
+
+describe('loot marks', () => {
+  it('a badge is notable when one of its drops is, common when they are only T1 ammo and the like', () => {
+    const [common] = summarizeWave([spawn({ drop: 'T1 ammo' }), spawn({ drop: 'trade goods' })]);
+    expect(common).toMatchObject({ loot: true, lootNotable: false });
+    const [rare] = summarizeWave([spawn({ drop: 'T1 ammo' }), spawn({ drop: 'faction modules', dropNotable: true })]);
+    expect(rare).toMatchObject({ loot: true, lootNotable: true });
   });
 });

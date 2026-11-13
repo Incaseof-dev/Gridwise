@@ -38,11 +38,16 @@ function spawnTooltip(s: BriefSpawn): string {
     s.group,
     s.ewar.length ? `EWAR: ${s.ewar.map((k) => EWAR_LABEL[k]).join(', ')}` : null,
     s.triggers ? `TRIGGER: ${s.triggers}` : null,
-    s.drop ? `Loot: ${s.drop}` : null,
+    s.drop ? `Loot: ${s.drop}${s.dropNotable ? '' : ' (common)'}` : null,
     s.note,
   ]
     .filter(Boolean)
     .join('\n');
+}
+
+/** Gold for loot worth a look (faction, tags, BPCs …), grey for common drops such as T1 ammo. */
+function LootMark({ notable }: { notable: boolean }) {
+  return <span className={`tile-loot${notable ? '' : ' common'}`}>💰</span>;
 }
 
 function Tile({ s }: { s: BriefSpawn }) {
@@ -63,7 +68,7 @@ function Tile({ s }: { s: BriefSpawn }) {
       )}
       {(s.triggers || s.drop) && (
         <span className="tile-marks">
-          {s.drop && <span className="tile-loot">💰</span>}
+          {s.drop && <LootMark notable={s.dropNotable} />}
           {s.triggers && <span className="tile-trig">T</span>}
         </span>
       )}
@@ -97,7 +102,7 @@ function Badge({ b }: { b: SizeBadge }) {
         </span>
       )}
       {b.trigger && <span className="tile-trig">T</span>}
-      {b.loot && <span className="tile-loot">💰</span>}
+      {b.loot && <LootMark notable={b.lootNotable} />}
     </span>
   );
 }
@@ -142,7 +147,7 @@ export function Waves({ waves, view }: { waves: BriefWave[]; view: WaveView }) {
                   ))}
                   {s.triggers && <span className="mini trig">TRIGGER</span>}
                   {s.drop && (
-                    <span className="mini loot" title={s.drop}>
+                    <span className={`mini loot${s.dropNotable ? '' : ' common'}`} title={s.drop}>
                       💰
                     </span>
                   )}

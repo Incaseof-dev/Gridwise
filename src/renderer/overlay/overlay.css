@@ -1569,3 +1569,11 @@ button.icon-hint:disabled {
 .intel-hull .size-icon line {
   stroke: currentColor;
 }
+/* A common drop (T1 ammo, trade goods): the loot bag in grey, the gold one is for loot worth a look. */
+.tile-loot.common,
+.mini.loot.common {
+  filter: grayscale(1) opacity(0.6);
+}
+.mini.loot.common {
+  border-color: rgba(255, 255, 255, 0.2);
+}

@@ -7,7 +7,7 @@ import { DAMAGE_TYPES, type DamageType } from '../sde/damage';
 import type { GameDataService, NpcProfile } from '../sde/gameData';
 import type { NpcCapabilityKind } from '../sde/npcCapabilities';
 import type { EncounterRef } from '../settings';
-import { classifyRare } from '../loot/rarity';
+import { classifyRare, isNotableDrop } from '../loot/rarity';
 import { shipSize } from './shipSize';
 import type { Brief, BriefDamage, BriefEwar, BriefLoot, BriefPocket, Severity } from '../viewmodel';
 
@@ -243,6 +243,7 @@ function pocketsOf(e: Encounter, gd: GameDataService | null): BriefPocket[] {
         triggers: s.triggers ?? null,
         note: s.note ?? null,
         drop: s.drop ?? null,
+        dropNotable: !!s.drop && isNotableDrop(s.drop),
       })),
     })),
     triggers: mergeTriggers(

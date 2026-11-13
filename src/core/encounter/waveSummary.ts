@@ -14,6 +14,8 @@ export interface SizeBadge {
   ewar: NpcCapabilityKind[];
   trigger: boolean;
   loot: boolean;
+  /** One of its drops is worth a look (BriefSpawn.dropNotable). */
+  lootNotable: boolean;
   spawns: BriefSpawn[];
 }
 
@@ -43,13 +45,23 @@ export function summarizeWave(spawns: BriefSpawn[]): SizeBadge[] {
   for (const s of spawns) {
     let b = out.find((x) => x.size === s.size && x.elite === s.elite);
     if (!b) {
-      b = { size: s.size, elite: s.elite, count: '', ewar: [], trigger: false, loot: false, spawns: [] };
+      b = {
+        size: s.size,
+        elite: s.elite,
+        count: '',
+        ewar: [],
+        trigger: false,
+        loot: false,
+        lootNotable: false,
+        spawns: [],
+      };
       out.push(b);
     }
     b.spawns.push(s);
     for (const k of s.ewar) if (!b.ewar.includes(k)) b.ewar.push(k);
     b.trigger ||= s.triggers !== null;
     b.loot ||= s.drop !== null;
+    b.lootNotable ||= s.dropNotable;
   }
   for (const b of out) b.count = sumCounts(b.spawns.map((s) => s.count));
   return out;

@@ -6,7 +6,7 @@ import type { GameEvent } from '../logs/events';
 import type { GameDataService } from '../sde/gameData';
 import { CombatTracker } from '../session/combat';
 import { buildLootLookup, LOOT_REMINDER_MS, lootAlerts } from './alerts';
-import { classifyRare } from './rarity';
+import { classifyRare, isNotableDrop } from './rarity';
 
 describe('classifyRare', () => {
   it('classifies by SDE group name', () => {
@@ -160,5 +160,22 @@ pockets:
     expect(lootAlerts(c.latestEngagement(later), later, lookup)).toHaveLength(2);
     const muchLater = T0 + 3000 + LOOT_REMINDER_MS + 1;
     expect(lootAlerts(c.latestEngagement(muchLater), muchLater, lookup)).toEqual([]);
+  });
+});
+
+describe('isNotableDrop', () => {
+  it('greys only plainly common drops; mission items, faction loot and chips stay notable', () => {
+    for (const t of ['T1 ammo', 'drops', 'trade goods', 'metal scraps, trade goods', 'May drop missiles', 'Minerals'])
+      expect(isNotableDrop(t)).toBe(false);
+    for (const t of [
+      'Faction modules',
+      'Federation Navy Fleet Captain Insignia I',
+      'Passengers',
+      'Mission objective',
+      'Drone components or Astero chip',
+      'Arch Angel Ammo/Mid-Grade Halo Beta',
+      'Valuable Ammunition',
+    ])
+      expect(isNotableDrop(t)).toBe(true);
   });
 });

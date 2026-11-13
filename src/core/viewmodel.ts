@@ -67,6 +67,8 @@ export interface BriefSpawn {
   triggers: string | null;
   note: string | null;
   drop: string | null;
+  /** False for a plainly common drop (T1 ammo, trade goods, scrap …: rarity.ts isNotableDrop); the bag is grey then. */
+  dropNotable: boolean;
 }
 
 export interface BriefWave {
