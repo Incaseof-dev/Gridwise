@@ -5,7 +5,7 @@ labels: bug
 ---
 
 **Version and platform**
-<!-- Copy the line from Settings → Diagnostics, e.g. "v1.2.2 · Electron … · x11 session …" -->
+<!-- Copy the line from Settings → Diagnostics, e.g. "v1.3.0 · Electron … · x11 session …" -->
 
 **OS, desktop and how EVE runs**
 <!-- e.g. Windows 11; or Bazzite / KDE Plasma on Wayland, Steam/Proton, Fixed window mode -->

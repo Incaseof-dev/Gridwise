@@ -35,7 +35,7 @@ the system change lines; what players write is skipped.
 
 Gridwise is a third-party tool. CCP does not endorse or support third-party tools, and using one is at your own risk.
 
-> Status: 1.2.2. Tested by its author in daily play on Linux, with a Windows build. Expect rough edges, and please report them
+> Status: 1.3.0. Tested by its author in daily play on Linux, with a Windows build. Expect rough edges, and please report them
 > ([Bug reports and ideas](#bug-reports-and-ideas)).
 
 ## Install (Linux)
@@ -121,7 +121,7 @@ Automatic updates can be turned off in _Settings → Game data_. Details: [docs/
 
 Please use [GitHub Issues](https://github.com/Incaseof-dev/Gridwise/issues). A good report has:
 
-- the version and platform line from _Settings → Diagnostics_ (e.g. `v1.2.2 · Electron … · x11 session …`);
+- the version and platform line from _Settings → Diagnostics_ (e.g. `v1.3.0 · Electron … · x11 session …`);
 - your OS and desktop (e.g. Windows 11, or Bazzite / KDE Plasma on Wayland) and how EVE runs (Steam/Proton, native
   launcher, window mode);
 - what you did, what you expected and what happened instead, with a screenshot of the overlay if it helps;
