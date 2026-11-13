@@ -176,17 +176,17 @@ describe('saved fits', () => {
   it('defaults and cleans the header mode, the minimized strips and the Abyss filament', () => {
     const d = migrateSettings({}, '/h');
     expect(d.overlay.headerMode).toBe('scroll');
-    expect(d.overlay.minimizedShow).toEqual({ threats: false, messages: false, intel: true });
+    expect(d.overlay.minimizedShow).toEqual({ threats: false, messages: false, intel: true, loot: true, combat: false });
     expect(d.abyss).toEqual({ weather: null, tier: null, logKeep: 10 });
     const s = migrateSettings(
       {
-        overlay: { headerMode: 'tiny', minimizedShow: { threats: true, messages: 'yes' } },
+        overlay: { headerMode: 'tiny', minimizedShow: { threats: true, messages: 'yes', combat: 1 } },
         abyss: { weather: 'fog', tier: 9, logKeep: 500 },
       },
       '/h',
     );
     expect(s.overlay.headerMode).toBe('scroll');
-    expect(s.overlay.minimizedShow).toEqual({ threats: true, messages: false, intel: true });
+    expect(s.overlay.minimizedShow).toEqual({ threats: true, messages: false, intel: true, loot: true, combat: false });
     expect(s.abyss).toEqual({ weather: null, tier: null, logKeep: 100 });
   });
 });

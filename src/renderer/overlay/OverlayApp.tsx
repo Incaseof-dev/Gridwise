@@ -23,8 +23,8 @@ export function OverlayApp() {
   const { sections } = vm.settings.overlay;
   const interactive = !vm.overlay.clickThrough || vm.overlay.searchOpen;
 
-  // Minimized: the header row, so the shortcuts stay in sight, plus the strips the player keeps (EWAR, messages,
-  // quick intel).
+  // Minimized: the header row, so the shortcuts stay in sight, plus the strips the player keeps (Settings → Overlay →
+  // While minimized).
   if (vm.overlay.minimized) {
     const keep = vm.settings.overlay.minimizedShow;
     return (
@@ -32,7 +32,7 @@ export function OverlayApp() {
         <div className={`panel minimized${vm.overlay.clickThrough ? ' click-through' : ''}`}>
           <Header vm={vm} interactive={interactive} />
         </div>
-        {(keep.threats || keep.messages || keep.intel) && <Below vm={vm} interactive={interactive} only={keep} />}
+        {Object.values(keep).some(Boolean) && <Below vm={vm} interactive={interactive} only={keep} />}
       </>
     );
   }

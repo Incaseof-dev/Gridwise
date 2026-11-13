@@ -1,4 +1,5 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import type { MinimizedShow } from '@core/settings';
 import type { AppViewModel } from '../../preload/api';
 import { ApplicationSection } from './ApplicationSection';
 import { CombatSection } from './CombatSection';
@@ -32,15 +33,15 @@ export function Below({
 }: {
   vm: AppViewModel;
   interactive: boolean;
-  /** Minimized: only these strips (no DPS, no loot); intel as the one-line quick intel. */
-  only?: { threats: boolean; messages: boolean; intel: boolean };
+  /** Minimized: only these strips; intel as the one-line quick intel, loot one line per NPC. */
+  only?: MinimizedShow;
 }) {
   const { sections } = vm.settings.overlay;
   const show = only
     ? {
-        combat: false,
+        combat: sections.combat && only.combat,
         threats: sections.threats && only.threats,
-        loot: false,
+        loot: sections.loot && only.loot,
         messages: sections.threats && only.messages,
         intel: only.intel,
       }
@@ -95,7 +96,7 @@ export function Below({
       {show.combat && <CombatSection vm={vm} />}
       {show.threats && <ThreatsSection vm={vm} />}
       {show.intel && <IntelStrip vm={vm} quick={!!only} interactive={interactive} />}
-      {show.loot && <LootSection vm={vm} />}
+      {show.loot && <LootSection vm={vm} compact={!!only} />}
       {show.loot && <LootPrompt vm={vm} interactive={interactive} />}
       {show.combat && <ApplicationSection vm={vm} />}
       {show.messages && <Messages vm={vm} interactive={interactive} />}

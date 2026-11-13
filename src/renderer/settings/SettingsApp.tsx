@@ -221,37 +221,32 @@ function Overlay({ vm }: { vm: AppViewModel }) {
       </div>
       <div className="field">
         <label>While minimized, still show</label>
-        <label className="check">
-          <input
-            type="checkbox"
-            checked={o.minimizedShow.threats}
-            onChange={(e) =>
-              void window.eve.updateSettings({ overlay: { minimizedShow: { threats: e.target.checked } } })
-            }
-          />
-          {vm.liveCombat ? 'EWAR warnings (scram, point, neut …)' : 'Threat warnings (can scram, can web …)'}
-        </label>
-        <label className="check">
-          <input
-            type="checkbox"
-            checked={o.minimizedShow.messages}
-            onChange={(e) =>
-              void window.eve.updateSettings({ overlay: { minimizedShow: { messages: e.target.checked } } })
-            }
-          />
-          Comments (the timed messages)
-        </label>
-        <label className="check">
-          <input
-            type="checkbox"
-            checked={o.minimizedShow.intel}
-            onChange={(e) =>
-              void window.eve.updateSettings({ overlay: { minimizedShow: { intel: e.target.checked } } })
-            }
-          />
-          Quick intel (the closest report, Settings → Intel)
-        </label>
-        <p className="muted">Nothing checked: only the header row while minimized.</p>
+        {(
+          [
+            [
+              'threats',
+              vm.liveCombat ? 'EWAR warnings (scram, point, neut …)' : 'Threat warnings (can scram, can web …)',
+            ],
+            ['loot', 'Rare loot alerts (faction, officer, overseer NPCs in the fight), one line each'],
+            ['intel', 'Quick intel (the closest report, Settings → Intel)'],
+            ['messages', 'Comments (the timed messages)'],
+            ['combat', 'DPS and damage application'],
+          ] as const
+        ).map(([k, text]) => (
+          <label key={k} className="check">
+            <input
+              type="checkbox"
+              checked={o.minimizedShow[k]}
+              onChange={(e) =>
+                void window.eve.updateSettings({ overlay: { minimizedShow: { [k]: e.target.checked } } })
+              }
+            />
+            {text}
+          </label>
+        ))}
+        <p className="muted">
+          Nothing checked: only the header row while minimized. A strip whose section is off above stays off here too.
+        </p>
       </div>
       <div className="field">
         <label>Shortcuts</label>

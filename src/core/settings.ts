@@ -20,6 +20,17 @@ export interface Bounds {
   height: number;
 }
 
+/** What stays visible while the overlay is minimized (Settings → Overlay). */
+export interface MinimizedShow {
+  threats: boolean;
+  messages: boolean;
+  intel: boolean;
+  /** Rare loot alerts: faction, officer, overseer NPCs in the fight, one line each. */
+  loot: boolean;
+  /** DPS and damage application. */
+  combat: boolean;
+}
+
 export interface Settings {
   version: number;
   logDir: string;
@@ -41,7 +52,8 @@ export interface Settings {
     minimizedX: number | null;
     headerMode: HeaderMode;
     /** What still shows below the minimized header: EWAR warnings, timed messages, quick intel (EVE-98). */
-    minimizedShow: { threats: boolean; messages: boolean; intel: boolean };
+    /** The strips kept below the header row while minimized; each also needs its section on. */
+    minimizedShow: MinimizedShow;
   };
   shortcuts: {
     toggleClickThrough: string;
@@ -319,7 +331,7 @@ export function defaultSettings(home: string, platform = 'linux'): Settings {
       minimized: false,
       minimizedX: null,
       headerMode: 'scroll',
-      minimizedShow: { threats: false, messages: false, intel: true },
+      minimizedShow: { threats: false, messages: false, intel: true, loot: true, combat: false },
     },
     shortcuts: { ...DEFAULT_SHORTCUTS },
     updates: { auto: true, app: true },
@@ -385,6 +397,8 @@ export function migrateSettings(stored: unknown, home: string, platform = 'linux
     threats: s.overlay.minimizedShow?.threats === true,
     messages: s.overlay.minimizedShow?.messages === true,
     intel: s.overlay.minimizedShow?.intel !== false,
+    loot: s.overlay.minimizedShow?.loot !== false,
+    combat: s.overlay.minimizedShow?.combat === true,
   };
   if (typeof s.logDir !== 'string' || !s.logDir) s.logDir = defaults.logDir;
   s.fits.saved = Array.isArray(s.fits.saved) ? capPasted(s.fits.saved.filter(isSavedFit)) : [];
