@@ -125,6 +125,34 @@ export class EsiClient {
   }
 
   /**
+   * GET every page of a route outside the character's own (`/alliances/1/contacts`), with the character's token. Not
+   * cached: the callers ask rarely (the contacts hourly).
+   */
+  async getAllPages<T>(characterId: number, path: string, maxPages = 20): Promise<T[]> {
+    if (this.now() < this.blockedUntilMs) throw new EsiError('ESI asked to wait (rate limit)', 429);
+    const out: T[] = [];
+    for (let page = 1, pages = 1; page <= pages && page <= maxPages; page++) {
+      const res = await this.fetch(`${ESI_BASE}${path}?page=${page}`, {
+        method: 'GET',
+        headers: {
+          Authorization: `Bearer ${await this.token(characterId)}`,
+          Accept: 'application/json',
+          'X-Compatibility-Date': ESI_COMPATIBILITY_DATE,
+        },
+      });
+      if (res.status === 420 || res.status === 429) {
+        const wait = Number(res.headers.get('retry-after'));
+        this.blockedUntilMs = this.now() + (Number.isFinite(wait) && wait > 0 ? wait * 1000 : DEFAULT_BACKOFF_MS);
+        throw new EsiError('ESI asked to wait (rate limit)', res.status);
+      }
+      if (res.status !== 200) throw new EsiError(`ESI ${path}: ${res.status}`, res.status);
+      out.push(...((await res.json()) as T[]));
+      pages = Number(res.headers.get('x-pages')) || 1;
+    }
+    return out;
+  }
+
+  /**
    * EVE-103: the autopilot destination in game (the route the game picks with its own preferences). Clears the other
    * waypoints, like "Set Destination" in game.
    */

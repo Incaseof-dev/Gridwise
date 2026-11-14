@@ -73,6 +73,9 @@ export type KillSide = 'loss' | 'kill' | null;
 export interface Affiliation {
   corporationId: number;
   allianceId: number | null;
+  /** Corporations and alliances with a positive standing (own, corporation or alliance contacts): friends. */
+  blueCorps?: ReadonlySet<number>;
+  blueAlliances?: ReadonlySet<number>;
 }
 
 /** Whose kill it is from the pilot's side; a loss wins when ours are on both sides (an awox, a fight among blues). */
@@ -81,14 +84,10 @@ export function killSide(
   us: Affiliation | null,
 ): KillSide {
   if (!us) return null;
-  const ours = (corp: number | null, alliance: number | null) =>
-    corp === us.corporationId || (us.allianceId !== null && alliance === us.allianceId);
-  if (ours(k.victimCorp, k.victimAlliance)) return 'loss';
-  if (
-    k.attackerCorps.includes(us.corporationId) ||
-    (us.allianceId !== null && k.attackerAlliances.includes(us.allianceId))
-  )
-    return 'kill';
+  const ourCorp = (c: number | null) => c !== null && (c === us.corporationId || !!us.blueCorps?.has(c));
+  const ourAlliance = (a: number | null) => a !== null && (a === us.allianceId || !!us.blueAlliances?.has(a));
+  if (ourCorp(k.victimCorp) || ourAlliance(k.victimAlliance)) return 'loss';
+  if (k.attackerCorps.some(ourCorp) || k.attackerAlliances.some(ourAlliance)) return 'kill';
   return null;
 }
 

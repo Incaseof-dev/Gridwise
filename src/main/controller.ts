@@ -47,7 +47,7 @@ import { importSdeZip } from '../core/sde/importer';
 import { JumpMap } from '../core/intel/jumpMap';
 import { IntelLexicon } from '../core/intel/parser';
 import { buildIntelGraph, type IntelGraph } from '../core/intel/graph';
-import { IntelAlerts, type IntelView } from '../core/intel/view';
+import { IntelAlerts, type Affiliation, type IntelView } from '../core/intel/view';
 import type { IntelReport } from '../core/intel/board';
 import { IntelWatcher } from '../core/intel/watcher';
 import { KillBoard, ZkillFeed } from '../core/intel/zkill';
@@ -201,6 +201,7 @@ export class AppController {
       },
       () => this.esi.pilotId(this.tracker.active()?.characterId ?? null),
       () => this.store.get().intel.destination,
+      () => this.store.get().intel.zkill.blues,
     );
     this.esi.start();
     this.ewb = new EwbService(
@@ -825,6 +826,16 @@ export class AppController {
   }
 
   /** The active character's system (its Local log), else the system seen last; null in the Abyss or unknown. */
+  /** The pilot's side for the kill counts: corporation and alliance, plus the blues when that is on. */
+  private killSideOf(blues: boolean): Affiliation | null {
+    const id = this.intelCharacterId();
+    const us = this.affiliation.get(id);
+    if (!us || !blues) return us;
+    // Only the flying character's own login: another character's contacts would be another corporation's.
+    const b = this.esi.pilotId(id) === id ? this.esi.blues(id, us.corporationId, us.allianceId) : null;
+    return b ? { ...us, blueCorps: b.corps, blueAlliances: b.alliances } : us;
+  }
+
   /** The pilot whose side the kills are counted from: the active game log's character, else the latest in Local. */
   private intelCharacterId(): number | null {
     const id = this.tracker.active()?.characterId;
@@ -924,7 +935,7 @@ export class AppController {
       (id) => jumps.system(id),
       ship,
       s,
-      showKills ? this.affiliation.get(this.intelCharacterId()) : null,
+      showKills ? this.killSideOf(s.zkill.blues) : null,
     );
     let graph: IntelGraph | null = null;
     if (s.view === 'graph') {

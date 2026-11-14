@@ -9,6 +9,9 @@ const SCOPE_LABEL: Record<string, string> = {
   'esi-fittings.read_fittings.v1': 'saved fittings',
   'esi-location.read_ship_type.v1': 'current ship',
   'esi-ui.write_waypoint.v1': 'set destination',
+  'esi-characters.read_contacts.v1': 'your contacts',
+  'esi-corporations.read_contacts.v1': 'corporation contacts',
+  'esi-alliances.read_contacts.v1': 'alliance contacts',
 };
 
 /** EVE login (EVE-38): optional, read only; skills, implants, saved fittings and the current ship. */

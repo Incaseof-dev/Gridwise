@@ -218,10 +218,15 @@ describe('IntelAlerts.kills', () => {
       },
     );
     expect(r.kills[0]!.side).toBe('kill');
+    // Blues: a friendly alliance's loss is ours, a blue corporation among the attackers is our kill.
+    const us = { corporationId: 1, allianceId: 2 };
+    expect(killSide(kill, { ...us, blueAlliances: new Set([99000009]) })).toBe('loss');
+    expect(killSide(kill, { ...us, blueCorps: new Set([98000002]) })).toBe('kill');
+    expect(killSide(kill, { ...us, blueCorps: new Set(), blueAlliances: new Set() })).toBeNull();
   });
 
   it('normalises the zKillboard settings', () => {
-    expect(s.zkill).toEqual({ mode: 'quiet', quietMin: 5, keepMin: 15, sound: true });
+    expect(s.zkill).toEqual({ mode: 'quiet', quietMin: 5, keepMin: 15, sound: true, blues: false });
     expect(
       migrateSettings({ intel: { zkill: { mode: 'loud', quietMin: 0, keepMin: 999 } } }, '/h').intel.zkill,
     ).toEqual({
@@ -229,6 +234,7 @@ describe('IntelAlerts.kills', () => {
       quietMin: 1,
       keepMin: 120,
       sound: true,
+      blues: false,
     });
     expect(migrateSettings({ intel: { zkill: { sound: false } } }, '/h').intel.zkill.sound).toBe(false);
   });

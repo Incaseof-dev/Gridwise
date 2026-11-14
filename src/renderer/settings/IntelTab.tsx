@@ -352,6 +352,21 @@ export function IntelTab({ vm }: { vm: AppViewModel }) {
           />
           A new kill sounds too, like a report at that distance (off: shown only)
         </label>
+        <label className="check">
+          <input
+            type="checkbox"
+            checked={z.blues}
+            disabled={z.mode === 'off'}
+            onChange={(e) => void window.eve.updateSettings({ intel: { zkill: { blues: e.target.checked } } })}
+          />
+          Count the blues as ours too: corporations and alliances with a positive standing in your, your corporation’s
+          or your alliance’s contacts
+        </label>
+        <p className="muted small">
+          The kills are split into ours lost (red), ours killed (green) and the rest, by the corporation and alliance of
+          the character in game (public, no login needed). The blues need the EVE login (Settings → EVE login): log in
+          again after turning this on, so it may read the contacts. They are read hourly and kept in memory only.
+        </p>
         <p className="muted small">
           Player kills within the range, from zKillboard&apos;s live feed (NPC kills are left out). They reach
           zKillboard a little after they happen, so they are a second opinion, not a warning. They sound like reports

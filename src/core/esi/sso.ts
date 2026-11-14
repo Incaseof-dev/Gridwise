@@ -25,6 +25,15 @@ export type EsiScope = (typeof ESI_SCOPES)[number];
  * turns the option on (Settings → Intel), so a registration without it keeps working for the rest.
  */
 export const WAYPOINT_SCOPE = 'esi-ui.write_waypoint.v1';
+/**
+ * The blues: the pilot's own, corporation's and alliance's contacts, so kills of friends count as ours on the intel
+ * kill counts. Read only, asked for only when the player turns that on (Settings → Intel).
+ */
+export const CONTACT_SCOPES = [
+  'esi-characters.read_contacts.v1',
+  'esi-corporations.read_contacts.v1',
+  'esi-alliances.read_contacts.v1',
+] as const;
 
 const b64url = (b: Buffer) => b.toString('base64url');
 

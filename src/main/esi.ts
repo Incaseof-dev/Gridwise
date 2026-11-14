@@ -18,6 +18,7 @@ import {
   type TokenStore,
 } from '../core/esi/client';
 import {
+  CONTACT_SCOPES,
   ESI_SCOPES,
   exchangeCode,
   revokeToken,
@@ -33,6 +34,13 @@ import type { Pilot } from '../core/fit/types';
 import type { EsiView } from '../core/viewmodel';
 
 const LOGIN_TIMEOUT_MS = 5 * 60_000;
+const BLUES_KEEP_MS = 60 * 60_000;
+
+interface EsiContact {
+  contact_id: number;
+  contact_type: 'character' | 'corporation' | 'alliance' | 'faction';
+  standing: number;
+}
 /** Skills and implants change when the player trains or plugs in; a few minutes is plenty. */
 const POLL_MS = 5 * 60_000;
 /** The ship: often enough to follow a ship change within a minute (ESI caches it 5 s; 60 calls an hour). */
@@ -103,6 +111,8 @@ export class EsiService {
     private readonly shipCharacter: () => number | null,
     /** EVE-103: the destination option is on, so the login asks for the waypoint scope too. */
     private readonly wantsWaypoint: () => boolean = () => false,
+    /** Blues count as ours on the intel kills, so the login asks for the contact scopes too. */
+    private readonly wantsContacts: () => boolean = () => false,
   ) {
     this.client = new EsiClient(clientId, new SafeTokenStore(), fetchViaNet);
     this.changed = () => events.changed();
@@ -185,7 +195,70 @@ export class EsiService {
 
   /** The scopes a login asks for now. */
   private scopes(): string[] {
-    return this.wantsWaypoint() ? [...ESI_SCOPES, WAYPOINT_SCOPE] : [...ESI_SCOPES];
+    return [
+      ...ESI_SCOPES,
+      ...(this.wantsWaypoint() ? [WAYPOINT_SCOPE] : []),
+      ...(this.wantsContacts() ? CONTACT_SCOPES : []),
+    ];
+  }
+
+  private bluesCache: { key: string; atMs: number; corps: Set<number>; alliances: Set<number> } | null = null;
+  private bluesPending = false;
+
+  /**
+   * The pilot's blues: corporations and alliances with a positive standing in the character's, the corporation's
+   * and the alliance's contacts (whatever of these the login grants), read hourly; null while not known. Memory only.
+   */
+  blues(
+    characterId: number | null,
+    corporationId: number,
+    allianceId: number | null,
+  ): { corps: ReadonlySet<number>; alliances: ReadonlySet<number> } | null {
+    const c = this.client.list().find((x) => x.characterId === characterId);
+    if (characterId === null || !c || !CONTACT_SCOPES.some((s) => c.scopes.includes(s))) return null;
+    const key = `${characterId}|${corporationId}|${allianceId}`;
+    const hit = this.bluesCache?.key === key ? this.bluesCache : null;
+    if ((!hit || Date.now() - hit.atMs > BLUES_KEEP_MS) && !this.bluesPending)
+      void this.loadBlues(key, characterId, corporationId, allianceId, c.scopes);
+    return hit;
+  }
+
+  private async loadBlues(
+    key: string,
+    characterId: number,
+    corporationId: number,
+    allianceId: number | null,
+    scopes: readonly string[],
+  ): Promise<void> {
+    this.bluesPending = true;
+    const corps = new Set<number>();
+    const alliances = new Set<number>();
+    const sources: [string, string][] = [
+      ['esi-characters.read_contacts.v1', `/characters/${characterId}/contacts`],
+      ['esi-corporations.read_contacts.v1', `/corporations/${corporationId}/contacts`],
+      ...(allianceId !== null
+        ? ([['esi-alliances.read_contacts.v1', `/alliances/${allianceId}/contacts`]] as [string, string][])
+        : []),
+    ];
+    try {
+      for (const [scope, path] of sources) {
+        if (!scopes.includes(scope)) continue;
+        try {
+          const rows = await this.client.getAllPages<EsiContact>(characterId, path);
+          for (const r of rows) {
+            if (!(r.standing > 0)) continue;
+            if (r.contact_type === 'corporation') corps.add(r.contact_id);
+            else if (r.contact_type === 'alliance') alliances.add(r.contact_id);
+          }
+        } catch {
+          // One list not readable (no alliance, a refused scope): the others still count.
+        }
+      }
+      this.bluesCache = { key, atMs: Date.now(), corps, alliances };
+      this.changed();
+    } finally {
+      this.bluesPending = false;
+    }
   }
 
   /**
