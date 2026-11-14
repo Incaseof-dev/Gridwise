@@ -117,6 +117,8 @@ export interface IntelSettings {
   volume: number;
   /** The strip as a list of reports or as a jump graph around the pilot (EVE-102). */
   view: 'list' | 'graph';
+  /** System names on the graph: only where there is something (you, a report, a kill, the destination) or all. */
+  graphNames: 'marked' | 'all';
   /** zKillboard kills nearby (EVE-100): never, when the intel channels are quiet, or always. */
   zkill: { mode: ZkillMode; quietMin: number; keepMin: number };
   /** EVE-103: Ctrl+click on the graph sets the in-game destination (needs the ESI waypoint scope). */
@@ -348,6 +350,7 @@ export function defaultSettings(home: string, platform = 'linux'): Settings {
       warning: { on: true, jumps: 2, sound: 'alarm' },
       volume: 0.6,
       view: 'list',
+      graphNames: 'marked',
       zkill: { mode: 'quiet', quietMin: 5, keepMin: 15 },
       destination: false,
     },
@@ -458,6 +461,7 @@ function normalizeIntel(v: IntelSettings | undefined, d: IntelSettings): IntelSe
     warning: alert(v?.warning, d.warning),
     volume: Number.isFinite(Number(v?.volume)) ? Math.min(1, Math.max(0, Number(v!.volume))) : d.volume,
     view: v?.view === 'graph' ? 'graph' : 'list',
+    graphNames: v?.graphNames === 'all' ? 'all' : 'marked',
     zkill: {
       mode: ZKILL_MODES.includes(v?.zkill?.mode as ZkillMode) ? v!.zkill.mode : d.zkill.mode,
       quietMin: clampInt(v?.zkill?.quietMin, 1, 60, d.zkill.quietMin),

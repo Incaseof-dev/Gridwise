@@ -183,4 +183,10 @@ describe('IntelAlerts.kills', () => {
       keepMin: 120,
     });
   });
+
+  it('keeps the graph names setting, the names only where something is by default', () => {
+    expect(s.graphNames).toBe('marked');
+    expect(migrateSettings({ intel: { graphNames: 'all' } }, '/h').intel.graphNames).toBe('all');
+    expect(migrateSettings({ intel: { graphNames: 'some' } } as never, '/h').intel.graphNames).toBe('marked');
+  });
 });

@@ -207,6 +207,27 @@ export function IntelTab({ vm }: { vm: AppViewModel }) {
       </div>
 
       <div className="field">
+        <label>Names on the graph</label>
+        {(
+          [
+            ['marked', 'Only where there is something: you, a report, a kill, the destination'],
+            ['all', 'Every system'],
+          ] as const
+        ).map(([v, text]) => (
+          <label key={v} className="check">
+            <input
+              type="radio"
+              name="intelGraphNames"
+              checked={s.graphNames === v}
+              onChange={() => set({ graphNames: v })}
+            />
+            {text}
+          </label>
+        ))}
+        <p className="muted small">Hovering a system shows its name either way.</p>
+      </div>
+
+      <div className="field">
         <label>Set destination</label>
         <label className="check">
           <input type="checkbox" checked={s.destination} onChange={(e) => set({ destination: e.target.checked })} />

@@ -3,6 +3,8 @@ import type { AppViewModel } from '../../preload/api';
 import type { IntelKillView, IntelRowView } from '../../core/intel/view';
 import { onClearClick } from './IntelStrip';
 import { HullIcons, ICON_TAGS, ReportMarks } from './IntelIcons';
+import { ESS_TIMER_MS } from '../../core/intel/board';
+import { useNow } from '../shared/useNow';
 
 /** The in-game security colours, 1.0 down to 0.0 and below. */
 const SEC_COLORS = [
@@ -52,7 +54,8 @@ export function IntelGraph({ vm, interactive, now }: { vm: AppViewModel; interac
     setNote(r.ok ? { text: `Destination set: ${name}`, error: false } : { text: r.error, error: true });
   };
   const rowH = Math.max(26, Math.min(40, 220 / Math.max(1, g.range)));
-  const H = PAD_Y * 2 + g.range * rowH;
+  // Below the last row: room for the names (and an ESS ring) under its systems.
+  const H = PAD_Y * 2 + g.range * rowH + 16;
   const pos = new Map(g.nodes.map((n) => [n.id, { x: PAD_X + n.x * (W - 2 * PAD_X), y: PAD_Y + n.jumps * rowH }]));
   const reports = new Map(vm.intel.rows.map((r) => [r.systemId, r]));
   const kills = new Map<number, IntelKillView[]>();
@@ -71,6 +74,7 @@ export function IntelGraph({ vm, interactive, now }: { vm: AppViewModel; interac
       if (pos.has(a) && pos.has(b)) routeLegs.push([a, b]);
     }
   const exit = dest && !pos.has(dest.systemId) ? route.at(-1) : undefined;
+  const allNames = vm.settings.intel.graphNames === 'all';
 
   return (
     <div className="intel-graph">
@@ -101,6 +105,8 @@ export function IntelGraph({ vm, interactive, now }: { vm: AppViewModel; interac
           const count = r ? who(r) : null;
           const k = kills.get(n.id);
           const khue = k ? Math.round(55 * (1 - k[0]!.weight)) : 0;
+          const ess = r?.tags.includes('ess') ?? false;
+          const side = ess ? 15 : 9;
           return (
             <g
               key={n.id}
@@ -143,32 +149,43 @@ export function IntelGraph({ vm, interactive, now }: { vm: AppViewModel; interac
               )}
               {here && <circle cx={p.x} cy={p.y} r={9} className="graph-here" />}
               {dest?.systemId === n.id && <circle cx={p.x} cy={p.y} r={9} className="graph-dest" />}
-              <circle
-                cx={p.x}
-                cy={p.y}
-                r={here ? 6 : 4.5}
-                style={{ fill: secColor(n.security) }}
-                className="graph-dot"
-              />
+              {ess ? (
+                <>
+                  <EssRing x={p.x} y={p.y} endMs={r!.essEndMs} />
+                  <EssVault x={p.x} y={p.y} />
+                </>
+              ) : (
+                <circle
+                  cx={p.x}
+                  cy={p.y}
+                  r={here ? 6 : 4.5}
+                  style={{ fill: secColor(n.security) }}
+                  className="graph-dot"
+                />
+              )}
               {/* A bigger invisible target for the pointer. */}
               <circle cx={p.x} cy={p.y} r={10} className="graph-hit" />
               {count !== null && (
-                <text x={p.x + 9} y={p.y - 7} className="graph-count">
+                <text x={p.x + side} y={p.y - 7} className="graph-count">
                   {count}
                 </text>
               )}
               {k && (
-                <text x={p.x - 9} y={p.y - 7} className="graph-kills">
+                <text x={p.x - side} y={p.y - 7} className="graph-kills">
                   ✕{k.length}
                 </text>
               )}
-              {(here || r || k || dest?.systemId === n.id) && (
-                <text x={p.x} y={p.y + 17} className="graph-label">
+              {(allNames || here || r || k || dest?.systemId === n.id) && (
+                <text x={p.x} y={p.y + (ess ? 25 : 17)} className={`graph-label${r || k || here ? '' : ' quiet'}`}>
                   {n.name}
                 </text>
               )}
               {exit === n.id && dest && (
-                <text x={p.x} y={p.y + (r || k ? 28 : 17)} className="graph-label graph-dest-label">
+                <text
+                  x={p.x}
+                  y={p.y + (ess ? 36 : r || k || allNames ? 28 : 17)}
+                  className="graph-label graph-dest-label"
+                >
                   → {dest.name} · {dest.jumps} j
                 </text>
               )}
@@ -210,6 +227,45 @@ export function IntelGraph({ vm, interactive, now }: { vm: AppViewModel; interac
       )}
       {note && <div className={`graph-note${note.error ? ' error' : ''}`}>{note.text}</div>}
     </div>
+  );
+}
+
+/** The ESS on the graph: a vault in place of the dot. */
+function EssVault({ x, y }: { x: number; y: number }) {
+  return (
+    <g className="graph-ess" transform={`translate(${x - 6} ${y - 5})`}>
+      <rect x={0} y={0} width={12} height={10} rx={1.8} />
+      <circle cx={6} cy={5} r={2.3} />
+      <path d="M6 1.6 V2.7 M6 7.3 V8.4 M2.6 5 H3.7 M8.3 5 H9.4" />
+    </g>
+  );
+}
+
+/** Outside the report's halo (r 11), so the two do not cover each other. */
+const RING_R = 14;
+const RING_C = 2 * Math.PI * RING_R;
+
+/**
+ * The time left on the ESS timer as a ring around the vault, emptying clockwise from the top over the 6 minutes;
+ * faint and dashed once it is over. With no timer known, only the faint track.
+ */
+function EssRing({ x, y, endMs }: { x: number; y: number; endMs: number | null }) {
+  const now = useNow(1000);
+  const left = endMs === null ? 0 : Math.min(1, Math.max(0, (endMs - now) / ESS_TIMER_MS));
+  return (
+    <>
+      <circle cx={x} cy={y} r={RING_R} className={`graph-ess-track${endMs !== null && left === 0 ? ' over' : ''}`} />
+      {left > 0 && (
+        <circle
+          cx={x}
+          cy={y}
+          r={RING_R}
+          strokeDasharray={`${left * RING_C} ${RING_C}`}
+          transform={`rotate(-90 ${x} ${y})`}
+          className={`graph-ess-ring${left < 1 / 6 ? ' low' : ''}`}
+        />
+      )}
+    </>
   );
 }
 

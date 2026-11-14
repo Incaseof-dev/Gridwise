@@ -1354,6 +1354,40 @@ button.icon-hint:disabled {
   stroke: rgba(0, 0, 0, 0.9);
   stroke-width: 3px;
 }
+.graph-label.quiet {
+  fill: #aab4be;
+  font-size: 9px;
+  opacity: 0.75;
+}
+/* The ESS on the graph: a vault for the dot, the timer as a ring around it. */
+.graph-ess rect,
+.graph-ess circle {
+  fill: rgba(20, 16, 4, 0.9);
+}
+.graph-ess rect,
+.graph-ess circle,
+.graph-ess path {
+  stroke: #e8c547;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+}
+.graph-ess-track {
+  fill: none;
+  stroke: rgba(232, 197, 71, 0.22);
+  stroke-width: 2.5;
+}
+.graph-ess-track.over {
+  stroke-dasharray: 2 2;
+}
+.graph-ess-ring {
+  fill: none;
+  stroke: #e8c547;
+  stroke-width: 2.5;
+  filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.9));
+}
+.graph-ess-ring.low {
+  stroke: var(--bad);
+}
 .graph-tip {
   position: absolute;
   transform: translateX(-50%);
