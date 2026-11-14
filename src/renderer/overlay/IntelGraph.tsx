@@ -3,6 +3,7 @@ import type { AppViewModel } from '../../preload/api';
 import type { IntelKillView, IntelRowView } from '../../core/intel/view';
 import { onClearClick } from './IntelStrip';
 import { FleetGlyph, HullIcons, ICON_TAGS, isFleet, ReportMarks } from './IntelIcons';
+import { KillMark } from './IntelStrip';
 import { ESS_TIMER_MS } from '../../core/intel/board';
 import { useNow } from '../shared/useNow';
 
@@ -183,11 +184,7 @@ export function IntelGraph({ vm, interactive, now }: { vm: AppViewModel; interac
                   </div>
                 </foreignObject>
               )}
-              {k && (
-                <text x={p.x - side} y={p.y - 7} className="graph-kills">
-                  ✕{k.length}
-                </text>
-              )}
+              {k && <KillCounts x={p.x - side} y={p.y - 7} kills={k} />}
               {(allNames || here || r || k || dest?.systemId === n.id) && (
                 <text x={p.x} y={p.y + (ess ? 25 : 17)} className={`graph-label${r || k || here ? '' : ' quiet'}`}>
                   {n.name}
@@ -216,7 +213,7 @@ export function IntelGraph({ vm, interactive, now }: { vm: AppViewModel; interac
           {hoveredReport && <ReportDetails r={hoveredReport} now={now} />}
           {hoveredKills.map((x) => (
             <div key={x.killmailId}>
-              <span className="intel-kill-mark">kill</span>{' '}
+              <KillMark side={x.side} />{' '}
               {x.victim ? `${x.victim.name}${x.victim.cls ? ` · ${x.victim.cls}` : ''}` : '?'}
               <span className="muted">
                 {' '}
@@ -240,6 +237,30 @@ export function IntelGraph({ vm, interactive, now }: { vm: AppViewModel; interac
       )}
       {note && <div className={`graph-note${note.error ? ' error' : ''}`}>{note.text}</div>}
     </div>
+  );
+}
+
+/**
+ * The kills in a system, split by side when the pilot's corporation is known: ours lost (red), ours killed (green),
+ * the rest (neutral). Right-aligned, so the numbers end left of the system.
+ */
+function KillCounts({ x, y, kills }: { x: number; y: number; kills: readonly IntelKillView[] }) {
+  const n = (side: IntelKillView['side']) => kills.filter((k) => k.side === side).length;
+  const parts = (
+    [
+      ['loss', n('loss')],
+      ['kill', n('kill')],
+      ['other', n(null)],
+    ] as const
+  ).filter(([, c]) => c > 0);
+  return (
+    <text x={x} y={y} className="graph-kills">
+      {parts.map(([side, c], i) => (
+        <tspan key={side} className={`side-${side}`} dx={i ? 3 : 0}>
+          ✕{c}
+        </tspan>
+      ))}
+    </text>
   );
 }
 

@@ -24,11 +24,18 @@ export interface ZkillKill {
   attackers: number;
   /** ISK, zKillboard's estimate. */
   value: number;
+  /** Corporation and alliance of the victim and of the attacking pilots (unique), to tell our side (memory only). */
+  victimCorp: number | null;
+  victimAlliance: number | null;
+  attackerCorps: number[];
+  attackerAlliances: number[];
 }
 
 type Json = Record<string, unknown>;
 const obj = (v: unknown): Json | null => (typeof v === 'object' && v !== null ? (v as Json) : null);
 const int = (v: unknown): number | null => (typeof v === 'number' && Number.isFinite(v) ? v : null);
+
+const unique = (xs: (number | null)[]) => [...new Set(xs.filter((x): x is number => x !== null))];
 
 /** One R2Z2 package → a kill; null for NPC kills and anything malformed. */
 export function parseR2z2(pkg: unknown): ZkillKill | null {
@@ -51,6 +58,10 @@ export function parseR2z2(pkg: unknown): ZkillKill | null {
     attackerShipTypeIds: players.map((a) => int(a.ship_type_id)).filter((x): x is number => x !== null),
     attackers: players.length,
     value: int(zkb.totalValue) ?? 0,
+    victimCorp: int(obj(esi.victim)?.corporation_id),
+    victimAlliance: int(obj(esi.victim)?.alliance_id),
+    attackerCorps: unique(players.map((a) => int(a.corporation_id))),
+    attackerAlliances: unique(players.map((a) => int(a.alliance_id))),
   };
 }
 

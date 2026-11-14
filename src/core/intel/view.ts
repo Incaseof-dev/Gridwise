@@ -63,6 +63,33 @@ export interface IntelKillView {
   value: number;
   weight: number;
   level: IntelLevel | null;
+  /** The pilot's side: one of ours died (loss), ours were among the attackers (kill), or neither (null). */
+  side: KillSide;
+}
+
+export type KillSide = 'loss' | 'kill' | null;
+
+/** The pilot's corporation and alliance, from the public ESI affiliation. */
+export interface Affiliation {
+  corporationId: number;
+  allianceId: number | null;
+}
+
+/** Whose kill it is from the pilot's side; a loss wins when ours are on both sides (an awox, a fight among blues). */
+export function killSide(
+  k: Pick<KillInput, 'victimCorp' | 'victimAlliance' | 'attackerCorps' | 'attackerAlliances'>,
+  us: Affiliation | null,
+): KillSide {
+  if (!us) return null;
+  const ours = (corp: number | null, alliance: number | null) =>
+    corp === us.corporationId || (us.allianceId !== null && alliance === us.allianceId);
+  if (ours(k.victimCorp, k.victimAlliance)) return 'loss';
+  if (
+    k.attackerCorps.includes(us.corporationId) ||
+    (us.allianceId !== null && k.attackerAlliances.includes(us.allianceId))
+  )
+    return 'kill';
+  return null;
 }
 
 export interface IntelView {
@@ -128,6 +155,10 @@ export interface KillInput {
   attackerShipTypeIds: number[];
   attackers: number;
   value: number;
+  victimCorp: number | null;
+  victimAlliance: number | null;
+  attackerCorps: number[];
+  attackerAlliances: number[];
 }
 const TREND_MS = 5 * 60_000;
 
@@ -207,6 +238,7 @@ export class IntelAlerts {
     system: (systemId: number) => { name: string; security: number | null } | null,
     ship: (typeId: number) => IntelShipView | null,
     s: IntelSettings,
+    us: Affiliation | null = null,
   ): { kills: IntelKillView[]; alert: { seq: number; level: IntelLevel } | null } {
     const out: IntelKillView[] = [];
     for (const k of kills) {
@@ -232,6 +264,7 @@ export class IntelAlerts {
         value: k.value,
         weight: intelWeight(jumps, s.range) * KILL_WEIGHT,
         level: intelLevel(jumps, s),
+        side: killSide(k, us),
       });
     }
     const present = new Set(out.map((k) => k.killmailId));

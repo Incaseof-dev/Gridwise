@@ -1525,6 +1525,20 @@ button.icon-hint:disabled {
   stroke: rgba(0, 0, 0, 0.9);
   stroke-width: 3px;
 }
+/* The kills by the pilot's side: ours lost, ours killed, the rest. */
+.graph-kills .side-loss {
+  fill: #ff4f4f;
+}
+.graph-kills .side-kill {
+  fill: #62e07c;
+}
+.intel-kill-mark.side-kill {
+  color: #62e07c;
+}
+.intel-kill-mark.side-loss {
+  color: #ff4f4f;
+  text-decoration: underline;
+}
 
 /* Abyss without the live combat cues: what the room can hold, no order of fire. */
 .abyss-room-options ul {

@@ -69,7 +69,7 @@ class SafeTokenStore implements TokenStore {
   }
 }
 
-const fetchViaNet: EsiFetch = (url, init) => net.fetch(url, init);
+export const fetchViaNet: EsiFetch = (url, init) => net.fetch(url, init);
 
 const PAGE = (title: string, text: string) =>
   `<!doctype html><meta charset="utf-8"><title>Gridwise</title>` +

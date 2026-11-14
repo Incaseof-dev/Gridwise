@@ -81,7 +81,8 @@ import { placeAboveFullscreen } from './overlayLayer';
 import { platformInfo } from './platform';
 import { SettingsStore } from './settingsStore';
 import type { EsiFitting } from '../core/esi/client';
-import { EsiService } from './esi';
+import { EsiService, fetchViaNet } from './esi';
+import { AffiliationCache } from '../core/esi/affiliation';
 import { EwbService, type EwbFitText } from './ewb';
 import { createSettingsWindow, MINIMIZED_HEIGHT, OverlayDrag, OverlayWindow } from './windows';
 
@@ -111,6 +112,8 @@ export class AppController {
   private intel: IntelWatcher | null = null;
   private readonly intelAlerts = new IntelAlerts();
   private intelOrigin: number | null = null;
+  /** The pilot's corporation and alliance, to split the zKillboard kills into ours and theirs (memory only). */
+  private readonly affiliation = new AffiliationCache(fetchViaNet, () => this.schedulePush());
   /** Each character's system from its Local log (characterId → system name). */
   private readonly localSystems = new Map<number | null, { system: string; timeMs: number }>();
   private knownChannelsCache: { atMs: number; list: string[] } | null = null;
@@ -822,6 +825,14 @@ export class AppController {
   }
 
   /** The active character's system (its Local log), else the system seen last; null in the Abyss or unknown. */
+  /** The pilot whose side the kills are counted from: the active game log's character, else the latest in Local. */
+  private intelCharacterId(): number | null {
+    const id = this.tracker.active()?.characterId;
+    if (id !== undefined && id !== null) return id;
+    const latest = [...this.localSystems].filter(([c]) => c !== null).sort((a, b) => b[1].timeMs - a[1].timeMs)[0];
+    return latest?.[0] ?? this.esi.pilotId(null);
+  }
+
   private intelOriginId(): number | null {
     const id = this.tracker.active()?.characterId;
     const mine = id !== undefined ? this.localSystems.get(id) : undefined;
@@ -913,6 +924,7 @@ export class AppController {
       (id) => jumps.system(id),
       ship,
       s,
+      showKills ? this.affiliation.get(this.intelCharacterId()) : null,
     );
     let graph: IntelGraph | null = null;
     if (s.view === 'graph') {

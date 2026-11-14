@@ -149,6 +149,21 @@ const MAX_KILLS = 3;
 const isk = (v: number) =>
   v >= 1e9 ? `${(v / 1e9).toFixed(1)}b` : v >= 1e6 ? `${Math.round(v / 1e6)}m` : `${Math.round(v / 1e3)}k`;
 
+/** The kill's word, by the pilot's side: one of ours lost, one ours killed, or someone else's. */
+export function KillMark({ side }: { side: IntelKillView['side'] }) {
+  return side === 'loss' ? (
+    <span className="intel-kill-mark side-loss" title="One of yours (corporation or alliance) died">
+      loss
+    </span>
+  ) : side === 'kill' ? (
+    <span className="intel-kill-mark side-kill" title="Yours (corporation or alliance) were among the attackers">
+      our kill
+    </span>
+  ) : (
+    <span className="intel-kill-mark">kill</span>
+  );
+}
+
 /** A zKillboard kill nearby (EVE-100): what died, to how many, in what. */
 export function KillRow({
   k,
@@ -172,7 +187,7 @@ export function KillRow({
       <div className="intel-main">
         <span className="intel-jumps">{k.jumps === 0 ? 'HERE' : `${k.jumps}j`}</span>
         <span className="intel-system">{k.system}</span>
-        <span className="intel-kill-mark">kill</span>
+        <KillMark side={k.side} />
         <span className="intel-ships">
           {k.victim ? shipText(k.victim) : '?'}
           <span className="muted"> by {k.attackers}</span>
