@@ -120,7 +120,7 @@ export interface IntelSettings {
   /** System names on the graph: only where there is something (you, a report, a kill, the destination) or all. */
   graphNames: 'marked' | 'all';
   /** zKillboard kills nearby (EVE-100): never, when the intel channels are quiet, or always. */
-  zkill: { mode: ZkillMode; quietMin: number; keepMin: number };
+  zkill: { mode: ZkillMode; quietMin: number; keepMin: number; sound: boolean };
   /** EVE-103: Ctrl+click on the graph sets the in-game destination (needs the ESI waypoint scope). */
   destination: boolean;
 }
@@ -351,7 +351,7 @@ export function defaultSettings(home: string, platform = 'linux'): Settings {
       volume: 0.6,
       view: 'list',
       graphNames: 'marked',
-      zkill: { mode: 'quiet', quietMin: 5, keepMin: 15 },
+      zkill: { mode: 'quiet', quietMin: 5, keepMin: 15, sound: true },
       destination: false,
     },
   };
@@ -466,6 +466,7 @@ function normalizeIntel(v: IntelSettings | undefined, d: IntelSettings): IntelSe
       mode: ZKILL_MODES.includes(v?.zkill?.mode as ZkillMode) ? v!.zkill.mode : d.zkill.mode,
       quietMin: clampInt(v?.zkill?.quietMin, 1, 60, d.zkill.quietMin),
       keepMin: clampInt(v?.zkill?.keepMin, 5, 120, d.zkill.keepMin),
+      sound: typeof v?.zkill?.sound === 'boolean' ? v.zkill.sound : d.zkill.sound,
     },
     destination: typeof v?.destination === 'boolean' ? v.destination : d.destination,
   };

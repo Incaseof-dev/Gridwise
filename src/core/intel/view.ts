@@ -197,7 +197,10 @@ export class IntelAlerts {
     this.last = { seq: ++this.seq, level };
   }
 
-  /** zKillboard kills within range as rows; each kill sounds once, at its level (call after rows()). */
+  /**
+   * zKillboard kills within range as rows; each kill sounds once, at its level (call after rows()). With the kill
+   * sound off they are still marked as heard, so turning it back on does not replay them.
+   */
   kills(
     kills: readonly KillInput[],
     distance: (systemId: number) => number | null,
@@ -239,7 +242,7 @@ export class IntelAlerts {
       this.firedKills.set(k.killmailId, RANK[k.level]);
       if (!loudest || RANK[k.level] > RANK[loudest]) loudest = k.level;
     }
-    if (loudest) this.sound(loudest);
+    if (loudest && s.zkill.sound) this.sound(loudest);
     out.sort((a, b) => b.timeMs - a.timeMs);
     return { kills: out, alert: this.last };
   }

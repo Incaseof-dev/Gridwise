@@ -343,6 +343,15 @@ export function IntelTab({ vm }: { vm: AppViewModel }) {
             ))}
           </select>
         </div>
+        <label className="check">
+          <input
+            type="checkbox"
+            checked={z.sound}
+            disabled={z.mode === 'off'}
+            onChange={(e) => void window.eve.updateSettings({ intel: { zkill: { sound: e.target.checked } } })}
+          />
+          A new kill sounds too, like a report at that distance (off: shown only)
+        </label>
         <p className="muted small">
           Player kills within the range, from zKillboard&apos;s live feed (NPC kills are left out). They reach
           zKillboard a little after they happen, so they are a second opinion, not a warning. They sound like reports

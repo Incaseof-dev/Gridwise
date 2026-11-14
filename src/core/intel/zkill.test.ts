@@ -173,15 +173,31 @@ describe('IntelAlerts.kills', () => {
     ).toEqual([]);
   });
 
+  it('shows a kill without a sound when the kill sound is off, and does not replay it when turned back on', () => {
+    const a = new IntelAlerts();
+    const quiet = { ...s, zkill: { ...s.zkill, sound: false } };
+    const look = [
+      (id: number) => (id === 30000142 ? 1 : null),
+      () => ({ name: 'Jita', security: 0.9 }),
+      () => null,
+    ] as const;
+    const r = a.kills([kill], ...look, quiet);
+    expect(r.kills).toHaveLength(1);
+    expect(r.alert).toBeNull();
+    expect(a.kills([kill], ...look, s).alert).toBeNull();
+  });
+
   it('normalises the zKillboard settings', () => {
-    expect(s.zkill).toEqual({ mode: 'quiet', quietMin: 5, keepMin: 15 });
+    expect(s.zkill).toEqual({ mode: 'quiet', quietMin: 5, keepMin: 15, sound: true });
     expect(
       migrateSettings({ intel: { zkill: { mode: 'loud', quietMin: 0, keepMin: 999 } } }, '/h').intel.zkill,
     ).toEqual({
       mode: 'quiet',
       quietMin: 1,
       keepMin: 120,
+      sound: true,
     });
+    expect(migrateSettings({ intel: { zkill: { sound: false } } }, '/h').intel.zkill.sound).toBe(false);
   });
 
   it('keeps the graph names setting, the names only where something is by default', () => {
