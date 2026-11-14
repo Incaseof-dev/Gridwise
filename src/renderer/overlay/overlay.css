@@ -1388,6 +1388,17 @@ button.icon-hint:disabled {
 .graph-ess-ring.low {
   stroke: var(--bad);
 }
+.graph-icons {
+  overflow: visible;
+  pointer-events: none;
+}
+.graph-icons-row {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+  height: 14px;
+  filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.95));
+}
 .graph-tip {
   position: absolute;
   transform: translateX(-50%);

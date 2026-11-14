@@ -84,7 +84,7 @@ function EssGlyph() {
   );
 }
 
-function FleetGlyph() {
+export function FleetGlyph() {
   // Three hulls in formation.
   return (
     <svg className="intel-glyph" viewBox="0 0 16 12" aria-hidden>

@@ -144,6 +144,14 @@ describe('parseIntelText', () => {
     expect(parse('AZBR-2*  Pilot A fleet').tags).toEqual(['fleet']);
   });
 
+  it('reads the ESS window pasted in Chinese, a full-width colon and "ess+5"', () => {
+    const cn = parse('主赏金池：62.4 百万 星币  T-GCGL* 5：30');
+    expect(cn).toMatchObject({ tags: ['ess'], timerSec: 330, pilots: [] });
+    expect(cn.systems.map((x) => x.name)).toEqual(['T-GCGL']);
+    expect(parse('T-GCGL* 3：30').timerSec).toBe(210);
+    expect(parse('WH-JCA* ess+5')).toMatchObject({ tags: ['ess'], count: 5 });
+  });
+
   it('takes "<system> gate" as the gate, not the place', () => {
     const p = parse('T-GCGL*  Pilot A (Sabre) obe gate');
     expect(sys(p)).toEqual(['T-GCGL']);

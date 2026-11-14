@@ -272,6 +272,13 @@ export function parseIntelText(
   }
   if (/\bno vis(ual)?\b/i.test(body)) out.noVisual = true;
   if (/\bblack ops\b/i.test(body)) tags.add('blops');
+  // The ESS window copied in Chinese: "主赏金池：426 百万 星币" (main bounty pool: 426 million ISK), the reserve too.
+  if (/赏金池/.test(body)) {
+    tags.add('ess');
+    body = body.replace(/[主储备]*赏金池[:：]?\s*[\d.,]+\s*(百万|十亿|亿|万)?\s*(星币)?/g, '  ');
+  }
+  // A full-width colon in a timer ("5：30"), and a count stuck to the tag ("ess+5").
+  body = body.replace(/(\d)：(\d)/g, '$1:$2').replace(/\b([A-Za-z]{2,})\+(\d)/g, '$1 +$2');
 
   for (const rawSeg of body.split(/\s{2,}/)) {
     let seg = rawSeg.trim();

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import type { AppViewModel } from '../../preload/api';
 import type { IntelKillView, IntelRowView } from '../../core/intel/view';
 import { onClearClick } from './IntelStrip';
-import { HullIcons, ICON_TAGS, ReportMarks } from './IntelIcons';
+import { FleetGlyph, HullIcons, ICON_TAGS, isFleet, ReportMarks } from './IntelIcons';
 import { ESS_TIMER_MS } from '../../core/intel/board';
 import { useNow } from '../shared/useNow';
 
@@ -169,6 +169,19 @@ export function IntelGraph({ vm, interactive, now }: { vm: AppViewModel; interac
                 <text x={p.x + side} y={p.y - 7} className="graph-count">
                   {count}
                 </text>
+              )}
+              {r && (r.ships.length > 0 || isFleet(r)) && (
+                // The hull sizes reported (biggest first) and a fleet, right of the system under the count.
+                <foreignObject x={p.x + side - 2} y={p.y - 5} width={64} height={14} className="graph-icons">
+                  <div className="graph-icons-row">
+                    <HullIcons ships={r.ships} max={2} />
+                    {isFleet(r) && (
+                      <span className="intel-mark mark-fleet">
+                        <FleetGlyph />
+                      </span>
+                    )}
+                  </div>
+                </foreignObject>
               )}
               {k && (
                 <text x={p.x - side} y={p.y - 7} className="graph-kills">
