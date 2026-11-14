@@ -63,12 +63,18 @@ Shortcuts_.
 
 ## First start
 
-- On Linux the default log folder is the Steam/Proton location:
-  `~/.local/share/Steam/steamapps/compatdata/8500/pfx/drive_c/users/steamuser/Documents/EVE/logs/Gamelogs`.
-  Change it in _Settings → Game logs_ if yours differs.
+- **The log folder is the only thing to set, once**: EVE's `Gamelogs` folder, in _Settings → Game logs → Choose…_. The
+  chat logs (Local for the Abyss timer and your system, the intel channels) are read from the `Chatlogs` folder next to
+  it, so there is nothing else to point at. The usual place is filled in already:
+  - Linux, Steam/Proton:
+    `~/.local/share/Steam/steamapps/compatdata/8500/pfx/drive_c/users/steamuser/Documents/EVE/logs/Gamelogs`;
+  - Windows: `%USERPROFILE%\Documents\EVE\logs\Gamelogs`.
+
+  _Settings → Game logs_ says _Watching_ when it is right, _Folder not found_ when it needs picking (another Steam
+  library, a redirected Documents folder). The choice is saved and kept across restarts and updates, and a change
+  takes effect at once.
 - Run EVE in **borderless window / fullscreen windowed** mode. The overlay cannot sit on top of exclusive fullscreen.
-- For the Abyss timer EVE must log chat to file (on by default). The chat logs are read from the `Chatlogs` folder next
-  to the game logs.
+- For the Abyss timer and intel EVE must log chat to file (on by default).
 
 ### Overlay on Linux (KDE Plasma, Wayland)
 
